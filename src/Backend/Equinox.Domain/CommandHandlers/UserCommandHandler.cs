@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,12 +11,14 @@ using Equinox.Domain.Core.Notifications;
 using Equinox.Domain.Events.User;
 using Equinox.Domain.Interfaces;
 using Equinox.Domain.Models;
+using IdentityModel;
 using MediatR;
 
 namespace Equinox.Domain.CommandHandlers
 {
     public class UserCommandHandler : CommandHandler,
-        IRequestHandler<RegisterNewUserCommand>
+        IRequestHandler<RegisterNewUserCommand>,
+        IRequestHandler<RegisterNewUserWithoutPassCommand>
     {
         private readonly IMediatorHandler _bus;
         private readonly IUserService _userService;
@@ -31,25 +34,48 @@ namespace Equinox.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RegisterNewUserCommand message, CancellationToken cancellationToken)
+        public async Task Handle(RegisterNewUserCommand request, CancellationToken cancellationToken)
         {
-            if (!message.IsValid())
+            if (!request.IsValid())
             {
-                NotifyValidationErrors(message);
+                NotifyValidationErrors(request);
                 return;
             }
 
             var user = new User()
             {
-                Email = message.Email,
-                Name = message.Name,
-                UserName = message.Username,
-                PhoneNumber = message.PhoneNumber,
+                Email = request.Email,
+                Name = request.Name,
+                UserName = request.Username,
+                PhoneNumber = request.PhoneNumber,
+                Picture = request.Picture
             };
 
-            var created = await _userService.CreateUser(user, message.Password);
+            var created = await _userService.CreateUser(user, request.Password);
             await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
         }
+
+        public async Task Handle(RegisterNewUserWithoutPassCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = new User()
+            {
+                Id = Guid.NewGuid(),
+                Email = request.Email,
+                Name = request.Name,
+                UserName = request.Username,
+                PhoneNumber = request.PhoneNumber,
+                Picture = request.Picture
+            };
+
+            await _userService.CreateUser(user, request.Provider, request.ProviderId);
+        }
+
     }
 
 

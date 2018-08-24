@@ -2,6 +2,13 @@
 
 namespace Equinox.Domain.Interfaces
 {
+    /// <summary>
+    /// Interface to propagate user id type
+    /// </summary>
+    public interface IDomainUser : IUser<Guid>
+    {
+
+    }
     public interface IUser<TUserId>
     {
         TUserId Id { get; set; }

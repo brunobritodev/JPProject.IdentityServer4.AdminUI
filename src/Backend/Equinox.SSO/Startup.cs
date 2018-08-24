@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Equinox.SSO
 {
@@ -70,12 +71,35 @@ namespace Equinox.SSO
 
             app.UseStaticFiles();
             app.UseIdentityServer();
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ID4 SSO");
-            });
+                .EnableSwagger(c =>
+                {
+                    c.SingleApiVersion("Version1", "API");
 
+                    // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                    c.ApiKey("apiKey")
+                        .Description("API Key Authentication")
+                        .Name("Token")
+                        .In("header");
+
+                    c.IncludeXmlComments(GetXmlCommentsPath());
+
+                    c.UseFullTypeNameInSchemaIds();
+
+                    c.OperationFilter<AddDefaultHeader>();
+
+                    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.FirstOrDefault());
+                })
+                .EnableSwaggerUi(c =>
+                {
+                    c.InjectStylesheet(thisAssembly, "API.Content.SwaggerStyle.css");
+
+
+
+                    // If your API supports ApiKey, you can override the default values.
+                    // "apiKeyIn" can either be "query" or "header"                                                
+                    //
+                    c.EnableApiKeySupport("apiKey", "header");
+                });
             app.UseMvc();
         }
 

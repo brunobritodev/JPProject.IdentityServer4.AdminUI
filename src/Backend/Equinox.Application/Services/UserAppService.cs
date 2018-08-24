@@ -8,6 +8,7 @@ using Equinox.Application.ViewModels;
 using Equinox.Domain.Commands.User;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Interfaces;
+using Equinox.Domain.Models;
 using Equinox.Infra.Data.Repository.EventSourcing;
 
 namespace Equinox.Application.Services
@@ -36,6 +37,12 @@ namespace Equinox.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
+        public Task Register(SocialLoginViewModel model)
+        {
+            var registerCommand = _mapper.Map<RegisterNewUserWithoutPassCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
         public Task<bool> CheckUsername(string userName)
         {
             return _userService.UsernameExist(userName);
@@ -46,9 +53,10 @@ namespace Equinox.Application.Services
             return _userService.EmailExist(email);
         }
 
-        public void PasswordSignInAsync(string modelUsername, string modelPassword, bool modelRememberLogin, bool lockoutOnFailure)
+        public async Task<IDomainUser> FindByLoginAsync(string provider, string providerUserId)
         {
-            throw new NotImplementedException();
+            
+            return await _userService.FindByLoginAsync(provider, providerUserId);
         }
 
         public void Dispose()

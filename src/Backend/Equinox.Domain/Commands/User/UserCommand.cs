@@ -12,5 +12,6 @@ namespace Equinox.Domain.Commands.User
         public string Username { get; protected set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
+        public string Picture { get; set; }
     }
 }

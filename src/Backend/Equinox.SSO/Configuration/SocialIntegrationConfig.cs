@@ -12,14 +12,22 @@ namespace Equinox.SSO.Configuration
     {
         public static IServiceCollection AddSocialIntegration(this IServiceCollection services)
         {
-            services.AddAuthentication()
+            services
+                .AddAuthentication()
                 .AddGoogle("Google", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
-                    options.ClientId = "371356724436-50s0nucv60p35d2negqi6ra77q2bl77n.apps.googleusercontent.com";
-                    options.ClientSecret = "BZSvopBUlKgyFyyWDcJD-3xY";
+                    options.ClientId = "27416902506-r7o9rfmcma3m6gnuck7q5vf1939o3003.apps.googleusercontent.com";
+                    options.ClientSecret = "BZ3muDLrCavUcsFPz44hK9-i";
 
+                })
+                .AddFacebook("Facebook", options =>
+                {
+
+                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+                    options.ClientId = "2205593199670245";
+                    options.ClientSecret = "c5646224e92f226ffa49be2e1482d284";
                 });
 
             return services;
