@@ -2,13 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>Equinox.UI.Site</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <PackageId>Equinox.UI.Site</PackageId>
-    <UserSecretsId>aspnet-Equinox.UI.Site-de2246eb-3cce-41bd-ab51-a1e37e0f6934</UserSecretsId>
-    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
-    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
   </PropertyGroup>
 
   <ItemGroup>

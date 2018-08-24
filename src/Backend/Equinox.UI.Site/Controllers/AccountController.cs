@@ -6,6 +6,7 @@ using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
 using Equinox.Infra.CrossCutting.Identity.Extensions;
 using Equinox.Infra.CrossCutting.Identity.Models;
 using Equinox.Infra.CrossCutting.Identity.Models.AccountViewModels;
+using Equinox.Infra.CrossCutting.Identity.Models.ManageViewModels;
 using Equinox.Infra.CrossCutting.Identity.Services;
 using Equinox.UI.Site.Extensions;
 using Microsoft.AspNetCore.Authentication;
@@ -55,7 +56,7 @@ namespace Equinox.UI.Site.Controllers
         [Route("account/login")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginInputModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -483,5 +484,10 @@ namespace Equinox.UI.Site.Controllers
         }
 
         #endregion
+    }
+
+    public class ExternalLoginViewModel
+    {
+        public string Email { get; set; }
     }
 }

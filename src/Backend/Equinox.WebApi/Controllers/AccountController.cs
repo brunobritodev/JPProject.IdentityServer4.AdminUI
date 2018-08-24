@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
-using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Equinox.WebApi.Controllers
 {
@@ -43,44 +42,6 @@ namespace Equinox.WebApi.Controllers
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
 
-        [HttpPost]
-        [Route("account/login")]
-        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(model);
-            }
-            SignInResult result = null;
-            UserIdentity userIdentity = null;
-
-            if (model.IsUsernameEmail())
-            {
-                userIdentity = await _userManager.FindByEmailAsync(model.Username);
-                if (userIdentity == null)
-                    return UserDoesntExist();
-                result = await _signInManager.PasswordSignInAsync(userIdentity.UserName, model.Password, model.RememberLogin,
-                    lockoutOnFailure: true);
-            }
-            else
-            {
-                userIdentity = await _userManager.FindByNameAsync(model.Username);
-                if (userIdentity == null)
-                    return UserDoesntExist();
-                result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberLogin,
-                    lockoutOnFailure: true);
-            }
-
-            if (!result.Succeeded)
-
-            {
-                NotifyError(result.ToString(), "Login failure");
-                return Response(result);
-            }
-
-            return Response(new { SignInResult = result, Profile = new UserProfile(userIdentity) });
-        }
 
         private IActionResult UserDoesntExist()
         {

@@ -11,7 +11,6 @@ using Equinox.Domain.Core.Notifications;
 using Equinox.Domain.Events.User;
 using Equinox.Domain.Interfaces;
 using Equinox.Domain.Models;
-using IdentityModel;
 using MediatR;
 
 namespace Equinox.Domain.CommandHandlers
