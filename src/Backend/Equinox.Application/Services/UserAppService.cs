@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Equinox.Application.Interfaces;
@@ -8,7 +6,6 @@ using Equinox.Application.ViewModels;
 using Equinox.Domain.Commands.User;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Interfaces;
-using Equinox.Domain.Models;
 using Equinox.Infra.Data.Repository.EventSourcing;
 
 namespace Equinox.Application.Services
@@ -34,12 +31,6 @@ namespace Equinox.Application.Services
         public Task Register(UserViewModel model)
         {
             var registerCommand = _mapper.Map<RegisterNewUserCommand>(model);
-            return Bus.SendCommand(registerCommand);
-        }
-
-        public Task Register(SocialLoginViewModel model)
-        {
-            var registerCommand = _mapper.Map<RegisterNewUserWithoutPassCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
 
