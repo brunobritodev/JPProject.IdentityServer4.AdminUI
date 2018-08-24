@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Equinox.Application.ViewModels;
+using Equinox.Domain.Interfaces;
 
 namespace Equinox.Application.Interfaces
 {
     public interface IUserManagerAppService : IDisposable
     {
         Task Register(UserViewModel model);
+        Task Register(SocialLoginViewModel social);
         Task<bool> CheckUsername(string userName);
         Task<bool> CheckEmail(string email);
-        void PasswordSignInAsync(string modelUsername, string modelPassword, bool modelRememberLogin, bool lockoutOnFailure);
+        Task<IDomainUser> FindByLoginAsync(string provider, string providerUserId);
     }
 }

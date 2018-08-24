@@ -1,7 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { LocationStrategy, HashLocationStrategy } from "@angular/common";
-
+import { HttpClientModule } from "@angular/common/http";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
 import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
@@ -23,6 +22,33 @@ const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
 
+/*
+  BEGIN Social login
+ */
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from "angular-6-social-login-v2";
+
+// Configs 
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("2205593199670245")
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("27416902506-r7o9rfmcma3m6gnuck7q5vf1939o3003.apps.googleusercontent.com")
+      }
+    ]);
+  return config;
+}
+/* END SOCIAL LOGIN */
+
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -38,8 +64,6 @@ import { AppRoutingModule } from "./app.routing";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts/ng2-charts";
-import { LoginComponent } from "./pages/login/login.component";
-import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -54,7 +78,8 @@ import { HttpClientModule } from "@angular/common/http";
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    SocialLoginModule
   ],
   declarations: [
     AppComponent,
@@ -62,7 +87,12 @@ import { HttpClientModule } from "@angular/common/http";
     P404Component,
     P500Component,
   ],
-  providers: [],
-  bootstrap: [ AppComponent ]
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

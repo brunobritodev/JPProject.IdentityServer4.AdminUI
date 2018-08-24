@@ -5,7 +5,7 @@ using Equinox.Domain.Interfaces;
 
 namespace Equinox.Domain.Models
 {
-    public class User : IUser<Guid>
+    public class User : IDomainUser
     {
         public Guid Id { get; set; }
         public string Email { get; set; }

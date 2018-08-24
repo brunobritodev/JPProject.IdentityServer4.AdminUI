@@ -11,9 +11,12 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="8.0.0" />
-    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
-    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IdentityModel">
+      <HintPath>C:\Users\Bruno\.nuget\packages\identitymodel\3.0.0\lib\netstandard2.0\IdentityModel.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

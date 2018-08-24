@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Equinox.Infra.CrossCutting.Identity.Entities.Identity
 {
-    public class UserIdentity : IdentityUser<Guid>, IUser<Guid>
+    public class UserIdentity : IdentityUser<Guid>, IDomainUser
     {
         public string Picture { get; set; }
         public string Url { get; set; }
