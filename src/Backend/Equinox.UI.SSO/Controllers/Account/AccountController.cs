@@ -1,18 +1,17 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using Equinox.Application.Interfaces;
+using Equinox.Application.ViewModels;
 using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
 using Equinox.Infra.CrossCutting.Identity.Services;
 using Equinox.UI.SSO.Controllers.Home;
 using Equinox.UI.SSO.Models;
 using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
@@ -23,34 +22,36 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using ServiceStack.Text;
 
 namespace Equinox.UI.SSO.Controllers.Account
 {
     [SecurityHeaders]
     public class AccountController : Controller
     {
-        private readonly UserManager<UserIdentity> _userManager;
+        private readonly UserService _userService;
         private readonly SignInManager<UserIdentity> _signInManager;
+        private readonly IUserManagerAppService _userManagerAppService;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
-        private readonly IEmailSender _emailSender;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
 
         public AccountController(
-            UserManager<UserIdentity> userManager,
+            UserService userService,
             SignInManager<UserIdentity> signInManager,
+            IUserManagerAppService userManagerAppService,
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
-            IEmailSender emailSender,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events)
         {
-            _userManager = userManager;
+            _userService = userService;
             _signInManager = signInManager;
+            _userManagerAppService = userManagerAppService;
             _interaction = interaction;
             _clientStore = clientStore;
-            _emailSender = emailSender;
             _schemeProvider = schemeProvider;
             _events = events;
         }
@@ -90,7 +91,7 @@ namespace Equinox.UI.SSO.Controllers.Account
                     // denied the consent (even if this client does not require consent).
                     // this will send back an access denied OIDC error response to the client.
                     await _interaction.GrantConsentAsync(context, ConsentResponse.Denied);
-                    
+
                     // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
                     return Redirect(model.ReturnUrl);
                 }
@@ -103,49 +104,48 @@ namespace Equinox.UI.SSO.Controllers.Account
 
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberLogin, lockoutOnFailure: true);
-                if (result.Succeeded)
+                UserIdentity userIdentity;
+                if (model.IsUsernameEmail())
                 {
-                    var user = await _userManager.FindByNameAsync(model.Username);
-                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName));
+                    userIdentity = await _userService.FindByEmailAsync(model.Username);
 
-                    // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
-                    // the IsLocalUrl check is only necessary if you want to support additional local pages, otherwise IsValidReturnUrl is more strict
-                    if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
-                    {
-                        return Redirect(model.ReturnUrl);
-                    }
-
-                    return Redirect("~/");
+                }
+                else
+                {
+                    userIdentity = await _userService.FindByNameAsync(model.Username);
                 }
 
-                await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials"));
+                if (userIdentity == null)
+                {
+                    await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials"));
+                    ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
+                }
 
-                ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
+                if (userIdentity != null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(userIdentity.UserName, model.Password,model.RememberLogin, lockoutOnFailure: true);
+                    if (result.Succeeded)
+                    {
+                        var user = await _userService.FindByNameAsync(model.Username);
+                        await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName));
+
+                        // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
+                        // the IsLocalUrl check is only necessary if you want to support additional local pages, otherwise IsValidReturnUrl is more strict
+                        if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
+                        {
+                            return Redirect(model.ReturnUrl);
+                        }
+
+                        return Redirect("~/");
+                    }
+                }
             }
 
             // something went wrong, show form with error
             var vm = await BuildLoginViewModelAsync(model);
             return View(vm);
         }
-
-        [HttpGet]
-        [Route("account/confirm-email")]
-        [AllowAnonymous]
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
-        {
-            if (userId == null || code == null)
-            {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                throw new ApplicationException($"Unable to load user with ID '{userId}'.");
-            }
-            var result = await _userManager.ConfirmEmailAsync(user, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
-        }
+       
 
         /// <summary>
         /// initiate roundtrip to external authentication provider
@@ -181,7 +181,7 @@ namespace Equinox.UI.SSO.Controllers.Account
         public async Task<IActionResult> ExternalLoginCallback()
         {
             // read external identity from the temporary cookie
-            var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
+            var result = await HttpContext.AuthenticateAsync(IdentityServerConstants.ExternalCookieAuthenticationScheme);
             if (result?.Succeeded != true)
             {
                 throw new Exception("External authentication error");
@@ -209,6 +209,7 @@ namespace Equinox.UI.SSO.Controllers.Account
             // issue authentication cookie for user
             // we must issue the cookie maually, and can't use the SignInManager because
             // it doesn't expose an API to issue additional claims from the login workflow
+            // I don't have pride of this.
             var principal = await _signInManager.CreateUserPrincipalAsync(user);
             additionalLocalClaims.AddRange(principal.Claims);
             var name = principal.FindFirst(JwtClaimTypes.Name)?.Value ?? user.Id.ToString();
@@ -453,7 +454,7 @@ namespace Equinox.UI.SSO.Controllers.Account
             }
         }
 
-        private async Task<(UserIdentity user, string provider, string providerUserId, IEnumerable<Claim> claims)> 
+        private async Task<(UserIdentity user, string provider, string providerUserId, IEnumerable<Claim> claims)>
             FindUserFromExternalProviderAsync(AuthenticateResult result)
         {
             var externalUser = result.Principal;
@@ -473,7 +474,7 @@ namespace Equinox.UI.SSO.Controllers.Account
             var providerUserId = userIdClaim.Value;
 
             // find external user
-            var user = await _userManager.FindByLoginAsync(provider, providerUserId);
+            var user = await _userService.FindByProviderAsync(provider, providerUserId);
 
             return (user, provider, providerUserId, claims);
         }
@@ -484,8 +485,7 @@ namespace Equinox.UI.SSO.Controllers.Account
             var filtered = new List<Claim>();
 
             // user's display name
-            var name = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Name)?.Value ??
-                claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+            var name = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Name)?.Value ?? claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
             if (name != null)
             {
                 filtered.Add(new Claim(JwtClaimTypes.Name, name));
@@ -518,23 +518,18 @@ namespace Equinox.UI.SSO.Controllers.Account
                 filtered.Add(new Claim(JwtClaimTypes.Email, email));
             }
 
-            var user = new UserIdentity
+            var user = new SocialViewModel()
             {
-                UserName = Guid.NewGuid().ToString(),
+                Username = email,
+                Name = name,
+                Email = email,
+                Picture = "",
+                Provider = provider,
+                ProviderId = providerUserId
             };
-            var identityResult = await _userManager.CreateAsync(user);
-            if (!identityResult.Succeeded) throw new Exception(identityResult.Errors.First().Description);
+            await _userManagerAppService.RegisterWithoutPassword(user);
 
-            if (filtered.Any())
-            {
-                identityResult = await _userManager.AddClaimsAsync(user, filtered);
-                if (!identityResult.Succeeded) throw new Exception(identityResult.Errors.First().Description);
-            }
-
-            identityResult = await _userManager.AddLoginAsync(user, new UserLoginInfo(provider, providerUserId, provider));
-            if (!identityResult.Succeeded) throw new Exception(identityResult.Errors.First().Description);
-
-            return user;
+            return await _userService.FindByProviderAsync(provider, providerUserId);
         }
 
         private void ProcessLoginCallbackForOidc(AuthenticateResult externalResult, List<Claim> localClaims, AuthenticationProperties localSignInProps)

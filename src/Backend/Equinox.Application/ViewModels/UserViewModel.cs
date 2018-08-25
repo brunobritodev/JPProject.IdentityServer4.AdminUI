@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Equinox.Application.ViewModels
 {
     public class UserViewModel
     {
+        public Guid Id { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -31,5 +34,8 @@ namespace Equinox.Application.ViewModels
         [Required]
         [Display(Name = "Username")]
         public string Username { get; set; }
+
+        [Display(Name = "Picture")]
+        public string Picture { get; set; }
     }
 }

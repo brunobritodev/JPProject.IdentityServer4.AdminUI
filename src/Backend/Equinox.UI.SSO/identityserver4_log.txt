@@ -1,0 +1,361 @@
+2018-08-25 00:53:04.755 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 00:53:04.778 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 00:53:04.778 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 00:53:04.778 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 00:53:04.778 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 00:53:04.857 -03:00 [DBG] Starting token cleanup
+2018-08-25 00:53:12.945 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 00:53:16.712 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 00:53:20.498 -03:00 [INF] Clearing 0 tokens
+2018-08-25 00:53:21.766 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 00:53:21.791 -03:00 [INF] Identity.External was not authenticated. Failure message: Unprotect ticket failed
+2018-08-25 00:54:24.762 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 00:54:24.783 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 00:54:24.783 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 00:54:24.783 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 00:54:24.784 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 00:54:24.862 -03:00 [DBG] Starting token cleanup
+2018-08-25 00:54:31.752 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 00:54:34.259 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 00:54:39.147 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 00:54:39.169 -03:00 [INF] Identity.External was not authenticated. Failure message: Unprotect ticket failed
+2018-08-25 00:56:47.685 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 00:56:47.705 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 00:56:47.706 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 00:56:47.706 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 00:56:47.706 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 00:56:47.780 -03:00 [DBG] Starting token cleanup
+2018-08-25 00:56:55.908 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 00:56:59.439 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 00:57:04.930 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 00:57:04.952 -03:00 [INF] Identity.External was not authenticated. Failure message: Unprotect ticket failed
+2018-08-25 01:00:03.248 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:00:03.268 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:00:03.268 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:00:03.268 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:00:03.268 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:00:03.350 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:00:06.552 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:00:08.550 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:00:13.191 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:00:13.213 -03:00 [INF] Identity.External was not authenticated. Failure message: Unprotect ticket failed
+2018-08-25 01:05:29.974 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:05:29.995 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:05:29.995 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:05:29.995 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:05:29.995 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:05:30.081 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:05:39.482 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:07:32.443 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:11:24.419 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:12:32.339 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:12:32.360 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:12:32.360 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:12:32.360 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:12:32.361 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:12:32.442 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:12:41.596 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:12:50.887 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:12:57.519 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:14:28.519 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Error constructing handler for request of type MediatR.IRequestHandler`1[Equinox.Domain.Commands.User.RegisterNewUserWithoutPassCommand]. Register your handlers with the container. See the samples in GitHub for examples. ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.EntityFrameworkCore.DbContextOptions`1[Equinox.Infra.Data.Context.EquinoxContext]' while attempting to activate 'Equinox.Infra.Data.Context.EquinoxContext'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](SingleInstanceFactory factory)
+   --- End of inner exception stack trace ---
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](SingleInstanceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`1.<>c__DisplayClass0_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Equinox.UI.SSO.Controllers.Account.AccountController.AutoProvisionUserAsync(String provider, String providerUserId, IEnumerable`1 claims) in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 529
+   at Equinox.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 196
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-25 01:14:47.650 -03:00 [DBG] TaskCanceledException. Exiting.
+2018-08-25 01:14:47.669 -03:00 [DBG] Stopping token cleanup
+2018-08-25 01:15:43.183 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:15:43.204 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:15:43.204 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:15:43.204 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:15:43.204 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:15:43.293 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:15:46.324 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:15:47.577 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:15:52.887 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:16:01.129 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Error constructing handler for request of type MediatR.IRequestHandler`1[Equinox.Domain.Commands.User.RegisterNewUserWithoutPassCommand]. Register your handlers with the container. See the samples in GitHub for examples. ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.EntityFrameworkCore.DbContextOptions`1[Equinox.Infra.Data.Context.EquinoxContext]' while attempting to activate 'Equinox.Infra.Data.Context.EquinoxContext'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](SingleInstanceFactory factory)
+   --- End of inner exception stack trace ---
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](SingleInstanceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`1.<>c__DisplayClass0_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Equinox.UI.SSO.Controllers.Account.AccountController.AutoProvisionUserAsync(String provider, String providerUserId, IEnumerable`1 claims) in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 529
+   at Equinox.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 196
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-25 01:16:10.993 -03:00 [DBG] TaskCanceledException. Exiting.
+2018-08-25 01:16:11.007 -03:00 [DBG] Stopping token cleanup
+2018-08-25 01:17:29.226 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:17:29.246 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:17:29.246 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:17:29.247 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:17:29.247 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:17:29.326 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:17:32.473 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:17:33.604 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:17:38.719 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:18:00.468 -03:00 [INF] User created a new account with password.
+2018-08-25 01:18:03.194 -03:00 [INF] User created a new account with password.
+2018-08-25 01:18:13.560 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: user
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`1.CreateAsync(TUser user)
+   at IdentityServer4.AspNetIdentity.UserClaimsFactory`1.CreateAsync(TUser user) in C:\local\identity\server4\AspNetIdentity\src\IdentityServer4.AspNetIdentity\UserClaimsFactory.cs:line 28
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CreateUserPrincipalAsync(TUser user)
+   at Equinox.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 212
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-25 01:18:44.939 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:18:46.115 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:18:50.801 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:20:12.921 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:20:12.941 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:20:12.941 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:20:12.941 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:20:12.941 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:20:13.017 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:20:15.996 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:20:17.070 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:20:21.567 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:20:41.478 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: value
+   at System.Security.Claims.Claim..ctor(String type, String value, String valueType, String issuer, String originalIssuer, ClaimsIdentity subject, String propertyKey, String propertyValue)
+   at System.Security.Claims.Claim..ctor(String type, String value)
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`1.GenerateClaimsAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`2.GenerateClaimsAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`1.CreateAsync(TUser user)
+   at IdentityServer4.AspNetIdentity.UserClaimsFactory`1.CreateAsync(TUser user) in C:\local\identity\server4\AspNetIdentity\src\IdentityServer4.AspNetIdentity\UserClaimsFactory.cs:line 28
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CreateUserPrincipalAsync(TUser user)
+   at Equinox.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 212
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-25 01:21:11.974 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:21:13.060 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:21:19.731 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:22:22.967 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: value
+   at System.Security.Claims.Claim..ctor(String type, String value, String valueType, String issuer, String originalIssuer, ClaimsIdentity subject, String propertyKey, String propertyValue)
+   at System.Security.Claims.Claim..ctor(String type, String value)
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`1.GenerateClaimsAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`2.GenerateClaimsAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`1.CreateAsync(TUser user)
+   at IdentityServer4.AspNetIdentity.UserClaimsFactory`1.CreateAsync(TUser user) in C:\local\identity\server4\AspNetIdentity\src\IdentityServer4.AspNetIdentity\UserClaimsFactory.cs:line 28
+   at Microsoft.AspNetCore.Identity.SignInManager`1.CreateUserPrincipalAsync(TUser user)
+   at Equinox.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP.Project\src\Backend\Equinox.UI.SSO\Controllers\Account\AccountController.cs:line 212
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-25 01:22:25.642 -03:00 [DBG] TaskCanceledException. Exiting.
+2018-08-25 01:22:25.652 -03:00 [DBG] Stopping token cleanup
+2018-08-25 01:58:41.295 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:58:41.318 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:58:41.319 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:58:41.319 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:58:41.319 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:58:41.409 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:58:44.870 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:58:44.888 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Equinox.Infra.CrossCutting.Identity.Services.UserService' while attempting to activate 'Equinox.UI.SSO.Controllers.Account.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-25 01:59:45.942 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-25 01:59:45.967 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-25 01:59:45.968 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-25 01:59:45.968 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-25 01:59:45.968 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-25 01:59:46.077 -03:00 [DBG] Starting token cleanup
+2018-08-25 01:59:49.799 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-25 01:59:51.060 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-25 01:59:56.320 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-08-25 01:59:57.463 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Google",
+  "ProviderUserId": "102696868227620762147",
+  "SubjectId": "cabce51c-9883-4207-965c-3d287ea3c185",
+  "DisplayName": "Bruno Brito",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGA8UA3FGG1:00000004",
+  "TimeStamp": "2018-08-25T04:59:57Z",
+  "ProcessId": 15408,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-08-25 01:59:57.484 -03:00 [DBG] Augmenting SignInContext
+2018-08-25 01:59:57.485 -03:00 [DBG] Adding amr claim with value: external
+2018-08-25 01:59:57.490 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-08-25 01:59:57.495 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-08-25 01:59:57.552 -03:00 [DBG] 0 persisted grants found for cabce51c-9883-4207-965c-3d287ea3c185
+2018-08-25 02:00:48.216 -03:00 [DBG] TaskCanceledException. Exiting.
+2018-08-25 02:00:48.240 -03:00 [ERR] Unexpected exception in SocketConnection.StartAsync.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'MemoryPoolBlock'.
+   at System.Buffers.ThrowHelper.ThrowObjectDisposedException(ExceptionArgument argument)
+   at System.Buffers.MemoryPoolBlock.Dispose()
+   at System.IO.Pipelines.BufferSegment.ResetMemory()
+   at System.IO.Pipelines.Pipe.CompletePipe()
+   at System.IO.Pipelines.Pipe.CompleteWriter(Exception exception)
+   at System.IO.Pipelines.Pipe.DefaultPipeWriter.Complete(Exception exception)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.StartAsync(IConnectionDispatcher connectionDispatcher)
+2018-08-25 02:00:48.240 -03:00 [ERR] Unexpected exception in SocketConnection.StartAsync.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'MemoryPoolBlock'.
+   at System.Buffers.ThrowHelper.ThrowObjectDisposedException(ExceptionArgument argument)
+   at System.Buffers.MemoryPoolBlock.Dispose()
+   at System.IO.Pipelines.BufferSegment.ResetMemory()
+   at System.IO.Pipelines.Pipe.CompletePipe()
+   at System.IO.Pipelines.Pipe.CompleteWriter(Exception exception)
+   at System.IO.Pipelines.Pipe.DefaultPipeWriter.Complete(Exception exception)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.StartAsync(IConnectionDispatcher connectionDispatcher)
+2018-08-25 02:00:48.242 -03:00 [DBG] Stopping token cleanup

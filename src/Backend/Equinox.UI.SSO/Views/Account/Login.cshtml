@@ -45,7 +45,7 @@
                     </form>
                 </div>
             </div>
-            <div class="card text-white bg-primary py-5 d-md-down-none" style="width: 44%">
+            <div class="card text-white bg-primary py-5 d-md-down-none">
                 <div class="card-body text-center">
 
                     <h2>Sign up</h2>
@@ -63,7 +63,7 @@
                         <p>
                             @if (Model.VisibleExternalProviders.Any(a => a.DisplayName.ToLower() == "google"))
                             {
-                                <a class="btn btn-brand btn-google-plus" style="margin-bottom: 4px"
+                                <a class="btn btn-brand btn-google-plus"
                                    asp-action="ExternalLogin"
                                    asp-route-provider="Google"
                                    asp-route-returnUrl="@Model.ReturnUrl">
@@ -73,7 +73,7 @@
                             }
                             @if (Model.VisibleExternalProviders.Any(a => a.DisplayName.ToLower() == "twitter"))
                             {
-                                <a class="btn btn-brand btn-twitter" style="margin-bottom: 4px"
+                                <a class="btn btn-brand btn-twitter" 
                                    asp-action="ExternalLogin"
                                    asp-route-provider="Twitter"
                                    asp-route-returnUrl="@Model.ReturnUrl">
@@ -83,7 +83,7 @@
                             }
                             @if (Model.VisibleExternalProviders.Any(a => a.DisplayName.ToLower() == "facebook"))
                             {
-                                <a class="btn btn-brand btn-facebook" style="margin-bottom: 4px"
+                                <a class="btn btn-brand btn-facebook" 
                                    asp-action="ExternalLogin"
                                    asp-route-provider="Facebook"
                                    asp-route-returnUrl="@Model.ReturnUrl">

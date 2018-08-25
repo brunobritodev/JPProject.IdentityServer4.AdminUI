@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
+using ServiceStack.Text;
 
 namespace Equinox.Infra.CrossCutting.Identity.Services
 {
@@ -102,10 +103,11 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             return user != null;
         }
 
-        public async Task<IDomainUser> FindByLoginAsync(string provider, string providerUserId)
+        public async Task<User> FindByLoginAsync(string provider, string providerUserId)
         {
             var model = await _userManager.FindByLoginAsync(provider, providerUserId);
-            return model;
+
+            return Get(model);
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)
@@ -155,5 +157,26 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             }
 
             return false;
-        }}
+        }
+
+        private User Get(UserIdentity user)
+        {
+            return JsonSerializer.DeserializeFromString<User>(JsonSerializer.SerializeToString(user));
+        }
+
+        public Task<UserIdentity> FindByEmailAsync(string email)
+        {
+            return _userManager.FindByEmailAsync(email);
+        }
+
+        public Task<UserIdentity> FindByNameAsync(string username)
+        {
+            return _userManager.FindByNameAsync(username);
+        }
+
+        public Task<UserIdentity> FindByProviderAsync(string provider, string providerUserId)
+        {
+            return _userManager.FindByLoginAsync(provider, providerUserId);
+        }
+    }
 }

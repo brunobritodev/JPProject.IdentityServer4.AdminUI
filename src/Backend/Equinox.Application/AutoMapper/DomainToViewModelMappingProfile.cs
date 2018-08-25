@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Equinox.Application.ViewModels;
-using Equinox.Domain.Interfaces;
 using Equinox.Domain.Models;
 
 namespace Equinox.Application.AutoMapper
@@ -11,7 +10,6 @@ namespace Equinox.Application.AutoMapper
         {
             CreateMap<Customer, CustomerViewModel>();
             CreateMap<User, UserViewModel>();
-            CreateMap<UserViewModel, IDomainUser>(MemberList.Destination);
         }
     }
 }

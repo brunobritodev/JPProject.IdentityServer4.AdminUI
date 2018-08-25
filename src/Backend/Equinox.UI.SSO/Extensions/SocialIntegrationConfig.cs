@@ -1,7 +1,8 @@
 ﻿using IdentityServer4;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UserManagement.Configuration
+namespace Equinox.UI.SSO.Extensions
 {
     public static class SocialIntegrationConfig
     {
@@ -13,9 +14,8 @@ namespace Equinox.UserManagement.Configuration
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
-                    options.ClientId = "27416902506-r7o9rfmcma3m6gnuck7q5vf1939o3003.apps.googleusercontent.com";
-                    options.ClientSecret = "BZ3muDLrCavUcsFPz44hK9-i";
-
+                    options.ClientId = "434483408261-55tc8n0cs4ff1fe21ea8df2o443v2iuc.apps.googleusercontent.com";
+                    options.ClientSecret = "3gcoTrEDPPJ0ukn_aYYT6PWo";
                 })
                 .AddFacebook("Facebook", options =>
                 {
