@@ -41,18 +41,9 @@ namespace Equinox.UI.SSO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = Configuration.GetConnectionString("SSOConnection");
-            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("SSOConnection")));
-
-            services.AddIdentity<UserIdentity, UserIdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-            services.AddAutoMapperSetup();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            // configure identity
+            services.AddIdentity(Configuration);
+            services.AddMvc();
 
             services.Configure<IISOptions>(iis =>
             {
@@ -60,64 +51,14 @@ namespace Equinox.UI.SSO
                 iis.AutomaticAuthentication = false;
             });
 
-            var builder = services.AddIdentityServer(options =>
-            {
-                options.Events.RaiseErrorEvents = true;
-                options.Events.RaiseInformationEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseSuccessEvents = true;
-            })
-                .AddAspNetIdentity<UserIdentity>()
-                // this adds the config data from DB (clients, resources)
-                .AddConfigurationStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseSqlServer(connectionString,
-                            sql => sql.MigrationsAssembly(migrationsAssembly));
-                })
-                // this adds the operational data from DB (codes, tokens, consents)
-                .AddOperationalStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseSqlServer(connectionString,
-                            sql => sql.MigrationsAssembly(migrationsAssembly));
+            // Configure identity server
+            services.AddIdentityServer(Configuration, Environment);
 
-                    // this enables automatic token cleanup. this is optional.
-                    options.EnableTokenCleanup = true;
-
-#if DEBUG
-                    options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
-#endif                
-                });
-
-            services
-                .AddAuthentication()
-                .AddGoogle("Google", options =>
-                {
-                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-
-                    options.ClientId = "27416902506-r7o9rfmcma3m6gnuck7q5vf1939o3003.apps.googleusercontent.com";
-                    options.ClientSecret = "BZ3muDLrCavUcsFPz44hK9-i";
-
-                })
-                .AddFacebook("Facebook", options =>
-                {
-
-                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    options.ClientId = "2205593199670245";
-                    options.ClientSecret = "c5646224e92f226ffa49be2e1482d284";
-                });
-
-
-            if (Environment.IsDevelopment())
-            {
-                builder.AddDeveloperSigningCredential();
-            }
-            else
-            {
-                throw new Exception("need to configure key material");
-            }
-
+            // Configure authentication and external logins
+            services.AddSocialIntegration();
+            
+            // Configure automapper
+            services.AddAutoMapperSetup();
 
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));

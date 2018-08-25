@@ -34,6 +34,12 @@ namespace Equinox.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
+        public Task RegisterWithoutPassword(SocialViewModel model)
+        {
+            var registerCommand = _mapper.Map<RegisterNewUserWithoutPassCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
         public Task<bool> CheckUsername(string userName)
         {
             return _userService.UsernameExist(userName);
@@ -44,10 +50,10 @@ namespace Equinox.Application.Services
             return _userService.EmailExist(email);
         }
 
-        public async Task<IDomainUser> FindByLoginAsync(string provider, string providerUserId)
+        public async Task<UserViewModel> FindByLoginAsync(string provider, string providerUserId)
         {
-            
-            return await _userService.FindByLoginAsync(provider, providerUserId);
+            var model = await _userService.FindByLoginAsync(provider, providerUserId);
+            return _mapper.Map<UserViewModel>(model);
         }
 
         public void Dispose()

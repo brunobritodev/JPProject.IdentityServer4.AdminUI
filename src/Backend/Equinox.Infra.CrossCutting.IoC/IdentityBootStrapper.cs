@@ -17,6 +17,7 @@ namespace Equinox.Infra.CrossCutting.IoC
                 .AddJsonFile("appsettings.json")
                 .Build();
 
+            services.AddScoped<UserService>();
 
             // Infra - Identity Services
             services.AddTransient<IEmailSender, AuthEmailMessageSender>();

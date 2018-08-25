@@ -10,7 +10,7 @@ namespace Equinox.Domain.Interfaces
         Task<bool> CreateUser(IDomainUser user, string password);
         Task<bool> UsernameExist(string userName);
         Task<bool> EmailExist(string email);
-        Task<IDomainUser> FindByLoginAsync(string provider, string providerUserId);
+        Task<User> FindByLoginAsync(string provider, string providerUserId);
         Task<bool> CreateUser(IDomainUser user, string provider, string providerUserId);
     }
 }

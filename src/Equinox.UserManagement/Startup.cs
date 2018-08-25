@@ -38,14 +38,13 @@ namespace Equinox.UserManagement
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.ConfigureCors()
-                    .AddSwagger()
-                    .AddIdentity(Configuration).Configure<IISOptions>(iis =>
-                    {
-                        iis.AuthenticationDisplayName = "Windows";
-                        iis.AutomaticAuthentication = false;
-                    })
-                    .AddIdentityServer(Configuration, Environment)
-                    .AddSocialIntegration();
+                .AddSwagger()
+                .AddIdentity(Configuration).Configure<IISOptions>(iis =>
+                {
+                    iis.AuthenticationDisplayName = "Windows";
+                    iis.AutomaticAuthentication = false;
+                })
+                .AddIdentityServer(Configuration, Environment);
 
             services.AddAutoMapperSetup();
             // Adding MediatR for Domain Events and Notifications

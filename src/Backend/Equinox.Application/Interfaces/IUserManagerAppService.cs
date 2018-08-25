@@ -10,8 +10,9 @@ namespace Equinox.Application.Interfaces
     public interface IUserManagerAppService : IDisposable
     {
         Task Register(UserViewModel model);
+        Task RegisterWithoutPassword(SocialViewModel model);
         Task<bool> CheckUsername(string userName);
         Task<bool> CheckEmail(string email);
-        Task<IDomainUser> FindByLoginAsync(string provider, string providerUserId);
+        Task<UserViewModel> FindByLoginAsync(string provider, string providerUserId);
     }
 }
