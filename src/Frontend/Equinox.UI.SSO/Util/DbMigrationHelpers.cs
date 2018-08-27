@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Equinox.Infra.CrossCutting.Identity.Constants;
 using Equinox.Infra.CrossCutting.Identity.Context;
 using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
+using Equinox.Infra.CrossCutting.IdentityServer.Context;
 using Equinox.Infra.Data.Context;
 using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Hosting;
@@ -39,8 +40,17 @@ namespace Equinox.UI.SSO.Util
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
 
+                var id4Context = scope.ServiceProvider.GetRequiredService<IdentityServerContext>();
+                var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreSQLContext>();
+                var equinox = scope.ServiceProvider.GetRequiredService<EquinoxContext>();
+
+                id4Context.Database.Migrate();
                 userContext.Database.Migrate();
-                await EnsureSeedIdentityServerData(scope.ServiceProvider.GetRequiredService<EquinoxContext>());
+                storeDb.Database.Migrate();
+                equinox.Database.Migrate();
+
+
+                await EnsureSeedIdentityServerData(id4Context);
                 await EnsureSeedIdentityData(userManager, roleManager);
             }
         }
@@ -80,7 +90,7 @@ namespace Equinox.UI.SSO.Util
         /// <summary>
         /// Generate default clients, identity and api resources
         /// </summary>
-        private static async Task EnsureSeedIdentityServerData(EquinoxContext context)
+        private static async Task EnsureSeedIdentityServerData(IdentityServerContext context)
         {
             if (!context.Clients.Any())
             {

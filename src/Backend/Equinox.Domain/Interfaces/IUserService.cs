@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using Equinox.Domain.Models;
@@ -13,5 +14,8 @@ namespace Equinox.Domain.Interfaces
         Task<bool> UsernameExist(string userName);
         Task<bool> EmailExist(string email);
         Task<User> FindByLoginAsync(string provider, string providerUserId);
-        }
+        Task<Guid?> SendResetLink(string requestEmail, string requestUsername);
+        Task<Guid?> ResetPassword(string requestEmail, string requestPassword, string requestCode);
+        Task<Guid?> ConfirmEmailAsync(string email, string code);
+    }
 }

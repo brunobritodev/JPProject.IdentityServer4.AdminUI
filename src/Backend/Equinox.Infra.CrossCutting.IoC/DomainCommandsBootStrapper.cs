@@ -16,9 +16,10 @@ namespace Equinox.Infra.CrossCutting.IoC
 
             services.AddScoped<IRequestHandler<RegisterNewUserCommand>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<RegisterNewUserWithoutPassCommand>, UserCommandHandler>();
-            services.AddScoped<IRequestHandler<RegisterNewUserWithProvider>, UserCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterNewUserWithProviderCommand>, UserCommandHandler>();
+            services.AddScoped<IRequestHandler<SendResetLinkCommand>, UserCommandHandler>();
+            services.AddScoped<IRequestHandler<ResetPasswordCommand>, UserCommandHandler>();
+            services.AddScoped<IRequestHandler<ConfirmEmailCommand>, UserCommandHandler>();
         }
     }
-
-   
 }

@@ -54,6 +54,7 @@ namespace Equinox.UI.SSO.Util
                     RedirectUris = { "http://localhost:4200/login-callback", "https://localhost:5003/swagger/oauth2-redirect.html" },
                     PostLogoutRedirectUris =  { "http://localhost:4200/" },
                     AllowedCorsOrigins = { "http://localhost:4200" },
+                    LogoUri = "~/images/clientLogo/1.jpg",
                     AccessTokenType = AccessTokenType.Reference,
                     AllowedScopes =
                     {

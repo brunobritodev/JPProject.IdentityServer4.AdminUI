@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Org.BouncyCastle.Asn1.Ocsp;
 
-namespace Equinox.Infra.CrossCutting.Identity.Models.AccountViewModels
+namespace Equinox.Application.ViewModels
 {
     public class ResetPasswordViewModel
     {

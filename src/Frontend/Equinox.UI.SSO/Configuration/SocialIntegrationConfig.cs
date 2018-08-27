@@ -1,11 +1,13 @@
 ﻿using IdentityServer4;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Equinox.UI.SSO.Configuration
 {
     public static class SocialIntegrationConfig
     {
-        public static IServiceCollection AddSocialIntegration(this IServiceCollection services)
+        public static IServiceCollection AddSocialIntegration(this IServiceCollection services,
+            IConfiguration configuration)
         {
             services
                 .AddAuthentication()
@@ -13,15 +15,15 @@ namespace Equinox.UI.SSO.Configuration
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
-                    options.ClientId = "434483408261-55tc8n0cs4ff1fe21ea8df2o443v2iuc.apps.googleusercontent.com";
-                    options.ClientSecret = "3gcoTrEDPPJ0ukn_aYYT6PWo";
+                    options.ClientId = configuration.GetSection("ExternalLogin").GetSection("Google").GetSection("ClientId").Value;
+                    options.ClientSecret = configuration.GetSection("ExternalLogin").GetSection("Google").GetSection("ClientSecret").Value;
                 })
                 .AddFacebook("Facebook", options =>
                 {
 
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    options.ClientId = "2205593199670245";
-                    options.ClientSecret = "c5646224e92f226ffa49be2e1482d284";
+                    options.ClientId = configuration.GetSection("ExternalLogin").GetSection("Facebook").GetSection("ClientId").Value;
+                    options.ClientSecret = configuration.GetSection("ExternalLogin").GetSection("Facebook").GetSection("ClientSecret").Value;
                 });
 
             return services;

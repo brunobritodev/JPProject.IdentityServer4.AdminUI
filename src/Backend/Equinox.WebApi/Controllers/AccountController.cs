@@ -80,7 +80,7 @@ namespace Equinox.WebApi.Controllers
                 return Response(false);
             }
 
-            var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = await _userManager.FindByEmailAsync(model.UsernameOrEmail);
             if (user == null)
             {
                 // Don't reveal that the user does not exist or is not confirmed
@@ -92,7 +92,7 @@ namespace Equinox.WebApi.Controllers
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
             var callbackUrl = $"{_configuration.GetSection("WebAppUrl").Value}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
 
-            await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+            await _emailSender.SendEmailAsync(model.UsernameOrEmail, "Reset Password",
                 $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
 
             return Response(true);

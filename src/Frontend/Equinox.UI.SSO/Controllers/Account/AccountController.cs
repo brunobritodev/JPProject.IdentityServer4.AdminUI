@@ -84,9 +84,13 @@ namespace Equinox.UI.SSO.Controllers.Account
         [HttpGet]
         public IActionResult Register()
         {
-            return Redirect(_configuration.GetSection("ApplicationSettings").GetSection("RegisterURL").Value);
+            return Redirect(_configuration.GetSection("ApplicationSettings").GetSection("RegisterUrl").Value);
         }
 
+        public IActionResult ForgotPassword()
+        {
+            return Redirect(_configuration.GetSection("ApplicationSettings").GetSection("ForgotUrl").Value);
+        }
         /// <summary>
         /// Handle postback from username/password login
         /// </summary>
@@ -595,5 +599,6 @@ namespace Equinox.UI.SSO.Controllers.Account
         }
 
         #endregion
+
     }
 }

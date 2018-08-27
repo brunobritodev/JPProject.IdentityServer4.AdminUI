@@ -50,7 +50,7 @@ namespace Equinox.UI.SSO
             services.AddIdentityServer(Configuration, Environment);
 
             // Configure authentication and external logins
-            services.AddSocialIntegration();
+            services.AddSocialIntegration(Configuration);
             
             // Configure automapper
             services.AddAutoMapperSetup();

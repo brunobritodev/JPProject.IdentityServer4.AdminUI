@@ -13,7 +13,7 @@ export class LoginComponent {
     }
 
     public login() {
-        this.oauthService.initImplicitFlow("login");
+        this.configure();
     }
 
     public async configure() {

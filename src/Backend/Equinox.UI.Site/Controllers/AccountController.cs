@@ -379,7 +379,7 @@ namespace Equinox.UI.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(model.Email);
+                var user = await _userManager.FindByEmailAsync(model.UsernameOrEmail);
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
@@ -390,7 +390,7 @@ namespace Equinox.UI.Site.Controllers
                 // visit https://go.microsoft.com/fwlink/?LinkID=532713
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id.ToString(), code, Request.Scheme);
-                await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                await _emailSender.SendEmailAsync(model.UsernameOrEmail, "Reset Password",
                     $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }

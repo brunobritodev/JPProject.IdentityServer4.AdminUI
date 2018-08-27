@@ -1,82 +1,15 @@
 ﻿using System.IO;
-using System.Threading.Tasks;
-using Equinox.Domain.Models;
-using Equinox.Infra.Data.Mappings;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Extensions;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
 namespace Equinox.Infra.Data.Context
 {
-    public class EquinoxContext : DbContext, IConfigurationDbContext, IPersistedGrantDbContext
+    public class EquinoxContext : DbContext
     {
-        private readonly ConfigurationStoreOptions _storeOptions;
-        private readonly OperationalStoreOptions _operationalOptions;
-
-        public EquinoxContext(DbContextOptions<EquinoxContext> options,
-            ConfigurationStoreOptions storeOptions,
-            OperationalStoreOptions operationalOptions
-            ) :base(options)
+        public EquinoxContext(DbContextOptions<EquinoxContext> options
+        ) : base(options)
         {
-            _storeOptions = storeOptions;
-            _operationalOptions = operationalOptions;
         }
-
-        public DbSet<Customer> Customers { get; set; }
-
-        public DbSet<ApiResource> ApiResources { get; set; }
-
-        public DbSet<IdentityResource> IdentityResources { get; set; }
-
-        public DbSet<ApiSecret> ApiSecrets { get; set; }
-
-        public DbSet<ApiScope> ApiScopes { get; set; }
-
-        public DbSet<ApiScopeClaim> ApiScopeClaims { get; set; }
-
-        public DbSet<IdentityClaim> IdentityClaims { get; set; }
-
-        public DbSet<ApiResourceClaim> ApiResourceClaims { get; set; }
-
-        public DbSet<Client> Clients { get; set; }
-
-        public DbSet<ClientGrantType> ClientGrantTypes { get; set; }
-
-        public DbSet<ClientScope> ClientScopes { get; set; }
-
-        public DbSet<ClientSecret> ClientSecrets { get; set; }
-
-        public DbSet<ClientPostLogoutRedirectUri> ClientPostLogoutRedirectUris { get; set; }
-
-        public DbSet<ClientCorsOrigin> ClientCorsOrigins { get; set; }
-
-        public DbSet<ClientIdPRestriction> ClientIdPRestrictions { get; set; }
-
-        public DbSet<ClientRedirectUri> ClientRedirectUris { get; set; }
-
-        public DbSet<ClientClaim> ClientClaims { get; set; }
-
-        public DbSet<ClientProperty> ClientProperties { get; set; }
-
-        public DbSet<PersistedGrant> PersistedGrants { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.ApplyConfiguration(new CustomerMap());
-
-
-            modelBuilder.ConfigureClientContext(_storeOptions);
-            modelBuilder.ConfigureResourcesContext(_storeOptions);
-            modelBuilder.ConfigurePersistedGrantContext(_operationalOptions);
-        }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // get the configuration from the app settings
@@ -88,12 +21,6 @@ namespace Equinox.Infra.Data.Context
             // define the database to use
             optionsBuilder.UseSqlServer(config.GetConnectionString("SSOConnection"));
         }
-
-
-        public Task<int> SaveChangesAsync()
-        {
-            return base.SaveChangesAsync();
-        }
     }
-
+    
 }
