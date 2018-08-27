@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Equinox.Infra.Data.Migrations.Equinox
+namespace Equinox.Infra.CrossCutting.IdentityServer.Migrations
 {
     public partial class Initial : Migration
     {
@@ -68,20 +68,6 @@ namespace Equinox.Infra.Data.Migrations.Equinox
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clients", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    Email = table.Column<string>(type: "varchar(100)", maxLength: 11, nullable: false),
-                    BirthDate = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -550,9 +536,6 @@ namespace Equinox.Infra.Data.Migrations.Equinox
 
             migrationBuilder.DropTable(
                 name: "ClientSecrets");
-
-            migrationBuilder.DropTable(
-                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "IdentityClaims");

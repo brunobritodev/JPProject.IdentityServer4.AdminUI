@@ -1,0 +1,725 @@
+2018-08-27 15:13:21.741 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:13:34.058 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/User/forgot-password application/json-patch+json 46
+2018-08-27 15:13:34.063 -03:00 [INF] Policy execution successful.
+2018-08-27 15:13:34.132 -03:00 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement)
+2018-08-27 15:13:34.262 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ForgotPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:13:41.759 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:13:42.069 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:13:42.320 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8047.7695ms.
+2018-08-27 15:13:42.328 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:13:42.340 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement) in 8203.8543ms
+2018-08-27 15:13:42.350 -03:00 [INF] Request finished in 8293.2839ms 200 application/json; charset=utf-8
+2018-08-27 15:14:26.089 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:14:30.499 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/User/forgot-password application/json-patch+json 46
+2018-08-27 15:14:30.504 -03:00 [INF] Policy execution successful.
+2018-08-27 15:14:30.579 -03:00 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement)
+2018-08-27 15:14:30.705 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ForgotPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:14:44.197 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:14:44.528 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:14:44.816 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14100.9824ms.
+2018-08-27 15:14:44.824 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:14:44.837 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement) in 14254.170100000001ms
+2018-08-27 15:14:44.848 -03:00 [INF] Request finished in 14349.8143ms 200 application/json; charset=utf-8
+2018-08-27 15:15:57.552 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:16:01.670 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/User/forgot-password application/json-patch+json 46
+2018-08-27 15:16:01.676 -03:00 [INF] Policy execution successful.
+2018-08-27 15:16:01.759 -03:00 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement)
+2018-08-27 15:16:01.900 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ForgotPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:16:04.853 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:16:05.167 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:16:05.402 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3490.3955ms.
+2018-08-27 15:16:05.411 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:16:05.423 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ForgotPassword (Equinox.UserManagement) in 3660.0106ms
+2018-08-27 15:16:05.433 -03:00 [INF] Request finished in 3763.5411ms 200 application/json; charset=utf-8
+2018-08-27 15:37:09.995 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:37:10.015 -03:00 [INF] Policy execution successful.
+2018-08-27 15:37:10.017 -03:00 [INF] Request finished in 21.6061ms 204 
+2018-08-27 15:37:10.018 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 336
+2018-08-27 15:37:10.019 -03:00 [INF] Policy execution successful.
+2018-08-27 15:37:10.021 -03:00 [INF] Request finished in 2.2813ms 404 
+2018-08-27 15:37:10.023 -03:00 [INF] Connection id "0HLGC94IISGON", Request id "0HLGC94IISGON:00000002": the application completed without reading the entire request body.
+2018-08-27 15:51:34.387 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:51:39.614 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:51:39.621 -03:00 [INF] Policy execution successful.
+2018-08-27 15:51:39.625 -03:00 [INF] Request finished in 12.9231ms 204 
+2018-08-27 15:51:39.631 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 336
+2018-08-27 15:51:39.632 -03:00 [INF] Policy execution successful.
+2018-08-27 15:51:39.708 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:51:39.845 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:51:45.793 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 6081.0844000000006ms
+2018-08-27 15:51:45.801 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+===========================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+ResetPasswordViewModel -> ResetPasswordCommand (Destination member list)
+Equinox.Application.ViewModels.ResetPasswordViewModel -> Equinox.Domain.Commands.User.ResetPasswordCommand (Destination member list)
+
+Unmapped properties:
+Id
+PhoneNumber
+Name
+Username
+Picture
+Provider
+ProviderId
+Timestamp
+ValidationResult
+MessageType
+AggregateId
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , ResetPasswordViewModel , ResetPasswordCommand , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 207
+   at Equinox.Application.Services.UserManagerAppService.ResetPassword(ResetPasswordViewModel model) in D:\workspace\JpProject\src\Backend\Equinox.Application\Services\UserAppService.cs:line 55
+   at Equinox.UserManagement.Controllers.UserController.ResetPassword(ResetPasswordViewModel model) in D:\workspace\JpProject\src\Backend\Equinox.UserManagement\Controllers\UserController.cs:line 93
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-27 15:51:49.987 -03:00 [INF] Request finished in 10355.5158ms 500 text/html; charset=utf-8
+2018-08-27 15:53:53.317 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:54:00.192 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:54:00.198 -03:00 [INF] Policy execution successful.
+2018-08-27 15:54:00.203 -03:00 [INF] Request finished in 11.3356ms 204 
+2018-08-27 15:54:00.208 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 336
+2018-08-27 15:54:00.209 -03:00 [INF] Policy execution successful.
+2018-08-27 15:54:00.278 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:54:00.404 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:54:22.425 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 22010.4864ms.
+2018-08-27 15:54:22.431 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:54:22.440 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 22158.759000000002ms
+2018-08-27 15:54:22.445 -03:00 [INF] Request finished in 22236.897ms 400 application/json; charset=utf-8
+2018-08-27 15:54:49.409 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:54:51.279 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:54:51.285 -03:00 [INF] Policy execution successful.
+2018-08-27 15:54:51.289 -03:00 [INF] Request finished in 10.9512ms 204 
+2018-08-27 15:54:51.297 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 336
+2018-08-27 15:54:51.298 -03:00 [INF] Policy execution successful.
+2018-08-27 15:54:51.365 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:54:51.496 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:55:01.832 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:55:02.155 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:55:02.264 -03:00 [WRN] User a4e211ec-86f0-43dd-b102-1413fc89f8a3 password validation failed: PasswordRequiresLower.
+2018-08-27 15:55:08.476 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16969.0517ms.
+2018-08-27 15:55:08.484 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:55:08.496 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 17127.3247ms
+2018-08-27 15:55:08.507 -03:00 [INF] Request finished in 17210.2334ms 200 application/json; charset=utf-8
+2018-08-27 15:56:53.936 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:56:54.570 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:56:54.577 -03:00 [INF] Policy execution successful.
+2018-08-27 15:56:54.583 -03:00 [INF] Request finished in 15.1606ms 204 
+2018-08-27 15:56:54.589 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 336
+2018-08-27 15:56:54.590 -03:00 [INF] Policy execution successful.
+2018-08-27 15:56:54.685 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:56:54.822 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:56:57.871 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:56:58.191 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:56:58.299 -03:00 [WRN] User a4e211ec-86f0-43dd-b102-1413fc89f8a3 password validation failed: PasswordRequiresLower.
+2018-08-27 15:57:21.063 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 15:57:23.442 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:57:23.448 -03:00 [INF] Policy execution successful.
+2018-08-27 15:57:23.452 -03:00 [INF] Request finished in 10.7731ms 204 
+2018-08-27 15:57:23.457 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 336
+2018-08-27 15:57:23.458 -03:00 [INF] Policy execution successful.
+2018-08-27 15:57:23.527 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:57:23.662 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:57:25.619 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:57:25.947 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:57:26.059 -03:00 [WRN] User a4e211ec-86f0-43dd-b102-1413fc89f8a3 password validation failed: PasswordRequiresLower.
+2018-08-27 15:57:26.070 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 2397.0418ms.
+2018-08-27 15:57:26.079 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:57:26.091 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 2560.5633000000003ms
+2018-08-27 15:57:26.102 -03:00 [INF] Request finished in 2644.1013ms 400 application/json; charset=utf-8
+2018-08-27 15:57:38.050 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:57:38.051 -03:00 [INF] Policy execution successful.
+2018-08-27 15:57:38.052 -03:00 [INF] Request finished in 2.5458ms 204 
+2018-08-27 15:57:38.055 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 338
+2018-08-27 15:57:38.056 -03:00 [INF] Policy execution successful.
+2018-08-27 15:57:38.058 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:57:38.062 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:57:40.780 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:57:40.792 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:57:40.843 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 15:57:40.960 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [AccessFailedCount] = @p0, [Bio] = @p1, [Company] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [JobTitle] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [Name] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [Picture] = @p15, [SecurityStamp] = @p16, [TwoFactorEnabled] = @p17, [Url] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+2018-08-27 15:57:40.993 -03:00 [INF] Password reseted successfull.
+2018-08-27 15:57:41.053 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2989.1828ms.
+2018-08-27 15:57:41.056 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:57:41.058 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 2998.3074ms
+2018-08-27 15:57:41.061 -03:00 [INF] Request finished in 3006.0672ms 200 application/json; charset=utf-8
+2018-08-27 15:59:26.140 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:59:26.141 -03:00 [INF] Policy execution successful.
+2018-08-27 15:59:26.142 -03:00 [INF] Request finished in 2.2293ms 204 
+2018-08-27 15:59:26.144 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 346
+2018-08-27 15:59:26.145 -03:00 [INF] Policy execution successful.
+2018-08-27 15:59:26.146 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:59:26.148 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:59:28.345 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:59:28.351 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:59:28.354 -03:00 [WRN] VerifyUserTokenAsync() failed with purpose: ResetPassword for user a4e211ec-86f0-43dd-b102-1413fc89f8a3.
+2018-08-27 15:59:28.356 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 2206.2328ms.
+2018-08-27 15:59:28.358 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:59:28.360 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 2212.7781ms
+2018-08-27 15:59:28.361 -03:00 [INF] Request finished in 2217.1312ms 400 application/json; charset=utf-8
+2018-08-27 15:59:49.415 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/reset-password  
+2018-08-27 15:59:49.416 -03:00 [INF] Policy execution successful.
+2018-08-27 15:59:49.417 -03:00 [INF] Request finished in 2.1194ms 204 
+2018-08-27 15:59:49.419 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/reset-password application/json 346
+2018-08-27 15:59:49.420 -03:00 [INF] Policy execution successful.
+2018-08-27 15:59:49.421 -03:00 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement)
+2018-08-27 15:59:49.423 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ResetPasswordViewModel"]) - Validation state: "Valid"
+2018-08-27 15:59:49.427 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 15:59:49.430 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 15:59:49.432 -03:00 [WRN] VerifyUserTokenAsync() failed with purpose: ResetPassword for user a4e211ec-86f0-43dd-b102-1413fc89f8a3.
+2018-08-27 15:59:49.433 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 7.8557000000000006ms.
+2018-08-27 15:59:49.437 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 15:59:49.438 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ResetPassword (Equinox.UserManagement) in 16.0307ms
+2018-08-27 15:59:49.440 -03:00 [INF] Request finished in 20.5106ms 400 application/json; charset=utf-8
+2018-08-27 16:08:40.040 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:10:55.082 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:12:20.370 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:14:18.804 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:14:31.792 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:35:13.571 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:42:01.809 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:42:01.815 -03:00 [INF] Policy execution successful.
+2018-08-27 16:42:01.819 -03:00 [INF] Request finished in 10.954ms 204 
+2018-08-27 16:42:01.827 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:42:01.828 -03:00 [INF] Policy execution successful.
+2018-08-27 16:42:01.900 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:42:02.039 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:42:14.117 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 12213.513200000001ms
+2018-08-27 16:42:14.119 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=========================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+ConfirmEmailViewModel -> ConfirmEmailCommand (Destination member list)
+Equinox.Application.ViewModels.ConfirmEmailViewModel -> Equinox.Domain.Commands.User.ConfirmEmailCommand (Destination member list)
+
+Unmapped properties:
+Id
+PhoneNumber
+Name
+Username
+Password
+ConfirmPassword
+Picture
+Provider
+ProviderId
+Timestamp
+ValidationResult
+MessageType
+AggregateId
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps) in C:\projects\automapper\src\AutoMapper\ConfigurationValidator.cs:line 48
+   at lambda_method(Closure , ConfirmEmailViewModel , ConfirmEmailCommand , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 207
+   at Equinox.Application.Services.UserManagerAppService.ConfirmEmail(ConfirmEmailViewModel model) in D:\workspace\JpProject\src\Backend\Equinox.Application\Services\UserAppService.cs:line 61
+   at Equinox.UserManagement.Controllers.UserController.ConfirmEmail(ConfirmEmailViewModel model) in D:\workspace\JpProject\src\Backend\Equinox.UserManagement\Controllers\UserController.cs:line 107
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-27 16:42:14.207 -03:00 [INF] Request finished in 12380.2645ms 500 text/html; charset=utf-8
+2018-08-27 16:43:05.257 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:43:10.201 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:43:10.208 -03:00 [INF] Policy execution successful.
+2018-08-27 16:43:10.213 -03:00 [INF] Request finished in 12.5834ms 204 
+2018-08-27 16:43:10.220 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:43:10.221 -03:00 [INF] Policy execution successful.
+2018-08-27 16:43:10.293 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:43:10.425 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:45:21.183 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-27 16:45:21.185 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 130889.6109ms
+2018-08-27 16:45:21.183 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-27 16:45:21.183 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-27 16:45:21.185 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:45:21.183 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-27 16:45:21.213 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot return null from an action method with a return type of 'Microsoft.AspNetCore.Mvc.IActionResult'.
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.EnsureActionResultNotNull(ObjectMethodExecutor executor, IActionResult actionResult)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-27 16:45:21.231 -03:00 [INF] Policy execution successful.
+2018-08-27 16:45:21.252 -03:00 [INF] Request finished in 66.8614ms 204 
+2018-08-27 16:45:21.254 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:45:21.254 -03:00 [INF] Policy execution successful.
+2018-08-27 16:45:21.257 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:45:21.260 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:45:23.709 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 2451.0258ms
+2018-08-27 16:45:23.712 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot return null from an action method with a return type of 'Microsoft.AspNetCore.Mvc.IActionResult'.
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.EnsureActionResultNotNull(ObjectMethodExecutor executor, IActionResult actionResult)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-27 16:45:23.719 -03:00 [INF] Request finished in 133501.8084ms 500 text/html; charset=utf-8
+2018-08-27 16:45:23.743 -03:00 [INF] Request finished in 2489.4465ms 500 text/html; charset=utf-8
+2018-08-27 16:45:43.016 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:46:01.278 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:46:18.104 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:46:26.363 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:46:26.369 -03:00 [INF] Policy execution successful.
+2018-08-27 16:46:26.373 -03:00 [INF] Request finished in 11.6497ms 204 
+2018-08-27 16:46:26.379 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:46:26.380 -03:00 [INF] Policy execution successful.
+2018-08-27 16:46:26.454 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:46:26.587 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:46:34.628 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 8030.9451000000008ms.
+2018-08-27 16:46:34.634 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 16:46:34.643 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 8186.5278000000008ms
+2018-08-27 16:46:34.653 -03:00 [INF] Request finished in 8274.5084ms 400 application/json; charset=utf-8
+2018-08-27 16:47:51.307 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:47:51.308 -03:00 [INF] Policy execution successful.
+2018-08-27 16:47:51.309 -03:00 [INF] Request finished in 2.0986ms 204 
+2018-08-27 16:47:51.322 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:47:51.323 -03:00 [INF] Policy execution successful.
+2018-08-27 16:47:51.325 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:47:51.369 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:47:53.920 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 2549.0922ms.
+2018-08-27 16:47:53.923 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 16:47:53.926 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 2598.5624000000003ms
+2018-08-27 16:47:53.928 -03:00 [INF] Request finished in 2605.5744ms 400 application/json; charset=utf-8
+2018-08-27 16:50:16.200 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:50:16.204 -03:00 [INF] Policy execution successful.
+2018-08-27 16:50:16.205 -03:00 [INF] Request finished in 4.8741ms 204 
+2018-08-27 16:50:16.220 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:50:16.221 -03:00 [INF] Policy execution successful.
+2018-08-27 16:50:16.223 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:50:16.227 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:50:16.231 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 2.2216ms.
+2018-08-27 16:50:16.234 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 16:50:16.237 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 12.0448ms
+2018-08-27 16:50:16.239 -03:00 [INF] Request finished in 19.36ms 400 application/json; charset=utf-8
+2018-08-27 16:50:31.950 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:50:31.951 -03:00 [INF] Policy execution successful.
+2018-08-27 16:50:31.953 -03:00 [INF] Request finished in 2.1916ms 204 
+2018-08-27 16:50:31.963 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:50:31.964 -03:00 [INF] Policy execution successful.
+2018-08-27 16:50:31.965 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:50:31.968 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:50:31.983 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 10.925ms.
+2018-08-27 16:50:31.985 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 16:50:31.988 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 20.7569ms
+2018-08-27 16:50:31.991 -03:00 [INF] Request finished in 27.3484ms 400 application/json; charset=utf-8
+2018-08-27 16:50:54.656 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:51:03.924 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:51:03.930 -03:00 [INF] Policy execution successful.
+2018-08-27 16:51:03.938 -03:00 [INF] Request finished in 12.3346ms 204 
+2018-08-27 16:51:03.941 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:51:03.942 -03:00 [INF] Policy execution successful.
+2018-08-27 16:51:04.012 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:51:04.154 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:51:04.682 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 16:51:04.988 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 16:51:08.343 -03:00 [WRN] VerifyUserTokenAsync() failed with purpose: EmailConfirmation for user 68202b22-d09d-442c-8bb2-325d922ed55c.
+2018-08-27 16:51:35.406 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 16:51:41.688 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:51:41.696 -03:00 [INF] Policy execution successful.
+2018-08-27 16:51:41.701 -03:00 [INF] Request finished in 14.0968ms 204 
+2018-08-27 16:51:41.718 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:51:41.719 -03:00 [INF] Policy execution successful.
+2018-08-27 16:51:41.798 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:51:41.941 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:51:42.449 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 16:51:42.755 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 16:51:43.812 -03:00 [WRN] VerifyUserTokenAsync() failed with purpose: EmailConfirmation for user 68202b22-d09d-442c-8bb2-325d922ed55c.
+2018-08-27 16:51:43.823 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 1871.9255ms.
+2018-08-27 16:51:43.831 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 16:51:43.842 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 2041.0955000000001ms
+2018-08-27 16:51:43.853 -03:00 [INF] Request finished in 2134.8587ms 400 application/json; charset=utf-8
+2018-08-27 16:51:48.408 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/confirm-email  
+2018-08-27 16:51:48.409 -03:00 [INF] Policy execution successful.
+2018-08-27 16:51:48.411 -03:00 [INF] Request finished in 2.5287ms 204 
+2018-08-27 16:51:48.416 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/confirm-email application/json 305
+2018-08-27 16:51:48.418 -03:00 [INF] Policy execution successful.
+2018-08-27 16:51:48.419 -03:00 [INF] Route matched with {action = "ConfirmEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement)
+2018-08-27 16:51:48.432 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.ConfirmEmailViewModel"]) - Validation state: "Valid"
+2018-08-27 16:51:48.446 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 16:51:48.462 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-08-27 16:51:48.467 -03:00 [WRN] VerifyUserTokenAsync() failed with purpose: EmailConfirmation for user 68202b22-d09d-442c-8bb2-325d922ed55c.
+2018-08-27 16:51:48.469 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 33.8278ms.
+2018-08-27 16:51:48.471 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 16:51:48.476 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.ConfirmEmail (Equinox.UserManagement) in 55.2672ms
+2018-08-27 16:51:48.478 -03:00 [INF] Request finished in 62.291ms 400 application/json; charset=utf-8
+2018-08-27 16:52:31.523 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 17:10:11.773 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 17:11:12.998 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 17:11:44.621 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/user/checkUsername?username=bhdebrito  
+2018-08-27 17:11:44.627 -03:00 [INF] Policy execution successful.
+2018-08-27 17:11:44.701 -03:00 [INF] Route matched with {action = "CheckUsername", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement)
+2018-08-27 17:11:44.825 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement) with arguments (["bhdebrito"]) - Validation state: "Valid"
+2018-08-27 17:11:45.066 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/user/checkEmail?email=bhdebrito@gmail.com  
+2018-08-27 17:11:45.067 -03:00 [INF] Policy execution successful.
+2018-08-27 17:11:45.071 -03:00 [INF] Route matched with {action = "CheckEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement)
+2018-08-27 17:11:45.087 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement) with arguments (["bhdebrito@gmail.com"]) - Validation state: "Valid"
+2018-08-27 17:11:45.292 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 17:11:45.292 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 17:11:45.629 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:11:45.629 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:11:45.668 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 577.7956ms.
+2018-08-27 17:11:45.668 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 832.25110000000006ms.
+2018-08-27 17:11:45.679 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:11:45.679 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:11:45.693 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement) in 619.1713ms
+2018-08-27 17:11:45.693 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement) in 988.89650000000006ms
+2018-08-27 17:11:45.705 -03:00 [INF] Request finished in 638.8031ms 200 application/json; charset=utf-8
+2018-08-27 17:11:45.705 -03:00 [INF] Request finished in 1084.6094ms 200 application/json; charset=utf-8
+2018-08-27 17:11:48.504 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/register-provider  
+2018-08-27 17:11:48.507 -03:00 [INF] Policy execution successful.
+2018-08-27 17:11:48.509 -03:00 [INF] Request finished in 4.3124ms 204 
+2018-08-27 17:11:48.511 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/register-provider application/json 418
+2018-08-27 17:11:48.512 -03:00 [INF] Policy execution successful.
+2018-08-27 17:11:48.516 -03:00 [INF] Route matched with {action = "RegisterWithProvider", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement)
+2018-08-27 17:11:48.536 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.UserViewModel"]) - Validation state: "Valid"
+2018-08-27 17:11:48.625 -03:00 [WRN] User d78ef217-75a6-4bf1-9c79-c00daa70b1ab password validation failed: PasswordRequiresNonAlphanumeric.
+2018-08-27 17:11:48.786 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 247.3554ms.
+2018-08-27 17:11:48.788 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:11:48.793 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) in 275.08570000000003ms
+2018-08-27 17:11:48.795 -03:00 [INF] Request finished in 284.0387ms 400 application/json; charset=utf-8
+2018-08-27 17:11:55.547 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/register-provider  
+2018-08-27 17:11:55.549 -03:00 [INF] Policy execution successful.
+2018-08-27 17:11:55.550 -03:00 [INF] Request finished in 2.311ms 204 
+2018-08-27 17:11:55.552 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/register-provider application/json 421
+2018-08-27 17:11:55.552 -03:00 [INF] Policy execution successful.
+2018-08-27 17:11:55.553 -03:00 [INF] Route matched with {action = "RegisterWithProvider", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement)
+2018-08-27 17:11:55.561 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.UserViewModel"]) - Validation state: "Invalid"
+2018-08-27 17:11:55.565 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 0.99540000000000006ms.
+2018-08-27 17:11:55.566 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:11:55.569 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) in 13.7942ms
+2018-08-27 17:11:55.570 -03:00 [INF] Request finished in 18.6392ms 400 application/json; charset=utf-8
+2018-08-27 17:12:01.267 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/register-provider  
+2018-08-27 17:12:01.268 -03:00 [INF] Policy execution successful.
+2018-08-27 17:12:01.269 -03:00 [INF] Request finished in 2.0639ms 204 
+2018-08-27 17:12:01.271 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/register-provider application/json 420
+2018-08-27 17:12:01.271 -03:00 [INF] Policy execution successful.
+2018-08-27 17:12:01.272 -03:00 [INF] Route matched with {action = "RegisterWithProvider", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement)
+2018-08-27 17:12:01.274 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.UserViewModel"]) - Validation state: "Valid"
+2018-08-27 17:12:01.314 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 17:12:01.321 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:12:01.392 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 4000), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Bio], [Company], [ConcurrencyStamp], [Email], [EmailConfirmed], [JobTitle], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Picture], [SecurityStamp], [TwoFactorEnabled], [Url], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+2018-08-27 17:12:01.466 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:12:01.493 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserClaims] ([ClaimType], [ClaimValue], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [UserClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-08-27 17:12:01.509 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserClaims] ([ClaimType], [ClaimValue], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [UserClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-08-27 17:12:01.519 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [AccessFailedCount] = @p0, [Bio] = @p1, [Company] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [JobTitle] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [Name] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [Picture] = @p15, [SecurityStamp] = @p16, [TwoFactorEnabled] = @p17, [Url] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+2018-08-27 17:12:01.553 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [UserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+2018-08-27 17:12:01.578 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:12:01.587 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserLogins] ([LoginProvider], [ProviderKey], [ProviderDisplayName], [UserId])
+VALUES (@p0, @p1, @p2, @p3);
+2018-08-27 17:12:01.593 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [AccessFailedCount] = @p0, [Bio] = @p1, [Company] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [JobTitle] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [Name] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [Picture] = @p15, [SecurityStamp] = @p16, [TwoFactorEnabled] = @p17, [Url] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+2018-08-27 17:12:01.604 -03:00 [INF] User created a new account with password.
+2018-08-27 17:12:01.605 -03:00 [INF] Provider google associated.
+2018-08-27 17:12:01.616 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 338.21880000000004ms.
+2018-08-27 17:12:01.619 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:12:01.624 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) in 350.4135ms
+2018-08-27 17:12:01.628 -03:00 [INF] Request finished in 357.7145ms 200 application/json; charset=utf-8
+2018-08-27 17:15:19.087 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-27 17:15:58.662 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/user/checkUsername?username=bhdebrito  
+2018-08-27 17:15:58.667 -03:00 [INF] Policy execution successful.
+2018-08-27 17:15:58.733 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/user/checkEmail?email=bhdebrito@gmail.com  
+2018-08-27 17:15:58.734 -03:00 [INF] Policy execution successful.
+2018-08-27 17:15:58.740 -03:00 [INF] Route matched with {action = "CheckUsername", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement)
+2018-08-27 17:15:58.740 -03:00 [INF] Route matched with {action = "CheckEmail", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement)
+2018-08-27 17:15:58.873 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement) with arguments (["bhdebrito@gmail.com"]) - Validation state: "Valid"
+2018-08-27 17:15:58.873 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement) with arguments (["bhdebrito"]) - Validation state: "Valid"
+2018-08-27 17:15:59.319 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 17:15:59.319 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 17:15:59.654 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:15:59.654 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:15:59.692 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 808.8069ms.
+2018-08-27 17:15:59.692 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 807.9416ms.
+2018-08-27 17:15:59.701 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:15:59.701 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:15:59.729 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.CheckEmail (Equinox.UserManagement) in 969.9133ms
+2018-08-27 17:15:59.729 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.CheckUsername (Equinox.UserManagement) in 971.81310000000008ms
+2018-08-27 17:15:59.742 -03:00 [INF] Request finished in 1080.2494ms 200 application/json; charset=utf-8
+2018-08-27 17:15:59.742 -03:00 [INF] Request finished in 1008.0288ms 200 application/json; charset=utf-8
+2018-08-27 17:16:05.207 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/user/register-provider  
+2018-08-27 17:16:05.208 -03:00 [INF] Policy execution successful.
+2018-08-27 17:16:05.211 -03:00 [INF] Request finished in 3.5627ms 204 
+2018-08-27 17:16:05.213 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/user/register-provider application/json 465
+2018-08-27 17:16:05.214 -03:00 [INF] Policy execution successful.
+2018-08-27 17:16:05.217 -03:00 [INF] Route matched with {action = "RegisterWithProvider", controller = "User"}. Executing action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement)
+2018-08-27 17:16:05.237 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) with arguments (["Equinox.Application.ViewModels.UserViewModel"]) - Validation state: "Valid"
+2018-08-27 17:16:05.350 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-27 17:16:05.357 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:16:05.549 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 4000), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Bio], [Company], [ConcurrencyStamp], [Email], [EmailConfirmed], [JobTitle], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Picture], [SecurityStamp], [TwoFactorEnabled], [Url], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+2018-08-27 17:16:05.633 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:16:05.680 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Guid), @p29='?' (DbType = Guid), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p30='?' (Size = 4000), @p13='?' (Size = 256), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTimeOffset), @p18='?' (Size = 4000), @p19='?' (Size = 256), @p20='?' (Size = 256), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (DbType = Boolean), @p27='?' (Size = 4000), @p28='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [UserClaims] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2)) AS i ([ClaimType], [ClaimValue], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ClaimType], [ClaimValue], [UserId])
+VALUES (i.[ClaimType], i.[ClaimValue], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [UserClaims] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+UPDATE [Users] SET [AccessFailedCount] = @p9, [Bio] = @p10, [Company] = @p11, [ConcurrencyStamp] = @p12, [Email] = @p13, [EmailConfirmed] = @p14, [JobTitle] = @p15, [LockoutEnabled] = @p16, [LockoutEnd] = @p17, [Name] = @p18, [NormalizedEmail] = @p19, [NormalizedUserName] = @p20, [PasswordHash] = @p21, [PhoneNumber] = @p22, [PhoneNumberConfirmed] = @p23, [Picture] = @p24, [SecurityStamp] = @p25, [TwoFactorEnabled] = @p26, [Url] = @p27, [UserName] = @p28
+WHERE [Id] = @p29 AND [ConcurrencyStamp] = @p30;
+SELECT @@ROWCOUNT;
+2018-08-27 17:16:05.723 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [UserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+2018-08-27 17:16:05.753 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Bio], [u].[Company], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Picture], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[Url], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2018-08-27 17:16:05.759 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserLogins] ([LoginProvider], [ProviderKey], [ProviderDisplayName], [UserId])
+VALUES (@p0, @p1, @p2, @p3);
+2018-08-27 17:16:05.764 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [AccessFailedCount] = @p0, [Bio] = @p1, [Company] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [JobTitle] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [Name] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [Picture] = @p15, [SecurityStamp] = @p16, [TwoFactorEnabled] = @p17, [Url] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+2018-08-27 17:16:05.774 -03:00 [INF] User created a new account with password.
+2018-08-27 17:16:05.775 -03:00 [INF] Provider facebook associated.
+2018-08-27 17:16:05.821 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 581.4783ms.
+2018-08-27 17:16:05.823 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-27 17:16:05.828 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.UserController.RegisterWithProvider (Equinox.UserManagement) in 608.62ms
+2018-08-27 17:16:05.830 -03:00 [INF] Request finished in 616.9415ms 200 application/json; charset=utf-8

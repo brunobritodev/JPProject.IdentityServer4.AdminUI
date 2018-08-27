@@ -6,16 +6,21 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { UserService } from "../shared/services/user.service";
 import { CommonModule } from "@angular/common";
 import { AlertModule } from "ngx-bootstrap/alert";
-import { AccountService } from "../shared/services/account.service";
 import { UnauthorizedComponent } from "./unauthorized/unauthorized.component";
 import { LoginCallbackComponent } from "./login-callback/login-callback.component";
+import { RecoverComponent } from "./recover/recover.component";
+import { ResetPasswordComponent } from "./reset-password/reset-password.component";
+import { ConfirmEmailComponent } from "./confirm-email/confirm-email.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LoginComponent, data: { title: "Login Page" } },
-    { path: "register", component: RegisterComponent, data: { title: "Register Page" } },
-    { path: "login-callback", component: LoginCallbackComponent, data: { title: "Login Page" } },
-    { path: "unauthorized", component: UnauthorizedComponent, data: { title: "Unauthorized Page" } },
+    { path: "register", component: RegisterComponent, data: { title: "Register" } },
+    { path: "login-callback", component: LoginCallbackComponent, data: { title: "Login" } },
+    { path: "unauthorized", component: UnauthorizedComponent, data: { title: "Unauthorized" } },
+    { path: "recover", component: RecoverComponent, data: { title: "Recover account" } },
+    { path: "reset-password", component: ResetPasswordComponent, data: { title: "Reset password" } },
+    { path: "confirm-email", component: ConfirmEmailComponent, data: { title: "Confirm account" } },
 ];
 
 
@@ -29,13 +34,15 @@ const routes: Routes = [
     ],
     providers: [
         UserService,
-        AccountService
     ],
     declarations: [
         LoginComponent,
         RegisterComponent,
         UnauthorizedComponent, 
-        LoginCallbackComponent 
+        LoginCallbackComponent,
+        RecoverComponent,
+        ResetPasswordComponent,
+        ConfirmEmailComponent
     ],
     exports: [
         RouterModule

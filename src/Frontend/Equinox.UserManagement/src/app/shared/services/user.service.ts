@@ -4,12 +4,15 @@ import { DefaultResponse } from "../view-model/default-response.model";
 import { User } from "../models/user.model";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
+import { ForgotPassword } from "../models/forgot-password.model";
+import { ResetPassword } from "../models/reset-password.model";
+import { ConfirmEmail } from "../models/confirm-email.model";
 
 @Injectable()
 export class UserService {
-
-
-
+    
+    
+    
     constructor(private http: HttpClient) {
         // set token if saved in local storage
     }
@@ -32,5 +35,17 @@ export class UserService {
             email: email
         };
         return this.http.get<DefaultResponse<boolean>>(environment.ResourceServer + "user/checkEmail", { params: params });
+    }
+
+    public recoverPassword(emailOrPassword: ForgotPassword): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "user/forgot-password", emailOrPassword);
+    }
+
+    public resetPassword(model: ResetPassword): any {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "user/reset-password", model);
+    }
+
+    public confirmEmail(model: ConfirmEmail): any {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "user/confirm-email", model);
     }
 }

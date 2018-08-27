@@ -15,5 +15,8 @@ namespace Equinox.Application.Interfaces
         Task<bool> CheckEmail(string email);
         Task<UserViewModel> FindByLoginAsync(string provider, string providerUserId);
         Task RegisterWithProvider(UserViewModel model);
+        Task SendResetLink(ForgotPasswordViewModel model);
+        Task ResetPassword(ResetPasswordViewModel model);
+        Task ConfirmEmail(ConfirmEmailViewModel model);
     }
 }

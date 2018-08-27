@@ -8,8 +8,6 @@ import { switchMap } from "rxjs/operators";
 import { Subject } from "rxjs";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
 import { AlertConfig } from "ngx-bootstrap/alert";
-import { LoginInfo } from "../../shared/models/login-info.model";
-import { AccountService } from "../../shared/services/account.service";
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider, VkontakteLoginProvider } from "angular-6-social-login-v2";
 
 function getAlertConfig(): AlertConfig {
@@ -35,7 +33,6 @@ export class RegisterComponent implements OnInit {
 
     private userExistsSubject: Subject<string> = new Subject<string>();
     private emailExistsSubject: Subject<string> = new Subject<string>();
-    loginInfo: LoginInfo;
 
     constructor(
         private userService: UserService,

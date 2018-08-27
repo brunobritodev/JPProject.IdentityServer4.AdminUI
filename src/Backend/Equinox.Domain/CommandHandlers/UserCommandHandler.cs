@@ -18,7 +18,10 @@ namespace Equinox.Domain.CommandHandlers
     public class UserCommandHandler : CommandHandler,
         IRequestHandler<RegisterNewUserCommand>,
         IRequestHandler<RegisterNewUserWithoutPassCommand>,
-        IRequestHandler<RegisterNewUserWithProvider>
+        IRequestHandler<RegisterNewUserWithProviderCommand>,
+        IRequestHandler<SendResetLinkCommand>,
+        IRequestHandler<ResetPasswordCommand>,
+        IRequestHandler<ConfirmEmailCommand>
     {
         private readonly IMediatorHandler _bus;
         private readonly IUserService _userService;
@@ -79,7 +82,7 @@ namespace Equinox.Domain.CommandHandlers
             await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
         }
 
-        public async Task Handle(RegisterNewUserWithProvider request, CancellationToken cancellationToken)
+        public async Task Handle(RegisterNewUserWithProviderCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
@@ -98,6 +101,45 @@ namespace Equinox.Domain.CommandHandlers
             await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
 
             await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
+        }
+
+        public async Task Handle(SendResetLinkCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var emailSent = await _userService.SendResetLink(request.Email, request.Username);
+
+            if (emailSent.HasValue)
+                await _bus.RaiseEvent(new ResetLinkGenerated(emailSent.Value, request.Email, request.Username));
+        }
+
+        public async Task Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var emailSent = await _userService.ResetPassword(request.Email, request.Password, request.Code);
+
+            if (emailSent.HasValue)
+                await _bus.RaiseEvent(new AccountPasswordReseted(emailSent.Value, request.Email, request.Code));
+        }
+
+        public async Task Handle(ConfirmEmailCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+            
+            var result = await _userService.ConfirmEmailAsync(request.Email, request.Code);
         }
     }
 

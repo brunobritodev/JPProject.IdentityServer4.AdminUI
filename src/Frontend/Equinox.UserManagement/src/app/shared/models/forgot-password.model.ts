@@ -1,4 +1,4 @@
 ﻿
 export class ForgotPassword   {
-	public email: string;
+	public usernameOrEmail: string;
 }

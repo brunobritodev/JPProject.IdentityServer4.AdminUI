@@ -5,7 +5,7 @@
     if (Context.User.IsAuthenticated())
     {
         name = Context.User?.GetDisplayName();
-        image = Context.User?.Claims.FirstOrDefault(a => a.Type == "image")?.Value ?? "~/images/no-image.png";
+        image = Context.User?.Claims.FirstOrDefault(a => a.Type == "picture")?.Value ?? "~/images/no-image.png";
     }
 }
 <!DOCTYPE html>

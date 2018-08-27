@@ -2,10 +2,10 @@
 
 namespace Equinox.Domain.Commands.User
 {
-    public class RegisterNewUserWithProvider : UserCommand
+    public class RegisterNewUserWithProviderCommand : UserCommand
     {
 
-        public RegisterNewUserWithProvider(string username, string email, string name, string phoneNumber, string password, string confirmPassword, string picture, string provider, string providerId)
+        public RegisterNewUserWithProviderCommand(string username, string email, string name, string phoneNumber, string password, string confirmPassword, string picture, string provider, string providerId)
         {
             Picture = picture;
             Provider = provider;

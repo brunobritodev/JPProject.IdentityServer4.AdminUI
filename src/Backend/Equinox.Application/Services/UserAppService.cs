@@ -40,7 +40,25 @@ namespace Equinox.Application.Services
         }
         public Task RegisterWithProvider(UserViewModel model)
         {
-            var registerCommand = _mapper.Map<RegisterNewUserWithProvider>(model);
+            var registerCommand = _mapper.Map<RegisterNewUserWithProviderCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public Task SendResetLink(ForgotPasswordViewModel model)
+        {
+            var registerCommand = _mapper.Map<SendResetLinkCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public Task ResetPassword(ResetPasswordViewModel model)
+        {
+            var registerCommand = _mapper.Map<ResetPasswordCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public Task ConfirmEmail(ConfirmEmailViewModel model)
+        {
+            var registerCommand = _mapper.Map<ConfirmEmailCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
 
