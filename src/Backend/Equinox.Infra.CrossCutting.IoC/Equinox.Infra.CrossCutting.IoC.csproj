@@ -8,6 +8,8 @@
     <ProjectReference Include="..\Equinox.Application\Equinox.Application.csproj" />
     <ProjectReference Include="..\Equinox.Domain\Equinox.Domain.csproj" />
     <ProjectReference Include="..\Equinox.Infra.CrossCutting.Identity\Equinox.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Tools\Equinox.Infra.CrossCutting.Tools.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.Data\Equinox.Infra.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

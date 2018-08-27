@@ -10,8 +10,10 @@ namespace Equinox.Domain.Commands.User
         public string PhoneNumber { get; protected set; }
         public string Name { get; protected set; }
         public string Username { get; protected set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-        public string Picture { get; set; }
+        public string Password { get; protected set; }
+        public string ConfirmPassword { get; protected set; }
+        public string Picture { get; protected set; }
+        public string Provider { get; protected set; }
+        public string ProviderId { get; protected set; }
     }
 }

@@ -8,7 +8,6 @@ using Equinox.Application.ViewModels;
 using Equinox.Domain.Commands;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Interfaces;
-using Equinox.Infra.Data.Repository.EventSourcing;
 
 namespace Equinox.Application.Services
 {
@@ -17,17 +16,20 @@ namespace Equinox.Application.Services
         private readonly IMapper _mapper;
         private readonly ICustomerRepository _customerRepository;
         private readonly IEventStoreRepository _eventStoreRepository;
+        private readonly ISerializer _serializer;
         private readonly IMediatorHandler Bus;
 
         public CustomerAppService(IMapper mapper,
                                   ICustomerRepository customerRepository,
                                   IMediatorHandler bus,
-                                  IEventStoreRepository eventStoreRepository)
+                                  IEventStoreRepository eventStoreRepository,
+                                  ISerializer serializer)
         {
             _mapper = mapper;
             _customerRepository = customerRepository;
             Bus = bus;
             _eventStoreRepository = eventStoreRepository;
+            _serializer = serializer;
         }
 
         public IEnumerable<CustomerViewModel> GetAll()
@@ -60,7 +62,7 @@ namespace Equinox.Application.Services
 
         public IList<CustomerHistoryData> GetAllHistory(Guid id)
         {
-            return CustomerHistory.ToJavaScriptCustomerHistory(_eventStoreRepository.All(id));
+            return CustomerHistory.ToJavaScriptCustomerHistory(_eventStoreRepository.All(id), _serializer);
         }
 
         public void Dispose()

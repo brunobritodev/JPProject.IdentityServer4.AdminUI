@@ -43,5 +43,17 @@ namespace Equinox.Domain.Validations.User
                 .Equal(c => c.ConfirmPassword).WithMessage("Password and Confirm password must be equal")
                 .MinimumLength(8).WithMessage("Password minimun length must be 8 characters");
         }
+
+        protected void ValidateProvider()
+        {
+            RuleFor(c => c.Provider)
+                .NotEmpty();
+        }
+
+        protected void ValidateProviderId()
+        {
+            RuleFor(c => c.ProviderId)
+                .NotEmpty();
+        }
     }
 }

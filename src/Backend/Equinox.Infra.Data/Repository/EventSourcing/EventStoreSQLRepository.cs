@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using Equinox.Domain.Core.Events;
+using Equinox.Domain.Interfaces;
 using Equinox.Infra.Data.Context;
 
 namespace Equinox.Infra.Data.Repository.EventSourcing

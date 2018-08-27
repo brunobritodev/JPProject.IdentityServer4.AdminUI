@@ -1,0 +1,96 @@
+﻿@using IdentityServer4.Extensions
+@{
+    string name = null;
+    string image = null;
+    if (Context.User.IsAuthenticated())
+    {
+        name = Context.User?.GetDisplayName();
+        image = Context.User?.Claims.FirstOrDefault(a => a.Type == "image")?.Value ?? "~/images/no-image.png";
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="JP Project - Open Source IdentityServer4 Admin">
+    <meta name="author" content="Bruno Brito">
+    <meta name="keyword" content="ID4,IdentityServer4,AdminUI,UserManagement,Open,Source,MicroService,Identity,SSO">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <title>JP Project - Open Source IdentityServer4 Admin</title>
+    <!-- Icons-->
+    <link href="@Url.Content("~/css/jp.min.css")" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+    <header class="app-header navbar">
+        <a class="navbar-brand" href="#">
+            <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo.png")" height="40" alt="JP Logo">
+            <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo-min.png")" width="30" height="30" alt="JP Logo">
+        </a>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="img-avatar" src="@Url.Content(image)" alt="@name">@name
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header text-center">
+                        <strong>Account</strong>
+                    </div>
+                    <a class="dropdown-item"
+                       asp-action="Index"
+                       asp-controller="Grants">
+                        <i class="fa fa-tasks"></i>
+                        <span>Grants</span>
+                    </a>
+
+                    <a class="dropdown-item"
+                       asp-action="Logout"
+                       asp-controller="Account">
+                        <i class="fa fa-lock"></i> Logout
+                    </a>
+                    <div class="dropdown-header text-center">
+                        <strong>Settings</strong>
+                    </div>
+                    <a class="dropdown-item"
+                       asp-action="Index"
+                       asp-controller="Diagnostics">
+                        <i class="fa fa-server"></i>
+                        <span>Diagnostic</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+    </header>
+
+    <div class="app-body">
+        <main class="main">
+            @RenderSection("breadcrumb", false)
+            <div class="container-fluid">
+                <div class="animated fadeIn">
+                    @RenderBody()
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="app-footer">
+        <div>
+            <a href="https://coreui.io">JP Project</a>
+            <span>&copy; 2018 Bruno Brito.</span>
+        </div>
+        <div class="ml-auto">
+            <span>Powered by</span>
+            <a href="https://coreui.io">CoreUI</a>
+        </div>
+    </footer>
+    <script src="@Url.Content("~/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/popper.min.js")"></script>
+    <script src="@Url.Content("~/js/pace.min.js")"></script>
+    <script src="@Url.Content("~/js/perfect-scrollbar.min.js")"></script>
+    <script src="@Url.Content("~/js/coreui.min.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

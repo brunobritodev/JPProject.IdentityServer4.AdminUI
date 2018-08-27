@@ -14,17 +14,7 @@ namespace Equinox.Domain.Validations.User
             ValidateProviderId();
         }
 
-        private void ValidateProvider()
-        {
-            RuleFor(c => c.Provider)
-                .NotEmpty();
-        }
-
-        private void ValidateProviderId()
-        {
-            RuleFor(c => c.ProviderId)
-                .NotEmpty();
-        }
+        
 
     }
 }

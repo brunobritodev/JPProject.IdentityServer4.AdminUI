@@ -1,0 +1,35 @@
+﻿@using Equinox.UI.SSO.Models
+@model Equinox.UI.SSO.Models.LogoutViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section breadcrumb
+    {
+    <!-- Breadcrumb-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">
+            <a asp-action="Index" asp-controller="Home">User</a>
+        </li>
+        <li class="breadcrumb-item active">Logout</li>
+    </ol>
+}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card-group">
+            <div class="card p-4">
+                <div class="card-body">
+                    <p>Would you like to logout of IdentityServer?</p>
+                    <form asp-action="Logout">
+                        <input type="hidden" name="logoutId" value="@Model.LogoutId" />
+                        <fieldset>
+                            <div class="form-group">
+                                <button class="btn btn-primary">Yes</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

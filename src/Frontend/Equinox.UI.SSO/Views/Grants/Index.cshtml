@@ -1,0 +1,97 @@
+﻿@using Equinox.UI.SSO.Controllers.Grants
+@model Equinox.UI.SSO.Controllers.Grants.GrantsViewModel
+@section breadcrumb
+    {
+    <!-- Breadcrumb-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">
+            <a asp-action="Index" asp-controller="Home">User</a>
+        </li>
+        <li class="breadcrumb-item active">Grants</li>
+    </ol>
+}
+@if (!Model.Grants.Any())
+{
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">Client Application Access.</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="alert alert-warning" role="alert">You have not given access to any applications!</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (Model.Grants.Any())
+{
+    <div class="row justify-content-center">
+        @foreach (var grant in Model.Grants)
+        {
+            <div class="col-sm-12 col-md-8 col-lg-4">
+                <div class="card">
+                    <div class="card-header text-white bg-success"><strong>@grant.ClientName</strong></div>
+                    <div class="card-body">
+                        <div class="row grant">
+                            <div class="col-sm-4">
+                                @if (grant.ClientLogoUrl != null)
+                                {
+                                    <img src="@Url.Content(grant.ClientLogoUrl)" class="img-fluid">
+                                }
+                            </div>
+                            <div class="col-sm-8">
+                                <p>
+                                    <span class="created">Created:</span> @grant.Created.ToString("yyyy-MM-dd")
+                                </p>
+                                @if (grant.Expires.HasValue)
+                                {
+                                    <p>
+                                        <span class="expires">Expires:</span> @grant.Expires.Value.ToString("yyyy-MM-dd")
+                                    </p>
+                                }
+                                @if (grant.IdentityGrantNames.Any())
+                                {
+                                    <p>
+                                        <div class="granttype">Identity Grants</div>
+                                        <ul>
+                                            @foreach (var name in grant.IdentityGrantNames)
+                                            {
+                                                <li>@name</li>
+                                            }
+                                        </ul>
+                                    </p>
+                                }
+                                @if (grant.ApiGrantNames.Any())
+                                {
+                                    <p>
+                                        <div class="granttype">API Grants</div>
+                                        <ul>
+                                            @foreach (var name in grant.ApiGrantNames)
+                                            {
+                                                <li>@name</li>
+                                            }
+                                        </ul>
+                                    </p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <form asp-action="Revoke">
+                            <input type="hidden" name="clientId" value="@grant.ClientId">
+                            <button class="btn btn-danger">Revoke Access</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+           
+        }
+    </div>
+}

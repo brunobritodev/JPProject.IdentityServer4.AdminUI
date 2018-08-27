@@ -1,0 +1,65 @@
+﻿@using IdentityServer4.Extensions
+@{
+
+    if (Context.User.IsAuthenticated())
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutExt.cshtml";
+
+    }
+}
+@if (Context.User.IsAuthenticated())
+{
+    @section breadcrumb
+    {
+
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">
+                <a asp-action="Index" asp-controller="Home">User</a>
+            </li>
+        </ol>
+    }
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card p-8">
+            <div class="card-body">
+                <div class="clearfix">
+                    <img class="icon" src="@Url.Content("~/images/brand/logo.png")">
+                    <h4 class="pt-3">Welcome to JP Project SSO.</h4>
+                    <p class="text-muted">A Single Sign On Server, User Management and Admin for ID4.</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <img class="icon" src="@Url.Content("~/icon.jpg")">
+                        <p>
+                            IdentityServer publishes a
+                            <a href="~/.well-known/openid-configuration">discovery document</a>
+                            where you can find metadata and links to all the endpoints, key material, etc.
+                        </p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p>
+                            Click <a asp-action="Index" asp-controller="Grants">here</a> to manage your stored grants.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p>
+                            Here are links to the
+                            <a href="https://github.com/identityserver/IdentityServer4">source code repository</a>,
+                            and <a href="https://github.com/identityserver/IdentityServer4.Samples">ready to use samples</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

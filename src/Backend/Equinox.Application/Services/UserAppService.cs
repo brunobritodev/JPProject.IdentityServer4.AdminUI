@@ -6,7 +6,6 @@ using Equinox.Application.ViewModels;
 using Equinox.Domain.Commands.User;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Interfaces;
-using Equinox.Infra.Data.Repository.EventSourcing;
 
 namespace Equinox.Application.Services
 {
@@ -39,6 +38,11 @@ namespace Equinox.Application.Services
             var registerCommand = _mapper.Map<RegisterNewUserWithoutPassCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
+        public Task RegisterWithProvider(UserViewModel model)
+        {
+            var registerCommand = _mapper.Map<RegisterNewUserWithProvider>(model);
+            return Bus.SendCommand(registerCommand);
+        }
 
         public Task<bool> CheckUsername(string userName)
         {
@@ -55,6 +59,7 @@ namespace Equinox.Application.Services
             var model = await _userService.FindByLoginAsync(provider, providerUserId);
             return _mapper.Map<UserViewModel>(model);
         }
+
 
         public void Dispose()
         {
