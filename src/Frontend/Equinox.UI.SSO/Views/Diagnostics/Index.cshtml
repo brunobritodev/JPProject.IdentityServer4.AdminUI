@@ -1,0 +1,56 @@
+@using Equinox.UI.SSO.Controllers.Diagnostics
+@model Equinox.UI.SSO.Controllers.Diagnostics.DiagnosticsViewModel
+@section breadcrumb
+    {
+    <!-- Breadcrumb-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">
+            <a asp-action="Index" asp-controller="Home">User</a>
+        </li>
+        <li class="breadcrumb-item">Diagnostics</li>
+    </ol>
+}
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8 col-lg-4">
+        <div class="card">
+            <div class="card-header text-white bg-success"><strong>Authentication cookie</strong></div>
+            <div class="card-body">
+
+                <h3>Claims</h3>
+
+                <ul class="list-group">
+                    @foreach (var claim in Model.AuthenticateResult.Principal.Claims)
+                    {
+                        <li class="list-group-item list-group-item-accent-primary">
+                            @claim.Type: <strong>@claim.Value</strong>
+                        </li>
+
+                    }
+                </ul>
+                <hr />
+                <h3>Properties</h3>
+                <ul class="list-group">
+                    @foreach (var prop in Model.AuthenticateResult.Properties.Items)
+                    {
+                        <li class="list-group-item list-group-item-accent-success">
+                            @prop.Key: <strong>@prop.Value</strong>
+                        </li>
+                    }
+                </ul>
+                <hr />
+                @if (Model.Clients.Any())
+                {
+                    <h3>Clients</h3>
+                    <ul class="list-group">
+                        @foreach (var client in Model.Clients)
+                        {
+                            <li class="list-group-item list-group-item-accent-warning">@client</li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -43,7 +43,22 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
                 .Build();
         }
 
-        public async Task<bool> CreateUser(IDomainUser user, string password)
+        public Task<bool> CreateUserWithPass(IDomainUser user, string password)
+        {
+            return CreateUser(user, password, null, null);
+        }
+
+        public Task<bool> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId)
+        {
+            return CreateUser(user, null, provider, providerUserId);
+        }
+
+        public Task<bool> CreateUserWithProviderAndPass(IDomainUser user, string password, string provider, string providerId)
+        {
+            return CreateUser(user, password, provider, providerId);
+        }
+
+        private async Task<bool> CreateUser(IDomainUser user, string password, string provider, string providerId)
         {
             var newUser = new UserIdentity
             {
@@ -54,8 +69,12 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
                 Name = user.Name,
                 Picture = user.Picture
             };
+            IdentityResult result;
+            if (string.IsNullOrWhiteSpace(password))
+                result = await _userManager.CreateAsync(newUser, password);
+            else
+                result = await _userManager.CreateAsync(newUser, password);
 
-            var result = await _userManager.CreateAsync(newUser, password);
             if (result.Succeeded)
             {
                 // User claim for write customers data
@@ -69,6 +88,9 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
                 _logger.LogInformation(3, "User created a new account with password.");
                 await AddClaims(newUser);
 
+                if (!string.IsNullOrWhiteSpace(provider))
+                    await AddLoginAsync(newUser, provider, providerId);
+
                 return true;
             }
 
@@ -80,13 +102,11 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             return false;
         }
 
-
         private async Task AddClaims(UserIdentity user)
         {
             var filtered = new List<Claim>();
             filtered.Add(new Claim(JwtClaimTypes.Name, user.Name));
             filtered.Add(new Claim(JwtClaimTypes.Email, user.Email));
-            filtered.Add(new Claim(JwtClaimTypes.Name, user.Name));
 
             var identityResult = await _userManager.AddClaimsAsync(user, filtered);
         }
@@ -122,42 +142,6 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-        public async Task<bool> CreateUser(IDomainUser user, string provider, string providerUserId)
-        {
-            var newUser = new UserIdentity
-            {
-                Id = Guid.NewGuid(),
-                PhoneNumber = user.PhoneNumber,
-                Email = user.Email,
-                UserName = user.UserName,
-                Name = user.Name,
-                Picture = user.Picture
-            };
-
-            var result = await _userManager.CreateAsync(newUser);
-            if (result.Succeeded)
-            {
-                // User claim for write customers data
-                //await _userManager.AddClaimAsync(newUser, new Claim("User", "Write"));
-                _logger.LogInformation("User created a new account with password.");
-
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-                var callbackUrl = $"{_config.GetSection("WebAppUrl").Value}/confirm-email?user={user.Email.UrlEncode()}&code={code.UrlEncode()}";
-                await _emailSender.SendEmailConfirmationAsync(user.Email, callbackUrl);
-
-                _logger.LogInformation(3, "User created a new account with password.");
-                await AddClaims(newUser);
-                await AddLoginAsync(newUser, provider, providerUserId);
-                return true;
-            }
-
-            foreach (var error in result.Errors)
-            {
-                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
-            }
-
-            return false;
-        }
 
         private User Get(UserIdentity user)
         {

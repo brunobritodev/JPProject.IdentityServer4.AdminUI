@@ -4,14 +4,20 @@ namespace Equinox.Domain.Commands.User
 {
     public class RegisterNewUserCommand : UserCommand
     {
+        public string Picture { get; }
+        public string Provider { get; }
+        public string ProviderId { get; }
+
         public RegisterNewUserCommand(string username, string email, string name, string phoneNumber, string password, string confirmPassword)
         {
+           
             Username = username;
             Email = email;
             Name = name;
             PhoneNumber = phoneNumber;
             Password = password;
             ConfirmPassword = confirmPassword;
+            
         }
         public override bool IsValid()
         {

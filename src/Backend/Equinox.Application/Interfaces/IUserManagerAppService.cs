@@ -14,5 +14,6 @@ namespace Equinox.Application.Interfaces
         Task<bool> CheckUsername(string userName);
         Task<bool> CheckEmail(string email);
         Task<UserViewModel> FindByLoginAsync(string provider, string providerUserId);
+        Task RegisterWithProvider(UserViewModel model);
     }
 }

@@ -37,5 +37,11 @@ namespace Equinox.Application.ViewModels
 
         [Display(Name = "Picture")]
         public string Picture { get; set; }
+
+        [Display(Name = "Provider")]
+        public string Provider { get; set; }
+
+        [Display(Name = "ProviderId")]
+        public string ProviderId { get; set; }
     }
 }

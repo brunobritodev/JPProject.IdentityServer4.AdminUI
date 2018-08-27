@@ -17,7 +17,8 @@ namespace Equinox.Domain.CommandHandlers
 {
     public class UserCommandHandler : CommandHandler,
         IRequestHandler<RegisterNewUserCommand>,
-        IRequestHandler<RegisterNewUserWithoutPassCommand>
+        IRequestHandler<RegisterNewUserWithoutPassCommand>,
+        IRequestHandler<RegisterNewUserWithProvider>
     {
         private readonly IMediatorHandler _bus;
         private readonly IUserService _userService;
@@ -50,7 +51,8 @@ namespace Equinox.Domain.CommandHandlers
                 Picture = request.Picture
             };
 
-            var created = await _userService.CreateUser(user, request.Password);
+            await _userService.CreateUserWithPass(user, request.Password);
+
             await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
         }
 
@@ -72,9 +74,31 @@ namespace Equinox.Domain.CommandHandlers
                 Picture = request.Picture
             };
 
-            await _userService.CreateUser(user, request.Provider, request.ProviderId);
+            await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
+
+            await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
         }
 
+        public async Task Handle(RegisterNewUserWithProvider request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = new User()
+            {
+                Email = request.Email,
+                Name = request.Name,
+                UserName = request.Username,
+                PhoneNumber = request.PhoneNumber,
+                Picture = request.Picture
+            };
+            await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
+
+            await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
+        }
     }
 
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Equinox.Domain.Core.Events;
-using Newtonsoft.Json;
+using Equinox.Domain.Interfaces;
 
 namespace Equinox.Application.EventSourcedNormalizers
 {
@@ -10,10 +10,10 @@ namespace Equinox.Application.EventSourcedNormalizers
     {
         public static IList<CustomerHistoryData> HistoryData { get; set; }
 
-        public static IList<CustomerHistoryData> ToJavaScriptCustomerHistory(IList<StoredEvent> storedEvents)
+        public static IList<CustomerHistoryData> ToJavaScriptCustomerHistory(IList<StoredEvent> storedEvents, ISerializer serializer)
         {
             HistoryData = new List<CustomerHistoryData>();
-            CustomerHistoryDeserializer(storedEvents);
+            CustomerHistoryDeserializer(storedEvents, serializer);
 
             var sorted = HistoryData.OrderBy(c => c.When);
             var list = new List<CustomerHistoryData>();
@@ -46,7 +46,7 @@ namespace Equinox.Application.EventSourcedNormalizers
             return list;
         }
 
-        private static void CustomerHistoryDeserializer(IEnumerable<StoredEvent> storedEvents)
+        private static void CustomerHistoryDeserializer(IEnumerable<StoredEvent> storedEvents, ISerializer serializer)
         {
             foreach (var e in storedEvents)
             {
@@ -56,7 +56,7 @@ namespace Equinox.Application.EventSourcedNormalizers
                 switch (e.MessageType)
                 {
                     case "CustomerRegisteredEvent":
-                        values = JsonConvert.DeserializeObject<dynamic>(e.Data);
+                        values = serializer.DeserializeFromString<dynamic>(e.Data);
                         slot.BirthDate = values["BirthDate"];
                         slot.Email = values["Email"];
                         slot.Name = values["Name"];
@@ -66,7 +66,7 @@ namespace Equinox.Application.EventSourcedNormalizers
                         slot.Who = e.User;
                         break;
                     case "CustomerUpdatedEvent":
-                        values = JsonConvert.DeserializeObject<dynamic>(e.Data);
+                        values = serializer.DeserializeFromString<dynamic>(e.Data);
                         slot.BirthDate = values["BirthDate"];
                         slot.Email = values["Email"];
                         slot.Name = values["Name"];
@@ -76,7 +76,7 @@ namespace Equinox.Application.EventSourcedNormalizers
                         slot.Who = e.User;
                         break;
                     case "CustomerRemovedEvent":
-                        values = JsonConvert.DeserializeObject<dynamic>(e.Data);
+                        values = serializer.DeserializeFromString<dynamic>(e.Data);
                         slot.Action = "Removed";
                         slot.When = values["Timestamp"];
                         slot.Id = values["Id"];
