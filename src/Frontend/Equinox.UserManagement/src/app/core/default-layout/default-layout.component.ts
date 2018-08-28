@@ -1,28 +1,42 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { navItems } from "../../_nav";
 import { OAuthService } from "../../../../node_modules/angular-oauth2-oidc";
+import { SettingsService } from "../settings/settings.service";
+import { environment } from "../../../environments/environment";
 
 @Component({
-  selector: "app-dashboard",
-  templateUrl: "./default-layout.component.html"
+    selector: "app-dashboard",
+    templateUrl: "./default-layout.component.html",
+    providers: [SettingsService]
 })
-export class DefaultLayoutComponent {
-  public navItems = navItems;
-  public sidebarMinimized = true;
-  private changes: MutationObserver;
-  public element: HTMLElement = document.body;
-  constructor(private oauthService: OAuthService) {
+export class DefaultLayoutComponent implements OnInit {
 
-    this.changes = new MutationObserver((mutations) => {
-      this.sidebarMinimized = document.body.classList.contains("sidebar-minimized");
-    });
+    public navItems = navItems;
+    public sidebarMinimized = true;
+    private changes: MutationObserver;
+    public element: HTMLElement = document.body;
+    public userProfile: any;
+    constructor(public settingsService: SettingsService) {
 
-    this.changes.observe(<Element>this.element, {
-      attributes: true
-    });
-  }
+        this.changes = new MutationObserver((mutations) => {
+            this.sidebarMinimized = document.body.classList.contains("sidebar-minimized");
+        });
 
-  public logout(){
-    this.oauthService.logOut();
-  }
+        this.changes.observe(<Element>this.element, {
+            attributes: true
+        });
+
+    }
+    public ngOnInit() {
+        this.getUserImage();
+    }
+    public logout() {
+        this.settingsService.logout();
+    }
+
+    public async getUserImage() {
+        this.userProfile = await this.settingsService.getUserProfile();
+        if (!environment.production)
+            console.table(this.userProfile);
+    }
 }

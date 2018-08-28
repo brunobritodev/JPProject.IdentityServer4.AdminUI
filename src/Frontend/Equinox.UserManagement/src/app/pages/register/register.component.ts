@@ -135,7 +135,7 @@ export class RegisterComponent implements OnInit {
                 this.model.name = userData.name;
                 this.model.picture = userData.image;
                 this.model.provider = userData.provider;
-                this.model.providerId = userData.token;
+                this.model.providerId = userData.id;
             }
         );
     }

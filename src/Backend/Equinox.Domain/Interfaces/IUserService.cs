@@ -8,9 +8,9 @@ namespace Equinox.Domain.Interfaces
 {
     public interface IUserService
     {
-        Task<bool> CreateUserWithPass(IDomainUser user, string password);
-        Task<bool> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId);
-        Task<bool> CreateUserWithProviderAndPass(IDomainUser user, string requestPassword, string requestProvider, string requestProviderId);
+        Task<Guid?> CreateUserWithPass(IDomainUser user, string password);
+        Task<Guid?> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId);
+        Task<Guid?> CreateUserWithProviderAndPass(IDomainUser user, string requestPassword, string requestProvider, string requestProviderId);
         Task<bool> UsernameExist(string userName);
         Task<bool> EmailExist(string email);
         Task<User> FindByLoginAsync(string provider, string providerUserId);

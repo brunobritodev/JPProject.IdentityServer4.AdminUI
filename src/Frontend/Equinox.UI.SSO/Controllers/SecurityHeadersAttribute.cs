@@ -31,7 +31,7 @@ namespace Equinox.UI.SSO.Controllers
                 // also consider adding upgrade-insecure-requests once you have HTTPS in place for production
                 //csp += "upgrade-insecure-requests;";
                 // also an example if you need client images to be displayed from twitter
-                // csp += "img-src 'self' https://pbs.twimg.com;";
+                csp += "img-src * 'self' data: https:;";
 
                 // once for standards compliant browsers
                 if (!context.HttpContext.Response.Headers.ContainsKey("Content-Security-Policy"))

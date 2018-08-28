@@ -23,7 +23,7 @@ namespace Equinox.UI.SSO.Util
                     ClientId = AuthorizationConsts.OidcClientId,
                     ClientName = AuthorizationConsts.OidcClientId,
                     ClientUri = AuthorizationConsts.IdentityAdminBaseUrl,
-                    
+
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
@@ -61,6 +61,7 @@ namespace Equinox.UI.SSO.Util
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
+                        "picture",
                         "UserManagementApi.full_access",
                         "UserManagementApi.read_access",
                         "UserManagementApi.write_access"
