@@ -62,7 +62,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts/ng2-charts";
 import { OAuthModule } from "angular-oauth2-oidc";
-import { SettingsService } from "./core/settings/settings.service";
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
   imports: [
@@ -74,6 +74,7 @@ import { SettingsService } from "./core/settings/settings.service";
         sendAccessToken: true
       }
     }),
+    CoreModule.forRoot(),
     AppRoutingModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -94,8 +95,7 @@ import { SettingsService } from "./core/settings/settings.service";
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
-    },
-    SettingsService
+    }
   ],
   bootstrap: [AppComponent]
 })

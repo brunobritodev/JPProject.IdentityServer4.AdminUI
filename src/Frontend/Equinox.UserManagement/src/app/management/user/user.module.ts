@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { CoreModule } from '../../core/core.module';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 const routes: Routes = [
     {
@@ -23,12 +25,12 @@ const routes: Routes = [
     }
 ];
 
-
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         RouterModule.forChild(routes),
+        AlertModule.forRoot(),
     ],
     declarations: [
         ProfileComponent

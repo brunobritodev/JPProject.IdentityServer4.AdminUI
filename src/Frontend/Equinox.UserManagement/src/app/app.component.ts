@@ -19,11 +19,10 @@ export class AppComponent implements OnInit {
         this.oauthService.configure(authConfig);
         this.oauthService.setStorage(localStorage);
         this.oauthService.tokenValidationHandler = new JwksValidationHandler();
-        this.oauthService.loadDiscoveryDocument().then(doc => {
-            if (!environment.production)
-                console.log(doc);
-            this.oauthService.tryLogin();
-        });
+        const doc = await this.oauthService.loadDiscoveryDocument();
+        if (!environment.production)
+            console.log(doc);
+        await this.oauthService.tryLogin();
     }
 
     ngOnInit() {

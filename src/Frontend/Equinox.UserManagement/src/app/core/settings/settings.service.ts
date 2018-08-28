@@ -1,14 +1,21 @@
-import { OAuthService } from "angular-oauth2-oidc";
+import { OAuthService, JwksValidationHandler } from "angular-oauth2-oidc";
 import { Injectable } from "@angular/core";
-import { of } from "rxjs";
+import { of, concat, from, Observable } from "rxjs";
 import { Router } from "@angular/router";
+import { environment } from "../../../environments/environment";
+import { authConfig } from "../auth/auth.config";
+import { withLatestFrom, map, switchMap, share } from "rxjs/operators";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root' // or 'root' for singleton
+})
 export class SettingsService {
+
 
     private user: any;
     public app: any;
     public layout: any;
+    private loadDocumentObservable: Observable<void>;
 
     constructor(
         private oauthService: OAuthService,
@@ -19,22 +26,21 @@ export class SettingsService {
         this.app = {
             name: "JP Project",
             description: "User Management UI",
-            year: ((new Date()).getFullYear())
+            year: ((new Date()).getFullYear()),
+            docLoaded: false,
         };
+
     }
 
     public logout() {
         this.oauthService.logOut();
     }
 
-    public getUserProfile(): Promise<object> {
+    public getUserProfile(): Observable<object> {
         if (this.user == null) {
-            return this.oauthService.loadUserProfile()
-                .then(userProfile =>
-                    this.user = userProfile
-                );
+            return from(this.oauthService.loadUserProfile()).pipe(share());
         }
-        return of(this.user).toPromise();
+        return of(this.user);
     }
 
     public login() {
@@ -47,8 +53,6 @@ export class SettingsService {
             }, 1000);
         }
     }
-
-
 
 
 

@@ -6,6 +6,7 @@ import { DefaultLayoutComponent } from "./core";
 
 import { PagesModule } from "./pages/pages.module";
 import { AuthGuard } from "./core/auth/auth.guard";
+import { CoreModule } from "./core/core.module";
 
 
 export const routes: Routes = [
