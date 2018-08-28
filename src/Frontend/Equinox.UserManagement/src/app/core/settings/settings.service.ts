@@ -43,7 +43,7 @@ export class SettingsService {
         } else {
             // for race conditions, sometimes dashboard don't load
             setTimeout(() => {
-                this.router.navigate(["/dashboard"]);
+                this.router.navigate(["/home"]);
             }, 1000);
         }
     }

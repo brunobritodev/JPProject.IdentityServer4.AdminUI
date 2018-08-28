@@ -537,12 +537,15 @@ namespace Equinox.UI.SSO.Controllers.Account
                 filtered.Add(new Claim(JwtClaimTypes.Email, email));
             }
 
+            //picture
+            var picture = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Picture)?.Value ?? claims.FirstOrDefault(x => x.Type == "image")?.Value;
+
             var user = new SocialViewModel()
             {
                 Username = email,
                 Name = name,
                 Email = email,
-                Picture = "",
+                Picture = picture,
                 Provider = provider,
                 ProviderId = providerUserId
             };

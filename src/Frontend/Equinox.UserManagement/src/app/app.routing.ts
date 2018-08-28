@@ -12,6 +12,9 @@ export const routes: Routes = [
     {
         path: "", component: DefaultLayoutComponent, canActivate: [AuthGuard], data: { title: "Home" },
         children: [
+            { path: "home", loadChildren: "app/management/home/home.module#HomeModule" },
+            { path: "user", loadChildren: "app/management/user/user.module#UserModule" },
+
             { path: "base", loadChildren: "./views/base/base.module#BaseModule" },
             { path: "buttons", loadChildren: "./views/buttons/buttons.module#ButtonsModule" },
             { path: "charts", loadChildren: "./views/chartjs/chartjs.module#ChartJSModule" },
@@ -27,7 +30,8 @@ export const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes),
-        PagesModule
+        PagesModule,
+        
     ],
     exports: [RouterModule],
     providers: [AuthGuard]

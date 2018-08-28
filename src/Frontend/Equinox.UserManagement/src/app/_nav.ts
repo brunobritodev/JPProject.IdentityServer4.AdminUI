@@ -1,10 +1,7 @@
 export const navItems = [
-    { name: "Welcome", url: "/home", icon: "icon-speedometer", badge: { variant: "info", text: "NEW" } },
-
-
-    { name: "Dashboard", url: "/dashboard", icon: "icon-speedometer", badge: { variant: "info", text: "NEW" } },
-    { title: true, name: "Theme" },
-    { name: "Colors", url: "/theme/colors", icon: "icon-drop" },
+    { name: "Welcome", url: "/home", icon: "icon-speedometer", badge: { variant: "info", text: "THANKS" } },
+    { title: true, name: "User Settings" },
+    { name: "Profile", url: "/user/profile", icon: "icon-user" },
     { name: "Typography", url: "/theme/typography", icon: "icon-pencil" },
     { title: true, name: "Components" },
     {

@@ -11,23 +11,16 @@ export class LoginCallbackComponent implements OnInit {
     constructor(private oauthService: OAuthService, private router: Router) { }
 
     ngOnInit() {
-        this.oauthService.loadDiscoveryDocument().then(doc => {
-            console.log("doc loaded");
-            this.oauthService.tryLogin()
-                .catch(err => {
-                    console.error(err);
-                })
-                .then(() => {
-                    if (!this.oauthService.hasValidIdToken() || !this.oauthService.hasValidAccessToken()) {
-                        this.oauthService.initImplicitFlow();
-                    }else{
-                        // for race conditions, sometimes dashboard don't load
-                        setTimeout(() => {
-                            this.router.navigate(["/dashboard"]);
-                        }, 1000);
-                    }
-                });
+        this.oauthService.loadDiscoveryDocumentAndTryLogin().then(doc => {
+            if (!this.oauthService.hasValidIdToken() || !this.oauthService.hasValidAccessToken()) {
+                this.oauthService.initImplicitFlow();
+            } else {
+                // for race conditions, sometimes dashboard don't load
+                setTimeout(() => {
+                    this.router.navigate(["/home"]);
+                }, 1000);
+            }
         });
-       
+
     }
 }
