@@ -12,7 +12,6 @@ namespace Equinox.UI.SSO
 {
     public class Startup
     {
-        private DefaultCorsPolicyService _cors;
         public IConfiguration Configuration { get; }
         public IHostingEnvironment Environment { get; }
 

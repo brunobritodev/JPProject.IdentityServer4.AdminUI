@@ -43,24 +43,24 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
                 .Build();
         }
 
-        public Task<bool> CreateUserWithPass(IDomainUser user, string password)
+        public Task<Guid?> CreateUserWithPass(IDomainUser user, string password)
         {
 
             return CreateUser(user, password, null, null);
 
         }
 
-        public Task<bool> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId)
+        public Task<Guid?> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId)
         {
             return CreateUser(user, null, provider, providerUserId);
         }
 
-        public Task<bool> CreateUserWithProviderAndPass(IDomainUser user, string password, string provider, string providerId)
+        public Task<Guid?> CreateUserWithProviderAndPass(IDomainUser user, string password, string provider, string providerId)
         {
             return CreateUser(user, password, provider, providerId);
         }
 
-        private async Task<bool> CreateUser(IDomainUser user, string password, string provider, string providerId)
+        private async Task<Guid?> CreateUser(IDomainUser user, string password, string provider, string providerId)
         {
             var newUser = new UserIdentity
             {
@@ -98,7 +98,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
 
                 if (!string.IsNullOrEmpty(provider))
                     _logger.LogInformation($"Provider {provider} associated.");
-                return true;
+                return user.Id;
             }
 
             foreach (var error in result.Errors)
@@ -106,7 +106,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
                 await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
             }
 
-            return false;
+            return null;
         }
 
         private async Task AddClaims(UserIdentity user)

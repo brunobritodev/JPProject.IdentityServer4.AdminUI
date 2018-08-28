@@ -54,9 +54,9 @@ namespace Equinox.Domain.CommandHandlers
                 Picture = request.Picture
             };
 
-            await _userService.CreateUserWithPass(user, request.Password);
-
-            await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
+            var id = await _userService.CreateUserWithPass(user, request.Password);
+            if (id.HasValue)
+                await _bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(RegisterNewUserWithoutPassCommand request, CancellationToken cancellationToken)
@@ -77,9 +77,9 @@ namespace Equinox.Domain.CommandHandlers
                 Picture = request.Picture
             };
 
-            await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
-
-            await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
+            var id = await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
+            if (id.HasValue)
+                await _bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(RegisterNewUserWithProviderCommand request, CancellationToken cancellationToken)
@@ -98,9 +98,9 @@ namespace Equinox.Domain.CommandHandlers
                 PhoneNumber = request.PhoneNumber,
                 Picture = request.Picture
             };
-            await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
-
-            await _bus.RaiseEvent(new UserRegisteredeEvent(user.Id, user.Name, user.Email));
+            var id = await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
+            if (id.HasValue)
+                await _bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(SendResetLinkCommand request, CancellationToken cancellationToken)
@@ -138,7 +138,7 @@ namespace Equinox.Domain.CommandHandlers
                 NotifyValidationErrors(request);
                 return;
             }
-            
+
             var result = await _userService.ConfirmEmailAsync(request.Email, request.Code);
         }
     }

@@ -11,6 +11,8 @@ import { LoginCallbackComponent } from "./login-callback/login-callback.componen
 import { RecoverComponent } from "./recover/recover.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { ConfirmEmailComponent } from "./confirm-email/confirm-email.component";
+import { P404Component } from "./error/404.component";
+import { P500Component } from "./error/500.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
@@ -21,6 +23,8 @@ const routes: Routes = [
     { path: "recover", component: RecoverComponent, data: { title: "Recover account" } },
     { path: "reset-password", component: ResetPasswordComponent, data: { title: "Reset password" } },
     { path: "confirm-email", component: ConfirmEmailComponent, data: { title: "Confirm account" } },
+    { path: "404", component: P404Component, data: { title: "Not Found" } },
+    { path: "500", component: P500Component, data: { title: "Error" } },
 ];
 
 
@@ -42,7 +46,9 @@ const routes: Routes = [
         LoginCallbackComponent,
         RecoverComponent,
         ResetPasswordComponent,
-        ConfirmEmailComponent
+        ConfirmEmailComponent,
+        P404Component,
+        P500Component
     ],
     exports: [
         RouterModule

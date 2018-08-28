@@ -15,9 +15,6 @@ import { AppComponent } from "./app.component";
 // Import containers
 import { DefaultLayoutComponent } from "./core";
 
-import { P404Component } from "./views/error/404.component";
-import { P500Component } from "./views/error/500.component";
-
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -65,6 +62,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts/ng2-charts";
 import { OAuthModule } from "angular-oauth2-oidc";
+import { SettingsService } from "./core/settings/settings.service";
 
 @NgModule({
   imports: [
@@ -90,15 +88,14 @@ import { OAuthModule } from "angular-oauth2-oidc";
   ],
   declarations: [
     AppComponent,
-    ...APP_CONTAINERS,
-    P404Component,
-    P500Component,
+    ...APP_CONTAINERS
   ],
   providers: [
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
-    }
+    },
+    SettingsService
   ],
   bootstrap: [AppComponent]
 })

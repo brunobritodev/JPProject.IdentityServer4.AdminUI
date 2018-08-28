@@ -1,39 +1,25 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { OAuthService } from "angular-oauth2-oidc";
 import { Router } from "@angular/router";
+import { SettingsService } from "../../core/settings/settings.service";
 
 @Component({
     selector: "app-dashboard",
-    templateUrl: "login.component.html"
+    templateUrl: "login.component.html",
+    providers: [SettingsService]
 })
-export class LoginComponent {
-    constructor(private oauthService: OAuthService,
+export class LoginComponent implements OnInit {
+    constructor(private settingsService: SettingsService,
         private router: Router) {
-        this.configure();
+        
+    }
+
+    public ngOnInit(){
+        this.login();
     }
 
     public login() {
-        this.configure();
-    }
-
-    public async configure() {
-        this.oauthService.loadDiscoveryDocument().then(doc => {
-            console.log("doc loaded");
-            this.oauthService.tryLogin()
-                .catch(err => {
-                    console.error(err);
-                })
-                .then(() => {
-                    if (!this.oauthService.hasValidIdToken() || !this.oauthService.hasValidAccessToken()) {
-                        this.oauthService.initImplicitFlow();
-                    } else {
-                        // for race conditions, sometimes dashboard don't load
-                        setTimeout(() => {
-                            this.router.navigate(["/dashboard"]);
-                        }, 1000);
-                    }
-                });
-        });
+        this.settingsService.login();
     }
 
 }

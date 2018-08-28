@@ -16,7 +16,7 @@ namespace Equinox.UI.SSO.Util
                 new IdentityResources.Email(),
 
                 // custom identity resource with some consolidated claims
-                new IdentityResource("custom.profile", new[] { JwtClaimTypes.Name, JwtClaimTypes.Email, "location" }),
+                new IdentityResource("picture", new[] { JwtClaimTypes.Picture }),
 
                 // add additional identity resource
                 new IdentityResource("roles", "Roles", new[] { "role" })
@@ -46,6 +46,7 @@ namespace Equinox.UI.SSO.Util
                                     {
                                         JwtClaimTypes.Name,
                                         JwtClaimTypes.Email,
+                                        JwtClaimTypes.Picture
                                     },
 
                                     Scopes =
