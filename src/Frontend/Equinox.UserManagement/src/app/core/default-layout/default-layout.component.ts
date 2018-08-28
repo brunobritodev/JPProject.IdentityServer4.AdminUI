@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { navItems } from "../../_nav";
-import { OAuthService } from "../../../../node_modules/angular-oauth2-oidc";
 import { SettingsService } from "../settings/settings.service";
+import { tap } from "rxjs/operators";
 import { environment } from "../../../environments/environment";
 
 @Component({
@@ -17,7 +17,6 @@ export class DefaultLayoutComponent implements OnInit {
     public element: HTMLElement = document.body;
     public userProfile: any;
     constructor(public settingsService: SettingsService) {
-
         this.changes = new MutationObserver((mutations) => {
             this.sidebarMinimized = document.body.classList.contains("sidebar-minimized");
         });
@@ -25,18 +24,23 @@ export class DefaultLayoutComponent implements OnInit {
         this.changes.observe(<Element>this.element, {
             attributes: true
         });
-
     }
+
     public ngOnInit() {
         this.getUserImage();
     }
+
     public logout() {
         this.settingsService.logout();
     }
 
     public async getUserImage() {
-        this.userProfile = await this.settingsService.getUserProfile();
-        if (!environment.production)
-            console.table(this.userProfile);
+        this.settingsService.getUserProfile()
+             .pipe(
+                 tap(u => {
+                     if (!environment.production)
+                         console.table(u);
+                 }))
+            .subscribe(a => this.userProfile = a);
     }
 }
