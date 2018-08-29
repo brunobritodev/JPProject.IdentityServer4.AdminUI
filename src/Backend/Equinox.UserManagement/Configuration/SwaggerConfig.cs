@@ -25,7 +25,7 @@ namespace Equinox.UserManagement.Configuration
                     Flow = "implicit",
                     AuthorizationUrl = "http://localhost:5000/connect/authorize",
                     Scopes = new Dictionary<string, string> {
-                        { "UserManagementApi", "User Management API - full access" },
+                        { "UserManagementApi.owner-content", "User Management API - full access" },
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();

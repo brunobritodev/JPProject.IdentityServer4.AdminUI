@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Notifications;
+using Equinox.Infra.CrossCutting.Tools;
+using IdentityModel;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -27,21 +31,21 @@ namespace Equinox.UserManagement.Controllers
             return (!_notifications.HasNotifications());
         }
 
-        protected new IActionResult Response(object result = null)
+        protected new ActionResult<DefaultResponse<T>> Response<T>(T result)
         {
             if (IsValidOperation())
             {
-                return Ok(new
+                return Ok(new DefaultResponse<T>
                 {
-                    success = true,
-                    data = result
+                    Success = true,
+                    Data = result
                 });
             }
 
-            return BadRequest(new
+            return BadRequest(new DefaultResponse<T>
             {
-                success = false,
-                errors = _notifications.GetNotifications().Select(n => n.Value)
+                Success = false,
+                Errors = _notifications.GetNotifications().Select(n => n.Value)
             });
         }
 
@@ -67,5 +71,14 @@ namespace Equinox.UserManagement.Controllers
                 NotifyError(result.ToString(), error.Description);
             }
         }
+
+        protected Guid? GetUserId()
+        {
+            if (User == null)
+                throw new ArgumentNullException(nameof(User));
+
+            return Guid.Parse(User.FindFirst(JwtClaimTypes.Subject)?.Value);
+        }
+
     }
 }

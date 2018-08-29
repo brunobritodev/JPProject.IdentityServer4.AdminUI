@@ -53,6 +53,7 @@
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.0.1",
     "ngx-image-cropper": "^1.0.2",
+    "ngx-img-cropper": "^0.10.4",
     "ngx-perfect-scrollbar": "^6.3.0",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2",

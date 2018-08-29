@@ -53,7 +53,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-3 col-md-12 justify-content-between">
-                            <img [src]="croppedImage" class="img-thumbnail rounded-circle thumb128" *ngIf="imageReadyToUpload" />
+                            <img [src]="croppedImage" class="img-thumbnail rounded-circle thumb128" />
                         </div>
                         <div class="col-lg-9 col-md-12">
                             <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1" [resizeToWidth]="128"

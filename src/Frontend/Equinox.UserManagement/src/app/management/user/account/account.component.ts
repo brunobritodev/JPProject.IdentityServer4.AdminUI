@@ -11,12 +11,12 @@ export class AccountComponent implements OnInit {
     public errors: Array<string>;
 
     constructor(private settings: SettingsService) {
-        this.changePass = new ChangePassword();
-        this.errors = [];
+       
      }
 
     ngOnInit() {
-        
+         this.changePass = new ChangePassword();
+        this.errors = [];
     }
 
 }

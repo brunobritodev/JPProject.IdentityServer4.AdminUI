@@ -16,13 +16,15 @@ namespace Equinox.UI.SSO.Configuration
             string connectionString = configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
-            var builder = services.AddIdentityServer(options =>
-                {
-                    options.Events.RaiseErrorEvents = true;
-                    options.Events.RaiseInformationEvents = true;
-                    options.Events.RaiseFailureEvents = true;
-                    options.Events.RaiseSuccessEvents = true;
-                })
+            var builder = services.AddIdentityServer(
+                //    options =>
+                //{
+                //    options.Events.RaiseErrorEvents = true;
+                //    options.Events.RaiseInformationEvents = true;
+                //    options.Events.RaiseFailureEvents = true;
+                //    options.Events.RaiseSuccessEvents = true;
+                //}
+                    )
                 .AddAspNetIdentity<UserIdentity>()
                 // this adds the config data from DB (clients, resources)
                 .AddConfigurationStore(options =>
@@ -37,13 +39,13 @@ namespace Equinox.UI.SSO.Configuration
                         b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
 
                     // this enables automatic token cleanup. this is optional.
-                    options.EnableTokenCleanup = true;
+                    //options.EnableTokenCleanup = true;
                     //options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
 
             if (environment.IsDevelopment())
             {
-                builder.AddDeveloperSigningCredential();
+                builder.AddDeveloperSigningCredential(false);
             }
             else
             {
