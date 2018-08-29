@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../shared/services/user.service";
 import { AlertConfig } from "ngx-bootstrap/alert";
-import { ForgotPassword } from "../../shared/models/forgot-password.model";
+import { ForgotPassword } from "../../shared/view-model/forgot-password.model";
 
 function getAlertConfig(): AlertConfig {
     return Object.assign(new AlertConfig(), { type: "success" });

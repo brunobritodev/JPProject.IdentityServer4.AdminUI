@@ -1341,3 +1341,430 @@ SELECT @@ROWCOUNT;
 2018-08-28 09:35:59.901 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2018-08-28 09:37:02.783 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2018-08-28 10:58:35.678 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 20:28:27.103 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:03:07.453 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:03:13.906 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:03:13.941 -03:00 [INF] Request finished in 35.2453ms 200 text/html
+2018-08-28 23:03:14.380 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:03:14.430 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Ambiguous HTTP method for action - Equinox.UserManagement.Controllers.ManagementController.GetUser (Equinox.UserManagement). Actions require an explicit HttpMethod binding for Swagger 2.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItem(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItems(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath, String[] schemes)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-28 23:03:14.520 -03:00 [INF] Request finished in 140.3991ms 500 text/html; charset=utf-8
+2018-08-28 23:04:12.345 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:04:13.262 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:04:13.298 -03:00 [INF] Request finished in 36.7615ms 200 text/html
+2018-08-28 23:04:13.700 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:04:13.719 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:04:13.741 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:04:13.745 -03:00 [INF] Request finished in 27.5078ms 200 image/png
+2018-08-28 23:04:13.752 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-16x16.png  
+2018-08-28 23:04:13.755 -03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2018-08-28 23:04:13.761 -03:00 [INF] Request finished in 8.3232ms 200 image/png
+2018-08-28 23:04:13.797 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Ambiguous HTTP method for action - Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement). Actions require an explicit HttpMethod binding for Swagger 2.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItem(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItems(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath, String[] schemes)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-08-28 23:04:13.855 -03:00 [INF] Request finished in 154.9994ms 500 text/html; charset=utf-8
+2018-08-28 23:05:43.826 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:05:45.075 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:05:45.110 -03:00 [INF] Request finished in 35.843ms 200 text/html
+2018-08-28 23:05:45.489 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:05:45.492 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:05:45.499 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:05:45.506 -03:00 [INF] Request finished in 13.3693ms 200 image/png
+2018-08-28 23:05:45.666 -03:00 [INF] Request finished in 177.1062ms 200 application/json;charset=utf-8
+2018-08-28 23:05:57.118 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/oauth2-redirect.html  
+2018-08-28 23:05:57.119 -03:00 [INF] Sending file. Request path: '/oauth2-redirect.html'. Physical path: 'N/A'
+2018-08-28 23:05:57.120 -03:00 [INF] Request finished in 2.4673ms 200 text/html
+2018-08-28 23:06:07.459 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:06:07.494 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:06:07.509 -03:00 [INF] Authorization failed.
+2018-08-28 23:06:07.513 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:06:07.517 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:06:07.529 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:06:07.533 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 34.606500000000004ms
+2018-08-28 23:06:07.541 -03:00 [INF] Request finished in 81.7244ms 302 
+2018-08-28 23:06:07.545 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:06:07.546 -03:00 [INF] Request finished in 1.194ms 404 
+2018-08-28 23:06:43.666 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:06:45.767 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:06:45.878 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:06:45.893 -03:00 [INF] Authorization failed.
+2018-08-28 23:06:45.896 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:06:45.901 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:06:45.913 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:06:45.916 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 35.1678ms
+2018-08-28 23:06:45.927 -03:00 [INF] Request finished in 161.4024ms 302 
+2018-08-28 23:06:45.934 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:06:45.935 -03:00 [INF] Request finished in 1.2181ms 404 
+2018-08-28 23:12:11.240 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:12:12.374 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:12:12.417 -03:00 [INF] Request finished in 44.4222ms 200 text/html
+2018-08-28 23:12:12.820 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:12:12.826 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:12:12.836 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:12:12.848 -03:00 [INF] Request finished in 21.7499ms 200 image/png
+2018-08-28 23:12:13.007 -03:00 [INF] Request finished in 187.2081ms 200 application/json;charset=utf-8
+2018-08-28 23:12:32.345 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:12:32.379 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:12:32.394 -03:00 [INF] Authorization failed.
+2018-08-28 23:12:32.397 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:12:32.403 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:12:32.416 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:12:32.420 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 37.1257ms
+2018-08-28 23:12:32.429 -03:00 [INF] Request finished in 84.2884ms 302 
+2018-08-28 23:12:32.431 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:12:32.432 -03:00 [INF] Request finished in 1.0201ms 404 
+2018-08-28 23:23:49.727 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:24:07.812 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:24:07.831 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:07.906 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:24:07.920 -03:00 [INF] Authorization failed.
+2018-08-28 23:24:07.924 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:24:07.928 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:24:07.935 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:24:07.939 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 29.614ms
+2018-08-28 23:24:07.949 -03:00 [INF] Request finished in 138.3501ms 302 
+2018-08-28 23:24:07.951 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:24:07.953 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:07.954 -03:00 [INF] Request finished in 2.9677ms 404 
+2018-08-28 23:24:38.698 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:24:38.700 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:38.702 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:24:38.705 -03:00 [INF] Authorization failed.
+2018-08-28 23:24:38.706 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:24:38.708 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:24:38.710 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:24:38.711 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 6.836ms
+2018-08-28 23:24:38.713 -03:00 [INF] Request finished in 15.6526ms 302 
+2018-08-28 23:24:38.715 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:24:38.718 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:38.720 -03:00 [INF] Request finished in 4.5447ms 404 
+2018-08-28 23:24:41.612 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:24:41.614 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:41.624 -03:00 [INF] Request finished in 12.0997ms 200 text/html
+2018-08-28 23:24:42.114 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:24:42.115 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:42.121 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:24:42.132 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:24:42.141 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:24:42.144 -03:00 [INF] Request finished in 23.6233ms 200 image/png
+2018-08-28 23:24:47.451 -03:00 [INF] Request finished in 5337.1939ms 200 application/json;charset=utf-8
+2018-08-28 23:25:09.073 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:25:09.075 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:09.077 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:25:09.080 -03:00 [INF] Authorization failed.
+2018-08-28 23:25:09.083 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:25:09.086 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:25:09.088 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:25:09.090 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 9.878400000000001ms
+2018-08-28 23:25:09.092 -03:00 [INF] Request finished in 18.6582ms 302 
+2018-08-28 23:25:09.099 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:25:09.101 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:09.104 -03:00 [INF] Request finished in 5.1385ms 404 
+2018-08-28 23:25:26.054 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:25:26.056 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:26.058 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:25:26.062 -03:00 [INF] Authorization failed.
+2018-08-28 23:25:26.063 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:25:26.066 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:25:26.068 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:25:26.069 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 7.7074000000000007ms
+2018-08-28 23:25:26.071 -03:00 [INF] Request finished in 17.1779ms 302 
+2018-08-28 23:25:26.077 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:25:26.078 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:26.080 -03:00 [INF] Request finished in 3.0075ms 404 
+2018-08-28 23:25:28.242 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:25:28.244 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:28.245 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:25:28.247 -03:00 [INF] Authorization failed.
+2018-08-28 23:25:28.251 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:25:28.255 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:25:28.256 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:25:28.257 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 10.1869ms
+2018-08-28 23:25:28.260 -03:00 [INF] Request finished in 18.0104ms 302 
+2018-08-28 23:25:28.264 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:25:28.266 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:28.268 -03:00 [INF] Request finished in 3.6377ms 404 
+2018-08-28 23:25:29.051 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:25:29.053 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:29.055 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:25:29.057 -03:00 [INF] Authorization failed.
+2018-08-28 23:25:29.059 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:25:29.062 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:25:29.063 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:25:29.065 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 7.1308000000000007ms
+2018-08-28 23:25:29.066 -03:00 [INF] Request finished in 15.8641ms 302 
+2018-08-28 23:25:29.069 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:25:29.070 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:29.072 -03:00 [INF] Request finished in 3.66ms 404 
+2018-08-28 23:25:40.495 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:25:40.497 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:40.499 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:25:40.501 -03:00 [INF] Authorization failed.
+2018-08-28 23:25:40.502 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:25:40.503 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:25:40.506 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:25:40.507 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 6.3251ms
+2018-08-28 23:25:40.511 -03:00 [INF] Request finished in 15.2697ms 302 
+2018-08-28 23:25:40.513 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:25:40.516 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:25:40.517 -03:00 [INF] Request finished in 3.8484ms 404 
+2018-08-28 23:39:06.261 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:39:13.846 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:39:13.864 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:39:13.884 -03:00 [INF] Request finished in 39.4426ms 200 text/html
+2018-08-28 23:39:14.399 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:39:14.405 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:39:14.406 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:39:14.411 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:39:14.438 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:39:14.441 -03:00 [INF] Request finished in 35.4546ms 200 image/png
+2018-08-28 23:39:14.569 -03:00 [INF] Request finished in 170.0138ms 200 application/json;charset=utf-8
+2018-08-28 23:40:33.035 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:46:14.263 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:46:14.281 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:14.363 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:46:14.379 -03:00 [INF] Authorization failed.
+2018-08-28 23:46:14.384 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:46:14.389 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:46:14.397 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:46:14.401 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 34.2391ms
+2018-08-28 23:46:14.417 -03:00 [INF] Request finished in 154.6797ms 302 
+2018-08-28 23:46:14.424 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:46:14.426 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:14.428 -03:00 [INF] Request finished in 4.1146ms 404 
+2018-08-28 23:46:16.203 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:46:16.205 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:16.206 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:46:16.208 -03:00 [INF] Authorization failed.
+2018-08-28 23:46:16.209 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:46:16.210 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:46:16.211 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:46:16.213 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 5.7588ms
+2018-08-28 23:46:16.216 -03:00 [INF] Request finished in 13.0305ms 302 
+2018-08-28 23:46:16.218 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:46:16.219 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:16.221 -03:00 [INF] Request finished in 2.5407ms 404 
+2018-08-28 23:46:27.293 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:46:27.295 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:27.305 -03:00 [INF] Request finished in 12.3986ms 200 text/html
+2018-08-28 23:46:27.776 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:46:27.778 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:27.800 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:46:27.802 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:46:27.808 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:46:27.814 -03:00 [INF] Request finished in 14.213ms 200 image/png
+2018-08-28 23:46:27.907 -03:00 [INF] Request finished in 130.4249ms 200 application/json;charset=utf-8
+2018-08-28 23:47:36.505 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:47:49.012 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/oauth2-redirect.html  
+2018-08-28 23:47:49.044 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:47:49.068 -03:00 [INF] The file /oauth2-redirect.html was not modified
+2018-08-28 23:47:49.076 -03:00 [INF] Request finished in 68.1524ms 304 text/html
+2018-08-28 23:47:54.132 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:47:54.135 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:47:54.208 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:47:54.223 -03:00 [INF] Authorization failed.
+2018-08-28 23:47:54.227 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:47:54.231 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:47:54.238 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:47:54.242 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 30.407200000000003ms
+2018-08-28 23:47:54.247 -03:00 [INF] Request finished in 114.817ms 302 
+2018-08-28 23:47:54.252 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:47:54.254 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:47:54.255 -03:00 [INF] Request finished in 2.926ms 404 
+2018-08-28 23:53:30.499 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-28 23:54:49.650 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-28 23:54:49.668 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:54:49.688 -03:00 [INF] Request finished in 39.1848ms 200 text/html
+2018-08-28 23:54:50.250 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-28 23:54:50.250 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-28 23:54:50.253 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:54:50.254 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:54:50.274 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-28 23:54:50.277 -03:00 [INF] Request finished in 26.3978ms 200 image/png
+2018-08-28 23:54:50.415 -03:00 [INF] Request finished in 164.9648ms 200 application/json;charset=utf-8
+2018-08-28 23:55:01.683 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/oauth2-redirect.html  
+2018-08-28 23:55:01.685 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:55:01.687 -03:00 [INF] The file /oauth2-redirect.html was not modified
+2018-08-28 23:55:01.690 -03:00 [INF] Request finished in 6.6288ms 304 text/html
+2018-08-28 23:55:06.348 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-28 23:55:06.349 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:55:06.384 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-28 23:55:06.403 -03:00 [INF] Authorization failed.
+2018-08-28 23:55:06.407 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-28 23:55:06.412 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-28 23:55:06.419 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-28 23:55:06.423 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 34.478300000000004ms
+2018-08-28 23:55:06.429 -03:00 [INF] Request finished in 80.7888ms 302 
+2018-08-28 23:55:06.435 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-28 23:55:06.436 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-28 23:55:06.437 -03:00 [INF] Request finished in 2.7487ms 404 
+2018-08-29 00:26:03.966 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:26:21.217 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:26:21.235 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:26:21.256 -03:00 [INF] Request finished in 40.5365ms 200 text/html
+2018-08-29 00:26:21.775 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:26:21.775 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:26:21.778 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:26:21.778 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:26:21.809 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:26:21.816 -03:00 [INF] Request finished in 41.0432ms 200 image/png
+2018-08-29 00:26:21.951 -03:00 [INF] Request finished in 176.7112ms 200 application/json;charset=utf-8
+2018-08-29 00:27:38.395 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:27:46.695 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:27:46.713 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:27:46.736 -03:00 [INF] Request finished in 41.6932ms 200 text/html
+2018-08-29 00:27:47.262 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:27:47.266 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:27:47.278 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:27:47.278 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:27:47.299 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:27:47.301 -03:00 [INF] Request finished in 36.671ms 200 image/png
+2018-08-29 00:27:47.426 -03:00 [INF] Request finished in 164.47ms 200 application/json;charset=utf-8
+2018-08-29 00:28:45.855 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:28:57.757 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:28:57.792 -03:00 [INF] Request finished in 35.3346ms 200 text/html
+2018-08-29 00:28:58.136 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:28:58.136 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:28:58.165 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:28:58.168 -03:00 [INF] Request finished in 31.5778ms 200 image/png
+2018-08-29 00:28:58.284 -03:00 [INF] Request finished in 147.9933ms 200 application/json;charset=utf-8
+2018-08-29 00:30:53.768 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:31:16.685 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:31:16.718 -03:00 [INF] Request finished in 34.371ms 200 text/html
+2018-08-29 00:31:17.235 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:31:17.238 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:31:17.266 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:31:17.268 -03:00 [INF] Request finished in 30.5412ms 200 image/png
+2018-08-29 00:31:17.386 -03:00 [INF] Request finished in 150.9013ms 200 application/json;charset=utf-8
+2018-08-29 00:44:17.116 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:44:26.698 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:44:26.747 -03:00 [INF] Request finished in 50.1478ms 200 text/html
+2018-08-29 00:44:27.320 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:44:27.322 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:44:27.359 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:44:27.361 -03:00 [INF] Request finished in 39.5213ms 200 image/png
+2018-08-29 00:44:27.494 -03:00 [INF] Request finished in 174.3845ms 200 application/json;charset=utf-8
+2018-08-29 00:45:20.749 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:45:29.697 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:45:29.735 -03:00 [INF] Request finished in 38.7447ms 200 text/html
+2018-08-29 00:45:30.260 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:45:30.264 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:45:30.300 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:45:30.302 -03:00 [INF] Request finished in 38.1168ms 200 image/png
+2018-08-29 00:45:30.419 -03:00 [INF] Request finished in 158.4694ms 200 application/json;charset=utf-8
+2018-08-29 00:48:30.418 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 00:49:46.502 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 00:49:46.536 -03:00 [INF] Request finished in 34.7891ms 200 text/html
+2018-08-29 00:49:47.035 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 00:49:47.036 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 00:49:47.064 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 00:49:47.066 -03:00 [INF] Request finished in 31.0444ms 200 image/png
+2018-08-29 00:49:47.196 -03:00 [INF] Request finished in 160.4998ms 200 application/json;charset=utf-8
+2018-08-29 00:50:04.488 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/oauth2-redirect.html  
+2018-08-29 00:50:04.491 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:50:04.493 -03:00 [INF] The file /oauth2-redirect.html was not modified
+2018-08-29 00:50:04.495 -03:00 [INF] Request finished in 7.3142ms 304 text/html
+2018-08-29 00:50:20.701 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-29 00:50:20.704 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:50:20.740 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-29 00:50:20.755 -03:00 [INF] Authorization failed.
+2018-08-29 00:50:20.759 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-29 00:50:20.764 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-29 00:50:20.770 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-29 00:50:20.774 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 30.649600000000003ms
+2018-08-29 00:50:20.779 -03:00 [INF] Request finished in 77.2963ms 302 
+2018-08-29 00:50:20.781 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-29 00:50:20.782 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:50:20.784 -03:00 [INF] Request finished in 2.7944ms 404 
+2018-08-29 00:50:26.903 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-29 00:50:26.905 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:50:26.908 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-29 00:50:26.912 -03:00 [INF] Authorization failed.
+2018-08-29 00:50:26.914 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-29 00:50:26.917 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-29 00:50:26.919 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-29 00:50:26.922 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 11.0233ms
+2018-08-29 00:50:26.925 -03:00 [INF] Request finished in 21.5345ms 302 
+2018-08-29 00:50:26.927 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-29 00:50:26.928 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 00:50:26.929 -03:00 [INF] Request finished in 2.2635ms 404 
+2018-08-29 01:11:29.001 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 01:11:33.766 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 01:11:33.791 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:11:33.816 -03:00 [INF] Request finished in 52.1005ms 200 text/html
+2018-08-29 01:11:34.342 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 01:11:34.343 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 01:11:34.346 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:11:34.349 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:11:34.376 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 01:11:34.378 -03:00 [INF] Request finished in 34.9929ms 200 image/png
+2018-08-29 01:11:34.507 -03:00 [INF] Request finished in 165.1583ms 200 application/json;charset=utf-8
+2018-08-29 01:11:45.612 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-29 01:11:45.613 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:11:45.645 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-29 01:11:45.661 -03:00 [INF] Authorization failed.
+2018-08-29 01:11:45.664 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-29 01:11:45.669 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-29 01:11:45.676 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-29 01:11:45.680 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 30.579500000000003ms
+2018-08-29 01:11:45.685 -03:00 [INF] Request finished in 73.1716ms 302 
+2018-08-29 01:11:45.687 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-29 01:11:45.688 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:11:45.690 -03:00 [INF] Request finished in 2.823ms 404 
+2018-08-29 01:23:35.164 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 01:24:00.494 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 01:24:00.525 -03:00 [INF] Request finished in 32.378ms 200 text/html
+2018-08-29 01:24:01.020 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 01:24:01.028 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 01:24:01.043 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 01:24:01.045 -03:00 [INF] Request finished in 25.528ms 200 image/png
+2018-08-29 01:24:01.254 -03:00 [INF] Request finished in 226.1986ms 200 application/json;charset=utf-8
+2018-08-29 01:24:10.415 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/oauth2-redirect.html  
+2018-08-29 01:24:10.418 -03:00 [INF] The file /oauth2-redirect.html was not modified
+2018-08-29 01:24:10.420 -03:00 [INF] Request finished in 4.4316ms 304 text/html
+2018-08-29 01:24:14.215 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-29 01:24:14.259 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-29 01:24:14.276 -03:00 [INF] Authorization failed.
+2018-08-29 01:24:14.280 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-29 01:24:14.285 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-29 01:24:14.297 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-29 01:24:14.301 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 37.7593ms
+2018-08-29 01:24:14.309 -03:00 [INF] Request finished in 93.9853ms 302 
+2018-08-29 01:24:14.310 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-29 01:24:14.311 -03:00 [INF] Request finished in 0.9653ms 404 
+2018-08-29 01:27:48.764 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-29 01:27:54.629 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-29 01:27:54.647 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:27:54.668 -03:00 [INF] Request finished in 39.0909ms 200 text/html
+2018-08-29 01:27:55.268 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-29 01:27:55.272 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:27:55.278 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-29 01:27:55.285 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:27:55.304 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-29 01:27:55.306 -03:00 [INF] Request finished in 28.213ms 200 image/png
+2018-08-29 01:27:55.425 -03:00 [INF] Request finished in 156.7286ms 200 application/json;charset=utf-8
+2018-08-29 01:28:05.915 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-info  
+2018-08-29 01:28:05.918 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:28:05.956 -03:00 [INF] Route matched with {action = "UserInfo", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement)
+2018-08-29 01:28:05.971 -03:00 [INF] Authorization failed.
+2018-08-29 01:28:05.975 -03:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-08-29 01:28:05.979 -03:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-08-29 01:28:05.986 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-29 01:28:05.989 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserInfo (Equinox.UserManagement) in 29.3247ms
+2018-08-29 01:28:05.994 -03:00 [INF] Request finished in 78.6573ms 302 
+2018-08-29 01:28:05.996 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Account/Login?ReturnUrl=%2FManagement%2Fuser-info  
+2018-08-29 01:28:05.997 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-08-29 01:28:05.998 -03:00 [INF] Request finished in 2.2121ms 404 

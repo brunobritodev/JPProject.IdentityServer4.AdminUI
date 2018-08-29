@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs/Subscription";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ConfirmEmail } from "../../shared/models/confirm-email.model";
+import { ConfirmEmail } from "../../shared/view-model/confirm-email.model";
 import { UserService } from "../../shared/services/user.service";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
 
