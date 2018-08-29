@@ -9,7 +9,7 @@ namespace Equinox.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Customer, CustomerViewModel>();
-            CreateMap<User, UserViewModel>();
+            CreateMap<User, UserViewModel>().ForMember(a => a.Password, o => o.Ignore()).ForMember(a => a.ConfirmPassword, o => o.Ignore());
         }
     }
 }

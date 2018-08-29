@@ -1,12 +1,15 @@
-﻿using Equinox.Infra.CrossCutting.IoC;
+﻿using System.Collections.Generic;
+using Equinox.Infra.CrossCutting.IoC;
 using Equinox.UserManagement.Configuration;
 using IdentityServer4.AccessTokenValidation;
+using IdentityServer4.Models;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Equinox.UserManagement
 {
@@ -36,21 +39,28 @@ namespace Equinox.UserManagement
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
 
-            services
-                    .ConfigureCors()
-                    .AddIdentity(Configuration)
-                    .AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+            services.AddIdentity(Configuration);
+            services.ConfigureCors();
+
+            //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
+                })
                     .AddIdentityServerAuthentication(options =>
                                                     {
                                                         options.Authority = "http://localhost:5000";
                                                         options.RequireHttpsMetadata = false;
-
+                                                        options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
                                                         options.ApiName = "UserManagementApi";
                                                     });
+
             services.AddSwagger();
 
+            // Config automapper
             services.AddAutoMapperSetup();
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
@@ -77,7 +87,7 @@ namespace Equinox.UserManagement
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ID4 User Management");
-                c.OAuthClientId("UserManagementUI");
+                c.OAuthClientId("Swagger");
                 c.OAuthAppName("User Management UI - full access");
             });
             app.UseMvc();

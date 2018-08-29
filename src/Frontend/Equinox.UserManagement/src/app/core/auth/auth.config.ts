@@ -5,6 +5,6 @@ export const authConfig: AuthConfig = {
     clientId: "UserManagementUI",
     postLogoutRedirectUri: "http://localhost:4200/",
     redirectUri: window.location.origin + "/login-callback",
-    scope: "openid profile email picture",
+    scope: "openid profile email picture UserManagementApi.owner-content",
     oidc: true,
 };

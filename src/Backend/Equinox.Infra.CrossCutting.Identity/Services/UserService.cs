@@ -250,9 +250,9 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             return _userManager.FindByLoginAsync(provider, providerUserId);
         }
 
-        public Task<UserIdentity> GetUserAsync(ClaimsPrincipal user)
+        public Task<UserIdentity> GetUserAsync(Guid user)
         {
-            return _userManager.GetUserAsync(user);
+            return _userManager.FindByIdAsync(user.ToString());
         }
     }
 }
