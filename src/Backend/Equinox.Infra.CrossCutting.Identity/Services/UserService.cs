@@ -19,7 +19,7 @@ using ServiceStack.Text;
 
 namespace Equinox.Infra.CrossCutting.Identity.Services
 {
-    public class UserService : IUserService
+    public class UserService : IUserService, IUserManager
     {
         private readonly UserManager<UserIdentity> _userManager;
         private readonly IEmailSender _emailSender;
@@ -248,6 +248,11 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
         public Task<UserIdentity> FindByProviderAsync(string provider, string providerUserId)
         {
             return _userManager.FindByLoginAsync(provider, providerUserId);
+        }
+
+        public Task<UserIdentity> GetUserAsync(ClaimsPrincipal user)
+        {
+            return _userManager.GetUserAsync(user);
         }
     }
 }

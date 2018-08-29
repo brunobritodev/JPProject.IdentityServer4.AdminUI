@@ -1,5 +1,6 @@
 ﻿using Equinox.Infra.CrossCutting.IoC;
 using Equinox.UserManagement.Configuration;
+using IdentityServer4.AccessTokenValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,16 +40,16 @@ namespace Equinox.UserManagement
 
             services
                     .ConfigureCors()
-                    .AddSwagger()
                     .AddIdentity(Configuration)
-                    .AddAuthentication("Bearer")
+                    .AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                     .AddIdentityServerAuthentication(options =>
                                                     {
                                                         options.Authority = "http://localhost:5000";
                                                         options.RequireHttpsMetadata = false;
-                                    
+
                                                         options.ApiName = "UserManagementApi";
                                                     });
+            services.AddSwagger();
 
             services.AddAutoMapperSetup();
             // Adding MediatR for Domain Events and Notifications
@@ -70,7 +71,8 @@ namespace Equinox.UserManagement
             {
                 app.UseHsts();
             }
-            app.UseStaticFiles();
+
+            app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

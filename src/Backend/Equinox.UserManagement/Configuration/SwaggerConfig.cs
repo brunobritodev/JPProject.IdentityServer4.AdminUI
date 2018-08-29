@@ -13,7 +13,7 @@ namespace Equinox.UserManagement.Configuration
                 options.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Identity Server 4 Single Sign On Server",
+                    Title = "Identity Server 4 User Management API ",
                     Description = "Swagger surface",
                     Contact = new Contact { Name = "Bruno Brito", Email = "bhdebrito@gmail.com", Url = "http://www.brunobrito.net.br" },
                     License = new License { Name = "MIT", Url = "https://github.com/brunohbrito/CognitesServicesAzure-Example/blob/master/LICENSE" },
@@ -25,12 +25,7 @@ namespace Equinox.UserManagement.Configuration
                     Flow = "implicit",
                     AuthorizationUrl = "http://localhost:5000/connect/authorize",
                     Scopes = new Dictionary<string, string> {
-                        { "UserManagementApi.full_access", "User Management API - full access" },
-                        { "UserManagementApi.read_access", "User Management API - Read access" },
-                        { "UserManagementApi.write_access", "User Management API - Write access" },
-                        { "openid", "OpenId" },
-                        { "email", "Email" },
-
+                        { "UserManagementApi", "User Management API - full access" },
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();

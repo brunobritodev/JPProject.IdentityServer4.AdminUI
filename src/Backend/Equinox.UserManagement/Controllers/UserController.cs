@@ -3,7 +3,6 @@ using Equinox.Application.Interfaces;
 using Equinox.Application.ViewModels;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Notifications;
-using Equinox.Infra.CrossCutting.Identity.Models.AccountViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,7 +30,7 @@ namespace Equinox.UserManagement.Controllers
                 return Response(model);
             }
 
-           await _userManagerAppService.Register(model);
+            await _userManagerAppService.Register(model);
 
             return Response(model);
         }
@@ -91,7 +90,7 @@ namespace Equinox.UserManagement.Controllers
             }
 
             await _userManagerAppService.ResetPassword(model);
-            
+
             return Response(true);
         }
 

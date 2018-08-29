@@ -4,9 +4,9 @@ import { DefaultResponse } from "../view-model/default-response.model";
 import { User } from "../models/user.model";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
-import { ForgotPassword } from "../models/forgot-password.model";
-import { ResetPassword } from "../models/reset-password.model";
-import { ConfirmEmail } from "../models/confirm-email.model";
+import { ForgotPassword } from "../view-model/forgot-password.model";
+import { ResetPassword } from "../view-model/reset-password.model";
+import { ConfirmEmail } from "../view-model/confirm-email.model";
 
 @Injectable()
 export class UserService {

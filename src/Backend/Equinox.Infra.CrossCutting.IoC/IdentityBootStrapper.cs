@@ -17,12 +17,12 @@ namespace Equinox.Infra.CrossCutting.IoC
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            services.AddScoped<UserService>();
-
+                
             // Infra - Identity Services
             services.AddTransient<IEmailSender, AuthEmailMessageSender>();
             services.AddTransient<ISmsSender, AuthSMSMessageSender>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserManager, UserService>();
             services.AddSingleton<IEmailConfiguration>(config.GetSection("EmailConfiguration").Get<EmailConfiguration>());
 
             // Infra - Identity

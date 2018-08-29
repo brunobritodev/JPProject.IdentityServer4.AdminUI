@@ -33,51 +33,35 @@ namespace Equinox.UI.SSO.Util
                     // this is needed for introspection when using reference tokens
                     ApiSecrets = { new Secret("secret".Sha256()) }
                                 },
-                
+                new ApiResource("UserManagementApi", "User Management API"), 
                 // expanded version if more control is needed
-                new ApiResource
-                                {
-                                    Name = "UserManagementApi",
-                                    DisplayName = "User Management API",
-                                    Description = "API with default and protected actions to register and manager User",
-                                    ApiSecrets = { new Secret("Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++".Sha256()) },
+                //new ApiResource
+                //                {
+                //                    Name = "UserManagementApi",
+                //                    DisplayName = "User Management API",
+                //                    Description = "API with default and protected actions to register and manager User",
+                //                    ApiSecrets = { new Secret("Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++".Sha256()) },
 
-                                    UserClaims =
-                                    {
-                                        JwtClaimTypes.Name,
-                                        JwtClaimTypes.Email,
-                                        JwtClaimTypes.Picture
-                                    },
+                //                    UserClaims =
+                //                    {
+                //                        JwtClaimTypes.Profile,
+                //                        JwtClaimTypes.Name,
+                //                        JwtClaimTypes.Email,
+                //                        JwtClaimTypes.Picture
+                //                    },
 
-                                    Scopes =
-                                    {
-                                        new Scope()
-                                        {
-                                            Name = "UserManagementApi.full_access",
-                                            DisplayName = "Full access",
-                                            Description = "Full access to User Management",
-                                            UserClaims =
-                                            {
-                                                JwtClaimTypes.Name
-                                            }
-                                        },
-                                        new Scope()
-                                        {
-                                            Name = "UserManagementApi.read_access",
-                                            DisplayName = "Read access",
-                                            Description = "Read access to User Data"
-                                        },
-                                        new Scope()
-                                        {
-                                            Name = "UserManagementApi.write_access",
-                                            DisplayName = "Write access",
-                                            Description = "Write access to User data",
+                //                    Scopes =
+                //                    {
+                //                        new Scope()
+                //                        {
+                //                            Name = "UserManagementApi.owner-content",
+                //                            DisplayName = "Full access",
+                //                            Description = "Full access to User Management",
+                //                            Required = true
+                //                        }
 
-
-                                        }
-
-                                    }
-                                }
+                //                    }
+                //                }
                         };
         }
     }

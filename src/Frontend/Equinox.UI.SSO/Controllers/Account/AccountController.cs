@@ -31,7 +31,7 @@ namespace Equinox.UI.SSO.Controllers.Account
     [SecurityHeaders]
     public class AccountController : Controller
     {
-        private readonly UserService _userService;
+        private readonly IUserManager _userService;
         private readonly SignInManager<UserIdentity> _signInManager;
         private readonly IUserManagerAppService _userManagerAppService;
         private readonly IIdentityServerInteractionService _interaction;
@@ -42,7 +42,7 @@ namespace Equinox.UI.SSO.Controllers.Account
         private readonly DomainNotificationHandler _notifications;
 
         public AccountController(
-            UserService userService,
+            IUserManager userService,
             SignInManager<UserIdentity> signInManager,
             IUserManagerAppService userManagerAppService,
             IIdentityServerInteractionService interaction,

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Equinox.Infra.CrossCutting.Identity.Constants;
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 
@@ -50,22 +51,20 @@ namespace Equinox.UI.SSO.Util
                     //AccessTokenLifetime = 600, // 10 minutes, default 60 minutes
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    RequireConsent = true,
+                    //RequireConsent = true,
                     RedirectUris = { "http://localhost:4200/login-callback", "https://localhost:5003/swagger/oauth2-redirect.html" },
-                    PostLogoutRedirectUris =  { "http://localhost:4200/" },
-                    AllowedCorsOrigins = { "http://localhost:4200" },
+                    //PostLogoutRedirectUris =  { "http://localhost:4200/" },
+                    //AllowedCorsOrigins = { "http://localhost:4200" },
                     LogoUri = "~/images/clientLogo/1.jpg",
-                    AccessTokenType = AccessTokenType.Reference,
+                    //AccessTokenType = AccessTokenType.Reference,
                     AllowedScopes =
                     {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.Email,
-                        "picture",
-                        "UserManagementApi.full_access",
-                        "UserManagementApi.read_access",
-                        "UserManagementApi.write_access"
-
+                        //IdentityServerConstants.StandardScopes.OpenId,
+                        //IdentityServerConstants.StandardScopes.Profile,
+                        //IdentityServerConstants.StandardScopes.Email,
+                        //JwtClaimTypes.Picture,
+                        //"UserManagementApi.owner-content",
+                        "UserManagementApi"
                     }
                 }
 
