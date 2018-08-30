@@ -70,6 +70,11 @@ namespace Equinox.Application.Services
             var registerCommand = _mapper.Map<ChangePasswordCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
+
+        public Task<bool> HasPassword(Guid userId)
+        {
+            return _userService.HasPassword(userId);
+        }
     }
 }
 

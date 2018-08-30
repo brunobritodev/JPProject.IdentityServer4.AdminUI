@@ -23,9 +23,9 @@ export class LoginCallbackComponent implements OnInit {
             if (!this.oauthService.hasValidIdToken()) {
                 this.oauthService.initImplicitFlow();
             } else {
-                // for race conditions, sometimes dashboard don't load
+                // for race conditions, sometimes home don't load
                 setTimeout(() => {
-                    this.router.navigate(["/dashboard"]);
+                    this.router.navigate(["/home"]);
                 }, 1000);
             }
         });

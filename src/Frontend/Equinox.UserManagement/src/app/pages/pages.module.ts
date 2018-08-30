@@ -15,7 +15,6 @@ import { P404Component } from "./error/404.component";
 import { P500Component } from "./error/500.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LoginComponent, data: { title: "Login Page" } },
     { path: "register", component: RegisterComponent, data: { title: "Register" } },
     { path: "login-callback", component: LoginCallbackComponent, data: { title: "Login" } },
@@ -25,12 +24,13 @@ const routes: Routes = [
     { path: "confirm-email", component: ConfirmEmailComponent, data: { title: "Confirm account" } },
     { path: "404", component: P404Component, data: { title: "Not Found" } },
     { path: "500", component: P500Component, data: { title: "Error" } },
+    // { path: "**", redirectTo: "404" }
 ];
 
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes),
+        RouterModule.forRoot(routes, { enableTracing: true }),
         FormsModule,
         CommonModule,
         ReactiveFormsModule,

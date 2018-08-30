@@ -2,12 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../../../shared/models/user.model';
 import { SettingsService } from '../../../core/settings/settings.service';
 import { ProfilePictureViewModel } from '../../../shared/view-model/file-upload.model';
-import { ProfileService } from './profile.service';
 import { DefaultResponse } from '../../../shared/view-model/default-response.model';
+import { AccountManagementService } from '../account-management.service';
 
 @Component({
     templateUrl: 'profile.component.html',
-    providers: [ProfileService],
+    providers: [AccountManagementService],
 
 })
 export class ProfileComponent implements OnInit {
@@ -21,13 +21,14 @@ export class ProfileComponent implements OnInit {
     public fileData: ProfilePictureViewModel;
     updatingProfile: boolean;
     updatingImage: boolean;
+    userProfile: object;
 
-    constructor(private settings: SettingsService, private profileService: ProfileService) {
+    constructor(private settings: SettingsService, private profileService: AccountManagementService) {
 
     }
 
     ngOnInit() {
-
+        this.settings.getUserProfile().subscribe(a => this.userProfile = a);
         this.errors = [];
         this.profileService.getUserData().subscribe((a: DefaultResponse<User>) => {
             this.user = a.data;
@@ -51,6 +52,7 @@ export class ProfileComponent implements OnInit {
             );
             this.uploadingImage = false;
             this.imageReadyToUpload = true;
+            
         };
         this.imageChangedEvent = event;
     }
@@ -64,9 +66,10 @@ export class ProfileComponent implements OnInit {
         // show message
     }
 
-    public async uploadImage(){
+    public async uploadImage() {
         this.updatingImage = true;
         await this.profileService.updatePicture(this.fileData).toPromise();
+        this.user.picture = this.croppedImage;
         this.updatingImage = false;
     }
 

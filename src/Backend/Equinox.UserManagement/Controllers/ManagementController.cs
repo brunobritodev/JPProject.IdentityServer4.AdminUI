@@ -53,6 +53,7 @@ namespace Equinox.UserManagement.Controllers
             return Response(true);
         }
 
+
         [Route("update-profile-picture"), HttpPost]
         public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfilePicture([FromBody] ProfilePictureViewModel model)
         {
@@ -102,6 +103,9 @@ namespace Equinox.UserManagement.Controllers
             await _userAppService.RemoveAccount(model);
             return Response(true);
         }
+
+        [HttpGet, Route("has-password")]
+        public async Task<ActionResult<DefaultResponse<bool>>> HasPassword() => Response(await _userAppService.HasPassword(GetUserId().Value));
 
     }
 

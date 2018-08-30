@@ -229,6 +229,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             user.Company = command.Company;
             user.JobTitle = command.JobTitle;
             user.Url = command.Url;
+            user.PhoneNumber = command.PhoneNumber;
 
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
@@ -286,6 +287,17 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
         public async Task<bool> CreatePasswordAsync(SetPasswordCommand request)
         {
             var user = await _userManager.FindByIdAsync(request.Id.Value.ToString());
+
+            var hasPassword = await _userManager.HasPasswordAsync(user);
+            if (hasPassword)
+            {
+                /*
+                 * DO NOT display the reason.
+                 * if this happen is because user are trying to hack.
+                 */
+                throw new Exception("Unknown error");
+            }
+
             var result = await _userManager.AddPasswordAsync(user, request.Password);
             if (result.Succeeded)
                 return true;
@@ -326,6 +338,13 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             }
 
             return false;
+        }
+
+        public async Task<bool> HasPassword(Guid userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+
+            return await _userManager.HasPasswordAsync(user);
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)

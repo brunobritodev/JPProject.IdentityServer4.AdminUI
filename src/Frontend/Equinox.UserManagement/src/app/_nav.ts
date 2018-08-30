@@ -2,6 +2,7 @@ export const navItems = [
     { name: "Welcome", url: "/home", icon: "icon-speedometer", badge: { variant: "info", text: "THANKS" } },
     { title: true, name: "User Settings" },
     { name: "Profile", url: "/user/profile", icon: "icon-user" },
+    { name: "Settings", url: "/user/account", icon: "icon-settings" },
     { name: "Typography", url: "/theme/typography", icon: "icon-pencil" },
     { title: true, name: "Components" },
     {

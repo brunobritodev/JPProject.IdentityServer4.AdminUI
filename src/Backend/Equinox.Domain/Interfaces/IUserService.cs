@@ -24,5 +24,6 @@ namespace Equinox.Domain.Interfaces
         Task<bool> CreatePasswordAsync(SetPasswordCommand request);
         Task<bool> ChangePasswordAsync(ChangePasswordCommand request);
         Task<bool> RemoveAccountAsync(RemoveAccountCommand request);
+        Task<bool> HasPassword(Guid userId);
     }
 }

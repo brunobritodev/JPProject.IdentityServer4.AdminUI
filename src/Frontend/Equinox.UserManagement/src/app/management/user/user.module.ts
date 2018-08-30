@@ -6,7 +6,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AccountComponent } from './account/account.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { ProfileService } from './profile/profile.service';
+import { AccountManagementService } from './account-management.service';
+import {NgxMaskModule} from 'ngx-mask';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
     {
@@ -27,14 +29,16 @@ const routes: Routes = [
         FormsModule,
         RouterModule.forChild(routes),
         AlertModule.forRoot(),
-        ImageCropperModule
+        ImageCropperModule,
+        NgxMaskModule.forRoot(),
+        ModalModule.forRoot()
     ],
     declarations: [
         ProfileComponent,
         AccountComponent,
     ],
     providers: [
-        ProfileService
+        AccountManagementService
     ],
     exports: [RouterModule]
 })

@@ -1,22 +1,19 @@
-import { OAuthService, JwksValidationHandler } from "angular-oauth2-oidc";
+import { OAuthService } from "angular-oauth2-oidc";
 import { Injectable } from "@angular/core";
-import { of, concat, from, Observable } from "rxjs";
+import { of, from, Observable, defer } from "rxjs";
 import { Router } from "@angular/router";
-import { environment } from "../../../environments/environment";
-import { authConfig } from "../auth/auth.config";
-import { withLatestFrom, map, switchMap, share, tap } from "rxjs/operators";
+import { map, switchMap, share, tap } from "rxjs/operators";
 
-@Injectable({
-    providedIn: 'root' // or 'root' for singleton
-})
+@Injectable()
 export class SettingsService {
 
 
     private user: any;
     public app: any;
     public layout: any;
-    private loadDocumentObservable: Observable<void>;
     doc: any;
+    userProfileObservable: Observable<object>;
+    loadDiscoveryDocumentAndTryLoginObservable: Observable<any>;
 
     constructor(
         private oauthService: OAuthService,
@@ -31,6 +28,12 @@ export class SettingsService {
             docLoaded: false,
         };
 
+        /**
+         * Defer makes promise cold
+         * https://blog.angularindepth.com/observable-frompromise-cold-or-hot-531229818255
+         */
+        this.userProfileObservable = defer(() => from(this.oauthService.loadUserProfile())).pipe(share());
+        this.loadDiscoveryDocumentAndTryLoginObservable = defer(() => from(this.oauthService.loadDiscoveryDocument())).pipe(share()).pipe(tap(a => this.doc = a)).pipe(switchMap(a => this.oauthService.tryLogin())).pipe(map(() => this.doc));
     }
 
     public logout() {
@@ -39,7 +42,7 @@ export class SettingsService {
 
     public loadDiscoveryDocumentAndTryLogin(): Observable<any> {
         if (this.doc == null)
-            return from(this.oauthService.loadDiscoveryDocument()).pipe(share()).pipe(tap(a => this.doc = a)).pipe(switchMap(a => this.oauthService.tryLogin())).pipe(map(() => this.doc));
+            return this.loadDiscoveryDocumentAndTryLoginObservable;
 
         return of(this.doc);
     }
@@ -48,9 +51,13 @@ export class SettingsService {
 
     public getUserProfile(): Observable<object> {
         if (this.user == null) {
-            return from(this.oauthService.loadUserProfile()).pipe(share());
+            return this.userProfileObservable;
         }
         return of(this.user);
+    }
+
+    set userpicture(image: string) {
+        this.user.picture = image;
     }
 
     public login() {
