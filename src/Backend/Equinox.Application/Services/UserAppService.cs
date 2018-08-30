@@ -10,14 +10,14 @@ using Equinox.Domain.Interfaces;
 
 namespace Equinox.Application.Services
 {
-    public class UserManagerAppService : IUserManagerAppService
+    public class UserAppService : IUserAppService
     {
         private readonly IMapper _mapper;
         private readonly IUserService _userService;
         private readonly IEventStoreRepository _eventStoreRepository;
         private readonly IMediatorHandler Bus;
 
-        public UserManagerAppService(IMapper mapper,
+        public UserAppService(IMapper mapper,
             IUserService userService,
             IMediatorHandler bus,
             IEventStoreRepository eventStoreRepository)

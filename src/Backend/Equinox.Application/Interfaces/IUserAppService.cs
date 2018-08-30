@@ -4,7 +4,7 @@ using Equinox.Application.ViewModels;
 
 namespace Equinox.Application.Interfaces
 {
-    public interface IUserManagerAppService : IDisposable
+    public interface IUserAppService : IDisposable
     {
         Task Register(UserViewModel model);
         Task RegisterWithoutPassword(SocialViewModel model);

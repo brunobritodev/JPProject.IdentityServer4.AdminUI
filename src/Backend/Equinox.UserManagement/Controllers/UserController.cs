@@ -4,6 +4,7 @@ using Equinox.Application.ViewModels;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Notifications;
 using Equinox.Infra.CrossCutting.Tools;
+using Equinox.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,14 +13,14 @@ namespace Equinox.UserManagement.Controllers
     [Route("[controller]")]
     public class UserController : ApiController
     {
-        private readonly IUserManagerAppService _userManagerAppService;
+        private readonly IUserAppService _userAppService;
 
         public UserController(
-            IUserManagerAppService userManagerAppService,
+            IUserAppService userAppService,
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator) : base(notifications, mediator)
         {
-            _userManagerAppService = userManagerAppService;
+            _userAppService = userAppService;
         }
 
         [HttpPost, Route("register")]
@@ -31,7 +32,7 @@ namespace Equinox.UserManagement.Controllers
                 return Response(false);
             }
 
-            await _userManagerAppService.Register(model);
+            await _userAppService.Register(model);
 
             return Response(true);
         }
@@ -45,7 +46,7 @@ namespace Equinox.UserManagement.Controllers
                 return Response(false);
             }
 
-            await _userManagerAppService.RegisterWithProvider(model);
+            await _userAppService.RegisterWithProvider(model);
 
             return Response(true);
         }
@@ -53,7 +54,7 @@ namespace Equinox.UserManagement.Controllers
         [HttpGet, Route("checkUsername")]
         public async Task<ActionResult<DefaultResponse<bool>>> CheckUsername(string username)
         {
-            var exist = await _userManagerAppService.CheckUsername(username);
+            var exist = await _userAppService.CheckUsername(username);
 
             return Response(exist);
         }
@@ -61,7 +62,7 @@ namespace Equinox.UserManagement.Controllers
         [HttpGet, Route("checkEmail")]
         public async Task<ActionResult<DefaultResponse<bool>>> CheckEmail(string email)
         {
-            var exist = await _userManagerAppService.CheckUsername(email);
+            var exist = await _userAppService.CheckUsername(email);
 
             return Response(exist);
         }
@@ -75,7 +76,7 @@ namespace Equinox.UserManagement.Controllers
                 return Response(false);
             }
 
-            await _userManagerAppService.SendResetLink(model);
+            await _userAppService.SendResetLink(model);
 
             return Response(true);
         }
@@ -90,7 +91,7 @@ namespace Equinox.UserManagement.Controllers
                 return Response(false);
             }
 
-            await _userManagerAppService.ResetPassword(model);
+            await _userAppService.ResetPassword(model);
 
             return Response(true);
         }
@@ -104,7 +105,7 @@ namespace Equinox.UserManagement.Controllers
                 return Response(false);
             }
 
-            await _userManagerAppService.ConfirmEmail(model);
+            await _userAppService.ConfirmEmail(model);
             return Response(true);
         }
     }

@@ -33,7 +33,7 @@ namespace Equinox.UI.SSO.Controllers.Account
     {
         private readonly IUserManager _userService;
         private readonly SignInManager<UserIdentity> _signInManager;
-        private readonly IUserManagerAppService _userManagerAppService;
+        private readonly IUserAppService _userAppService;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
@@ -44,7 +44,7 @@ namespace Equinox.UI.SSO.Controllers.Account
         public AccountController(
             IUserManager userService,
             SignInManager<UserIdentity> signInManager,
-            IUserManagerAppService userManagerAppService,
+            IUserAppService userAppService,
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
             IAuthenticationSchemeProvider schemeProvider,
@@ -54,7 +54,7 @@ namespace Equinox.UI.SSO.Controllers.Account
         {
             _userService = userService;
             _signInManager = signInManager;
-            _userManagerAppService = userManagerAppService;
+            _userAppService = userAppService;
             _interaction = interaction;
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
@@ -549,7 +549,7 @@ namespace Equinox.UI.SSO.Controllers.Account
                 Provider = provider,
                 ProviderId = providerUserId
             };
-            await _userManagerAppService.RegisterWithoutPassword(user);
+            await _userAppService.RegisterWithoutPassword(user);
 
             return await _userService.FindByProviderAsync(provider, providerUserId);
         }

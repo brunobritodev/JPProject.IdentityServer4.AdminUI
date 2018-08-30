@@ -9,11 +9,7 @@ namespace Equinox.UserManagement.Configuration
         public CustomMappingProfile()
         {
 
-            CreateMap<UserIdentity, UserViewModel>()
-                .ForMember(c => c.Password, o => o.Ignore())
-                .ForMember(c => c.ConfirmPassword, o => o.Ignore())
-                .ForMember(c => c.Provider, o => o.Ignore())
-                .ForMember(c => c.ProviderId, o => o.Ignore());
+            CreateMap<UserIdentity, ProfileViewModel>();
         }
     }
 }

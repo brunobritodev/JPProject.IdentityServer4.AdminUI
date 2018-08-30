@@ -14,6 +14,7 @@ using Equinox.Infra.CrossCutting.Identity.Authorization;
 using Equinox.Infra.CrossCutting.Identity.Models;
 using Equinox.Infra.CrossCutting.Identity.Services;
 using Equinox.Infra.CrossCutting.Tools;
+using Equinox.Infra.CrossCutting.Tools.Serializer;
 using Equinox.Infra.Data.Context;
 using Equinox.Infra.Data.EventSourcing;
 using Equinox.Infra.Data.Repository;
