@@ -12,48 +12,86 @@
     <div class="row justify-content-center">
         <div class="col-lg-5 col-md-5">
             <div class="card b">
-                <div class="card-header bg-gray-lighter text-bold">Account</div>
+                <div class="card-header bg-primary text-bold">Account</div>
                 <div class="card-body">
-                    <div [hidden]="!errors.length">
-                        <alert *ngFor="let alert of errors;let i = index" type="danger">
-                            <span>{{alert}}</span>
+                    <div *ngIf="errors.length > 0">
+                        <alert type="danger">
+                            <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
                         </alert>
                     </div>
-                    <div class="form-group">
-                        <label>Current password</label>
-                        <input class="form-control" type="password" [(ngModel)]="changePass.oldPassword" />
-                    </div>
-                    <div class="form-group">
-                        <label>New password</label>
-                        <input class="form-control" type="password" [(ngModel)]="changePass.newPassword" />
-                    </div>
-                    <div class="form-group">
-                        <label>Confirm new password</label>
-                        <input class="form-control" type="password" [(ngModel)]="changePass.confirmPassword" />
-                    </div>
-                    <button class="btn btn-primary" type="button" (click)="ChangePassword()" *ngIf="!changingPassword">Update password</button>
-                    <div class="profile-loader d-flex align-items-center justify-content-center" *ngIf="changingPassword">
-                        <div class="ball-clip-rotate-pulse">
-                            <div></div>
-                            <div></div>
+                    <div *ngIf="hasPassword">
+                        <div class="form-group">
+                            <label>Current password</label>
+                            <input class="form-control" type="password" autocomplete="current-password" [(ngModel)]="changePass.oldPassword" />
+                        </div>
+                        <div class="form-group">
+                            <label>New password</label>
+                            <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="changePass.newPassword" />
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm new password</label>
+                            <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="changePass.confirmPassword" />
+                        </div>
+                        <button class="btn btn-primary" type="button" (click)="changePassword()" *ngIf="!changingPassword">Update
+                            password
+                        </button>
+                        <div class="progress mb-3" *ngIf="changingPassword">
+                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
-                    
+                    <div *ngIf="!hasPassword">
+
+                        <div class="form-group">
+                            <label>New password</label>
+                            <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="setPassword.newPassword" />
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm new password</label>
+                            <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="setPassword.confirmPassword" />
+                        </div>
+                        <button class="btn btn-primary" type="button" (click)="createPassword()" *ngIf="!changingPassword">Create
+                            password
+                        </button>
+                        <div class="progress mb-3" *ngIf="changingPassword">
+                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-5 col-md-5">
             <div class="card b">
                 <div class="card-header bg-danger text-bold">Delete account</div>
                 <div class="card-body bt">
                     <p>You will be asked for confirmation before delete account.</p>
-                    <button class="btn btn-danger" type="button">
-                        <span (click)="DeleteAccount()">Delete account</span>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" (click)="dangerModal.show()">
+                        Delete account
                     </button>
-                    <p>
-                        <small class="text-muted">* Just grocery</small>
-                    </p>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
+<div bsModal #dangerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-danger" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Remove Account</h4>
+                <button type="button" class="close" (click)="dangerModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure?&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="dangerModal.hide()">No</button>
+                <button type="button" class="btn btn-danger" (click)="removeAccount()">Yes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

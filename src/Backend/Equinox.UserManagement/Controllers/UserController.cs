@@ -108,5 +108,7 @@ namespace Equinox.UserManagement.Controllers
             await _userAppService.ConfirmEmail(model);
             return Response(true);
         }
+
+        
     }
 }

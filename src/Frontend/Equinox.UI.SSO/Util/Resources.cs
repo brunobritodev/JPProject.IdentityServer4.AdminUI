@@ -46,7 +46,7 @@ namespace Equinox.UI.SSO.Util
                                         IdentityServerConstants.StandardScopes.OpenId,
                                         IdentityServerConstants.StandardScopes.Profile,
                                         IdentityServerConstants.StandardScopes.Email,
-                                        JwtClaimTypes.Picture,
+                                        
                                     },
 
                                     Scopes =

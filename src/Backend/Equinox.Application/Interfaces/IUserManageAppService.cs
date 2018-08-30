@@ -11,5 +11,6 @@ namespace Equinox.Application.Interfaces
         Task ChangePassword(ChangePasswordViewModel model);
         Task CreatePassword(SetPasswordViewModel model);
         Task RemoveAccount(RemoveAccountViewModel model);
+        Task<bool> HasPassword(Guid userId);
     }
 }
