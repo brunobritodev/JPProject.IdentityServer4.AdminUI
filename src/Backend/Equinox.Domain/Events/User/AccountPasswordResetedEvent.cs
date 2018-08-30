@@ -3,16 +3,16 @@ using Equinox.Domain.Core.Events;
 
 namespace Equinox.Domain.Events.User
 {
-    public class ResetLinkGenerated : Event
+    public class AccountPasswordResetedEvent : Event
     {
         public string Email { get; }
-        public string Username { get; }
+        public string Code { get; }
 
-        public ResetLinkGenerated(Guid aggregateId, string email, string username)
+        public AccountPasswordResetedEvent(Guid aggregateId, string email, string code)
         {
             AggregateId = aggregateId;
             Email = email;
-            Username = username;
+            Code = code;
         }
     }
 }

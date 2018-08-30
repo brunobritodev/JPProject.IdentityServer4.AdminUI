@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Equinox.Domain.Core.Notifications;
 
-namespace Equinox.Infra.CrossCutting.Tools
+namespace Equinox.Infra.CrossCutting.Tools.Model
 {
     public class DefaultResponse<T>
     {

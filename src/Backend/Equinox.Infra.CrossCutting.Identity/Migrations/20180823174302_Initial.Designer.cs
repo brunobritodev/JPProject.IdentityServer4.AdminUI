@@ -38,7 +38,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
-                    b.Property<bool>("EmailConfirmed");
+                    b.Property<bool>("EmailConfirmedEvent");
 
                     b.Property<string>("JobTitle");
 

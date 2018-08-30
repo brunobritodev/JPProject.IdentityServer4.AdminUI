@@ -23,7 +23,6 @@ namespace Equinox.Domain.CommandHandlers
         IRequestHandler<ResetPasswordCommand>,
         IRequestHandler<ConfirmEmailCommand>
     {
-        private readonly IMediatorHandler _bus;
         private readonly IUserService _userService;
 
         public UserCommandHandler(
@@ -32,7 +31,6 @@ namespace Equinox.Domain.CommandHandlers
             INotificationHandler<DomainNotification> notifications,
             IUserService userService) : base(uow, bus, notifications)
         {
-            _bus = bus;
             _userService = userService;
         }
 
@@ -56,7 +54,7 @@ namespace Equinox.Domain.CommandHandlers
 
             var id = await _userService.CreateUserWithPass(user, request.Password);
             if (id.HasValue)
-                await _bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
+                await Bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(RegisterNewUserWithoutPassCommand request, CancellationToken cancellationToken)
@@ -79,7 +77,7 @@ namespace Equinox.Domain.CommandHandlers
 
             var id = await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
             if (id.HasValue)
-                await _bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
+                await Bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(RegisterNewUserWithProviderCommand request, CancellationToken cancellationToken)
@@ -100,7 +98,7 @@ namespace Equinox.Domain.CommandHandlers
             };
             var id = await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
             if (id.HasValue)
-                await _bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
+                await Bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(SendResetLinkCommand request, CancellationToken cancellationToken)
@@ -114,7 +112,7 @@ namespace Equinox.Domain.CommandHandlers
             var emailSent = await _userService.SendResetLink(request.Email, request.Username);
 
             if (emailSent.HasValue)
-                await _bus.RaiseEvent(new ResetLinkGenerated(emailSent.Value, request.Email, request.Username));
+                await Bus.RaiseEvent(new ResetLinkGeneratedEvent(emailSent.Value, request.Email, request.Username));
         }
 
         public async Task Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
@@ -125,10 +123,10 @@ namespace Equinox.Domain.CommandHandlers
                 return;
             }
 
-            var emailSent = await _userService.ResetPassword(request.Email, request.Password, request.Code);
+            var emailSent = await _userService.ResetPassword(request);
 
             if (emailSent.HasValue)
-                await _bus.RaiseEvent(new AccountPasswordReseted(emailSent.Value, request.Email, request.Code));
+                await Bus.RaiseEvent(new AccountPasswordResetedEvent(emailSent.Value, request.Email, request.Code));
         }
 
         public async Task Handle(ConfirmEmailCommand request, CancellationToken cancellationToken)
@@ -140,6 +138,8 @@ namespace Equinox.Domain.CommandHandlers
             }
 
             var result = await _userService.ConfirmEmailAsync(request.Email, request.Code);
+            if (result.HasValue)
+                await Bus.RaiseEvent(new EmailConfirmedEvent(request.Email, request.Code, result.Value));
         }
     }
 

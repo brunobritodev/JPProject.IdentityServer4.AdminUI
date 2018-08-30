@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Equinox.Domain.Commands.User;
+using Equinox.Domain.Commands.UserManagement;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Notifications;
 using Equinox.Domain.Interfaces;
@@ -169,16 +172,16 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             return user.Id;
         }
 
-        public async Task<Guid?> ResetPassword(string email, string requestPassword, string requestCode)
+        public async Task<Guid?> ResetPassword(ResetPasswordCommand request)
         {
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
                 return null;
             }
 
-            var result = await _userManager.ResetPasswordAsync(user, requestCode, requestPassword);
+            var result = await _userManager.ResetPasswordAsync(user, request.Code, request.Password);
 
             if (result.Succeeded)
             {
@@ -215,6 +218,114 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             }
 
             return null;
+        }
+
+        public async Task<bool> UpdateProfileAsync(UpdateProfileCommand command)
+        {
+            var user = await _userManager.FindByIdAsync(command.Id.ToString());
+
+            user.Name = command.Name;
+            user.Bio = command.Bio;
+            user.Company = command.Company;
+            user.JobTitle = command.JobTitle;
+            user.Url = command.Url;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                var claims = await _userManager.GetClaimsAsync(user);
+                if (!user.Name.Equals(command.Name))
+                    await AddOrUpdateClaimAsync(user, claims, JwtClaimTypes.Name, user.Name);
+
+                return true;
+            }
+
+
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return false;
+        }
+
+        public async Task<bool> UpdateProfilePictureAsync(UpdateProfilePictureCommand command)
+        {
+            var user = await _userManager.FindByIdAsync(command.Id.ToString());
+
+            user.Picture = command.Picture;
+
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                var claims = await _userManager.GetClaimsAsync(user);
+                await AddOrUpdateClaimAsync(user, claims, JwtClaimTypes.Picture, user.Picture);
+                return true;
+            }
+
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return false;
+        }
+
+        private async Task AddOrUpdateClaimAsync(UserIdentity user, IEnumerable<Claim> claims, string key, string value)
+        {
+            var customClaim = claims.FirstOrDefault(a => a.Type == key);
+            if (customClaim != null)
+                await _userManager.RemoveClaimAsync(user, customClaim);
+
+            await _userManager.AddClaimAsync(user, new Claim(key, value));
+        }
+
+        public async Task<bool> CreatePasswordAsync(SetPasswordCommand request)
+        {
+            var user = await _userManager.FindByIdAsync(request.Id.Value.ToString());
+            var result = await _userManager.AddPasswordAsync(user, request.Password);
+            if (result.Succeeded)
+                return true;
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return false;
+        }
+
+        public async Task<bool> ChangePasswordAsync(ChangePasswordCommand request)
+        {
+            var user = await _userManager.FindByIdAsync(request.Id.Value.ToString());
+            var result = await _userManager.ChangePasswordAsync(user, request.OldPassword, request.Password);
+            if (result.Succeeded)
+                return true;
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return false;
+        }
+
+        public async Task<bool> RemoveAccountAsync(RemoveAccountCommand request)
+        {
+            var user = await _userManager.FindByIdAsync(request.Id.Value.ToString());
+            var result = await _userManager.DeleteAsync(user);
+            if (result.Succeeded)
+                return true;
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return false;
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)

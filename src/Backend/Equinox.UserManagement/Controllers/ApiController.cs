@@ -5,6 +5,7 @@ using System.Security.Claims;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Notifications;
 using Equinox.Infra.CrossCutting.Tools;
+using Equinox.Infra.CrossCutting.Tools.Model;
 using IdentityModel;
 using MediatR;
 using Microsoft.AspNetCore.Identity;

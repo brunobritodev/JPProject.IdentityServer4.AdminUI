@@ -12,7 +12,8 @@ namespace Equinox.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<ICustomerAppService, CustomerAppService>();
-            services.AddScoped<IUserManagerAppService, UserManagerAppService>();
+            services.AddScoped<IUserAppService, UserAppService>();
+            services.AddScoped<IUserManageAppService, UserManagerAppService>();
         }
     }
 }

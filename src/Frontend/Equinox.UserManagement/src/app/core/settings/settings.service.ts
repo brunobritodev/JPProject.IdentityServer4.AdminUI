@@ -4,7 +4,7 @@ import { of, concat, from, Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { environment } from "../../../environments/environment";
 import { authConfig } from "../auth/auth.config";
-import { withLatestFrom, map, switchMap, share } from "rxjs/operators";
+import { withLatestFrom, map, switchMap, share, tap } from "rxjs/operators";
 
 @Injectable({
     providedIn: 'root' // or 'root' for singleton
@@ -16,6 +16,7 @@ export class SettingsService {
     public app: any;
     public layout: any;
     private loadDocumentObservable: Observable<void>;
+    doc: any;
 
     constructor(
         private oauthService: OAuthService,
@@ -35,6 +36,15 @@ export class SettingsService {
     public logout() {
         this.oauthService.logOut();
     }
+
+    public loadDiscoveryDocumentAndTryLogin(): Observable<any> {
+        if (this.doc == null)
+            return from(this.oauthService.loadDiscoveryDocument()).pipe(share()).pipe(tap(a => this.doc = a)).pipe(switchMap(a => this.oauthService.tryLogin())).pipe(map(() => this.doc));
+
+        return of(this.doc);
+    }
+
+    public setDoc(doc: any) { this.doc = doc; }
 
     public getUserProfile(): Observable<object> {
         if (this.user == null) {

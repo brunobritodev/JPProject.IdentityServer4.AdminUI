@@ -7,7 +7,6 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { AccountComponent } from './account/account.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ProfileService } from './profile/profile.service';
-import { ImageCropperComponent, CropperSettings } from "ngx-img-cropper";
 
 const routes: Routes = [
     {
@@ -33,7 +32,6 @@ const routes: Routes = [
     declarations: [
         ProfileComponent,
         AccountComponent,
-        ImageCropperComponent
     ],
     providers: [
         ProfileService
