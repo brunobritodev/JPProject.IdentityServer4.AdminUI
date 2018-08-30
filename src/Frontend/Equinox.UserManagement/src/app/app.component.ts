@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
         this.settingsService.loadDiscoveryDocumentAndTryLogin().pipe(tap(doc => {
             if (!environment.production)
                 console.log(doc);
-        }));
+        })).subscribe();
         // this.oauthService.loadDiscoveryDocument().then(doc => {
         //     if (!environment.production)
         //     console.log(doc);
