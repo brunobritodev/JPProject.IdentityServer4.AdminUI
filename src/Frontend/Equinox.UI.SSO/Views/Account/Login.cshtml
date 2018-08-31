@@ -3,52 +3,55 @@
 @{
     Layout = "~/Views/Shared/_LayoutExt.cshtml";
 }
-<br class="d-md-none"/>
+<br class="d-md-none" />
 <div class="row justify-content-center">
     <div class="col-md-8">
         @await Html.PartialAsync("_ValidationSummary")
         <div class="card-group">
-            <div class="card p-4">
-                <div class="card-body">
-                    <h1>Login</h1>
-                    <p class="text-muted">Sign In to your account</p>
-                    <form asp-route="Login">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="icon-user"></i>
-                                </span>
+            @if (Model.EnableLocalLogin)
+            {
+                <div class="card p-4">
+                    <div class="card-body">
+                        <h1>Login</h1>
+                        <p class="text-muted">Sign In to your account</p>
+                        <form asp-route="Login">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-user"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
                             </div>
-                            <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
-                        </div>
-                        <div class="input-group mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="icon-lock"></i>
-                                </span>
-                            </div>
-                            <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
-                        </div>
-                        @if (Model.AllowRememberLogin)
-                        {
                             <div class="input-group mb-4">
-                                <label asp-for="RememberLogin">
-                                    <input asp-for="RememberLogin">
-                                    <strong>Remember My Login</strong>
-                                </label>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-lock"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
                             </div>
-                        }
-                        <div class="row">
-                            <div class="col-6">
-                                <button class="btn btn-primary px-4" name="button" value="login">Login</button>
+                            @if (Model.AllowRememberLogin)
+                            {
+                                <div class="input-group mb-4">
+                                    <label asp-for="RememberLogin">
+                                        <input asp-for="RememberLogin">
+                                        <strong>Remember My Login</strong>
+                                    </label>
+                                </div>
+                            }
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-primary px-4" name="button" value="login">Login</button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a class="btn btn-link px-0" asp-action="ForgotPassword">Forgot password?</a>
+                                </div>
                             </div>
-                            <div class="col-6 text-right">
-                                <a class="btn btn-link px-0" asp-action="ForgotPassword">Forgot password?</a>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            }
             <div class="card text-white bg-primary p-4">
                 <div class="card-body text-center">
 
