@@ -13512,3 +13512,339 @@ WHERE [e].[Id] = @__get_Item_0
 2018-08-31 02:42:36.476 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Equinox.Application.EventSourcedNormalizers.EventHistoryData, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
 2018-08-31 02:42:36.479 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement) in 11.8352ms
 2018-08-31 02:42:36.482 -03:00 [INF] Request finished in 77.8771ms 200 application/json; charset=utf-8
+2018-08-31 16:02:51.597 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-31 16:02:52.568 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:02:52.568 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:02:53.404 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-31 16:02:53.493 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:53.524 -03:00 [INF] Request finished in 120.4597ms 200 text/html
+2018-08-31 16:02:53.572 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/swagger-ui-standalone-preset.js  
+2018-08-31 16:02:53.576 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/swagger-ui.css  
+2018-08-31 16:02:53.576 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/swagger-ui-bundle.js  
+2018-08-31 16:02:53.576 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:53.595 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:53.595 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:53.636 -03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2018-08-31 16:02:53.638 -03:00 [INF] Request finished in 62.2742ms 200 text/css
+2018-08-31 16:02:53.650 -03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2018-08-31 16:02:53.657 -03:00 [INF] Request finished in 85.2058ms 200 application/javascript
+2018-08-31 16:02:53.782 -03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2018-08-31 16:02:53.787 -03:00 [INF] Request finished in 211.3607ms 200 application/javascript
+2018-08-31 16:02:54.104 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-31 16:02:54.105 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:54.138 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-32x32.png  
+2018-08-31 16:02:54.139 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:54.142 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-08-31 16:02:54.144 -03:00 [INF] Request finished in 5.5897ms 200 image/png
+2018-08-31 16:02:54.147 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/favicon-16x16.png  
+2018-08-31 16:02:54.153 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:02:54.155 -03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2018-08-31 16:02:54.157 -03:00 [INF] Request finished in 10.1813ms 200 image/png
+2018-08-31 16:02:54.280 -03:00 [INF] Request finished in 176.1487ms 200 application/json;charset=utf-8
+2018-08-31 16:03:28.528 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-08-31 16:03:28.531 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:28.536 -03:00 [INF] Request finished in 7.6977ms 204 
+2018-08-31 16:03:28.543 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-08-31 16:03:28.544 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:28.808 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:28.811 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:28.841 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 16:03:28.855 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:28.967 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:29.083 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/has-password  
+2018-08-31 16:03:29.084 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:29.085 -03:00 [INF] Request finished in 2.3907ms 204 
+2018-08-31 16:03:29.096 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/has-password  
+2018-08-31 16:03:29.097 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:29.158 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:29.159 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:29.165 -03:00 [INF] Route matched with {action = "HasPassword", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement)
+2018-08-31 16:03:29.166 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:29.181 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:29.471 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:29.471 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:29.815 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:29.815 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:29.920 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 735.3354ms.
+2018-08-31 16:03:29.927 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 954.0384ms.
+2018-08-31 16:03:29.932 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 16:03:29.932 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-31 16:03:29.942 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-08-31 16:03:29.942 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:29.943 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement) in 773.0258ms
+2018-08-31 16:03:29.943 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 1095.7215ms
+2018-08-31 16:03:29.950 -03:00 [INF] Request finished in 853.0866ms 200 application/json; charset=utf-8
+2018-08-31 16:03:29.950 -03:00 [INF] Request finished in 1406.653ms 200 application/json; charset=utf-8
+2018-08-31 16:03:29.993 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:29.994 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:29.996 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 16:03:29.997 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:30.004 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:30.006 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:30.015 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:30.018 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.010900000000001ms.
+2018-08-31 16:03:30.019 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 16:03:30.020 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 23.1126ms
+2018-08-31 16:03:30.023 -03:00 [INF] Request finished in 81.0314ms 200 application/json; charset=utf-8
+2018-08-31 16:03:30.073 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-08-31 16:03:30.075 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:30.184 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:30.185 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:30.186 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 16:03:30.187 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:30.188 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:30.190 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:30.194 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:30.198 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.3821000000000012ms.
+2018-08-31 16:03:30.199 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 16:03:30.200 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 13.6433ms
+2018-08-31 16:03:30.202 -03:00 [INF] Request finished in 129.0802ms 200 application/json; charset=utf-8
+2018-08-31 16:03:31.224 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/has-password  
+2018-08-31 16:03:31.224 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-08-31 16:03:31.225 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:31.228 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:31.287 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:31.287 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:31.289 -03:00 [INF] Route matched with {action = "HasPassword", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement)
+2018-08-31 16:03:31.290 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:31.293 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:31.297 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:31.302 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:31.303 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:31.309 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.3338ms.
+2018-08-31 16:03:31.314 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:31.318 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-31 16:03:31.319 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 16:03:31.320 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement) in 29.9969ms
+2018-08-31 16:03:31.321 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:31.323 -03:00 [INF] Request finished in 98.7286ms 200 application/json; charset=utf-8
+2018-08-31 16:03:31.329 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:31.331 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:31.334 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:31.338 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.9853000000000005ms.
+2018-08-31 16:03:31.339 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 16:03:31.340 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 19.0836ms
+2018-08-31 16:03:31.342 -03:00 [INF] Request finished in 118.109ms 200 application/json; charset=utf-8
+2018-08-31 16:03:31.798 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/logs  
+2018-08-31 16:03:31.801 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:31.804 -03:00 [INF] Request finished in 5.4994ms 204 
+2018-08-31 16:03:31.806 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/logs  
+2018-08-31 16:03:31.807 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:31.860 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:31.861 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:31.863 -03:00 [INF] Route matched with {action = "GetLogs", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement)
+2018-08-31 16:03:31.864 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:31.866 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:31.944 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 76.1421ms.
+2018-08-31 16:03:31.946 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Equinox.Application.EventSourcedNormalizers.EventHistoryData, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-31 16:03:31.950 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement) in 85.6842ms
+2018-08-31 16:03:31.952 -03:00 [INF] Request finished in 146.0761ms 200 application/json; charset=utf-8
+2018-08-31 16:03:36.954 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-08-31 16:03:36.955 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:36.957 -03:00 [INF] Request finished in 3.104ms 204 
+2018-08-31 16:03:36.961 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-08-31 16:03:36.962 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:37.032 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:37.033 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:37.035 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 16:03:37.036 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:37.039 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:37.041 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:37.051 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:37.054 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14.127500000000001ms.
+2018-08-31 16:03:37.056 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 16:03:37.057 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 20.7682ms
+2018-08-31 16:03:37.058 -03:00 [INF] Request finished in 97.1954ms 200 application/json; charset=utf-8
+2018-08-31 16:03:37.624 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-08-31 16:03:37.624 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/has-password  
+2018-08-31 16:03:37.625 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:37.626 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:37.631 -03:00 [INF] Request finished in 6.9887ms 204 
+2018-08-31 16:03:37.636 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/has-password  
+2018-08-31 16:03:37.638 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:37.684 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:37.684 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:37.685 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 16:03:37.686 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:37.688 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:37.690 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:37.693 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:37.694 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:37.695 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:37.695 -03:00 [INF] Route matched with {action = "HasPassword", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement)
+2018-08-31 16:03:37.701 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 11.7399ms.
+2018-08-31 16:03:37.702 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:37.705 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 16:03:37.706 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:37.707 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 20.5758ms
+2018-08-31 16:03:37.709 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 16:03:37.710 -03:00 [INF] Request finished in 85.3845ms 200 application/json; charset=utf-8
+2018-08-31 16:03:37.714 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 16:03:37.717 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.6187ms.
+2018-08-31 16:03:37.718 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-31 16:03:37.719 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.HasPassword (Equinox.UserManagement) in 17.2067ms
+2018-08-31 16:03:37.720 -03:00 [INF] Request finished in 84.5189ms 200 application/json; charset=utf-8
+2018-08-31 16:03:39.062 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/logs  
+2018-08-31 16:03:39.063 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:39.067 -03:00 [INF] Request finished in 5.1391ms 204 
+2018-08-31 16:03:39.069 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/logs  
+2018-08-31 16:03:39.070 -03:00 [INF] Policy execution successful.
+2018-08-31 16:03:39.117 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-08-31 16:03:39.117 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 16:03:39.118 -03:00 [INF] Route matched with {action = "GetLogs", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement)
+2018-08-31 16:03:39.119 -03:00 [INF] Authorization was successful.
+2018-08-31 16:03:39.121 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 16:03:39.124 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.6631ms.
+2018-08-31 16:03:39.127 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Equinox.Application.EventSourcedNormalizers.EventHistoryData, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-08-31 16:03:39.129 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.GetLogs (Equinox.UserManagement) in 9.951ms
+2018-08-31 16:03:39.132 -03:00 [INF] Request finished in 63.4581ms 200 application/json; charset=utf-8
+2018-08-31 16:11:07.442 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-31 16:11:08.102 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:11:08.102 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:11:08.727 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-31 16:11:08.749 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:11:08.770 -03:00 [INF] Request finished in 44.065ms 200 text/html
+2018-08-31 16:11:09.278 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-31 16:11:09.279 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:11:09.431 -03:00 [INF] Request finished in 153.0382ms 200 application/json;charset=utf-8
+2018-08-31 16:12:06.038 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-31 16:12:06.834 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:12:06.834 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:12:07.320 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-31 16:12:07.341 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:12:07.360 -03:00 [INF] Request finished in 40.2969ms 200 text/html
+2018-08-31 16:12:07.729 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-31 16:12:07.730 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:12:07.889 -03:00 [INF] Request finished in 159.9786ms 200 application/json;charset=utf-8
+2018-08-31 16:15:20.778 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-31 16:15:21.345 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:15:21.345 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 16:15:21.953 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-31 16:15:21.976 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:15:21.994 -03:00 [INF] Request finished in 42.6935ms 200 text/html
+2018-08-31 16:15:22.354 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-31 16:15:22.355 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 16:15:22.549 -03:00 [INF] Request finished in 195.0845ms 200 application/json;charset=utf-8
