@@ -64,6 +64,8 @@ import { ChartsModule } from "ng2-charts/ng2-charts";
 import { OAuthModule, OAuthStorage } from "angular-oauth2-oidc";
 import { CoreModule } from "./core/core.module";
 import { AuthInterceptor } from "./core/interceptors/AuthInterceptor";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
     imports: [
@@ -76,6 +78,8 @@ import { AuthInterceptor } from "./core/interceptors/AuthInterceptor";
             }
         }),
         CoreModule.forRoot(),
+        BrowserAnimationsModule, 
+        ToastrModule.forRoot(),
         AppRoutingModule,
         AppAsideModule,
         AppBreadcrumbModule.forRoot(),

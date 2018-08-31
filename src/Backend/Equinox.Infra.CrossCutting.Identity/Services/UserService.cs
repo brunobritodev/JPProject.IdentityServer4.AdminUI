@@ -13,7 +13,6 @@ using Equinox.Domain.Interfaces;
 using Equinox.Domain.Models;
 using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
 using Equinox.Infra.CrossCutting.Identity.Extensions;
-using IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -75,6 +74,14 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
                 Picture = user.Picture
             };
             IdentityResult result;
+
+            if (!string.IsNullOrEmpty(provider))
+            {
+                var userByProvider = await _userManager.FindByLoginAsync(provider, providerId);
+                if (userByProvider != null)
+                    await _bus.RaiseEvent(new DomainNotification("1001", $"User already taken with {provider}"));
+            }
+
             if (string.IsNullOrWhiteSpace(password))
                 result = await _userManager.CreateAsync(newUser);
             else
@@ -101,7 +108,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
 
                 if (!string.IsNullOrEmpty(provider))
                     _logger.LogInformation($"Provider {provider} associated.");
-                return user.Id;
+                return newUser.Id;
             }
 
             foreach (var error in result.Errors)
@@ -115,11 +122,11 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
         private async Task AddClaims(UserIdentity user)
         {
             var claims = new List<Claim>();
-            claims.Add(new Claim(JwtClaimTypes.Name, user.Name));
-            claims.Add(new Claim(JwtClaimTypes.Email, user.Email));
+            claims.Add(new Claim("anme", user.Name));
+            claims.Add(new Claim("email", user.Email));
 
             if (!string.IsNullOrEmpty(user.Picture))
-                claims.Add(new Claim(JwtClaimTypes.Picture, user.Picture));
+                claims.Add(new Claim("picture", user.Picture));
 
             var identityResult = await _userManager.AddClaimsAsync(user, claims);
         }
@@ -236,7 +243,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             {
                 var claims = await _userManager.GetClaimsAsync(user);
                 if (!user.Name.Equals(command.Name))
-                    await AddOrUpdateClaimAsync(user, claims, JwtClaimTypes.Name, user.Name);
+                    await AddOrUpdateClaimAsync(user, claims, "name", user.Name);
 
                 return true;
             }
@@ -262,7 +269,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Services
             if (result.Succeeded)
             {
                 var claims = await _userManager.GetClaimsAsync(user);
-                await AddOrUpdateClaimAsync(user, claims, JwtClaimTypes.Picture, user.Picture);
+                await AddOrUpdateClaimAsync(user, claims, "picture", user.Picture);
                 return true;
             }
 

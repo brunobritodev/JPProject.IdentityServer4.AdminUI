@@ -10,10 +10,17 @@ namespace Equinox.Domain.EventHandlers
 {
     
     public class UserEventHandler :
-        INotificationHandler<UserRegisteredeEvent>
+        INotificationHandler<UserRegisteredEvent>,
+        INotificationHandler<EmailConfirmedEvent>
     {
-        public Task Handle(UserRegisteredeEvent notification, CancellationToken cancellationToken)
+        public Task Handle(UserRegisteredEvent notification, CancellationToken cancellationToken)
         {
+            return Task.CompletedTask;
+        }
+
+        public Task Handle(EmailConfirmedEvent notification, CancellationToken cancellationToken)
+        {
+            // Send some e-mail. Alert admin
             return Task.CompletedTask;
         }
     }

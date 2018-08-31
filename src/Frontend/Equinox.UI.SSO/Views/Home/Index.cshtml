@@ -31,7 +31,13 @@
         <div class="card p-8">
             <div class="card-body">
                 <div class="clearfix">
-                    <img class="icon" src="@Url.Content("~/images/brand/logo.png")">
+                    <div class="d-none d-lg-block">
+                        <img class="icon" src="@Url.Content("~/images/brand/logo.png")">
+                    </div>
+                    <div class="d-lg-none text-center">
+                        <img class="icon" src="@Url.Content("~/images/brand/logo-min.png")">
+                    </div>
+
                     <h4 class="pt-3">Welcome to JP Project SSO.</h4>
                     <p class="text-muted">A Single Sign On Server, User Management and Admin for ID4.</p>
                 </div>

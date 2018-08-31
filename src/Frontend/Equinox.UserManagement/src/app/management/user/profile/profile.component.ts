@@ -4,6 +4,7 @@ import { SettingsService } from '../../../core/settings/settings.service';
 import { ProfilePictureViewModel } from '../../../shared/view-model/file-upload.model';
 import { DefaultResponse } from '../../../shared/view-model/default-response.model';
 import { AccountManagementService } from '../account-management.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     templateUrl: 'profile.component.html',
@@ -23,7 +24,11 @@ export class ProfileComponent implements OnInit {
     updatingImage: boolean;
     userProfile: object;
 
-    constructor(private settings: SettingsService, private profileService: AccountManagementService) {
+    constructor(
+        private settings: SettingsService, 
+        private profileService: AccountManagementService,
+        private toastr: ToastrService
+    ) {
 
     }
 
@@ -70,13 +75,14 @@ export class ProfileComponent implements OnInit {
         this.updatingImage = true;
         await this.profileService.updatePicture(this.fileData).toPromise();
         this.user.picture = this.croppedImage;
+        this.toastr.success('Picture updated, refresh browser!', 'Success!');
         this.updatingImage = false;
     }
 
     public async updateProfile() {
         this.updatingProfile = true;
         await this.profileService.update(this.user).toPromise();
-
+        this.toastr.success('Profile Updated!', 'Success!');
         this.updatingProfile = false;
     }
 }

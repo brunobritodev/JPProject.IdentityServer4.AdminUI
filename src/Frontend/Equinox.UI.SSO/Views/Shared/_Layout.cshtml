@@ -26,13 +26,22 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed">
     <header class="app-header navbar">
         <a class="navbar-brand" href="#">
-            <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo.png")" height="40" alt="JP Logo">
-            <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo-min.png")" width="40" alt="JP Logo">
+            <div class="d-none d-lg-block">
+                <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo.png")" height="40" alt="JP Logo">
+                <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo.png")" width="40" alt="JP Logo">
+            </div>
+            <div class="d-lg-none text-left">
+                <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo-min.png")" height="40" alt="JP Logo">
+                <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo-min.png")" width="40" alt="JP Logo">
+            </div>
         </a>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link d-none d-md-block" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img class="img-avatar" src="@Url.Content(image)" alt="@name">@name
+                </a>
+                <a class="nav-link d-md-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="img-avatar" src="@Url.Content(image)" alt="@name">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="dropdown-header text-center">

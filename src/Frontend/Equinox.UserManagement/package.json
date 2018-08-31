@@ -3,17 +3,11 @@
   "version": "2.0.0-rc.4",
   "description": "CoreUI Free Angular 2+ Admin Template",
   "author": {
-    "name": "Łukasz Holeczek",
-    "url": "http://holeczek.pl",
-    "github": "https://github.com/mrholek",
-    "twitter": "https://twitter.com/lukaszholeczek"
+    "name": "Bruno Brito",
+    "url": "http://www.brunobrito.net.br",
+    "github": "https://github.com/brunohbrito",
+    "facebook": "https://www.facebook.com/brunohbrito"
   },
-  "contributors": [
-    {
-      "name": "Andrzej Kopański",
-      "url": "https://github.com/xidedix"
-    }
-  ],
   "homepage": "https://coreui.io/angular",
   "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
   "license": "MIT",
@@ -47,6 +41,7 @@
     "core-js": "^2.5.7",
     "flag-icon-css": "^3.0.0",
     "font-awesome": "^4.7.0",
+    "hoek": "^5.0.4",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "mutationobserver-shim": "^0.3.2",
@@ -55,6 +50,7 @@
     "ngx-image-cropper": "^1.0.2",
     "ngx-mask": "^6.1.2",
     "ngx-perfect-scrollbar": "^6.3.0",
+    "ngx-toastr": "^9.0.2",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2",
     "simple-line-icons": "^2.4.1",

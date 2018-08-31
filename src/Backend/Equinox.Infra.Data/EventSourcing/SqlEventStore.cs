@@ -23,7 +23,7 @@ namespace Equinox.Infra.Data.EventSourcing
             var storedEvent = new StoredEvent(
                 theEvent,
                 serializedData,
-                _systemUser.Name);
+                _systemUser.Username);
 
             _eventStoreRepository.Store(storedEvent);
         }

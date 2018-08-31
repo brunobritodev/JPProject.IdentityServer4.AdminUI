@@ -54,7 +54,7 @@ namespace Equinox.Domain.CommandHandlers
 
             var id = await _userService.CreateUserWithPass(user, request.Password);
             if (id.HasValue)
-                await Bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
+                await Bus.RaiseEvent(new UserRegisteredEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(RegisterNewUserWithoutPassCommand request, CancellationToken cancellationToken)
@@ -77,7 +77,7 @@ namespace Equinox.Domain.CommandHandlers
 
             var id = await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
             if (id.HasValue)
-                await Bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
+                await Bus.RaiseEvent(new UserRegisteredEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(RegisterNewUserWithProviderCommand request, CancellationToken cancellationToken)
@@ -98,7 +98,7 @@ namespace Equinox.Domain.CommandHandlers
             };
             var id = await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
             if (id.HasValue)
-                await Bus.RaiseEvent(new UserRegisteredeEvent(id.Value, user.Name, user.Email));
+                await Bus.RaiseEvent(new UserRegisteredEvent(id.Value, user.Name, user.Email));
         }
 
         public async Task Handle(SendResetLinkCommand request, CancellationToken cancellationToken)

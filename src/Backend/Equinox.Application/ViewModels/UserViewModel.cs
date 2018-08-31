@@ -28,7 +28,7 @@ namespace Equinox.Application.ViewModels
         public string PhoneNumber { get; set; }
 
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Username")]
         public string Name { get; set; }
 
         [Required]

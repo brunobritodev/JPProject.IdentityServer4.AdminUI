@@ -10,8 +10,9 @@ namespace Equinox.Domain.Events.UserManagement
     {
         public UpdateProfileCommand Request { get; }
 
-        public ProfileUpdatedEvent(UpdateProfileCommand request)
+        public ProfileUpdatedEvent(Guid aggregateId,UpdateProfileCommand request)
         {
+            AggregateId = aggregateId;
             Request = request;
         }
     }

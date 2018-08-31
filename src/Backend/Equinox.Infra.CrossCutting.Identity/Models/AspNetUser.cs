@@ -14,7 +14,7 @@ namespace Equinox.Infra.CrossCutting.Identity.Models
             _accessor = accessor;
         }
 
-        public string Name => _accessor.HttpContext.User.Identity.Name;
+        public string Username => _accessor.HttpContext.User.FindFirst("email")?.Value;
 
         public bool IsAuthenticated()
         {

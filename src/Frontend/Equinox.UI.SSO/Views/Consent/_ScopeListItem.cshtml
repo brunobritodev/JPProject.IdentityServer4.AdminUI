@@ -3,22 +3,24 @@
 
 <li class="list-group-item list-group-item-info">
     <div class="form-group row">
-        <label class="switch switch-label switch-success">
-            <input class="switch-input" type="checkbox"
-                   name="ScopesConsented"
-                   id="scopes_@Model.Name"
-                   value="@Model.Name"
-                   checked="@Model.Checked"
-                   disabled="@Model.Required">
-            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-        </label>
-        <div class="col-md-9">
+        <div class="col-md-3 col-sm-3 col-lg-2">
+            <label class="switch switch-label switch-success">
+                <input class="switch-input" type="checkbox"
+                       name="ScopesConsented"
+                       id="scopes_@Model.Name"
+                       value="@Model.Name"
+                       checked="@Model.Checked"
+                       disabled="@Model.Required">
+                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+            </label>
+        </div>
+        <div class="col-9 text-left">
             <label for="scopes_@Model.Name">
                 @if (Model.Required)
                 {
                     <input type="hidden"
                            name="ScopesConsented"
-                           value="@Model.Name" />
+                           value="@Model.Name"/>
                 }
                 <strong>@Model.DisplayName</strong>
                 @if (Model.Emphasize)

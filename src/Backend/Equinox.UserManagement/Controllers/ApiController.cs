@@ -31,7 +31,7 @@ namespace Equinox.UserManagement.Controllers
         {
             return (!_notifications.HasNotifications());
         }
-
+        
         protected new ActionResult<DefaultResponse<T>> Response<T>(T result)
         {
             if (IsValidOperation())

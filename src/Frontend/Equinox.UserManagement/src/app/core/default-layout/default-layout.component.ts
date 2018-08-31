@@ -3,6 +3,7 @@ import { navItems } from "../../_nav";
 import { SettingsService } from "../settings/settings.service";
 import { tap } from "rxjs/operators";
 import { environment } from "../../../environments/environment";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-dashboard",
@@ -16,7 +17,8 @@ export class DefaultLayoutComponent implements OnInit {
     private changes: MutationObserver;
     public element: HTMLElement = document.body;
     public userProfile: any;
-    constructor(public settingsService: SettingsService) {
+    constructor(public settingsService: SettingsService,
+        private router: Router) {
         this.changes = new MutationObserver((mutations) => {
             this.sidebarMinimized = document.body.classList.contains("sidebar-minimized");
         });

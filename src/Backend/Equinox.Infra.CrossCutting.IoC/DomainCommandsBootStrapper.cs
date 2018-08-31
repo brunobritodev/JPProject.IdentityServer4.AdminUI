@@ -1,5 +1,4 @@
 ﻿using Equinox.Domain.CommandHandlers;
-using Equinox.Domain.Commands;
 using Equinox.Domain.Commands.User;
 using Equinox.Domain.Commands.UserManagement;
 using MediatR;
@@ -11,9 +10,6 @@ namespace Equinox.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<IRequestHandler<RegisterNewCustomerCommand>, CustomerCommandHandler>();
-            services.AddScoped<IRequestHandler<UpdateCustomerCommand>, CustomerCommandHandler>();
-            services.AddScoped<IRequestHandler<RemoveCustomerCommand>, CustomerCommandHandler>();
 
             services.AddScoped<IRequestHandler<RegisterNewUserCommand>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<RegisterNewUserWithoutPassCommand>, UserCommandHandler>();

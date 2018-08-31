@@ -24,7 +24,7 @@
                     }
                     <h1>
                         @Model.ClientName
-                        <small>is requesting your permission</small>
+                        <br class="d-lg-none"/><small>is requesting your permission</small>
                     </h1>
                 </div>
                 <div class="row justify-content-center">
@@ -76,15 +76,16 @@
                             {
                                 <div class="col-md-12">
                                     <div class="form-group row">
-
-                                        <label class="switch switch-label switch-danger">
-                                            <input class="switch-input"
-                                                   id="rememberConsent"
-                                                   type="checkbox"
-                                                   asp-for="RememberConsent">
-                                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-                                        </label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-3 col-sm-3 col-lg-2">
+                                            <label class="switch switch-label switch-danger">
+                                                <input class="switch-input"
+                                                       id="rememberConsent"
+                                                       type="checkbox"
+                                                       asp-for="RememberConsent">
+                                                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-9 text-left">
                                             <label for="rememberConsent" class="form-control-static">
                                                 <strong>Remember My Decision</strong>
                                             </label>
