@@ -17,19 +17,14 @@ export const routes: Routes = [
         children: [
             { path: "", loadChildren: "app/management/management.module#ManagementModule" },
         ]
-        
     },
-    // {
-    //     path: "management", 
-    //     component: DefaultLayoutComponent,
-    //     loadChildren: "app/views/views.module#ViewsModule" 
-    // }
+    { path: "**", redirectTo: "404" }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes),
         PagesModule,
+        RouterModule.forRoot(routes),
 
     ],
     exports: [RouterModule],

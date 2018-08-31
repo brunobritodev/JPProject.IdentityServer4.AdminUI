@@ -24,7 +24,6 @@ const routes: Routes = [
     { path: "confirm-email", component: ConfirmEmailComponent, data: { title: "Confirm account" } },
     { path: "404", component: P404Component, data: { title: "Not Found" } },
     { path: "500", component: P500Component, data: { title: "Error" } },
-    // { path: "**", redirectTo: "404" }
 ];
 
 

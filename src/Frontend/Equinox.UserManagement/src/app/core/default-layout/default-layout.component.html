@@ -1,21 +1,23 @@
 <app-header
   [fixed]="true"
-  [navbarBrandFull]="{src: 'assets/img/brand/logo.png', height: 40, alt: 'Jp Project'}"
-  [navbarBrandMinimized]="{src: 'assets/img/brand/logo-min.png', height: 40, alt: 'Jp Project'}"
+  [navbarBrandFull]="{src: 'assets/img/brand/logo.png', height: 40, alt: 'Jp Project', href: 'https://github.com/brunohbrito/JP-Project'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/logo-min.png', height: 40, alt: 'Jp Project', href: 'https://github.com/brunohbrito/JP-Project'}"
   [sidebarToggler]="'lg'"
+  [asideMenuToggler]="false"
+    [mobileAsideMenuToggler]="false"
   >
   <ul class="nav navbar-nav d-md-down-none">
     <li class="nav-item px-3">
-      <a class="nav-link" href="#">Users</a>
+      <a class="nav-link" [routerLink]="'/user/profile'">Users</a>
     </li>
     <li class="nav-item px-3">
-      <a class="nav-link" href="#">Settings</a>
+      <a class="nav-link" [routerLink]="'/user/account'">Settings</a>
     </li>
   </ul>
   <ul class="nav navbar-nav ml-auto">
     <li class="nav-item dropdown" dropdown placement="bottom right">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
-        <img [src]="userProfile.picture" *ngIf="userProfile"  class="img-avatar" alt="userProfile.name"/>
+        <img [src]="userProfile.picture" *ngIf="userProfile"  class="img-avatar" alt="userProfile?.name"/>{{userProfile?.name}}&nbsp;&nbsp;
       </a>
       <div class="dropdown-menu dropdown-menu-right pointer" *dropdownMenu aria-labelledby="simple-dropdown" (click)="logout()">
         <div class="dropdown-header text-center"><strong>Account</strong></div>
@@ -24,7 +26,7 @@
     </li>
   </ul>
 </app-header>
-<div class="app-body">
+<div class="app-body aside-menu-hidden">
   <app-sidebar [fixed]="true" [display]="'lg'">
     <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
     <app-sidebar-minimizer></app-sidebar-minimizer>
@@ -41,6 +43,6 @@
   </main>
 </div>
 <app-footer>
-  <span><a href="https://coreui.io">JP Project</a> &copy; 2018 Bruno Brito.</span>
-  <span class="ml-auto">Powered by <a href="https://coreui.io/angular">CoreUI for Angular</a></span>
+  <span><a href="https://github.com/brunohbrito/JP-Project">JP Project</a> &copy; 2018 Bruno Brito.</span>
+  <span class="ml-auto">Powered by <a href="https://coreui.io/angular">CoreUI</a></span>
 </app-footer>

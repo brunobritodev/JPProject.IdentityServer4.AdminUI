@@ -9,7 +9,7 @@ namespace Equinox.Application.ViewModels
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Username")]
         public string Name { get; set; }
 
         [Required]

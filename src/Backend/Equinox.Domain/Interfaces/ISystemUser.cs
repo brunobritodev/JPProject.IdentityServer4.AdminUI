@@ -5,7 +5,7 @@ namespace Equinox.Domain.Interfaces
 {
     public interface ISystemUser
     {
-        string Name { get; }
+        string Username { get; }
         bool IsAuthenticated();
         IEnumerable<Claim> GetClaimsIdentity();
     }

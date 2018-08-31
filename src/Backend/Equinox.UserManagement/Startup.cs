@@ -1,15 +1,11 @@
-﻿using System.Collections.Generic;
-using Equinox.Infra.CrossCutting.IoC;
+﻿using Equinox.Infra.CrossCutting.IoC;
 using Equinox.UserManagement.Configuration;
 using IdentityServer4.AccessTokenValidation;
-using IdentityServer4.Models;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace Equinox.UserManagement
 {

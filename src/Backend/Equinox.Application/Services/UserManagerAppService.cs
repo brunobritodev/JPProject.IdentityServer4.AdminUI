@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using AutoMapper.QueryableExtensions;
 using System.Threading.Tasks;
 using AutoMapper;
+using Equinox.Application.EventSourcedNormalizers;
 using Equinox.Application.Interfaces;
 using Equinox.Application.ViewModels;
 using Equinox.Domain.Commands.UserManagement;
@@ -74,6 +75,12 @@ namespace Equinox.Application.Services
         public Task<bool> HasPassword(Guid userId)
         {
             return _userService.HasPassword(userId);
+        }
+
+        public IEnumerable<EventHistoryData> GetHistoryLogs(Guid id)
+        {
+            var history = _mapper.Map<IEnumerable<EventHistoryData>>(_eventStoreRepository.All(id));
+            return history;
         }
     }
 }

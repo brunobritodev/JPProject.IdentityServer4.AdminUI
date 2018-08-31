@@ -1,11 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
+using Equinox.Application.EventSourcedNormalizers;
 using Equinox.Application.Interfaces;
 using Equinox.Application.ViewModels;
 using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Notifications;
 using Equinox.Infra.CrossCutting.Identity.Services;
 using Equinox.Infra.CrossCutting.Tools.Model;
+using IdentityModel;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -35,7 +38,6 @@ namespace Equinox.UserManagement.Controllers
         public async Task<ActionResult<DefaultResponse<ProfileViewModel>>> UserData()
         {
             var user = await _userManager.GetUserAsync(GetUserId().Value);
-
             return Response(_mapper.Map<ProfileViewModel>(user));
         }
 
@@ -106,6 +108,12 @@ namespace Equinox.UserManagement.Controllers
 
         [HttpGet, Route("has-password")]
         public async Task<ActionResult<DefaultResponse<bool>>> HasPassword() => Response(await _userAppService.HasPassword(GetUserId().Value));
+
+        [HttpGet, Route("logs")]
+        public ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>> GetLogs()
+        {
+            return Response(_userAppService.GetHistoryLogs(GetUserId().Value));
+        }
 
     }
 

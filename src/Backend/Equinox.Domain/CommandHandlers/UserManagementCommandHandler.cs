@@ -22,10 +22,10 @@ namespace Equinox.Domain.CommandHandlers
         private readonly IUserService _userService;
 
         public UserManagementCommandHandler(
-            IUnitOfWork uow, 
-            IMediatorHandler bus, 
+            IUnitOfWork uow,
+            IMediatorHandler bus,
             INotificationHandler<DomainNotification> notifications,
-            IUserService userService) 
+            IUserService userService)
             : base(uow, bus, notifications)
         {
             _userService = userService;
@@ -41,7 +41,7 @@ namespace Equinox.Domain.CommandHandlers
 
             var result = await _userService.UpdateProfileAsync(request);
             if (result)
-                await Bus.RaiseEvent(new ProfileUpdatedEvent(request));
+                await Bus.RaiseEvent(new ProfileUpdatedEvent(request.Id.Value, request));
         }
 
         public async Task Handle(UpdateProfilePictureCommand request, CancellationToken cancellationToken)
@@ -80,7 +80,7 @@ namespace Equinox.Domain.CommandHandlers
 
             var result = await _userService.ChangePasswordAsync(request);
             if (result)
-                await Bus.RaiseEvent(new PasswordCreatedEvent(request.Id.Value));
+                await Bus.RaiseEvent(new PasswordChangedEvent(request.Id.Value));
         }
 
         public async Task Handle(RemoveAccountCommand request, CancellationToken cancellationToken)

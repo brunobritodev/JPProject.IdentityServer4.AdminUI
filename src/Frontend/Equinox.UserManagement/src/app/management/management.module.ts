@@ -14,15 +14,6 @@ const routes: Routes = [
             { path: "", redirectTo: "home", pathMatch: "full" },
             { path: "home", loadChildren: "app/management/home/home.module#HomeModule" },
             { path: "user", loadChildren: "app/management/user/user.module#UserModule" },
-
-            { path: "base", loadChildren: "app/views/base/base.module#BaseModule" },
-            { path: "buttons", loadChildren: "app/views/buttons/buttons.module#ButtonsModule" },
-            { path: "charts", loadChildren: "app/views/chartjs/chartjs.module#ChartJSModule" },
-            { path: "dashboard", loadChildren: "app/views/dashboard/dashboard.module#DashboardModule" },
-            { path: "icons", loadChildren: "app/views/icons/icons.module#IconsModule" },
-            { path: "notifications", loadChildren: "app/views/notifications/notifications.module#NotificationsModule" },
-            { path: "theme", loadChildren: "app/views/theme/theme.module#ThemeModule" },
-            { path: "widgets", loadChildren: "app/views/widgets/widgets.module#WidgetsModule" }
         ]
     }
 ];

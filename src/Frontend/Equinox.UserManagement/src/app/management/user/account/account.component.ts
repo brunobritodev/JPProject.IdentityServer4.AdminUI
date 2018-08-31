@@ -8,6 +8,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { SetPassword } from '../../../shared/view-model/set-password.model';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     templateUrl: './account.component.html',
@@ -26,7 +27,8 @@ export class AccountComponent implements OnInit {
     constructor(
         private settings: SettingsService,
         private accountManagementService: AccountManagementService,
-        private oauthService: OAuthService) {
+        private oauthService: OAuthService,
+        private toastr: ToastrService) {
 
     }
 
@@ -53,6 +55,7 @@ export class AccountComponent implements OnInit {
                 (s) => {
                     this.changingPassword = false;
                     this.hasPassword = true;
+                    this.toastr.success('Password changed!', 'Success!');
                 },
                 (err) => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
@@ -61,8 +64,8 @@ export class AccountComponent implements OnInit {
             );
 
         } catch (error) {
-            this.errors.push("Unknown error while trying to register");
-            return Observable.throw("Unknown error while trying to register");
+            this.errors.push("Unknown error while trying to change password");
+            return Observable.throw("Unknown error while trying to change password");
 
         } finally {
             this.changingPassword = false;
@@ -76,6 +79,7 @@ export class AccountComponent implements OnInit {
                 this.errors = [];
                 this.dangerModal.hide();
                 this.oauthService.logOut();
+                this.toastr.success('Password created!', 'Success!');
 
             },
             err => {
@@ -87,16 +91,28 @@ export class AccountComponent implements OnInit {
 
     public createPassword() {
         this.changingPassword = true;
-        this.accountManagementService.addPassword(this.setPassword).subscribe(
-            s => {
-                this.changingPassword = false;
-                this.errors = [];
-                this.hasPassword = true;
-            },
-            err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                this.changingPassword = false;
-            }
-        );
+
+        try {
+            this.changingPassword = true;
+            this.accountManagementService.addPassword(this.setPassword).subscribe(
+                s => {
+                    this.changingPassword = false;
+                    this.errors = [];
+                    this.hasPassword = true;
+                    this.toastr.success('Password created!', 'Success!');
+                },
+                err => {
+                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                    this.changingPassword = false;
+                }
+            );
+
+        } catch (error) {
+            this.errors.push("Unknown error while trying to create password");
+            return Observable.throw("Unknown error while trying to create password");
+
+        } finally {
+            this.changingPassword = false;
+        }
     }
 }

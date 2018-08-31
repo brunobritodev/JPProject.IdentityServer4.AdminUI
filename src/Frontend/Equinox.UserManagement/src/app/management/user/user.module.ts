@@ -7,8 +7,9 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { AccountComponent } from './account/account.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { AccountManagementService } from './account-management.service';
-import {NgxMaskModule} from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { UserHistoryComponent } from './history/user-history.component';
 
 const routes: Routes = [
     {
@@ -18,7 +19,8 @@ const routes: Routes = [
         },
         children: [
             { path: 'profile', component: ProfileComponent, data: { title: 'Profiles' } },
-            { path: 'account', component: AccountComponent, data: { title: 'Account' } }
+            { path: 'account', component: AccountComponent, data: { title: 'Account' } },
+            { path: 'history', component: UserHistoryComponent, data: { title: 'Account' } }
         ]
     }
 ];
@@ -36,6 +38,7 @@ const routes: Routes = [
     declarations: [
         ProfileComponent,
         AccountComponent,
+        UserHistoryComponent
     ],
     providers: [
         AccountManagementService
