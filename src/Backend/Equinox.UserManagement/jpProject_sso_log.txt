@@ -13848,3 +13848,61 @@ System.IO.IOException: Authentication failed because the remote party has closed
 2018-08-31 16:15:22.354 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
 2018-08-31 16:15:22.355 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2018-08-31 16:15:22.549 -03:00 [INF] Request finished in 195.0845ms 200 application/json;charset=utf-8
+2018-08-31 17:04:09.234 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-08-31 17:04:10.109 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 17:04:10.109 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-08-31 17:04:10.665 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-31 17:04:10.685 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 17:04:10.703 -03:00 [INF] Request finished in 39.4927ms 200 text/html
+2018-08-31 17:04:11.050 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-31 17:04:11.052 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 17:04:11.198 -03:00 [INF] Request finished in 148.0729ms 200 application/json;charset=utf-8
+2018-08-31 17:05:08.401 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html  
+2018-08-31 17:05:08.403 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 17:05:08.409 -03:00 [INF] Request finished in 7.8109ms 200 text/html
+2018-08-31 17:05:08.725 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json  
+2018-08-31 17:05:08.726 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 17:05:08.730 -03:00 [INF] Request finished in 5.334ms 200 application/json;charset=utf-8
+2018-08-31 17:05:16.428 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/oauth2-redirect.html  
+2018-08-31 17:05:16.428 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-08-31 17:05:16.441 -03:00 [INF] Sending file. Request path: '/oauth2-redirect.html'. Physical path: 'N/A'
+2018-08-31 17:05:16.443 -03:00 [INF] Request finished in 15.4349ms 200 text/html
+2018-08-31 17:05:23.717 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Management/user-data  
+2018-08-31 17:05:23.975 -03:00 [INF] Successfully validated the token.
+2018-08-31 17:05:23.979 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-08-31 17:05:24.008 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement)
+2018-08-31 17:05:24.025 -03:00 [INF] Authorization was successful.
+2018-08-31 17:05:24.145 -03:00 [INF] Executing action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) - Validation state: "Valid"
+2018-08-31 17:05:24.595 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-08-31 17:05:24.922 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-08-31 17:05:25.025 -03:00 [INF] Executed action method Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 872.6264ms.
+2018-08-31 17:05:25.034 -03:00 [INF] Executing ObjectResult, writing value of type 'Equinox.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Equinox.Application.ViewModels.ProfileViewModel, Equinox.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-08-31 17:05:25.046 -03:00 [INF] Executed action Equinox.UserManagement.Controllers.ManagementController.UserData (Equinox.UserManagement) in 1034.2253ms
+2018-08-31 17:05:25.054 -03:00 [INF] Request finished in 1337.8943ms 200 application/json; charset=utf-8
