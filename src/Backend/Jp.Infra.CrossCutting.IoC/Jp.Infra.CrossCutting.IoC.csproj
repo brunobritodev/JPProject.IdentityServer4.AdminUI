@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Equinox.Application\Jp.Application.csproj" />
-    <ProjectReference Include="..\Equinox.Domain\Jp.Domain.csproj" />
-    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
-    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Tools\Jp.Infra.CrossCutting.Tools.csproj" />
-    <ProjectReference Include="..\Equinox.Infra.Data\Jp.Infra.Data.csproj" />
+    <ProjectReference Include="..\Jp.Application\Jp.Application.csproj" />
+    <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
+    <ProjectReference Include="..\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Jp.Infra.CrossCutting.Tools\Jp.Infra.CrossCutting.Tools.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

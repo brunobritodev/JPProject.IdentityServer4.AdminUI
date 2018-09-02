@@ -31,11 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Backend\Equinox.Application\Jp.Application.csproj" />
-    <ProjectReference Include="..\..\Backend\Equinox.Infra.CrossCutting.IdentityServer\Jp.Infra.CrossCutting.IdentityServer.csproj" />
-    <ProjectReference Include="..\..\Backend\Equinox.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
-    <ProjectReference Include="..\..\Backend\Equinox.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
-    <ProjectReference Include="..\..\Backend\Equinox.Infra.Data\Jp.Infra.Data.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Application\Jp.Application.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IdentityServer\Jp.Infra.CrossCutting.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Data\Jp.Infra.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

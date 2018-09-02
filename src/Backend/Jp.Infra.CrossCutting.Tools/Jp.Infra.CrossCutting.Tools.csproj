@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Equinox.Application\Jp.Application.csproj" />
-    <ProjectReference Include="..\Equinox.Domain\Jp.Domain.csproj" />
+    <ProjectReference Include="..\Jp.Application\Jp.Application.csproj" />
+    <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
