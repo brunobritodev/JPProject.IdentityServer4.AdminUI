@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Equinox.Domain.Interfaces
+namespace Jp.Domain.Interfaces
 {
     /// <summary>
     /// Interface to propagate user id type

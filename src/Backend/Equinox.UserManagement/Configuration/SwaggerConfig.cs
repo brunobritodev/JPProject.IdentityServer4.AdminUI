@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Equinox.UserManagement.Configuration
+namespace Jp.UserManagement.Configuration
 {
     public static class SwaggerConfig
     {

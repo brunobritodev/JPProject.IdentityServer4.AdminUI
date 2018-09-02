@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+      <UserSecretsId>aspnet-jpproject-04C6939F-E672-4E56-B4A5-5F064EB67F23</UserSecretsId>
+      <DockerTargetOS>Linux</DockerTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\coreui.min.js" />
+    <Content Include="Assets\js\pace.min.js" />
+    <Content Include="Assets\js\perfect-scrollbar.min.js" />
+    <Content Include="Assets\js\popper.min.js" />
+    <Content Include="Assets\js\signin-redirect.js" />
+    <Content Include="Assets\js\signout-redirect.js" />
+    <Content Include="Assets\js\site.js" />
+    <Content Include="Assets\js\site.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend\Equinox.Application\Jp.Application.csproj" />
+    <ProjectReference Include="..\..\Backend\Equinox.Infra.CrossCutting.IdentityServer\Jp.Infra.CrossCutting.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\Backend\Equinox.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\..\Backend\Equinox.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\..\Backend\Equinox.Infra.Data\Jp.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_ValidationScriptsPartial.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

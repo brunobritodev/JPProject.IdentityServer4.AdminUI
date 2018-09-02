@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Equinox.Domain.Events.UserManagement;
+using Jp.Domain.Events.UserManagement;
 using MediatR;
 
-namespace Equinox.Domain.EventHandlers
+namespace Jp.Domain.EventHandlers
 {
     public class UserManagerEventHandler : 
         INotificationHandler<ProfileUpdatedEvent>,

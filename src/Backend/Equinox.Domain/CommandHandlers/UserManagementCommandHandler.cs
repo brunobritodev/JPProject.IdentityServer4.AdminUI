@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using Equinox.Domain.Commands.UserManagement;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Domain.Events.UserManagement;
-using Equinox.Domain.Interfaces;
+using Jp.Domain.Commands.UserManagement;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
+using Jp.Domain.Events.UserManagement;
+using Jp.Domain.Interfaces;
 using MediatR;
 
-namespace Equinox.Domain.CommandHandlers
+namespace Jp.Domain.CommandHandlers
 {
     public class UserManagementCommandHandler : CommandHandler,
         IRequestHandler<UpdateProfileCommand>,

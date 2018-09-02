@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Equinox.Application.ViewModels;
+using Jp.Application.ViewModels;
 
-namespace Equinox.Application.Interfaces
+namespace Jp.Application.Interfaces
 {
     public interface IUserAppService : IDisposable
     {

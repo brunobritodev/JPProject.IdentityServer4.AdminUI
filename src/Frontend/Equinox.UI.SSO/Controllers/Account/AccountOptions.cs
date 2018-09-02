@@ -4,7 +4,7 @@
 
 using System;
 
-namespace Equinox.UI.SSO.Controllers.Account
+namespace Jp.UI.SSO.Controllers.Account
 {
     public class AccountOptions
     {

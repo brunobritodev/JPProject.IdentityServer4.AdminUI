@@ -5,7 +5,7 @@ using IdentityServer4.EntityFramework.Interfaces;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 
-namespace Equinox.Infra.CrossCutting.IdentityServer.Context
+namespace Jp.Infra.CrossCutting.IdentityServer.Context
 {
     public class IdentityServerContext : DbContext
         , IConfigurationDbContext

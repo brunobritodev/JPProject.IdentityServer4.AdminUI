@@ -1,6 +1,6 @@
-﻿using Equinox.Domain.Commands.User;
+﻿using Jp.Domain.Commands.User;
 
-namespace Equinox.Domain.Validations.User
+namespace Jp.Domain.Validations.User
 {
     public class SendResetLinkCommandValidation : UserValidation<SendResetLinkCommand>
     {

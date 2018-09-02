@@ -1,7 +1,7 @@
 ﻿using System;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Core.Notifications
+namespace Jp.Domain.Core.Notifications
 {
     public class DomainNotification : Event
     {

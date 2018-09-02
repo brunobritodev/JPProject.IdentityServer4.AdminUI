@@ -5,7 +5,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Equinox.UI.SSO.Controllers
+namespace Jp.UI.SSO.Controllers
 {
     public class SecurityHeadersAttribute : ActionFilterAttribute
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using Equinox.Domain.Core.Commands;
+using Jp.Domain.Core.Commands;
 
-namespace Equinox.Domain.Commands.User
+namespace Jp.Domain.Commands.User
 {
     public abstract class UserCommand : Command
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Events.UserManagement
+namespace Jp.Domain.Events.UserManagement
 {
     public class PasswordCreatedEvent : Event
     {

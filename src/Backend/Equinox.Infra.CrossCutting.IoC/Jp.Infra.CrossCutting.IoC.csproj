@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Equinox.Application\Jp.Application.csproj" />
+    <ProjectReference Include="..\Equinox.Domain\Jp.Domain.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Tools\Jp.Infra.CrossCutting.Tools.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.Data\Jp.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>

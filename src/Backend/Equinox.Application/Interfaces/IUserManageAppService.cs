@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Equinox.Application.EventSourcedNormalizers;
-using Equinox.Application.ViewModels;
+using Jp.Application.EventSourcedNormalizers;
+using Jp.Application.ViewModels;
 
-namespace Equinox.Application.Interfaces
+namespace Jp.Application.Interfaces
 {
     public interface IUserManageAppService : IDisposable
     {

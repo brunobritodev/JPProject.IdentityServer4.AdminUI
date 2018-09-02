@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
-using Equinox.Domain.Interfaces;
+using Jp.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 
-namespace Equinox.Infra.CrossCutting.Identity.Models
+namespace Jp.Infra.CrossCutting.Identity.Models
 {
     public class AspNetUser : ISystemUser
     {

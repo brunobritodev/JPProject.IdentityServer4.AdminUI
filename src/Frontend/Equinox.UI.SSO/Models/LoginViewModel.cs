@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Equinox.UI.SSO.Models
+namespace Jp.UI.SSO.Models
 {
     public class LoginViewModel : LoginInputModel
     {

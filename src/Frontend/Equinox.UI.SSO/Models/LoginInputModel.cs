@@ -5,7 +5,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace Equinox.UI.SSO.Models
+namespace Jp.UI.SSO.Models
 {
     public class LoginInputModel
     {

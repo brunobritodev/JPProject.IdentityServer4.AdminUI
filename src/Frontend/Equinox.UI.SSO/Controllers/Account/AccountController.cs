@@ -4,13 +4,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
-using Equinox.Application.Interfaces;
-using Equinox.Application.ViewModels;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
-using Equinox.Infra.CrossCutting.Identity.Services;
-using Equinox.UI.SSO.Controllers.Home;
-using Equinox.UI.SSO.Models;
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Events;
@@ -18,15 +11,21 @@ using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
+using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
+using Jp.Domain.Core.Notifications;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.CrossCutting.Identity.Services;
+using Jp.UI.SSO.Controllers.Home;
+using Jp.UI.SSO.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
-namespace Equinox.UI.SSO.Controllers.Account
+namespace Jp.UI.SSO.Controllers.Account
 {
     [SecurityHeaders]
     public class AccountController : Controller

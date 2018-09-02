@@ -1,4 +1,4 @@
-﻿namespace Equinox.Domain.Core.Models
+﻿namespace Jp.Domain.Core.Models
 {
     public abstract class ValueObject<T> where T : ValueObject<T>
     {

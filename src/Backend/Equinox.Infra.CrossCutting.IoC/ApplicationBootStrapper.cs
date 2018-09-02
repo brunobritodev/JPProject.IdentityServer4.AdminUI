@@ -1,8 +1,8 @@
-﻿using Equinox.Application.Interfaces;
-using Equinox.Application.Services;
+﻿using Jp.Application.Interfaces;
+using Jp.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.Infra.CrossCutting.IoC
+namespace Jp.Infra.CrossCutting.IoC
 {
     internal class ApplicationBootStrapper
     {

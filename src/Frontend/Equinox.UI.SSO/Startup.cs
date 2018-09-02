@@ -1,6 +1,6 @@
-﻿using Equinox.Infra.CrossCutting.IoC;
-using Equinox.UI.SSO.Configuration;
-using IdentityServer4.Services;
+﻿using IdentityServer4.Services;
+using Jp.Infra.CrossCutting.IoC;
+using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Equinox.UI.SSO
+namespace Jp.UI.SSO
 {
     public class Startup
     {

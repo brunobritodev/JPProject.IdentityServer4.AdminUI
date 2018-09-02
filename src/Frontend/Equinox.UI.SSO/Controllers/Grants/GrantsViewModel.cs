@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Equinox.UI.SSO.Controllers.Grants
+namespace Jp.UI.SSO.Controllers.Grants
 {
     public class GrantsViewModel
     {

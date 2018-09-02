@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Equinox.Application.EventSourcedNormalizers;
-using Equinox.Application.Interfaces;
-using Equinox.Application.ViewModels;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Infra.CrossCutting.Identity.Services;
-using Equinox.Infra.CrossCutting.Tools.Model;
-using IdentityModel;
+using Jp.Application.EventSourcedNormalizers;
+using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
+using Jp.Infra.CrossCutting.Identity.Services;
+using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Equinox.UserManagement.Controllers
+namespace Jp.UserManagement.Controllers
 {
     [Route("[controller]"), Authorize]
     public class ManagementController : ApiController

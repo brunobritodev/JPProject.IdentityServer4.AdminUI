@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Equinox.UI.SSO.Controllers.Diagnostics
+namespace Jp.UI.SSO.Controllers.Diagnostics
 {
     [SecurityHeaders]
     [Authorize]

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UI.SSO.Configuration
+namespace Jp.UI.SSO.Configuration
 {
     public static class SocialIntegrationConfig
     {

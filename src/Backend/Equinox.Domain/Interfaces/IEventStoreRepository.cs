@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Interfaces
+namespace Jp.Domain.Interfaces
 {
     public interface IEventStoreRepository : IDisposable
     {

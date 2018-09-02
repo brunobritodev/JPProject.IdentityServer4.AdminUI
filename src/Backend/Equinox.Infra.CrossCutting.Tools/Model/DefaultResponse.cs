@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Equinox.Infra.CrossCutting.Tools.Model
+namespace Jp.Infra.CrossCutting.Tools.Model
 {
     public class DefaultResponse<T>
     {

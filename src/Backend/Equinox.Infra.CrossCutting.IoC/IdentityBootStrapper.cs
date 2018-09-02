@@ -1,13 +1,13 @@
 ﻿using System.IO;
-using Equinox.Application.Interfaces;
-using Equinox.Domain.Interfaces;
-using Equinox.Infra.CrossCutting.Identity.Models;
-using Equinox.Infra.CrossCutting.Identity.Services;
-using Equinox.Infra.CrossCutting.Tools.CloudServices.Storage;
+using Jp.Application.Interfaces;
+using Jp.Domain.Interfaces;
+using Jp.Infra.CrossCutting.Identity.Models;
+using Jp.Infra.CrossCutting.Identity.Services;
+using Jp.Infra.CrossCutting.Tools.CloudServices.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.Infra.CrossCutting.IoC
+namespace Jp.Infra.CrossCutting.IoC
 {
     internal class IdentityBootStrapper
     {

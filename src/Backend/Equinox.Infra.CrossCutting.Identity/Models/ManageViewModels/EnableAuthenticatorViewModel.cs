@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Equinox.Infra.CrossCutting.Identity.Models.ManageViewModels
+namespace Jp.Infra.CrossCutting.Identity.Models.ManageViewModels
 {
     public class EnableAuthenticatorViewModel
     {

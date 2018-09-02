@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
-using Equinox.Application.ViewModels;
-using Equinox.Domain.Commands;
-using Equinox.Domain.Commands.User;
-using Equinox.Domain.Commands.UserManagement;
+using Jp.Application.ViewModels;
+using Jp.Domain.Commands.User;
+using Jp.Domain.Commands.UserManagement;
 
-namespace Equinox.Application.AutoMapper
+namespace Jp.Application.AutoMapper
 {
     public class ViewModelToDomainMappingProfile : Profile
     {

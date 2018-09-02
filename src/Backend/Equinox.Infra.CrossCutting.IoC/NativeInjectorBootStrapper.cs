@@ -1,18 +1,18 @@
-﻿using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Events;
-using Equinox.Domain.Interfaces;
-using Equinox.Infra.CrossCutting.Bus;
-using Equinox.Infra.CrossCutting.Identity.Authorization;
-using Equinox.Infra.CrossCutting.Tools.Serializer;
-using Equinox.Infra.Data.Context;
-using Equinox.Infra.Data.EventSourcing;
-using Equinox.Infra.Data.Repository.EventSourcing;
-using Equinox.Infra.Data.UoW;
+﻿using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Events;
+using Jp.Domain.Interfaces;
+using Jp.Infra.CrossCutting.Bus;
+using Jp.Infra.CrossCutting.Identity.Authorization;
+using Jp.Infra.CrossCutting.Tools.Serializer;
+using Jp.Infra.Data.Context;
+using Jp.Infra.Data.EventSourcing;
+using Jp.Infra.Data.Repository.EventSourcing;
+using Jp.Infra.Data.UoW;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.Infra.CrossCutting.IoC
+namespace Jp.Infra.CrossCutting.IoC
 {
     public class NativeInjectorBootStrapper
     {
@@ -38,7 +38,7 @@ namespace Equinox.Infra.CrossCutting.IoC
 
             // Infra - Data
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<EquinoxContext>();
+            services.AddScoped<JpContext>();
 
             // Infra - Data EventSourcing
             services.AddScoped<IEventStoreRepository, EventStoreSQLRepository>();

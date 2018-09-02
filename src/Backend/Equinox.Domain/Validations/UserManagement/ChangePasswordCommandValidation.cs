@@ -1,6 +1,6 @@
-﻿using Equinox.Domain.Commands.UserManagement;
+﻿using Jp.Domain.Commands.UserManagement;
 
-namespace Equinox.Domain.Validations.UserManagement
+namespace Jp.Domain.Validations.UserManagement
 {
     public class ChangePasswordCommandValidation : PasswordCommandValidation<ChangePasswordCommand>
     {

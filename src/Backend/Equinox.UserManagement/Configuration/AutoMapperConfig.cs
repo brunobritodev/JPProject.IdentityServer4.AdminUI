@@ -1,9 +1,9 @@
 ﻿using System;
 using AutoMapper;
-using Equinox.Application.AutoMapper;
+using Jp.Application.AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UserManagement.Configuration
+namespace Jp.UserManagement.Configuration
 {
     public static class AutoMapperSetup
     {

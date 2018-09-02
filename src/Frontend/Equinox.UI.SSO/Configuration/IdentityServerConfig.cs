@@ -1,12 +1,11 @@
-﻿using System;
-using System.Reflection;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
+﻿using System.Reflection;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UI.SSO.Configuration
+namespace Jp.UI.SSO.Configuration
 {
     public static class IdentityServerConfig
     {

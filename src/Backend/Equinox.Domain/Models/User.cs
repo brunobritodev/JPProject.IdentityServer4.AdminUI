@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Interfaces;
+using Jp.Domain.Interfaces;
 
-namespace Equinox.Domain.Models
+namespace Jp.Domain.Models
 {
     public class User : IDomainUser
     {

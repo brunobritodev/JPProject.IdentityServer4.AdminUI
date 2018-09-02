@@ -3,7 +3,7 @@ using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 
-namespace Equinox.UI.SSO.Util
+namespace Jp.UI.SSO.Util
 {
     public class ClientResources
     {

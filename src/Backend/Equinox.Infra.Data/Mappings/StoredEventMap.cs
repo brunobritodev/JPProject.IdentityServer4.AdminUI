@@ -1,8 +1,8 @@
+using Jp.Domain.Core.Events;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Equinox.Domain.Core.Events;
 
-namespace Equinox.Infra.Data.Mappings
+namespace Jp.Infra.Data.Mappings
 {    
     public class StoredEventMap : IEntityTypeConfiguration<StoredEvent>
     {

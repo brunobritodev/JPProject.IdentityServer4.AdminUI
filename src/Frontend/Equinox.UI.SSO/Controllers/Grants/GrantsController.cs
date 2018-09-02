@@ -10,7 +10,7 @@ using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Equinox.UI.SSO.Controllers.Grants
+namespace Jp.UI.SSO.Controllers.Grants
 {
     /// <summary>
     /// This sample controller allows a user to revoke grants given to clients

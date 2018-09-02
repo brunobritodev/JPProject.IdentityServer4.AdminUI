@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Events.User
+namespace Jp.Domain.Events.User
 {
     public class EmailConfirmedEvent : Event
     {

@@ -1,4 +1,4 @@
-﻿namespace Equinox.Application.EventSourcedNormalizers
+﻿namespace Jp.Application.EventSourcedNormalizers
 {
     public class EventHistoryData
     {

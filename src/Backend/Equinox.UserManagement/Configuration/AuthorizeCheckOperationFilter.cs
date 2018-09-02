@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-
-namespace Equinox.UserManagement.Configuration
+namespace Jp.UserManagement.Configuration
 {
     public class AuthorizeCheckOperationFilter : IOperationFilter
     {

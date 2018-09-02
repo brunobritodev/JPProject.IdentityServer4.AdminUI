@@ -1,7 +1,7 @@
 ﻿using System;
-using Equinox.Domain.Validations.UserManagement;
+using Jp.Domain.Validations.UserManagement;
 
-namespace Equinox.Domain.Commands.UserManagement
+namespace Jp.Domain.Commands.UserManagement
 {
     public class SetPasswordCommand : PasswordCommand
     {

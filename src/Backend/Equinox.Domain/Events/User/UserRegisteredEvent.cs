@@ -1,7 +1,7 @@
 ﻿using System;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Events.User
+namespace Jp.Domain.Events.User
 {
     public class UserRegisteredEvent : Event
     {

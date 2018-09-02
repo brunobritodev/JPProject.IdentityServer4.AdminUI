@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Equinox.Domain.Interfaces
+namespace Jp.Domain.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
