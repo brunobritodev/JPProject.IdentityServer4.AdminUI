@@ -1,7 +1,7 @@
-﻿using Equinox.Domain.Commands.User;
-using FluentValidation;
+﻿using FluentValidation;
+using Jp.Domain.Commands.User;
 
-namespace Equinox.Domain.Validations.User
+namespace Jp.Domain.Validations.User
 {
     public class ResetPasswordCommandValidation : UserValidation<ResetPasswordCommand>
     {

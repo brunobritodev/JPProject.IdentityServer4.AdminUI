@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Equinox.Infra.CrossCutting.Identity.Constants;
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
+using Jp.Infra.CrossCutting.Identity.Constants;
 
-namespace Equinox.UI.SSO.Util
+namespace Jp.UI.SSO.Util
 
 {
     public class Clients

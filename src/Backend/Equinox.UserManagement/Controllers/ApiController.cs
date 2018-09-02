@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Infra.CrossCutting.Tools;
-using Equinox.Infra.CrossCutting.Tools.Model;
 using IdentityModel;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
+using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Equinox.UserManagement.Controllers
+namespace Jp.UserManagement.Controllers
 {
     public abstract class ApiController : ControllerBase
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Equinox.Application.ViewModels;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Application.ViewModels;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 
-namespace Equinox.UserManagement.Configuration
+namespace Jp.UserManagement.Configuration
 {
     internal class CustomMappingProfile : Profile
     {

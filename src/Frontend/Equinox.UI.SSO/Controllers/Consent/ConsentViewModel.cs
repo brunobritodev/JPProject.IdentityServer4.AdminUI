@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 
-namespace Equinox.UI.SSO.Controllers.Consent
+namespace Jp.UI.SSO.Controllers.Consent
 {
     public class ConsentViewModel : ConsentInputModel
     {

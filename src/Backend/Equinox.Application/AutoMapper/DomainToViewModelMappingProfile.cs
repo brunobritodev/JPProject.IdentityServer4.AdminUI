@@ -1,11 +1,11 @@
 ﻿using System.Globalization;
 using AutoMapper;
-using Equinox.Application.EventSourcedNormalizers;
-using Equinox.Application.ViewModels;
-using Equinox.Domain.Core.Events;
-using Equinox.Domain.Models;
+using Jp.Application.EventSourcedNormalizers;
+using Jp.Application.ViewModels;
+using Jp.Domain.Core.Events;
+using Jp.Domain.Models;
 
-namespace Equinox.Application.AutoMapper
+namespace Jp.Application.AutoMapper
 {
     public class DomainToViewModelMappingProfile : Profile
     {

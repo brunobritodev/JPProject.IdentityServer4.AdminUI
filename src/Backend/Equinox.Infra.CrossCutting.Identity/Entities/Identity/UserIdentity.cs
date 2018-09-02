@@ -1,8 +1,8 @@
 ﻿using System;
-using Equinox.Domain.Interfaces;
+using Jp.Domain.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
-namespace Equinox.Infra.CrossCutting.Identity.Entities.Identity
+namespace Jp.Infra.CrossCutting.Identity.Entities.Identity
 {
     public class UserIdentity : IdentityUser<Guid>, IDomainUser
     {

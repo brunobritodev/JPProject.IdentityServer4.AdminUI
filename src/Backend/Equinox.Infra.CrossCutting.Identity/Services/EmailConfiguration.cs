@@ -1,4 +1,4 @@
-﻿namespace Equinox.Infra.CrossCutting.Identity.Services
+﻿namespace Jp.Infra.CrossCutting.Identity.Services
 {
     public class EmailConfiguration : IEmailConfiguration
     {

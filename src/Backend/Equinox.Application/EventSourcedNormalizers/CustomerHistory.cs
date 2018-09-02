@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Equinox.Domain.Core.Events;
-using Equinox.Domain.Interfaces;
-
-namespace Equinox.Application.EventSourcedNormalizers
+﻿namespace Jp.Application.EventSourcedNormalizers
 {
     //public class CustomerHistory
     //{

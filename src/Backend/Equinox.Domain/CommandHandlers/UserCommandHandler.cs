@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Equinox.Domain.Commands.User;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Domain.Events.User;
-using Equinox.Domain.Interfaces;
-using Equinox.Domain.Models;
+using Jp.Domain.Commands.User;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
+using Jp.Domain.Events.User;
+using Jp.Domain.Interfaces;
+using Jp.Domain.Models;
 using MediatR;
 
-namespace Equinox.Domain.CommandHandlers
+namespace Jp.Domain.CommandHandlers
 {
     public class UserCommandHandler : CommandHandler,
         IRequestHandler<RegisterNewUserCommand>,

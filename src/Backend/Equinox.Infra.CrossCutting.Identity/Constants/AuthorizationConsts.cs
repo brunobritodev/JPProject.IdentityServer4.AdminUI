@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Equinox.Infra.CrossCutting.Identity.Constants
+namespace Jp.Infra.CrossCutting.Identity.Constants
 {
     public class AuthorizationConsts
     {

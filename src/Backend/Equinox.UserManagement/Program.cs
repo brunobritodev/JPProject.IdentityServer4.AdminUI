@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Data;
-using System.IO;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
-using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Equinox.UserManagement
+namespace Jp.UserManagement
 {
     public class Program
     {

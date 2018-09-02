@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Equinox.UI.SSO.Controllers.Consent
+namespace Jp.UI.SSO.Controllers.Consent
 {
     /// <summary>
     /// This controller processes the consent UI

@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
-using Equinox.Domain.Commands.User;
-using Equinox.Domain.Commands.UserManagement;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Domain.Interfaces;
-using Equinox.Domain.Models;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
-using Equinox.Infra.CrossCutting.Identity.Extensions;
+using Jp.Domain.Commands.User;
+using Jp.Domain.Commands.UserManagement;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
+using Jp.Domain.Interfaces;
+using Jp.Domain.Models;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.CrossCutting.Identity.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
 using ServiceStack.Text;
 
-namespace Equinox.Infra.CrossCutting.Identity.Services
+namespace Jp.Infra.CrossCutting.Identity.Services
 {
     public class UserService : IUserService, IUserManager
     {

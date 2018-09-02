@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using AutoMapper;
 
-namespace Equinox.Application.AutoMapper
+namespace Jp.Application.AutoMapper
 {
     public class AutoMapperConfig
     {

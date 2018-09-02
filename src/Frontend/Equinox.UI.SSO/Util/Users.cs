@@ -1,4 +1,4 @@
-﻿namespace Equinox.UI.SSO.Util
+﻿namespace Jp.UI.SSO.Util
 {
     public class Users
     {

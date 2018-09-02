@@ -1,7 +1,7 @@
-﻿using Equinox.Domain.Commands.UserManagement;
-using FluentValidation;
+﻿using FluentValidation;
+using Jp.Domain.Commands.UserManagement;
 
-namespace Equinox.Domain.Validations.UserManagement
+namespace Jp.Domain.Validations.UserManagement
 {
     public class PasswordCommandValidation<T> : AbstractValidator<T> where T : PasswordCommand
     {

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Core.Commands;
-using Equinox.Domain.Validations.UserManagement;
+using Jp.Domain.Validations.UserManagement;
 
-namespace Equinox.Domain.Commands.UserManagement
+namespace Jp.Domain.Commands.UserManagement
 {
     public class UpdateProfileCommand : ProfileCommand
     {

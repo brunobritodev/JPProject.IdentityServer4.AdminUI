@@ -1,4 +1,4 @@
-﻿namespace Equinox.Domain.Core.Events
+﻿namespace Jp.Domain.Core.Events
 {
     public interface IEventStore
     {

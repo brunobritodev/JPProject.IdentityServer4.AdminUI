@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Security.Claims;
 using System.Threading.Tasks;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 
-namespace Equinox.Infra.CrossCutting.Identity.Services
+namespace Jp.Infra.CrossCutting.Identity.Services
 {
     public interface IUserManager
     {

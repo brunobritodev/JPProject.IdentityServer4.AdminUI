@@ -1,7 +1,7 @@
 ﻿using System;
-using Equinox.Domain.Core.Commands;
+using Jp.Domain.Core.Commands;
 
-namespace Equinox.Domain.Commands.UserManagement
+namespace Jp.Domain.Commands.UserManagement
 {
     public abstract class ProfileCommand : Command
     {

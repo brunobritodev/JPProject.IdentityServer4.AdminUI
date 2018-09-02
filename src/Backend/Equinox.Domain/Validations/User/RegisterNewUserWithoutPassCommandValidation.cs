@@ -1,7 +1,6 @@
-﻿using Equinox.Domain.Commands.User;
-using FluentValidation;
+﻿using Jp.Domain.Commands.User;
 
-namespace Equinox.Domain.Validations.User
+namespace Jp.Domain.Validations.User
 {
     public class RegisterNewUserWithoutPassCommandValidation : UserValidation<RegisterNewUserWithoutPassCommand>
     {

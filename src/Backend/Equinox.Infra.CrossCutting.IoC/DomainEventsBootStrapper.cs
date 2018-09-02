@@ -1,11 +1,11 @@
-﻿using Equinox.Domain.Core.Notifications;
-using Equinox.Domain.EventHandlers;
-using Equinox.Domain.Events.User;
-using Equinox.Domain.Events.UserManagement;
+﻿using Jp.Domain.Core.Notifications;
+using Jp.Domain.EventHandlers;
+using Jp.Domain.Events.User;
+using Jp.Domain.Events.UserManagement;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.Infra.CrossCutting.IoC
+namespace Jp.Infra.CrossCutting.IoC
 {
     internal class DomainEventsBootStrapper
     {

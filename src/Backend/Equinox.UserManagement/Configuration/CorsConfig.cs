@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UserManagement.Configuration
+namespace Jp.UserManagement.Configuration
 {
     public static class CorsConfig
     {

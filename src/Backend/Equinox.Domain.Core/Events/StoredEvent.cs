@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Equinox.Domain.Core.Events
+namespace Jp.Domain.Core.Events
 {
     public class StoredEvent : Event
     {

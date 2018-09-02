@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Commands.UserManagement;
-using Equinox.Domain.Core.Commands;
-using FluentValidation;
+﻿using FluentValidation;
+using Jp.Domain.Commands.UserManagement;
 
-namespace Equinox.Domain.Validations.UserManagement
+namespace Jp.Domain.Validations.UserManagement
 {
     public class ProfileValidation<T> : AbstractValidator<T> where T : ProfileCommand
     {

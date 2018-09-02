@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Commands.User;
 using FluentValidation;
+using Jp.Domain.Commands.User;
 
-namespace Equinox.Domain.Validations.User
+namespace Jp.Domain.Validations.User
 {
     public abstract class UserValidation<T> : AbstractValidator<T> where T : UserCommand
     {

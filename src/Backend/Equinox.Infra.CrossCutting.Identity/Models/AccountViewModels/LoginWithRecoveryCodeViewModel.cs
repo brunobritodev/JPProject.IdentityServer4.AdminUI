@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Equinox.Infra.CrossCutting.Identity.Models.AccountViewModels
+namespace Jp.Infra.CrossCutting.Identity.Models.AccountViewModels
 {
     public class LoginWithRecoveryCodeViewModel
     {

@@ -1,13 +1,13 @@
-﻿using Equinox.Domain.Interfaces;
-using Equinox.Infra.Data.Context;
+﻿using Jp.Domain.Interfaces;
+using Jp.Infra.Data.Context;
 
-namespace Equinox.Infra.Data.UoW
+namespace Jp.Infra.Data.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly EquinoxContext _context;
+        private readonly JpContext _context;
 
-        public UnitOfWork(EquinoxContext context)
+        public UnitOfWork(JpContext context)
         {
             _context = context;
         }

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Commands.UserManagement;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Commands.UserManagement;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Events.UserManagement
+namespace Jp.Domain.Events.UserManagement
 {
     public class ProfileUpdatedEvent : Event
     {

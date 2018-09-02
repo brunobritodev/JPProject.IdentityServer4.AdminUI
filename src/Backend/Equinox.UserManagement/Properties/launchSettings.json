@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Equinox.UserManagement": {
+    "Jp.UserManagement": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger/index.html",

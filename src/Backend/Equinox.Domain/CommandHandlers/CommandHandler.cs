@@ -1,10 +1,10 @@
-﻿using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Commands;
-using Equinox.Domain.Core.Notifications;
-using Equinox.Domain.Interfaces;
+﻿using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Commands;
+using Jp.Domain.Core.Notifications;
+using Jp.Domain.Interfaces;
 using MediatR;
 
-namespace Equinox.Domain.CommandHandlers
+namespace Jp.Domain.CommandHandlers
 {
     public class CommandHandler
     {

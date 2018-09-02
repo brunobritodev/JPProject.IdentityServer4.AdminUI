@@ -3,7 +3,7 @@ using MailKit.Net.Smtp;
 using MimeKit;
 using MimeKit.Text;
 
-namespace Equinox.Infra.CrossCutting.Identity.Services
+namespace Jp.Infra.CrossCutting.Identity.Services
 {
 
     public class AuthEmailMessageSender : IEmailSender

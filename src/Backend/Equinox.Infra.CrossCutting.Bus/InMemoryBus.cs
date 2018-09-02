@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Core.Commands;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Commands;
+using Jp.Domain.Core.Events;
 using MediatR;
 
-namespace Equinox.Infra.CrossCutting.Bus
+namespace Jp.Infra.CrossCutting.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {

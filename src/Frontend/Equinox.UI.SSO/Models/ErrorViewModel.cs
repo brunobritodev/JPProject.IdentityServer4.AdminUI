@@ -1,6 +1,6 @@
 ﻿using IdentityServer4.Models;
 
-namespace Equinox.UI.SSO.Models
+namespace Jp.UI.SSO.Models
 {
     public class ErrorViewModel
     {

@@ -4,7 +4,7 @@
 
 using IdentityServer4.Models;
 
-namespace Equinox.UI.SSO.Controllers.Home
+namespace Jp.UI.SSO.Controllers.Home
 {
     public class ErrorViewModel
     {

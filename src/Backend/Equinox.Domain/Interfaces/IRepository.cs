@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Equinox.Domain.Interfaces
+namespace Jp.Domain.Interfaces
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {

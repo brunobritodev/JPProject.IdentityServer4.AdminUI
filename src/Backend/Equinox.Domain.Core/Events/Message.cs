@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace Equinox.Domain.Core.Events
+namespace Jp.Domain.Core.Events
 {
     public abstract class Message : IRequest
     {

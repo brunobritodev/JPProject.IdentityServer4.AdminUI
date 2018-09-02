@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-using Equinox.Domain.Core.Events;
-using Equinox.Domain.Interfaces;
-using Equinox.Infra.Data.Context;
+using System.Linq;
+using Jp.Domain.Core.Events;
+using Jp.Domain.Interfaces;
+using Jp.Infra.Data.Context;
 
-namespace Equinox.Infra.Data.Repository.EventSourcing
+namespace Jp.Infra.Data.Repository.EventSourcing
 {
     public class EventStoreSQLRepository : IEventStoreRepository
     {

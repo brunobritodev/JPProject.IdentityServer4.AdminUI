@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Equinox.Domain.Interfaces
+﻿namespace Jp.Domain.Interfaces
 {
     public interface ISerializer
     {

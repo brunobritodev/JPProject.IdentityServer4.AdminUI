@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Linq;
-using Equinox.Domain.Interfaces;
-using Equinox.Infra.Data.Context;
+using Jp.Domain.Interfaces;
+using Jp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Equinox.Infra.Data.Repository
+namespace Jp.Infra.Data.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly EquinoxContext Db;
+        protected readonly JpContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        public Repository(EquinoxContext context)
+        public Repository(JpContext context)
         {
             Db = context;
             DbSet = Db.Set<TEntity>();

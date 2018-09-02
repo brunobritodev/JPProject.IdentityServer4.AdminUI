@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using Equinox.Infra.CrossCutting.Identity.Constants;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.CrossCutting.Identity.Constants;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Equinox.Infra.CrossCutting.Identity.Context
+namespace Jp.Infra.CrossCutting.Identity.Context
 {
     public class ApplicationDbContext : IdentityDbContext<UserIdentity, UserIdentityRole, Guid, UserIdentityUserClaim, UserIdentityUserRole, UserIdentityUserLogin, UserIdentityRoleClaim, UserIdentityUserToken>
     {

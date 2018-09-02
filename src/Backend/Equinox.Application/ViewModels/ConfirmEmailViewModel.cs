@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Equinox.Application.ViewModels
+namespace Jp.Application.ViewModels
 {
     public class ConfirmEmailViewModel
     {

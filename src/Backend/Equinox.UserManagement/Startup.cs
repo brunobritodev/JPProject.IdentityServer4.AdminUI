@@ -1,13 +1,13 @@
-﻿using Equinox.Infra.CrossCutting.IoC;
-using Equinox.UserManagement.Configuration;
-using IdentityServer4.AccessTokenValidation;
+﻿using IdentityServer4.AccessTokenValidation;
+using Jp.Infra.CrossCutting.IoC;
+using Jp.UserManagement.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UserManagement
+namespace Jp.UserManagement
 {
     public class Startup
     {

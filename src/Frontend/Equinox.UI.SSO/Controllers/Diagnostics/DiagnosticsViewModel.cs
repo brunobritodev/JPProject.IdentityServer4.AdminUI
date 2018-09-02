@@ -8,7 +8,7 @@ using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
 using Newtonsoft.Json;
 
-namespace Equinox.UI.SSO.Controllers.Diagnostics
+namespace Jp.UI.SSO.Controllers.Diagnostics
 {
     public class DiagnosticsViewModel
     {

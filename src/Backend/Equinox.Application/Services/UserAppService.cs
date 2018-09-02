@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
-using Equinox.Application.Interfaces;
-using Equinox.Application.ViewModels;
-using Equinox.Domain.Commands.User;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Interfaces;
+using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
+using Jp.Domain.Commands.User;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Interfaces;
 
-namespace Equinox.Application.Services
+namespace Jp.Application.Services
 {
     public class UserAppService : IUserAppService
     {

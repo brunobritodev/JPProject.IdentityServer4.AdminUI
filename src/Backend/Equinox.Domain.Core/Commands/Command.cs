@@ -1,8 +1,8 @@
 ﻿using System;
-using Equinox.Domain.Core.Events;
 using FluentValidation.Results;
+using Jp.Domain.Core.Events;
 
-namespace Equinox.Domain.Core.Commands
+namespace Jp.Domain.Core.Commands
 {
     public abstract class Command : Message
     {

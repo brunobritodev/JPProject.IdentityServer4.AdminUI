@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Equinox.Application.Interfaces;
-using Equinox.Application.ViewModels;
+using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace Equinox.Infra.CrossCutting.Tools.CloudServices.Storage
+namespace Jp.Infra.CrossCutting.Tools.CloudServices.Storage
 {
     public class AzureImageStoreService : IImageStorage
     {

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Equinox.Infra.CrossCutting.Identity.Authorization
+namespace Jp.Infra.CrossCutting.Identity.Authorization
 {
     public class ClaimsRequirementHandler : AuthorizationHandler<ClaimRequirement>
     {

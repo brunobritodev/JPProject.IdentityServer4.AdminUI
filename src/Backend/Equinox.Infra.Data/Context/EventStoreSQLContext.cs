@@ -1,11 +1,10 @@
 ﻿using System.IO;
-using Equinox.Domain.Core.Events;
-using Equinox.Infra.Data.Mappings;
+using Jp.Domain.Core.Events;
+using Jp.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-
-namespace Equinox.Infra.Data.Context
+namespace Jp.Infra.Data.Context
 {
     public class EventStoreSQLContext : DbContext
     {

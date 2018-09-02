@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using AutoMapper.QueryableExtensions;
 using System.Threading.Tasks;
 using AutoMapper;
-using Equinox.Application.EventSourcedNormalizers;
-using Equinox.Application.Interfaces;
-using Equinox.Application.ViewModels;
-using Equinox.Domain.Commands.UserManagement;
-using Equinox.Domain.Core.Bus;
-using Equinox.Domain.Interfaces;
+using Jp.Application.EventSourcedNormalizers;
+using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
+using Jp.Domain.Commands.UserManagement;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Interfaces;
 
-
-namespace Equinox.Application.Services
+namespace Jp.Application.Services
 {
     public class UserManagerAppService : IUserManageAppService
     {

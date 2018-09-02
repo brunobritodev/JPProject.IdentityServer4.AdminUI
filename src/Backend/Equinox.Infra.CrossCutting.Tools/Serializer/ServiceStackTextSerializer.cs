@@ -1,6 +1,6 @@
-﻿using Equinox.Domain.Interfaces;
+﻿using Jp.Domain.Interfaces;
 
-namespace Equinox.Infra.CrossCutting.Tools.Serializer
+namespace Jp.Infra.CrossCutting.Tools.Serializer
 {
     public class ServiceStackTextSerializer : ISerializer
     {

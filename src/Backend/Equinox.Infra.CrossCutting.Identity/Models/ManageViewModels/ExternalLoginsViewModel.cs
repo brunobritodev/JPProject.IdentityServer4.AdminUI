@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace Equinox.Infra.CrossCutting.Identity.Models.ManageViewModels
+namespace Jp.Infra.CrossCutting.Identity.Models.ManageViewModels
 {
     public class ExternalLoginsViewModel
     {

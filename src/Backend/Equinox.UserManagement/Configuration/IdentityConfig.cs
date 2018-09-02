@@ -1,12 +1,12 @@
-﻿using Equinox.Infra.CrossCutting.Identity.Context;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
-using Equinox.Infra.Data.Context;
+﻿using Jp.Infra.CrossCutting.Identity.Context;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UserManagement.Configuration
+namespace Jp.UserManagement.Configuration
 {
     public static class IdentityConfig
     {
@@ -14,7 +14,7 @@ namespace Equinox.UserManagement.Configuration
         {
             string connectionString = configuration.GetConnectionString("SSOConnection");
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-            services.AddDbContext<EquinoxContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString));
 
             services.AddIdentity<UserIdentity, UserIdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

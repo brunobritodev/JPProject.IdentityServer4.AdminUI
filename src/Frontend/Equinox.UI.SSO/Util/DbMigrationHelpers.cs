@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Equinox.Infra.CrossCutting.Identity.Constants;
-using Equinox.Infra.CrossCutting.Identity.Context;
-using Equinox.Infra.CrossCutting.Identity.Entities.Identity;
-using Equinox.Infra.CrossCutting.IdentityServer.Context;
-using Equinox.Infra.Data.Context;
 using IdentityServer4.EntityFramework.Mappers;
+using Jp.Infra.CrossCutting.Identity.Constants;
+using Jp.Infra.CrossCutting.Identity.Context;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.CrossCutting.IdentityServer.Context;
+using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Equinox.UI.SSO.Util
+namespace Jp.UI.SSO.Util
 {
     public static class DbMigrationHelpers
     {
@@ -42,12 +42,12 @@ namespace Equinox.UI.SSO.Util
 
                 var id4Context = scope.ServiceProvider.GetRequiredService<IdentityServerContext>();
                 var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreSQLContext>();
-                var equinox = scope.ServiceProvider.GetRequiredService<EquinoxContext>();
+                var jpContext = scope.ServiceProvider.GetRequiredService<JpContext>();
 
                 id4Context.Database.Migrate();
                 userContext.Database.Migrate();
                 storeDb.Database.Migrate();
-                equinox.Database.Migrate();
+                jpContext.Database.Migrate();
 
 
                 await EnsureSeedIdentityServerData(id4Context);

@@ -1,4 +1,4 @@
-﻿namespace Equinox.Infra.CrossCutting.Identity.Entities
+﻿namespace Jp.Infra.CrossCutting.Identity.Entities
 {
     public class PersistedGrantDataView
     {

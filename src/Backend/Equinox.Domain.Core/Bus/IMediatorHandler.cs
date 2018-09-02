@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Equinox.Domain.Core.Commands;
-using Equinox.Domain.Core.Events;
+using Jp.Domain.Core.Commands;
+using Jp.Domain.Core.Events;
 
-
-namespace Equinox.Domain.Core.Bus
+namespace Jp.Domain.Core.Bus
 {
     public interface IMediatorHandler
     {
