@@ -22,7 +22,7 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Equinox.Domain\Jp.Domain.csproj" />
+    <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
   </ItemGroup>
 
 </Project>
