@@ -1,4 +1,5 @@
-﻿using IdentityServer4.AccessTokenValidation;
+﻿using System;
+using IdentityServer4.AccessTokenValidation;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.UserManagement.Configuration;
 using MediatR;
@@ -12,24 +13,24 @@ namespace Jp.UserManagement
     public class Startup
     {
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment Environment { get; }
+        public IHostingEnvironment HostEnvironment { get; }
 
-        public Startup(IHostingEnvironment environment)
+        public Startup(IHostingEnvironment hostEnvironment)
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
+                .SetBasePath(hostEnvironment.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
-            if (environment.IsDevelopment())
+            if (hostEnvironment.IsDevelopment())
             {
                 builder.AddUserSecrets<Startup>();
             }
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
-            Environment = environment;
+            HostEnvironment = hostEnvironment;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -48,7 +49,7 @@ namespace Jp.UserManagement
                 })
                     .AddIdentityServerAuthentication(options =>
                                                     {
-                                                        options.Authority = "http://localhost:5000";
+                                                        options.Authority = Environment.GetEnvironmentVariable("AUTHORITY") ?? "http://localhost:5000";
                                                         options.RequireHttpsMetadata = false;
                                                         options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
                                                         options.ApiName = "UserManagementApi";
@@ -76,6 +77,7 @@ namespace Jp.UserManagement
             else
             {
                 app.UseHsts();
+                app.UseHttpsRedirection();
             }
 
             app.UseAuthentication();

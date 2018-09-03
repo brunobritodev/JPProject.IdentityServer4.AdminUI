@@ -1,0 +1,56 @@
+    version: "3"
+    services:
+        database:
+            image: "microsoft/mssql-server-linux"
+
+            environment:
+                SA_PASSWORD: "@Password1"
+                ACCEPT_EULA: "Y"
+
+            ports:
+                - "44274:1433"
+                
+        sso:
+            image: "jpproject/v1"
+
+            build: 
+              context: .
+              dockerfile: sso.dockerfile
+
+            ports:
+                - "5000:5000"
+
+            depends_on:
+                - database
+            
+            environment: 
+                SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
+                ASPNETCORE_ENVIRONMENT: "Development"
+                ISSUER_URI: "http://localhost:5000"
+                # PUBLIC_URI: "http://localhost:5000"
+        user-management-api:
+            build: 
+              context: .
+              dockerfile: user-management.dockerfile
+
+            ports:
+                - "5003:5003"
+
+            depends_on:
+                - database
+                - sso
+
+            environment: 
+                SQLSERVER_CONNECTION: "Server=localhost,44274;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
+                ASPNETCORE_ENVIRONMENT: "Development"
+                AUTHORITY: "http://localhost:5000"
+                
+            network_mode: host
+
+        user-management-ui:
+            container_name: user-management-ui
+            build: 
+              context: .
+              dockerfile: ui-user-management.dockerfile
+            ports:
+                - 4200:80

@@ -1,4 +1,5 @@
-﻿using Jp.Infra.CrossCutting.Identity.Context;
+﻿using System;
+using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Identity;
@@ -12,9 +13,11 @@ namespace Jp.UserManagement.Configuration
     {
         public static IServiceCollection AddIdentity(this IServiceCollection services, IConfiguration configuration)
         {
-            string connectionString = configuration.GetConnectionString("SSOConnection");
+            var connectionString = Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
             services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<EventStoreSQLContext>(options => options.UseSqlServer(connectionString));
 
             services.AddIdentity<UserIdentity, UserIdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

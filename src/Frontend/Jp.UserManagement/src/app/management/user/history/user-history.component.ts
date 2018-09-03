@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class UserHistoryComponent implements OnInit {
 
     public historyData$: Observable<EventHistoryData>;
-
+    public loading: boolean;
     constructor(private accountService: AccountManagementService) {
 
     }
