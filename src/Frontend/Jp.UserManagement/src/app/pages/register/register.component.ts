@@ -10,7 +10,7 @@ import { DefaultResponse } from "../../shared/view-model/default-response.model"
 import { AlertConfig } from "ngx-bootstrap/alert";
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider, VkontakteLoginProvider } from "angular-6-social-login-v2";
 
-function getAlertConfig(): AlertConfig {
+export function getAlertConfig(): AlertConfig {
     return Object.assign(new AlertConfig(), { type: "success" });
 }
 
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     showButtonLoading: boolean;
     userExist: boolean;
     emailExist: boolean;
-    private socialLoggedIn: boolean;
+    public socialLoggedIn: boolean;
 
     private userExistsSubject: Subject<string> = new Subject<string>();
     private emailExistsSubject: Subject<string> = new Subject<string>();

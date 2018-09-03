@@ -27,7 +27,7 @@ namespace Jp.UI.SSO
             {
                 builder.AddUserSecrets<Startup>();
             }
-            
+
             Configuration = builder.Build();
             Environment = environment;
         }
@@ -50,7 +50,7 @@ namespace Jp.UI.SSO
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);
-            
+
             // Configure automapper
             services.AddAutoMapperSetup();
 
@@ -68,6 +68,12 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+                app.UseHttpsRedirection();
+            }
+
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

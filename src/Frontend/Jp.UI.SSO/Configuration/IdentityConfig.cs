@@ -1,4 +1,5 @@
-﻿using Jp.Infra.CrossCutting.Identity.Context;
+﻿using System;
+using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.CrossCutting.IdentityServer.Context;
 using Jp.Infra.Data.Context;
@@ -13,10 +14,12 @@ namespace Jp.UI.SSO.Configuration
     {
         public static IServiceCollection AddIdentity(this IServiceCollection services, IConfiguration configuration)
         {
-            string connectionString = configuration.GetConnectionString("SSOConnection");
+            var connectionString = Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+
             services.AddEntityFrameworkSqlServer().AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
             services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString));
             services.AddDbContext<IdentityServerContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<EventStoreSQLContext>(options => options.UseSqlServer(connectionString));
 
             services.AddIdentity<UserIdentity, UserIdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

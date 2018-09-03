@@ -16,7 +16,7 @@ namespace Jp.UserManagement.Configuration
                     Title = "Identity Server 4 User Management API ",
                     Description = "Swagger surface",
                     Contact = new Contact { Name = "Bruno Brito", Email = "bhdebrito@gmail.com", Url = "http://www.brunobrito.net.br" },
-                    License = new License { Name = "MIT", Url = "https://github.com/brunohbrito/CognitesServicesAzure-Example/blob/master/LICENSE" },
+                    License = new License { Name = "MIT", Url = "https://github.com/brunohbrito/JP-Project/blob/master/LICENSE" },
 
                 });
 

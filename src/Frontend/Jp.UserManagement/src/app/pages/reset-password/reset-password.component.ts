@@ -12,7 +12,7 @@ import { DefaultResponse } from "../../shared/view-model/default-response.model"
 })
 export class ResetPasswordComponent implements OnInit, OnDestroy {
 
-    private model: ResetPassword;
+    public model: ResetPassword;
     public errors: Array<string>;
 
     public showButtonLoading: boolean;

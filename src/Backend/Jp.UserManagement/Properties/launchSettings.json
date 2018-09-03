@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:57194",
-      "sslPort": 44311
+      "applicationUrl": "http://localhost:5003",
+      "sslPort": 5002
     }
   },
   "profiles": {
@@ -12,6 +12,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "SQLSERVER_PORT": "1433",
+        "SQLSERVER_HOST": "localhost",
+        "SQLSERVER_PASSWORD": "@Password1",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
@@ -20,14 +23,17 @@
       "launchBrowser": true,
       "launchUrl": "swagger/index.html",
       "environmentVariables": {
+        "SQLSERVER_PORT": "1433",
+        "SQLSERVER_HOST": "localhost",
+        "SQLSERVER_PASSWORD": "@Password1",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:5003;http://localhost:5002"
+      "applicationUrl": "http://localhost:5003;https://localhost:5002"
     },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://localhost:{ServicePort}"
+      "launchUrl": "{Scheme}://localhost:{ServicePort}/swagger/index.html"
     }
   }
 }

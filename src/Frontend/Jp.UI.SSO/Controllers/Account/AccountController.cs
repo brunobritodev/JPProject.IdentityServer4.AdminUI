@@ -244,7 +244,7 @@ namespace Jp.UI.SSO.Controllers.Account
                 return Redirect(returnUrl);
             }
 
-            return Redirect("~/");
+            return RedirectToAction("Index", "Home");
         }
 
         /// <summary>

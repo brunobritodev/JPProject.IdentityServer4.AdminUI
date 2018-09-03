@@ -3,7 +3,7 @@ import { UserService } from "../../shared/services/user.service";
 import { AlertConfig } from "ngx-bootstrap/alert";
 import { ForgotPassword } from "../../shared/view-model/forgot-password.model";
 
-function getAlertConfig(): AlertConfig {
+export function getAlertConfig(): AlertConfig {
     return Object.assign(new AlertConfig(), { type: "success" });
 }
 
