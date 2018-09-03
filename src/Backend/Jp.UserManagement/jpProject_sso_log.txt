@@ -619,3 +619,78 @@ WHERE [e].[Id] = @__get_Item_0
 2018-09-03 01:53:29.258 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
 2018-09-03 01:53:29.260 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2018-09-03 01:53:29.461 -03:00 [INF] Request finished in 202.9468ms 200 application/json;charset=utf-8
+2018-09-03 14:52:14.639 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-03 14:52:15.712 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-03 14:52:15.742 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:15.783 -03:00 [INF] Request finished in 72.4872ms 200 text/html
+2018-09-03 14:52:15.870 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/swagger-ui.css  
+2018-09-03 14:52:15.870 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/swagger-ui-standalone-preset.js  
+2018-09-03 14:52:15.870 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/swagger-ui-bundle.js  
+2018-09-03 14:52:15.872 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:15.872 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:15.873 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:15.927 -03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2018-09-03 14:52:15.927 -03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2018-09-03 14:52:15.934 -03:00 [INF] Request finished in 63.254ms 200 text/css
+2018-09-03 14:52:15.934 -03:00 [INF] Request finished in 63.254ms 200 application/javascript
+2018-09-03 14:52:16.033 -03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2018-09-03 14:52:16.035 -03:00 [INF] Request finished in 164.7783ms 200 application/javascript
+2018-09-03 14:52:16.326 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-03 14:52:16.327 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:16.359 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/favicon-32x32.png  
+2018-09-03 14:52:16.360 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:16.363 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-09-03 14:52:16.365 -03:00 [INF] Request finished in 6.4668ms 200 image/png
+2018-09-03 14:52:16.370 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/favicon-16x16.png  
+2018-09-03 14:52:16.371 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:52:16.373 -03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2018-09-03 14:52:16.376 -03:00 [INF] Request finished in 5.9045ms 200 image/png
+2018-09-03 14:52:16.493 -03:00 [INF] Request finished in 166.3778ms 200 application/json;charset=utf-8
+2018-09-03 14:53:44.168 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-03 14:53:45.125 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-03 14:53:45.211 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:53:45.229 -03:00 [INF] Request finished in 105.718ms 200 text/html
+2018-09-03 14:53:45.772 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-03 14:53:45.774 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:53:45.924 -03:00 [INF] Request finished in 151.6338ms 200 application/json;charset=utf-8
+2018-09-03 14:54:13.996 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/oauth2-redirect.html  
+2018-09-03 14:54:13.998 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 14:54:14.011 -03:00 [INF] Sending file. Request path: '/oauth2-redirect.html'. Physical path: 'N/A'
+2018-09-03 14:54:14.014 -03:00 [INF] Request finished in 18.2516ms 200 text/html
+2018-09-03 14:54:20.112 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/Management/user-data  
+2018-09-03 14:54:20.355 -03:00 [INF] Successfully validated the token.
+2018-09-03 14:54:20.360 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-03 14:54:20.389 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-03 14:54:20.404 -03:00 [INF] Authorization was successful.
+2018-09-03 14:54:20.516 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-03 14:54:45.995 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-09-03 14:54:46.324 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-03 14:54:46.429 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25905.5463ms.
+2018-09-03 14:54:46.438 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-03 14:54:46.450 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 26056.407300000003ms
+2018-09-03 14:54:46.457 -03:00 [INF] Request finished in 26344.8842ms 200 application/json; charset=utf-8
+2018-09-03 15:32:26.606 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-03 15:32:27.495 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-03 15:32:27.530 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 15:32:27.549 -03:00 [INF] Request finished in 58.2322ms 200 text/html
+2018-09-03 15:32:27.929 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-03 15:32:27.931 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-03 15:32:28.088 -03:00 [INF] Request finished in 158.9564ms 200 application/json;charset=utf-8
+2018-09-03 15:32:45.281 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/Management/user-data  
+2018-09-03 15:32:45.530 -03:00 [INF] Successfully validated the token.
+2018-09-03 15:32:45.535 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-03 15:32:45.574 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-03 15:32:45.587 -03:00 [INF] Authorization was successful.
+2018-09-03 15:32:45.694 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-03 15:32:46.138 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-09-03 15:32:46.469 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-03 15:32:46.575 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 873.77150000000006ms.
+2018-09-03 15:32:46.584 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-03 15:32:46.594 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 1017.3105ms
+2018-09-03 15:32:46.607 -03:00 [INF] Request finished in 1325.4112ms 200 application/json; charset=utf-8

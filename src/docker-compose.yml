@@ -45,8 +45,6 @@
                 ASPNETCORE_ENVIRONMENT: "Development"
                 AUTHORITY: "http://localhost:5000"
                 
-            network_mode: host
-
         user-management-ui:
             container_name: user-management-ui
             build: 

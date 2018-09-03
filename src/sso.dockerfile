@@ -26,4 +26,5 @@ RUN dotnet publish "Jp.UI.SSO.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+COPY ["Frontend/Jp.UI.SSO/JPProjectOAuth.pfx", "/app"]
 ENTRYPOINT ["dotnet", "Jp.UI.SSO.dll", "--server.urls", "http://*:5000"]

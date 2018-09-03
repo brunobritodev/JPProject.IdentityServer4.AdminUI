@@ -1,4 +1,5 @@
-﻿using IdentityServer4.Services;
+﻿using IdentityServer4.Configuration;
+using IdentityServer4.Services;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
 using MediatR;
@@ -12,11 +13,13 @@ namespace Jp.UI.SSO
 {
     public class Startup
     {
+        private readonly ILogger _logger;
         public IConfiguration Configuration { get; }
         public IHostingEnvironment Environment { get; }
 
-        public Startup(IHostingEnvironment environment, ILogger<DefaultCorsPolicyService> logger)
+        public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
         {
+            _logger = logger;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(environment.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -46,7 +49,7 @@ namespace Jp.UI.SSO
             });
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, Environment);
+            services.AddIdentityServer(Configuration, Environment, _logger);
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);

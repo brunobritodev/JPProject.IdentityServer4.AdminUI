@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Reflection;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.UI.SSO.Util;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Jp.UI.SSO.Configuration
 {
     public static class IdentityServerConfig
     {
-        public static IServiceCollection AddIdentityServer(this IServiceCollection services, IConfiguration configuration, IHostingEnvironment environment)
+        public static IServiceCollection AddIdentityServer(this IServiceCollection services,
+            IConfiguration configuration, IHostingEnvironment environment, ILogger logger)
         {
             var connectionString = Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
 
@@ -24,7 +27,7 @@ namespace Jp.UI.SSO.Configuration
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
                     options.IssuerUri = Environment.GetEnvironmentVariable("ISSUER_URI");
-                    options.PublicOrigin = Environment.GetEnvironmentVariable("PUBLIC_ORIGIN");
+                    options.PublicOrigin = Environment.GetEnvironmentVariable("PUBLIC_URI");
                 })
                 .AddAspNetIdentity<UserIdentity>()
                 // this adds the config data from DB (clients, resources)
@@ -43,16 +46,19 @@ namespace Jp.UI.SSO.Configuration
                     //options.EnableTokenCleanup = true;
                     //options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
-            if (environment.IsDevelopment())
-            {
-                builder.AddDeveloperSigningCredential(false);
-            }
-            else
-            {
-                throw new Exception("need to configure key material");
-            }
+
+            builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger);
+            //if (environment.IsDevelopment())
+            //{
+            //    builder.AddDeveloperSigningCredential(false);
+            //}
+            //else
+            //{
+            //    builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger);
+            //}
 
             return services;
         }
+
     }
 }
