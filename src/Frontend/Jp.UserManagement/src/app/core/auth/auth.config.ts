@@ -9,4 +9,7 @@ export const authConfig: AuthConfig = {
     redirectUri: window.location.origin + "/login-callback",
     scope: "openid profile email picture UserManagementApi.owner-content",
     oidc: true,
+    options: {
+        validateIssuerName: false
+    }
 };

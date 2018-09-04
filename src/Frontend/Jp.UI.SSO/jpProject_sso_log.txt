@@ -2247,3 +2247,235 @@ System.Exception: External authentication error
 2018-09-03 15:32:45.491 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
 2018-09-03 15:32:45.492 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2018-09-03 15:32:45.496 -03:00 [DBG] Start key discovery request
+2018-09-04 02:28:18.534 -03:00 [DBG] SigninCredentialExtension keyType is File
+2018-09-04 02:28:18.592 -03:00 [ERR] SigninCredentialExtension cannot find key file JPProjectOAuth.pfx
+2018-09-04 02:29:44.986 -03:00 [DBG] SigninCredentialExtension keyType is File
+2018-09-04 02:29:45.031 -03:00 [DBG] SigninCredentialExtension adding key from file JPProjectOAuth.pfx
+2018-09-04 02:33:20.813 -03:00 [DBG] Custom IssuerUri set to http://sso:5000
+2018-09-04 02:33:20.840 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 02:33:20.840 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 02:33:20.840 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 02:33:20.841 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 02:33:20.841 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 02:33:23.340 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:23.353 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:23.359 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-04 02:33:23.367 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-04 02:33:23.368 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-04 02:33:23.374 -03:00 [DBG] Start authorize request
+2018-09-04 02:33:23.380 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:23.386 -03:00 [DBG] No user present in authorize request
+2018-09-04 02:33:23.390 -03:00 [DBG] Start authorize request protocol validation
+2018-09-04 02:33:23.756 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:23.802 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:23.928 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:23.942 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:23.950 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:23.958 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-04 02:33:23.996 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "Swagger",
+  "ClientName": "Swagger UI",
+  "RedirectUri": "http://localhost:5003/swagger/oauth2-redirect.html",
+  "AllowedRedirectUris": [
+    "http://localhost:5003/swagger/oauth2-redirect.html"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "UserManagementApi.owner-content",
+  "State": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk=",
+  "Raw": {
+    "response_type": "token",
+    "client_id": "Swagger",
+    "redirect_uri": "http://localhost:5003/swagger/oauth2-redirect.html",
+    "scope": "UserManagementApi.owner-content",
+    "state": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk="
+  }
+}
+2018-09-04 02:33:24.005 -03:00 [INF] Showing login: User is not authenticated
+2018-09-04 02:33:24.041 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:24.043 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:24.150 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:24.153 -03:00 [DBG] Start authorize request protocol validation
+2018-09-04 02:33:24.165 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:24.166 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:24.174 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:24.177 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:24.187 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:24.188 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-04 02:33:24.208 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:26.411 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:26.413 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:26.436 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 02:33:27.579 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 02:33:27.598 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:27.599 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:27.825 -03:00 [INF] Provider Facebook associated.
+2018-09-04 02:33:27.993 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "f0f5dad8-a527-4c7e-9dc2-bdd58e551b58",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGI4VN6AVKE:00000006",
+  "TimeStamp": "2018-09-04T05:33:27Z",
+  "ProcessId": 24604,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 02:33:28.004 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 02:33:28.010 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 02:33:28.014 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 02:33:28.017 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 02:33:28.026 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 02:33:28.061 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-04 02:33:28.065 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-04 02:33:28.065 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-04 02:33:28.072 -03:00 [DBG] Start authorize callback request
+2018-09-04 02:33:28.076 -03:00 [DBG] User in authorize request: f0f5dad8-a527-4c7e-9dc2-bdd58e551b58
+2018-09-04 02:33:28.077 -03:00 [DBG] Start authorize request protocol validation
+2018-09-04 02:33:28.089 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:28.090 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:28.096 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:28.098 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:28.103 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:28.103 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-04 02:33:28.104 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "Swagger",
+  "ClientName": "Swagger UI",
+  "RedirectUri": "http://localhost:5003/swagger/oauth2-redirect.html",
+  "AllowedRedirectUris": [
+    "http://localhost:5003/swagger/oauth2-redirect.html"
+  ],
+  "SubjectId": "f0f5dad8-a527-4c7e-9dc2-bdd58e551b58",
+  "ResponseType": "token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "UserManagementApi.owner-content",
+  "State": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk=",
+  "SessionId": "03da0f7d79210583fe1c047c8bc222d7",
+  "Raw": {
+    "response_type": "token",
+    "client_id": "Swagger",
+    "redirect_uri": "http://localhost:5003/swagger/oauth2-redirect.html",
+    "scope": "UserManagementApi.owner-content",
+    "state": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk="
+  }
+}
+2018-09-04 02:33:28.150 -03:00 [DBG] zyAz+A+asftyagE9Hu6R87Lt6UVLqmtnFd9GuzUmlE0= found in database: false
+2018-09-04 02:33:28.152 -03:00 [DBG] user_consent grant with value: Swagger|f0f5dad8-a527-4c7e-9dc2-bdd58e551b58 not found in store.
+2018-09-04 02:33:28.154 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-04 02:33:28.154 -03:00 [INF] Showing consent: User has not yet consented
+2018-09-04 02:33:28.182 -03:00 [DBG] Start authorize request protocol validation
+2018-09-04 02:33:28.191 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:28.192 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:28.197 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:28.198 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:28.203 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:28.204 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-04 02:33:28.213 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:28.214 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:28.219 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:29.865 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 02:33:29.903 -03:00 [DBG] Start authorize request protocol validation
+2018-09-04 02:33:29.915 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:29.917 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:29.923 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:29.926 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:29.931 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:29.932 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-04 02:33:29.949 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-04 02:33:29.951 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-04 02:33:29.954 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-04 02:33:29.955 -03:00 [DBG] Start authorize callback request
+2018-09-04 02:33:29.962 -03:00 [DBG] User in authorize request: f0f5dad8-a527-4c7e-9dc2-bdd58e551b58
+2018-09-04 02:33:29.963 -03:00 [DBG] Start authorize request protocol validation
+2018-09-04 02:33:29.974 -03:00 [DBG] Swagger found in database: true
+2018-09-04 02:33:29.976 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:29.983 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:29.985 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 02:33:29.992 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 02:33:29.993 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-04 02:33:29.995 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "Swagger",
+  "ClientName": "Swagger UI",
+  "RedirectUri": "http://localhost:5003/swagger/oauth2-redirect.html",
+  "AllowedRedirectUris": [
+    "http://localhost:5003/swagger/oauth2-redirect.html"
+  ],
+  "SubjectId": "f0f5dad8-a527-4c7e-9dc2-bdd58e551b58",
+  "ResponseType": "token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "UserManagementApi.owner-content",
+  "State": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk=",
+  "SessionId": "03da0f7d79210583fe1c047c8bc222d7",
+  "Raw": {
+    "response_type": "token",
+    "client_id": "Swagger",
+    "redirect_uri": "http://localhost:5003/swagger/oauth2-redirect.html",
+    "scope": "UserManagementApi.owner-content",
+    "state": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk="
+  }
+}
+2018-09-04 02:33:30.004 -03:00 [DBG] zyAz+A+asftyagE9Hu6R87Lt6UVLqmtnFd9GuzUmlE0= found in database: false
+2018-09-04 02:33:30.005 -03:00 [DBG] user_consent grant with value: Swagger|f0f5dad8-a527-4c7e-9dc2-bdd58e551b58 not found in store.
+2018-09-04 02:33:30.009 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-04 02:33:30.018 -03:00 [INF] User consented to scopes: ["UserManagementApi.owner-content"]
+2018-09-04 02:33:30.022 -03:00 [DBG] User indicated to remember consent for scopes: ["UserManagementApi.owner-content"]
+2018-09-04 02:33:30.030 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: f0f5dad8-a527-4c7e-9dc2-bdd58e551b58
+2018-09-04 02:33:30.053 -03:00 [DBG] zyAz+A+asftyagE9Hu6R87Lt6UVLqmtnFd9GuzUmlE0= not found in database
+2018-09-04 02:33:30.117 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-04 02:33:30.132 -03:00 [DBG] Getting claims for access token for client: Swagger
+2018-09-04 02:33:30.133 -03:00 [DBG] Getting claims for access token for subject: f0f5dad8-a527-4c7e-9dc2-bdd58e551b58
+2018-09-04 02:33:30.224 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "Swagger",
+  "ClientName": "Swagger UI",
+  "RedirectUri": "http://localhost:5003/swagger/oauth2-redirect.html",
+  "Endpoint": "Authorize",
+  "SubjectId": "f0f5dad8-a527-4c7e-9dc2-bdd58e551b58",
+  "Scopes": "UserManagementApi.owner-content",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****d1rQ"
+    }
+  ],
+  "ActivityId": "0HLGI4VN6AVKB:00000005",
+  "TimeStamp": "2018-09-04T05:33:30Z",
+  "ProcessId": 24604,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 02:33:30.231 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "f0f5dad8-a527-4c7e-9dc2-bdd58e551b58",
+  "ClientId": "Swagger",
+  "RedirectUri": "http://localhost:5003/swagger/oauth2-redirect.html",
+  "State": "VHVlIFNlcCAwNCAyMDE4IDAyOjMzOjIzIEdNVC0wMzAwIChIb3LDoXJpbyBQYWRyw6NvIGRlIEJyYXPDrWxpYSk=",
+  "Scope": "UserManagementApi.owner-content"
+}
+2018-09-04 02:33:30.246 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 02:33:30.247 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 02:33:40.233 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-04 02:33:40.237 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-04 02:33:40.238 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-04 02:33:40.243 -03:00 [DBG] Start discovery request
+2018-09-04 02:33:40.316 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-04 02:33:40.362 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-09-04 02:33:40.364 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-09-04 02:33:40.365 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-09-04 02:33:40.369 -03:00 [DBG] Start key discovery request

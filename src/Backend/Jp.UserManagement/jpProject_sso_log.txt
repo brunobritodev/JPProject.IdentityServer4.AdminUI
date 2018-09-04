@@ -694,3 +694,50 @@ WHERE [e].[Id] = @__get_Item_0
 2018-09-03 15:32:46.584 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2018-09-03 15:32:46.594 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 1017.3105ms
 2018-09-03 15:32:46.607 -03:00 [INF] Request finished in 1325.4112ms 200 application/json; charset=utf-8
+2018-09-04 02:28:20.156 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 02:28:21.796 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 02:28:21.833 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:28:21.861 -03:00 [INF] Request finished in 66.511ms 200 text/html
+2018-09-04 02:28:22.307 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 02:28:22.309 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:28:22.487 -03:00 [INF] Request finished in 180.1242ms 200 application/json;charset=utf-8
+2018-09-04 02:30:34.839 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 02:30:36.385 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 02:30:36.429 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:30:36.463 -03:00 [INF] Request finished in 80.9751ms 200 text/html
+2018-09-04 02:30:36.913 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 02:30:36.915 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:30:37.101 -03:00 [INF] Request finished in 187.72ms 200 application/json;charset=utf-8
+2018-09-04 02:32:25.059 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 02:32:26.611 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 02:32:26.641 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:32:26.661 -03:00 [INF] Request finished in 53.1548ms 200 text/html
+2018-09-04 02:32:27.148 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 02:32:27.150 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:32:27.316 -03:00 [INF] Request finished in 168.3335ms 200 application/json;charset=utf-8
+2018-09-04 02:33:06.603 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 02:33:08.119 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 02:33:08.154 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:33:08.195 -03:00 [INF] Request finished in 79.1444ms 200 text/html
+2018-09-04 02:33:08.653 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 02:33:08.654 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:33:08.829 -03:00 [INF] Request finished in 176.3641ms 200 application/json;charset=utf-8
+2018-09-04 02:33:30.258 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/oauth2-redirect.html  
+2018-09-04 02:33:30.259 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 02:33:30.274 -03:00 [INF] Sending file. Request path: '/oauth2-redirect.html'. Physical path: 'N/A'
+2018-09-04 02:33:30.275 -03:00 [INF] Request finished in 17.8794ms 200 text/html
+2018-09-04 02:33:35.099 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/Management/user-data  
+2018-09-04 02:33:40.408 -03:00 [INF] Successfully validated the token.
+2018-09-04 02:33:40.415 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-04 02:33:40.449 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-04 02:33:40.465 -03:00 [INF] Authorization was successful.
+2018-09-04 02:33:40.610 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-04 02:33:41.155 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-09-04 02:33:41.549 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-04 02:33:41.676 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1056.9394ms.
+2018-09-04 02:33:41.687 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-04 02:33:41.700 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 1247.3456ms
+2018-09-04 02:33:41.711 -03:00 [INF] Request finished in 6612.0118ms 200 application/json; charset=utf-8
