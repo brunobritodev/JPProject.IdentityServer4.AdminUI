@@ -24,15 +24,15 @@ RUN npm run build
 ##################
 
 # base image
-FROM nginx:1.15.3-alpine
+FROM nginx:alpine
 
 # copy artifact build from the 'build environment'
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
-COPY ["Frontend/Jp.UserManagement/nginx/nginx.conf", "/etc/nginx/nginx.conf"]
-WORKDIR /usr/share/nginx/html
+COPY  --from=builder /usr/src/app/nginx/nginx.conf /etc/nginx/nginx.conf
+
 
 # expose port 80
-EXPOSE 80
+EXPOSE 80/tcp
 
 # run nginx
 CMD ["nginx", "-g", "daemon off;"]

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ServiceStack;
 
 namespace Jp.UI.SSO.Configuration
 {
@@ -26,7 +27,7 @@ namespace Jp.UI.SSO.Configuration
                     options.Events.RaiseInformationEvents = true;
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
-                    options.IssuerUri = Environment.GetEnvironmentVariable("ISSUER_URI");
+                    options.IssuerUri = Environment.GetEnvironmentVariable("ISSUER_URI") ?? "http://localhost:5000";
                     options.PublicOrigin = Environment.GetEnvironmentVariable("PUBLIC_URI");
                 })
                 .AddAspNetIdentity<UserIdentity>()
@@ -47,15 +48,15 @@ namespace Jp.UI.SSO.Configuration
                     //options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
 
-            builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger);
-            //if (environment.IsDevelopment())
-            //{
-            //    builder.AddDeveloperSigningCredential(false);
-            //}
-            //else
-            //{
-            //    builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger);
-            //}
+            //builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger);
+            if (environment.IsDevelopment())
+            {
+                builder.AddDeveloperSigningCredential(false);
+            }
+            else
+            {
+                builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger);
+            }
 
             return services;
         }

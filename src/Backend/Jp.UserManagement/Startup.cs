@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using IdentityServer4.AccessTokenValidation;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.UserManagement.Configuration;
@@ -41,11 +42,13 @@ namespace Jp.UserManagement
             services.AddIdentity(Configuration);
             services.ConfigureCors();
 
+
             //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
             services.AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
                     options.DefaultChallengeScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
+                    
                 })
                     .AddIdentityServerAuthentication(options =>
                                                     {
@@ -53,6 +56,13 @@ namespace Jp.UserManagement
                                                         options.RequireHttpsMetadata = false;
                                                         options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
                                                         options.ApiName = "UserManagementApi";
+
+
+                                                        options.JwtBearerEvents.OnMessageReceived = (messae) =>
+                                                        {
+                                                            messae.Options.TokenValidationParameters.ValidateIssuer = bool.TryParse(Environment.GetEnvironmentVariable("VALIDATE_ISSUER") ?? "true", out _);
+                                                            return Task.CompletedTask;
+                                                        };
                                                     });
 
             services.AddSwagger();

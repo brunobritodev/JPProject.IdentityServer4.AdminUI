@@ -1,5 +1,9 @@
     version: "3"
     services:
+
+        #############################
+        # Database
+        #############################
         database:
             image: "microsoft/mssql-server-linux"
 
@@ -9,9 +13,17 @@
 
             ports:
                 - "44274:1433"
-                
+            
+            healthcheck:
+                test: [ "CMD", "sqlcmd", "-U", "sa", "-P", "Password1", "-Q", "select 1" ]
+                interval: 1s
+                retries: 30
+              
+        #############################
+        # Server SSO
+        #############################
         sso:
-            image: "jpproject/v1"
+            image: "jpproject-sso"
 
             build: 
               context: .
@@ -28,7 +40,12 @@
                 ASPNETCORE_ENVIRONMENT: "Development"
                 ISSUER_URI: "http://localhost:5000"
                 # PUBLIC_URI: "http://localhost:5000"
+
+        #############################
+        # Management API
+        #############################
         user-management-api:
+            container_name: jpproject-user_management_api
             build: 
               context: .
               dockerfile: user-management.dockerfile
@@ -41,14 +58,20 @@
                 - sso
 
             environment: 
-                SQLSERVER_CONNECTION: "Server=localhost,44274;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
+                SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
-                AUTHORITY: "http://localhost:5000"
-                
+                AUTHORITY: "http://sso:5000"
+                VALIDATE_ISSUER: "false"
+
+        #############################
+        # User management UI
+        #############################
         user-management-ui:
-            container_name: user-management-ui
+            container_name: jpproject-user-management-ui
+
             build: 
               context: .
               dockerfile: ui-user-management.dockerfile
+
             ports:
                 - 4200:80
