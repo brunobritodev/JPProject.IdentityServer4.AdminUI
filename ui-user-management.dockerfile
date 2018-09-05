@@ -8,13 +8,13 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY ["Frontend/Jp.UserManagement/package.json", "/usr/src/app"]
-COPY ["Frontend/Jp.UserManagement/package-lock.json", "/usr/src/app"]
+COPY ["src/Frontend/Jp.UserManagement/package.json", "/usr/src/app"]
+COPY ["src/Frontend/Jp.UserManagement/package-lock.json", "/usr/src/app"]
 RUN npm install
 RUN npm install -g @angular/cli@1.7.1 --unsafe
 
 # add app
-COPY ["Frontend/Jp.UserManagement/", "/usr/src/app"]
+COPY ["src/Frontend/Jp.UserManagement/", "/usr/src/app"]
 
 # generate build
 RUN npm run build

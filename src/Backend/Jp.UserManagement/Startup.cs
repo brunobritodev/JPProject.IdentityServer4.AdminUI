@@ -8,16 +8,19 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Jp.UserManagement
 {
     public class Startup
     {
+        private readonly ILogger<Startup> _logger;
         public IConfiguration Configuration { get; }
         public IHostingEnvironment HostEnvironment { get; }
 
-        public Startup(IHostingEnvironment hostEnvironment)
+        public Startup(IHostingEnvironment hostEnvironment, ILogger<Startup> logger)
         {
+            _logger = logger;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(hostEnvironment.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -42,17 +45,17 @@ namespace Jp.UserManagement
             services.AddIdentity(Configuration);
             services.ConfigureCors();
 
-
-            //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+            var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "http://localhost:5000";
+            _logger.LogInformation($"Authority URI: {authorityUri}");
             services.AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
                     options.DefaultChallengeScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-                    
+
                 })
                     .AddIdentityServerAuthentication(options =>
                                                     {
-                                                        options.Authority = Environment.GetEnvironmentVariable("AUTHORITY") ?? "http://localhost:5000";
+                                                        options.Authority = authorityUri;
                                                         options.RequireHttpsMetadata = false;
                                                         options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
                                                         options.ApiName = "UserManagementApi";
@@ -60,7 +63,7 @@ namespace Jp.UserManagement
 
                                                         options.JwtBearerEvents.OnMessageReceived = (messae) =>
                                                         {
-                                                            messae.Options.TokenValidationParameters.ValidateIssuer = bool.TryParse(Environment.GetEnvironmentVariable("VALIDATE_ISSUER") ?? "true", out _);
+                                                            messae.Options.TokenValidationParameters.ValidateIssuer = bool.Parse(Environment.GetEnvironmentVariable("VALIDATE_ISSUER") ?? "true");
                                                             return Task.CompletedTask;
                                                         };
                                                     });

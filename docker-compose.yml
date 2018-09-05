@@ -1,6 +1,15 @@
     version: "3"
     services:
 
+        # #############################
+        # # Database
+        # #############################
+        # redis:
+        #   image: redis:alpine
+        #   ports:
+        #       - "16379:6379"
+
+
         #############################
         # Database
         #############################
@@ -39,7 +48,7 @@
                 SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
                 ISSUER_URI: "http://localhost:5000"
-                # PUBLIC_URI: "http://localhost:5000"
+                AMBIENT: "linux"
 
         #############################
         # Management API
@@ -62,6 +71,7 @@
                 ASPNETCORE_ENVIRONMENT: "Development"
                 AUTHORITY: "http://sso:5000"
                 VALIDATE_ISSUER: "false"
+                AMBIENT: "linux"
 
         #############################
         # User management UI

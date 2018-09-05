@@ -34,8 +34,8 @@ namespace Jp.UI.SSO.Configuration
                 })
                 .AddFacebook("Facebook", options =>
                 {
-
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
                     options.ClientId = configuration.GetSection("ExternalLogin").GetSection("Facebook").GetSection("ClientId").Value;
                     options.ClientSecret = configuration.GetSection("ExternalLogin").GetSection("Facebook").GetSection("ClientSecret").Value;
                     options.Fields.Add("picture");
