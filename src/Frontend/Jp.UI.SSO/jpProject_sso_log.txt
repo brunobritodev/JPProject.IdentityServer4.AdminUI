@@ -2947,3 +2947,127 @@ System.Exception: An error was encountered while handling the remote login. --->
 2018-09-04 16:05:34.349 -03:00 [INF] Authority URI: http://localhost:5000
 2018-09-04 16:05:34.433 -03:00 [INF] SigninCredentialExtension keyType is File
 2018-09-04 16:05:38.237 -03:00 [INF] SigninCredentialExtension adding key from file JPProjectOAuth.pfx
+2018-09-05 00:51:15.325 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:51:15.411 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeEnvironment
+2018-09-05 00:51:15.431 -03:00 [INF] Take Certifate from Environment
+2018-09-05 00:51:15.431 -03:00 [ERR] SigninCredentialExtension cannot find key file 
+2018-09-05 00:52:11.582 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:52:11.653 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeEnvironment
+2018-09-05 00:52:11.665 -03:00 [INF] Take Certifate from Environment
+2018-09-05 00:52:11.665 -03:00 [ERR] SigninCredentialExtension cannot find key file 
+2018-09-05 00:53:47.012 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:53:47.074 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeKeyFile
+2018-09-05 00:55:12.944 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:55:13.010 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeKeyFile
+2018-09-05 00:56:13.784 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:56:13.859 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeKeyFile
+2018-09-05 00:56:23.241 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:56:23.335 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeKeyFile
+2018-09-05 00:56:37.619 -03:00 [DBG] Custom IssuerUri set to https://sso:5000
+2018-09-05 00:56:37.625 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-05 00:56:37.625 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-05 00:56:37.625 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-05 00:56:37.625 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-05 00:56:37.626 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-05 00:56:44.062 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-05 00:56:44.169 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-05 00:56:44.174 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-05 00:56:44.210 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-05 00:56:44.216 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-05 00:56:44.216 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-05 00:56:44.220 -03:00 [DBG] Start discovery request
+2018-09-05 00:56:44.488 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-05 00:57:37.306 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-05 00:57:37.313 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-05 00:57:37.314 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-05 00:57:37.326 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-05 00:57:37.327 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-05 00:57:37.330 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-05 00:57:37.336 -03:00 [DBG] Start discovery request
+2018-09-05 00:57:37.346 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-05 00:57:53.419 -03:00 [INF] Authority URI: https://sso:5000
+2018-09-05 00:57:53.492 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeKeyFile
+2018-09-05 00:57:56.198 -03:00 [DBG] Custom IssuerUri set to https://sso:5000
+2018-09-05 00:57:56.208 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-05 00:57:56.208 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-05 00:57:56.208 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-05 00:57:56.209 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-05 00:57:56.209 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-05 00:58:02.535 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-05 00:58:02.648 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-05 00:58:02.653 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-05 00:58:02.692 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-05 00:58:02.697 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-05 00:58:02.698 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-05 00:58:02.702 -03:00 [DBG] Start discovery request
+2018-09-05 00:58:02.979 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-05 00:58:35.017 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 00:58:35.086 -03:00 [INF] SigninCredentialExtension keyType is KeyTypeKeyFile
+2018-09-05 00:58:37.710 -03:00 [DBG] Custom IssuerUri set to https://localhost:5000
+2018-09-05 00:58:37.716 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-05 00:58:37.717 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-05 00:58:37.717 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-05 00:58:37.718 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-05 00:58:37.718 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-05 00:58:41.269 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-05 00:58:41.400 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-05 00:58:41.408 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-05 00:58:41.448 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-05 00:58:41.454 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-05 00:58:41.455 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-05 00:58:41.459 -03:00 [DBG] Start discovery request
+2018-09-05 00:58:41.759 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-05 00:58:41.842 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-05 00:58:41.848 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-05 00:58:41.849 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-05 00:58:41.854 -03:00 [DBG] Start authorize request
+2018-09-05 00:58:41.863 -03:00 [DBG] No user present in authorize request
+2018-09-05 00:58:41.873 -03:00 [DBG] Start authorize request protocol validation
+2018-09-05 00:58:42.069 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-05 00:58:42.107 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-05 00:58:42.197 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-05 00:58:42.212 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-05 00:58:42.218 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-05 00:58:42.225 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-05 00:58:42.236 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "oakoMECfsZN86wQ7PanazMKSufQz1F11p42J0R1u",
+  "Nonce": "oakoMECfsZN86wQ7PanazMKSufQz1F11p42J0R1u",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "oakoMECfsZN86wQ7PanazMKSufQz1F11p42J0R1u",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "oakoMECfsZN86wQ7PanazMKSufQz1F11p42J0R1u"
+  }
+}
+2018-09-05 00:58:42.244 -03:00 [INF] Showing login: User is not authenticated
+2018-09-05 00:58:42.377 -03:00 [DBG] Start authorize request protocol validation
+2018-09-05 00:58:42.388 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-05 00:58:42.392 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-05 00:58:42.399 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-05 00:58:42.402 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-05 00:58:42.412 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-05 00:58:42.413 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-05 00:58:42.426 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-05 00:58:42.481 -03:00 [ERR] An exception was thrown while deserializing the token.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery token could not be decrypted. ---> System.Security.Cryptography.CryptographicException: The key {1280242d-1c0e-4f05-b18c-50de979b41c7} was not found in the key ring.
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.GetCookieTokenDoesNotThrow(HttpContext httpContext)

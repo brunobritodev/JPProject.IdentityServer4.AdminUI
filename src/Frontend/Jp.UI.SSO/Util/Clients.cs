@@ -74,7 +74,7 @@ namespace Jp.UI.SSO.Util
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris =
                     {
-                        "http://localhost:5003/swagger/oauth2-redirect.html"
+                        "https://localhost:5003/swagger/oauth2-redirect.html"
                     },
                     AllowedScopes =
                     {

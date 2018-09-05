@@ -18,11 +18,14 @@ namespace Jp.UI.SSO.Configuration
             IConfiguration configuration, IHostingEnvironment environment, ILogger logger)
         {
             var connectionString = Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
-            var issuerUri = Environment.GetEnvironmentVariable("ISSUER_URI") ?? "http://localhost:5000";
+            var issuerUri = Environment.GetEnvironmentVariable("ISSUER_URI") ?? "https://localhost:5000";
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
 
             logger.LogInformation($"Authority URI: {issuerUri}");
+            
+
+
             var builder = services.AddIdentityServer(
                     options =>
                 {
@@ -31,7 +34,7 @@ namespace Jp.UI.SSO.Configuration
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
                     options.IssuerUri = issuerUri;
-                    options.Authentication.CheckSessionCookieName = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+                    
                 })
                 .AddAspNetIdentity<UserIdentity>()
                 // this adds the config data from DB (clients, resources)

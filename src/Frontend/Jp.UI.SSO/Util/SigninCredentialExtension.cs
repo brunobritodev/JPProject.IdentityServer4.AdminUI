@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,9 @@ namespace Jp.UI.SSO.Util
         private const string FileName = nameof(FileName);
         private const string FilePassword = nameof(FilePassword);
         private const string KeyStoreIssuer = "KeyStoreIssuer";
+        private const string KeyTypeEnvironment = nameof(KeyTypeEnvironment);
+
+
 
         public static IIdentityServerBuilder AddSigninCredentialFromConfig(
             this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger, IHostingEnvironment env)
@@ -47,9 +51,30 @@ namespace Jp.UI.SSO.Util
                 case KeyTypeKeyStore:
                     AddCertificateFromStore(builder, options, logger);
                     break;
+
+                case KeyTypeEnvironment:
+                    AddCertificateFromEnvironment(builder, logger);
+                    break;
             }
 
             return builder;
+        }
+
+        private static void AddCertificateFromEnvironment(IIdentityServerBuilder builder, ILogger logger)
+        {
+            logger.LogInformation("Take Certifate from Environment");
+            var file = Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Path");
+            var password = Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Password");
+            if (File.Exists(file))
+            {
+                logger.LogInformation("Taked Certifate from Environment");
+                builder.AddSigningCredential(new X509Certificate2(file, password));
+            }
+            else
+            {
+                logger.LogError($"SigninCredentialExtension cannot find key file {Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Path")}");
+            }
+
         }
 
         private static void AddCertificateFromStore(IIdentityServerBuilder builder,
