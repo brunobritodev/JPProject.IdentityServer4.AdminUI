@@ -1,9 +1,10 @@
-﻿using IdentityServer4.Configuration;
-using IdentityServer4.Services;
+﻿using System;
+using System.IO;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +16,7 @@ namespace Jp.UI.SSO
     {
         private readonly ILogger _logger;
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment Environment { get; }
+        private readonly IHostingEnvironment _environment;
 
         public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
         {
@@ -32,7 +33,7 @@ namespace Jp.UI.SSO
             }
 
             Configuration = builder.Build();
-            Environment = environment;
+            _environment = environment;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -42,14 +43,14 @@ namespace Jp.UI.SSO
             services.AddMvc();
             services.AddIdentity(Configuration);
 
-            services.Configure<IISOptions>(iis =>
-            {
-                iis.AuthenticationDisplayName = "Windows";
-                iis.AutomaticAuthentication = false;
-            });
+            // For linux ambient DataProtection
+            // https://github.com/aspnet/Home/issues/2941
+            // You can remove it in ISS
+            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
+
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, Environment, _logger);
+            services.AddIdentityServer(Configuration, _environment, _logger);
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);
@@ -67,16 +68,18 @@ namespace Jp.UI.SSO
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Only use HTTPS redirect in Production Ambients
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
+                _logger.LogInformation("Using HTTPS Rediretion");
                 app.UseHsts();
                 app.UseHttpsRedirection();
             }
-
+            
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

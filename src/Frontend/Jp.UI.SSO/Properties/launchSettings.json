@@ -1,7 +1,4 @@
 {
-  "ConnectionStrings": {
-    "SSOConnection": "Server=.;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
-  },
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -10,25 +7,24 @@
       "sslPort": 5001
     }
   },
+  "ConnectionStrings": {
+    "SSOConnection": "Server=.;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
+  },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SQLSERVER_PORT": "1433",
         "SQLSERVER_HOST": "localhost",
         "SQLSERVER_PASSWORD": "@Password1",
-        "SQLSERVER_PORT": "1433"
-
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "Jp.UI.SSO": {
       "commandName": "Project",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "SQLSERVER_HOST": "localhost",
-        "SQLSERVER_PASSWORD": "@Password1",
-        "SQLSERVER_PORT": "1433"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:5000;https://localhost:5001"
     }

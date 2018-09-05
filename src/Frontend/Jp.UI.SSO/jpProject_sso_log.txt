@@ -2479,3 +2479,471 @@ System.Exception: External authentication error
 2018-09-04 02:33:40.364 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
 2018-09-04 02:33:40.365 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2018-09-04 02:33:40.369 -03:00 [DBG] Start key discovery request
+2018-09-04 12:57:48.492 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 12:57:48.520 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 12:57:48.521 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 12:57:48.521 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 12:57:48.521 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 12:57:48.521 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 12:58:02.764 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:02.776 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:17.788 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:17.789 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:17.816 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 12:58:17.820 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:17.820 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:18.900 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:18.902 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:18.915 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 12:58:20.323 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 12:58:20.331 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:20.331 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:20.602 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGIFSKOEBV8:00000006",
+  "TimeStamp": "2018-09-04T15:58:20Z",
+  "ProcessId": 33556,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 12:58:20.611 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 12:58:20.612 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 12:58:20.616 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 12:58:20.618 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 12:58:20.621 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 12:58:20.773 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 12:58:21.147 -03:00 [DBG] Swagger found in database: true
+2018-09-04 12:58:21.178 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 12:58:21.289 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 12:58:38.606 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 12:58:39.175 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 12:58:39.193 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGIFSKOEBV6:00000007",
+  "TimeStamp": "2018-09-04T15:58:39Z",
+  "ProcessId": 33556,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 12:58:39.200 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 12:58:39.201 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 12:58:39.202 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 12:58:39.202 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 12:58:39.208 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 12:58:39.219 -03:00 [DBG] Swagger found in database: true
+2018-09-04 12:58:39.221 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 12:58:39.226 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 12:59:05.499 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 12:59:05.537 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-04 12:59:05.538 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 12:59:05.540 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-04 12:59:05.544 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGIFSKOEBV8:0000000C",
+  "TimeStamp": "2018-09-04T15:59:05Z",
+  "ProcessId": 33556,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 13:05:37.939 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 13:05:37.968 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 13:05:37.969 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 13:05:37.969 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 13:05:37.969 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 13:05:37.969 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 13:05:55.160 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 13:05:57.108 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 13:05:57.967 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 13:05:58.223 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGIG1538VEE:00000006",
+  "TimeStamp": "2018-09-04T16:05:58Z",
+  "ProcessId": 10496,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 13:05:58.232 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 13:05:58.233 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 13:05:58.237 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 13:05:58.241 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 13:05:58.291 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 13:05:58.615 -03:00 [DBG] Swagger found in database: true
+2018-09-04 13:05:58.645 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 13:05:58.740 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 13:06:22.754 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 13:06:22.786 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-04 13:06:22.788 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 13:06:22.788 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-04 13:06:22.792 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGIG1538VEE:00000009",
+  "TimeStamp": "2018-09-04T16:06:22Z",
+  "ProcessId": 10496,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 13:07:14.395 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 13:07:14.421 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 13:07:14.421 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 13:07:14.422 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 13:07:14.422 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 13:07:14.422 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 13:36:16.804 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 13:36:19.051 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 13:36:19.057 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 13:36:19.058 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 13:36:19.058 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 13:36:19.058 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 13:36:19.058 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 13:36:22.834 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 13:36:25.246 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 13:36:25.253 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 13:36:25.253 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 13:36:25.253 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 13:36:25.254 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 13:36:25.254 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 13:36:35.844 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 13:36:43.761 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 13:36:44.778 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 13:36:45.029 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGIGI76TE6A:00000006",
+  "TimeStamp": "2018-09-04T16:36:44Z",
+  "ProcessId": 31596,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 13:36:45.039 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 13:36:45.041 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 13:36:45.044 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 13:36:45.049 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 13:36:45.099 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 13:36:45.395 -03:00 [DBG] Swagger found in database: true
+2018-09-04 13:36:45.423 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 13:36:45.521 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 13:36:51.138 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 13:36:51.171 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-04 13:36:51.172 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 13:36:51.174 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-04 13:36:51.178 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGIGI76TE6A:00000009",
+  "TimeStamp": "2018-09-04T16:36:51Z",
+  "ProcessId": 31596,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 15:05:48.512 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:05:50.951 -03:00 [WRN] No XML encryptor configured. Key "ccbb65c1-b7ad-44ec-add7-d7b4e0644492" may be persisted to storage in unencrypted form.
+2018-09-04 15:05:51.050 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 15:05:51.058 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 15:05:51.058 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 15:05:51.058 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 15:05:51.058 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 15:05:51.059 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 15:06:04.592 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:06:04.604 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:06:09.153 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:06:09.157 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:06:09.181 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 15:06:09.185 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:06:09.187 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:06:09.242 -03:00 [ERR] An exception was thrown while deserializing the token.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery token could not be decrypted. ---> System.Security.Cryptography.CryptographicException: The key {b89a3127-6459-4bd3-8eb9-3f53e8355053} was not found in the key ring.
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.GetCookieTokenDoesNotThrow(HttpContext httpContext)
+2018-09-04 15:07:12.222 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:07:14.697 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 15:07:14.704 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 15:07:14.704 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 15:07:14.705 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 15:07:14.705 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 15:07:14.705 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 15:07:20.379 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:20.391 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:23.622 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:23.624 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:23.647 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 15:07:23.651 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:23.652 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:27.177 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:27.178 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:27.189 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 15:07:28.167 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 15:07:28.175 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:28.175 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:28.414 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGII4V8VKR0:00000006",
+  "TimeStamp": "2018-09-04T18:07:28Z",
+  "ProcessId": 16112,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 15:07:28.421 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 15:07:28.423 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 15:07:28.426 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:07:28.427 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 15:07:28.431 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:07:28.481 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 15:07:28.796 -03:00 [DBG] Swagger found in database: true
+2018-09-04 15:07:28.823 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 15:07:28.922 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 15:07:34.360 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 15:07:34.388 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-04 15:07:34.389 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:07:34.390 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-04 15:07:34.394 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGII4V8VKR0:00000009",
+  "TimeStamp": "2018-09-04T18:07:34Z",
+  "ProcessId": 16112,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 15:07:39.512 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-09-04 15:07:45.304 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 15:07:45.413 -03:00 [WRN] User 744eb69e-ab3a-4a03-a840-53088819651b validation failed: DuplicateUserName.
+2018-09-04 15:07:50.390 -03:00 [WRN] '.AspNetCore.Correlation.Google.ehGpSg2StXsuKOu57AbMSu7D1nmSHfIv23iFmMGG1Pw' cookie not found.
+2018-09-04 15:07:50.392 -03:00 [INF] Error from RemoteAuthentication: Correlation failed..
+2018-09-04 15:07:50.400 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error was encountered while handling the remote login. ---> System.Exception: Correlation failed.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at IdentityServer4.Hosting.FederatedSignOut.AuthenticationRequestHandlerWrapper.HandleRequestAsync() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\FederatedSignOut\AuthenticationRequestHandlerWrapper.cs:line 38
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-04 15:07:57.910 -03:00 [WRN] '.AspNetCore.Correlation.Google.ehGpSg2StXsuKOu57AbMSu7D1nmSHfIv23iFmMGG1Pw' cookie not found.
+2018-09-04 15:07:57.911 -03:00 [INF] Error from RemoteAuthentication: Correlation failed..
+2018-09-04 15:07:57.914 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error was encountered while handling the remote login. ---> System.Exception: Correlation failed.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at IdentityServer4.Hosting.FederatedSignOut.AuthenticationRequestHandlerWrapper.HandleRequestAsync() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\FederatedSignOut\AuthenticationRequestHandlerWrapper.cs:line 38
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-04 15:08:03.947 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 15:08:04.619 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 15:08:04.631 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bc04b0b5-d42e-456d-af1e-cbba844a2d6e",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGII4V8VKR0:00000014",
+  "TimeStamp": "2018-09-04T18:08:04Z",
+  "ProcessId": 16112,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 15:08:04.633 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 15:08:04.633 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 15:08:04.634 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 15:08:04.634 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:08:09.261 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 15:08:09.274 -03:00 [DBG] Swagger found in database: true
+2018-09-04 15:08:09.276 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 15:08:09.279 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 15:08:14.995 -03:00 [DBG] 1 persisted grants found for bc04b0b5-d42e-456d-af1e-cbba844a2d6e
+2018-09-04 15:08:15.010 -03:00 [DBG] Swagger found in database: true
+2018-09-04 15:08:15.011 -03:00 [DBG] Found [] identity scopes in database
+2018-09-04 15:08:15.017 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-04 15:14:02.364 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:14:49.058 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:16:55.082 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:17:09.301 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 15:17:09.307 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 15:17:09.307 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 15:17:09.308 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 15:17:09.308 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 15:17:09.308 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 15:17:10.350 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:10.360 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:16.977 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:16.979 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:17.003 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 15:17:17.008 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:17.008 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.623 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.623 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.623 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.623 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.624 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.624 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.625 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:33.626 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-09-04 15:17:50.769 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 15:18:06.628 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 15:18:11.000 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 15:18:12.232 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 15:18:12.446 -03:00 [INF] Provider Facebook associated.
+2018-09-04 15:18:12.642 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bd712d59-5ba3-46d6-88c3-4b052a4b9f27",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGIIAGMOMTJ:0000000E",
+  "TimeStamp": "2018-09-04T18:18:12Z",
+  "ProcessId": 16688,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 15:18:12.650 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 15:18:12.652 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 15:18:12.655 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 15:18:12.660 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:18:12.700 -03:00 [DBG] 0 persisted grants found for bd712d59-5ba3-46d6-88c3-4b052a4b9f27
+2018-09-04 15:18:19.280 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 15:18:19.313 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-04 15:18:19.314 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:18:19.316 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-04 15:18:19.320 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "bd712d59-5ba3-46d6-88c3-4b052a4b9f27",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGIIAGMOMTJ:00000012",
+  "TimeStamp": "2018-09-04T18:18:19Z",
+  "ProcessId": 16688,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-04 15:19:34.679 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:19:37.224 -03:00 [DBG] Custom IssuerUri set to http://localhost:5000
+2018-09-04 15:19:37.231 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-04 15:19:37.232 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-04 15:19:37.232 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-04 15:19:37.232 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-04 15:19:37.232 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-04 15:19:48.375 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-09-04 15:19:51.973 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-04 15:19:53.120 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-04 15:19:53.371 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "bd712d59-5ba3-46d6-88c3-4b052a4b9f27",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGIIBSJ32A3:00000007",
+  "TimeStamp": "2018-09-04T18:19:53Z",
+  "ProcessId": 15408,
+  "LocalIpAddress": "127.0.0.1:5000",
+  "RemoteIpAddress": "127.0.0.1"
+}
+2018-09-04 15:19:53.379 -03:00 [DBG] Augmenting SignInContext
+2018-09-04 15:19:53.380 -03:00 [DBG] Adding amr claim with value: external
+2018-09-04 15:19:53.384 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-04 15:19:53.389 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:19:53.426 -03:00 [DBG] 0 persisted grants found for bd712d59-5ba3-46d6-88c3-4b052a4b9f27
+2018-09-04 15:19:57.904 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-04 15:19:57.932 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-04 15:19:57.933 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-04 15:19:57.934 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-04 15:19:57.939 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "bd712d59-5ba3-46d6-88c3-4b052a4b9f27",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGIIBSJ32A3:0000000A",
+  "TimeStamp": "2018-09-04T18:19:57Z",
+  "ProcessId": 15408,
+  "LocalIpAddress": "127.0.0.1:5000",
+  "RemoteIpAddress": "127.0.0.1"
+}
+2018-09-04 16:01:14.859 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:01:14.961 -03:00 [INF] SigninCredentialExtension keyType is File
+2018-09-04 16:02:00.410 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:02:00.479 -03:00 [INF] SigninCredentialExtension keyType is File
+2018-09-04 16:04:45.975 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:04:46.043 -03:00 [INF] SigninCredentialExtension keyType is File
+2018-09-04 16:05:34.349 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:05:34.433 -03:00 [INF] SigninCredentialExtension keyType is File
+2018-09-04 16:05:38.237 -03:00 [INF] SigninCredentialExtension adding key from file JPProjectOAuth.pfx

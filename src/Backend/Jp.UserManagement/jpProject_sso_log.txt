@@ -741,3 +741,164 @@ WHERE [e].[Id] = @__get_Item_0
 2018-09-04 02:33:41.687 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2018-09-04 02:33:41.700 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 1247.3456ms
 2018-09-04 02:33:41.711 -03:00 [INF] Request finished in 6612.0118ms 200 application/json; charset=utf-8
+2018-09-04 12:56:41.810 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 12:56:42.142 -03:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://[::1]:5003: address already in use. ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted ---> System.Net.Sockets.SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2018-09-04 12:57:46.642 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 12:57:47.662 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 12:57:47.728 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 12:57:47.769 -03:00 [INF] Request finished in 107.4661ms 200 text/html
+2018-09-04 12:57:48.013 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 12:57:48.015 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 12:57:48.164 -03:00 [INF] Request finished in 150.2416ms 200 application/json;charset=utf-8
+2018-09-04 13:05:16.600 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 13:05:16.860 -03:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://[::1]:5003: address already in use. ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted ---> System.Net.Sockets.SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2018-09-04 13:05:36.202 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 13:05:37.061 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 13:05:37.085 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 13:05:37.109 -03:00 [INF] Request finished in 50.6803ms 200 text/html
+2018-09-04 13:05:37.373 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 13:05:37.375 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 13:05:37.552 -03:00 [INF] Request finished in 178.7571ms 200 application/json;charset=utf-8
+2018-09-04 13:07:12.698 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 13:07:13.657 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 13:07:13.685 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 13:07:13.700 -03:00 [INF] Request finished in 45.0707ms 200 text/html
+2018-09-04 13:07:13.991 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 13:07:13.992 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 13:07:14.150 -03:00 [INF] Request finished in 159.3134ms 200 application/json;charset=utf-8
+2018-09-04 13:36:22.733 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 13:36:23.445 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 13:36:24.381 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 13:36:24.414 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 13:36:24.436 -03:00 [INF] Request finished in 57.3508ms 200 text/html
+2018-09-04 13:36:24.749 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 13:36:24.751 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 13:36:24.926 -03:00 [INF] Request finished in 177.3326ms 200 application/json;charset=utf-8
+2018-09-04 14:56:09.723 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 14:57:31.152 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:05:48.390 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:05:49.237 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 15:05:50.647 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:05:50.681 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:05:50.733 -03:00 [INF] Request finished in 88.3561ms 200 text/html
+2018-09-04 15:05:51.103 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:05:51.104 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:05:51.278 -03:00 [INF] Request finished in 175.0562ms 200 application/json;charset=utf-8
+2018-09-04 15:07:10.580 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:07:12.855 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 15:07:13.871 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:07:13.899 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:07:13.913 -03:00 [INF] Request finished in 47.3391ms 200 text/html
+2018-09-04 15:07:14.209 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:07:14.211 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:07:14.392 -03:00 [INF] Request finished in 182.5782ms 200 application/json;charset=utf-8
+2018-09-04 15:13:46.756 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:14:03.173 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 15:14:04.522 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:14:04.553 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:04.583 -03:00 [INF] Request finished in 63.0157ms 200 text/html
+2018-09-04 15:14:04.709 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/swagger-ui-bundle.js  
+2018-09-04 15:14:04.709 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/swagger-ui.css  
+2018-09-04 15:14:04.711 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:04.712 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/swagger-ui-standalone-preset.js  
+2018-09-04 15:14:04.714 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:04.717 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:04.778 -03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2018-09-04 15:14:04.778 -03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2018-09-04 15:14:04.785 -03:00 [INF] Request finished in 72.7628ms 200 application/javascript
+2018-09-04 15:14:04.785 -03:00 [INF] Request finished in 75.7925ms 200 text/css
+2018-09-04 15:14:04.860 -03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2018-09-04 15:14:04.862 -03:00 [INF] Request finished in 152.3053ms 200 application/javascript
+2018-09-04 15:14:05.402 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:14:05.403 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:05.559 -03:00 [INF] Request finished in 156.8359ms 200 application/json;charset=utf-8
+2018-09-04 15:14:44.760 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:14:49.704 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 15:14:50.546 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:14:50.546 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:14:50.580 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:50.580 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:50.607 -03:00 [INF] Request finished in 63.3338ms 200 text/html
+2018-09-04 15:14:50.607 -03:00 [INF] Request finished in 63.3248ms 200 text/html
+2018-09-04 15:14:51.368 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:14:51.369 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:51.509 -03:00 [INF] Request finished in 141.2844ms 200 application/json;charset=utf-8
+2018-09-04 15:14:52.007 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:14:52.009 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:14:52.012 -03:00 [INF] Request finished in 5.2193ms 200 application/json;charset=utf-8
+2018-09-04 15:16:53.399 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:16:55.709 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 15:16:56.691 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:16:56.776 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:16:56.800 -03:00 [INF] Request finished in 111.542ms 200 text/html
+2018-09-04 15:16:57.523 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:16:57.525 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:16:57.669 -03:00 [INF] Request finished in 145.4127ms 200 application/json;charset=utf-8
+2018-09-04 15:16:58.011 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:16:58.012 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:16:58.016 -03:00 [INF] Request finished in 4.7879ms 200 application/json;charset=utf-8
+2018-09-04 15:19:34.582 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 15:19:35.332 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 15:19:36.243 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html  
+2018-09-04 15:19:36.288 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:19:36.340 -03:00 [INF] Request finished in 99.4792ms 200 text/html
+2018-09-04 15:19:37.071 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:19:37.072 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:19:37.266 -03:00 [INF] Request finished in 194.8337ms 200 application/json;charset=utf-8
+2018-09-04 15:19:39.021 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json  
+2018-09-04 15:19:39.022 -03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-09-04 15:19:39.027 -03:00 [INF] Request finished in 6.3427ms 200 application/json;charset=utf-8
+2018-09-04 16:01:14.748 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:02:00.288 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:04:45.887 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:05:34.235 -03:00 [INF] Authority URI: http://localhost:5000
+2018-09-04 16:05:39.964 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-04 16:05:40.212 -03:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://[::1]:5003: address already in use. ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted ---> System.Net.Sockets.SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)

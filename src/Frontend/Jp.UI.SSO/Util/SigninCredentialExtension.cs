@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -11,7 +13,7 @@ namespace Jp.UI.SSO.Util
     /// with an appsetting.json configuration look similar to:
     /// "SigninKeyCredentials": {
     ///     "KeyType": "KeyFile",
-    ///     "KeyFilePath": "C:\\certificates\\idsv4.pfx",
+    ///     "FileName": "C:\\certificates\\idsv4.pfx",
     ///     "KeyStorePath": ""
     /// }
     /// </summary>
@@ -21,25 +23,25 @@ namespace Jp.UI.SSO.Util
         private const string KeyTypeKeyFile = "File";
         private const string KeyTypeKeyStore = "Store";
         private const string KeyTypeTemporary = "Temporary";
-        private const string KeyFilePath = "FilePath";
-        private const string KeyFilePassword = "FilePassword";
+        private const string FileName = nameof(FileName);
+        private const string FilePassword = nameof(FilePassword);
         private const string KeyStoreIssuer = "KeyStoreIssuer";
 
         public static IIdentityServerBuilder AddSigninCredentialFromConfig(
-            this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger)
+            this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger, IHostingEnvironment env)
         {
             string keyType = options.GetValue<string>(KeyType);
-            logger.LogDebug($"SigninCredentialExtension keyType is {keyType}");
+            logger.LogInformation($"SigninCredentialExtension keyType is {keyType}");
 
             switch (keyType)
             {
                 case KeyTypeTemporary:
-                    logger.LogDebug($"SigninCredentialExtension adding Temporary Signing Credential");
+                    logger.LogInformation($"SigninCredentialExtension adding Temporary Signing Credential");
                     builder.AddDeveloperSigningCredential(true);
                     break;
 
                 case KeyTypeKeyFile:
-                    AddCertificateFromFile(builder, options, logger);
+                    AddCertificateFromFile(builder, options, logger, env);
                     break;
 
                 case KeyTypeKeyStore:
@@ -54,7 +56,7 @@ namespace Jp.UI.SSO.Util
             IConfigurationSection options, ILogger logger)
         {
             var keyIssuer = options.GetValue<string>(KeyStoreIssuer);
-            logger.LogDebug($"SigninCredentialExtension adding key from store by {keyIssuer}");
+            logger.LogInformation($"SigninCredentialExtension adding key from store by {keyIssuer}");
 
             X509Store store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
             store.Open(OpenFlags.ReadOnly);
@@ -68,19 +70,19 @@ namespace Jp.UI.SSO.Util
         }
 
         private static void AddCertificateFromFile(IIdentityServerBuilder builder,
-            IConfigurationSection options, ILogger logger)
+            IConfigurationSection options, ILogger logger, IHostingEnvironment env)
         {
-            var keyFilePath = options.GetValue<string>(KeyFilePath);
-            var keyFilePassword = options.GetValue<string>(KeyFilePassword);
+            var keyFileName = options.GetValue<string>(FileName);
+            var keyFilePassword = options.GetValue<string>(FilePassword);
 
-            if (File.Exists(keyFilePath))
+            if (File.Exists(Path.Combine(env.ContentRootPath, keyFileName)))
             {
-                logger.LogDebug($"SigninCredentialExtension adding key from file {keyFilePath}");
-                builder.AddSigningCredential(new X509Certificate2(keyFilePath, keyFilePassword, X509KeyStorageFlags.MachineKeySet));
+                logger.LogInformation($"SigninCredentialExtension adding key from file {keyFileName}");
+                builder.AddSigningCredential(new X509Certificate2(Path.Combine(env.ContentRootPath, keyFileName), keyFilePassword));
             }
             else
             {
-                logger.LogError($"SigninCredentialExtension cannot find key file {keyFilePath}");
+                logger.LogError($"SigninCredentialExtension cannot find key file {keyFileName}");
             }
         }
     }
