@@ -7,9 +7,6 @@
       "sslPort": 5001
     }
   },
-  "ConnectionStrings": {
-    "SSOConnection": "Server=.;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
-  },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
@@ -23,14 +20,15 @@
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "SQLSERVER_CONNECTION": "Server=.,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;",
         "ASPNETCORE_URLS": "https://+:5000;http://+:5001",
+        "APPINSIGHTS_INSTRUMENTATIONKEY": "<KEY>",
+        "CERTIFICATE_TYPE": "File"
 
+        // "DATABASE_CONNECTION": "Server=.,1433;Initial Catalog=JpProjectTest;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;",
         // For Docker certificate
         // "ASPNETCORE_Kestrel__Certificates__Default__Password": ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3",
         // "ASPNETCORE_Kestrel__Certificates__Default__Path": "/root/.dotnet/https/jpproject.pfx",
         // Types:: File / Environment / Temporary / Store
-        "CERTIFICATE_TYPE": "File"
       },
       "applicationUrl": "https://localhost:5000;http://localhost:5001"
     }

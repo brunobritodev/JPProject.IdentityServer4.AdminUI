@@ -1496,3 +1496,195 @@ WHERE [e].[Id] = @__get_Item_0
 2018-09-05 14:08:12.275 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2018-09-05 14:08:12.288 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 970.41370000000006ms
 2018-09-05 14:08:12.298 -03:00 [INF] Request finished in 1330.8913ms 200 application/json; charset=utf-8
+2018-09-05 14:20:03.834 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 14:20:18.262 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 14:20:20.799 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 16:43:49.503 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 16:43:50.503 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 16:45:17.261 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 16:45:18.061 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 16:46:03.898 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-09-05 16:46:03.903 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:03.908 -03:00 [INF] Request finished in 10.6897ms 204 
+2018-09-05 16:46:03.914 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-05 16:46:03.915 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:04.197 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:04.200 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:04.266 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-05 16:46:04.278 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:04.369 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:04.791 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:05.193 -03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:05.307 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 932.0385ms.
+2018-09-05 16:46:05.315 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-05 16:46:05.329 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 1061.1931ms
+2018-09-05 16:46:05.339 -03:00 [INF] Request finished in 1425.3302ms 200 application/json; charset=utf-8
+2018-09-05 16:46:15.872 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-09-05 16:46:15.873 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:15.876 -03:00 [INF] Request finished in 3.6272ms 204 
+2018-09-05 16:46:16.943 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/has-password  
+2018-09-05 16:46:16.945 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:16.947 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-05 16:46:16.947 -03:00 [INF] Request finished in 4.1601ms 204 
+2018-09-05 16:46:16.948 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:16.962 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/has-password  
+2018-09-05 16:46:16.964 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:17.059 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:17.060 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:17.061 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-05 16:46:17.062 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:17.064 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:17.072 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:17.109 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:17.109 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:17.109 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:17.112 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 47.046400000000006ms.
+2018-09-05 16:46:17.114 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-05 16:46:17.115 -03:00 [INF] Route matched with {action = "HasPassword", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement)
+2018-09-05 16:46:17.115 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 53.0606ms
+2018-09-05 16:46:17.116 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:17.118 -03:00 [INF] Request finished in 170.9352ms 200 application/json; charset=utf-8
+2018-09-05 16:46:17.121 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:17.124 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:17.131 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:17.135 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.7751ms.
+2018-09-05 16:46:17.136 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-09-05 16:46:17.140 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement) in 23.5229ms
+2018-09-05 16:46:17.141 -03:00 [INF] Request finished in 179.4786ms 200 application/json; charset=utf-8
+2018-09-05 16:46:29.750 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/create-password  
+2018-09-05 16:46:29.751 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:29.752 -03:00 [INF] Request finished in 1.6571ms 204 
+2018-09-05 16:46:29.754 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5003/management/create-password application/json 59
+2018-09-05 16:46:29.755 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:29.815 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:29.816 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:29.826 -03:00 [INF] Route matched with {action = "CreatePassword", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.CreatePassword (Jp.UserManagement)
+2018-09-05 16:46:29.828 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:29.859 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.CreatePassword (Jp.UserManagement) with arguments (["Jp.Application.ViewModels.SetPasswordViewModel"]) - Validation state: "Valid"
+2018-09-05 16:46:29.913 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:29.921 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:29.991 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`AccessFailedCount`, `u`.`Bio`, `u`.`Company`, `u`.`ConcurrencyStamp`, `u`.`Email`, `u`.`EmailConfirmed`, `u`.`JobTitle`, `u`.`LockoutEnabled`, `u`.`LockoutEnd`, `u`.`Name`, `u`.`NormalizedEmail`, `u`.`NormalizedUserName`, `u`.`PasswordHash`, `u`.`PhoneNumber`, `u`.`PhoneNumberConfirmed`, `u`.`Picture`, `u`.`SecurityStamp`, `u`.`TwoFactorEnabled`, `u`.`Url`, `u`.`UserName`
+FROM `Users` AS `u`
+WHERE `u`.`NormalizedUserName` = @__normalizedUserName_0
+LIMIT 1
+2018-09-05 16:46:30.129 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `AccessFailedCount` = @p0, `Bio` = @p1, `Company` = @p2, `ConcurrencyStamp` = @p3, `Email` = @p4, `EmailConfirmed` = @p5, `JobTitle` = @p6, `LockoutEnabled` = @p7, `LockoutEnd` = @p8, `Name` = @p9, `NormalizedEmail` = @p10, `NormalizedUserName` = @p11, `PasswordHash` = @p12, `PhoneNumber` = @p13, `PhoneNumberConfirmed` = @p14, `Picture` = @p15, `SecurityStamp` = @p16, `TwoFactorEnabled` = @p17, `Url` = @p18, `UserName` = @p19
+WHERE `Id` = @p20 AND `ConcurrencyStamp` = @p21;
+SELECT ROW_COUNT();
+2018-09-05 16:46:30.244 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'EventStoreSQLContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:30.279 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 100) (DbType = AnsiString), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `StoredEvent` (`Id`, `AggregateId`, `Data`, `Action`, `CreationDate`, `User`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2018-09-05 16:46:30.292 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.CreatePassword (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 426.3802ms.
+2018-09-05 16:46:30.306 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-09-05 16:46:30.308 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.CreatePassword (Jp.UserManagement) in 480.04810000000003ms
+2018-09-05 16:46:30.311 -03:00 [INF] Request finished in 556.7078ms 200 application/json; charset=utf-8
+2018-09-05 16:46:34.646 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-09-05 16:46:34.648 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:34.650 -03:00 [INF] Request finished in 4.6535ms 204 
+2018-09-05 16:46:34.654 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-05 16:46:34.656 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:34.754 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:34.755 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:34.756 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-05 16:46:34.759 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:34.761 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:34.763 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:34.770 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:34.775 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.086ms.
+2018-09-05 16:46:34.777 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-05 16:46:34.778 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 19.191200000000002ms
+2018-09-05 16:46:34.780 -03:00 [INF] Request finished in 125.6405ms 200 application/json; charset=utf-8
+2018-09-05 16:46:38.152 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-05 16:46:38.154 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:38.302 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:38.303 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:38.304 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-05 16:46:38.305 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:38.307 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:38.308 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:38.313 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:38.316 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.148200000000001ms.
+2018-09-05 16:46:38.317 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-05 16:46:38.319 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 13.537600000000001ms
+2018-09-05 16:46:38.320 -03:00 [INF] Request finished in 168.6085ms 200 application/json; charset=utf-8
+2018-09-05 16:46:38.661 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/has-password  
+2018-09-05 16:46:38.661 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-05 16:46:38.661 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:38.663 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:38.664 -03:00 [INF] Request finished in 3.6805ms 204 
+2018-09-05 16:46:38.671 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/has-password  
+2018-09-05 16:46:38.672 -03:00 [INF] Policy execution successful.
+2018-09-05 16:46:38.736 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:38.736 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:38.737 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-05 16:46:38.740 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:38.741 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:38.743 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:38.749 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-05 16:46:38.749 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:38.750 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-05 16:46:38.753 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.047500000000001ms.
+2018-09-05 16:46:38.754 -03:00 [INF] Route matched with {action = "HasPassword", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement)
+2018-09-05 16:46:38.756 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-05 16:46:38.757 -03:00 [INF] Authorization was successful.
+2018-09-05 16:46:38.758 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 18.8244ms
+2018-09-05 16:46:38.761 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement) - Validation state: "Valid"
+2018-09-05 16:46:38.761 -03:00 [INF] Request finished in 100.6649ms 200 application/json; charset=utf-8
+2018-09-05 16:46:38.765 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-09-05 16:46:38.771 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`Bio`, `e`.`Company`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`JobTitle`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`Name`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`Picture`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `Users` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2018-09-05 16:46:38.775 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.7478ms.
+2018-09-05 16:46:38.777 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-09-05 16:46:38.778 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement) in 20.4818ms
+2018-09-05 16:46:38.779 -03:00 [INF] Request finished in 108.5186ms 200 application/json; charset=utf-8
+2018-09-05 17:03:59.808 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:04:00.632 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:30:29.507 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:30:30.350 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:35:30.675 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:35:31.517 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:37:33.697 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:37:34.521 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:37:47.248 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:37:48.081 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:38:53.450 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:38:54.239 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:45:37.336 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:45:38.249 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 17:48:21.272 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 17:48:22.081 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-05 18:01:57.996 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-05 18:01:58.890 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.

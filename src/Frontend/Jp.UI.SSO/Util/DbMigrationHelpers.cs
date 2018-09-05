@@ -44,10 +44,10 @@ namespace Jp.UI.SSO.Util
                 var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreSQLContext>();
                 var jpContext = scope.ServiceProvider.GetRequiredService<JpContext>();
 
-                id4Context.Database.Migrate();
-                userContext.Database.Migrate();
-                storeDb.Database.Migrate();
-                jpContext.Database.Migrate();
+                await id4Context.Database.MigrateAsync();
+                await userContext.Database.MigrateAsync();
+                await storeDb.Database.MigrateAsync();
+                await jpContext.Database.MigrateAsync();
 
 
                 await EnsureSeedIdentityServerData(id4Context);
