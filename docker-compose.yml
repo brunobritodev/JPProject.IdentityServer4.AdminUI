@@ -1,4 +1,12 @@
     version: "3"
+    
+    networks:
+        jpproject_network:
+          driver: bridge
+          ipam:
+            driver: default
+            config:
+              - subnet: 172.20.0.0/16
     services:
 
         # #############################
@@ -8,7 +16,7 @@
         #   image: redis:alpine
         #   ports:
         #       - "16379:6379"
-
+    
 
         #############################
         # Database
@@ -27,7 +35,10 @@
                 test: [ "CMD", "sqlcmd", "-U", "sa", "-P", "Password1", "-Q", "select 1" ]
                 interval: 1s
                 retries: 30
-              
+
+            networks:
+                jpproject_network:
+                    ipv4_address: 172.20.0.5
         #############################
         # Server SSO
         #############################
@@ -39,7 +50,8 @@
               dockerfile: sso.dockerfile
 
             ports:
-                - "5000:5000"
+                - "5001:80"
+                - "5000:443"
 
             depends_on:
                 - database
@@ -47,8 +59,14 @@
             environment: 
                 SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
-                ISSUER_URI: "http://localhost:5000"
-                AMBIENT: "linux"
+                ISSUER_URI: "https://localhost:5000"
+                ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
+                ASPNETCORE_Kestrel__Certificates__Default__Path: "/root/.dotnet/https/jpproject.pfx"
+                ASPNETCORE_URLS: https://+:443;http://+:80
+
+            networks:
+                jpproject_network:
+                    ipv4_address: 172.20.0.6
 
         #############################
         # Management API
@@ -60,7 +78,8 @@
               dockerfile: user-management.dockerfile
 
             ports:
-                - "5003:5003"
+                - "5003:443"
+                - "5002:80"
 
             depends_on:
                 - database
@@ -69,9 +88,18 @@
             environment: 
                 SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
-                AUTHORITY: "http://sso:5000"
+                AUTHORITY: "http://localhost"
+                ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
+                ASPNETCORE_Kestrel__Certificates__Default__Path: "/root/.dotnet/https/jpproject.pfx"
+                ASPNETCORE_URLS: https://+:443;http://+:80
                 VALIDATE_ISSUER: "false"
-                AMBIENT: "linux"
+
+            extra_hosts:
+                - "localhost:172.20.0.6"
+
+            networks:
+                jpproject_network:
+                    ipv4_address: 172.20.0.7
 
         #############################
         # User management UI
@@ -85,3 +113,7 @@
 
             ports:
                 - 4200:80
+
+            networks:
+                jpproject_network:
+                    ipv4_address: 172.20.0.8

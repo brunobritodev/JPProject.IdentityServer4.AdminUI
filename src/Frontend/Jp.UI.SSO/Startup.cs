@@ -48,6 +48,11 @@ namespace Jp.UI.SSO
             // You can remove it in ISS
             services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
 
+            services.Configure<IISOptions>(iis =>
+            {
+                iis.AuthenticationDisplayName = "Windows";
+                iis.AutomaticAuthentication = false;
+            });
 
             // Configure identity server
             services.AddIdentityServer(Configuration, _environment, _logger);
@@ -75,11 +80,11 @@ namespace Jp.UI.SSO
             }
             else
             {
-                _logger.LogInformation("Using HTTPS Rediretion");
                 app.UseHsts();
                 app.UseHttpsRedirection();
             }
-            
+
+
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

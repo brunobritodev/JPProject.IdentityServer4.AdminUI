@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { CanActivate, Router } from "@angular/router";
 import { OAuthService } from "angular-oauth2-oidc";
-import { of } from "rxjs";
 import { SettingsService } from "../settings/settings.service";
 import { map } from "rxjs/operators";
 
