@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,39 +18,39 @@ namespace Jp.UI.SSO.Util
     /// </summary>
     public static class SigninCredentialExtension
     {
-        private const string KeyType = "KeyType";
-        private const string KeyTypeKeyFile = "File";
-        private const string KeyTypeKeyStore = "Store";
-        private const string KeyTypeTemporary = "Temporary";
+        private const string File = nameof(File);
+        private const string Store = nameof(Store);
+        private const string Temporary = nameof(Temporary);
+        private const string Environment = nameof(Environment);
+
         private const string FileName = nameof(FileName);
         private const string FilePassword = nameof(FilePassword);
-        private const string KeyStoreIssuer = "KeyStoreIssuer";
-        private const string KeyTypeEnvironment = nameof(KeyTypeEnvironment);
+        private const string KeyStoreIssuer = nameof(KeyStoreIssuer);
 
 
 
         public static IIdentityServerBuilder AddSigninCredentialFromConfig(
             this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger, IHostingEnvironment env)
         {
-            string keyType = options.GetValue<string>(KeyType);
+            string keyType = System.Environment.GetEnvironmentVariable("CERTIFICATE_TYPE");
             logger.LogInformation($"SigninCredentialExtension keyType is {keyType}");
 
             switch (keyType)
             {
-                case KeyTypeTemporary:
+                case Temporary:
                     logger.LogInformation($"SigninCredentialExtension adding Temporary Signing Credential");
                     builder.AddDeveloperSigningCredential(true);
                     break;
 
-                case KeyTypeKeyFile:
+                case File:
                     AddCertificateFromFile(builder, options, logger, env);
                     break;
 
-                case KeyTypeKeyStore:
+                case Store:
                     AddCertificateFromStore(builder, options, logger);
                     break;
 
-                case KeyTypeEnvironment:
+                case Environment:
                     AddCertificateFromEnvironment(builder, logger);
                     break;
             }
@@ -62,19 +60,18 @@ namespace Jp.UI.SSO.Util
 
         private static void AddCertificateFromEnvironment(IIdentityServerBuilder builder, ILogger logger)
         {
-            logger.LogInformation("Take Certifate from Environment");
-            var file = Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Path");
-            var password = Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Password");
-            if (File.Exists(file))
+            logger.LogInformation("Taking Certificate from Environment");
+            var file = System.Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Path");
+            var password = System.Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Password");
+            if (System.IO.File.Exists(file))
             {
-                logger.LogInformation("Taked Certifate from Environment");
-                builder.AddSigningCredential(new X509Certificate2(file, password));
+                logger.LogInformation("Taked Certificate from Environment");
+                builder.AddSigningCredential(new X509Certificate2(file, password, X509KeyStorageFlags.MachineKeySet));
             }
             else
             {
-                logger.LogError($"SigninCredentialExtension cannot find key file {Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Path")}");
+                logger.LogError($"SigninCredentialExtension cannot find key file {System.Environment.GetEnvironmentVariable("ASPNETCORE_Kestrel__Certificates__Default__Path")}");
             }
-
         }
 
         private static void AddCertificateFromStore(IIdentityServerBuilder builder,
@@ -100,10 +97,10 @@ namespace Jp.UI.SSO.Util
             var keyFileName = options.GetValue<string>(FileName);
             var keyFilePassword = options.GetValue<string>(FilePassword);
 
-            if (File.Exists(Path.Combine(env.ContentRootPath, keyFileName)))
+            if (System.IO.File.Exists(Path.Combine(env.ContentRootPath, keyFileName)))
             {
                 logger.LogInformation($"SigninCredentialExtension adding key from file {keyFileName}");
-                builder.AddSigningCredential(new X509Certificate2(Path.Combine(env.ContentRootPath, keyFileName), keyFilePassword));
+                builder.AddSigningCredential(new X509Certificate2(Path.Combine(env.ContentRootPath, keyFileName), keyFilePassword, X509KeyStorageFlags.MachineKeySet));
             }
             else
             {

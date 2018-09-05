@@ -18,13 +18,7 @@ namespace Jp.UI.SSO.Configuration
             IConfiguration configuration, IHostingEnvironment environment, ILogger logger)
         {
             var connectionString = Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
-            var issuerUri = Environment.GetEnvironmentVariable("ISSUER_URI") ?? "https://localhost:5000";
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-
-
-            logger.LogInformation($"Authority URI: {issuerUri}");
-            
-
 
             var builder = services.AddIdentityServer(
                     options =>
@@ -33,8 +27,6 @@ namespace Jp.UI.SSO.Configuration
                     options.Events.RaiseInformationEvents = true;
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
-                    options.IssuerUri = issuerUri;
-                    
                 })
                 .AddAspNetIdentity<UserIdentity>()
                 // this adds the config data from DB (clients, resources)
@@ -50,19 +42,11 @@ namespace Jp.UI.SSO.Configuration
                         b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
 
                     // this enables automatic token cleanup. this is optional.
-                    //options.EnableTokenCleanup = true;
-                    //options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
+                    options.EnableTokenCleanup = true;
+                    options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
 
             builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger, environment);
-            //if (environment.IsDevelopment())
-            //{
-            //    builder.AddDeveloperSigningCredential(false);
-            //}
-            //else
-            //{
-            //    builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger, environment);
-            //}
 
             return services;
         }

@@ -28,5 +28,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 COPY ["keys/jpproject.pfx", "/root/.dotnet/https/jpproject.pfx"]
+COPY ["build/hosts", "etc/hosts"]
 
 ENTRYPOINT ["dotnet", "Jp.UserManagement.dll"]

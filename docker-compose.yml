@@ -1,3 +1,6 @@
+# BUG's at SSL and Issuer Validation
+# SSL bug: https://github.com/dotnet/corefx/issues/22996 and https://github.com/dotnet/corefx/issues/31034
+# There are a mismatch between Angular Isser Name and Api Issuer Name, so it cant validate it inside docker ambient.
     version: "3"
     
     networks:
@@ -8,15 +11,6 @@
             config:
               - subnet: 172.20.0.0/16
     services:
-
-        # #############################
-        # # Database
-        # #############################
-        # redis:
-        #   image: redis:alpine
-        #   ports:
-        #       - "16379:6379"
-    
 
         #############################
         # Database
@@ -50,8 +44,8 @@
               dockerfile: sso.dockerfile
 
             ports:
-                - "5001:80"
-                - "5000:443"
+                - "5001:5001"
+                - "5000:5000"
 
             depends_on:
                 - database
@@ -59,10 +53,10 @@
             environment: 
                 SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
-                ISSUER_URI: "https://localhost:5000"
+                # ISSUER_URI: "http://localhost:5000"
                 ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
                 ASPNETCORE_Kestrel__Certificates__Default__Path: "/root/.dotnet/https/jpproject.pfx"
-                ASPNETCORE_URLS: https://+:443;http://+:80
+                ASPNETCORE_URLS: http://+:5000;http://+:5001
 
             networks:
                 jpproject_network:
@@ -88,14 +82,11 @@
             environment: 
                 SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
-                AUTHORITY: "http://localhost"
+                AUTHORITY: "http://localhost:5000"
                 ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
                 ASPNETCORE_Kestrel__Certificates__Default__Path: "/root/.dotnet/https/jpproject.pfx"
-                ASPNETCORE_URLS: https://+:443;http://+:80
+                ASPNETCORE_URLS: "https://+:443;http://+:80"
                 VALIDATE_ISSUER: "false"
-
-            extra_hosts:
-                - "localhost:172.20.0.6"
 
             networks:
                 jpproject_network:

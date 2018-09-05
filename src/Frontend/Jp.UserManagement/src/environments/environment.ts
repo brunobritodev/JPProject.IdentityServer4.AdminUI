@@ -9,5 +9,5 @@ export const environment = {
   FacebookClientId: "2205593199670245",
   ResourceServer: "https://localhost:5003/",
   IssuerUri:  "https://localhost:5000",
-  RequireHttps: true,
+  RequireHttps: false,
 };

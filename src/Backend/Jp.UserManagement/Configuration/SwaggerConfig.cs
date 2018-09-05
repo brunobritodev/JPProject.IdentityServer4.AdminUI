@@ -23,7 +23,7 @@ namespace Jp.UserManagement.Configuration
                 options.AddSecurityDefinition("oauth2", new OAuth2Scheme
                 {
                     Flow = "implicit",
-                    AuthorizationUrl = "https://localhost:5000/connect/authorize",
+                    AuthorizationUrl = "http://localhost:5000/connect/authorize",
                     Scopes = new Dictionary<string, string> {
                         { "UserManagementApi.owner-content", "User Management API - full access" },
                     }

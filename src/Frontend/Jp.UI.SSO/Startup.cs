@@ -46,13 +46,15 @@ namespace Jp.UI.SSO
             // For linux ambient DataProtection
             // https://github.com/aspnet/Home/issues/2941
             // You can remove it in ISS
+            if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
+                Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
             services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
 
-            services.Configure<IISOptions>(iis =>
-            {
-                iis.AuthenticationDisplayName = "Windows";
-                iis.AutomaticAuthentication = false;
-            });
+            //services.Configure<IISOptions>(iis =>
+            //{
+            //    iis.AuthenticationDisplayName = "Windows";
+            //    iis.AutomaticAuthentication = false;
+            //});
 
             // Configure identity server
             services.AddIdentityServer(Configuration, _environment, _logger);
@@ -83,7 +85,6 @@ namespace Jp.UI.SSO
                 app.UseHsts();
                 app.UseHttpsRedirection();
             }
-
 
             app.UseStaticFiles();
             app.UseIdentityServer();

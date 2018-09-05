@@ -45,7 +45,7 @@ namespace Jp.UserManagement
             services.AddIdentity(Configuration);
             services.ConfigureCors();
 
-            var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "https://localhost:5000";
+            var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "http://localhost:5000";
             _logger.LogInformation($"Authority URI: {authorityUri}");
             services.AddAuthentication(options =>
                 {
