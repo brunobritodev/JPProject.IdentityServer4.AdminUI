@@ -1,6 +1,10 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using Jp.Infra.CrossCutting.IdentityServer.Configuration;
 using Jp.Infra.CrossCutting.IoC;
+using Jp.Infra.Migrations.MySql.Identity.Configuration;
+using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
+using Jp.Infra.Migrations.Sql.Identity.Configuration;
+using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -20,6 +24,7 @@ namespace Jp.UI.SSO
 
         public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
         {
+             
             _logger = logger;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(environment.ContentRootPath)
@@ -41,7 +46,7 @@ namespace Jp.UI.SSO
         {
             // configure identity
             services.AddMvc();
-            services.AddIdentity(Configuration);
+            services.AddIdentityMySql(Configuration);
 
             // For linux ambient DataProtection
             // https://github.com/aspnet/Home/issues/2941
@@ -50,14 +55,14 @@ namespace Jp.UI.SSO
                 Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
             services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
 
-            //services.Configure<IISOptions>(iis =>
-            //{
-            //    iis.AuthenticationDisplayName = "Windows";
-            //    iis.AutomaticAuthentication = false;
-            //});
+            services.Configure<IISOptions>(iis =>
+            {
+                iis.AuthenticationDisplayName = "Windows";
+                iis.AutomaticAuthentication = false;
+            });
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, _environment, _logger);
+            services.AddIdentityServer(Configuration, _environment, _logger).UseIdentityServerMySqlDatabase(services, Configuration, _logger);
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);

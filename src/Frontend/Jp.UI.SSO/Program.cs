@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Jp.UI.SSO.Util;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
@@ -22,6 +20,7 @@ namespace Jp.UI.SSO
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.FromLogContext()
+                .WriteTo.ApplicationInsightsEvents(Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY"))
                 .WriteTo.File(@"jpProject_sso_log.txt")
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Literate)
                 .CreateLogger();
@@ -30,13 +29,14 @@ namespace Jp.UI.SSO
 
             // Uncomment this to seed upon startup, alternatively pass in `dotnet run / seed` to seed using CLI
             // await DbMigrationHelpers.EnsureSeedData(host);
-            Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
+            //Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
 
             host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseApplicationInsights(Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY"))
                 .ConfigureLogging(builder =>
                 {
                     builder.ClearProviders();

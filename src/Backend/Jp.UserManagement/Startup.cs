@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using IdentityServer4.AccessTokenValidation;
 using Jp.Infra.CrossCutting.IoC;
+using Jp.Infra.Migrations.MySql.Identity.Configuration;
 using Jp.UserManagement.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -42,10 +43,10 @@ namespace Jp.UserManagement
         {
             services.AddMvc();
 
-            services.AddIdentity(Configuration);
+            services.AddIdentityMySql(Configuration);
             services.ConfigureCors();
 
-            var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "http://localhost:5000";
+            var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "https://localhost:5000";
             _logger.LogInformation($"Authority URI: {authorityUri}");
             services.AddAuthentication(options =>
                 {

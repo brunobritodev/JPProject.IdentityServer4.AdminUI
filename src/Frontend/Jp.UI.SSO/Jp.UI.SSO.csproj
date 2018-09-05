@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
       <UserSecretsId>aspnet-jpproject-04C6939F-E672-4E56-B4A5-5F064EB67F23</UserSecretsId>
       <DockerTargetOS>Linux</DockerTargetOS>
+      <ApplicationInsightsResourceId>/subscriptions/ce40329b-ac99-4c5f-ab72-539cc648b3c1/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Jp.UI.SSO</ApplicationInsightsResourceId>
+      <ApplicationInsightsAnnotationResourceId>/subscriptions/ce40329b-ac99-4c5f-ab72-539cc648b3c1/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Jp.UI.SSO</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,12 +22,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
-    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="2.6.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
   </ItemGroup>
@@ -36,6 +39,10 @@
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.Data\Jp.Infra.Data.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.MySql.IdentityServer\Jp.Infra.Migrations.MySql.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.MySql.Identity\Jp.Infra.Migrations.MySql.Identity.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.Sql.IdentityServer\Jp.Infra.Migrations.Sql.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.Identity.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +53,10 @@
     <Content Update="Views\Shared\_ValidationScriptsPartial.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
