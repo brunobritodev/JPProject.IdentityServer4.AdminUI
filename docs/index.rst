@@ -1,5 +1,5 @@
-Welcome to Jp Project's documentation!
-======================================
+Getting Started
+===============
 
 .. image:: images/logo.png
     :align: center
@@ -11,7 +11,8 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 Helping teams and Entrepretneurs to achieve the company's primary purpose: Maximize shareholder value.
 
 Contributing
-^^^^^^^^^^^^^^
+------------
+
 Wanna contribute? Make a pull request!
 
 Free
@@ -25,25 +26,25 @@ There are several ways we can help you out.
    :hidden:
    :caption: Introduction
 
-    intro/big_picture
-    intro/architecture
-    intro/technologies
+   intro/big_picture
+   intro/architecture
 
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Setup
+   :caption: Building
 
-    setup/ambient_variables
-    setup/docker_support
-    setup/building
+   quickstart/build
+   quickstart/ambient_variables
+   quickstart/docker_support
+   
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Configuration
 
-    configuration/sql_server
-    configuration/mysql
-    configuration/serilog
-    configuration/application_insights
+   configuration/sql_server
+   configuration/mysql
+   configuration/serilog
+   configuration/application_insights
