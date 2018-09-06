@@ -14,8 +14,16 @@ Free
 If you need help building or running your Jp Project platform, :ref:`let us know <refSupport>`.
 There are several ways we can help you out.
 
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Introduction
 
     intro/big_picture
@@ -24,6 +32,7 @@ There are several ways we can help you out.
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Setup
 
     setup/ambient_variables
@@ -32,6 +41,7 @@ There are several ways we can help you out.
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Configuration
 
     configuration/sql_server
@@ -39,9 +49,4 @@ There are several ways we can help you out.
     configuration/serilog
     configuration/application_insights
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
