@@ -1,5 +1,6 @@
 Welcome to Jp Project's documentation!
 ======================================
+
 .. image:: images/logo.png
     :align: center
 
@@ -9,17 +10,15 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 
 Helping teams and Entrepretneurs to achieve the company's primary purpose: Maximize shareholder value.
 
+Contributing
+^^^^^^^^^^^^^^
+Wanna contribute? Make a pull request!
+
 Free
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you need help building or running your Jp Project platform, :ref:`let us know <refSupport>`.
+^^^^
+If you need help building or running your Jp Project platform
 There are several ways we can help you out.
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 .. toctree::
    :maxdepth: 2
@@ -48,5 +47,3 @@ Indices and tables
     configuration/mysql
     configuration/serilog
     configuration/application_insights
-
-
