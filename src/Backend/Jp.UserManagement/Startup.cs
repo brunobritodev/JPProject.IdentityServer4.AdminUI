@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using IdentityServer4.AccessTokenValidation;
 using Jp.Infra.CrossCutting.IoC;
-using Jp.Infra.Migrations.MySql.Identity.Configuration;
+using Jp.Infra.Migrations.Sql.Identity.Configuration;
 using Jp.UserManagement.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -43,7 +43,7 @@ namespace Jp.UserManagement
         {
             services.AddMvc();
 
-            services.AddIdentityMySql(Configuration);
+            services.AddIdentitySqlServer(Configuration);
             services.ConfigureCors();
 
             var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "https://localhost:5000";
@@ -64,7 +64,6 @@ namespace Jp.UserManagement
                                                             messae.Options.TokenValidationParameters.ValidateIssuer = bool.Parse(Environment.GetEnvironmentVariable("VALIDATE_ISSUER") ?? "true");
                                                             return Task.CompletedTask;
                                                         };
-                                                        
                                                     });
 
             services.AddSwagger();

@@ -19,6 +19,7 @@ namespace Jp.UserManagement
                 .MinimumLevel.Override("System", LogEventLevel.Information)
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.FromLogContext()
+                .WriteTo.ApplicationInsightsEvents(Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY"))
                 .WriteTo.File(@"jpProject_sso_log.txt")
                 .WriteTo.Console()
                 .CreateLogger();
@@ -30,6 +31,7 @@ namespace Jp.UserManagement
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseApplicationInsights(Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY"))
                 .UseStartup<Startup>()
                 .UseSerilog();
     }

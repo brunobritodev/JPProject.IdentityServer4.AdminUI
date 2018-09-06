@@ -92,7 +92,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 //await _userManager.AddClaimAsync(newUser, new Claim("User", "Write"));
 
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-                var callbackUrl = $"{_config.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/confirm-email?user={user.Email.UrlEncode()}&code={code.UrlEncode()}";
+                var callbackUrl = Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? $"{_config.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/confirm-email?user={user.Email.UrlEncode()}&code={code.UrlEncode()}";
                 await _emailSender.SendEmailConfirmationAsync(user.Email, callbackUrl);
 
 

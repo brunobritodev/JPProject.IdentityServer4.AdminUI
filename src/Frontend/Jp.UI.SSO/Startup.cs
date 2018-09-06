@@ -46,14 +46,14 @@ namespace Jp.UI.SSO
         {
             // configure identity
             services.AddMvc();
-            services.AddIdentityMySql(Configuration);
+            services.AddIdentitySqlServer(Configuration);
 
             // For linux ambient DataProtection
             // https://github.com/aspnet/Home/issues/2941
             // You can remove it in ISS
-            if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
-                Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
-            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
+            //if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
+            //    Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
+            //services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
 
             services.Configure<IISOptions>(iis =>
             {
@@ -62,7 +62,7 @@ namespace Jp.UI.SSO
             });
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, _environment, _logger).UseIdentityServerMySqlDatabase(services, Configuration, _logger);
+            services.AddIdentityServer(Configuration, _environment, _logger).UseIdentityServerSqlDatabase(services, Configuration, _logger);
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);
