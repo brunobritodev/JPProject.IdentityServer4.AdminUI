@@ -241,3 +241,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Sphinx
+*.opt
+docs/_build/
