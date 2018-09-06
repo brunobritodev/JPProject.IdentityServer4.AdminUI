@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "https://localhost:5000",
       "sslPort": 5001
     }
   },
@@ -21,8 +21,9 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "https://+:5000;http://+:5001",
-        "APPINSIGHTS_INSTRUMENTATIONKEY": "<KEY>",
-        "CERTIFICATE_TYPE": "File"
+        "APPINSIGHTS_INSTRUMENTATIONKEY": "d8ad6580-77c5-4e92-904a-43e8fbed5936",
+        "CERTIFICATE_TYPE": "File",
+        "USER_MANAGEMENT_URI": "http://localhost:4200"
 
         // "DATABASE_CONNECTION": "Server=.,1433;Initial Catalog=JpProjectTest;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;",
         // For Docker certificate

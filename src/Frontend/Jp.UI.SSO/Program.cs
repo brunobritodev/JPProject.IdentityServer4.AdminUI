@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Jp.UI.SSO.Util;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
@@ -28,8 +30,7 @@ namespace Jp.UI.SSO
             var host = CreateWebHostBuilder(args).Build();
 
             // Uncomment this to seed upon startup, alternatively pass in `dotnet run / seed` to seed using CLI
-            // await DbMigrationHelpers.EnsureSeedData(host);
-            //Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
+            Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
 
             host.Run();
         }

@@ -13,6 +13,7 @@ import { ResetPasswordComponent } from "./reset-password/reset-password.componen
 import { ConfirmEmailComponent } from "./confirm-email/confirm-email.component";
 import { P404Component } from "./error/404.component";
 import { P500Component } from "./error/500.component";
+import { NgxMaskModule } from "ngx-mask";
 
 const routes: Routes = [
     { path: "login", component: LoginComponent, data: { title: "Login Page" } },
@@ -34,6 +35,7 @@ const routes: Routes = [
         CommonModule,
         ReactiveFormsModule,
         AlertModule.forRoot(),
+        NgxMaskModule.forRoot(),
     ],
     providers: [
         UserService,

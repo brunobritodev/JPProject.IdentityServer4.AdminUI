@@ -46,11 +46,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.CrossCutting.Ident
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.UI.SSO", "Frontend\Jp.UI.SSO\Jp.UI.SSO.csproj", "{CF7B5562-179E-44EB-B7E3-7096698A46E7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - Migrations", "5.2 - Migrations", "{D516F9FC-7FE6-44B2-9C1B-99444AFA5762}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3 - Migrations", "5.3 - Migrations", "{D516F9FC-7FE6-44B2-9C1B-99444AFA5762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jp.Infra.Migrations.MySql.Identity", "Backend\Jp.Infra.Migrations.MySql.Identity\Jp.Infra.Migrations.MySql.Identity.csproj", "{D3BE89D0-A0F4-45F7-8B01-C38F9B933A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Migrations.MySql.Identity", "Backend\Jp.Infra.Migrations.MySql.Identity\Jp.Infra.Migrations.MySql.Identity.csproj", "{D3BE89D0-A0F4-45F7-8B01-C38F9B933A97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jp.Infra.Migrations.Sql.IdentityServer", "Backend\Jp.Infra.Migrations.Sql.IdentityServer\Jp.Infra.Migrations.Sql.IdentityServer.csproj", "{68D0EA83-DC72-48F2-8EA3-095DEC6497FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Migrations.Sql.IdentityServer", "Backend\Jp.Infra.Migrations.Sql.IdentityServer\Jp.Infra.Migrations.Sql.IdentityServer.csproj", "{68D0EA83-DC72-48F2-8EA3-095DEC6497FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{7CE51ABB-FDEE-49DE-AC76-19A6C1C62709}"
 EndProject
@@ -58,7 +58,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySql", "MySql", "{DEEAC32F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Migrations.Sql.Identity", "Backend\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.Identity.csproj", "{73E1116D-B25B-4E5C-8C0D-43CF34FBADD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jp.Infra.Migrations.MySql.IdentityServer", "Backend\Jp.Infra.Migrations.MySql.IdentityServer\Jp.Infra.Migrations.MySql.IdentityServer.csproj", "{12786761-7BF9-49C5-8E91-3211C8279AAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Migrations.MySql.IdentityServer", "Backend\Jp.Infra.Migrations.MySql.IdentityServer\Jp.Infra.Migrations.MySql.IdentityServer.csproj", "{12786761-7BF9-49C5-8E91-3211C8279AAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

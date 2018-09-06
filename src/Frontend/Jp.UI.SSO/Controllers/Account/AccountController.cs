@@ -83,12 +83,14 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public IActionResult Register()
         {
-            return Redirect(_configuration.GetSection("ApplicationSettings").GetSection("RegisterUrl").Value);
+            var url = $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? _configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/register";
+            return Redirect(url);
         }
 
         public IActionResult ForgotPassword()
         {
-            return Redirect(_configuration.GetSection("ApplicationSettings").GetSection("ForgotUrl").Value);
+            var url = $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? _configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/recover";
+            return Redirect(url);
         }
         /// <summary>
         /// Handle postback from username/password login

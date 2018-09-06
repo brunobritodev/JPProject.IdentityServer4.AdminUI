@@ -94,11 +94,12 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
         {
             var keyFileName = options.GetValue<string>(FileName);
             var keyFilePassword = options.GetValue<string>(FilePassword);
+            var file = Path.Combine(env.ContentRootPath, keyFileName);
 
-            if (System.IO.File.Exists(Path.Combine(env.ContentRootPath, keyFileName)))
+            if (System.IO.File.Exists(file))
             {
                 logger.LogInformation($"SigninCredentialExtension adding key from file {keyFileName}");
-                builder.AddSigningCredential(new X509Certificate2(Path.Combine(env.ContentRootPath, keyFileName), keyFilePassword, X509KeyStorageFlags.MachineKeySet));
+                builder.AddSigningCredential(new X509Certificate2(file, keyFilePassword));
             }
             else
             {
