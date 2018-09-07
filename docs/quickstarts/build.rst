@@ -18,19 +18,19 @@ To build solution you need to certify about these components first
 Build Files
 -----------
 
-After :download:`download <https://github.com/brunohbrito/JP-Project/archive/master.zip>` or `clone <https://github.com/brunohbrito/JP-Project>`_ the initial state of project is:
+After :download:`at` `here <https://github.com/brunohbrito/JP-Project/archive/master.zip>`_ or `clone <https://github.com/brunohbrito/JP-Project>`_ the initial state of project is:
 
 * Use Sql Server LocalDb
 * Temporary Certificate
 * Auto Migration enabled
 
 Using build.bat
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Open folder *build* and execute build.bat. The file will install Nuget and NPM dependencies. Then compile and run.
 
 Using build.ps1
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Sometimes there are missing parameters at Environment Path, so the build.bat can't build. 
 
