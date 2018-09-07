@@ -1,7 +1,6 @@
 param (
     [Parameter(Mandatory=$true)][string]$certificatename,
-    [Parameter(Mandatory=$true)][SecureString]$certificatepassword,
-    [Parameter(Mandatory=$true)][string]$path
+    [Parameter(Mandatory=$true)][SecureString]$certificatepassword
  )
 # setup certificate properties including the commonName (DNSName) property for Chrome 58+
 $certificate = New-SelfSignedCertificate `
@@ -18,7 +17,7 @@ $certificate = New-SelfSignedCertificate `
     -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.1") 
 $certificatePath = 'Cert:\CurrentUser\My\' + ($certificate.ThumbPrint)
 # create temporary certificate path
-$tmpPath = $path
+$tmpPath = (Get-Item -Path ".\" -Verbose).FullName;
 If(!(test-path $tmpPath))
 {
 New-Item -ItemType Directory -Force -Path $tmpPath

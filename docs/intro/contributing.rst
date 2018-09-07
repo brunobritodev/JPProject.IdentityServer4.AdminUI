@@ -14,6 +14,6 @@ Please start a discussion on the `issue tracker <https://github.com/brunohbrito/
 
 Platform
 ^^^^^^^^
-JpProject is built against ASP.NET Core and runs on .NET Framework 4.6.1 (and higher) and .NET Core 2.1 (and higher).
+Backend of JpProject is built against ASP.NET Core and runs on .NET Framework 4.6.1 (and higher) and .NET Core 2.1 (and higher).
 
-SPA is built against Angular 6 and runs on Node and Angular Cli 6.
+The Frontend SPA is built against Angular 6 and runs on Node and Angular Cli 6.

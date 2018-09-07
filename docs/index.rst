@@ -13,7 +13,7 @@ Helping teams and Entrepretneurs to achieve the company's primary purpose: Maxim
 Contributing
 ------------
 
-Wanna contribute? Check 
+Wanna contribute? Check the `Contributing Section <intro/contributing.html>`_
 
 Free
 ^^^^
@@ -33,11 +33,11 @@ There are several ways we can help you out.
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: GetStart
+   :caption: Get Start
 
-   quickstart/build
-   quickstart/ambient_variables
-   quickstart/docker_support
+   quickstarts/build.rst
+   quickstarts/ambient_variables.rst
+   quickstarts/docker_support
    
 
 .. toctree::
