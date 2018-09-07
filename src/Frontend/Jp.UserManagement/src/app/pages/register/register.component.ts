@@ -38,8 +38,7 @@ export class RegisterComponent implements OnInit {
         private userService: UserService,
         private router: Router,
         private route: ActivatedRoute,
-        private socialAuthService: AuthService) {
-    }
+        private socialAuthService: AuthService) { }
 
     public ngOnInit() {
         this.errors = [];

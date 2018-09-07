@@ -13,7 +13,7 @@ Helping teams and Entrepretneurs to achieve the company's primary purpose: Maxim
 Contributing
 ------------
 
-Wanna contribute? Make a pull request!
+Wanna contribute? Check 
 
 Free
 ^^^^
@@ -28,11 +28,12 @@ There are several ways we can help you out.
 
    intro/big_picture
    intro/architecture
+   intro/contributing
 
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Building
+   :caption: GetStart
 
    quickstart/build
    quickstart/ambient_variables
