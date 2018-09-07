@@ -51,7 +51,7 @@
                 - database
             
             environment: 
-                SQLSERVER_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
+                DATABASE_CONNECTION: "Server=database,1433;Initial Catalog=JpProject;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;"
                 ASPNETCORE_ENVIRONMENT: "Development"
                 # ISSUER_URI: "http://localhost:5000"
                 ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
