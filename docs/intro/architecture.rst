@@ -5,17 +5,17 @@ This project was developed aiming the best practices.
 
 Equinox Project
 ---------------
-To achieve this the ASP.NET Core Architecture was based on `Equinox Project <https://github.com/EduardoPires/EquinoxProject/>`_. 
+The ASP.NET Core Architecture was based on `Equinox Project <https://github.com/EduardoPires/EquinoxProject/>`_. 
 
 Angular 6
 ---------
 
-To manage user and new one's a SPA Angular 6 was created. But instead begin of nothing, the `CoreUI <https://github.com/coreui/coreui-angular>`_ Admin was used.
+To manage existing user and new one's a SPA Angular 6 was created. But instead begin of nothing, the `CoreUI <https://github.com/coreui/coreui-angular>`_ Admin was used.
 
 Application Insights ready
 --------------------------
 
-You can To monitor Application in production ambient with Application Insights.
+You can monitor Application in production ambient with Application Insights.
 
 
 Technologies
@@ -40,6 +40,7 @@ ASP.NET CORE
 * Event Sourcing
 * Unit of Work
 * Repository and Generic Repository
+* Serilog
 
 Angular 6
 ^^^^^^^^^^

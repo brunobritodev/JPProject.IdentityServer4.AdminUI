@@ -2977,3 +2977,50 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
 2018-09-06 02:31:14.080 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2018-09-06 02:42:06.535 -03:00 [INF] Authority URI: https://localhost:5000
 2018-09-06 02:42:07.895 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:24:17.905 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:24:18.691 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:27:46.344 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:27:46.913 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:34:17.349 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:34:17.836 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:36:03.845 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:36:04.301 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:41:03.066 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:41:03.536 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:52:26.359 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:52:26.846 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:53:55.668 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:53:56.164 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 11:54:22.219 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 11:54:22.675 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 12:00:53.054 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 12:00:53.537 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 12:01:33.347 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 12:01:33.888 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 12:13:27.668 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 12:13:28.242 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 12:18:00.437 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 12:18:00.939 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 12:18:25.048 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-09-07 12:18:25.063 -03:00 [INF] Policy execution successful.
+2018-09-07 12:18:25.067 -03:00 [INF] Request finished in 22.0064ms 204 
+2018-09-07 12:18:25.080 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-07 12:18:25.081 -03:00 [INF] Policy execution successful.
+2018-09-07 12:18:25.328 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-07 12:18:25.332 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-07 12:18:25.397 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-07 12:18:25.409 -03:00 [INF] Authorization was successful.
+2018-09-07 12:18:25.476 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-07 12:18:25.893 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Jp.Infra.Migrations.Sql.Identity 
+2018-09-07 12:18:26.172 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-07 12:18:26.269 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 785.1298ms.
+2018-09-07 12:18:26.278 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-07 12:18:26.290 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 890.3043ms
+2018-09-07 12:18:26.299 -03:00 [INF] Request finished in 1219.5838ms 200 application/json; charset=utf-8
+2018-09-07 12:33:11.300 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 12:33:11.968 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-07 13:20:40.106 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-07 13:20:41.390 -03:00 [INF] User profile is available. Using 'C:\Users\bruno.brito\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.

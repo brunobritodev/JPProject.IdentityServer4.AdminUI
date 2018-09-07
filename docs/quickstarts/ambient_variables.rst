@@ -2,5 +2,5 @@
 Ambient variables
 #################
 
-Using Ambient var you can minimize efforts for publish and change configuration.
+Using Ambient var you can minimize efforts to change configuration after publish.
 
