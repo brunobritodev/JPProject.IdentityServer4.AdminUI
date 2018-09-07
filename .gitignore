@@ -244,5 +244,5 @@ ModelManifest.xml
 
 # Sphinx
 *.opt
-docs/_build/
-docks/.vscode/
+docs/_build
+docs/.vscode
