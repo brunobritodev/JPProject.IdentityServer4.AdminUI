@@ -17,7 +17,7 @@ Helping teams and entrepreneurs to achieve the company's primary purpose: Maximi
 Liked?
 
 Give a Star!
-----------------------
+------------
 
 Do you love it? give us a :yellow:`Star!`
 
