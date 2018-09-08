@@ -14,7 +14,13 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 
 Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-Liked?
+See it in action
+
+.. raw:: html
+
+    <div style="position: relative; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://player.vimeo.com/video/288481888?color=ff9933&title=0&byline=0" width="800" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
 
 Give a Star!
 ------------
@@ -62,3 +68,4 @@ There are several ways we can help you out.
    configuration/mysql
    configuration/serilog
    configuration/application_insights
+   configuration/certificate
