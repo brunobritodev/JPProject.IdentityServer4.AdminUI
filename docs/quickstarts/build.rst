@@ -43,7 +43,7 @@ Open powershell as Admin. Navigate to build folder. Execute these commands:
 .. raw:: html
 
     <div style="position: relative; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://player.vimeo.com/video/288753436?color=ff9933&title=0&byline=0" width="800" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/288753436?color=ff9933&title=0&byline=0" width="800" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 
 
