@@ -30,14 +30,14 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
         public static IIdentityServerBuilder AddSigninCredentialFromConfig(
             this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger, IHostingEnvironment env)
         {
-            string keyType = System.Environment.GetEnvironmentVariable("CERTIFICATE_TYPE");
+            string keyType = System.Environment.GetEnvironmentVariable("CERTIFICATE_TYPE") ?? options.GetSection("Type").Value;
             logger.LogInformation($"SigninCredentialExtension keyType is {keyType}");
 
             switch (keyType)
             {
                 case Temporary:
                     logger.LogInformation($"SigninCredentialExtension adding Temporary Signing Credential");
-                    builder.AddDeveloperSigningCredential(true);
+                    builder.AddDeveloperSigningCredential(false);
                     break;
 
                 case File:
