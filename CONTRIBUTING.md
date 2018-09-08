@@ -1,7 +1,7 @@
 Contributing
 ============
 
-![image](../images/logo.png%0A%20:align:%20center)
+![image](https://github.com/brunohbrito/JP-Project/blob/master/docs/images/logo.png?raw=true)
 
 We are open to community contributions.
 
