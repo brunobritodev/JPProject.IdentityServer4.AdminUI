@@ -22,16 +22,20 @@ See it in action
         <iframe src="https://player.vimeo.com/video/288481888?color=ff9933&title=0&byline=0" width="800" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 
-Give a Star!
+Give a Star ⭐!
 ------------
 
-Do you love it? give us a :yellow:`Star!`
+Do you love it? give us a :yellow:`Star!` ⭐
 
 Contributing
 ------------
 Wanna contribute? Feel free to do that!
 
 But remember to check the `Contributing Section <intro/contributing.html>`_
+
+Take you special place in our heart!
+
+All contributors has a heart💓! See them in `Contributor list <https://github.com/brunohbrito/JP-Project/blob/master/CONTRIBUTORS.md>`_
 
 Free
 ^^^^
@@ -48,6 +52,7 @@ There are several ways we can help you out.
    intro/architecture
    intro/contributing
    intro/code_of_conduct
+   intro/contributors.md
 
 .. toctree::
    :maxdepth: 2

@@ -9,7 +9,7 @@ Jp Project is a Open Source Quickstart for IdentityServer4.
 Written in ASP.NET Core and Angular 6.
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management. Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-## Give a Star! :star:
+## Give a Star! ⭐
 
 Do you love it? give us a Star!
 
