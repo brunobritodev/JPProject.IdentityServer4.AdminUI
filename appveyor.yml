@@ -1,14 +1,17 @@
 version: 1.0.{build}
 image: Visual Studio 2017
-dotnet_csproj:
-  patch: true
-  file: './src/JpProject.sln'
-  version: '{version}'
-  package_version: '{version}'
+branches:
+  only:
+  - master
+pull_requests:
+  do_not_increment_build_number: true
+init:
+  # Good practice, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
 before_build:
-- cmd: >-
-    dotnet restore
-
-    dotnet build
-build:
-  verbosity: minimal
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display minimal restore text
+  - cmd: dotnet restore ./src --verbosity m
+build_script:
+  - cmd: dotnet build ./src

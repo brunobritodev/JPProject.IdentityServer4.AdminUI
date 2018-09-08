@@ -113,11 +113,11 @@ included in the project:
 .. code::
 
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/free-bootstrap-admin-template.git
+   git clone https://github.com/<your-username>/JP-Project.git
    # Navigate to the newly cloned directory
    cd free-bootstrap-admin-template
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/coreui/coreui-free-bootstrap-admin-template.git
+   git remote add upstream https://github.com/brunohbrito/JP-Project.git
 
 
 2. If you cloned a while ago, get the latest changes from upstream:
