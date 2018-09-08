@@ -18,7 +18,7 @@ To build solution you need to certify about these components first
 Build Files
 -----------
 
-After :download:`at` `here <https://github.com/brunohbrito/JP-Project/archive/master.zip>`_ or `clone <https://github.com/brunohbrito/JP-Project>`_ the initial state of project is:
+After |download| `here <https://github.com/brunohbrito/JP-Project/archive/master.zip>`_ or `clone <https://github.com/brunohbrito/JP-Project>`_ the initial state of project is:
 
 * Use Sql Server LocalDb
 * Temporary Certificate

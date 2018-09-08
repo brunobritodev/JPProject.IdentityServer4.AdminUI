@@ -15024,3 +15024,5 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'JpProject'
 2018-09-07 13:21:17.208 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
 2018-09-07 13:21:17.219 -03:00 [INF] Profile service returned to the following claim types: sub email picture preferred_username name email email_verified
 2018-09-07 13:21:17.222 -03:00 [DBG] End userinfo request
+2018-09-07 18:50:05.889 -03:00 [INF] SigninCredentialExtension keyType is File
+2018-09-07 18:50:05.926 -03:00 [INF] SigninCredentialExtension adding key from file jpproject.pfx

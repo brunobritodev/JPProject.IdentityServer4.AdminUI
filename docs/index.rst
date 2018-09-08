@@ -1,19 +1,31 @@
+.. include:: special.rst
+
 Getting Started
 ===============
 
 .. image:: images/logo.png
     :align: center
 
-Jp Project is a Open Source Quickstart for IdentityServer4. Built with ASP.NET Core and Angular 6.
+Jp Project is a Open Source Quickstart for IdentityServer4. 
+
+Built with ASP.NET Core and Angular 6.
 
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management.
 
-Helping teams and Entrepretneurs to achieve the company's primary purpose: Maximize shareholder value.
+Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
+
+Liked?
+
+Give a Star :fa:`star`
+----------------------
+
+Do you love it? give us a :yellow:`Star!`
 
 Contributing
 ------------
+Wanna contribute? Feel free to do that!
 
-Wanna contribute? Check the `Contributing Section <intro/contributing.html>`_
+But remember to check the `Contributing Section <intro/contributing.html>`_
 
 Free
 ^^^^
@@ -29,16 +41,17 @@ There are several ways we can help you out.
    intro/big_picture
    intro/architecture
    intro/contributing
+   intro/code_of_conduct
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Get Start
 
-   quickstarts/build.rst
-   quickstarts/ambient_variables.rst
+   quickstarts/build
+   quickstarts/ambient_variables
+   quickstarts/app_settings
    quickstarts/docker_support
-   
 
 .. toctree::
    :maxdepth: 2
