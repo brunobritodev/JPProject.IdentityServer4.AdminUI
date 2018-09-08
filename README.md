@@ -19,18 +19,18 @@ Jp Project is built against ASP.NET Core 2.1.
 * [Install](https://www.microsoft.com/net/download/core#/current) the latest .NET Core 2.1 SDK
 * Run `build.ps1` (Powershell) or `build.bat` (cmd)
 
-Wait for ng to complete his proccess then run!
+Wait for ng to complete his proccess then go to http://localhost:4200!
 
 # Expected after start project.
 
-## SSO
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/expectedsso.JPG?raw=true" width="480" />
+## Login page
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/login.JPG?raw=true" width="480" />
 
-## User managemente API
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/expectedusermanagement.JPG?raw=true" width="480" />
+## Consent page
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/consent-page.JPG?raw=true" width="480" />
 
-## User Management UI
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/expectedangular.JPG?raw=true" width="480" />
+## Profile 
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/profile.JPG?raw=true" width="480" />
 
 Any doubts? Go to docs
 
