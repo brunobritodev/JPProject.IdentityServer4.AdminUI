@@ -570,3 +570,2139 @@
 2018-09-08 00:33:05.165 -03:00 [DBG] End userinfo request
 2018-09-08 00:33:09.175 -03:00 [DBG] TaskCanceledException. Exiting.
 2018-09-08 00:33:09.189 -03:00 [DBG] Stopping token cleanup
+2018-09-08 11:21:47.121 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:29:40.949 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:29:45.776 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 11:29:45.784 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 11:29:45.786 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 11:29:45.786 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 11:29:45.787 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 11:29:45.877 -03:00 [DBG] Starting token cleanup
+2018-09-08 11:30:00.945 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:30:15.950 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:30:21.549 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 11:30:21.656 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 11:30:21.657 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 11:30:21.688 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 11:30:21.693 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 11:30:21.693 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 11:30:21.697 -03:00 [DBG] Start discovery request
+2018-09-08 11:30:21.879 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 11:30:21.995 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-08 11:30:22.001 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:30:22.002 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-08 11:30:22.008 -03:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-09-08 11:30:22.010 -03:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-09-08 11:30:22.017 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 11:30:22.029 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 11:30:22.030 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 11:30:22.035 -03:00 [DBG] Start authorize request
+2018-09-08 11:30:22.055 -03:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-09-08 11:30:22.062 -03:00 [DBG] No user present in authorize request
+2018-09-08 11:30:22.076 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:30:22.230 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:30:22.266 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:30:22.349 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:30:22.358 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:30:22.365 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:30:22.372 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:30:22.383 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "Nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7"
+  }
+}
+2018-09-08 11:30:22.392 -03:00 [INF] Showing login: User is not authenticated
+2018-09-08 11:30:22.493 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:30:22.503 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:30:22.506 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:30:22.512 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:30:22.516 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:30:22.522 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:30:22.523 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:30:22.536 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:30:30.956 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:30:45.968 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:31:00.981 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:31:15.996 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:31:30.999 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:31:46.012 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:32:01.027 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:32:16.033 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:32:27.554 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:32:28.556 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:32:28.744 -03:00 [INF] Provider Facebook associated.
+2018-09-08 11:32:28.886 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLIUDGV6UI:00000003",
+  "TimeStamp": "2018-09-08T14:32:28Z",
+  "ProcessId": 29020,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:32:28.901 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:32:28.903 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:32:28.910 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:32:28.911 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:32:28.925 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 11:32:28.927 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 11:32:28.928 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 11:32:28.934 -03:00 [DBG] Start authorize callback request
+2018-09-08 11:32:28.938 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:32:28.939 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:32:28.951 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:32:28.955 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:32:28.964 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:32:28.968 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:32:28.976 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:32:28.977 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:32:28.978 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "Nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "SessionId": "c54b87b041e8bc90c3f215560913bb42",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7"
+  }
+}
+2018-09-08 11:32:29.014 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: false
+2018-09-08 11:32:29.015 -03:00 [DBG] user_consent grant with value: UserManagementUI|7db8a904-9549-417b-817f-6cd5a922114a not found in store.
+2018-09-08 11:32:29.017 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-08 11:32:29.017 -03:00 [INF] Showing consent: User has not yet consented
+2018-09-08 11:32:29.043 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:32:29.054 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:32:29.058 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:32:29.066 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:32:29.069 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:32:29.075 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:32:29.076 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:32:29.086 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:32:29.088 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:32:29.094 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:32:31.035 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:32:46.048 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:33:01.061 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:33:15.008 -03:00 [DBG] TaskCanceledException. Exiting.
+2018-09-08 11:33:15.016 -03:00 [DBG] Stopping token cleanup
+2018-09-08 11:34:05.884 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:34:24.633 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:34:28.561 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 11:34:28.582 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 11:34:28.584 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 11:34:28.586 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 11:34:28.588 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 11:34:28.725 -03:00 [DBG] Starting token cleanup
+2018-09-08 11:34:36.205 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:34:36.629 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:34:36.696 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:34:36.880 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:34:36.902 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:34:36.924 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:34:36.934 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:34:36.976 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:34:36.987 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:34:37.009 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:34:43.793 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:34:58.819 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:35:13.828 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:35:21.161 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 11:35:21.204 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:21.242 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:21.253 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:21.275 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:21.287 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:21.308 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:21.312 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:21.362 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 11:35:21.373 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 11:35:21.384 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 11:35:21.393 -03:00 [DBG] Start authorize callback request
+2018-09-08 11:35:21.405 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:21.414 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:21.451 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:21.466 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:21.496 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:21.512 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:21.537 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:21.543 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:21.560 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "Nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "SessionId": "c54b87b041e8bc90c3f215560913bb42",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7"
+  }
+}
+2018-09-08 11:35:21.640 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: false
+2018-09-08 11:35:21.650 -03:00 [DBG] user_consent grant with value: UserManagementUI|7db8a904-9549-417b-817f-6cd5a922114a not found in store.
+2018-09-08 11:35:21.672 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-08 11:35:21.684 -03:00 [INF] User consented to scopes: ["openid","profile","email","picture","UserManagementApi.owner-content"]
+2018-09-08 11:35:21.693 -03:00 [DBG] User indicated to remember consent for scopes: ["openid","profile","email","picture","UserManagementApi.owner-content"]
+2018-09-08 11:35:21.700 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:21.726 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= not found in database
+2018-09-08 11:35:21.860 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 11:35:21.870 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 11:35:21.874 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:22.014 -03:00 [DBG] 442+L023Q9wWOmPcd/pjtZyFQw/KFuHG06dNERbZ0h0= not found in database
+2018-09-08 11:35:22.038 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 11:35:22.043 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 11:35:22.102 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 59\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 69\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ0PKJH6J:00000007",
+  "TimeStamp": "2018-09-08T14:35:22Z",
+  "ProcessId": 23960,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:35:22.114 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 11:35:22.133 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 11:35:26.466 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:26.506 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:26.518 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:26.539 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:26.552 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:26.574 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:26.577 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:26.615 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:26.626 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:26.648 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:27.294 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:27.331 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:27.343 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:27.365 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:27.376 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:27.397 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:27.400 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:27.438 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:28.847 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:35:29.560 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:35:30.514 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:35:30.599 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ0PKJH6J:0000000D",
+  "TimeStamp": "2018-09-08T14:35:30Z",
+  "ProcessId": 23960,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:35:30.611 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:35:30.616 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:35:30.623 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:35:30.630 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:35:30.647 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 11:35:30.652 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 11:35:30.656 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 11:35:30.660 -03:00 [DBG] Start authorize callback request
+2018-09-08 11:35:30.663 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:30.666 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:30.704 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:30.716 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:30.740 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:30.751 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:30.774 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:30.782 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:30.786 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "Nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "SessionId": "8c5f377e7660d51714592323d6edc2d9",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7"
+  }
+}
+2018-09-08 11:35:30.814 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 11:35:30.822 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 11:35:30.825 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 11:35:30.828 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 11:35:30.832 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:30.852 -03:00 [DBG] XbOegsJNu3fI9GI1+UkFAcFzcuCQ0fiv9CWiFwJg+Po= not found in database
+2018-09-08 11:35:30.871 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 11:35:30.875 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 11:35:30.881 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 59\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 69\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ0PKJH6J:0000000E",
+  "TimeStamp": "2018-09-08T14:35:30Z",
+  "ProcessId": 23960,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:35:30.900 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 11:35:30.915 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 11:35:32.062 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:32.107 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:32.120 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:32.144 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:32.157 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:32.181 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:32.187 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:32.230 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:32.387 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:32.431 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:32.443 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:32.464 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:32.474 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:32.492 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:32.496 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:32.528 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:34.164 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:35:34.749 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:35:34.783 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ0PKJH6J:00000014",
+  "TimeStamp": "2018-09-08T14:35:34Z",
+  "ProcessId": 23960,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:35:34.791 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:35:34.794 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:35:34.797 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:35:34.802 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:35:34.810 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 11:35:34.814 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 11:35:34.818 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 11:35:34.824 -03:00 [DBG] Start authorize callback request
+2018-09-08 11:35:34.829 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:34.833 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:34.875 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:34.888 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:34.915 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:34.927 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:34.952 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:34.956 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:34.960 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "Nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+  "SessionId": "12d38cb85e639689365ccaa1704e5cf2",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "sLa0pyLtGYO2WgUKVYwF9vy6La5tREWRX8BwhXO7"
+  }
+}
+2018-09-08 11:35:34.980 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 11:35:34.986 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 11:35:34.990 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 11:35:34.993 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 11:35:34.996 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:35.014 -03:00 [DBG] 0bIr8mjmXz5clJU34QsQkemRC0dtLXeIjxBPQfklJ98= not found in database
+2018-09-08 11:35:35.033 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 11:35:35.037 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 11:35:35.043 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 59\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 69\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ0PKJH6J:00000015",
+  "TimeStamp": "2018-09-08T14:35:35Z",
+  "ProcessId": 23960,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:35:35.065 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 11:35:35.085 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 11:35:35.925 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:35.973 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:35.986 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:36.011 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:36.025 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:36.051 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:36.057 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:36.100 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:40.893 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 11:35:40.918 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 11:35:40.922 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 11:35:40.928 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 11:35:40.934 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 11:35:40.939 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 11:35:40.945 -03:00 [DBG] Start discovery request
+2018-09-08 11:35:41.040 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 11:35:41.079 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 11:35:41.085 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 11:35:41.088 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 11:35:41.094 -03:00 [DBG] Start authorize request
+2018-09-08 11:35:41.097 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:41.100 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:35:41.133 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:35:41.142 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:41.160 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:41.168 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:35:41.186 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:35:41.189 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:35:41.192 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "G9XHRKdFhp1G0nabCLhNk5sKv7HM1fVe1Nm0Jufy",
+  "Nonce": "G9XHRKdFhp1G0nabCLhNk5sKv7HM1fVe1Nm0Jufy",
+  "SessionId": "12d38cb85e639689365ccaa1704e5cf2",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "G9XHRKdFhp1G0nabCLhNk5sKv7HM1fVe1Nm0Jufy",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "G9XHRKdFhp1G0nabCLhNk5sKv7HM1fVe1Nm0Jufy"
+  }
+}
+2018-09-08 11:35:41.214 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 11:35:41.221 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 11:35:41.223 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 11:35:41.226 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 11:35:41.228 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:35:41.246 -03:00 [DBG] FGfdcG8votnYsOenH0Ag/M3GLVC5S+hWLSK5exa8c1Y= not found in database
+2018-09-08 11:35:41.277 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 11:35:41.281 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 11:35:41.288 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpoint.cs:line 55\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ0PKJH6J:00000017",
+  "TimeStamp": "2018-09-08T14:35:41Z",
+  "ProcessId": 23960,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:35:41.303 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpoint.cs:line 55
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 11:35:41.317 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpoint.cs:line 55
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 11:35:43.859 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:35:58.874 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:36:07.229 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: The handshake failed due to an unexpected packet format.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-09-08 11:36:07.709 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: The handshake failed due to an unexpected packet format.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-09-08 11:36:07.721 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: The handshake failed due to an unexpected packet format.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-09-08 11:36:07.732 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: The handshake failed due to an unexpected packet format.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-09-08 11:36:13.889 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:36:28.897 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:36:43.914 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:36:58.929 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:37:13.947 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:37:28.971 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:37:43.993 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:38:22.297 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:38:25.916 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 11:38:25.930 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 11:38:25.933 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 11:38:25.935 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 11:38:25.940 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 11:38:26.053 -03:00 [DBG] Starting token cleanup
+2018-09-08 11:38:51.377 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:38:54.988 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 11:38:55.002 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 11:38:55.004 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 11:38:55.008 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 11:38:55.011 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 11:38:55.128 -03:00 [DBG] Starting token cleanup
+2018-09-08 11:39:10.419 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:39:14.031 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 11:39:14.046 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 11:39:14.049 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 11:39:14.052 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 11:39:14.057 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 11:39:14.164 -03:00 [DBG] Starting token cleanup
+2018-09-08 11:39:21.432 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 11:39:21.650 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 11:39:21.658 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 11:39:21.662 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 11:39:21.670 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 11:39:21.676 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 11:39:21.682 -03:00 [DBG] Start discovery request
+2018-09-08 11:39:21.996 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 11:39:22.063 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 11:39:22.070 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 11:39:22.074 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 11:39:22.080 -03:00 [DBG] Start authorize request
+2018-09-08 11:39:22.090 -03:00 [DBG] No user present in authorize request
+2018-09-08 11:39:22.101 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:39:22.343 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:39:22.385 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:39:22.490 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:39:22.509 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:39:22.528 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:39:22.537 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:39:22.550 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k",
+  "Nonce": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k"
+  }
+}
+2018-09-08 11:39:22.561 -03:00 [INF] Showing login: User is not authenticated
+2018-09-08 11:39:22.606 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:39:22.646 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:39:22.658 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:39:22.678 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:39:22.689 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:39:22.712 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:39:22.720 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:39:22.760 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:39:24.474 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:39:25.178 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:39:25.373 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ3CJBULP:0000000E",
+  "TimeStamp": "2018-09-08T14:39:25Z",
+  "ProcessId": 4732,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:39:25.384 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:39:25.390 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:39:25.397 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:39:25.404 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:39:25.426 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 11:39:25.431 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 11:39:25.434 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 11:39:25.441 -03:00 [DBG] Start authorize callback request
+2018-09-08 11:39:25.447 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:39:25.451 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:39:25.487 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:39:25.498 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:39:25.518 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:39:25.528 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:39:25.547 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:39:25.550 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:39:25.553 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k",
+  "Nonce": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k",
+  "SessionId": "4f90b177ad699239966621281b077b92",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "6DijkydnThnCCpsmBMzbKEvI2vP27ImH8Xxcy22k"
+  }
+}
+2018-09-08 11:39:25.617 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 11:39:25.629 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 11:39:25.638 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 11:39:25.647 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 11:39:25.651 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:39:25.698 -03:00 [DBG] lUHheGGNgZuAHJVoGjuAryz0gr8WovQKnzbHr8iLmnU= not found in database
+2018-09-08 11:39:25.822 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 11:39:25.826 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 11:39:25.875 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 59\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 69\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ3CJBULP:0000000F",
+  "TimeStamp": "2018-09-08T14:39:25Z",
+  "ProcessId": 4732,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:39:25.897 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 11:39:25.920 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 11:39:29.269 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:39:44.283 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:39:59.299 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:42:07.620 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 11:42:11.554 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 11:42:11.568 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 11:42:11.571 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 11:42:11.574 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 11:42:11.581 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 11:42:11.696 -03:00 [DBG] Starting token cleanup
+2018-09-08 11:42:14.049 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 11:42:14.068 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 11:42:14.072 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 11:42:14.078 -03:00 [DBG] Start authorize request
+2018-09-08 11:42:14.087 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:14.103 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:42:14.589 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:42:14.662 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:42:14.845 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:42:14.866 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:42:14.888 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:42:14.898 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:42:14.932 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "6MzdYLglpiRDBxeVfaBinQeGGU7njgMO6bud1BhO",
+  "Nonce": "6MzdYLglpiRDBxeVfaBinQeGGU7njgMO6bud1BhO",
+  "SessionId": "4f90b177ad699239966621281b077b92",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "6MzdYLglpiRDBxeVfaBinQeGGU7njgMO6bud1BhO",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "6MzdYLglpiRDBxeVfaBinQeGGU7njgMO6bud1BhO"
+  }
+}
+2018-09-08 11:42:15.024 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 11:42:15.039 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 11:42:15.052 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 11:42:15.062 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 11:42:15.066 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:15.209 -03:00 [DBG] bOP0l9okBAFNnNu85RiA3OD0cKXj0d0tH1l2rDmxKww= not found in database
+2018-09-08 11:42:15.326 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 11:42:15.330 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 11:42:15.382 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpoint.cs:line 55\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ51FKSKC:00000001",
+  "TimeStamp": "2018-09-08T14:42:15Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::ffff:127.0.0.1:5000",
+  "RemoteIpAddress": "::ffff:127.0.0.1"
+}
+2018-09-08 11:42:15.415 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpoint.cs:line 55
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 11:42:15.437 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpoint.cs:line 55
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 11:42:18.987 -03:00 [DBG] 7 persisted grants found for 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:19.040 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:42:19.054 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:42:19.074 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:42:22.962 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 11:42:23.011 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-08 11:42:23.016 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:42:23.020 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-08 11:42:23.028 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGLJ51FKSKD:0000000B",
+  "TimeStamp": "2018-09-08T14:42:23Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::ffff:127.0.0.1:5000",
+  "RemoteIpAddress": "::ffff:127.0.0.1"
+}
+2018-09-08 11:42:26.542 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:42:26.729 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:42:27.221 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:42:27.315 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ51FKSKH:0000000A",
+  "TimeStamp": "2018-09-08T14:42:27Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:42:27.328 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:42:27.333 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:42:27.339 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:42:27.343 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:42:31.923 -03:00 [DBG] 7 persisted grants found for 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:31.981 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:42:31.996 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:42:32.027 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:42:34.177 -03:00 [DBG] 7 persisted grants found for 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:34.232 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:42:34.247 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:42:34.276 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:42:37.867 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 11:42:37.879 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-08 11:42:37.885 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:42:37.890 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-08 11:42:37.894 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGLJ51FKSKF:00000010",
+  "TimeStamp": "2018-09-08T14:42:37Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:42:41.735 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:42:43.858 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:42:44.494 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:42:44.526 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ51FKSKE:00000016",
+  "TimeStamp": "2018-09-08T14:42:44Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:42:44.532 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:42:44.536 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:42:44.540 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:42:44.545 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:42:50.263 -03:00 [DBG] 7 persisted grants found for 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:50.317 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:42:50.330 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:42:50.356 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:42:52.860 -03:00 [DBG] CORS request made for path: /Grants/Revoke from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 11:42:52.886 -03:00 [DBG] removing 7 persisted grants from database for subject 7db8a904-9549-417b-817f-6cd5a922114a, clientId UserManagementUI
+2018-09-08 11:42:52.925 -03:00 [DBG] 0 persisted grants found for 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:42:56.596 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 11:42:56.602 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-08 11:42:56.609 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:42:56.614 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-08 11:42:56.618 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGLJ51FKSKC:00000023",
+  "TimeStamp": "2018-09-08T14:42:56Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::ffff:127.0.0.1:5000",
+  "RemoteIpAddress": "::ffff:127.0.0.1"
+}
+2018-09-08 11:42:56.752 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:43:00.212 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 11:43:00.240 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 11:43:00.244 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 11:43:00.251 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 11:43:00.259 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 11:43:00.267 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 11:43:00.279 -03:00 [DBG] Start discovery request
+2018-09-08 11:43:00.403 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 11:43:00.487 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 11:43:00.493 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 11:43:00.501 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 11:43:00.505 -03:00 [DBG] Start authorize request
+2018-09-08 11:43:00.508 -03:00 [DBG] No user present in authorize request
+2018-09-08 11:43:00.513 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:43:00.552 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:43:00.564 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:00.584 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:00.596 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:00.629 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:00.633 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:43:00.636 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D",
+  "Nonce": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D"
+  }
+}
+2018-09-08 11:43:00.640 -03:00 [INF] Showing login: User is not authenticated
+2018-09-08 11:43:00.653 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:43:00.695 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:43:00.713 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:00.742 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:00.753 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:00.778 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:00.783 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:43:00.822 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:43:02.569 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 11:43:03.156 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 11:43:03.180 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ51FKSKH:00000022",
+  "TimeStamp": "2018-09-08T14:43:03Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 11:43:03.193 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 11:43:03.197 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 11:43:03.201 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 11:43:03.207 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 11:43:03.216 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 11:43:03.220 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 11:43:03.224 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 11:43:03.233 -03:00 [DBG] Start authorize callback request
+2018-09-08 11:43:03.239 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 11:43:03.243 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:43:03.286 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:43:03.300 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:03.329 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:03.342 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:03.369 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:03.377 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:43:03.380 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D",
+  "Nonce": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D",
+  "SessionId": "6bb862aae036492608a9067ac2e0612d",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "50hfEkhiRO6yW2Fb67LNMZvUUusgWR5zbE7fFX9D"
+  }
+}
+2018-09-08 11:43:03.405 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: false
+2018-09-08 11:43:03.409 -03:00 [DBG] user_consent grant with value: UserManagementUI|7db8a904-9549-417b-817f-6cd5a922114a not found in store.
+2018-09-08 11:43:03.414 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-08 11:43:03.418 -03:00 [INF] Showing consent: User has not yet consented
+2018-09-08 11:43:03.433 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 11:43:03.474 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:43:03.485 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:03.507 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:03.519 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:03.542 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:03.545 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 11:43:03.585 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 11:43:03.596 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 11:43:03.619 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 11:43:11.766 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:43:26.784 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:43:41.799 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:43:56.817 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:44:11.832 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:44:26.848 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:44:41.857 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:44:56.868 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:45:11.896 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:45:26.908 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:45:41.925 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:45:56.943 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:46:11.961 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:46:26.986 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:46:41.998 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:46:57.016 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:47:12.032 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:47:27.050 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:47:42.061 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:47:57.079 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:48:12.102 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:48:27.112 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:48:42.122 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:48:57.136 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:49:12.158 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:49:27.175 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:49:42.193 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:49:57.213 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:50:12.235 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:50:27.253 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:50:42.273 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:50:57.282 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:51:12.298 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:51:27.312 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:51:42.332 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:51:57.343 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:52:12.356 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:52:27.374 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:52:42.394 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:52:57.408 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:53:12.419 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:53:27.440 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:53:42.464 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:53:57.476 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:54:12.484 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:54:27.502 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:54:42.518 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:54:57.530 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:55:12.552 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:55:27.570 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:55:42.590 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:55:57.608 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:56:12.620 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:56:27.640 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:56:42.657 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:56:57.666 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:57:12.687 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:57:27.703 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:57:42.718 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:57:57.729 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:58:12.743 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:58:27.764 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:58:42.786 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:58:57.805 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:59:12.828 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:59:27.843 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:59:42.861 -03:00 [INF] Clearing 0 tokens
+2018-09-08 11:59:57.879 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:00:12.903 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:00:27.924 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:00:42.945 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:00:57.957 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:01:12.976 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:01:27.991 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:01:43.001 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:01:58.014 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:02:13.033 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:02:28.047 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:02:43.063 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:02:58.079 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:03:13.096 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:03:28.103 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:03:43.124 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:03:58.139 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:04:13.152 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:04:28.170 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:04:43.187 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:04:58.210 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:05:13.220 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:05:28.233 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:05:43.251 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:05:58.275 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:06:13.295 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:06:28.316 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:06:43.336 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:06:58.363 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:07:13.390 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:07:28.420 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:07:43.438 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:07:58.454 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:08:13.475 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:08:28.485 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:08:43.503 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:08:58.513 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:09:13.536 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:09:28.547 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:09:43.568 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:09:58.594 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:10:13.604 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:10:28.615 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:10:43.635 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:10:58.657 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:11:13.679 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:11:28.699 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:11:43.719 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:11:58.733 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:12:13.752 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:12:28.763 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:12:43.780 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:12:58.801 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:13:13.816 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:13:28.840 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:13:43.861 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:13:58.880 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:14:13.900 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:14:28.911 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:14:43.932 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:14:58.942 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:15:13.963 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:15:28.990 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:15:43.999 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:15:59.014 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:16:14.035 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:16:29.045 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:16:44.052 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:16:59.071 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:17:14.082 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:17:29.102 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:17:44.119 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:17:59.127 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:18:14.142 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:18:29.158 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:18:44.178 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:18:59.198 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:19:14.222 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:19:29.243 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:19:44.258 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:19:59.268 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:20:08.811 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 12:20:08.820 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:20:08.825 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:20:08.828 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 12:20:08.833 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 12:20:08.839 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 12:20:08.851 -03:00 [DBG] Start discovery request
+2018-09-08 12:20:08.886 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 12:20:09.043 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 12:20:09.054 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 12:20:09.066 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 12:20:09.078 -03:00 [DBG] Start authorize request
+2018-09-08 12:20:09.083 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:20:09.088 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:20:09.134 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:09.150 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:09.176 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:09.190 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:09.215 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:09.220 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:20:09.225 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "fa93s3VKGg3Cq35MoF9ALeuORT3Q9kquXUBkSC8Y",
+  "Nonce": "fa93s3VKGg3Cq35MoF9ALeuORT3Q9kquXUBkSC8Y",
+  "SessionId": "6bb862aae036492608a9067ac2e0612d",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "fa93s3VKGg3Cq35MoF9ALeuORT3Q9kquXUBkSC8Y",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "fa93s3VKGg3Cq35MoF9ALeuORT3Q9kquXUBkSC8Y"
+  }
+}
+2018-09-08 12:20:09.285 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: false
+2018-09-08 12:20:09.290 -03:00 [DBG] user_consent grant with value: UserManagementUI|7db8a904-9549-417b-817f-6cd5a922114a not found in store.
+2018-09-08 12:20:09.293 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-08 12:20:09.297 -03:00 [INF] Showing consent: User has not yet consented
+2018-09-08 12:20:09.306 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:20:09.342 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:09.355 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:09.377 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:09.389 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:09.411 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:09.416 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:20:09.450 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:09.459 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:09.477 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:13.652 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 12:20:13.660 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-09-08 12:20:13.665 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 12:20:13.673 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-09-08 12:20:13.678 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLGLJ51FKSKJ:00000005",
+  "TimeStamp": "2018-09-08T15:20:13Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:20:14.288 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:20:17.179 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 12:20:17.190 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:20:17.193 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:20:17.197 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 12:20:17.204 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 12:20:17.208 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 12:20:17.213 -03:00 [DBG] Start discovery request
+2018-09-08 12:20:17.246 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 12:20:29.311 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:20:33.870 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 12:20:33.880 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:20:33.885 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:20:33.890 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 12:20:33.901 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 12:20:33.906 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 12:20:33.912 -03:00 [DBG] Start discovery request
+2018-09-08 12:20:33.952 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 12:20:44.331 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:20:46.482 -03:00 [INF] AuthenticationScheme: Facebook was challenged.
+2018-09-08 12:20:47.164 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-09-08 12:20:47.188 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Facebook",
+  "ProviderUserId": "1832756710095231",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLGLJ51FKSKK:00000016",
+  "TimeStamp": "2018-09-08T15:20:47Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:20:47.198 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 12:20:47.201 -03:00 [DBG] Adding amr claim with value: external
+2018-09-08 12:20:47.205 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 12:20:47.209 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-09-08 12:20:54.345 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 12:20:54.354 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:20:54.365 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:20:54.369 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 12:20:54.380 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 12:20:54.385 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 12:20:54.394 -03:00 [DBG] Start discovery request
+2018-09-08 12:20:54.434 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 12:20:54.572 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-09-08 12:20:54.584 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-09-08 12:20:54.589 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-09-08 12:20:54.597 -03:00 [DBG] Start authorize request
+2018-09-08 12:20:54.600 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:20:54.622 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:20:54.662 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:54.672 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:54.690 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:54.699 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:54.751 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:54.754 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:20:54.758 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "Nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "SessionId": "35ca02473297bdd03dd88d0dd1a46047",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM"
+  }
+}
+2018-09-08 12:20:54.787 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: false
+2018-09-08 12:20:54.790 -03:00 [DBG] user_consent grant with value: UserManagementUI|7db8a904-9549-417b-817f-6cd5a922114a not found in store.
+2018-09-08 12:20:54.794 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-08 12:20:54.797 -03:00 [INF] Showing consent: User has not yet consented
+2018-09-08 12:20:54.804 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:20:54.841 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:54.854 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:54.873 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:54.883 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:54.904 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:54.908 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:20:54.941 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:54.951 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:54.974 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:56.509 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 12:20:56.531 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:20:56.575 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:56.588 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:56.611 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:56.625 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:56.651 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:56.657 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:20:56.677 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 12:20:56.684 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 12:20:56.689 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 12:20:56.694 -03:00 [DBG] Start authorize callback request
+2018-09-08 12:20:56.700 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:20:56.706 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:20:56.747 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:20:56.759 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:56.781 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:56.791 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:20:56.815 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:20:56.820 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:20:56.822 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "Nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "SessionId": "35ca02473297bdd03dd88d0dd1a46047",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM"
+  }
+}
+2018-09-08 12:20:56.843 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: false
+2018-09-08 12:20:56.846 -03:00 [DBG] user_consent grant with value: UserManagementUI|7db8a904-9549-417b-817f-6cd5a922114a not found in store.
+2018-09-08 12:20:56.849 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-09-08 12:20:56.857 -03:00 [INF] User consented to scopes: ["openid","profile","email","picture","UserManagementApi.owner-content"]
+2018-09-08 12:20:56.862 -03:00 [DBG] User indicated to remember consent for scopes: ["openid","profile","email","picture","UserManagementApi.owner-content"]
+2018-09-08 12:20:56.869 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:20:56.880 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= not found in database
+2018-09-08 12:20:56.898 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 12:20:56.901 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 12:20:56.906 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:20:56.929 -03:00 [DBG] 41B4w2kUYP3oo04SvsLzZ09SUEN5/dyax5P9tBP9PsU= not found in database
+2018-09-08 12:20:56.943 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 12:20:56.946 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 12:20:56.954 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 59\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 69\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ51FKSKJ:00000012",
+  "TimeStamp": "2018-09-08T15:20:56Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:20:56.986 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 12:20:57.006 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 12:20:59.346 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:21:03.918 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 12:21:03.924 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 12:21:03.928 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 12:21:03.938 -03:00 [DBG] Start authorize callback request
+2018-09-08 12:21:03.942 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:21:03.947 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:21:03.991 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:21:04.010 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:21:04.034 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:21:04.047 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:21:04.071 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:21:04.077 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:21:04.080 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "Nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "SessionId": "35ca02473297bdd03dd88d0dd1a46047",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM"
+  }
+}
+2018-09-08 12:21:04.092 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 12:21:04.100 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 12:21:04.103 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 12:21:04.106 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 12:21:04.109 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:21:04.127 -03:00 [DBG] 3BAGtXmQ4I6/n9Dq6yTwfraivLykj9WlZuvF3KLQgFY= not found in database
+2018-09-08 12:21:04.145 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 12:21:04.148 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 12:21:04.153 -03:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "System.InvalidOperationException: No signing credential is configured. Can't create JWT token\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 77\r\n   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenCreationService.cs:line 64\r\n   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Services\\DefaultTokenService.cs:line 225\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 177\r\n   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\ResponseHandling\\AuthorizeResponseGenerator.cs:line 81\r\n   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeEndpointBase.cs:line 99\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 59\r\n   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\AuthorizeCallbackEndpoint.cs:line 69\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "No signing credential is configured. Can't create JWT token",
+  "ActivityId": "0HLGLJ51FKSKJ:00000013",
+  "TimeStamp": "2018-09-08T15:21:04Z",
+  "ProcessId": 31908,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:21:04.164 -03:00 [FTL] Unhandled exception: System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-09-08 12:21:04.206 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No signing credential is configured. Can't create JWT token
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateHeaderAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 77
+   at IdentityServer4.Services.DefaultTokenCreationService.CreateTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenCreationService.cs:line 64
+   at IdentityServer4.Services.DefaultTokenService.CreateSecurityTokenAsync(Token token) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Services\DefaultTokenService.cs:line 225
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateImplicitFlowResponseAsync(ValidatedAuthorizeRequest request, String authorizationCode) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 177
+   at IdentityServer4.ResponseHandling.AuthorizeResponseGenerator.CreateResponseAsync(ValidatedAuthorizeRequest request) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\ResponseHandling\AuthorizeResponseGenerator.cs:line 81
+   at IdentityServer4.Endpoints.AuthorizeEndpointBase.ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeEndpointBase.cs:line 99
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 59
+   at IdentityServer4.Endpoints.AuthorizeCallbackEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\AuthorizeCallbackEndpoint.cs:line 69
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-08 12:21:14.361 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:21:24.103 -03:00 [INF] SigninCredentialExtension keyType is 
+2018-09-08 12:21:27.908 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 12:21:27.923 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 12:21:27.926 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 12:21:27.932 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 12:21:27.942 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 12:21:28.059 -03:00 [DBG] Starting token cleanup
+2018-09-08 12:22:20.509 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-09-08 12:22:20.570 -03:00 [INF] SigninCredentialExtension adding Temporary Signing Credential
+2018-09-08 12:22:26.518 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-09-08 12:22:26.531 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-09-08 12:22:26.534 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-09-08 12:22:26.536 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-09-08 12:22:26.543 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-09-08 12:22:26.662 -03:00 [DBG] Starting token cleanup
+2018-09-08 12:22:26.958 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:22:27.411 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:27.487 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:27.663 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:27.686 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:27.710 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:27.726 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:22:27.773 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:27.786 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:27.811 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:29.662 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-09-08 12:22:29.695 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:22:29.734 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:29.746 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:29.770 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:29.782 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:29.806 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:29.814 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:22:29.841 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-09-08 12:22:29.852 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-09-08 12:22:29.856 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-09-08 12:22:29.867 -03:00 [DBG] Start authorize callback request
+2018-09-08 12:22:29.878 -03:00 [DBG] User in authorize request: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:22:29.887 -03:00 [DBG] Start authorize request protocol validation
+2018-09-08 12:22:29.934 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:29.953 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:29.980 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:29.992 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:30.017 -03:00 [DBG] Found ["UserManagementApi.owner-content"] API scopes in database
+2018-09-08 12:22:30.024 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-09-08 12:22:30.041 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email picture UserManagementApi.owner-content",
+  "State": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "Nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "SessionId": "35ca02473297bdd03dd88d0dd1a46047",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email picture UserManagementApi.owner-content",
+    "nonce": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM"
+  }
+}
+2018-09-08 12:22:30.134 -03:00 [DBG] xIU9C3c1ASIUH7/4DmK6zabrrVkdKoCsey9aJRmxkIc= found in database: true
+2018-09-08 12:22:30.143 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-09-08 12:22:30.152 -03:00 [DBG] Creating Implicit Flow response.
+2018-09-08 12:22:30.166 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-09-08 12:22:30.170 -03:00 [DBG] Getting claims for access token for subject: 7db8a904-9549-417b-817f-6cd5a922114a
+2018-09-08 12:22:30.326 -03:00 [DBG] zO9oz0sKEa3Eg0+hP1t533gdoM9pQ2RJTV3UCbeXK1M= not found in database
+2018-09-08 12:22:30.447 -03:00 [DBG] Getting claims for identity token for subject: 7db8a904-9549-417b-817f-6cd5a922114a and client: UserManagementUI
+2018-09-08 12:22:30.452 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-09-08 12:22:30.496 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "Scopes": "openid profile email picture UserManagementApi.owner-content",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****y0WQ"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****9229"
+    }
+  ],
+  "ActivityId": "0HLGLJRH67KA9:00000004",
+  "TimeStamp": "2018-09-08T15:22:30Z",
+  "ProcessId": 8400,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:22:30.516 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "7db8a904-9549-417b-817f-6cd5a922114a",
+  "ClientId": "UserManagementUI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "State": "8TDpAmokNbu8sa99rZhZz86hokoBsFLq2vIUcpaM",
+  "Scope": "openid profile email picture UserManagementApi.owner-content"
+}
+2018-09-08 12:22:30.542 -03:00 [DBG] Augmenting SignInContext
+2018-09-08 12:22:30.557 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-09-08 12:22:31.994 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-09-08 12:22:32.035 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:22:32.041 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:22:32.049 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 12:22:32.115 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 12:22:32.148 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 12:22:32.162 -03:00 [DBG] Start discovery request
+2018-09-08 12:22:32.275 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 12:22:32.329 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-09-08 12:22:32.336 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:22:32.339 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:22:32.342 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-09-08 12:22:32.347 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-09-08 12:22:32.350 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-09-08 12:22:32.356 -03:00 [DBG] Start key discovery request
+2018-09-08 12:22:33.509 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-09-08 12:22:33.518 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:22:33.521 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:22:33.585 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-09-08 12:22:33.594 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:22:33.598 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:22:33.601 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-09-08 12:22:33.606 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-09-08 12:22:33.610 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-09-08 12:22:33.622 -03:00 [DBG] Start userinfo request
+2018-09-08 12:22:33.627 -03:00 [DBG] Bearer token found in header
+2018-09-08 12:22:33.644 -03:00 [DBG] zO9oz0sKEa3Eg0+hP1t533gdoM9pQ2RJTV3UCbeXK1M= found in database: true
+2018-09-08 12:22:33.681 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:33.713 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:33.723 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-09-08 12:22:33.729 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Reference",
+  "ExpectedScope": "openid",
+  "TokenHandle": "c13adcf914df9e0c048bcd053e4f2795444b94c5e0ea5be311b43cd17dac9229",
+  "Claims": {
+    "iss": "https://localhost:5000",
+    "nbf": 1536420150,
+    "exp": 1536423750,
+    "aud": [
+      "https://localhost:5000/resources",
+      "UserManagementApi"
+    ],
+    "client_id": "UserManagementUI",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "picture",
+      "UserManagementApi.owner-content"
+    ],
+    "sub": "7db8a904-9549-417b-817f-6cd5a922114a",
+    "auth_time": 1536420047,
+    "idp": "Facebook",
+    "amr": "external",
+    "email": "bhdebrito@gmail.com"
+  }
+}
+2018-09-08 12:22:33.739 -03:00 [DBG] Creating userinfo response
+2018-09-08 12:22:33.746 -03:00 [DBG] Scopes in access token: openid profile email picture UserManagementApi.owner-content
+2018-09-08 12:22:33.751 -03:00 [DBG] Scopes in access token: openid profile email picture UserManagementApi.owner-content
+2018-09-08 12:22:33.760 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:33.763 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email email_verified
+2018-09-08 12:22:33.765 -03:00 [DBG] Scopes in access token: openid profile email picture UserManagementApi.owner-content
+2018-09-08 12:22:33.778 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:33.789 -03:00 [INF] Profile service returned to the following claim types: sub email picture preferred_username name email email_verified
+2018-09-08 12:22:33.793 -03:00 [DBG] End userinfo request
+2018-09-08 12:22:34.850 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-09-08 12:22:34.863 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-09-08 12:22:34.873 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-09-08 12:22:34.884 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-09-08 12:22:34.896 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-09-08 12:22:34.902 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-09-08 12:22:34.907 -03:00 [DBG] Start userinfo request
+2018-09-08 12:22:34.910 -03:00 [DBG] Bearer token found in header
+2018-09-08 12:22:34.917 -03:00 [DBG] zO9oz0sKEa3Eg0+hP1t533gdoM9pQ2RJTV3UCbeXK1M= found in database: true
+2018-09-08 12:22:34.964 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:34.998 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:35.007 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-09-08 12:22:35.009 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Reference",
+  "ExpectedScope": "openid",
+  "TokenHandle": "c13adcf914df9e0c048bcd053e4f2795444b94c5e0ea5be311b43cd17dac9229",
+  "Claims": {
+    "iss": "https://localhost:5000",
+    "nbf": 1536420150,
+    "exp": 1536423750,
+    "aud": [
+      "https://localhost:5000/resources",
+      "UserManagementApi"
+    ],
+    "client_id": "UserManagementUI",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "picture",
+      "UserManagementApi.owner-content"
+    ],
+    "sub": "7db8a904-9549-417b-817f-6cd5a922114a",
+    "auth_time": 1536420047,
+    "idp": "Facebook",
+    "amr": "external",
+    "email": "bhdebrito@gmail.com"
+  }
+}
+2018-09-08 12:22:35.016 -03:00 [DBG] Creating userinfo response
+2018-09-08 12:22:35.018 -03:00 [DBG] Scopes in access token: openid profile email picture UserManagementApi.owner-content
+2018-09-08 12:22:35.022 -03:00 [DBG] Scopes in access token: openid profile email picture UserManagementApi.owner-content
+2018-09-08 12:22:35.033 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:35.039 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email email_verified
+2018-09-08 12:22:35.044 -03:00 [DBG] Scopes in access token: openid profile email picture UserManagementApi.owner-content
+2018-09-08 12:22:35.056 -03:00 [DBG] Found ["openid","profile","email","picture"] identity scopes in database
+2018-09-08 12:22:35.071 -03:00 [INF] Profile service returned to the following claim types: sub email picture preferred_username name email email_verified
+2018-09-08 12:22:35.079 -03:00 [DBG] End userinfo request
+2018-09-08 12:22:35.174 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-09-08 12:22:35.178 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-09-08 12:22:35.181 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-09-08 12:22:35.185 -03:00 [DBG] Start discovery request
+2018-09-08 12:22:35.212 -03:00 [DBG] Found ["openid","profile","email","picture","UserManagementApi.owner-content"] as all scopes in database
+2018-09-08 12:22:35.246 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-09-08 12:22:35.250 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-09-08 12:22:35.254 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-09-08 12:22:35.258 -03:00 [DBG] Start key discovery request
+2018-09-08 12:22:35.295 -03:00 [DBG] Request path /connect/introspect matched to endpoint type Introspection
+2018-09-08 12:22:35.300 -03:00 [DBG] Endpoint enabled: Introspection, successfully created handler: IdentityServer4.Endpoints.IntrospectionEndpoint
+2018-09-08 12:22:35.303 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2018-09-08 12:22:35.317 -03:00 [DBG] Starting introspection request.
+2018-09-08 12:22:35.328 -03:00 [DBG] Start parsing Basic Authentication secret
+2018-09-08 12:22:35.332 -03:00 [DBG] Start parsing for secret in post body
+2018-09-08 12:22:35.335 -03:00 [DBG] Parser found secret: PostBodySecretParser
+2018-09-08 12:22:35.338 -03:00 [DBG] Secret id found: UserManagementApi
+2018-09-08 12:22:35.390 -03:00 [DBG] Found UserManagementApi API resource in database
+2018-09-08 12:22:35.399 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-09-08 12:22:35.402 -03:00 [DBG] API resource validation success
+2018-09-08 12:22:35.407 -03:00 [INF] {
+  "Name": "API Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1020,
+  "ApiName": "UserManagementApi",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLGLJRH67KAE:00000001",
+  "TimeStamp": "2018-09-08T15:22:35Z",
+  "ProcessId": 8400,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:22:35.414 -03:00 [DBG] Introspection request validation started.
+2018-09-08 12:22:35.420 -03:00 [DBG] zO9oz0sKEa3Eg0+hP1t533gdoM9pQ2RJTV3UCbeXK1M= found in database: true
+2018-09-08 12:22:35.456 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:35.488 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:22:35.494 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-09-08 12:22:35.501 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Reference",
+  "TokenHandle": "c13adcf914df9e0c048bcd053e4f2795444b94c5e0ea5be311b43cd17dac9229",
+  "Claims": {
+    "iss": "https://localhost:5000",
+    "nbf": 1536420150,
+    "exp": 1536423750,
+    "aud": [
+      "https://localhost:5000/resources",
+      "UserManagementApi"
+    ],
+    "client_id": "UserManagementUI",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "picture",
+      "UserManagementApi.owner-content"
+    ],
+    "sub": "7db8a904-9549-417b-817f-6cd5a922114a",
+    "auth_time": 1536420047,
+    "idp": "Facebook",
+    "amr": "external",
+    "email": "bhdebrito@gmail.com"
+  }
+}
+2018-09-08 12:22:35.508 -03:00 [DBG] Introspection request validation successful.
+2018-09-08 12:22:35.518 -03:00 [DBG] Creating introspection response for active token.
+2018-09-08 12:22:35.522 -03:00 [INF] Success token introspection. Token active: true, for API name: UserManagementApi
+2018-09-08 12:22:41.696 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:22:56.706 -03:00 [INF] Clearing 0 tokens
+2018-09-08 12:23:07.936 -03:00 [DBG] Request path /connect/introspect matched to endpoint type Introspection
+2018-09-08 12:23:07.943 -03:00 [DBG] Endpoint enabled: Introspection, successfully created handler: IdentityServer4.Endpoints.IntrospectionEndpoint
+2018-09-08 12:23:07.946 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2018-09-08 12:23:07.950 -03:00 [DBG] Starting introspection request.
+2018-09-08 12:23:07.955 -03:00 [DBG] Start parsing Basic Authentication secret
+2018-09-08 12:23:07.958 -03:00 [DBG] Start parsing for secret in post body
+2018-09-08 12:23:07.962 -03:00 [DBG] Parser found secret: PostBodySecretParser
+2018-09-08 12:23:07.967 -03:00 [DBG] Secret id found: UserManagementApi
+2018-09-08 12:23:07.986 -03:00 [DBG] Found UserManagementApi API resource in database
+2018-09-08 12:23:07.989 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-09-08 12:23:07.991 -03:00 [DBG] API resource validation success
+2018-09-08 12:23:07.993 -03:00 [INF] {
+  "Name": "API Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1020,
+  "ApiName": "UserManagementApi",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLGLJRH67KAE:00000002",
+  "TimeStamp": "2018-09-08T15:23:07Z",
+  "ProcessId": 8400,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:23:07.997 -03:00 [DBG] Introspection request validation started.
+2018-09-08 12:23:08.003 -03:00 [DBG] zO9oz0sKEa3Eg0+hP1t533gdoM9pQ2RJTV3UCbeXK1M= found in database: true
+2018-09-08 12:23:08.045 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:23:08.079 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:23:08.086 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-09-08 12:23:08.089 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Reference",
+  "TokenHandle": "c13adcf914df9e0c048bcd053e4f2795444b94c5e0ea5be311b43cd17dac9229",
+  "Claims": {
+    "iss": "https://localhost:5000",
+    "nbf": 1536420150,
+    "exp": 1536423750,
+    "aud": [
+      "https://localhost:5000/resources",
+      "UserManagementApi"
+    ],
+    "client_id": "UserManagementUI",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "picture",
+      "UserManagementApi.owner-content"
+    ],
+    "sub": "7db8a904-9549-417b-817f-6cd5a922114a",
+    "auth_time": 1536420047,
+    "idp": "Facebook",
+    "amr": "external",
+    "email": "bhdebrito@gmail.com"
+  }
+}
+2018-09-08 12:23:08.093 -03:00 [DBG] Introspection request validation successful.
+2018-09-08 12:23:08.095 -03:00 [DBG] Creating introspection response for active token.
+2018-09-08 12:23:08.097 -03:00 [INF] Success token introspection. Token active: true, for API name: UserManagementApi
+2018-09-08 12:23:08.522 -03:00 [DBG] Request path /connect/introspect matched to endpoint type Introspection
+2018-09-08 12:23:08.527 -03:00 [DBG] Endpoint enabled: Introspection, successfully created handler: IdentityServer4.Endpoints.IntrospectionEndpoint
+2018-09-08 12:23:08.531 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2018-09-08 12:23:08.537 -03:00 [DBG] Starting introspection request.
+2018-09-08 12:23:08.540 -03:00 [DBG] Start parsing Basic Authentication secret
+2018-09-08 12:23:08.542 -03:00 [DBG] Start parsing for secret in post body
+2018-09-08 12:23:08.544 -03:00 [DBG] Parser found secret: PostBodySecretParser
+2018-09-08 12:23:08.547 -03:00 [DBG] Secret id found: UserManagementApi
+2018-09-08 12:23:08.565 -03:00 [DBG] Found UserManagementApi API resource in database
+2018-09-08 12:23:08.569 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-09-08 12:23:08.571 -03:00 [DBG] API resource validation success
+2018-09-08 12:23:08.574 -03:00 [INF] {
+  "Name": "API Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1020,
+  "ApiName": "UserManagementApi",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLGLJRH67KAE:00000003",
+  "TimeStamp": "2018-09-08T15:23:08Z",
+  "ProcessId": 8400,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-09-08 12:23:08.579 -03:00 [DBG] Introspection request validation started.
+2018-09-08 12:23:08.584 -03:00 [DBG] zO9oz0sKEa3Eg0+hP1t533gdoM9pQ2RJTV3UCbeXK1M= found in database: true
+2018-09-08 12:23:08.620 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:23:08.650 -03:00 [DBG] UserManagementUI found in database: true
+2018-09-08 12:23:08.656 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-09-08 12:23:08.660 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Reference",
+  "TokenHandle": "c13adcf914df9e0c048bcd053e4f2795444b94c5e0ea5be311b43cd17dac9229",
+  "Claims": {
+    "iss": "https://localhost:5000",
+    "nbf": 1536420150,
+    "exp": 1536423750,
+    "aud": [
+      "https://localhost:5000/resources",
+      "UserManagementApi"
+    ],
+    "client_id": "UserManagementUI",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "picture",
+      "UserManagementApi.owner-content"
+    ],
+    "sub": "7db8a904-9549-417b-817f-6cd5a922114a",
+    "auth_time": 1536420047,
+    "idp": "Facebook",
+    "amr": "external",
+    "email": "bhdebrito@gmail.com"
+  }
+}
+2018-09-08 12:23:08.665 -03:00 [DBG] Introspection request validation successful.
+2018-09-08 12:23:08.667 -03:00 [DBG] Creating introspection response for active token.
+2018-09-08 12:23:08.669 -03:00 [INF] Success token introspection. Token active: true, for API name: UserManagementApi
+2018-09-08 12:23:11.712 -03:00 [INF] Clearing 0 tokens
