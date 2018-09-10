@@ -1,7 +1,7 @@
 {
-  "name": "equinox-web-app",
+  "name": "jp-project",
   "version": "1.0.0",
-  "description": "Equinox - Angular6 Client",
+  "description": "Jp Project - IdentityServer4 Admin Panel",
   "author": "brunobrito",
   "license": "MIT",
   "scripts": {
@@ -38,7 +38,7 @@
     "@swimlane/ngx-datatable": "12.0.0",
     "ag-grid": "17.1.1",
     "ag-grid-angular": "17.1.0",
-    "angular-tree-component": "^7.0.1",
+    "angular-tree-component": "7.0.1",
     "angular2-text-mask": "9.0.0",
     "angular2-toaster": "5.0.1",
     "bootstrap": "4.1.1",
@@ -84,7 +84,8 @@
     "ts-helpers": "1.1.1",
     "weather-icons": "github:erikflowers/weather-icons",
     "web-animations-js": "2.2.1",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "angular-oauth2-oidc": "^4.0.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "6.0.0",

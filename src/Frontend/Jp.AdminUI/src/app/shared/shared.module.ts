@@ -33,6 +33,7 @@ import { JqcloudDirective } from "./directives/jqcloud/jqcloud.directive";
 import { ColorsService } from "./services/colors.service";
 import {TextMaskModule} from "angular2-text-mask";
 
+
 // https://angular.io/styleguide#!#04-10
 @NgModule({
     imports: [
@@ -56,7 +57,8 @@ import {TextMaskModule} from "angular2-text-mask";
         TooltipModule.forRoot(),
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToasterModule
+        ToasterModule,
+        
     ],
     providers: [
         ColorsService

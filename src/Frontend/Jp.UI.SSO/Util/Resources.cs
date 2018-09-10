@@ -18,6 +18,9 @@ namespace Jp.UI.SSO.Util
 
                 // custom identity resource with some consolidated claims
                 new IdentityResource("picture", new[] { JwtClaimTypes.Picture }),
+                new IdentityResource("management-api-permissions", new[] { JwtClaimTypes.Role }),
+                // add additional identity resource
+                new IdentityResource("roles", "Roles", new[] { "role" })
 
             };
         }
@@ -26,38 +29,44 @@ namespace Jp.UI.SSO.Util
         {
             return new[]
             {
-                // simple version with ctor
-                // new ApiResource("api1", "Some API 1")
-                //                {
-                //    // this is needed for introspection when using reference tokens
-                //    ApiSecrets = { new Secret("secret".Sha256()) }
-                                //},
-                //new ApiResource("demo_api", "Demo API with Swagger"),
-                // expanded version if more control is needed
                 new ApiResource
                                 {
-                                    Name = "UserManagementApi",
+                                    Name = "ManagementApi",
                                     DisplayName = "User Management API",
                                     Description = "API with default and protected actions to register and manager User",
                                     ApiSecrets = { new Secret("Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++".Sha256()) },
-                                    
+
                                     UserClaims =
                                     {
                                         IdentityServerConstants.StandardScopes.OpenId,
                                         IdentityServerConstants.StandardScopes.Profile,
                                         IdentityServerConstants.StandardScopes.Email,
-                                        
+                                        ""
                                     },
-                                    
+
                                     Scopes =
                                     {
                                         new Scope()
                                         {
-                                            Name = "UserManagementApi.owner-content",
+                                            Name = "management-api.owner-content",
                                             DisplayName = "User Management - Full access",
                                             Description = "Full access to User Management",
                                             Required = true
-                                        }
+                                        },
+                                        new Scope()
+                                        {
+                                            Name = "management-api.identityserver4-manager",
+                                            DisplayName = "Administrator",
+                                            Description = "Manage mode to IS4",
+                                            Required = true
+                                        },
+                                        new Scope()
+                                        {
+                                            Name = "management-api.identityserver4-readonly",
+                                            DisplayName = "Readonly",
+                                            Description = "With this access user just can read data from ID4 resources",
+                                            Required = true
+                                        },
 
                                     }
                                 }

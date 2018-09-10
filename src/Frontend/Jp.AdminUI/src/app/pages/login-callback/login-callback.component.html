@@ -1,0 +1,30 @@
+<div class="login-container wrapper">
+    <div class="block-center mt-4 wd-xl">
+        <!-- START card-->
+        <div class="card card-flat">
+            <div class="card-header text-center bg-dark">
+                <a href="#">
+                    <img class="block-center rounded login-logo" src="assets/img/brand/logo.png" alt="Image" />
+                </a>
+            </div>
+            <div class="card-body">
+                <p class="text-center"><span class="badge badge-warning ml-0">Loading user data</span></p>
+                <div class="progress mb-3">
+
+                    <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END card-->
+        <div class="p-3 text-center">
+            <span>&copy;</span>
+            <span>{{ settingsService.app.year }}</span>
+            <span class="mx-2">-</span>
+            <span>{{ settingsService.app.name }}</span>
+            <br/>
+            <span>{{ settingsService.app.description }}</span>
+        </div>
+    </div>
+</div>

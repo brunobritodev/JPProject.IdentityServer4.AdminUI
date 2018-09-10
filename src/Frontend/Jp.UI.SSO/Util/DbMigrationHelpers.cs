@@ -76,7 +76,8 @@ namespace Jp.UI.SSO.Util
             {
                 UserName = Users.AdminUserName,
                 Email = Users.AdminEmail,
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                
             };
 
             var result = await userManager.CreateAsync(user, Users.AdminPassword);

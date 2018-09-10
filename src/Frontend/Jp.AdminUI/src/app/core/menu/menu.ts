@@ -6,13 +6,13 @@ const Home = {
 };
 
 const Settings = {
-    text: "User Settings",
-    link: "/user",
-    icon: "icon-settings",
+    text: "Clients",
+    link: "/clients",
+    icon: "fa fa-desktop",
     submenu: [
         {
-            text: "Profile",
-            link: "/user/profile"
+            text: "List",
+            link: "/clients/list"
         }
     ]
 };

@@ -16,6 +16,7 @@ using Jp.Application.ViewModels;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.CrossCutting.Identity.Services;
+using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
 using MediatR;
@@ -83,13 +84,13 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public IActionResult Register()
         {
-            var url = $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? _configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/register";
+            var url = $"{JpProjectConfiguration.UserManagementUrl}/register";
             return Redirect(url);
         }
 
         public IActionResult ForgotPassword()
         {
-            var url = $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? _configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/recover";
+            var url = $"{JpProjectConfiguration.UserManagementUrl}/recover";
             return Redirect(url);
         }
         /// <summary>

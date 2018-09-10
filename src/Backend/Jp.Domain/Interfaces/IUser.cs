@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Jp.Domain.Interfaces
 {
@@ -29,5 +31,6 @@ namespace Jp.Domain.Interfaces
         string Company { get; set; }
         string Bio { get; set; }
         string JobTitle { get; set; }
+        
     }
 }
