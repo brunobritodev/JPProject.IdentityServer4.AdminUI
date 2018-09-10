@@ -3,6 +3,7 @@ using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using Jp.Infra.CrossCutting.Identity.Constants;
+using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 
 namespace Jp.UI.SSO.Util
 
@@ -15,30 +16,54 @@ namespace Jp.UI.SSO.Util
 
             return new List<Client>
             {
+                new Client
+                {
+
+                    ClientId = AuthorizationConsts.OidcClientId,
+                    ClientName = AuthorizationConsts.OidcClientId,
+                    ClientUri = AuthorizationConsts.IdentityAdminBaseUrl,
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signin-oidc"},
+                    FrontChannelLogoutUri = $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-oidc",
+                    PostLogoutRedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-callback-oidc"},
+                    AllowedCorsOrigins = { AuthorizationConsts.IdentityAdminBaseUrl },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "roles"
+                    }
+                },
                 /*
                  * JP Project ID4 Admin Client
                  */
 	           new Client
                {
 
-                   ClientId = AuthorizationConsts.OidcClientId,
-                   ClientName = AuthorizationConsts.OidcClientId,
-                   ClientUri = AuthorizationConsts.IdentityAdminBaseUrl,
+                   ClientId = "ID4-Admin",
+                   ClientName = "ID4-Admin",
+                   //ClientUri = JpProjectConfiguration.IdentityServerAdminUrl,
 
                    AllowedGrantTypes = GrantTypes.Implicit,
                    AllowAccessTokensViaBrowser = true,
 
-                   RedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signin-oidc"},
+                   RedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}/login-callback", "http://localhost:9000/signin-oidc"},
                    FrontChannelLogoutUri = $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-oidc",
-                   PostLogoutRedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-callback-oidc"},
-                   AllowedCorsOrigins = { AuthorizationConsts.IdentityAdminBaseUrl },
+                   PostLogoutRedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}","http://localhost:9000/signout-callback-oidc" },
+                   AllowedCorsOrigins = { JpProjectConfiguration.IdentityServerAdminUrl , "http://localhost:9000"},
 
                    AllowedScopes =
                    {
                        IdentityServerConstants.StandardScopes.OpenId,
                        IdentityServerConstants.StandardScopes.Profile,
                        IdentityServerConstants.StandardScopes.Email,
-                       "roles"
+                       JwtClaimTypes.Picture,
+                       "management-api.identityserver4-manager",
                    }
                },
 
@@ -48,22 +73,21 @@ namespace Jp.UI.SSO.Util
                 new Client {
                     ClientId = "UserManagementUI",
                     ClientName = "User Management UI",
-                    //AccessTokenLifetime = 600, // 10 minutes, default 60 minutes
+                    
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = true,
-                    RedirectUris = { "http://localhost:4200/login-callback" },
-                    PostLogoutRedirectUris =  { "http://localhost:4200/" },
-                    AllowedCorsOrigins = { "http://localhost:4200" },
+                    RedirectUris = { $"{JpProjectConfiguration.UserManagementUrl}/login-callback" },
+                    PostLogoutRedirectUris =  { $"{JpProjectConfiguration.UserManagementUrl}" },
+                    AllowedCorsOrigins = { $"{JpProjectConfiguration.UserManagementUrl}" },
                     LogoUri = "~/images/clientLogo/1.jpg",
-                    AccessTokenType = AccessTokenType.Reference,
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
                         JwtClaimTypes.Picture,
-                        "UserManagementApi.owner-content",
+                        "management-api.owner-content",
                     }
                 },
                 new Client
@@ -74,11 +98,12 @@ namespace Jp.UI.SSO.Util
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris =
                     {
-                        "https://localhost:5003/swagger/oauth2-redirect.html"
+                        $"{JpProjectConfiguration.ResourceServer}/swagger/oauth2-redirect.html"
                     },
                     AllowedScopes =
                     {
-                        "UserManagementApi.owner-content"
+                        "management-api.owner-content",
+                        "management-api.identityserver4-manager",
                     }
                 }
 

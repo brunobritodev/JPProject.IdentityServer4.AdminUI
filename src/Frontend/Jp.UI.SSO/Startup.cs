@@ -46,7 +46,7 @@ namespace Jp.UI.SSO
         {
             // configure identity
             services.AddMvc();
-            services.AddIdentitySqlServer(Configuration);
+            services.AddIdentityMySql(Configuration);
 
             // For linux ambient DataProtection
             // https://github.com/aspnet/Home/issues/2941
@@ -62,7 +62,7 @@ namespace Jp.UI.SSO
             });
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, _environment, _logger).UseIdentityServerSqlDatabase(services, Configuration, _logger);
+            services.AddIdentityServer(Configuration, _environment, _logger).UseIdentityServerMySqlDatabase(services, Configuration, _logger);
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);
@@ -85,12 +85,7 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-                app.UseHttpsRedirection();
-            }
-
+            app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

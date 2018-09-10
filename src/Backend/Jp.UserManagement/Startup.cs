@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using IdentityServer4.AccessTokenValidation;
 using Jp.Infra.CrossCutting.IoC;
+using Jp.Infra.Migrations.MySql.Identity.Configuration;
 using Jp.Infra.Migrations.Sql.Identity.Configuration;
 using Jp.UserManagement.Configuration;
 using MediatR;
@@ -33,7 +34,6 @@ namespace Jp.UserManagement
                 builder.AddUserSecrets<Startup>();
             }
 
-            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
             HostEnvironment = hostEnvironment;
         }
@@ -43,7 +43,7 @@ namespace Jp.UserManagement
         {
             services.AddMvc();
 
-            services.AddIdentitySqlServer(Configuration);
+            services.AddIdentityMySql(Configuration);
             services.ConfigureCors();
 
             var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "https://localhost:5000";
@@ -58,7 +58,7 @@ namespace Jp.UserManagement
                                                         options.Authority = authorityUri;
                                                         options.RequireHttpsMetadata = false;
                                                         options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
-                                                        options.ApiName = "UserManagementApi";
+                                                        options.ApiName = "management-api";
                                                         options.JwtBearerEvents.OnMessageReceived = (messae) =>
                                                         {
                                                             messae.Options.TokenValidationParameters.ValidateIssuer = bool.Parse(Environment.GetEnvironmentVariable("VALIDATE_ISSUER") ?? "true");

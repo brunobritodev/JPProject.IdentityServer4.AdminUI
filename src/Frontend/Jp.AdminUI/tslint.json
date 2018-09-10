@@ -17,9 +17,7 @@
     "eofline": true,
     "forin": false,
     "import-blacklist": [
-      true,
-      "rxjs",
-      "rxjs/Rx"
+      true
     ],
     "import-spacing": true,
     "indent": [
@@ -30,7 +28,7 @@
     "label-position": true,
     "max-line-length": [
       true,
-      200
+      350
     ],
     "member-access": false,
     "member-ordering": [
@@ -67,7 +65,7 @@
     "no-string-literal": false,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
+    "no-trailing-whitespace": false,
     "no-unnecessary-initializer": true,
     "no-unused-expression": true,
     "no-use-before-declare": true,
@@ -82,7 +80,7 @@
     ],
     "prefer-const": false,
     "quotemark": [
-      true,
+      false,
       "double"
     ],
     "radix": true,

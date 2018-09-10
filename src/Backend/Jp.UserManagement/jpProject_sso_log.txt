@@ -99,3 +99,150 @@ ORDER BY [e].[CreationDate] DESC
 2018-09-08 12:23:08.797 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.EventSourcedNormalizers.EventHistoryData, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
 2018-09-08 12:23:08.808 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.GetLogs (Jp.UserManagement) in 123.6422ms
 2018-09-08 12:23:08.814 -03:00 [INF] Request finished in 301.5674ms 200 application/json; charset=utf-8
+2018-09-08 12:31:41.614 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-08 12:31:42.103 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-08 12:33:34.277 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-09-08 12:33:34.290 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:34.294 -03:00 [INF] Request finished in 19.5276ms 204 
+2018-09-08 12:33:34.305 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-08 12:33:34.307 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:34.536 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-08 12:33:34.540 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-08 12:33:34.601 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-08 12:33:34.615 -03:00 [INF] Authorization was successful.
+2018-09-08 12:33:34.683 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-08 12:33:35.115 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Jp.Infra.Migrations.Sql.Identity 
+2018-09-08 12:33:35.392 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-08 12:33:35.494 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 800.9863ms.
+2018-09-08 12:33:35.505 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-08 12:33:35.517 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 911.0329ms
+2018-09-08 12:33:35.528 -03:00 [INF] Request finished in 1222.6093ms 200 application/json; charset=utf-8
+2018-09-08 12:33:54.210 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/user-data  
+2018-09-08 12:33:54.212 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:54.213 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/has-password  
+2018-09-08 12:33:54.214 -03:00 [INF] Request finished in 4.2367ms 204 
+2018-09-08 12:33:54.215 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:54.218 -03:00 [INF] Request finished in 4.9192ms 204 
+2018-09-08 12:33:54.233 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/has-password  
+2018-09-08 12:33:54.233 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-08 12:33:54.234 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:54.236 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:54.328 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-08 12:33:54.330 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-08 12:33:54.335 -03:00 [INF] Route matched with {action = "HasPassword", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement)
+2018-09-08 12:33:54.339 -03:00 [INF] Authorization was successful.
+2018-09-08 12:33:54.342 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement) - Validation state: "Valid"
+2018-09-08 12:33:54.348 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Jp.Infra.Migrations.Sql.Identity 
+2018-09-08 12:33:54.356 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-08 12:33:54.357 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-08 12:33:54.363 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 19.0819ms.
+2018-09-08 12:33:54.363 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-08 12:33:54.368 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-09-08 12:33:54.370 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-08 12:33:54.374 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.HasPassword (Jp.UserManagement) in 35.2927ms
+2018-09-08 12:33:54.376 -03:00 [INF] Authorization was successful.
+2018-09-08 12:33:54.380 -03:00 [INF] Request finished in 146.7998ms 200 application/json; charset=utf-8
+2018-09-08 12:33:54.382 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-08 12:33:54.389 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Jp.Infra.Migrations.Sql.Identity 
+2018-09-08 12:33:54.394 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-08 12:33:54.403 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14.5747ms.
+2018-09-08 12:33:54.409 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-08 12:33:54.413 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 36.351400000000005ms
+2018-09-08 12:33:54.415 -03:00 [INF] Request finished in 182.2757ms 200 application/json; charset=utf-8
+2018-09-08 12:33:55.069 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/management/logs  
+2018-09-08 12:33:55.070 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:55.071 -03:00 [INF] Request finished in 2.8199ms 204 
+2018-09-08 12:33:55.077 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/logs  
+2018-09-08 12:33:55.079 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:55.136 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-08 12:33:55.138 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-08 12:33:55.141 -03:00 [INF] Route matched with {action = "GetLogs", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.GetLogs (Jp.UserManagement)
+2018-09-08 12:33:55.144 -03:00 [INF] Authorization was successful.
+2018-09-08 12:33:55.147 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.GetLogs (Jp.UserManagement) - Validation state: "Valid"
+2018-09-08 12:33:55.161 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'EventStoreSQLContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Jp.Infra.Migrations.Sql.Identity 
+2018-09-08 12:33:55.194 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__aggregateId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[AggregateId], [e].[Data], [e].[Action], [e].[CreationDate], [e].[User]
+FROM [StoredEvent] AS [e]
+WHERE [e].[AggregateId] = @__aggregateId_0
+ORDER BY [e].[CreationDate] DESC
+2018-09-08 12:33:55.228 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.GetLogs (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 78.045200000000008ms.
+2018-09-08 12:33:55.239 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.EventSourcedNormalizers.EventHistoryData, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-09-08 12:33:55.248 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.GetLogs (Jp.UserManagement) in 104.4118ms
+2018-09-08 12:33:55.252 -03:00 [INF] Request finished in 174.7041ms 200 application/json; charset=utf-8
+2018-09-08 12:33:56.229 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/management/user-data  
+2018-09-08 12:33:56.231 -03:00 [INF] Policy execution successful.
+2018-09-08 12:33:56.334 -03:00 [DBG] AuthenticationScheme: BearerIdentityServerAuthenticationIntrospection was successfully authenticated.
+2018-09-08 12:33:56.336 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-09-08 12:33:56.345 -03:00 [INF] Route matched with {action = "UserData", controller = "Management"}. Executing action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement)
+2018-09-08 12:33:56.351 -03:00 [INF] Authorization was successful.
+2018-09-08 12:33:56.357 -03:00 [INF] Executing action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) - Validation state: "Valid"
+2018-09-08 12:33:56.361 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Jp.Infra.Migrations.Sql.Identity 
+2018-09-08 12:33:56.366 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Bio], [e].[Company], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[JobTitle], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[Picture], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[Url], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-09-08 12:33:56.377 -03:00 [INF] Executed action method Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 15.9063ms.
+2018-09-08 12:33:56.380 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[Jp.Application.ViewModels.ProfileViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-09-08 12:33:56.383 -03:00 [INF] Executed action Jp.UserManagement.Controllers.ManagementController.UserData (Jp.UserManagement) in 31.758000000000003ms
+2018-09-08 12:33:56.385 -03:00 [INF] Request finished in 156.2731ms 200 application/json; charset=utf-8
+2018-09-09 18:05:55.342 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:05:57.488 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:08:01.345 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:08:02.395 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:18:59.813 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:19:00.935 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:24:16.163 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:24:17.330 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:27:16.657 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:27:17.729 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:28:30.911 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:28:32.059 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:29:38.883 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:29:40.001 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:33:38.137 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:33:39.259 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 18:34:18.389 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 18:34:19.462 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 19:26:21.634 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 19:26:22.814 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 19:27:51.316 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 19:27:52.340 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 19:28:28.308 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 19:28:29.412 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 19:31:13.768 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 19:31:14.841 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 19:41:36.625 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 19:41:37.732 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 20:01:23.067 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 20:01:24.123 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-09 20:10:22.310 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-09 20:10:23.311 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:05:04.248 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:05:06.740 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:06:47.430 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:06:48.627 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:06:55.131 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:06:56.072 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:17:13.933 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:17:15.103 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:21:06.841 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:21:07.878 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:24:13.585 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:24:14.781 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:27:33.936 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:27:35.192 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:31:31.436 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:31:32.597 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:33:11.887 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:33:14.460 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 00:33:58.198 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 00:33:59.363 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.

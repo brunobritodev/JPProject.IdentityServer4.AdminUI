@@ -7,7 +7,7 @@ export const authConfig: AuthConfig = {
     clientId: "UserManagementUI",
     postLogoutRedirectUri: "http://localhost:4200/",
     redirectUri: window.location.origin + "/login-callback",
-    scope: "openid profile email picture UserManagementApi.owner-content",
+    scope: "openid profile email picture management-api.owner-content",
     oidc: true,
     options: {
         validateIssuerName: false

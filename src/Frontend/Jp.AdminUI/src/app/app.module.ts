@@ -11,7 +11,9 @@ import { CoreModule } from "./core/core.module";
 import { LayoutModule } from "./shared/layout/layout.module";
 import { SharedModule } from "./shared/shared.module";
 import { RoutesModule } from "./app.routing.module";
-import { WithCredentialInterceptor } from "./core/interceptors/withCredential.interceptor";
+import { AuthInterceptor } from "./core/interceptors/auth.interceptor";
+import { OAuthModule } from "angular-oauth2-oidc";
+import { environment } from "../environments/environment";
 
 // https://github.com/ocombe/ng2-translate/issues/218
 export function createTranslateLoader(http: HttpClient) {
@@ -22,7 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
 let dev = [
     {
         provide: HTTP_INTERCEPTORS,
-        useClass: WithCredentialInterceptor,
+        useClass: AuthInterceptor,
         multi: true
     }
 ];
@@ -39,6 +41,12 @@ if (process.env.NODE_ENV === "production") {
     imports: [
         HttpClientModule,
         BrowserAnimationsModule, // required for ng2-tag-input
+        OAuthModule.forRoot({
+            resourceServer: {
+                allowedUrls: [ environment.ResourceServer],
+                sendAccessToken: true
+            }
+        }),
         CoreModule,
         LayoutModule,
         SharedModule.forRoot(),

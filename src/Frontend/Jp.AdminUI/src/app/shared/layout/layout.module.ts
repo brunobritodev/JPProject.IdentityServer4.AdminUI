@@ -10,7 +10,6 @@ import { UserblockService } from "./sidebar/userblock/userblock.service";
 import { FooterComponent } from "./footer/footer.component";
 
 import { SharedModule } from "../shared.module";
-import { AccountManagementService } from "../services/account-management.service";
 
 @NgModule({
     imports: [
@@ -18,7 +17,6 @@ import { AccountManagementService } from "../services/account-management.service
     ],
     providers: [
         UserblockService,
-        AccountManagementService
     ],
     declarations: [
         LayoutComponent,

@@ -1,18 +1,17 @@
-import { EquinoxWebAppPage } from "./app.po";
+import { JpProjectWebAppPage } from "./app.po";
 import { TestBed } from "@angular/core/testing";
-import { AccountManagementService } from "../src/app/shared/services/account-management.service";
 import { HttpClientModule } from "@angular/common/http";
 
-describe("Equinox WebApp", function () {
-  let page: EquinoxWebAppPage;
+describe("jpproject WebApp", function () {
+  let page: JpProjectWebAppPage;
 
   beforeEach(() => {
-    page = new EquinoxWebAppPage();
+    page = new JpProjectWebAppPage();
   });
 
   it("should display sign-in page", () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual("SIGN IN TO CONTINUE.");
-    expect(page.getUrl()).toContain("/sign-in");
+    expect(page.getUrl()).toContain("/login");
   });
 });

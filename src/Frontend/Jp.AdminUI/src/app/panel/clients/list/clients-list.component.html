@@ -1,0 +1,45 @@
+<div class="content-heading">
+    <div>
+        Clients
+        <small><b> {{ 'clist.ClientDescription' | translate }}.</b></small>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="col-xl-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-outline-primary mb-3"><i class="fa fa-plus-circle"></i> New Client</button>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Id</th>
+                                <th> {{"clist.TableClientName" | translate }} </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th><button class="btn btn-primary"><i class="fa fa-edit"></i></button></th>
+                                <td>@client.ClientId</td>
+                                <td>@client.ClientName</td>
+                                <td>
+                                    <button class="btn btn-danger" asp-action="ClientDelete" asp-route-id="@client.Id"><i class="fa fa-remove"></i></button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

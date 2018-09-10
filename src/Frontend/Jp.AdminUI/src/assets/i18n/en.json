@@ -18,7 +18,14 @@
             "SINGLEVIEW": "Single View"
         }
     },
-    "dashboard": {
-        "WELCOME": "Welcome"
-    }
+    "home": {
+        "WELCOME": "Welcome",
+        "DESCRIPTION": "This is IdentityServer4 Admin Panel. Here you can manage your IS4 settings.",
+        "CLIENTDESCRIPTION": "Manage your clients."
+    },
+    "clist": {
+        "ClientDescription": "The Client class represents an OpenID Connect or OAuth 2.0 client - e.g. a native application, a web application or a JS-based application",
+        "TableClientName": "Client Name"
+    },
+    "General": "General"
 }
