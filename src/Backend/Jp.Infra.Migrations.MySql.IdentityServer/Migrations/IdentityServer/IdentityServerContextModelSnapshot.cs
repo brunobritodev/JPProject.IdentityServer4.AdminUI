@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jp.Infra.Migrations.MySql.IdentityServer.Migrations.IdentityServer
 {
-    [DbContext(typeof(IdentityServerContext))]
+    [DbContext(typeof(JpContext))]
     partial class IdentityServerContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

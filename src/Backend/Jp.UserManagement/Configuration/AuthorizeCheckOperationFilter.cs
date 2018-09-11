@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Jp.UserManagement.Configuration
+namespace Jp.Management.Configuration
 {
     public class AuthorizeCheckOperationFilter : IOperationFilter
     {

@@ -14,4 +14,10 @@
     <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="IdentityServer4">
+      <HintPath>C:\Users\Bruno\.nuget\packages\identityserver4\2.1.1\lib\netstandard2.0\IdentityServer4.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

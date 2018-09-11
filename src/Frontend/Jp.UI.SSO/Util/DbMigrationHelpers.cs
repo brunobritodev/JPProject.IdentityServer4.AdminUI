@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using IdentityServer4.EntityFramework.Mappers;
 using Jp.Infra.CrossCutting.Identity.Constants;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using JpContext = Jp.Infra.CrossCutting.IdentityServer.Context.JpContext;
 
 namespace Jp.UI.SSO.Util
 {
@@ -40,14 +42,12 @@ namespace Jp.UI.SSO.Util
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
 
-                var id4Context = scope.ServiceProvider.GetRequiredService<IdentityServerContext>();
+                var id4Context = scope.ServiceProvider.GetRequiredService<JpContext>();
                 var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreSQLContext>();
-                var jpContext = scope.ServiceProvider.GetRequiredService<JpContext>();
 
                 await id4Context.Database.MigrateAsync();
                 await userContext.Database.MigrateAsync();
                 await storeDb.Database.MigrateAsync();
-                await jpContext.Database.MigrateAsync();
 
 
                 await EnsureSeedIdentityServerData(id4Context);
@@ -62,9 +62,9 @@ namespace Jp.UI.SSO.Util
             RoleManager<UserIdentityRole> roleManager)
         {
             // Create admin role
-            if (!await roleManager.RoleExistsAsync(AuthorizationConsts.AdministrationRole))
+            if (!await roleManager.RoleExistsAsync("Administrator"))
             {
-                var role = new UserIdentityRole { Name = AuthorizationConsts.AdministrationRole };
+                var role = new UserIdentityRole { Name = "Administrator" };
 
                 await roleManager.CreateAsync(role);
             }
@@ -84,6 +84,7 @@ namespace Jp.UI.SSO.Util
 
             if (result.Succeeded)
             {
+                await userManager.AddClaimAsync(user, new Claim("IS4-Permission", "Manager"));
                 await userManager.AddToRoleAsync(user, AuthorizationConsts.AdministrationRole);
             }
         }
@@ -91,7 +92,7 @@ namespace Jp.UI.SSO.Util
         /// <summary>
         /// Generate default clients, identity and api resources
         /// </summary>
-        private static async Task EnsureSeedIdentityServerData(IdentityServerContext context)
+        private static async Task EnsureSeedIdentityServerData(JpContext context)
         {
             if (!context.Clients.Any())
             {

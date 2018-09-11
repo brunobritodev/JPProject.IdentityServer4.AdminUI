@@ -9,7 +9,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Jp.UserManagement.Controllers
+namespace Jp.Management.Controllers
 {
     public abstract class ApiController : ControllerBase
     {

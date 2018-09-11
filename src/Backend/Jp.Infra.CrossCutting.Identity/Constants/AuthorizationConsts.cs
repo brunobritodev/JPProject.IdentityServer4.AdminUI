@@ -5,7 +5,7 @@ namespace Jp.Infra.CrossCutting.Identity.Constants
     public class AuthorizationConsts
     {
         public const string AdministrationPolicy = "RequireAdministratorRole";
-        public const string AdministrationRole = "SkorubaIdentityAdminAdministrator";
+        public const string AdministrationRole = "Administrator";
 
         public const string IdentityAdminCookieName = "IdentityServerAdmin";        
         public const string IdentityAdminRedirectUri = "http://localhost:9000/signin-oidc";

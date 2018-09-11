@@ -3,16 +3,16 @@ using System.Threading.Tasks;
 using IdentityServer4.AccessTokenValidation;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.Infra.Migrations.MySql.Identity.Configuration;
-using Jp.Infra.Migrations.Sql.Identity.Configuration;
-using Jp.UserManagement.Configuration;
+using Jp.Management.Configuration;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Jp.UserManagement
+namespace Jp.Management
 {
     public class Startup
     {
@@ -46,25 +46,11 @@ namespace Jp.UserManagement
             services.AddIdentityMySql(Configuration);
             services.ConfigureCors();
 
-            var authorityUri = Environment.GetEnvironmentVariable("AUTHORITY") ?? "https://localhost:5000";
-            _logger.LogInformation($"Authority URI: {authorityUri}");
-            services.AddAuthentication(options =>
-                {
-                    options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-                })
-                    .AddIdentityServerAuthentication(options =>
-                                                    {
-                                                        options.Authority = authorityUri;
-                                                        options.RequireHttpsMetadata = false;
-                                                        options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
-                                                        options.ApiName = "management-api";
-                                                        options.JwtBearerEvents.OnMessageReceived = (messae) =>
-                                                        {
-                                                            messae.Options.TokenValidationParameters.ValidateIssuer = bool.Parse(Environment.GetEnvironmentVariable("VALIDATE_ISSUER") ?? "true");
-                                                            return Task.CompletedTask;
-                                                        };
-                                                    });
+            // Configure policies
+            services.AddPolicies();
+
+            // configure auth Server
+            services.AddIdentityServerAuthentication(_logger);
 
             services.AddSwagger();
 

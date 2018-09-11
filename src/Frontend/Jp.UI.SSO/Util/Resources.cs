@@ -20,7 +20,7 @@ namespace Jp.UI.SSO.Util
                 new IdentityResource("picture", new[] { JwtClaimTypes.Picture }),
                 new IdentityResource("management-api-permissions", new[] { JwtClaimTypes.Role }),
                 // add additional identity resource
-                new IdentityResource("roles", "Roles", new[] { "role" })
+                new IdentityResource("IS4-Permission", "IdentityServer4 Admin Panel Permissions", new [] { "is4-permissions"})
 
             };
         }
@@ -41,7 +41,7 @@ namespace Jp.UI.SSO.Util
                                         IdentityServerConstants.StandardScopes.OpenId,
                                         IdentityServerConstants.StandardScopes.Profile,
                                         IdentityServerConstants.StandardScopes.Email,
-                                        ""
+                                        "is4-permissions"
                                     },
 
                                     Scopes =
@@ -59,15 +59,7 @@ namespace Jp.UI.SSO.Util
                                             DisplayName = "Administrator",
                                             Description = "Manage mode to IS4",
                                             Required = true
-                                        },
-                                        new Scope()
-                                        {
-                                            Name = "management-api.identityserver4-readonly",
-                                            DisplayName = "Readonly",
-                                            Description = "With this access user just can read data from ID4 resources",
-                                            Required = true
-                                        },
-
+                                        }
                                     }
                                 }
                         };

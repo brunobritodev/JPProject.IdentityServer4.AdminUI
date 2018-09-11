@@ -7,7 +7,7 @@ using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Jp.UserManagement.Controllers
+namespace Jp.Management.Controllers
 {
     [Route("[controller]")]
     public class UserController : ApiController

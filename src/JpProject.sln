@@ -40,7 +40,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.CrossCutting.Tools
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.CrossCutting.IoC", "Backend\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj", "{A56C9AC5-FE82-41D5-A59F-8460F7110569}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.UserManagement", "Backend\Jp.UserManagement\Jp.UserManagement.csproj", "{14A3F6B3-2B5B-43BF-A458-AA41F07365E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Management", "Backend\Jp.UserManagement\Jp.Management.csproj", "{14A3F6B3-2B5B-43BF-A458-AA41F07365E4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.CrossCutting.IdentityServer", "Backend\Jp.Infra.CrossCutting.IdentityServer\Jp.Infra.CrossCutting.IdentityServer.csproj", "{F1CE538A-D12B-430F-8CC1-47A1797B7679}"
 EndProject
