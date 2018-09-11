@@ -16,7 +16,7 @@ namespace Jp.Infra.Migrations.Sql.IdentityServer.Configuration
             var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
 
-            services.AddDbContext<IdentityServerContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             // this adds the config data from DB (clients, resources)
             builder.AddConfigurationStore(options =>
                 {

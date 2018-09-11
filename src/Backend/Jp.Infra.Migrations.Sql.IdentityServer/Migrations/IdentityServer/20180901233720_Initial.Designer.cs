@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
 {
-    [DbContext(typeof(IdentityServerContext))]
+    [DbContext(typeof(JpContext))]
     [Migration("20180901233720_Initial")]
     partial class Initial
     {

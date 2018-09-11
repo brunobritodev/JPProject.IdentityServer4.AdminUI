@@ -246,3 +246,5 @@ WHERE [e].[Id] = @__get_Item_0
 2018-09-10 00:33:14.460 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2018-09-10 00:33:58.198 -03:00 [INF] Authority URI: https://localhost:5000
 2018-09-10 00:33:59.363 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-09-10 22:33:08.014 -03:00 [INF] Authority URI: https://localhost:5000
+2018-09-10 22:33:09.398 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.

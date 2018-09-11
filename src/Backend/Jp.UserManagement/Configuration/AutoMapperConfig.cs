@@ -3,7 +3,7 @@ using AutoMapper;
 using Jp.Application.AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Jp.UserManagement.Configuration
+namespace Jp.Management.Configuration
 {
     public static class AutoMapperSetup
     {

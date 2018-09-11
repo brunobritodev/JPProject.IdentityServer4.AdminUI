@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
 {
-    [DbContext(typeof(IdentityServerContext))]
+    [DbContext(typeof(JpContext))]
     partial class IdentityServerContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

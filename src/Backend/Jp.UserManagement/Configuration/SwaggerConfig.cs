@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Jp.UserManagement.Configuration
+namespace Jp.Management.Configuration
 {
     public static class SwaggerConfig
     {
