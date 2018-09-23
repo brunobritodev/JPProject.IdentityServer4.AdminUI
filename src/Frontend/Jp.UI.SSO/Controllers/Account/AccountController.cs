@@ -28,7 +28,6 @@ using Microsoft.Extensions.Configuration;
 
 namespace Jp.UI.SSO.Controllers.Account
 {
-    [SecurityHeaders]
     public class AccountController : Controller
     {
         private readonly IUserManager _userService;
@@ -155,6 +154,11 @@ namespace Jp.UI.SSO.Controllers.Account
                         }
 
                         return Redirect("~/");
+                    }
+                    else
+                    {
+                        await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials"));
+                        ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
                     }
                 }
             }

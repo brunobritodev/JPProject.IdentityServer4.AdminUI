@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
-using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.ClientsViewModels;
 
 namespace Jp.Application.Interfaces
 {
     public interface IClientAppService: IDisposable
     {
-        Task<IEnumerable<Client>> GetClients();
+        Task<IEnumerable<ClientListViewModel>> GetClients();
+        Task<Client> GetClientDetails(string clientId);
     }
 }

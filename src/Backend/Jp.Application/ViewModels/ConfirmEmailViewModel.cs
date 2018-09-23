@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Jp.Domain.Core.Models;
 
 namespace Jp.Application.ViewModels
 {
@@ -9,5 +10,6 @@ namespace Jp.Application.ViewModels
         public string Email { get; set; }
         [Required]
         public string Code { get; set; }
+
     }
 }

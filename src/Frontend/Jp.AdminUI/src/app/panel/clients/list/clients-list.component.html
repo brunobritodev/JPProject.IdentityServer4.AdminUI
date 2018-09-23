@@ -1,7 +1,7 @@
 <div class="content-heading">
     <div>
         Clients
-        <small><b> {{ 'clist.ClientDescription' | translate }}.</b></small>
+        <small><b> {{ 'client.ClientDescription' | translate }}.</b></small>
     </div>
 </div>
 
@@ -18,22 +18,20 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Id</th>
-                                <th> {{"clist.TableClientName" | translate }} </th>
+                                <th> {{ "client.Image" | translate }}</th>
+                                <th> {{"client.TableClientName" | translate }} </th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <th><button class="btn btn-primary"><i class="fa fa-edit"></i></button></th>
-                                <td>@client.ClientId</td>
-                                <td>@client.ClientName</td>
+                            <tr *ngFor="let client of clientListObservable | async">
+                                <th><a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary"><i class="fa fa-edit"></i></a></th>
+                                <td><img *ngIf="client.logoUri" width="90" [src]="client.logoUri" /></td>
+                                <td>{{client.clientName}}</td>
                                 <td>
                                     <button class="btn btn-danger" asp-action="ClientDelete" asp-route-id="@client.Id"><i class="fa fa-remove"></i></button>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>

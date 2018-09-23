@@ -44,6 +44,7 @@ namespace Jp.Management
             services.AddMvc();
 
             services.AddIdentityMySql(Configuration);
+
             services.ConfigureCors();
 
             // Configure policies

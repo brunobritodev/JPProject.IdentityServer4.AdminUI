@@ -1,0 +1,146 @@
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.enabled' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.enabled-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.enabled" />
+            <span></span>
+        </label>
+    </div>
+</div>
+
+<!--Input - text -->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.description' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.description-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <input class="form-control" autocomplete="client-description" placeholder="Description" [(ngModel)]="model.description" />
+    </div>
+</div>
+
+<!--Select-->
+
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.protocolType' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.protocolType-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <ngx-select [items]="[model.protocolType]" [(ngModel)]="model.protocolType" placeholder="ProtocolType"></ngx-select>
+    </div>
+</div>
+
+
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.requireClientSecret' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.requireClientSecret-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.requireClientSecret" />
+            <span></span>
+        </label>
+    </div>
+</div>
+
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.requirePkce' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.requirePkce-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.requirePkce" />
+            <span></span>
+        </label>
+    </div>
+</div>
+
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.allowPlainTextPkce' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.allowPlainTextPkce-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.allowPlainTextPkce" />
+            <span></span>
+        </label>
+    </div>
+</div>
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.allowOfflineAccess' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.allowOfflineAccess-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.allowOfflineAccess" />
+            <span></span>
+        </label>
+    </div>
+</div>
+
+<!--Checkbox-->
+<div class="form-group row">
+    <div class="col-xl-4">
+        <label class="col-form-label">{{ 'client.details.allowAccessTokensViaBrowser' | translate }} </label>&nbsp;
+        <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.allowAccessTokensViaBrowser-tooltip' | translate"
+            [popoverTitle]="'client.details.allowAccessTokensViaBrowser' | translate" placement="auto" container="body">
+            <i class="fa fa-comment-dots" placement="top"></i>
+        </button>
+    </div>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.allowAccessTokensViaBrowser" />
+            <span></span>
+        </label>
+    </div>
+</div>
+
+<!--Select with tags-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.allowedScopes' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.allowedScopes-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <tag-input theme='bootstrap' name="allowedScopes" [modelAsStrings]="true" placeholder='+Scope' [(ngModel)]="model.allowedScopes"></tag-input>
+    </div>
+</div>
+<!--Select with tags-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.redirectUris' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.redirectUris-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <tag-input theme='bootstrap' name="redirectUris" [modelAsStrings]="true" placeholder='+Url' [(ngModel)]="model.redirectUris"></tag-input>
+    </div>
+</div>
+<!--Select with tags-->
+
+<div class="form-group row">
+    <div class="col-xl-4">
+        <label class="col-form-label">{{ 'client.details.allowedGrantTypes' | translate }} </label>&nbsp;
+        <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.allowedGrantTypes-tooltip' | translate"
+            [popoverTitle]="'client.details.allowedGrantTypes' | translate" placement="auto" container="body">
+            <i class="fa fa-comment-dots" placement="top"></i>
+        </button>
+    </div>
+    <div class="col-xl-8">
+        <tag-input theme='bootstrap' name="allowedGrantTypes" [modelAsStrings]="true" placeholder='+Grant' [(ngModel)]="model.allowedGrantTypes"></tag-input>
+    </div>
+</div>
+
+<!--Button-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.clientSecrets' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.clientSecrets-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <a target="_blank" [routerLink]="['/client/secrets', model.clientId]" class="btn btn-primary">{{
+            'client.details.clientSecrets' | translate }}</a>
+    </div>
+</div>
+
+<!--Button-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{ 'client.details.properties' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.properties-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <a target="_blank" [routerLink]="['/client/properties', model.clientId]" class="btn btn-primary">{{
+            'client.details.properties' | translate }}</a>
+    </div>
+</div>

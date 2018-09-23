@@ -17,21 +17,21 @@
                 <!-- external links -->
                 <a href *ngIf="!item.heading && !item.submenu && item.elink" [attr.target]="item.target" [attr.href]="item.elink" title="{{item.text}}">
                     <span class="float-right" *ngIf="item.alert" [ngClass]="item.label || 'badge badge-success'">{{item.alert}}</span>
-                    <em class="{{item.icon}}" *ngIf="item.icon"></em>
+                    <i class="{{item.icon}}" *ngIf="item.icon"></i>&nbsp;
                     <span>{{(item.translate | translate) || item.text}}</span>
                 </a>
                 <!-- single menu item -->
                 <a href *ngIf="!item.heading && !item.submenu && !item.elink" [routerLink]="item.link" [attr.route]="item.link" title="{{item.text}}"
                     (click)="toggleSubmenuClick($event)" (mouseenter)="toggleSubmenuHover($event)">
                     <span class="float-right" *ngIf="item.alert" [ngClass]="item.label || 'badge badge-success'">{{item.alert}}</span>
-                    <em class="{{item.icon}}" *ngIf="item.icon"></em>
+                    <i class="{{item.icon}}" *ngIf="item.icon"></i>&nbsp;
                     <span>{{(item.translate | translate) || item.text}}</span>
                 </a>
                 <!-- has submenu -->
                 <a href *ngIf="!item.heading && item.submenu" title="{{item.text}}"
                     (click)="toggleSubmenuClick($event)" (mouseenter)="toggleSubmenuHover($event)">
                         <span class="float-right" *ngIf="item.alert" [ngClass]="item.label || 'badge badge-success'">{{item.alert}}</span>
-                        <em class="{{item.icon}}" *ngIf="item.icon"></em>
+                        <i class="{{item.icon}}" *ngIf="item.icon"></i>&nbsp;
                         <span>{{(item.translate | translate) || item.text}}</span>
                 </a>
                 <!-- SUBLEVEL -->

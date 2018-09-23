@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.UI.SSO.Controllers.Home
 {
-    [SecurityHeaders]
     public class HomeController : Controller
     {
         private readonly IIdentityServerInteractionService _interaction;
