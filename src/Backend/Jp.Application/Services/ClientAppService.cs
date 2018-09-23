@@ -6,6 +6,7 @@ using AutoMapper;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
+using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
 
@@ -15,7 +16,7 @@ namespace Jp.Application.Services
     {
         private IMapper _mapper;
         private IEventStoreRepository _eventStoreRepository;
-        private readonly IClientRepository _ClientRepository;
+        private readonly IClientRepository _clientRepository;
         public IMediatorHandler Bus { get; set; }
 
         public ClientAppService(IMapper mapper,
@@ -26,15 +27,21 @@ namespace Jp.Application.Services
             _mapper = mapper;
             Bus = bus;
             _eventStoreRepository = eventStoreRepository;
-            _ClientRepository = clientRepository;
+            _clientRepository = clientRepository;
         }
 
-        public Task<IEnumerable<Client>> GetClients()
+        public Task<IEnumerable<ClientListViewModel>> GetClients()
         {
-
-            var resultado = _ClientRepository.GetAll().Select(a => a.ToModel()).ToList();
-            return Task.FromResult<IEnumerable<Client>>(resultado);
+            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(_clientRepository.GetAll().Select(a => a.ToModel()).OrderBy(a => a.ClientName).ToList());
+            return Task.FromResult(resultado);
         }
+
+        public async Task<Client> GetClientDetails(string clientId)
+        {
+            var resultado = await _clientRepository.GetByUniqueName(clientId);
+            return resultado.ToModel();
+        }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);

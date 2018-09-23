@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using IdentityServer4.EntityFramework.Options;
 using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
@@ -16,6 +17,12 @@ namespace Jp.Infra.Migrations.Sql.Identity.Configuration
         {
             var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityConfig).GetTypeInfo().Assembly.GetName().Name;
+
+            var operationalStoreOptions = new OperationalStoreOptions();
+            services.AddSingleton(operationalStoreOptions);
+
+            var storeOptions = new ConfigurationStoreOptions();
+            services.AddSingleton(storeOptions);
 
             services.AddEntityFrameworkSqlServer().AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));

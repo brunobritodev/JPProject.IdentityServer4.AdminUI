@@ -23,9 +23,47 @@
         "DESCRIPTION": "This is IdentityServer4 Admin Panel. Here you can manage your IS4 settings.",
         "CLIENTDESCRIPTION": "Manage your clients."
     },
-    "clist": {
+    "client": {
         "ClientDescription": "The Client class represents an OpenID Connect or OAuth 2.0 client - e.g. a native application, a web application or a JS-based application",
-        "TableClientName": "Client Name"
+        "TableClientName": "Client Name",
+        "Image": "Image",
+        "details": {
+            "name": "Name",
+            "name-tooltip": "Client display name (used for logging and consent screen)",
+            "settings": "Settings",
+            "clientId": "ClientId",
+            "clientId-tooltip": "Unique ID of the client",
+            "basic": "Basic",
+            "auth": "Authentication",
+            "token": "Token",
+            "consent": "Consent",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Specifies if client is enabled. Defaults to true.",
+            "description": "Description",
+            "description-tooltip": "Client Description.",
+            "protocolType": "Protocol Type",
+            "protocolType-tooltip": "Default is OpenID Connect protocol",
+            "requireClientSecret": "Require Client Secret",
+            "requireClientSecret-tooltip": "Specifies whether this client needs a secret to request tokens from the token endpoint (defaults to true)",
+            "requirePkce": "Require Pkce",
+            "requirePkce-tooltip": "Specifies whether clients using an authorization code based grant type must send a proof key",
+            "allowPlainTextPkce": "Allow Plain Text Pkce",
+            "allowPlainTextPkce-tooltip": "Specifies whether clients using PKCE can use a plain text code challenge (not recommended - and default to false)",
+            "allowOfflineAccess": "Allow Offline Access",
+            "allowOfflineAccess-tooltip": "Specifies whether this client can request refresh tokens (be requesting the offline_access scope)",
+            "allowAccessTokensViaBrowser": "Allow Access Token Via Browser",
+            "allowAccessTokensViaBrowser-tooltip": "Specifies whether this client is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code id_token to add the token response type and thus leaking the token to the browser.",
+            "allowedScopes": "Allowed Scopes",
+            "allowedScopes-tooltip": "By default a client has no access to any resources - specify the allowed resources by adding the corresponding scopes names",
+            "redirectUris": "Redirect Uri's",
+            "redirectUris-tooltip": "Specifies the allowed URIs to return tokens or authorization codes to",
+            "allowedGrantTypes": "Allowed Grant Types",
+            "allowedGrantTypes-tooltip": "Specifies the grant types the client is allowed to use. Use the GrantTypes class for common combinations. List of default grants: Implicit Grant - (implicit), Client Credentials Grant - (client_credentials), Authorization Code Grant - (authorization_code), Hybrid grant - (hybrid), Resource Owner Password Credentials Grant - (password)",
+            "clientSecrets": "Client Secrets",
+            "clientSecrets-tooltip": "List of client secrets - credentials to access the token endpoint.",
+            "properties": "Properties",
+            "properties-tooltip": "Dictionary to hold any custom client-specific values as needed."
+        }
     },
     "General": "General"
 }

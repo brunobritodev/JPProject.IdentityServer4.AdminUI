@@ -31,7 +31,7 @@ namespace Jp.UI.SSO.Util
             {
                 new ApiResource
                                 {
-                                    Name = "ManagementApi",
+                                    Name = "management-api",
                                     DisplayName = "User Management API",
                                     Description = "API with default and protected actions to register and manager User",
                                     ApiSecrets = { new Secret("Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++".Sha256()) },

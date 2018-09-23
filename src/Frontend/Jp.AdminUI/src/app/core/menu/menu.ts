@@ -8,7 +8,7 @@ const Home = {
 const Settings = {
     text: "Clients",
     link: "/clients",
-    icon: "fa fa-desktop",
+    icon: "fas fa-desktop",
     submenu: [
         {
             text: "List",

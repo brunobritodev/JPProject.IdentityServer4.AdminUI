@@ -42,30 +42,27 @@ namespace Jp.UI.SSO.Util
                 /*
                  * JP Project ID4 Admin Client
                  */
-	           new Client
-               {
+                new Client
+                {
 
-                   ClientId = "ID4-Admin",
-                   ClientName = "ID4-Admin",
-                   //ClientUri = JpProjectConfiguration.IdentityServerAdminUrl,
+                    ClientId = "IS4-Admin",
+                    ClientName = "IS4-Admin",
+                    ClientUri = JpProjectConfiguration.IdentityServerAdminUrl,
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}/login-callback"},
+                    AllowedCorsOrigins = { JpProjectConfiguration.IdentityServerAdminUrl},
 
-                   AllowedGrantTypes = GrantTypes.Implicit,
-                   AllowAccessTokensViaBrowser = true,
-
-                   RedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}/login-callback", "http://localhost:9000/signin-oidc"},
-                   FrontChannelLogoutUri = $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-oidc",
-                   PostLogoutRedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}","http://localhost:9000/signout-callback-oidc" },
-                   AllowedCorsOrigins = { JpProjectConfiguration.IdentityServerAdminUrl , "http://localhost:9000"},
-
-                   AllowedScopes =
-                   {
-                       IdentityServerConstants.StandardScopes.OpenId,
-                       IdentityServerConstants.StandardScopes.Profile,
-                       IdentityServerConstants.StandardScopes.Email,
-                       JwtClaimTypes.Picture,
-                       "management-api.identityserver4-manager",
-                   }
-               },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "roles",
+                        "management-api.identityserver4-manager",
+                        "IS4-Permission"
+                    }
+                },
 
                 /*
                  * User Management Client - OpenID Connect implicit flow client
@@ -73,7 +70,7 @@ namespace Jp.UI.SSO.Util
                 new Client {
                     ClientId = "UserManagementUI",
                     ClientName = "User Management UI",
-                    
+
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = true,
@@ -86,7 +83,6 @@ namespace Jp.UI.SSO.Util
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        JwtClaimTypes.Picture,
                         "management-api.owner-content",
                     }
                 },

@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { UserProfile } from "../../shared/viewModel/userProfile.model";
-import { DefaultResponse } from "../../shared/viewModel/defaultResponse.model";
 import { environment } from "../../../environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { OAuthService } from "angular-oauth2-oidc";

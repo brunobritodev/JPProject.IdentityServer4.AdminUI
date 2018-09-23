@@ -57,8 +57,7 @@ import {TextMaskModule} from "angular2-text-mask";
         TooltipModule.forRoot(),
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToasterModule,
-        
+        ToasterModule
     ],
     providers: [
         ColorsService
@@ -71,7 +70,7 @@ import {TextMaskModule} from "angular2-text-mask";
         VectormapDirective,
         NowDirective,
         ScrollableDirective,
-        JqcloudDirective
+        JqcloudDirective,
     ],
     exports: [
         CommonModule,

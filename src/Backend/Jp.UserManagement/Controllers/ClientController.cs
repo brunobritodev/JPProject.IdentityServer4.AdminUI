@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Authorize(Policy = "IS4-ReadOnly")]
-    public class ClientController : ApiController
+    [Route("[controller]"), 
+    // Authorize(Policy = "IS4-ReadOnly")
+    ]
+    public class ClientsController : ApiController
     {
         private readonly IClientAppService _clientAppService;
 
-        public ClientController(
+        public ClientsController(
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
                 IClientAppService clientAppService) : base(notifications, mediator)
@@ -27,9 +26,18 @@ namespace Jp.Management.Controllers
             _clientAppService = clientAppService;
         }
 
-        public async Task<ActionResult<DefaultResponse<Client>>> GetClients()
+        [HttpGet, Route("list")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<ClientListViewModel>>>> List()
         {
-            return Ok(await _clientAppService.GetClients());
+            var clients = await _clientAppService.GetClients();
+            return Response(clients);
+        }
+
+        [HttpGet, Route("details")]
+        public async Task<ActionResult<DefaultResponse<Client>>> Details(string clientId)
+        {
+            var clients = await _clientAppService.GetClientDetails(clientId);
+            return Response(clients);
         }
     }
 }

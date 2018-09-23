@@ -8,8 +8,11 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+            services.AddScoped<IApiResourceAppService, ApiResourceAppService>();
             services.AddScoped<IUserAppService, UserAppService>();
             services.AddScoped<IUserManageAppService, UserManagerAppService>();
+            services.AddScoped<IClientAppService, ClientAppService>();
+            
         }
     }
 }
