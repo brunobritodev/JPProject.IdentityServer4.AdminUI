@@ -1,0 +1,38 @@
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{  'client.details.requireConsent' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.requireConsent-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.requireConsent" />
+            <span></span>
+        </label>
+    </div>
+</div>
+<!--Checkbox-->
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label">{{  'client.details.allowRememberConsent' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.allowRememberConsent-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.allowRememberConsent" />
+            <span></span>
+        </label>
+    </div>
+</div>
+<!--Input - text -->
+<div class="form-group row">
+        <label class="col-xl-4 col-form-label">{{  'client.details.clientUri' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.clientUri-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <input class="form-control" autocomplete="client-clientUri" [placeholder]="'client.details.clientUri-tooltip' | translate" [(ngModel)]="model.clientUri" />
+    </div>
+</div>
+<!--Input - text -->
+<div class="form-group row">
+        <label class="col-xl-4 col-form-label">{{  'client.details.logoUri' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.details.logoUri-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <input class="form-control" autocomplete="client-logoUri" [placeholder]="'client.details.logoUri-tooltip' | translate" [(ngModel)]="model.logoUri" />
+    </div>
+</div>

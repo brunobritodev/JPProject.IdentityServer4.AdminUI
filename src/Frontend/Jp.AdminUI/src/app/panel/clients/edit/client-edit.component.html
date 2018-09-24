@@ -5,7 +5,13 @@
     </div>
 </div>
 
-<app-loading *ngIf="model == null"></app-loading>
+<app-loading *ngIf="model == null || showButtonLoading"></app-loading>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
 
 <div class="card card-default" *ngIf="model">
     <div class="card-header">
@@ -14,46 +20,28 @@
     <div class="card-body">
         <tabset>
             <tab [heading]="'client.details.basic' | translate">
-                <div class="form-group row">
-                    <label class="col-xl-2 col-form-label">{{ 'client.details.clientId' | translate }} <i class="fa fa-comment-dots" placement="top" [tooltip]="'client.details.clientId-tooltip' | translate"></i></label>
-                    <div class="col-xl-10">
-                        <input class="form-control" autocomplete="client-id" placeholder="ClientId" [(ngModel)]="model.clientId" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-xl-2 col-form-label">{{ 'client.details.name' | translate }} <i class="fa fa-comment-dots"
-                            placement="top" [tooltip]="'client.details.name-tooltip' | translate"></i></label>
-                    <div class="col-xl-10">
-                        <input class="form-control" autocomplete="client-name" placeholder="Name" [(ngModel)]="model.clientName" />
-                    </div>
-                </div>
+                <app-client-basic [model]="model"></app-client-basic>
             </tab>
             <tab [heading]="'client.details.settings' | translate">
                 <app-client-settings [model]="model"></app-client-settings>
             </tab>
-            <tab [heading]="'client.details.auth' | translate "></tab>
-            <tab [heading]="'client.details.token' | translate"></tab>
-            <tab [heading]="'client.details.consent' | translate"></tab>
+            <tab [heading]="'client.details.auth' | translate ">
+                <app-client-auth [model]="model"></app-client-auth>
+            </tab>
+            <tab [heading]="'client.details.token' | translate">
+                <app-client-token [model]="model"></app-client-token>
+            </tab>
         </tabset>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane show active" id="nav-name" role="tabpanel" aria-labelledby="nav-name-tab">
-
-            </div>
-            <div class="tab-pane" id="nav-basics" role="tabpanel" aria-labelledby="nav-basics-tab">
-                @await Html.PartialAsync("Client/Section/Basics")
-            </div>
-            <div class="tab-pane" id="nav-authentication" role="tabpanel" aria-labelledby="nav-authentication-tab">
-                @await Html.PartialAsync("Client/Section/Authentication")
-            </div>
-            <div class="tab-pane" id="nav-token" role="tabpanel" aria-labelledby="nav-token-tab">
-                @await Html.PartialAsync("Client/Section/Token")
-            </div>
-            <div class="tab-pane" id="nav-consent" role="tabpanel" aria-labelledby="nav-consent-tab">
-                @await Html.PartialAsync("Client/Section/Consent")
-            </div>
-        </div>
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/clients']">Cancel</a>
     </div>
 </div>
 
-
-<pre>{{model | json}}</pre>
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

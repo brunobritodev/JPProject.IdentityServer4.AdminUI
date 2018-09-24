@@ -22,7 +22,7 @@ namespace Jp.Infra.Data.Repository
             DbSet.Add(obj);
         }
 
-        public virtual TEntity GetById(Guid id)
+        public virtual TEntity GetById<T>(T id)
         {
             return DbSet.Find(id);
         }
@@ -31,13 +31,13 @@ namespace Jp.Infra.Data.Repository
         {
             return DbSet;
         }
-
+        
         public virtual void Update(TEntity obj)
         {
             DbSet.Update(obj);
         }
 
-        public virtual void Remove(Guid id)
+        public virtual void Remove<T>(T id)
         {
             DbSet.Remove(DbSet.Find(id));
         }

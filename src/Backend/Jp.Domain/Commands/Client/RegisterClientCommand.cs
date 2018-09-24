@@ -6,7 +6,7 @@ namespace Jp.Domain.Commands.Client
     {
         public RegisterClientCommand()
         {
-           
+
         }
 
         public override bool IsValid()

@@ -8,9 +8,8 @@ namespace Jp.Domain.Events.Client
     {
         public RegisterClientCommand Request { get; }
 
-        public ClientRegisteredEvent(Guid aggregateId, RegisterClientCommand request)
+        public ClientRegisteredEvent(RegisterClientCommand request)
         {
-            AggregateId = aggregateId;
             Request = request;
         }
     }

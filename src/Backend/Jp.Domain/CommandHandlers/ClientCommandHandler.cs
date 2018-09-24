@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using IdentityServer4.EntityFramework.Mappers;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -12,7 +13,8 @@ using MediatR;
 namespace Jp.Domain.CommandHandlers
 {
     public class ClientCommandHandler : CommandHandler,
-        IRequestHandler<RegisterClientCommand>
+        IRequestHandler<RegisterClientCommand>,
+        IRequestHandler<UpdateClientCommand>
     {
         private readonly IClientRepository _clientRepository;
 
@@ -31,11 +33,11 @@ namespace Jp.Domain.CommandHandlers
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return Task.CompletedTask;;
+                return Task.CompletedTask; ;
             }
 
-			// Businness logic here
-			
+            // Businness logic here
+
             //if (Commit())
             //{
             //    Bus.RaiseEvent(new ClientRegisteredEvent(Client.Id));
@@ -44,5 +46,31 @@ namespace Jp.Domain.CommandHandlers
             return Task.CompletedTask;
         }
 
+        public async Task Handle(UpdateClientCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return; 
+            }
+
+            // Businness logic here
+            var savedClient = await _clientRepository.GetByUniqueName(request.Client.ClientId);
+            if (savedClient == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                return;
+            }
+
+            var client = request.Client.ToEntity();
+            client.Id = savedClient.Id;
+            await _clientRepository.UpdateWithChildrens(client);
+
+            if (Commit())
+            {
+                await Bus.RaiseEvent(new ClientUpdatedEvent(request));
+            }
+
+        }
     }
 }

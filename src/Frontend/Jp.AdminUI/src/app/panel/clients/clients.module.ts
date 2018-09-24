@@ -5,9 +5,13 @@ import { SharedModule } from "../../shared/shared.module";
 import { DndModule } from "ng2-dnd";
 import { ClientEditComponent } from "./edit/client-edit.component";
 import { SpinnersComponent } from "../../shared/components/spinners/spinners.component";
-import { ClientSettingsComponent } from "./edit/basic/settings.component";
 import { NgxSelectModule } from 'ngx-select-ex';
 import { TagInputModule } from 'ngx-chips';
+import { ClientAuthComponent } from "./edit/auth/auth.component";
+import { ClientSettingsComponent } from "./edit/settings/settings.component";
+import { NumberDirective } from "../../shared/directives/numberCheck/numbers-only.directive";
+import { ClientTokenComponent } from "./edit/token/token.component";
+import { ClientBasicComponent } from "./edit/basic/basic.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -27,7 +31,11 @@ const routes: Routes = [
         ClientListComponent,
         ClientEditComponent,
         SpinnersComponent,
-        ClientSettingsComponent
+        ClientSettingsComponent,
+        ClientAuthComponent,
+        NumberDirective,
+        ClientTokenComponent,
+        ClientBasicComponent
     ],
     exports: [
         RouterModule
