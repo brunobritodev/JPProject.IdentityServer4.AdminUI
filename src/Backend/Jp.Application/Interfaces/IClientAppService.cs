@@ -10,5 +10,6 @@ namespace Jp.Application.Interfaces
     {
         Task<IEnumerable<ClientListViewModel>> GetClients();
         Task<Client> GetClientDetails(string clientId);
+        Task Update(Client client);
     }
 }

@@ -10,8 +10,6 @@ import { ClientList } from "../../shared/viewModel/client-list.model";
 @Injectable()
 export class ClientService {
 
-
-
     constructor(private http: HttpClient) {
     }
 
@@ -27,5 +25,10 @@ export class ClientService {
             }
         };
         return this.http.get<DefaultResponse<Client>>(environment.ResourceServer + "clients/details", options);
+    }
+
+
+    public update(model: Client): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/update", model);
     }
 }

@@ -12,7 +12,7 @@ namespace Jp.Domain.Commands.User
         public string Username { get; protected set; }
         public string Password { get; protected set; }
         public string ConfirmPassword { get; protected set; }
-        public string Picture { get; protected set; }
+        public string Picture { get; protected set; }   
         public string Provider { get; protected set; }
         public string ProviderId { get; protected set; }
     }

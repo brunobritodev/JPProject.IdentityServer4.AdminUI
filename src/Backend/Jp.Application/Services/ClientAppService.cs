@@ -7,6 +7,7 @@ using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.ClientsViewModels;
+using Jp.Domain.Commands.Client;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
 
@@ -41,6 +42,13 @@ namespace Jp.Application.Services
             var resultado = await _clientRepository.GetByUniqueName(clientId);
             return resultado.ToModel();
         }
+
+        public Task Update(Client client)
+        {
+            var registerCommand = _mapper.Map<UpdateClientCommand>(client);
+            return Bus.SendCommand(registerCommand);
+        }
+
 
         public void Dispose()
         {

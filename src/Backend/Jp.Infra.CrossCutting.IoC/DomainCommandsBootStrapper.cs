@@ -1,5 +1,7 @@
 ﻿using Jp.Domain.CommandHandlers;
+using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.IdentityResources;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using MediatR;
@@ -11,8 +13,18 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<IRequestHandler<RegisterClientCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterApiResourceCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterIdentityResourcesCommand>, IdentityResourcesCommandHandler>();
 
+            /*
+             * Client commands
+             */
+            services.AddScoped<IRequestHandler<RegisterClientCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateClientCommand>, ClientCommandHandler>();
+
+            /*
+             * Regiser commands
+             */
             services.AddScoped<IRequestHandler<RegisterNewUserCommand>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<RegisterNewUserWithoutPassCommand>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<RegisterNewUserWithProviderCommand>, UserCommandHandler>();

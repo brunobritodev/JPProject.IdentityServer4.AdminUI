@@ -53,7 +53,7 @@ namespace Jp.UI.SSO.Configuration
                 options.ScriptSources(configuration =>
                 {
                     configuration.SelfSrc = true;
-                    configuration.CustomSources = new[] { "'sha256-iMxJ7OVhtXNAJK8UhwgDeXu0BTuJ/ARay62Lmqs61F0='" };
+                    configuration.CustomSources = new[] { "'sha256-iMxJ7OVhtXNAJK8UhwgDeXu0BTuJ/ARay62Lmqs61F0='", "'sha256-VuNUSJ59bpCpw62HM2JG/hCyGiqoPN3NqGvNXQPU+rY='" };
                     configuration.UnsafeInlineSrc = false;
                     configuration.UnsafeEvalSrc = false;
                 });

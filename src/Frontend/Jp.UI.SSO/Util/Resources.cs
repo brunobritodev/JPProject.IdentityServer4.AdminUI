@@ -18,6 +18,7 @@ namespace Jp.UI.SSO.Util
 
                 // custom identity resource with some consolidated claims
                 new IdentityResource("picture", new[] { JwtClaimTypes.Picture }),
+                new IdentityResource("roles", "Roles", new[] { "role" }),
                 new IdentityResource("management-api-permissions", new[] { JwtClaimTypes.Role }),
                 // add additional identity resource
                 new IdentityResource("IS4-Permission", "IdentityServer4 Admin Panel Permissions", new [] { "is4-permissions"})

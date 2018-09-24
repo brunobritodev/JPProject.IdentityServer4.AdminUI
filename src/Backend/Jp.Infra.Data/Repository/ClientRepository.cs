@@ -26,7 +26,43 @@ namespace Jp.Infra.Data.Repository
                 .Include(x => x.AllowedCorsOrigins)
                 .Include(x => x.Properties)
                 .Where(x => x.ClientId == clientId)
+                .AsNoTracking()
                 .SingleOrDefaultAsync();
         }
+
+        public async Task UpdateWithChildrens(Client client)
+        {
+            await RemoveClientRelationsAsync(client);
+            Update(client);
+        }
+
+
+        private async Task RemoveClientRelationsAsync(Client client)
+        {
+            //Remove old allowed scopes
+            var clientScopes = await Db.ClientScopes.Where(x => x.Client.Id == client.Id).ToListAsync();
+            Db.ClientScopes.RemoveRange(clientScopes);
+
+            //Remove old grant types
+            var clientGrantTypes = await Db.ClientGrantTypes.Where(x => x.Client.Id == client.Id).ToListAsync();
+            Db.ClientGrantTypes.RemoveRange(clientGrantTypes);
+
+            //Remove old redirect uri
+            var clientRedirectUris = await Db.ClientRedirectUris.Where(x => x.Client.Id == client.Id).ToListAsync();
+            Db.ClientRedirectUris.RemoveRange(clientRedirectUris);
+
+            //Remove old client cors
+            var clientCorsOrigins = await Db.ClientCorsOrigins.Where(x => x.Client.Id == client.Id).ToListAsync();
+            Db.ClientCorsOrigins.RemoveRange(clientCorsOrigins);
+
+            //Remove old client id restrictions
+            var clientIdPRestrictions = await Db.ClientIdPRestrictions.Where(x => x.Client.Id == client.Id).ToListAsync();
+            Db.ClientIdPRestrictions.RemoveRange(clientIdPRestrictions);
+
+            //Remove old client post logout redirect
+            var clientPostLogoutRedirectUris = await Db.ClientPostLogoutRedirectUris.Where(x => x.Client.Id == client.Id).ToListAsync();
+            Db.ClientPostLogoutRedirectUris.RemoveRange(clientPostLogoutRedirectUris);
+        }
+
     }
 }

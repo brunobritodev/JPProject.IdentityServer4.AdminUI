@@ -39,5 +39,17 @@ namespace Jp.Management.Controllers
             var clients = await _clientAppService.GetClientDetails(clientId);
             return Response(clients);
         }
+
+        [HttpPost, Route("update")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.Update(client);
+            return Response(true);
+        }
     }
 }

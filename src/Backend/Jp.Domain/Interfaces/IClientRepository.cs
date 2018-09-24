@@ -6,5 +6,6 @@ namespace Jp.Domain.Interfaces
     public interface IClientRepository : IRepository<Client>
     {
         Task<Client> GetByUniqueName(string clientId);
+        Task UpdateWithChildrens(Client client);
     }
 }

@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using IdentityServer4.Models;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.ClientsViewModels;
+using Jp.Domain.Commands.Client;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 
@@ -29,6 +32,12 @@ namespace Jp.Application.AutoMapper
             CreateMap<ChangePasswordViewModel, ChangePasswordCommand>().ConstructUsing(c => new ChangePasswordCommand(c.Id,c.OldPassword, c.NewPassword, c.ConfirmPassword));
             CreateMap<SetPasswordViewModel, SetPasswordCommand>().ConstructUsing(c => new SetPasswordCommand(c.Id, c.NewPassword, c.ConfirmPassword));
             CreateMap<RemoveAccountViewModel, RemoveAccountCommand>().ConstructUsing(c => new RemoveAccountCommand(c.Id));
+
+            /*
+             * Client commands
+             */
+            CreateMap<Client, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c));
+            CreateMap<ClientViewModel, Client>(MemberList.Destination);
         }
     }
 }

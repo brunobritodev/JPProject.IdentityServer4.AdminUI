@@ -5,13 +5,12 @@ import { TranslatorService } from "../../../../core/translator/translator.servic
 
 
 @Component({
-    selector: "app-client-settings",
-    templateUrl: "./settings.component.html",
-    styleUrls: ["./settings.component.scss"],
+    selector: "app-client-auth",
+    templateUrl: "./auth.component.html",
+    styleUrls: ["./auth.component.scss"],
 })
-export class ClientSettingsComponent implements OnInit {
+export class ClientAuthComponent implements OnInit {
 
-public items = ['Pizza', 'Pasta', 'Parmesan'];
 
     @Input()
     public model: Client;
