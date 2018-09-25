@@ -1,38 +1,40 @@
-<!--Checkbox-->
+<!--Select-->
+<fieldset>
 <div class="form-group row">
-    <label class="col-xl-4 col-form-label">{{  'client.details.requireConsent' | translate }} <i class="fa fa-comment-dots"
-            placement="top" [tooltip]="'client.details.requireConsent-tooltip' | translate"></i></label>
+       <label class="col-xl-4 col-form-label">{{  'client.secrets.secretType' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.secrets.secretType-tooltip' | translate"></i></label>
     <div class="col-xl-8">
-        <label class="switch m-0">
-            <input type="checkbox" [(ngModel)]="model.requireConsent" />
-            <span></span>
-        </label>
+        <ngx-select [items]="model.secretType" [(ngModel)]="model.secretType" [placeholder]="'client.secrets.secretType-tooltip' | translate"></ngx-select>
     </div>
 </div>
-<!--Checkbox-->
-<div class="form-group row">
-    <label class="col-xl-4 col-form-label">{{  'client.details.allowRememberConsent' | translate }} <i class="fa fa-comment-dots"
-            placement="top" [tooltip]="'client.details.allowRememberConsent-tooltip' | translate"></i></label>
-    <div class="col-xl-8">
-        <label class="switch m-0">
-            <input type="checkbox" [(ngModel)]="model.allowRememberConsent" />
-            <span></span>
-        </label>
-    </div>
-</div>
+</fieldset>
 <!--Input - text -->
+<fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label">{{  'client.details.clientUri' | translate }} <i class="fa fa-comment-dots"
-            placement="top" [tooltip]="'client.details.clientUri-tooltip' | translate"></i></label>
+        <label class="col-xl-4 col-form-label">{{  'client.secrets.secretValue' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.secrets.secretValue-tooltip' | translate"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="client-clientUri" [placeholder]="'client.details.clientUri-tooltip' | translate" [(ngModel)]="model.clientUri" />
+        <input class="form-control" autocomplete="secret-secretValue" [placeholder]="'client.secrets.secretValue-tooltip' | translate" [(ngModel)]="model.secretValue" />
     </div>
 </div>
-<!--Input - text -->
+</fieldset>
+<!--Select-->
+<fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label">{{  'client.details.logoUri' | translate }} <i class="fa fa-comment-dots"
-            placement="top" [tooltip]="'client.details.logoUri-tooltip' | translate"></i></label>
+       <label class="col-xl-4 col-form-label">{{  'client.secrets.hashType' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.secrets.hashType-tooltip' | translate"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="client-logoUri" [placeholder]="'client.details.logoUri-tooltip' | translate" [(ngModel)]="model.logoUri" />
+        <ngx-select [items]="model.hashType" [(ngModel)]="model.hashType" [placeholder]="'client.secrets.hashType-tooltip' | translate"></ngx-select>
     </div>
 </div>
+</fieldset>
+<!--Select-->
+<fieldset>
+<div class="form-group row">
+       <label class="col-xl-4 col-form-label">{{  'client.secrets.description' | translate }} <i class="fa fa-comment-dots"
+            placement="top" [tooltip]="'client.secrets.description-tooltip' | translate"></i></label>
+    <div class="col-xl-8">
+        <ngx-select [items]="model.description" [(ngModel)]="model.description" [placeholder]="'client.secrets.description-tooltip' | translate"></ngx-select>
+    </div>
+</div>
+</fieldset>

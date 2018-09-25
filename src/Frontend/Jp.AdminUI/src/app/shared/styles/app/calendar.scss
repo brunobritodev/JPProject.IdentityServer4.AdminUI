@@ -22,7 +22,7 @@
     .fc-button .fc-icon {
         margin: 0 .1em;
         font-size: inherit;
-        font-family: FontAwesome !important;
+        font-family: "Font Awesome 5 Free" !important;
         vertical-align: baseline;
         color: #555;
         line-height: 1.5; // Remove any icon predefined by FullCalendar
@@ -65,35 +65,6 @@
             content: "EMRTPUY";
         }
     } // Remove events drop area
-    .external-events-trash {
-        position: relative;
-        min-height: 120px;
-        &:after {
-            content: "\f00d"; // .fa-times
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: $inverse;
-            opacity: 0;
-            font-family: FontAwesome;
-            color: #fff;
-            text-align: center;
-            font-size: 50px;
-            padding: 8%;
-            max-height: 100%;
-            @include transition(all .3s ease);
-            z-index: -1;
-        }
-        &.active:after {
-            opacity: 1;
-            z-index: 1;
-        }
-        &.hovered:after {
-            background-color: #fb797e;
-        }
-    }
 
     .external-event-color-selector {
         .circle.selected {

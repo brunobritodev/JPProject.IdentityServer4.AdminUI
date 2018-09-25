@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using IdentityServer4.EntityFramework.Entities;
 
 namespace Jp.Domain.Interfaces
@@ -7,5 +9,6 @@ namespace Jp.Domain.Interfaces
     {
         Task<Client> GetByUniqueName(string clientId);
         Task UpdateWithChildrens(Client client);
+        Task<List<ClientSecret>> GetSecrets(string clientId);
     }
 }

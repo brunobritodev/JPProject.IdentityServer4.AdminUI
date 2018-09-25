@@ -25,11 +25,13 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let client of clientListObservable | async">
-                                <th><a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary"><i class="fa fa-edit"></i></a></th>
+                                <th><a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary"><i
+                                            class="fa fa-edit"></i></a></th>
                                 <td><img *ngIf="client.logoUri" height="33" [src]="client.logoUri" /></td>
                                 <td>{{client.clientName}}</td>
                                 <td>
-                                    <button class="btn btn-danger" asp-action="ClientDelete" asp-route-id="@client.Id"><i class="fa fa-times"></i></button>
+                                    <button class="btn btn-danger" asp-action="ClientDelete" asp-route-id="@client.Id"><i
+                                            class="fa fa-times"></i></button>
                                 </td>
                             </tr>
                         </tbody>

@@ -6,12 +6,6 @@
 // Horizontal top navbar
 // based on the bootstrap navbar styles and markup
 // ----------------------------------------------------
-// helper mixin to disable bs gradient mixin
-@mixin gradient-remove() {
-    background-image: none;
-    background-repeat: no-repeat;
-    filter: none;
-}
 
 $nav-header-wd:                 $aside-wd;
 $nav-header-wd-toggled:         $aside-wd-collapsed;
@@ -60,9 +54,6 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
 
     .navbar-header {
         background-color: $nav-header-bg;
-        @include media-breakpoint-up(md) {
-            background-image: none;
-        }
     }
 
     .navbar-header {
@@ -177,6 +168,9 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
             @include media-breakpoint-up(lg) {
                 width: auto;
             }
+            .navbar-brand {
+                min-height: $navbar-height;
+            }
         }
         .navbar-toggler {
             border: 0;
@@ -192,6 +186,9 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
                 left: 0 !important;
                 right: 0 !important;
             }
+        }
+        .navbar-form {
+            left: 0;
         }
     }
 }
@@ -255,7 +252,7 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
         }
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm) {
         .navbar-form {
             left: $nav-header-wd;
         }
@@ -264,18 +261,10 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
 
 // Navbar Desktop styles
 // ------------------------------
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
 
     // Navbar top styles
     .topnavbar {
-
-        .navbar-header {
-            @include gradient-remove();
-        } // Dropdown link open style
-        .navbar-nav>a {
-            box-shadow: 0 0 0 #000 inset;
-            @include transition(all .2s);
-        }
 
         .navbar-nav>.nav-item.show>.nav-link {
             &,
@@ -285,10 +274,7 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
                 @include transition(all .2s);
             }
         }
-        // relocate search toggle button
-        .navbar-nav>li>[data-toggle='navbar-search'] {
-            position: static;
-        }
+
     } // .topnavbar
 }
 

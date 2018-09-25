@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4.EntityFramework.Entities;
 using Jp.Domain.Interfaces;
@@ -34,6 +35,14 @@ namespace Jp.Infra.Data.Repository
         {
             await RemoveClientRelationsAsync(client);
             Update(client);
+        }
+
+        public async Task<List<ClientSecret>> GetSecrets(string clientId)
+        {
+            var client = await DbSet.Include(a => a.ClientSecrets).Where(w => w.ClientId == clientId)
+                .SingleOrDefaultAsync();
+            return client.ClientSecrets;
+
         }
 
 

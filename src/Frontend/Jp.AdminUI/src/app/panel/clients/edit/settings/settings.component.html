@@ -186,7 +186,7 @@
             <label class="col-xl-4 col-form-label">{{ 'client.details.clientSecrets' | translate }} <i class="fa fa-comment-dots"
                     placement="top" [tooltip]="'client.details.clientSecrets-tooltip' | translate"></i></label>
             <div class="col-xl-8">
-                <a target="_blank" [routerLink]="['/client/secrets', model.clientId]" class="btn btn-primary">{{
+                <a  [routerLink]="['/clients/secrets', model.clientId]" class="btn btn-primary">{{
                     'client.details.clientSecrets' | translate }}</a>
             </div>
         </div>
@@ -198,7 +198,7 @@
             <label class="col-xl-4 col-form-label">{{ 'client.details.properties' | translate }} <i class="fa fa-comment-dots"
                     placement="top" [tooltip]="'client.details.properties-tooltip' | translate"></i></label>
             <div class="col-xl-8">
-                <a target="_blank" [routerLink]="['/client/properties', model.clientId]" class="btn btn-primary">{{
+                <a  [routerLink]="['/clients/properties', model.clientId]" class="btn btn-primary">{{
                     'client.details.properties' | translate }}</a>
             </div>
         </div>
