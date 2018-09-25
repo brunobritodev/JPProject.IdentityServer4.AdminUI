@@ -21,6 +21,7 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { PopoverModule } from "ngx-bootstrap/popover";
 import { TypeaheadModule } from "ngx-bootstrap/typeahead";
 import { DatepickerModule } from "ngx-bootstrap/datepicker";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { FlotDirective } from "./directives/flot/flot.directive";
 import { SparklineDirective } from "./directives/sparkline/sparkline.directive";
@@ -47,6 +48,7 @@ import {TextMaskModule} from "angular2-text-mask";
         CarouselModule.forRoot(),
         CollapseModule.forRoot(),
         DatepickerModule.forRoot(),
+        BsDatepickerModule.forRoot(),
         BsDropdownModule.forRoot(),
         ModalModule.forRoot(),
         PaginationModule.forRoot(),
@@ -57,7 +59,8 @@ import {TextMaskModule} from "angular2-text-mask";
         TooltipModule.forRoot(),
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToasterModule
+        ToasterModule,
+        BsDatepickerModule.forRoot(),
     ],
     providers: [
         ColorsService
@@ -84,6 +87,7 @@ import {TextMaskModule} from "angular2-text-mask";
         CarouselModule,
         CollapseModule,
         DatepickerModule,
+        BsDatepickerModule,
         BsDropdownModule,
         ModalModule,
         PaginationModule,

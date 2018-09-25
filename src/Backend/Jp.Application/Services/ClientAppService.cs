@@ -40,13 +40,18 @@ namespace Jp.Application.Services
         public async Task<Client> GetClientDetails(string clientId)
         {
             var resultado = await _clientRepository.GetByUniqueName(clientId);
-            return resultado.ToModel();
+            return _mapper.Map<Client>(resultado);
         }
 
         public Task Update(Client client)
         {
             var registerCommand = _mapper.Map<UpdateClientCommand>(client);
             return Bus.SendCommand(registerCommand);
+        }
+
+        public async Task<IEnumerable<Secret>> GetSecrets(string clientId)
+        {
+            return _mapper.Map<IEnumerable<Secret>>(await _clientRepository.GetSecrets(clientId));
         }
 
 

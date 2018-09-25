@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import { Client } from "../../shared/viewModel/client.model";
+import { Client, ClientSecret } from "../../shared/viewModel/client.model";
 import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs";
 import { DefaultResponse } from "../../shared/viewModel/default-response.model";
@@ -9,6 +9,7 @@ import { ClientList } from "../../shared/viewModel/client-list.model";
 
 @Injectable()
 export class ClientService {
+
 
     constructor(private http: HttpClient) {
     }
@@ -27,8 +28,16 @@ export class ClientService {
         return this.http.get<DefaultResponse<Client>>(environment.ResourceServer + "clients/details", options);
     }
 
-
     public update(model: Client): Observable<DefaultResponse<boolean>> {
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/update", model);
+    }
+
+    public getClientSecrets(clientId: string): Observable<DefaultResponse<ClientSecret[]>> {
+        let options = {
+            params: {
+                clientId: clientId
+            }
+        };
+        return this.http.get<DefaultResponse<ClientSecret[]>>(environment.ResourceServer + "clients/secrets", options);
     }
 }

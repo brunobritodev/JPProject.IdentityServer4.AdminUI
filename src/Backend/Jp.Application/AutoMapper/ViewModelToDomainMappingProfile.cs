@@ -37,7 +37,6 @@ namespace Jp.Application.AutoMapper
              * Client commands
              */
             CreateMap<Client, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c));
-            CreateMap<ClientViewModel, Client>(MemberList.Destination);
         }
     }
 }

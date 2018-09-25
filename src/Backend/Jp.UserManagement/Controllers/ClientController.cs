@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.ClientsViewModels;
@@ -40,9 +41,17 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
+        [HttpGet, Route("secrets")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<Secret>>>> Secrets(string clientId)
+        {
+            var clients = await _clientAppService.GetSecrets(clientId);
+            return Response(clients);
+        }
+
         [HttpPost, Route("update")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
         {
+            var teste = client.ToEntity();
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();

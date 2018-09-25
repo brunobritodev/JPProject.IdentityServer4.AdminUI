@@ -25,6 +25,7 @@
     },
     "client": {
         "ClientDescription": "The Client class represents an OpenID Connect or OAuth 2.0 client - e.g. a native application, a web application or a JS-based application",
+        "SecretDescription": "In certain situations, clients need to authenticate with identityserver, e.g.: <br>1- confidential applications (aka clients) requesting tokens at the token endpoint. <br>2- APIs validating reference tokens at the introspection endpoint",
         "TableClientName": "Client Name",
         "Image": "Image",
         "details": {
@@ -112,11 +113,24 @@
             "logoUri-tooltip": "URI to client logo (used on consent screen). Must be Https",
             "claims": "Claims",
             "claims-tooltip": "Allows settings claims for the client (will be included in the access token)"
+        },
+        "secrets": {
+            "secretType": "Secret Type",
+            "secretType-tooltip": "The type of the client secret",
+            "secretValue": "Secret Value",
+            "secretValue-tooltip": "Specifies the secret of client",
+            "hashType": "Hash Type",
+            "hashType-tooltip": "Set the hash of Secret Value",
+            "description": "Description",
+            "description-tooltip": "Set description",
+            "expiration": "Expiration",
+            "expiration-tooltip": "Set expiration"
         }
     },
     "toasterMessages": {
         "title-success": "Success",
         "message-success": "Well done!"
     },
-    "General": "General"
+    "General": "General",
+    "loading": "Loading, please wait!"
 }

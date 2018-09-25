@@ -17,14 +17,12 @@
 
   &:focus,
   &.focus {
-    // remove this and uncomment below to restore focus box-shadow:
-    box-shadow: 0 0 0 #000;
     // Avoid using mixin so we can pass custom focus shadow properly
-    // @if $enable-shadows {
-    //   box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba($border, .5);
-    // } @else {
-    //   box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
-    // }
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba($border, .5);
+    } @else {
+      box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+    }
   }
 
   // Disabled comes first so active can properly restyle
@@ -46,13 +44,12 @@
     border-color: $active-border;
 
     &:focus {
-      box-shadow: inset 0 3px 5px rgba(0,0,0, .125);
-      // // Avoid using mixin so we can pass custom focus shadow properly
-      // @if $enable-shadows {
-      //   box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($border, .5);
-      // } @else {
-      //   box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
-      // }
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows {
+        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($border, .5);
+      } @else {
+        box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+      }
     }
   }
 }
@@ -71,8 +68,7 @@
 
   &:focus,
   &.focus {
-    box-shadow: inset 0 3px 5px rgba($color, .125);
-    //box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+    box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
   }
 
   &.disabled,
