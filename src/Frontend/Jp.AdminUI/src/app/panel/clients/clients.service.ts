@@ -11,6 +11,8 @@ import { ClientList } from "../../shared/viewModel/client-list.model";
 export class ClientService {
 
 
+
+
     constructor(private http: HttpClient) {
     }
 
@@ -39,5 +41,16 @@ export class ClientService {
             }
         };
         return this.http.get<DefaultResponse<ClientSecret[]>>(environment.ResourceServer + "clients/secrets", options);
+    }
+    public removeSecret(client: string, id: number): Observable<DefaultResponse<boolean>> {
+        const removeCommand = {
+            id: id,
+            clientId: client
+        };
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/remove-secret", removeCommand);
+    }
+
+    public saveSecret(model: ClientSecret): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/save-secret", model);
     }
 }

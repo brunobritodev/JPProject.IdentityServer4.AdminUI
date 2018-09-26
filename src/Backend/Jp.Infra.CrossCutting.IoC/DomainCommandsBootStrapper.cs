@@ -21,6 +21,8 @@ namespace Jp.Infra.CrossCutting.IoC
              */
             services.AddScoped<IRequestHandler<RegisterClientCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateClientCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveSecretCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<SaveClientSecretCommand>, ClientCommandHandler>();
 
             /*
              * Regiser commands

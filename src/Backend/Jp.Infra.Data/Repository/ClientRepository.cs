@@ -14,7 +14,7 @@ namespace Jp.Infra.Data.Repository
         {
         }
 
-        public Task<Client> GetByUniqueName(string clientId)
+        public Task<Client> GetClient(string clientId)
         {
             return DbSet
                 .Include(x => x.AllowedGrantTypes)
@@ -26,9 +26,14 @@ namespace Jp.Infra.Data.Repository
                 .Include(x => x.IdentityProviderRestrictions)
                 .Include(x => x.AllowedCorsOrigins)
                 .Include(x => x.Properties)
-                .Where(x => x.ClientId == clientId)
                 .AsNoTracking()
+                .Where(x => x.ClientId == clientId)
                 .SingleOrDefaultAsync();
+        }
+
+        public Task<Client> GetByClientId(string clientId)
+        {
+            return DbSet.Where(x => x.ClientId == clientId).SingleOrDefaultAsync();
         }
 
         public async Task UpdateWithChildrens(Client client)

@@ -7,8 +7,9 @@ namespace Jp.Domain.Interfaces
 {
     public interface IClientRepository : IRepository<Client>
     {
-        Task<Client> GetByUniqueName(string clientId);
+        Task<Client> GetClient(string clientId);
         Task UpdateWithChildrens(Client client);
         Task<List<ClientSecret>> GetSecrets(string clientId);
+        Task<Client> GetByClientId(string requestClientId);
     }
 }

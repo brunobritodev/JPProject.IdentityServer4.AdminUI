@@ -42,16 +42,42 @@ namespace Jp.Management.Controllers
         }
 
         [HttpGet, Route("secrets")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<Secret>>>> Secrets(string clientId)
+        public async Task<ActionResult<DefaultResponse<IEnumerable<SecretViewModel>>>> Secrets(string clientId)
         {
             var clients = await _clientAppService.GetSecrets(clientId);
             return Response(clients);
         }
 
+        [HttpPost, Route("remove-secret")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveSecretViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.RemoveSecret(model);
+            return Response(true);
+        }
+
+
+        [HttpPost, Route("save-secret")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] SaveClientSecretViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.SaveSecret(model);
+            return Response(true);
+        }
+
+
+
         [HttpPost, Route("update")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
         {
-            var teste = client.ToEntity();
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();

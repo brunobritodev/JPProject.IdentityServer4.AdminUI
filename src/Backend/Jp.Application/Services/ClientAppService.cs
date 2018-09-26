@@ -39,7 +39,7 @@ namespace Jp.Application.Services
 
         public async Task<Client> GetClientDetails(string clientId)
         {
-            var resultado = await _clientRepository.GetByUniqueName(clientId);
+            var resultado = await _clientRepository.GetClient(clientId);
             return _mapper.Map<Client>(resultado);
         }
 
@@ -49,15 +49,27 @@ namespace Jp.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
-        public async Task<IEnumerable<Secret>> GetSecrets(string clientId)
+        public async Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId)
         {
-            return _mapper.Map<IEnumerable<Secret>>(await _clientRepository.GetSecrets(clientId));
+            return _mapper.Map<IEnumerable<SecretViewModel>>(await _clientRepository.GetSecrets(clientId));
         }
 
+        public Task RemoveSecret(RemoveSecretViewModel model)
+        {
+            var registerCommand = _mapper.Map<RemoveSecretCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public Task SaveSecret(SaveClientSecretViewModel model)
+        {
+            var registerCommand = _mapper.Map<SaveClientSecretCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
 
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
     }
+
 }

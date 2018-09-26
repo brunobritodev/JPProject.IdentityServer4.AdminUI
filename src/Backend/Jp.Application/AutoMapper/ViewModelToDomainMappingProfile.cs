@@ -29,7 +29,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<ProfileViewModel, UpdateProfileCommand>().ConstructUsing(c => new UpdateProfileCommand(c.Id, c.Url, c.Bio, c.Company, c.JobTitle, c.Name, c.PhoneNumber));
             CreateMap<ProfilePictureViewModel, UpdateProfilePictureCommand>().ConstructUsing(c => new UpdateProfilePictureCommand(c.Id));
 
-            CreateMap<ChangePasswordViewModel, ChangePasswordCommand>().ConstructUsing(c => new ChangePasswordCommand(c.Id,c.OldPassword, c.NewPassword, c.ConfirmPassword));
+            CreateMap<ChangePasswordViewModel, ChangePasswordCommand>().ConstructUsing(c => new ChangePasswordCommand(c.Id, c.OldPassword, c.NewPassword, c.ConfirmPassword));
             CreateMap<SetPasswordViewModel, SetPasswordCommand>().ConstructUsing(c => new SetPasswordCommand(c.Id, c.NewPassword, c.ConfirmPassword));
             CreateMap<RemoveAccountViewModel, RemoveAccountCommand>().ConstructUsing(c => new RemoveAccountCommand(c.Id));
 
@@ -37,6 +37,8 @@ namespace Jp.Application.AutoMapper
              * Client commands
              */
             CreateMap<Client, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c));
+            CreateMap<RemoveSecretViewModel, RemoveSecretCommand>().ConstructUsing(c => new RemoveSecretCommand(c.Id, c.ClientId));
+            CreateMap<SaveClientSecretViewModel, SaveClientSecretCommand>().ConstructUsing(c => new SaveClientSecretCommand(c.ClientId, c.Description, c.Value, c.Type, c.Expiration, (int)c.Hash.GetValueOrDefault(HashType.Sha256)));
         }
     }
 }
