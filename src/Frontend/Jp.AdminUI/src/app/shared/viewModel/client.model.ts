@@ -1,10 +1,15 @@
 
 
 export class ClientSecret {
+    constructor() {
+        this.hashType = 0;
+    }
     description: string;
     value: string;
     expiration: Date;
     type: string;
+    hashType: number;
+    clientId: string;
 }
 
 
