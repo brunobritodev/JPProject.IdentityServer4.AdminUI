@@ -1,7 +1,7 @@
 MySql Support
 =============
 
-By default the project become with SQL Server, to change is very simple. You just need to change the ``Startup.cs``.
+By default the project come with SQL Server, to change is very simple. You just need to change the ``Startup.cs``.
 
 The file ``Startup.cs`` of **Jp.UI.SSO** and **Jp.UserManagement** has the config of Database. Change to this:
 
