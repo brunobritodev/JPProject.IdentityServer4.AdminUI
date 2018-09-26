@@ -50,5 +50,7 @@ There are several ways we can help you out.
 # What comes next?
 
 Admin panel to manage IdentityServer4 configuration.
+
 Translation
+
 Code coverage
