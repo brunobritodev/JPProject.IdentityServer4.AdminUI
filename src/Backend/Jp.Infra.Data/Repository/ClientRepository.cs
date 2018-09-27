@@ -42,14 +42,6 @@ namespace Jp.Infra.Data.Repository
             Update(client);
         }
 
-        public async Task<List<ClientSecret>> GetSecrets(string clientId)
-        {
-            var client = await DbSet.Include(a => a.ClientSecrets).Where(w => w.ClientId == clientId)
-                .SingleOrDefaultAsync();
-            return client.ClientSecrets;
-
-        }
-
 
         private async Task RemoveClientRelationsAsync(Client client)
         {

@@ -21,7 +21,7 @@ export class ClientSecretsComponent implements OnInit {
     public errors: Array<string>;
 
     public model: ClientSecret;
-    public clientSecretsObservable: Observable<ClientSecret[]>;
+    public clientSecrets: ClientSecret[];
 
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
@@ -43,7 +43,7 @@ export class ClientSecretsComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.clientSecretsObservable = this.route.params.pipe(tap(p => this.client = p["clientId"])).pipe(map(p => p["clientId"])).pipe(flatMap(m => this.clientService.getClientSecrets(m.toString()))).pipe(map(result => result.data));
+        this.route.params.pipe(tap(p => this.client = p["clientId"])).pipe(map(p => p["clientId"])).pipe(flatMap(m => this.clientService.getClientSecrets(m.toString()))).subscribe(result => this.clientSecrets = result.data);
         this.errors = [];
         this.model = new ClientSecret();
         this.showButtonLoading = false;
@@ -66,8 +66,9 @@ export class ClientSecretsComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.router.navigate(["/client/edit", this.client]);
+                        this.loadSecrets();
                     }
+                    this.showButtonLoading = false;
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
@@ -83,7 +84,10 @@ export class ClientSecretsComponent implements OnInit {
 
     }
 
+    private loadSecrets(): void {
 
+        this.clientService.getClientSecrets(this.client).subscribe(c => this.clientSecrets = c.data);
+    }
 
     public save() {
         this.showButtonLoading = true;
@@ -93,9 +97,10 @@ export class ClientSecretsComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.clientSecretsObservable.subscribe();
+                        this.loadSecrets();
                         this.model = new ClientSecret();
                     }
+                    this.showButtonLoading = false;
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
@@ -108,10 +113,6 @@ export class ClientSecretsComponent implements OnInit {
             this.showButtonLoading = false;
             return Observable.throw("Unknown error while trying to register");
         }
-    }
-
-    public teste() {
-
     }
 
 }

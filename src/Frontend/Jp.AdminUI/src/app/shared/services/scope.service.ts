@@ -6,9 +6,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class ScopeService {
-
-
-
+   
 
     constructor(private http: HttpClient) {
     }

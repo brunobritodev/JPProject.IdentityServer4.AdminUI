@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import { Client, ClientSecret } from "../../shared/viewModel/client.model";
+import { Client, ClientSecret, KeyValuePair, ClientProperty, Claim } from "../../shared/viewModel/client.model";
 import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs";
 import { DefaultResponse } from "../../shared/viewModel/default-response.model";
@@ -9,9 +9,6 @@ import { ClientList } from "../../shared/viewModel/client-list.model";
 
 @Injectable()
 export class ClientService {
-
-
-
 
     constructor(private http: HttpClient) {
     }
@@ -53,4 +50,48 @@ export class ClientService {
     public saveSecret(model: ClientSecret): Observable<DefaultResponse<boolean>> {
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/save-secret", model);
     }
+
+    public getClientProperties(clientId: string): Observable<DefaultResponse<ClientProperty[]>> {
+        let options = {
+            params: {
+                clientId: clientId
+            }
+        };
+        return this.http.get<DefaultResponse<ClientProperty[]>>(environment.ResourceServer + "clients/properties", options);
+    }
+
+    public removeProperty(client: string, id: number): Observable<DefaultResponse<boolean>> {
+        const removeCommand = {
+            id: id,
+            clientId: client
+        };
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/remove-property", removeCommand);
+    }
+
+    public saveProperty(model: ClientProperty): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/save-property", model);
+    }
+
+
+    public getClientClaims(clientId: string): Observable<DefaultResponse<Claim[]>> {
+        let options = {
+            params: {
+                clientId: clientId
+            }
+        };
+        return this.http.get<DefaultResponse<Claim[]>>(environment.ResourceServer + "clients/claims", options);
+    }
+
+    public removeClaim(client: string, id: number): Observable<DefaultResponse<boolean>> {
+        const removeCommand = {
+            id: id,
+            clientId: client
+        };
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/remove-claim", removeCommand);
+    }
+
+    public saveClaim(model: Claim): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/save-claim", model);
+    }
+
 }

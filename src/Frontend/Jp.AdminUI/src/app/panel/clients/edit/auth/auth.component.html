@@ -108,7 +108,7 @@
             <label class="col-xl-5 col-form-label">{{ 'client.details.claims' | translate }} <i class="fa fa-comment-dots"
                     placement="top" [tooltip]="'client.details.claims-tooltip' | translate"></i></label>
             <div class="col-xl-7">
-                <a target="_blank" [routerLink]="['/client/claims', model.clientId]" class="btn btn-primary">{{
+                <a  [routerLink]="['/clients/claims', model.clientId]" class="btn btn-primary">{{
                     'client.details.claims' | translate }}</a>
             </div>
         </div>

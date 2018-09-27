@@ -9,7 +9,7 @@ namespace Jp.Domain.Interfaces
     {
         Task<Client> GetClient(string clientId);
         Task UpdateWithChildrens(Client client);
-        Task<List<ClientSecret>> GetSecrets(string clientId);
         Task<Client> GetByClientId(string requestClientId);
+        
     }
 }

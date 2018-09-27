@@ -17,6 +17,8 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IIdentityResourcesRepository, IdentityResourcesRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IClientSecretRepository, ClientSecretRepository>();
+            services.AddScoped<IClientClaimRepository, ClientClaimRepository>();
+            services.AddScoped<IClientPropertyRepository, ClientPropertyRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<JpContext>();
 

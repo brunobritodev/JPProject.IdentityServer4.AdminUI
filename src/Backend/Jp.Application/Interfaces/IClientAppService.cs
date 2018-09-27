@@ -14,5 +14,11 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId);
         Task RemoveSecret(RemoveSecretViewModel model);
         Task SaveSecret(SaveClientSecretViewModel model);
+        Task<IEnumerable<ClientPropertyViewModel>> GetProperties(string clientId);
+        Task RemoveProperty(RemovePropertyViewModel model);
+        Task SaveProperty(SaveClientPropertyViewModel model);
+        Task<IEnumerable<ClientClaimViewModel>> GetClaims(string clientId);
+        Task RemoveClaim(RemoveClientClaimViewModel model);
+        Task SaveClaim(SaveClientClaimViewModel model);
     }
 }

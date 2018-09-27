@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), 
+    [Route("[controller]"),
     // Authorize(Policy = "IS4-ReadOnly")
     ]
     public class ClientsController : ApiController
@@ -62,7 +62,7 @@ namespace Jp.Management.Controllers
 
 
         [HttpPost, Route("save-secret")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] SaveClientSecretViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> SaveSecret([FromBody] SaveClientSecretViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -86,5 +86,70 @@ namespace Jp.Management.Controllers
             await _clientAppService.Update(client);
             return Response(true);
         }
+
+        [HttpGet, Route("properties")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<ClientPropertyViewModel>>>> Properties(string clientId)
+        {
+            var clients = await _clientAppService.GetProperties(clientId);
+            return Response(clients);
+        }
+
+        [HttpPost, Route("remove-property")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveProperty([FromBody] RemovePropertyViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.RemoveProperty(model);
+            return Response(true);
+        }
+
+
+        [HttpPost, Route("save-property")]
+        public async Task<ActionResult<DefaultResponse<bool>>> SaveProperty([FromBody] SaveClientPropertyViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.SaveProperty(model);
+            return Response(true);
+        }
+
+        [HttpGet, Route("claims")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<ClientClaimViewModel>>>> Claims(string clientId)
+        {
+            var clients = await _clientAppService.GetClaims(clientId);
+            return Response(clients);
+        }
+
+        [HttpPost, Route("remove-claim")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveClaim([FromBody] RemoveClientClaimViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.RemoveClaim(model);
+            return Response(true);
+        }
+
+
+        [HttpPost, Route("save-claim")]
+        public async Task<ActionResult<DefaultResponse<bool>>> SaveClaim([FromBody] SaveClientClaimViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.SaveClaim(model);
+            return Response(true);
+        }
+
     }
 }
