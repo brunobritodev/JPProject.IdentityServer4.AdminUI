@@ -23,6 +23,10 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<UpdateClientCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveSecretCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<SaveClientSecretCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<RemovePropertyCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<SaveClientPropertyCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveClientClaimCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<SaveClientClaimCommand>, ClientCommandHandler>();
 
             /*
              * Regiser commands

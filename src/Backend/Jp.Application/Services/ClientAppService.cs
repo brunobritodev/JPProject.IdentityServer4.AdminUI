@@ -18,17 +18,26 @@ namespace Jp.Application.Services
         private IMapper _mapper;
         private IEventStoreRepository _eventStoreRepository;
         private readonly IClientRepository _clientRepository;
+        private readonly IClientPropertyRepository _clientPropertyRepository;
+        private readonly IClientSecretRepository _clientSecretRepository;
+        private readonly IClientClaimRepository _clientClaimRepository;
         public IMediatorHandler Bus { get; set; }
 
         public ClientAppService(IMapper mapper,
             IMediatorHandler bus,
             IEventStoreRepository eventStoreRepository,
-            IClientRepository clientRepository)
+            IClientRepository clientRepository,
+            IClientPropertyRepository clientPropertyRepository,
+            IClientSecretRepository clientSecretRepository,
+            IClientClaimRepository clientClaimRepository)
         {
             _mapper = mapper;
             Bus = bus;
             _eventStoreRepository = eventStoreRepository;
             _clientRepository = clientRepository;
+            _clientPropertyRepository = clientPropertyRepository;
+            _clientSecretRepository = clientSecretRepository;
+            _clientClaimRepository = clientClaimRepository;
         }
 
         public Task<IEnumerable<ClientListViewModel>> GetClients()
@@ -51,7 +60,7 @@ namespace Jp.Application.Services
 
         public async Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId)
         {
-            return _mapper.Map<IEnumerable<SecretViewModel>>(await _clientRepository.GetSecrets(clientId));
+            return _mapper.Map<IEnumerable<SecretViewModel>>(await _clientSecretRepository.GetByClientId(clientId));
         }
 
         public Task RemoveSecret(RemoveSecretViewModel model)
@@ -63,6 +72,40 @@ namespace Jp.Application.Services
         public Task SaveSecret(SaveClientSecretViewModel model)
         {
             var registerCommand = _mapper.Map<SaveClientSecretCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public async Task<IEnumerable<ClientPropertyViewModel>> GetProperties(string clientId)
+        {
+            return _mapper.Map<IEnumerable<ClientPropertyViewModel>>(await _clientPropertyRepository.GetByClientId(clientId));
+        }
+
+        public Task RemoveProperty(RemovePropertyViewModel model)
+        {
+            var registerCommand = _mapper.Map<RemovePropertyCommand>(model);
+            return Bus.SendCommand(registerCommand);
+    }
+        public Task SaveProperty(SaveClientPropertyViewModel model)
+        {
+            var registerCommand = _mapper.Map<SaveClientPropertyCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public async Task<IEnumerable<ClientClaimViewModel>> GetClaims(string clientId)
+        {
+            return _mapper.Map<IEnumerable<ClientClaimViewModel>>(await _clientClaimRepository.GetByClientId(clientId));
+        }
+
+        public Task RemoveClaim(RemoveClientClaimViewModel model)
+        {
+
+            var registerCommand = _mapper.Map<RemoveClientClaimCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public Task SaveClaim(SaveClientClaimViewModel model)
+        {
+            var registerCommand = _mapper.Map<SaveClientClaimCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
 

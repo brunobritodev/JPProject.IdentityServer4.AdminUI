@@ -13,12 +13,16 @@ import { NumberDirective } from "../../shared/directives/numberCheck/numbers-onl
 import { ClientTokenComponent } from "./edit/token/token.component";
 import { ClientBasicComponent } from "./edit/basic/basic.component";
 import { ClientSecretsComponent } from "./secrets/secrets.component";
+import { ClientPropertiesComponent } from "./properties/properties.component";
+import { ClientClaimsComponent } from "./claims/claims.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
     { path: "list", component: ClientListComponent },
     { path: "edit/:clientId", component: ClientEditComponent },
     { path: "secrets/:clientId", component: ClientSecretsComponent },
+    { path: "properties/:clientId", component: ClientPropertiesComponent },
+    { path: "claims/:clientId", component: ClientClaimsComponent },
 ];
 
 @NgModule({
@@ -38,7 +42,9 @@ const routes: Routes = [
         NumberDirective,
         ClientTokenComponent,
         ClientBasicComponent,
-        ClientSecretsComponent
+        ClientSecretsComponent,
+        ClientPropertiesComponent,
+        ClientClaimsComponent
     ],
     exports: [
         RouterModule

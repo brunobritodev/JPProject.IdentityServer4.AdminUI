@@ -38,7 +38,12 @@ namespace Jp.Application.AutoMapper
              */
             CreateMap<Client, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c));
             CreateMap<RemoveSecretViewModel, RemoveSecretCommand>().ConstructUsing(c => new RemoveSecretCommand(c.Id, c.ClientId));
+            CreateMap<RemovePropertyViewModel, RemovePropertyCommand>().ConstructUsing(c => new RemovePropertyCommand(c.Id, c.ClientId));
             CreateMap<SaveClientSecretViewModel, SaveClientSecretCommand>().ConstructUsing(c => new SaveClientSecretCommand(c.ClientId, c.Description, c.Value, c.Type, c.Expiration, (int)c.Hash.GetValueOrDefault(HashType.Sha256)));
+            CreateMap<SaveClientPropertyViewModel, SaveClientPropertyCommand>().ConstructUsing(c => new SaveClientPropertyCommand(c.ClientId, c.Key, c.Value));
+
+            CreateMap<SaveClientClaimViewModel, SaveClientClaimCommand>().ConstructUsing(c => new SaveClientClaimCommand(c.ClientId, c.Type, c.Value));
+            CreateMap<RemoveClientClaimViewModel, RemoveClientClaimCommand>().ConstructUsing(c => new RemoveClientClaimCommand(c.Id, c.ClientId));
         }
     }
 }

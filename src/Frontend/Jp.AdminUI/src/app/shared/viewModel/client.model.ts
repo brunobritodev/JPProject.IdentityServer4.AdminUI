@@ -26,16 +26,21 @@ export class Subject {
 }
 
 export class Claim {
-    issuer: string;
-    originalIssuer: string;
-    properties: KeyValuePair;
-    subject: Subject;
+    id: number;
     type: string;
     value: string;
-    valueType: string;
+    clientId: string;
 }
 
 export class KeyValuePair {
+    key: string;
+    value: string;
+}
+
+
+export class ClientProperty {
+    id: number;
+    clientId: string;
     key: string;
     value: string;
 }
@@ -82,7 +87,7 @@ export class Client {
     clientClaimsPrefix: string;
     pairWiseSubjectSalt: string;
     allowedCorsOrigins: string[];
-    properties: KeyValuePair;
+    properties: ClientProperty[];
 
     public static isValid(client: Client, errors: string[]): boolean {
         errors.length = 0;

@@ -8,11 +8,6 @@ namespace Jp.Application.ViewModels.ClientsViewModels
     public class ClientClaimViewModel
     {
         public ClientClaimViewModel() { }
-        public ClientClaimViewModel(string type, string value)
-        {
-            Type = type;
-            Value = value;
-        }
 
         public int Id { get; set; }
         public string Type { get; set; }
