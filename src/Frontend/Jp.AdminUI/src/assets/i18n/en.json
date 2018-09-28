@@ -157,6 +157,10 @@
             "cancelled": ":)"
         }
     },
+    "identityResource": {
+        "description": "Identity resources are data like user ID, name, or email address of a user. An identity resource has a unique name, and you can assign arbitrary claim types to it. These claims will then be included in the identity token for the user.",
+        "newIr": "New Identity Resource"
+    },
     "toasterMessages": {
         "title-success": "Success",
         "message-success": "Well done!"
@@ -168,6 +172,6 @@
         "empty": "Empty",
         "remove": "Remove",
         "copy": "Copy",
-        "edit":"Edit"
+        "edit": "Edit"
     }
 }

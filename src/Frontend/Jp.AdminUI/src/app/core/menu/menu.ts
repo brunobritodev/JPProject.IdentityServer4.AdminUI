@@ -8,7 +8,7 @@ const Home = {
 const Settings = {
     text: "Clients",
     link: "/clients",
-    icon: "fas fa-desktop",
+    icon: "fa fa-desktop",
     submenu: [
         {
             text: "List",
@@ -21,6 +21,22 @@ const Settings = {
     ]
 };
 
+const IdentityResource = {
+    text: "Identity Resources",
+    link: "/identity-resource",
+    icon: "far fa-id-card",
+    submenu: [
+        {
+            text: "List",
+            link: "/identity-resource/list"
+        },
+        {
+            text: "Add",
+            link: "/identity-resource/add"
+        }
+    ]
+};
+
 const headingMain = {
     text: "Main Navigation",
     heading: true
@@ -29,5 +45,6 @@ const headingMain = {
 export const menu = [
     headingMain,
     Home,
-    Settings
+    Settings,
+    IdentityResource
 ];
