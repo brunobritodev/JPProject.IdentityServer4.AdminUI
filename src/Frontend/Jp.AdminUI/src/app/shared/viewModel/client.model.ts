@@ -45,6 +45,15 @@ export class ClientProperty {
     value: string;
 }
 
+export class NewClient {
+    clientId: string;
+    clientName: string;
+    clientUri: string;
+    logoUri: string;
+    description: string;
+    clientType: number;
+}
+
 export class Client {
     enabled: boolean;
     clientId: string;

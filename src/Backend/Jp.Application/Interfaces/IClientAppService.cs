@@ -20,5 +20,9 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<ClientClaimViewModel>> GetClaims(string clientId);
         Task RemoveClaim(RemoveClientClaimViewModel model);
         Task SaveClaim(SaveClientClaimViewModel model);
+        //Task Save(SaveClientViewModel client);
+        Task Save(SaveClientViewModel client);
+        Task Remove(RemoveClientViewModel client);
+        Task Copy(CopyClientViewModel client);
     }
 }

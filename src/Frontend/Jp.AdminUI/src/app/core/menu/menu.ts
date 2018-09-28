@@ -13,6 +13,10 @@ const Settings = {
         {
             text: "List",
             link: "/clients/list"
+        },
+        {
+            text: "Add",
+            link: "/clients/add"
         }
     ]
 };

@@ -15,6 +15,7 @@ import { ClientBasicComponent } from "./edit/basic/basic.component";
 import { ClientSecretsComponent } from "./secrets/secrets.component";
 import { ClientPropertiesComponent } from "./properties/properties.component";
 import { ClientClaimsComponent } from "./claims/claims.component";
+import { ClientAddComponent } from "./add/add.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: "secrets/:clientId", component: ClientSecretsComponent },
     { path: "properties/:clientId", component: ClientPropertiesComponent },
     { path: "claims/:clientId", component: ClientClaimsComponent },
+    { path: "add", component: ClientAddComponent },
 ];
 
 @NgModule({
@@ -44,7 +46,8 @@ const routes: Routes = [
         ClientBasicComponent,
         ClientSecretsComponent,
         ClientPropertiesComponent,
-        ClientClaimsComponent
+        ClientClaimsComponent,
+        ClientAddComponent
     ],
     exports: [
         RouterModule

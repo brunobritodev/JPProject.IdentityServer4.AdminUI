@@ -4,13 +4,13 @@ using Jp.Domain.Core.Events;
 
 namespace Jp.Domain.Events.Client
 {
-    public class ClientRegisteredEvent : Event
+    public class ClientRemovedEvent : Event
     {
-        public RegisterClientCommand Request { get; }
+        public string ClientId { get; }
 
-        public ClientRegisteredEvent(RegisterClientCommand request)
+        public ClientRemovedEvent(string clientId)
         {
-            Request = request;
+            ClientId = clientId;
         }
     }
 }

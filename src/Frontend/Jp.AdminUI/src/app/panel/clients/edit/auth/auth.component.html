@@ -94,8 +94,8 @@
     <!--Select with tags-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.allowedCorsOrigins' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.allowedCorsOrigins-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.allowedCorsOrigins-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.allowedCorsOrigins' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <tag-input theme='bootstrap' name="allowedCorsOrigins" [modelAsStrings]="true" [placeholder]="'+' + ('client.details.allowedCorsOrigins' | translate)"
                     [(ngModel)]="model.allowedCorsOrigins"></tag-input>
@@ -105,10 +105,10 @@
     <!--Button-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-5 col-form-label">{{ 'client.details.claims' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.claims-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.claims-tooltip' | translate" class="col-xl-5 col-form-label">{{
+                'client.details.claims' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-7">
-                <a  [routerLink]="['/clients/claims', model.clientId]" class="btn btn-primary">{{
+                <a [routerLink]="['/clients/claims', model.clientId]" class="btn btn-primary">{{
                     'client.details.claims' | translate }}</a>
             </div>
         </div>

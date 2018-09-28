@@ -98,7 +98,6 @@ namespace Jp.Application.Services
 
         public Task RemoveClaim(RemoveClientClaimViewModel model)
         {
-
             var registerCommand = _mapper.Map<RemoveClientClaimCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
@@ -107,6 +106,24 @@ namespace Jp.Application.Services
         {
             var registerCommand = _mapper.Map<SaveClientClaimCommand>(model);
             return Bus.SendCommand(registerCommand);
+        }
+
+        public Task Save(SaveClientViewModel client)
+        {
+            var command = _mapper.Map<SaveClientCommand>(client);
+            return Bus.SendCommand(command);
+        }
+
+        public Task Remove(RemoveClientViewModel client)
+        {
+            var command = _mapper.Map<RemoveClientCommand>(client);
+            return Bus.SendCommand(command);
+        }
+
+        public Task Copy(CopyClientViewModel client)
+        {
+            var command = _mapper.Map<CopyClientCommand>(client);
+            return Bus.SendCommand(command);
         }
 
         public void Dispose()

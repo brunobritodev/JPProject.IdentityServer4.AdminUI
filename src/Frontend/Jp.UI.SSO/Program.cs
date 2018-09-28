@@ -32,7 +32,7 @@ namespace Jp.UI.SSO
             // Uncomment this to seed upon startup, alternatively pass in `dotnet run / seed` to seed using CLI
             Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
 
-            host.Run();
+            host.Run(); 
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

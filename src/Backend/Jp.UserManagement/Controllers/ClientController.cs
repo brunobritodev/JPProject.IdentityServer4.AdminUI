@@ -34,6 +34,54 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
+        [HttpPost, Route("save")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] SaveClientViewModel client)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.Save(client);
+            return Response(true);
+        }
+
+        [HttpPost, Route("update")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.Update(client);
+            return Response(true);
+        }
+
+        [HttpPost, Route("remove")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveClientViewModel client)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.Remove(client);
+            return Response(true);
+        }
+
+        [HttpPost, Route("copy")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Copy([FromBody] CopyClientViewModel client)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _clientAppService.Copy(client);
+            return Response(true);
+        }
+
         [HttpGet, Route("details")]
         public async Task<ActionResult<DefaultResponse<Client>>> Details(string clientId)
         {
@@ -70,20 +118,6 @@ namespace Jp.Management.Controllers
                 return Response(false);
             }
             await _clientAppService.SaveSecret(model);
-            return Response(true);
-        }
-
-
-
-        [HttpPost, Route("update")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
-        {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
-            await _clientAppService.Update(client);
             return Response(true);
         }
 
@@ -152,4 +186,5 @@ namespace Jp.Management.Controllers
         }
 
     }
+
 }

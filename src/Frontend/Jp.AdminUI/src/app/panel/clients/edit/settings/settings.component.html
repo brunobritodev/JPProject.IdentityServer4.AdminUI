@@ -2,8 +2,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.enabled' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.enabled-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.enabled-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.enabled' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.enabled" />
@@ -12,12 +12,12 @@
             </div>
         </div>
     </fieldset>
-    
+
     <!--Select-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.protocolType' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.protocolType-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.protocolType-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.protocolType' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <ngx-select [items]="[model.protocolType]" [(ngModel)]="model.protocolType" placeholder="ProtocolType"></ngx-select>
             </div>
@@ -27,8 +27,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.requireClientSecret' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.requireClientSecret-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.requireClientSecret-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.requireClientSecret' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.requireClientSecret" />
@@ -40,8 +40,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.requirePkce' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.requirePkce-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.requirePkce-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.requirePkce' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.requirePkce" />
@@ -54,8 +54,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.allowPlainTextPkce' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.allowPlainTextPkce-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.allowPlainTextPkce-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.allowPlainTextPkce' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.allowPlainTextPkce" />
@@ -68,8 +68,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.allowOfflineAccess' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.allowOfflineAccess-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.allowOfflineAccess-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.allowOfflineAccess' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.allowOfflineAccess" />
@@ -102,8 +102,8 @@
     <!--Select with tags-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.allowedScopes' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.allowedScopes-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.allowedScopes-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.allowedScopes' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <tag-input theme='bootstrap' name="allowedScopes" [modelAsStrings]="true" placeholder='+Scope'
                     [(ngModel)]="model.allowedScopes">
@@ -117,8 +117,8 @@
     <!--Select with tags-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.redirectUris' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.redirectUris-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.redirectUris-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.redirectUris' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <tag-input theme='bootstrap' name="redirectUris" [modelAsStrings]="true" placeholder='+Url' [(ngModel)]="model.redirectUris"></tag-input>
             </div>
@@ -142,11 +142,16 @@
             <div class="col-xl-8 offset-4">
                 <small>Options:</small>
                 <br>
-                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('implicit')" type="button">implicit&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
-                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('hybrid')" type="button">hybrid&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
-                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('client_credentials')" type="button">client_credentials&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
-                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('authorization_code')" type="button">authorization_code&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
-                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('password')" type="button">password&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('implicit')" type="button">implicit&nbsp;&nbsp;<i
+                        class="fa fa-plus-circle"></i></button>&nbsp;
+                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('hybrid')" type="button">hybrid&nbsp;&nbsp;<i
+                        class="fa fa-plus-circle"></i></button>&nbsp;
+                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('client_credentials')" type="button">client_credentials&nbsp;&nbsp;<i
+                        class="fa fa-plus-circle"></i></button>&nbsp;
+                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('authorization_code')" type="button">authorization_code&nbsp;&nbsp;<i
+                        class="fa fa-plus-circle"></i></button>&nbsp;
+                <button class="btn btn-oval btn-sm btn-info mb-1" (click)="addGrantType('password')" type="button">password&nbsp;&nbsp;<i
+                        class="fa fa-plus-circle"></i></button>&nbsp;
             </div>
         </div>
     </fieldset>
@@ -154,8 +159,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.requireConsent' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.requireConsent-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.requireConsent-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.requireConsent' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.requireConsent" />
@@ -168,8 +173,8 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.allowRememberConsent' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.allowRememberConsent-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.allowRememberConsent-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.allowRememberConsent' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
                     <input type="checkbox" [(ngModel)]="model.allowRememberConsent" />
@@ -183,10 +188,10 @@
     <!--Button-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.clientSecrets' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.clientSecrets-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.clientSecrets-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.clientSecrets' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <a  [routerLink]="['/clients/secrets', model.clientId]" class="btn btn-primary">{{
+                <a [routerLink]="['/clients/secrets', model.clientId]" class="btn btn-primary">{{
                     'client.details.clientSecrets' | translate }}</a>
             </div>
         </div>
@@ -195,10 +200,10 @@
     <!--Button-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label">{{ 'client.details.properties' | translate }} <i class="fa fa-comment-dots"
-                    placement="top" [tooltip]="'client.details.properties-tooltip' | translate"></i></label>
+            <label placement="top" [tooltip]="'client.details.properties-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.properties' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <a  [routerLink]="['/clients/properties', model.clientId]" class="btn btn-primary">{{
+                <a [routerLink]="['/clients/properties', model.clientId]" class="btn btn-primary">{{
                     'client.details.properties' | translate }}</a>
             </div>
         </div>
