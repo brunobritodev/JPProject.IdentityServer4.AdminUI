@@ -18,7 +18,7 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<INotificationHandler<IdentityResourcesRegisteredEvent>, IdentityResourcesEventHandler>();
 
 
-            services.AddScoped<INotificationHandler<ClientRegisteredEvent>, ClientEventHandler>();
+            services.AddScoped<INotificationHandler<ClientRemovedEvent>, ClientEventHandler>();
             services.AddScoped<INotificationHandler<ClientUpdatedEvent>, ClientEventHandler>();
 
             services.AddScoped<INotificationHandler<ApiResourceRegisteredEvent>, ApiResourceEventHandler>();

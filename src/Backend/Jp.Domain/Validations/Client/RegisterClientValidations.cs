@@ -2,10 +2,11 @@ using Jp.Domain.Commands.Client;
 
 namespace Jp.Domain.Validations.Client
 {
-    public class RegisterClientCommandValidation : ClientValidation<RegisterClientCommand>
+    public class RemoveClientCommandValidation : ClientValidation<RemoveClientCommand>
     {
-        public RegisterClientCommandValidation()
+        public RemoveClientCommandValidation()
         {
+            ValidateClientId();
         }
     }
 }

@@ -129,16 +129,32 @@
             "expiration-tooltip": "Set expiration"
         },
         "property": {
-            "key":"Key",
-            "key-tooltip":"Key",
-            "value":"Value",
-            "value-tooltip":"Value"
+            "key": "Key",
+            "key-tooltip": "Key",
+            "value": "Value",
+            "value-tooltip": "Value"
         },
         "claims": {
-            "type":"Type",
-            "type-tooltip":"Type",
-            "value":"Value",
-            "value-tooltip":"Value"
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Value",
+            "value-tooltip": "Value"
+        },
+        "remove": {
+            "title": "Are you sure",
+            "text": "Your will not be able to recover!",
+            "confirmButtonText": "Yes, delete it!",
+            "cancelButtonText": "No, cancel plx!",
+            "deleted": "Client has been deleted.",
+            "cancelled": "Your Client is safe :)"
+        },
+        "clone": {
+            "title": "Clone",
+            "text": "Are you sure?",
+            "confirmButtonText": "Yes, clone it!",
+            "cancelButtonText": "No, cancel plx!",
+            "cloned": "Client has been cloned.",
+            "cancelled": ":)"
         }
     },
     "toasterMessages": {
@@ -146,7 +162,12 @@
         "message-success": "Well done!"
     },
     "general": {
+        "add": "Add",
         "loading": "Loading, please wait!",
-        "goback": "Go Back"
+        "goback": "Go Back",
+        "empty": "Empty",
+        "remove": "Remove",
+        "copy": "Copy",
+        "edit":"Edit"
     }
 }

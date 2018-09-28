@@ -2,16 +2,17 @@ using Jp.Domain.Validations.Client;
 
 namespace Jp.Domain.Commands.Client
 {
-    public class RegisterClientCommand : ClientCommand
+    public class RemoveClientCommand : ClientCommand
     {
-        public RegisterClientCommand()
-        {
 
+        public RemoveClientCommand(string clientId)
+        {
+            this.Client = new IdentityServer4.Models.Client() { ClientId = clientId };
         }
 
         public override bool IsValid()
         {
-            ValidationResult = new RegisterClientCommandValidation().Validate(this);
+            ValidationResult = new RemoveClientCommandValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }

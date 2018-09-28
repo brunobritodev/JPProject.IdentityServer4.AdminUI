@@ -11,5 +11,15 @@ namespace Jp.Domain.Validations.Client
             RuleFor(c => c.Client.AllowedGrantTypes)
                 .NotEmpty();
         }
+        protected void ValidateClientId()
+        {
+            RuleFor(c => c.Client.ClientId).NotEmpty().WithMessage("ClientId must be set");
+        }
+
+        protected void ValidateClientName()
+        {
+            RuleFor(c => c.Client.ClientName).NotEmpty().WithMessage("Client Name must be set");
+        }
+
     }
 }

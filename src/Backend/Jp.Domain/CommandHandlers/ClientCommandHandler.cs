@@ -1,26 +1,31 @@
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.EntityFramework.Mappers;
+using IdentityServer4.Models;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Events.Client;
 using Jp.Domain.Interfaces;
 using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jp.Domain.CommandHandlers
 {
     public class ClientCommandHandler : CommandHandler,
-        IRequestHandler<RegisterClientCommand>,
+        IRequestHandler<RemoveClientCommand>,
         IRequestHandler<UpdateClientCommand>,
         IRequestHandler<RemoveSecretCommand>,
         IRequestHandler<SaveClientSecretCommand>,
         IRequestHandler<RemovePropertyCommand>,
         IRequestHandler<SaveClientPropertyCommand>,
         IRequestHandler<RemoveClientClaimCommand>,
-        IRequestHandler<SaveClientClaimCommand>
+        IRequestHandler<SaveClientClaimCommand>,
+        IRequestHandler<SaveClientCommand>,
+        IRequestHandler<CopyClientCommand>
     {
         private readonly IClientRepository _clientRepository;
         private readonly IClientSecretRepository _clientSecretRepository;
@@ -43,22 +48,25 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public Task Handle(RegisterClientCommand request, CancellationToken cancellationToken)
+        public async Task Handle(RemoveClientCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return Task.CompletedTask; ;
+                return; ;
             }
 
-            // Businness logic here
-
-            //if (Commit())
-            //{
-            //    Bus.RaiseEvent(new ClientRegisteredEvent(Client.Id));
-            //}
-
-            return Task.CompletedTask;
+            var savedClient = await _clientRepository.GetClient(request.Client.ClientId);
+            if (savedClient == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                return;
+            }
+            _clientRepository.Remove(savedClient.Id);
+            if (Commit())
+            {
+                await Bus.RaiseEvent(new ClientRemovedEvent(request.Client.ClientId));
+            }
         }
 
         public async Task Handle(UpdateClientCommand request, CancellationToken cancellationToken)
@@ -265,6 +273,90 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new NewClientClaimEvent(request.Id, request.ClientId, property.Type, property.Value));
+            }
+        }
+
+        public async Task Handle(SaveClientCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
+            if (savedClient != null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "Client already exists"));
+                return;
+            }
+
+            PrepareClientTypeForNewClient(request);
+            var client = request.Client.ToEntity();
+            client.Description = request.Description;
+
+            _clientRepository.Add(client);
+
+            if (Commit())
+            {
+                await Bus.RaiseEvent(new NewClientEvent(request.Client.ClientId, request.ClientType, request.Client.ClientName));
+            }
+        }
+
+        private void PrepareClientTypeForNewClient(SaveClientCommand command)
+        {
+            switch (command.ClientType)
+            {
+                case ClientType.Empty:
+                    break;
+                case ClientType.WebImplicit:
+                    command.Client.AllowedGrantTypes = GrantTypes.Implicit;
+                    command.Client.AllowAccessTokensViaBrowser = true;
+                    break;
+                case ClientType.WebHybrid:
+                    command.Client.AllowedGrantTypes = GrantTypes.Hybrid;
+                    break;
+                case ClientType.Spa:
+                    command.Client.AllowedGrantTypes = GrantTypes.Implicit;
+                    command.Client.AllowAccessTokensViaBrowser = true;
+                    break;
+                case ClientType.Native:
+                    command.Client.AllowedGrantTypes = GrantTypes.Hybrid;
+                    break;
+                case ClientType.Machine:
+                    command.Client.AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public async Task Handle(CopyClientCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
+            if (savedClient == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                return;
+            }
+
+            var copyOf = savedClient.ToModel();
+            copyOf.ClientId = $"copy-of-{copyOf.ClientId}-{Guid.NewGuid().ToString().Replace("-", string.Empty)}";
+            copyOf.ClientSecrets = new List<IdentityServer4.Models.Secret>();
+            copyOf.ClientName = "Copy of " + copyOf.ClientName;
+            var newClient = copyOf.ToEntity();
+
+            _clientRepository.Add(newClient);
+
+            if (Commit())
+            {
+                await Bus.RaiseEvent(new ClientClonedEvent(request.Client.ClientId, newClient.ClientId));
             }
         }
     }

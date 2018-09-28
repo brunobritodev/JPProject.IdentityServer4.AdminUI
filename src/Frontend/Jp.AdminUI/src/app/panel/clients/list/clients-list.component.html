@@ -5,11 +5,14 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<app-loading *ngIf="clientList == null"></app-loading>
+
+<div class="container-fluid" *ngIf="clientList">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <button class="btn btn-outline-primary mb-3"><i class="fa fa-plus-circle"></i> New Client</button>
+                <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/clients/add' ]"><i class="fa fa-plus-circle"></i>
+                    New Client</a>
             </div>
 
             <div class="card-body">
@@ -21,17 +24,21 @@
                                 <th> {{ "client.Image" | translate }}</th>
                                 <th> {{"client.TableClientName" | translate }} </th>
                                 <th></th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let client of clientListObservable | async">
-                                <th><a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary"><i
-                                            class="fa fa-edit"></i></a></th>
+                            <tr *ngFor="let client of clientList">
+                                <th>
+                                    <a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary"  placement="top" [tooltip]="'general.edit' | translate"><i
+                                            class="fa fa-edit"></i></a> &nbsp;
+                                    <button (click)="copy(client.clientId)" class="btn btn-outline-info"  placement="top" [tooltip]="'general.copy' | translate"><i class="fa fa-copy"></i></button>
+                                </th>
                                 <td><img *ngIf="client.logoUri" height="33" [src]="client.logoUri" /></td>
                                 <td>{{client.clientName}}</td>
                                 <td>
-                                    <button class="btn btn-danger" asp-action="ClientDelete" asp-route-id="@client.Id"><i
-                                            class="fa fa-times"></i></button>
+                                    <button class="btn btn-danger" placement="top" [tooltip]="'general.remove' | translate"
+                                        (click)="remove(client.clientId)"><i class="fa fa-times"></i></button>
                                 </td>
                             </tr>
                         </tbody>

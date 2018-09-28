@@ -7,10 +7,10 @@ namespace Jp.Domain.EventHandlers
 {
     
     public class ClientEventHandler :
-        INotificationHandler<ClientRegisteredEvent>,
+        INotificationHandler<ClientRemovedEvent>,
         INotificationHandler<ClientUpdatedEvent>
     {
-        public Task Handle(ClientRegisteredEvent notification, CancellationToken cancellationToken)
+        public Task Handle(ClientRemovedEvent notification, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
         }
