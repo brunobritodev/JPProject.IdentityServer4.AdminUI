@@ -30,14 +30,14 @@
                         <tbody>
                             <tr *ngFor="let client of clientList">
                                 <th>
-                                    <a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary"  placement="top" [tooltip]="'general.edit' | translate"><i
+                                    <a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary btn-xs"  placement="top" [tooltip]="'general.edit' | translate"><i
                                             class="fa fa-edit"></i></a> &nbsp;
-                                    <button (click)="copy(client.clientId)" class="btn btn-outline-info"  placement="top" [tooltip]="'general.copy' | translate"><i class="fa fa-copy"></i></button>
+                                    <button (click)="copy(client.clientId)" class="btn btn-outline-info btn-xs"  placement="top" [tooltip]="'general.copy' | translate"><i class="fa fa-copy"></i></button>
                                 </th>
                                 <td><img *ngIf="client.logoUri" height="33" [src]="client.logoUri" /></td>
                                 <td>{{client.clientName}}</td>
                                 <td>
-                                    <button class="btn btn-danger" placement="top" [tooltip]="'general.remove' | translate"
+                                    <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
                                         (click)="remove(client.clientId)"><i class="fa fa-times"></i></button>
                                 </td>
                             </tr>

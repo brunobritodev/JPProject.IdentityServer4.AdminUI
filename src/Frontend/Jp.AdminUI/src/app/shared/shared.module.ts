@@ -33,6 +33,8 @@ import { ScrollableDirective } from "./directives/scrollable/scrollable.directiv
 import { JqcloudDirective } from "./directives/jqcloud/jqcloud.directive";
 import { ColorsService } from "./services/colors.service";
 import {TextMaskModule} from "angular2-text-mask";
+import { SpinnersComponent } from "./components/spinners/spinners.component";
+import { NumberDirective } from "./directives/numberCheck/numbers-only.directive";
 
 
 // https://angular.io/styleguide#!#04-10
@@ -74,6 +76,8 @@ import {TextMaskModule} from "angular2-text-mask";
         NowDirective,
         ScrollableDirective,
         JqcloudDirective,
+        SpinnersComponent,
+        NumberDirective,
     ],
     exports: [
         CommonModule,
@@ -107,7 +111,9 @@ import {TextMaskModule} from "angular2-text-mask";
         NowDirective,
         ScrollableDirective,
         JqcloudDirective,
-        TextMaskModule
+        TextMaskModule,
+        SpinnersComponent,
+        NumberDirective,
     ]
 })
 
