@@ -3,7 +3,6 @@ using Jp.Domain.EventHandlers;
 using Jp.Domain.Events.ApiResource;
 using Jp.Domain.Events.Client;
 using Jp.Domain.Events.IdentityResource;
-using Jp.Domain.Events.IdentityResources;
 using Jp.Domain.Events.User;
 using Jp.Domain.Events.UserManagement;
 using MediatR;
@@ -17,7 +16,6 @@ namespace Jp.Infra.CrossCutting.IoC
         {
             services.AddScoped<INotificationHandler<IdentityResourceRegisteredEvent>, IdentityResourceEventHandler>();
             services.AddScoped<INotificationHandler<ApiResourceRegisteredEvent>, ApiResourceEventHandler>();
-            services.AddScoped<INotificationHandler<IdentityResourcesRegisteredEvent>, IdentityResourcesEventHandler>();
 
 
             services.AddScoped<INotificationHandler<ClientRemovedEvent>, ClientEventHandler>();

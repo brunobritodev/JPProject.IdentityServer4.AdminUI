@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="IdentityServer4" Version="2.2.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.4.1" />
@@ -31,12 +32,6 @@
     <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />
     <ProjectReference Include="..\Jp.Infra.Migrations.MySql.Identity\Jp.Infra.Migrations.MySql.Identity.csproj" />
     <ProjectReference Include="..\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.Identity.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="IdentityServer4">
-      <HintPath>C:\Users\Bruno\.nuget\packages\identityserver4\2.1.1\lib\netstandard2.0\IdentityServer4.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

@@ -56,7 +56,7 @@ namespace Jp.Domain.CommandHandlers
                 return; ;
             }
 
-            var savedClient = await _clientRepository.GetClient(request.Client.ClientId);
+            var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
@@ -104,7 +104,7 @@ namespace Jp.Domain.CommandHandlers
                 return;
             }
 
-            var savedClient = await _clientRepository.GetClient(request.ClientId);
+            var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));

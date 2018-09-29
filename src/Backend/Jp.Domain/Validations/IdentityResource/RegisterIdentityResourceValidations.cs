@@ -6,6 +6,7 @@ namespace Jp.Domain.Validations.IdentityResource
     {
         public RegisterIdentityResourceCommandValidation()
         {
+            ValidateName();
         }
     }
 }

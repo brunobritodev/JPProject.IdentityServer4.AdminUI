@@ -19,36 +19,29 @@ export class IdentityResourceService {
         return this.http.get<DefaultResponse<IdentityResource[]>>(environment.ResourceServer + "IdentityResource/list");
     }
 
-    public getClientDetails(clientId: string): Observable<DefaultResponse<IdentityResource>> {
+    public getIdentityResourceDetails(name: string): Observable<DefaultResponse<IdentityResource>> {
         let options = {
             params: {
-                clientId: clientId
+                name: name
             }
         };
-        return this.http.get<DefaultResponse<IdentityResource>>(environment.ResourceServer + "clients/details", options);
+        return this.http.get<DefaultResponse<IdentityResource>>(environment.ResourceServer + "IdentityResource/details", options);
     }
 
     public save(model: IdentityResource): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/save", model);
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/save", model);
     }
 
     public update(model: IdentityResource): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/update", model);
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/update", model);
     }
 
     public remove(clientId: string): any {
         const removeCommand = {
             clientId: clientId
         };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/remove", removeCommand);
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/remove", removeCommand);
     }
 
-    public copy(clientId: string): Observable<DefaultResponse<boolean>> {
-        const command = {
-            clientId: clientId
-        };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/copy", command);
-    }
-    
 
 }

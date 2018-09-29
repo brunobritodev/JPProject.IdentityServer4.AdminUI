@@ -6,12 +6,11 @@ namespace Jp.Domain.Events.IdentityResource
 {
     public class IdentityResourceRegisteredEvent : Event
     {
-        public RegisterIdentityResourceCommand Request { get; }
+        public string Name { get; }
 
-        public IdentityResourceRegisteredEvent(Guid aggregateId, RegisterIdentityResourceCommand request)
+        public IdentityResourceRegisteredEvent(string name)
         {
-            AggregateId = aggregateId;
-            Request = request;
+            Name = name;
         }
     }
 }
