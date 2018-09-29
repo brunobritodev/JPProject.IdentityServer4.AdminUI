@@ -14,7 +14,6 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IUserAppService, UserAppService>();
             services.AddScoped<IUserManageAppService, UserManagerAppService>();
             services.AddScoped<IClientAppService, ClientAppService>();
-
         }
     }
 }

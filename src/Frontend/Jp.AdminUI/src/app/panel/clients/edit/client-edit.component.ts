@@ -49,7 +49,7 @@ export class ClientEditComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.router.navigate(["/home"]);
+                        this.router.navigate(["/clients"]);
                     }
                 },
                 err => {

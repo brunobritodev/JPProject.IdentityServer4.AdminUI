@@ -3,6 +3,7 @@ using IdentityServer4.Models;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 
@@ -47,6 +48,14 @@ namespace Jp.Application.AutoMapper
             CreateMap<RemoveClientViewModel, RemoveClientCommand>().ConstructUsing(c => new RemoveClientCommand(c.ClientId));
             CreateMap<CopyClientViewModel, CopyClientCommand>().ConstructUsing(c => new CopyClientCommand(c.ClientId));
             CreateMap<SaveClientViewModel, SaveClientCommand>().ConstructUsing(c => new SaveClientCommand(c.ClientId, c.ClientName, c.ClientUri, c.LogoUri, c.Description, c.ClientType));
+
+            /*
+             * Identity Resource commands
+             */
+            CreateMap<IdentityResource, RegisterIdentityResourceCommand>().ConstructUsing(c => new RegisterIdentityResourceCommand(c));
+            CreateMap<IdentityResource, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c));
+            CreateMap<IdentityResource, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
+
 
         }
     }

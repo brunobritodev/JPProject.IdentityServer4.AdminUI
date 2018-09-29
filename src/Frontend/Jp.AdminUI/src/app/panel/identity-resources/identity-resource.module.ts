@@ -5,10 +5,14 @@ import { DndModule } from "ng2-dnd";
 import { NgxSelectModule } from 'ngx-select-ex';
 import { TagInputModule } from 'ngx-chips';
 import { IdentityResourceListComponent } from "./list/identity-resources-list.component";
+import { IdentityResourceEditComponent } from "./edit/identity-resource-edit.component";
+import { IdentityResourceAddComponent } from "./add/identity-resource-add.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
     { path: "list", component: IdentityResourceListComponent },
+    { path: "edit/:name", component: IdentityResourceEditComponent },
+    { path: "add", component: IdentityResourceEditComponent },
 ];
 
 @NgModule({
@@ -20,7 +24,9 @@ const routes: Routes = [
         TagInputModule
     ],
     declarations: [
-        IdentityResourceListComponent
+        IdentityResourceListComponent,
+        IdentityResourceEditComponent,
+        IdentityResourceAddComponent
     ],
     exports: [
         RouterModule

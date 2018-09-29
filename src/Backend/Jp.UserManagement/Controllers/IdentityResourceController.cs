@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.ClientsViewModels;
+using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
@@ -33,6 +34,49 @@ namespace Jp.Management.Controllers
         {
             var irs = await _identityResourceAppService.GetIdentityResources();
             return Response(irs);
+        }
+
+        [HttpGet, Route("details")]
+        public async Task<ActionResult<DefaultResponse<IdentityResource>>> Details(string name)
+        {
+            var irs = await _identityResourceAppService.GetDetails(name);
+            return Response(irs);
+        }
+
+        [HttpPost, Route("save")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] IdentityResource model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _identityResourceAppService.Save(model);
+            return Response(true);
+        }
+
+        [HttpPost, Route("update")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] IdentityResource model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _identityResourceAppService.Update(model);
+            return Response(true);
+        }
+
+        [HttpPost, Route("remove")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveIdentityResourceViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _identityResourceAppService.Remove(model);
+            return Response(true);
         }
     }
 }

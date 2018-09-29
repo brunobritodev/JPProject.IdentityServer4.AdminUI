@@ -35,7 +35,7 @@
             </div>
         </div>
     </fieldset>
-    <!--Checkbox-->
+    <!--Input - text -->
     <fieldset>
         <div class="form-group row">
             <div class="col-xl-5">
@@ -46,10 +46,8 @@
                 </button>
             </div>
             <div class="col-xl-7">
-                <label class="switch m-0">
-                    <input type="checkbox" [(ngModel)]="model.backChannelLogoutUri" />
-                    <span></span>
-                </label>
+                <input class="form-control" autocomplete="client-backChannelLogoutUri" [placeholder]="'client.details.backChannelLogoutUri-tooltip' | translate"
+                    [(ngModel)]="model.backChannelLogoutUri" />
             </div>
         </div>
     </fieldset>

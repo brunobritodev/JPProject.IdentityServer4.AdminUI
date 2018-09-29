@@ -8,6 +8,7 @@ import { ToasterConfig, ToasterService } from "angular2-toaster";
 import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
 import { ScopeService } from "../../../shared/services/scope.service";
+import { StandardClaims } from "../../../shared/viewModel/standard-claims.model";
 
 
 @Component({
@@ -47,28 +48,7 @@ export class ClientClaimsComponent implements OnInit {
         this.errors = [];
         this.model = new Claim();
         this.showButtonLoading = false;
-        this.standardClaims = [
-            "sub",
-            "name",
-            "given_name",
-            "family_name",
-            "middle_name",
-            "nickname",
-            "preferred_username",
-            "profile",
-            "picture",
-            "website",
-            "email",
-            "email_verified",
-            "gender",
-            "birthdate",
-            "zoneinfo",
-            "locale",
-            "phone_number",
-            "phone_number_verified",
-            "address",
-            "updated_at"
-        ];
+        this.standardClaims = StandardClaims.claims;
     }
 
     public showSuccessMessage() {
