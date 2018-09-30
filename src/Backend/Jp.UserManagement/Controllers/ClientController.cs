@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -97,7 +97,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpPost, Route("remove-secret")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveSecretViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveClientSecretViewModel model)
         {
             if (!ModelState.IsValid)
             {

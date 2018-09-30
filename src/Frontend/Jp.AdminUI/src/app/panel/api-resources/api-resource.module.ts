@@ -5,12 +5,16 @@ import { DndModule } from "ng2-dnd";
 import { NgxSelectModule } from 'ngx-select-ex';
 import { TagInputModule } from 'ngx-chips';
 import { ApiResourceListComponent } from "./list/api-resources-list.component";
+import { ApiResourceEditComponent } from "./edit/api-resource-edit.component";
+import { ApiResourceAddComponent } from "./add/api-resource-add.component";
+import { ApiResourceSecretsComponent } from "./secrets/api-secrets.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
     { path: "list", component: ApiResourceListComponent },
-    // { path: "edit/:name", component: IdentityResourceEditComponent },
-    // { path: "add", component: IdentityResourceAddComponent },
+    { path: "edit/:name", component: ApiResourceEditComponent },
+    { path: "add", component: ApiResourceAddComponent },
+    { path: "secrets/:resource", component: ApiResourceSecretsComponent },
 ];
 
 @NgModule({
@@ -23,6 +27,9 @@ const routes: Routes = [
     ],
     declarations: [
         ApiResourceListComponent,
+        ApiResourceEditComponent,
+        ApiResourceAddComponent,
+        ApiResourceSecretsComponent
     ],
     exports: [
         RouterModule

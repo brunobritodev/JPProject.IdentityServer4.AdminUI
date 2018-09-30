@@ -1,18 +1,15 @@
 
-
 export class ClientSecret {
     constructor() {
         this.hashType = 0;
     }
+    clientId: string;
     description: string;
     value: string;
     expiration: Date;
     type: string;
     hashType: number;
-    clientId: string;
 }
-
-
 
 export class Subject {
     authenticationType: string;

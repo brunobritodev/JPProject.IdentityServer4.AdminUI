@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
+using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 
 namespace Jp.Application.Interfaces
@@ -12,7 +13,7 @@ namespace Jp.Application.Interfaces
         Task<Client> GetClientDetails(string clientId);
         Task Update(Client client);
         Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId);
-        Task RemoveSecret(RemoveSecretViewModel model);
+        Task RemoveSecret(RemoveClientSecretViewModel model);
         Task SaveSecret(SaveClientSecretViewModel model);
         Task<IEnumerable<ClientPropertyViewModel>> GetProperties(string clientId);
         Task RemoveProperty(RemovePropertyViewModel model);

@@ -116,18 +116,6 @@
             "claims": "Claims",
             "claims-tooltip": "Allows settings claims for the client (will be included in the access token)"
         },
-        "secrets": {
-            "secretType": "Secret Type",
-            "secretType-tooltip": "The type of the client secret",
-            "secretValue": "Secret Value",
-            "secretValue-tooltip": "Specifies the secret of client",
-            "hashType": "Hash Type",
-            "hashType-tooltip": "Set the hash of Secret Value",
-            "description": "Description",
-            "description-tooltip": "Set description",
-            "expiration": "Expiration",
-            "expiration-tooltip": "Set expiration"
-        },
         "property": {
             "key": "Key",
             "key-tooltip": "Key",
@@ -182,6 +170,14 @@
             "userClaims": "User Claims",
             "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
         },
+        "remove": {
+            "title": "Are you sure",
+            "text": "Your will not be able to recover!",
+            "confirmButtonText": "Yes, delete it!",
+            "cancelButtonText": "No, cancel plx!",
+            "deleted": "Resource has been deleted.",
+            "cancelled": "Your Resource is safe :)"
+        },
         "add": {
             "name": "Name",
             "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
@@ -200,6 +196,63 @@
             "userClaims": "User Claims",
             "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
         }
+    },
+    "apiResource": {
+        "description": "Resources are something you want to protect with IdentityServer – either APIs (by doing this your data will be protected as well). So to access your database content must be through an API.",
+        "secret-description":"The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.",
+        "new-api": "New Api Resource",
+        "list": {
+            "name": "Name",
+            "description": "Description"
+        },
+        "remove": {
+            "title": "Are you sure",
+            "text": "Your will not be able to recover!",
+            "confirmButtonText": "Yes, delete it!",
+            "cancelButtonText": "No, cancel plx!",
+            "deleted": "Resource has been deleted.",
+            "cancelled": "Your Resource is safe :)"
+        },
+        "edit": {
+            "name": "Name",
+            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
+            "description": "Description",
+            "description-tooltip": "This value can be used e.g. on the consent screen.",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the access token.",
+            "secrets": "Api Secrets",
+            "secrets-tooltip": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.",
+            "scope": "Api Scopes",
+            "scope-tooltip": "An API must have at least one scope. Each scope can have different settings."
+        },
+        "add": {
+            "name": "Name",
+            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
+            "description": "Description",
+            "description-tooltip": "This value can be used e.g. on the consent screen.",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+        }
+    },
+    "secrets": {
+        "secretType": "Secret Type",
+        "secretType-tooltip": "The type of the client secret",
+        "secretValue": "Secret Value",
+        "secretValue-tooltip": "Specifies the secret of client",
+        "hashType": "Hash Type",
+        "hashType-tooltip": "Set the hash of Secret Value",
+        "description": "Description",
+        "description-tooltip": "Set description",
+        "expiration": "Expiration",
+        "expiration-tooltip": "Set expiration"
     },
     "toasterMessages": {
         "title-success": "Success",

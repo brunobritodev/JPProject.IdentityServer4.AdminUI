@@ -5,7 +5,7 @@ namespace Jp.Domain.Validations.Client
 {
     public abstract class ClientSecretValidation<T> : AbstractValidator<T> where T : ClientSecretCommand
     {
-       
+
         protected void ValidateId()
         {
             RuleFor(c => c.Id).GreaterThan(0).WithMessage("Invalid secret");
@@ -29,4 +29,5 @@ namespace Jp.Domain.Validations.Client
             RuleFor(c => c.Hash).InclusiveBetween(0, 1).WithMessage("Please set hash type");
         }
     }
+
 }

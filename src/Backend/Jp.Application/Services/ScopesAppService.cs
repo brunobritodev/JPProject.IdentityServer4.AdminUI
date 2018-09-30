@@ -13,14 +13,14 @@ namespace Jp.Application.Services
     {
         private IMapper _mapper;
         private IEventStoreRepository _eventStoreRepository;
-        private readonly IIdentityResourcesRepository _identityResourcesRepository;
+        private readonly IIdentityResourceRepository _identityResourcesRepository;
         private readonly IApiResourceRepository _apiResourceRepository;
         public IMediatorHandler Bus { get; set; }
 
         public ScopesAppService(IMapper mapper,
             IMediatorHandler bus,
             IEventStoreRepository eventStoreRepository,
-            IIdentityResourcesRepository identityResourcesRepository,
+            IIdentityResourceRepository identityResourcesRepository,
             IApiResourceRepository apiResourceRepository)
         {
             _mapper = mapper;
@@ -29,8 +29,7 @@ namespace Jp.Application.Services
             _identityResourcesRepository = identityResourcesRepository;
             _apiResourceRepository = apiResourceRepository;
         }
-
-
+        
 
         public void Dispose()
         {

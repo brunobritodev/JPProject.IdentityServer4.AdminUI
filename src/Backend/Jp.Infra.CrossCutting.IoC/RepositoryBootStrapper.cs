@@ -13,11 +13,12 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-services.AddScoped<IIdentityResourceRepository, IdentityResourceRepository>();
             services.AddScoped<IApiResourceRepository, ApiResourceRepository>();
-            services.AddScoped<IIdentityResourcesRepository, IdentityResourcesRepository>();
+            services.AddScoped<IIdentityResourceRepository, IdentityResourceRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IClientSecretRepository, ClientSecretRepository>();
+            services.AddScoped<IApiSecretRepository, ApiSecretRepository>();
+
             services.AddScoped<IClientClaimRepository, ClientClaimRepository>();
             services.AddScoped<IClientPropertyRepository, ClientPropertyRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();

@@ -4,9 +4,10 @@ namespace Jp.Domain.Commands.ApiResource
 {
     public class RegisterApiResourceCommand : ApiResourceCommand
     {
-        public RegisterApiResourceCommand()
+
+        public RegisterApiResourceCommand(IdentityServer4.Models.ApiResource apiResource)
         {
-           
+            Resource = apiResource;
         }
 
         public override bool IsValid()

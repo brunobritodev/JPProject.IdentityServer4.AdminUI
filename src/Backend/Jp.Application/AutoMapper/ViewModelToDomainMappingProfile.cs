@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using IdentityServer4.Models;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.ApiResouceViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Application.ViewModels.IdentityResourceViewModels;
+using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Commands.User;
@@ -39,7 +41,7 @@ namespace Jp.Application.AutoMapper
              * Client commands
              */
             CreateMap<Client, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c));
-            CreateMap<RemoveSecretViewModel, RemoveSecretCommand>().ConstructUsing(c => new RemoveSecretCommand(c.Id, c.ClientId));
+            CreateMap<RemoveClientSecretViewModel, RemoveClientSecretCommand>().ConstructUsing(c => new RemoveClientSecretCommand(c.Id, c.ClientId));
             CreateMap<RemovePropertyViewModel, RemovePropertyCommand>().ConstructUsing(c => new RemovePropertyCommand(c.Id, c.ClientId));
             CreateMap<SaveClientSecretViewModel, SaveClientSecretCommand>().ConstructUsing(c => new SaveClientSecretCommand(c.ClientId, c.Description, c.Value, c.Type, c.Expiration, (int)c.Hash.GetValueOrDefault(HashType.Sha256)));
             CreateMap<SaveClientPropertyViewModel, SaveClientPropertyCommand>().ConstructUsing(c => new SaveClientPropertyCommand(c.ClientId, c.Key, c.Value));
@@ -56,6 +58,16 @@ namespace Jp.Application.AutoMapper
             CreateMap<IdentityResource, RegisterIdentityResourceCommand>().ConstructUsing(c => new RegisterIdentityResourceCommand(c));
             CreateMap<IdentityResource, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c));
             CreateMap<RemoveIdentityResourceViewModel, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
+
+            /*
+           * Api Resource commands
+           */
+            CreateMap<ApiResource, RegisterApiResourceCommand>().ConstructUsing(c => new RegisterApiResourceCommand(c));
+            CreateMap<ApiResource, UpdateApiResourceCommand>().ConstructUsing(c => new UpdateApiResourceCommand(c));
+            CreateMap<RemoveApiResourceViewModel, RemoveApiResourceCommand>().ConstructUsing(c => new RemoveApiResourceCommand(c.Name));
+
+            CreateMap<SaveApiSecretViewModel, SaveApiSecretCommand>().ConstructUsing(c => new SaveApiSecretCommand(c.ResourceName, c.Description, c.Value, c.Type, c.Expiration, (int)c.Hash.GetValueOrDefault(HashType.Sha256)));
+            CreateMap<RemoveApiSecretViewModel, RemoveApiSecretCommand>().ConstructUsing(c => new RemoveApiSecretCommand(c.Id, c.ResourceName));
 
 
         }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Jp.Application.ViewModels.ClientsViewModels
 {
-    public class RemoveSecretViewModel
+    public class RemoveClientSecretViewModel
     {
         [Required]
         public int Id { get; set; }

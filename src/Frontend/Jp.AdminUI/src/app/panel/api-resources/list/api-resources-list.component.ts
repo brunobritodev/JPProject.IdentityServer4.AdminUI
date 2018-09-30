@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "../../../core/translator/translator.service";
-import { IdentityResource } from "../../../shared/viewModel/identity-resource.model";
 import { ApiResourceService } from "../api-resource.service";
+import { ApiResource } from "../../../shared/viewModel/api-resource.model";
 const swal = require('sweetalert');
 
 @Component({
@@ -12,22 +12,22 @@ const swal = require('sweetalert');
 })
 export class ApiResourceListComponent implements OnInit {
 
-    public identityResources: IdentityResource[];
+    public apiResources: ApiResource[];
 
     constructor(
         public translator: TranslatorService,
-        private identityResourceService: ApiResourceService) { }
+        private apiResourceservice: ApiResourceService) { }
 
     ngOnInit() {
-        this.loadClients();
+        this.loadResources();
     }
 
-    public loadClients() {
-        this.identityResourceService.getIdentityResources().subscribe(a => this.identityResources = a.data);
+    public loadResources() {
+        this.apiResourceservice.getApiResources().subscribe(a => this.apiResources = a.data);
     }
 
     public remove(name: string) {
-        this.translator.translate.get('client.remove').subscribe(m => {
+        this.translator.translate.get('apiResource.remove').subscribe(m => {
             swal({
                 title: m['title'],
                 text: m["text"],
@@ -41,10 +41,10 @@ export class ApiResourceListComponent implements OnInit {
             }, (isConfirm) => {
                 if (isConfirm) {
 
-                    this.identityResourceService.remove(name).subscribe(
+                    this.apiResourceservice.remove(name).subscribe(
                         registerResult => {
                             if (registerResult.data) {
-                                this.loadClients();
+                                this.loadResources();
                                 swal("Deleted!", m["deleted"], 'success');
                             }
                         },
