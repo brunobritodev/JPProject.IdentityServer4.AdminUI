@@ -10,7 +10,7 @@ namespace Jp.Application.Interfaces
 {
     public interface IIdentityResourceAppService: IDisposable
     {
-        Task<IEnumerable<IdentityResource>> GetIdentityResources();
+        Task<IEnumerable<IdentityResourceListView>> GetIdentityResources();
         Task<IdentityResource> GetDetails(string name);
         Task Save(IdentityResource model);
         Task Update(IdentityResource model);

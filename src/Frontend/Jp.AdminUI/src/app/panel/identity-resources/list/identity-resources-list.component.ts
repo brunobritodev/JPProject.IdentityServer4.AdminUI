@@ -26,7 +26,7 @@ export class IdentityResourceListComponent implements OnInit {
         this.identityResourceService.getIdentityResources().subscribe(a => this.identityResources = a.data);
     }
 
-    public remove(clientId: string) {
+    public remove(name: string) {
         this.translator.translate.get('client.remove').subscribe(m => {
             swal({
                 title: m['title'],
@@ -41,7 +41,7 @@ export class IdentityResourceListComponent implements OnInit {
             }, (isConfirm) => {
                 if (isConfirm) {
 
-                    this.identityResourceService.remove(clientId).subscribe(
+                    this.identityResourceService.remove(name).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadClients();
@@ -49,7 +49,7 @@ export class IdentityResourceListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Cancelled", "Unknown error while trying to register", 'error');
+                            swal("Cancelled", "Unknown error while trying to remove", 'error');
                         }
                     );
 

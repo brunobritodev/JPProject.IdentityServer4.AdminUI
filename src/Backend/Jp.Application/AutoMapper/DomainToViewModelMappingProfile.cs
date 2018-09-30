@@ -4,6 +4,7 @@ using IdentityServer4.Models;
 using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
+using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Core.Events;
 using Jp.Domain.Models;
 
@@ -20,6 +21,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<IdentityServer4.EntityFramework.Entities.Secret, SecretViewModel>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientProperty, ClientPropertyViewModel>();
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientClaim, ClientClaimViewModel>();
+            CreateMap<IdentityServer4.EntityFramework.Entities.IdentityResource, IdentityResourceListView>(MemberList.Destination);
         }
     }
 }

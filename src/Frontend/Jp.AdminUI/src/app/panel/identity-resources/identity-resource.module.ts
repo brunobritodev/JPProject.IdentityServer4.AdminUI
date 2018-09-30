@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
     { path: "list", component: IdentityResourceListComponent },
     { path: "edit/:name", component: IdentityResourceEditComponent },
-    { path: "add", component: IdentityResourceEditComponent },
+    { path: "add", component: IdentityResourceAddComponent },
 ];
 
 @NgModule({

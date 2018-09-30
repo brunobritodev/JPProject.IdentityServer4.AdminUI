@@ -36,9 +36,9 @@ export class IdentityResourceService {
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/update", model);
     }
 
-    public remove(clientId: string): any {
+    public remove(name: string): any {
         const removeCommand = {
-            clientId: clientId
+            name: name
         };
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/remove", removeCommand);
     }

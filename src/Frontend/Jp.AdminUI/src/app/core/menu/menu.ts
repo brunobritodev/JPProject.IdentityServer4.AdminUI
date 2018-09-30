@@ -37,6 +37,22 @@ const IdentityResource = {
     ]
 };
 
+const ApiResource = {
+    text: "Api Resources",
+    link: "/api-resource",
+    icon: "fas fa-cloud",
+    submenu: [
+        {
+            text: "List",
+            link: "/api-resource/list"
+        },
+        {
+            text: "Add",
+            link: "/api-resource/add"
+        }
+    ]
+};
+
 const headingMain = {
     text: "Main Navigation",
     heading: true
@@ -46,5 +62,6 @@ export const menu = [
     headingMain,
     Home,
     Settings,
-    IdentityResource
+    IdentityResource,
+    ApiResource
 ];

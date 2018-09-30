@@ -24,6 +24,11 @@ namespace Jp.Infra.Data.Repository
             Update(irs);
         }
 
+        public Task<IdentityResource> GetDetails(string name)
+        {
+            return DbSet.Include(s => s.UserClaims).AsNoTracking().FirstOrDefaultAsync(w => w.Name == name);
+        }
+
         private async Task RemoveIdentityResourceClaimsAsync(IdentityResource identityResource)
         {
             var identityClaims = await Db.IdentityClaims.Where(x => x.IdentityResource.Id == identityResource.Id).ToListAsync();
