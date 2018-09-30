@@ -2,6 +2,7 @@
 using IdentityServer4.Models;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
+using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Commands.User;
@@ -54,7 +55,7 @@ namespace Jp.Application.AutoMapper
              */
             CreateMap<IdentityResource, RegisterIdentityResourceCommand>().ConstructUsing(c => new RegisterIdentityResourceCommand(c));
             CreateMap<IdentityResource, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c));
-            CreateMap<IdentityResource, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
+            CreateMap<RemoveIdentityResourceViewModel, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
 
 
         }

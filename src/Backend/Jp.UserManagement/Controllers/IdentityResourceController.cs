@@ -30,7 +30,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<IdentityResource>>>> List()
+        public async Task<ActionResult<DefaultResponse<IEnumerable<IdentityResourceListView>>>> List()
         {
             var irs = await _identityResourceAppService.GetIdentityResources();
             return Response(irs);

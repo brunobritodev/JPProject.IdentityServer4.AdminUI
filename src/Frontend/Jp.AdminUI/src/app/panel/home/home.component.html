@@ -23,37 +23,37 @@
         <!-- Clients -->
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Clients</h4>
+                <h4 class="my-0 font-weight-normal">{{ 'general.clients' | translate }}</h4>
             </div>
             <div class="card-body">
                 <h1 class="card-title">
                     <span title="Clients" class="font-size-1" aria-hidden="true">💻</span>
                 </h1>
-                <button [routerLink]="'/clients'" class="btn btn-lg btn-block btn-primary">{{ 'Manage' | translate }} </button>
+                <a [routerLink]="'/clients'" class="btn btn-lg btn-block btn-primary">{{ 'Manage' | translate }} </a>
             </div>
         </div>
         <!-- Identity Resources -->
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Identity Resources</h4>
+                <h4 class="my-0 font-weight-normal">{{ 'general.identity-resource' | translate }}</h4>
             </div>
             <div class="card-body">
                 <h1 class="card-title">
                     <span class="font-size-1" title="Identity Resources" aria-hidden="true">🔖</span>
                 </h1>
-                <button [routerLink]="'/identity-resource'" class="btn btn-lg btn-block btn-outline-primary">{{ 'Manage' | translate }}</button>
+                <a [routerLink]="'/identity-resource'" class="btn btn-lg btn-block btn-outline-primary">{{ 'Manage' | translate }}</a>
             </div>
         </div>
         <!-- Api Resources -->
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Protected Resources</h4>
+                <h4 class="my-0 font-weight-normal">{{ 'general.api-resource' | translate }}</h4>
             </div>
             <div class="card-body">
                 <h1 class="card-title">
                     <span class="font-size-1" title="Api Resources" aria-hidden="true">☁️</span>
                 </h1>
-                <button class="btn btn-lg btn-block btn-primary">{{ 'Manage' | translate }}</button>
+                <a [routerLink]="'/api-resource'" class="btn btn-lg btn-block btn-primary">{{ 'Manage' | translate }}</a>
             </div>
         </div>
     </div>

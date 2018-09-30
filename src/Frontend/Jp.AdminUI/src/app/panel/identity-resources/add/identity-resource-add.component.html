@@ -13,7 +13,7 @@
     </alert>
 </div>
 
-<div class="card card-default" *ngIf="model">
+<div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
     <div class="card-header">
         <h3>{{model.name}}</h3>
     </div>

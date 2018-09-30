@@ -7,5 +7,6 @@ namespace Jp.Domain.Interfaces
     {
         Task<IdentityResource> GetByName(string name);
         Task UpdateWithChildrens(IdentityResource irs);
+        Task<IdentityResource> GetDetails(string name);
     }
 }

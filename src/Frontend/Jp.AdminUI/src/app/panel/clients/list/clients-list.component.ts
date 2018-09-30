@@ -84,7 +84,7 @@ export class ClientListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Cancelled", "Unknown error while trying to register", 'error');
+                            swal("Cancelled", "Unknown error while trying to remove", 'error');
                         }
                     );
 

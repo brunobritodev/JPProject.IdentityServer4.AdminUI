@@ -13,7 +13,7 @@
     </alert>
 </div>
 
-<div class="card card-default" *ngIf="model">
+<div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
     <div class="card-header">
         <h3>{{model.name}}</h3>
     </div>
@@ -126,7 +126,7 @@
     </div>
     <div class="card-footer">
         <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
-        <a class="mb-1 btn btn-secondary" [routerLink]="['/clients']">Cancel</a>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/identity-resource']">Cancel</a>
     </div>
 </div>
 

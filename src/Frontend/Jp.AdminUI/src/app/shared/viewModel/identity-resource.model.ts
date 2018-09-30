@@ -1,6 +1,11 @@
 import { Claim } from "./client.model";
 
 export class IdentityResource {
+    constructor() {
+        this.enabled = true;
+        this.showInDiscoveryDocument = true;
+        this.userClaims = [];
+    }
     required: boolean;
     emphasize: boolean;
     showInDiscoveryDocument: boolean;

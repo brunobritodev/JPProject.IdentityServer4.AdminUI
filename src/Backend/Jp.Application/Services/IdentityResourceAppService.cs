@@ -33,15 +33,15 @@ namespace Jp.Application.Services
         }
 
 
-        public Task<IEnumerable<IdentityResource>> GetIdentityResources()
+        public Task<IEnumerable<IdentityResourceListView>> GetIdentityResources()
         {
-            var resultado = _identityResourceRepository.GetAll().Select(s => s.ToModel()).ToList();
-            return Task.FromResult<IEnumerable<IdentityResource>>(resultado);
+            var resultado = _identityResourceRepository.GetAll().Select(s => _mapper.Map<IdentityResourceListView>(s)).ToList();
+            return Task.FromResult<IEnumerable<IdentityResourceListView>>(resultado);
         }
 
         public async Task<IdentityResource> GetDetails(string name)
         {
-            var irs = await _identityResourceRepository.GetByName(name);
+            var irs = await _identityResourceRepository.GetDetails(name);
             return irs.ToModel();
         }
 
