@@ -19,15 +19,15 @@ export class IdentityResourceListComponent implements OnInit {
         private identityResourceService: IdentityResourceService) { }
 
     ngOnInit() {
-        this.loadClients();
+        this.loadResources();
     }
 
-    public loadClients() {
+    public loadResources() {
         this.identityResourceService.getIdentityResources().subscribe(a => this.identityResources = a.data);
     }
 
     public remove(name: string) {
-        this.translator.translate.get('client.remove').subscribe(m => {
+        this.translator.translate.get('identityResource.remove').subscribe(m => {
             swal({
                 title: m['title'],
                 text: m["text"],
@@ -44,7 +44,7 @@ export class IdentityResourceListComponent implements OnInit {
                     this.identityResourceService.remove(name).subscribe(
                         registerResult => {
                             if (registerResult.data) {
-                                this.loadClients();
+                                this.loadResources();
                                 swal("Deleted!", m["deleted"], 'success');
                             }
                         },

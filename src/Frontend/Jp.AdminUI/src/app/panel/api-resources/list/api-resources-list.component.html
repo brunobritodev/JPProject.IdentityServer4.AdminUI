@@ -1,36 +1,35 @@
 <div class="content-heading">
     <div>
-        {{ 'gerenal.api-resource' | translate }}
-        <small><b> {{ 'identityResource.description' | translate }}.</b></small>
+        {{ 'general.api-resource' | translate }}
+        <small><b> {{ 'apiResource.description' | translate }}</b></small>
     </div>
 </div>
 
-<app-loading *ngIf="identityResources == null"></app-loading>
+<app-loading *ngIf="apiResources == null"></app-loading>
 
-<div class="container-fluid" *ngIf="identityResources">
+<div class="container-fluid" *ngIf="apiResources">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/identity-resource/add' ]"><i class="fa fa-plus-circle"></i>
-                    {{ 'identityResource.newIr' | translate }}</a>
+                <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/api-resource/add' ]"><i class="fa fa-plus-circle"></i>
+                    {{ 'apiResource.new-api' | translate }}</a>
             </div>
-
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th></th>
-                                <th> {{ "identityResource.list.name" | translate }}</th>
-                                <th> {{"identityResource.list.description" | translate }} </th>
+                                <th> {{ "apiResource.list.name" | translate }}</th>
+                                <th> {{"apiResource.list.description" | translate }} </th>
                                 <th></th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let resource of identityResources">
+                            <tr *ngFor="let resource of apiResources">
                                 <th>
-                                    <a [routerLink]="['/identity-resource/edit', resource.name]" class="btn btn-primary btn-xs"
+                                    <a [routerLink]="['/api-resource/edit', resource.name]" class="btn btn-primary btn-xs"
                                         placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                                     &nbsp;
                                 </th>

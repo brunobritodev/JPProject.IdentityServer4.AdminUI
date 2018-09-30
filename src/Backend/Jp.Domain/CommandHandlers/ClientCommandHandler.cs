@@ -18,7 +18,7 @@ namespace Jp.Domain.CommandHandlers
     public class ClientCommandHandler : CommandHandler,
         IRequestHandler<RemoveClientCommand>,
         IRequestHandler<UpdateClientCommand>,
-        IRequestHandler<RemoveSecretCommand>,
+        IRequestHandler<RemoveClientSecretCommand>,
         IRequestHandler<SaveClientSecretCommand>,
         IRequestHandler<RemovePropertyCommand>,
         IRequestHandler<SaveClientPropertyCommand>,
@@ -96,7 +96,7 @@ namespace Jp.Domain.CommandHandlers
 
         }
 
-        public async Task Handle(RemoveSecretCommand request, CancellationToken cancellationToken)
+        public async Task Handle(RemoveClientSecretCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {

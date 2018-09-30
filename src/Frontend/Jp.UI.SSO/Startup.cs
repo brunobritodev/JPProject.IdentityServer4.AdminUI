@@ -1,14 +1,10 @@
-﻿using System.IO;
-using Jp.Infra.CrossCutting.IdentityServer.Configuration;
+﻿using Jp.Infra.CrossCutting.IdentityServer.Configuration;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.Infra.Migrations.MySql.Identity.Configuration;
 using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
-using Jp.Infra.Migrations.Sql.Identity.Configuration;
-using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

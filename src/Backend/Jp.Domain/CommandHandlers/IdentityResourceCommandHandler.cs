@@ -98,7 +98,7 @@ namespace Jp.Domain.CommandHandlers
 
             if (Commit())
             {
-                await Bus.RaiseEvent(new IdentityResourceUpdatedEvent(request.Resource));
+                await Bus.RaiseEvent(new IdentityResourceRemovedEvent(request.Resource.Name));
             }
         }
     }

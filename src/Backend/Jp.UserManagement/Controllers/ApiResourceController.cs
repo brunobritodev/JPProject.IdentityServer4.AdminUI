@@ -1,0 +1,116 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using IdentityServer4.Models;
+using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.ApiResouceViewModels;
+using Jp.Application.ViewModels.IdentityResourceViewModels;
+using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
+using Jp.Infra.CrossCutting.Tools.Model;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Jp.Management.Controllers
+{
+    [Route("[controller]")]
+    public class ApiResourceController : ApiController
+    {
+        private readonly IApiResourceAppService _apiResourceAppService;
+
+        public ApiResourceController(
+            INotificationHandler<DomainNotification> notifications, 
+            IMediatorHandler mediator,
+            IApiResourceAppService apiResourceAppService) : base(notifications, mediator)
+        {
+            _apiResourceAppService = apiResourceAppService;
+        }
+
+        [HttpGet, Route("list")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<ApiResourceListViewModel>>>> List()
+        {
+            var irs = await _apiResourceAppService.GetApiResources();
+            return Response(irs);
+        }
+
+
+        [HttpGet, Route("details")]
+        public async Task<ActionResult<DefaultResponse<ApiResource>>> Details(string name)
+        {
+            var irs = await _apiResourceAppService.GetDetails(name);
+            return Response(irs);
+        }
+
+        [HttpPost, Route("save")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] ApiResource model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.Save(model);
+            return Response(true);
+        }
+
+        [HttpPost, Route("update")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] ApiResource model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.Update(model);
+            return Response(true);
+        }
+
+        [HttpPost, Route("remove")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveApiResourceViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.Remove(model);
+            return Response(true);
+        }
+
+
+
+        [HttpGet, Route("secrets")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<SecretViewModel>>>> Secrets(string name)
+        {
+            var clients = await _apiResourceAppService.GetSecrets(name);
+            return Response(clients);
+        }
+
+        [HttpPost, Route("remove-secret")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveApiSecretViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.RemoveSecret(model);
+            return Response(true);
+        }
+
+
+        [HttpPost, Route("save-secret")]
+        public async Task<ActionResult<DefaultResponse<bool>>> SaveSecret([FromBody] SaveApiSecretViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.SaveSecret(model);
+            return Response(true);
+        }
+
+
+    }
+}

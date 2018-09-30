@@ -6,6 +6,7 @@ using AutoMapper;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
+using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Core.Bus;
@@ -63,9 +64,9 @@ namespace Jp.Application.Services
             return _mapper.Map<IEnumerable<SecretViewModel>>(await _clientSecretRepository.GetByClientId(clientId));
         }
 
-        public Task RemoveSecret(RemoveSecretViewModel model)
+        public Task RemoveSecret(RemoveClientSecretViewModel model)
         {
-            var registerCommand = _mapper.Map<RemoveSecretCommand>(model);
+            var registerCommand = _mapper.Map<RemoveClientSecretCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
 

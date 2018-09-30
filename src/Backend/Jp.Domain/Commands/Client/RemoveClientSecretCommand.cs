@@ -2,10 +2,10 @@ using Jp.Domain.Validations.Client;
 
 namespace Jp.Domain.Commands.Client
 {
-    public class RemoveSecretCommand : ClientSecretCommand
+    public class RemoveClientSecretCommand : ClientSecretCommand
     {
 
-        public RemoveSecretCommand(int id, string clientId)
+        public RemoveClientSecretCommand(int id, string clientId)
         {
             Id = id;
             ClientId = clientId;
@@ -14,7 +14,7 @@ namespace Jp.Domain.Commands.Client
 
         public override bool IsValid()
         {
-            ValidationResult = new RemoveSecretCommandValidation().Validate(this);
+            ValidationResult = new RemoveClientSecretCommandValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }

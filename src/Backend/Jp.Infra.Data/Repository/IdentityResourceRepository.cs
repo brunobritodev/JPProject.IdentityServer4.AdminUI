@@ -1,17 +1,20 @@
-using System.Linq;
-using System.Threading.Tasks;
 using IdentityServer4.EntityFramework.Entities;
 using Jp.Domain.Interfaces;
 using Jp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.Data.Repository
 {
-    public class IdentityResourceRepository : Repository<IdentityResource> , IIdentityResourceRepository
+    public class IdentityResourceRepository : Repository<IdentityResource>, IIdentityResourceRepository
     {
         public IdentityResourceRepository(JpContext context) : base(context)
         {
         }
+
+        public Task<List<string>> GetScopes(string search) => DbSet.Where(id => id.Name.Contains(search)).Select(x => x.Name).ToListAsync();
 
         public Task<IdentityResource> GetByName(string name)
         {
@@ -28,6 +31,7 @@ namespace Jp.Infra.Data.Repository
         {
             return DbSet.Include(s => s.UserClaims).AsNoTracking().FirstOrDefaultAsync(w => w.Name == name);
         }
+
 
         private async Task RemoveIdentityResourceClaimsAsync(IdentityResource identityResource)
         {

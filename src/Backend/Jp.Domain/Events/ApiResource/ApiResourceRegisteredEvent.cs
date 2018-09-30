@@ -6,12 +6,11 @@ namespace Jp.Domain.Events.ApiResource
 {
     public class ApiResourceRegisteredEvent : Event
     {
-        public RegisterApiResourceCommand Request { get; }
+        public string Name { get; }
 
-        public ApiResourceRegisteredEvent(Guid aggregateId, RegisterApiResourceCommand request)
+        public ApiResourceRegisteredEvent(string name)
         {
-            AggregateId = aggregateId;
-            Request = request;
+            Name = name;
         }
     }
 }

@@ -13,6 +13,18 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+            /*
+             * Api Resource  commands
+             */
+            services.AddScoped<IRequestHandler<RegisterApiResourceCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateApiResourceCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveApiResourceCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveApiSecretCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<SaveApiSecretCommand>, ApiResourceCommandHandler>();
+
+            /*
+             * Identity Resource  commands
+             */
             services.AddScoped<IRequestHandler<RegisterIdentityResourceCommand>, IdentityResourceCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveIdentityResourceCommand>, IdentityResourceCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateIdentityResourceCommand>, IdentityResourceCommandHandler>();
@@ -24,7 +36,7 @@ namespace Jp.Infra.CrossCutting.IoC
              */
             services.AddScoped<IRequestHandler<RemoveClientCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateClientCommand>, ClientCommandHandler>();
-            services.AddScoped<IRequestHandler<RemoveSecretCommand>, ClientCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveClientSecretCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<SaveClientSecretCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<RemovePropertyCommand>, ClientCommandHandler>();
             services.AddScoped<IRequestHandler<SaveClientPropertyCommand>, ClientCommandHandler>();

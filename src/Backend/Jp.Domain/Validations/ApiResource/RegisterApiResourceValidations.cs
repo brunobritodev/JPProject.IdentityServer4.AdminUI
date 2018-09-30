@@ -6,6 +6,7 @@ namespace Jp.Domain.Validations.ApiResource
     {
         public RegisterApiResourceCommandValidation()
         {
+            ValidateName();
         }
     }
 }

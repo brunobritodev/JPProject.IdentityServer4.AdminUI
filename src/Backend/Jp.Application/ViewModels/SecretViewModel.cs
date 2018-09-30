@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Jp.Application.ViewModels.ClientsViewModels
+namespace Jp.Application.ViewModels
 {
     public class SecretViewModel
     {
