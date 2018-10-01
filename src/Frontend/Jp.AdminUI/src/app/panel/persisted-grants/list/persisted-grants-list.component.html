@@ -17,6 +17,8 @@
                         <thead>
                             <tr>
                                 <th></th>
+                                <th> {{ 'persistedGrant.list.picture' | translate }} </th>
+                                <th> {{ 'persistedGrant.list.email' | translate }}</th>
                                 <th> {{ 'persistedGrant.list.clientId' | translate }}</th>
                                 <th> {{ 'persistedGrant.list.type' | translate }} </th>
                                 <th></th>
@@ -26,14 +28,16 @@
                         <tbody>
                             <tr *ngFor="let grant of persistedGrants">
                                 <th>
-                                    <a [routerLink]="['/persisted-grants/edit', grant.name]" class="btn btn-primary btn-xs"
-                                        placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                                    <button class="btn btn-primary btn-xs" (click)="details(grant.key)" placement="top"
+                                        [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
                                     &nbsp;
                                 </th>
+                                <td><img *ngIf="grant.picture" width="32" [src]="grant.picture" /></td>
+                                <td>{{grant.email}}</td>
                                 <td>{{grant.clientId}}</td>
                                 <td>{{grant.type}}</td>
                                 <td>
-                                    <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                    <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.revoke' | translate"
                                         (click)="remove(grant.key)"><i class="fa fa-times"></i></button>
                                 </td>
                             </tr>
@@ -42,6 +46,39 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-xl-12 col-md-12 col-lg-12" *ngIf="grantDetail">
+
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <h3>{{ 'general.details' | translate }} - {{grantDetail.clientId}} for {{grantDetail.email}}</h3>
+            </div>
+            <div class="card-body">
+                <img *ngIf="grantDetail.picture" [src]="grantDetail.picture" />
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.email' | translate }}</dt>
+                    <dd class="col-sm-9">{{grantDetail.email}}</dd>
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.key' | translate }}</dt>
+                    <dd class="col-sm-9">{{grantDetail.key}}</dd>
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.type' | translate }}</dt>
+                    <dd class="col-sm-9">{{grantDetail.type}}</dd>
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.clientId' | translate }}</dt>
+                    <dd class="col-sm-9">{{grantDetail.clientId}}</dd>
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.creationTime' | translate }}</dt>
+                    <dd class="col-sm-9">{{grantDetail.creationTime}}</dd>
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.expiration' | translate }}</dt>
+                    <dd class="col-sm-9">{{grantDetail.expiration}}</dd>
+                    <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.scopes' | translate }}</dt>
+                    <dd class="col-sm-9">
+                        <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [disable]="true"
+                            [(ngModel)]="grantDetail.parsedData.Scopes">
+                        </tag-input>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END card-->
     </div>
 
 

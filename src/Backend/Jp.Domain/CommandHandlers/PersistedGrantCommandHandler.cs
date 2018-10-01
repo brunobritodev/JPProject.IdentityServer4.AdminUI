@@ -12,7 +12,7 @@ using MediatR;
 namespace Jp.Domain.CommandHandlers
 {
     public class PersistedGrantCommandHandler : CommandHandler,
-        IRequestHandler<RegisterPersistedGrantCommand>
+        IRequestHandler<RemovePersistedGrantCommand>
     {
         private readonly IPersistedGrantRepository _persistedGrantRepository;
 
@@ -26,7 +26,7 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RegisterPersistedGrantCommand request, CancellationToken cancellationToken)
+        public async Task Handle(RemovePersistedGrantCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
@@ -35,13 +35,12 @@ namespace Jp.Domain.CommandHandlers
             }
 
 			// Businness logic here
-			
-            //if (Commit())
-            //{
-            //   await Bus.RaiseEvent(new PersistedGrantRegisteredEvent(PersistedGrant.Id));
-            //}
+			_persistedGrantRepository.Remove(request.Key);
 
-            return;
+            if (Commit())
+            {
+               await Bus.RaiseEvent(new PersistedGrantRemovedEvent(request.Key));
+            }
         }
 
     }

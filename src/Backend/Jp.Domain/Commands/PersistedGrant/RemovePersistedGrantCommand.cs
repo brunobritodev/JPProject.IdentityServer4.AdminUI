@@ -4,9 +4,10 @@ namespace Jp.Domain.Commands.PersistedGrant
 {
     public class RemovePersistedGrantCommand : PersistedGrantCommand
     {
-        public RemovePersistedGrantCommand()
+
+        public RemovePersistedGrantCommand(string key)
         {
-           
+            Key = key;
         }
 
         public override bool IsValid()

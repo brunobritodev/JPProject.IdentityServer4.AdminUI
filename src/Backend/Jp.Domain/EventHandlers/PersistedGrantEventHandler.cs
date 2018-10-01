@@ -7,9 +7,9 @@ namespace Jp.Domain.EventHandlers
 {
 
     public class PersistedGrantEventHandler :
-        INotificationHandler<PersistedGrantRegisteredEvent>
+        INotificationHandler<PersistedGrantRemovedEvent>
     {
-        public Task Handle(PersistedGrantRegisteredEvent notification, CancellationToken cancellationToken)
+        public Task Handle(PersistedGrantRemovedEvent notification, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
         }

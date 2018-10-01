@@ -272,7 +272,21 @@
         "description": "",
         "list": {
             "clientId": "Client",
-            "type": "Type"
+            "type": "Type",
+            "email": "Email",
+            "picture": "Picture",
+            "key": "Key",
+            "creationTime": "CreationTime",
+            "expiration": "Expiration",
+            "scopes": "Scopes"
+        },
+        "remove": {
+            "title": "Are you sure",
+            "text": "Your will not be able to recover!",
+            "confirmButtonText": "Yes, delete it!",
+            "cancelButtonText": "No, cancel plx!",
+            "deleted": "Grant has been deleted.",
+            "cancelled": "Grant is safe :)"
         }
     },
     "toasterMessages": {
@@ -292,6 +306,8 @@
         "api-resource": "Protected Resources",
         "persisted-grants": "Persisted Grants",
         "users": "Users",
-        "roles": "Roles"
+        "roles": "Roles",
+        "details": "Details",
+        "revoke": "Revoke"
     }
 }

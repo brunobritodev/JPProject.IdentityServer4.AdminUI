@@ -14,7 +14,7 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<IRequestHandler<RegisterPersistedGrantCommand>, PersistedGrantCommandHandler>();
+            services.AddScoped<IRequestHandler<RemovePersistedGrantCommand>, PersistedGrantCommandHandler>();
             /*
              * Api Resource  commands
              */

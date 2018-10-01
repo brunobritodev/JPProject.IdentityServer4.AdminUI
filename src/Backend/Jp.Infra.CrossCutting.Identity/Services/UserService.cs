@@ -13,6 +13,7 @@ using Jp.Domain.Models;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.CrossCutting.Identity.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
@@ -351,6 +352,32 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             var user = await _userManager.FindByIdAsync(userId.ToString());
 
             return await _userManager.HasPasswordAsync(user);
+        }
+
+        public async Task<IEnumerable<IDomainUser>> GetByIdAsync(params string[] id)
+        {
+            var users = await _userManager.Users.Where(w => id.Contains(w.Id.ToString())).ToListAsync();
+
+            return users.Select(s => new User
+            {
+                Id = s.Id,
+                Name = s.Name,
+                SecurityStamp = s.SecurityStamp,
+                AccessFailedCount = s.AccessFailedCount,
+                Bio = s.Bio,
+                Company = s.Company,
+                Email = s.Email,
+                EmailConfirmed = s.EmailConfirmed,
+                JobTitle = s.JobTitle,
+                LockoutEnabled = s.LockoutEnabled,
+                LockoutEnd = s.LockoutEnd,
+                PhoneNumber = s.PhoneNumber,
+                PhoneNumberConfirmed = s.PhoneNumberConfirmed,
+                Picture = s.Picture,
+                TwoFactorEnabled = s.TwoFactorEnabled,
+                Url = s.Url,
+                UserName = s.UserName,
+            }).ToList(); ;
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)
