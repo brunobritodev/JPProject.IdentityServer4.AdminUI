@@ -84,7 +84,6 @@ export class ApiResourceScopesComponent implements OnInit {
     }
 
     private loadScopes(): void {
-
         this.apiResourceService.getScopes(this.resourceName).subscribe(c => this.apiScopes = c.data);
     }
 
@@ -113,7 +112,6 @@ export class ApiResourceScopesComponent implements OnInit {
             return Observable.throw("Unknown error while trying to register");
         }
     }
-    
 
     public addClaim(claim: string) {
         if (this.model.userClaims.find(f => f == claim) == null)

@@ -53,6 +53,22 @@ const ApiResource = {
     ]
 };
 
+const PersistedGrants = {
+    text: "Persisted Grants",
+    link: "/persisted-grants",
+    icon: "fas fa-key",
+    submenu: [
+        {
+            text: "List",
+            link: "/persisted-grants/list"
+        },
+        {
+            text: "Add",
+            link: "/persisted-grants/add"
+        }
+    ]
+};
+
 const headingMain = {
     text: "Main Navigation",
     heading: true
@@ -63,5 +79,6 @@ export const menu = [
     Home,
     Settings,
     IdentityResource,
-    ApiResource
+    ApiResource,
+    PersistedGrants
 ];
