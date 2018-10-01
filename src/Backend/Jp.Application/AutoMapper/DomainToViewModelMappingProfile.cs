@@ -15,7 +15,6 @@ namespace Jp.Application.AutoMapper
     {
         public DomainToViewModelMappingProfile()
         {
-CreateMap<PersistedGrant, PersistedGrantViewModel>();
             CreateMap<ApiResource, ApiResourceListViewModel>();
             CreateMap<User, UserViewModel>().ForMember(a => a.Password, o => o.Ignore()).ForMember(a => a.ConfirmPassword, o => o.Ignore());
             CreateMap<StoredEvent, EventHistoryData>().ConstructUsing(a => new EventHistoryData() { Action = a.MessageType, Id = a.Id.ToString(), Details = a.Data, When = a.Timestamp.ToString(CultureInfo.InvariantCulture), Who = a.User });

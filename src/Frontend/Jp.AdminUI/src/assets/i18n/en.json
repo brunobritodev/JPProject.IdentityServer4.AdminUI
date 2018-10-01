@@ -268,10 +268,11 @@
         "expiration": "Expiration",
         "expiration-tooltip": "Set expiration"
     },
-    "persisted-grants": {
+    "persistedGrant": {
+        "description": "",
         "list": {
-            "name": "Name",
-            "description": "Description"
+            "clientId": "Client",
+            "type": "Type"
         }
     },
     "toasterMessages": {
@@ -291,7 +292,6 @@
         "api-resource": "Protected Resources",
         "persisted-grants": "Persisted Grants",
         "users": "Users",
-        "roles": "Roles",
-        "persisted-grant": ""
+        "roles": "Roles"
     }
 }

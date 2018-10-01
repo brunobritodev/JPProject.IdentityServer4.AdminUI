@@ -1,12 +1,13 @@
 using AutoMapper;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.EntityFramework.Mappers;
+using IdentityServer4.Models;
 
 namespace Jp.Application.Services
 {
@@ -28,10 +29,10 @@ namespace Jp.Application.Services
             _persistedGrantRepository = persistedGrantRepository;
         }
 
-        public async Task<IEnumerable<PersistedGrantViewModel>> GetPersistedGrants()
+        public async Task<IEnumerable<PersistedGrant>> GetPersistedGrants()
         {
             var resultado = await _persistedGrantRepository.GetGrants();
-            return resultado.Select(s => _mapper.Map<PersistedGrantViewModel>(s));
+            return resultado.Select(s => s.ToModel());
         }
         public void Dispose()
         {

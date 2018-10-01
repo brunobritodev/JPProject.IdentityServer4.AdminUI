@@ -1,7 +1,7 @@
 <div class="content-heading">
     <div>
-        🔑 {{ 'general.persisted-grant' | translate }}
-        <small><b> {{ 'persistedGrant.description' | translate }}.</b></small>
+        🔑 {{ 'general.persisted-grants' | translate }}
+        <small><b> {{ 'persistedGrant.description' | translate }}</b></small>
     </div>
 </div>
 
@@ -10,10 +10,6 @@
 <div class="container-fluid" *ngIf="persistedGrants">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
-            <div class="card-header">
-                <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/identity-resource/add' ]"><i class="fa fa-plus-circle"></i>
-                    {{ 'persistedGrant.new-grant' | translate }}</a>
-            </div>
 
             <div class="card-body">
                 <div class="table-responsive">
@@ -21,8 +17,8 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th> {{ "persistedGrant.list.name" | translate }}</th>
-                                <th> {{"persistedGrant.list.description" | translate }} </th>
+                                <th> {{ 'persistedGrant.list.clientId' | translate }}</th>
+                                <th> {{ 'persistedGrant.list.type' | translate }} </th>
                                 <th></th>
 
                             </tr>
@@ -34,11 +30,11 @@
                                         placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                                     &nbsp;
                                 </th>
-                                <td>{{grant.name}}</td>
-                                <td>{{grant.description}}</td>
+                                <td>{{grant.clientId}}</td>
+                                <td>{{grant.type}}</td>
                                 <td>
                                     <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
-                                        (click)="remove(grant.name)"><i class="fa fa-times"></i></button>
+                                        (click)="remove(grant.key)"><i class="fa fa-times"></i></button>
                                 </td>
                             </tr>
                         </tbody>
