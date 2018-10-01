@@ -14,11 +14,12 @@ namespace Jp.Infra.Data.Repository
         {
         }
 
-        public Task<List<string>> GetScopes(string search) => DbSet.AsNoTracking().Where(id => id.Name.Contains(search)).Select(x => x.Name).ToListAsync();
+        public Task<List<ApiResource>> GetResources() => DbSet.Include(s => s.UserClaims).ToListAsync();
         public Task<ApiResource> GetResource(string name) => DbSet.AsNoTracking().Include(s => s.Secrets).Include(s => s.Scopes).FirstOrDefaultAsync(s => s.Name == name);
         public Task<ApiResource> GetByName(string name)
         {
             return DbSet
+                .Include(s => s.UserClaims)
                 .FirstOrDefaultAsync(s => s.Name == name);
         }
 

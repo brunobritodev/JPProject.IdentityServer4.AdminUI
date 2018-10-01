@@ -8,6 +8,7 @@ import { ApiResourceListComponent } from "./list/api-resources-list.component";
 import { ApiResourceEditComponent } from "./edit/api-resource-edit.component";
 import { ApiResourceAddComponent } from "./add/api-resource-add.component";
 import { ApiResourceSecretsComponent } from "./secrets/api-secrets.component";
+import { ApiResourceScopesComponent } from "./scope/api-scopes.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: "edit/:name", component: ApiResourceEditComponent },
     { path: "add", component: ApiResourceAddComponent },
     { path: "secrets/:resource", component: ApiResourceSecretsComponent },
+    { path: "scopes/:resource", component: ApiResourceScopesComponent },
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const routes: Routes = [
         ApiResourceListComponent,
         ApiResourceEditComponent,
         ApiResourceAddComponent,
-        ApiResourceSecretsComponent
+        ApiResourceSecretsComponent,
+        ApiResourceScopesComponent
     ],
     exports: [
         RouterModule

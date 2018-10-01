@@ -1,4 +1,7 @@
 export class Scope {
+    constructor() {
+        this.userClaims = [];
+    }
     /// <summary>
     /// Name of the scope. This is the value a client will use to request the scope.
     /// </summary>
@@ -28,4 +31,8 @@ export class Scope {
     /// Specifies whether this scope is shown in the discovery document. Defaults to true.
     /// </summary>
     public showInDiscoveryDocument: boolean;
+
+    public resourceName: string;
+    public userClaims: string[];
+
 }

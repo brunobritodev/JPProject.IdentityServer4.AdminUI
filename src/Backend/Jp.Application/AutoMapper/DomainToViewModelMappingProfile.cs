@@ -7,6 +7,7 @@ using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Core.Events;
 using Jp.Domain.Models;
 using System.Globalization;
+using Jp.Application.ViewModels.ApiResouceViewModels;
 
 namespace Jp.Application.AutoMapper
 {
@@ -22,6 +23,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientProperty, ClientPropertyViewModel>();
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientClaim, ClientClaimViewModel>();
             CreateMap<IdentityServer4.EntityFramework.Entities.IdentityResource, IdentityResourceListView>(MemberList.Destination);
+            CreateMap<IdentityServer4.EntityFramework.Entities.ApiScope, ScopeViewModel>(MemberList.Destination);
         }
     }
 }

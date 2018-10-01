@@ -1,7 +1,7 @@
 using FluentValidation;
 using Jp.Domain.Commands.Client;
 
-namespace Jp.Domain.Validations.Client
+namespace Jp.Domain.Validations.ApiResource
 {
     public abstract class ApiSecretValidation<T> : AbstractValidator<T> where T : ApiSecretCommand
     {
@@ -10,7 +10,7 @@ namespace Jp.Domain.Validations.Client
         {
             RuleFor(c => c.Id).GreaterThan(0).WithMessage("Invalid secret");
         }
-        protected void ValidateClientId()
+        protected void ValidateResourceName()
         {
             RuleFor(c => c.ResourceName).NotEmpty().WithMessage("ClientId must be set");
         }

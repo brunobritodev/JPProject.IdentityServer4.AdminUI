@@ -4,10 +4,12 @@ import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs";
 import { DefaultResponse } from "../../shared/viewModel/default-response.model";
 import { ApiResource, ApiResourceSecret } from "../../shared/viewModel/api-resource.model";
+import { Scope } from "../../shared/viewModel/scope.model";
+
 
 @Injectable()
 export class ApiResourceService {
-
+   
     constructor(private http: HttpClient) {
     }
 
@@ -60,5 +62,26 @@ export class ApiResourceService {
     public saveSecret(model: ApiResourceSecret): Observable<DefaultResponse<boolean>> {
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/save-secret", model);
     }
+
+    public getScopes(resourceName: string): Observable<DefaultResponse<Scope[]>> {
+        let options = {
+            params: {
+                name: resourceName
+            }
+        };
+        return this.http.get<DefaultResponse<Scope[]>>(environment.ResourceServer + "ApiResource/scopes", options);
+    }
+    public removeScope(resourceName: string, id: number): Observable<DefaultResponse<boolean>> {
+        const removeCommand = {
+            id: id,
+            resourceName: resourceName
+        };
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/remove-scope", removeCommand);
+    }
+
+    public saveScope(model: Scope): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/save-scope", model);
+    }
+
 
 }

@@ -21,6 +21,8 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<RemoveApiResourceCommand>, ApiResourceCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveApiSecretCommand>, ApiResourceCommandHandler>();
             services.AddScoped<IRequestHandler<SaveApiSecretCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveApiScopeCommand>, ApiResourceCommandHandler>();
+            services.AddScoped<IRequestHandler<SaveApiScopeCommand>, ApiResourceCommandHandler>();
 
             /*
              * Identity Resource  commands

@@ -111,6 +111,38 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
+        [HttpGet, Route("scopes")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<ScopeViewModel>>>> Scopes(string name)
+        {
+            var clients = await _apiResourceAppService.GetScopes(name);
+            return Response(clients);
+        }
+
+        [HttpPost, Route("remove-scope")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveScope([FromBody] RemoveApiScopeViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.RemoveScope(model);
+            return Response(true);
+        }
+
+
+        [HttpPost, Route("save-scope")]
+        public async Task<ActionResult<DefaultResponse<bool>>> SaveScope([FromBody] SaveApiScopeViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _apiResourceAppService.SaveScope(model);
+            return Response(true);
+        }
+
 
     }
 }

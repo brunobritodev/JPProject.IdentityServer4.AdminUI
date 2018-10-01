@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using IdentityServer4.Models;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ApiResouceViewModels;
-using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Application.ViewModels.IdentityResourceViewModels;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Interfaces
 {
-    public interface IApiResourceAppService: IDisposable
+    public interface IApiResourceAppService : IDisposable
     {
         Task<IEnumerable<ApiResourceListViewModel>> GetApiResources();
         Task<ApiResource> GetDetails(string name);
@@ -20,5 +18,8 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<SecretViewModel>> GetSecrets(string name);
         Task RemoveSecret(RemoveApiSecretViewModel model);
         Task SaveSecret(SaveApiSecretViewModel model);
+        Task<IEnumerable<ScopeViewModel>> GetScopes(string name);
+        Task RemoveScope(RemoveApiScopeViewModel model);
+        Task SaveScope(SaveApiScopeViewModel model);
     }
 }

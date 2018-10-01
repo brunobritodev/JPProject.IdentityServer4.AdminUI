@@ -70,7 +70,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.edit.userClaims-tooltip' | translate">{{
                     'apiResource.edit.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.edit.userClaims' | translate"
+                    <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" placeholder="+Claim"
                         [(ngModel)]="model.userClaims"></tag-input>
                 </div>
                 <div class="col-xl-8 offset-4">
@@ -99,7 +99,7 @@
                 <label placement="top" [tooltip]="'apiResource.edit.scope-tooltip' | translate" class="col-xl-4 col-form-label">{{
                     'apiResource.edit.scope' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <a [routerLink]="['/api-resource/scope', model.name]" class="btn btn-primary">{{
+                    <a [routerLink]="['/api-resource/scopes', model.name]" class="btn btn-primary">{{
                         'apiResource.edit.scope' | translate }}</a>
                 </div>
             </div>
