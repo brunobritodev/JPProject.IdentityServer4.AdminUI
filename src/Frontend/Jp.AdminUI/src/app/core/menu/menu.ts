@@ -56,17 +56,7 @@ const ApiResource = {
 const PersistedGrants = {
     text: "Persisted Grants",
     link: "/persisted-grants",
-    icon: "fas fa-key",
-    submenu: [
-        {
-            text: "List",
-            link: "/persisted-grants/list"
-        },
-        {
-            text: "Add",
-            link: "/persisted-grants/add"
-        }
-    ]
+    icon: "fas fa-key"
 };
 
 const headingMain = {

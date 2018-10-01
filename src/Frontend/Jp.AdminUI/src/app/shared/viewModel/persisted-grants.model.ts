@@ -54,4 +54,9 @@ export class PersistedGrant {
     /// The data.
     /// </value>
     public data: string;
+
+    public email: string;
+
+    public picture: string;
+    public parsedData: any;
 }

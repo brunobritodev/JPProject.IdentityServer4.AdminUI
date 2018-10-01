@@ -14,6 +14,7 @@ const swal = require('sweetalert');
 export class PersistedGrantListComponent implements OnInit {
 
     public persistedGrants: PersistedGrant[];
+    grantDetail: PersistedGrant;
 
     constructor(
         public translator: TranslatorService,
@@ -24,7 +25,10 @@ export class PersistedGrantListComponent implements OnInit {
     }
 
     public loadGrants() {
-        this.persistedGrantService.getPersistedGrants().subscribe(a => this.persistedGrants = a.data);
+        this.persistedGrantService.getPersistedGrants().subscribe(a => {
+            this.persistedGrants = a.data;
+            this.persistedGrants.forEach(grant => grant.parsedData = JSON.parse(grant.data));
+        });
     }
 
     public remove(name: string) {
@@ -60,7 +64,13 @@ export class PersistedGrantListComponent implements OnInit {
                 }
             });
         });
+    }
 
+    public getData(data: string) {
+        return JSON.parse(data);
+    }
 
+    public details(id: string) {
+        this.grantDetail = this.persistedGrants.find(f => f.key == id);
     }
 }

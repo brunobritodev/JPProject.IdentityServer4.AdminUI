@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
@@ -23,5 +24,7 @@ namespace Jp.Domain.Interfaces
         Task<bool> ChangePasswordAsync(ChangePasswordCommand request);
         Task<bool> RemoveAccountAsync(RemoveAccountCommand request);
         Task<bool> HasPassword(Guid userId);
+
+        Task<IEnumerable<IDomainUser>> GetByIdAsync(params string[] id);
     }
 }

@@ -4,14 +4,13 @@ using Jp.Domain.Core.Events;
 
 namespace Jp.Domain.Events.PersistedGrant
 {
-    public class PersistedGrantRegisteredEvent : Event
+    public class PersistedGrantRemovedEvent : Event
     {
-        public RegisterPersistedGrantCommand Request { get; }
+        public string Key { get; }
 
-        public PersistedGrantRegisteredEvent(Guid aggregateId, RegisterPersistedGrantCommand request)
+        public PersistedGrantRemovedEvent(string key)
         {
-            AggregateId = aggregateId;
-            Request = request;
+            Key = key;
         }
     }
 }

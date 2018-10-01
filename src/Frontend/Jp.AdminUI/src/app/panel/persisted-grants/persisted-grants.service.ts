@@ -16,28 +16,11 @@ export class PersistedGrantsService {
         return this.http.get<DefaultResponse<PersistedGrant[]>>(environment.ResourceServer + "PersistedGrants/list");
     }
 
-    public getPersistedGrantsDetails(name: string): Observable<DefaultResponse<PersistedGrant>> {
-        let options = {
-            params: {
-                name: name
-            }
-        };
-        return this.http.get<DefaultResponse<PersistedGrant>>(environment.ResourceServer + "PersistedGrants/details", options);
-    }
-
-    public save(model: PersistedGrant): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "PersistedGrants/save", model);
-    }
-
-    public update(model: PersistedGrant): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "PersistedGrants/update", model);
-    }
-
-    public remove(name: string): any {
+    public remove(key: string): any {
         const removeCommand = {
-            name: name
+            key: key
         };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "PersistedGrant/remove", removeCommand);
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "PersistedGrants/remove", removeCommand);
     }
 
 

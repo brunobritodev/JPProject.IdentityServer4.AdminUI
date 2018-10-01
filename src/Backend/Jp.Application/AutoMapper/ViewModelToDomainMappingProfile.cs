@@ -7,6 +7,7 @@ using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Commands.IdentityResource;
+using Jp.Domain.Commands.PersistedGrant;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 
@@ -16,6 +17,11 @@ namespace Jp.Application.AutoMapper
     {
         public ViewModelToDomainMappingProfile()
         {
+            /*
+             * Persisted grant
+             */
+            CreateMap<RemovePersistedGrantViewModel, RemovePersistedGrantCommand>().ConstructUsing(c => new RemovePersistedGrantCommand(c.Key));
+
             /*
              * User Creation Commands
              */
@@ -70,8 +76,8 @@ namespace Jp.Application.AutoMapper
             CreateMap<RemoveApiSecretViewModel, RemoveApiSecretCommand>().ConstructUsing(c => new RemoveApiSecretCommand(c.Id, c.ResourceName));
 
             CreateMap<RemoveApiScopeViewModel, RemoveApiScopeCommand>().ConstructUsing(c => new RemoveApiScopeCommand(c.Id, c.ResourceName));
-            CreateMap<SaveApiScopeViewModel, SaveApiScopeCommand>().ConstructUsing(c => new SaveApiScopeCommand(c.ResourceName,c.Name, c.Description, c.DisplayName, c.Emphasize, c.ShowInDiscoveryDocument, c.UserClaims));
-            
+            CreateMap<SaveApiScopeViewModel, SaveApiScopeCommand>().ConstructUsing(c => new SaveApiScopeCommand(c.ResourceName, c.Name, c.Description, c.DisplayName, c.Emphasize, c.ShowInDiscoveryDocument, c.UserClaims));
+
 
         }
     }

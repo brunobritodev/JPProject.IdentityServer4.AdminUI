@@ -15,7 +15,7 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<INotificationHandler<PersistedGrantRegisteredEvent>, PersistedGrantEventHandler>();
+            services.AddScoped<INotificationHandler<PersistedGrantRemovedEvent>, PersistedGrantEventHandler>();
             services.AddScoped<INotificationHandler<IdentityResourceRegisteredEvent>, IdentityResourceEventHandler>();
             services.AddScoped<INotificationHandler<ClientRemovedEvent>, ClientEventHandler>();
             services.AddScoped<INotificationHandler<ClientUpdatedEvent>, ClientEventHandler>();
