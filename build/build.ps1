@@ -7,8 +7,8 @@ $adminui = (Get-Item -Path ($src + "/Frontend/Jp.AdminUI") -Verbose).FullName
 
 $paramsSSO= "/c cd " + $sso + " && dotnet run";
 $paramsAPI= "/c cd " + $api + " && dotnet run";
-$paramsUI= "/c cd " + $ui + " && ng serve";
-$paramsAdminUI= "/c cd " + $adminui + " && ng serve";
+$paramsUI= "/c cd " + $ui + " && npm start";
+$paramsAdminUI= "/c cd " + $adminui + " && npm start";
 
 Write-Information Restore deps
 dotnet restore $sso
