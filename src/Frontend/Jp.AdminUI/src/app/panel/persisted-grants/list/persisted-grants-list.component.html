@@ -26,8 +26,7 @@
                         <tbody>
                             <tr *ngFor="let grant of persistedGrants">
                                 <th>
-                                    <a [routerLink]="['/persisted-grants/edit', grant.name]" class="btn btn-primary btn-xs"
-                                        placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                                    <button  class="btn btn-primary btn-xs" (click)="details(grant.key)" placement="top" [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
                                     &nbsp;
                                 </th>
                                 <td>{{grant.clientId}}</td>
@@ -39,6 +38,16 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-12 col-md-12 col-lg-12" *ngIf="grantDetail">
+        <div class="card">
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <pre>{{grantDetail | json}}</pre>
                 </div>
             </div>
         </div>

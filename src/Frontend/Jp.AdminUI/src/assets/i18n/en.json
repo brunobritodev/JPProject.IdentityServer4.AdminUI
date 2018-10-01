@@ -292,6 +292,7 @@
         "api-resource": "Protected Resources",
         "persisted-grants": "Persisted Grants",
         "users": "Users",
-        "roles": "Roles"
+        "roles": "Roles",
+        "details":"Details"
     }
 }
