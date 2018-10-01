@@ -1,37 +1,48 @@
 <!--Input - text -->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.edit.name-tooltip' | translate">{{  'apiResource.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.name-tooltip' | translate">{{  'apiResource.scope.name' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="model-name" [placeholder]="'apiResource.edit.name-tooltip' | translate" [(ngModel)]="model.name" />
+        <input class="form-control" autocomplete="model-name" [placeholder]="'apiResource.scope.name-tooltip' | translate" [(ngModel)]="model.name" />
     </div>
 </div>
 </fieldset>
 <!--Input - text -->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.edit.displayName-tooltip' | translate">{{  'apiResource.edit.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.displayName-tooltip' | translate">{{  'apiResource.scope.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="model-displayName" [placeholder]="'apiResource.edit.displayName-tooltip' | translate" [(ngModel)]="model.displayName" />
+        <input class="form-control" autocomplete="model-displayName" [placeholder]="'apiResource.scope.displayName-tooltip' | translate" [(ngModel)]="model.displayName" />
     </div>
 </div>
 </fieldset>
 <!--Input - text -->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.edit.description-tooltip' | translate">{{  'apiResource.edit.description' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.description-tooltip' | translate">{{  'apiResource.scope.description' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="model-description" [placeholder]="'apiResource.edit.description-tooltip' | translate" [(ngModel)]="model.description" />
+        <input class="form-control" autocomplete="model-description" [placeholder]="'apiResource.scope.description-tooltip' | translate" [(ngModel)]="model.description" />
     </div>
 </div>
 </fieldset>
 <!--Checkbox-->
 <fieldset>
 <div class="form-group row">
-    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.edit.enabled-tooltip' | translate">{{  'apiResource.edit.enabled' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.required-tooltip' | translate">{{  'apiResource.scope.required' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
         <label class="switch m-0">
-            <input type="checkbox" [(ngModel)]="model.enabled" />
+            <input type="checkbox" [(ngModel)]="model.required" />
+            <span></span>
+        </label>
+    </div>
+</div>
+</fieldset><!--Checkbox-->
+<fieldset>
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.Emphasize-tooltip' | translate">{{  'apiResource.scope.Emphasize' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.Emphasize" />
             <span></span>
         </label>
     </div>
@@ -39,9 +50,9 @@
 </fieldset><!--Select with tags-->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.edit.userClaims-tooltip' | translate">{{  'apiResource.edit.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{  'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.edit.userClaims' | translate" [(ngModel)]="model.userClaims"></tag-input>
+        <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.scope.userClaims' | translate" [(ngModel)]="model.userClaims"></tag-input>
     </div>
 </div>
 </fieldset>

@@ -14,7 +14,7 @@ namespace Jp.Infra.Data.Repository
         {
         }
 
-        public Task<List<string>> GetScopes(string search) => DbSet.Where(id => id.Name.Contains(search)).Select(x => x.Name).ToListAsync();
+        public Task<List<string>> SearchScopes(string search) => DbSet.Where(id => id.Name.Contains(search)).Select(x => x.Name).ToListAsync();
 
         public Task<IdentityResource> GetByName(string name)
         {

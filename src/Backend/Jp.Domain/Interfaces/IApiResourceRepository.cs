@@ -6,9 +6,9 @@ namespace Jp.Domain.Interfaces
 {
     public interface IApiResourceRepository : IRepository<ApiResource>
     {
-        Task<List<string>> GetScopes(string search);
-        Task<ApiResource> GetResource(string name);
+        Task<List<ApiResource>> GetResources();
         Task<ApiResource> GetByName(string name);
         Task UpdateWithChildrens(ApiResource irs);
+        Task<ApiResource> GetResource(string resourceName);
     }
 }

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
@@ -12,6 +8,10 @@ using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Services
 {
@@ -21,25 +21,28 @@ namespace Jp.Application.Services
         private IEventStoreRepository _eventStoreRepository;
         private readonly IApiResourceRepository _apiResourceRepository;
         private readonly IApiSecretRepository _secretRepository;
+        private readonly IApiScopeRepository _apiScopeRepository;
         public IMediatorHandler Bus { get; set; }
 
         public ApiResourceAppService(IMapper mapper,
             IMediatorHandler bus,
             IEventStoreRepository eventStoreRepository,
             IApiResourceRepository apiResourceRepository,
-            IApiSecretRepository secretRepository)
+            IApiSecretRepository secretRepository,
+            IApiScopeRepository apiScopeRepository)
         {
             _mapper = mapper;
             Bus = bus;
             _eventStoreRepository = eventStoreRepository;
             _apiResourceRepository = apiResourceRepository;
             _secretRepository = secretRepository;
+            _apiScopeRepository = apiScopeRepository;
         }
 
-        public Task<IEnumerable<ApiResourceListViewModel>> GetApiResources()
+        public async Task<IEnumerable<ApiResourceListViewModel>> GetApiResources()
         {
-            var resultado = _apiResourceRepository.GetAll().Select(s => _mapper.Map<ApiResourceListViewModel>(s)).ToList();
-            return Task.FromResult<IEnumerable<ApiResourceListViewModel>>(resultado);
+            var resultado = await _apiResourceRepository.GetResources();
+            return resultado.Select(s => _mapper.Map<ApiResourceListViewModel>(s)).ToList();
         }
 
         public async Task<ApiResource> GetDetails(string name)
@@ -84,6 +87,23 @@ namespace Jp.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
+        public async Task<IEnumerable<ScopeViewModel>> GetScopes(string name)
+        {
+            return _mapper.Map<IEnumerable<ScopeViewModel>>(await _apiScopeRepository.GetScopesByResource(name));
+        }
+
+        public Task RemoveScope(RemoveApiScopeViewModel model)
+        {
+            var registerCommand = _mapper.Map<RemoveApiScopeCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+
+        public Task SaveScope(SaveApiScopeViewModel model)
+        {
+            var registerCommand = _mapper.Map<SaveApiScopeCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
 
         public void Dispose()
         {

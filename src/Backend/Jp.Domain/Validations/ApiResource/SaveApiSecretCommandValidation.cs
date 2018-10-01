@@ -7,7 +7,7 @@ namespace Jp.Domain.Validations.ApiResource
     {
         public SaveApiSecretCommandValidation()
         {
-            ValidateClientId();
+            ValidateResourceName();
             ValidateType();
             ValidateValue();
             ValidateHashType();

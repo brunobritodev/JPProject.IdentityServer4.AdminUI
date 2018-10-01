@@ -8,7 +8,7 @@ namespace Jp.Domain.Validations.ApiResource
     {
         public RemoveApiSecretCommandValidation()
         {
-            ValidateClientId();
+            ValidateResourceName();
             ValidateId();
         }
     }
