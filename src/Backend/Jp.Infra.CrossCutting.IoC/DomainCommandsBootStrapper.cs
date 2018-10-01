@@ -2,6 +2,7 @@
 using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Commands.IdentityResource;
+using Jp.Domain.Commands.PersistedGrant;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using MediatR;
@@ -13,6 +14,7 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+            services.AddScoped<IRequestHandler<RegisterPersistedGrantCommand>, PersistedGrantCommandHandler>();
             /*
              * Api Resource  commands
              */
