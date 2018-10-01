@@ -31,7 +31,7 @@ namespace Jp.Management.Controllers
 
 
         [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<PersistedGrantViewModel>>>> List()
+        public async Task<ActionResult<DefaultResponse<IEnumerable<PersistedGrant>>>> List()
         {
             var irs = await _persistedGrantAppService.GetPersistedGrants();
             return Response(irs);

@@ -28,7 +28,7 @@ export class PersistedGrantListComponent implements OnInit {
     }
 
     public remove(name: string) {
-        this.translator.translate.get('persisttedGrant.remove').subscribe(m => {
+        this.translator.translate.get('persistedGrant.remove').subscribe(m => {
             swal({
                 title: m['title'],
                 text: m["text"],
