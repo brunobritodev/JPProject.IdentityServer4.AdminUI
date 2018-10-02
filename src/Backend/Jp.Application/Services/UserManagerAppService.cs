@@ -5,9 +5,11 @@ using AutoMapper;
 using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using Jp.Domain.Models;
 
 namespace Jp.Application.Services
 {
@@ -39,7 +41,7 @@ namespace Jp.Application.Services
             GC.SuppressFinalize(this);
         }
 
-        public Task UpdateProfile(ProfileViewModel model)
+        public Task UpdateProfile(UserViewModel model)
         {
             var registerCommand = _mapper.Map<UpdateProfileCommand>(model);
             return Bus.SendCommand(registerCommand);
@@ -79,6 +81,24 @@ namespace Jp.Application.Services
         {
             var history = _mapper.Map<IEnumerable<EventHistoryData>>(_eventStoreRepository.All(id));
             return history;
+        }
+
+        public async Task<IEnumerable<UserViewModel>> GetUsers()
+        {
+            var users = await _userService.GetUsers();
+            return _mapper.Map<IEnumerable<UserViewModel>>(users);
+        }
+
+        public async Task<UserViewModel> GetUserDetails(string username)
+        {
+            var users = await _userService.FindByNameAsync(username);
+            return _mapper.Map<UserViewModel>(users);
+        }
+
+        public async Task<UserViewModel> GetUserAsync(Guid value)
+        {
+            var users = await _userService.GetUserAsync(value);
+            return _mapper.Map<UserViewModel>(users);
         }
     }
 }

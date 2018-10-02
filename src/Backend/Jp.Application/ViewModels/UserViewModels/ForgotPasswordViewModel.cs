@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Jp.Application.ViewModels
+namespace Jp.Application.ViewModels.UserViewModels
 {
     public class ForgotPasswordViewModel
     {

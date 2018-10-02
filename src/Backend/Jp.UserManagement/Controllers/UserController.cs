@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
@@ -23,7 +24,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpPost, Route("register")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Register([FromBody] UserViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> Register([FromBody] RegisterUserViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -37,7 +38,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpPost, Route("register-provider")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RegisterWithProvider([FromBody] UserViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> RegisterWithProvider([FromBody] RegisterUserViewModel model)
         {
             if (!ModelState.IsValid)
             {

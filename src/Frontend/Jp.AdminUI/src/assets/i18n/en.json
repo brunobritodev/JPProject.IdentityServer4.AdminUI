@@ -289,6 +289,24 @@
             "cancelled": "Grant is safe :)"
         }
     },
+    "users": {
+        "description": "A user is a person or robot that can access resources and clients.",
+        "new-user":"New User",
+        "list": {
+            "email": "Email",
+            "picture": "Picture",
+            "name": "Name"
+            
+        },
+        "remove": {
+            "title": "Are you sure",
+            "text": "Your will not be able to recover!",
+            "confirmButtonText": "Yes, delete it!",
+            "cancelButtonText": "No, cancel plx!",
+            "deleted": "User has been deleted.",
+            "cancelled": "User is safe :)"
+        }
+    },
     "toasterMessages": {
         "title-success": "Success",
         "message-success": "Well done!"

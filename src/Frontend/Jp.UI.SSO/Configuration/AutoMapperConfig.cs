@@ -15,7 +15,7 @@ namespace Jp.UI.SSO.Configuration
 
             // Registering Mappings automatically only works if the 
             // Automapper Profile classes are in ASP.NET project
-            AutoMapperConfig.RegisterMappings();
+            AutoMapperConfig.RegisterMappings(new CustomMappingProfile());
         }
     }
 }

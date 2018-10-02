@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 
-namespace Jp.Management.Configuration
+namespace Jp.UI.SSO.Configuration
 {
     internal class CustomMappingProfile : Profile
     {
