@@ -59,6 +59,22 @@ const PersistedGrants = {
     icon: "fas fa-key"
 };
 
+const Users = {
+    text: "Users",
+    link: "/users",
+    icon: "fas fa-users-cog",
+    submenu: [
+        {
+            text: "List",
+            link: "/users/list"
+        },
+        {
+            text: "Add",
+            link: "/users/add"
+        }
+    ]
+};
+
 const headingMain = {
     text: "Main Navigation",
     heading: true
@@ -70,5 +86,6 @@ export const menu = [
     Settings,
     IdentityResource,
     ApiResource,
-    PersistedGrants
+    PersistedGrants,
+    Users
 ];

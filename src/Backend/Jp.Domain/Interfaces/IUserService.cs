@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Jp.Domain.Commands.User;
+﻿using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Domain.Interfaces
 {
@@ -24,7 +24,11 @@ namespace Jp.Domain.Interfaces
         Task<bool> ChangePasswordAsync(ChangePasswordCommand request);
         Task<bool> RemoveAccountAsync(RemoveAccountCommand request);
         Task<bool> HasPassword(Guid userId);
-
-        Task<IEnumerable<IDomainUser>> GetByIdAsync(params string[] id);
+        Task<IEnumerable<User>> GetByIdAsync(params string[] id);
+        Task<IEnumerable<User>> GetUsers();
+        Task<User> FindByEmailAsync(string email);
+        Task<User> FindByNameAsync(string username);
+        Task<User> FindByProviderAsync(string provider, string providerUserId);
+        Task<User> GetUserAsync(Guid user);
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Jp.Application.ViewModels
+namespace Jp.Application.ViewModels.UserViewModels
 {
-    public class UserViewModel
+    public class RegisterUserViewModel
     {
         public Guid Id { get; set; }
 

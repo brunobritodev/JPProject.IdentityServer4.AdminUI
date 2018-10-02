@@ -17,11 +17,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
-using ServiceStack.Text;
 
 namespace Jp.Infra.CrossCutting.Identity.Services
 {
-    public class UserService : IUserService, IUserManager
+    public class UserService : IUserService
     {
         private readonly UserManager<UserIdentity> _userManager;
         private readonly IEmailSender _emailSender;
@@ -47,9 +46,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
         public Task<Guid?> CreateUserWithPass(IDomainUser user, string password)
         {
-
             return CreateUser(user, password, null, null);
-
         }
 
         public Task<Guid?> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId)
@@ -146,13 +143,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         public async Task<User> FindByLoginAsync(string provider, string providerUserId)
         {
             var model = await _userManager.FindByLoginAsync(provider, providerUserId);
-
-            return Get(model);
+            return GetUser(model);
         }
 
         public async Task<Guid?> SendResetLink(string requestEmail, string requestUsername)
         {
-
             var user = await _userManager.FindByEmailAsync(requestEmail);
             if (user == null)
             {
@@ -248,8 +243,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 return true;
             }
 
-
-
             foreach (var error in result.Errors)
             {
                 await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
@@ -264,7 +257,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
             user.Picture = command.Picture;
 
-
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
@@ -272,7 +264,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 await AddOrUpdateClaimAsync(user, claims, "picture", user.Picture);
                 return true;
             }
-
 
             foreach (var error in result.Errors)
             {
@@ -354,11 +345,18 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return await _userManager.HasPasswordAsync(user);
         }
 
-        public async Task<IEnumerable<IDomainUser>> GetByIdAsync(params string[] id)
+        public async Task<IEnumerable<User>> GetByIdAsync(params string[] id)
         {
             var users = await _userManager.Users.Where(w => id.Contains(w.Id.ToString())).ToListAsync();
 
-            return users.Select(s => new User
+            return users.Select(GetUser).ToList(); ;
+        }
+
+        private User GetUser(UserIdentity s)
+        {
+            if (s == null)
+                return null;
+            return new User
             {
                 Id = s.Id,
                 Name = s.Name,
@@ -377,7 +375,13 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 TwoFactorEnabled = s.TwoFactorEnabled,
                 Url = s.Url,
                 UserName = s.UserName,
-            }).ToList(); ;
+            };
+        }
+
+        public async Task<IEnumerable<User>> GetUsers()
+        {
+            var users = await this._userManager.Users.ToListAsync();
+            return users.Select(GetUser);
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)
@@ -392,30 +396,28 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-
-        private User Get(UserIdentity user)
+        public async Task<User> FindByEmailAsync(string email)
         {
-            return JsonSerializer.DeserializeFromString<User>(JsonSerializer.SerializeToString(user));
+            var user = await _userManager.FindByEmailAsync(email);
+            return GetUser(user);
         }
 
-        public Task<UserIdentity> FindByEmailAsync(string email)
+        public async Task<User> FindByNameAsync(string username)
         {
-            return _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByNameAsync(username);
+            return GetUser(user);
         }
 
-        public Task<UserIdentity> FindByNameAsync(string username)
+        public async Task<User> FindByProviderAsync(string provider, string providerUserId)
         {
-            return _userManager.FindByNameAsync(username);
+            var user = await _userManager.FindByLoginAsync(provider, providerUserId);
+            return GetUser(user);
         }
 
-        public Task<UserIdentity> FindByProviderAsync(string provider, string providerUserId)
+        public async Task<User> GetUserAsync(Guid user)
         {
-            return _userManager.FindByLoginAsync(provider, providerUserId);
-        }
-
-        public Task<UserIdentity> GetUserAsync(Guid user)
-        {
-            return _userManager.FindByIdAsync(user.ToString());
+            var userDb = await _userManager.FindByIdAsync(user.ToString());
+            return GetUser(userDb);
         }
     }
 }

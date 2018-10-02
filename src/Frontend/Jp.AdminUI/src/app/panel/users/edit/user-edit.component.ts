@@ -1,0 +1,72 @@
+import { Component, OnInit } from "@angular/core";
+import { TranslatorService } from "../../../core/translator/translator.service";
+import { flatMap } from "rxjs/operators";
+import { ActivatedRoute, Router } from "@angular/router";
+import { ToasterConfig, ToasterService } from "angular2-toaster";
+import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { Observable } from "rxjs";
+import { UserProfile } from "../../../shared/viewModel/userProfile.model";
+import { UserService } from "../user.service";
+
+
+@Component({
+    selector: "app-user-edit",
+    templateUrl: "./user-edit.component.html",
+    styleUrls: ["./user-edit.component.scss"],
+    providers: [UserService]
+})
+export class UserEditComponent implements OnInit {
+
+    public errors: Array<string>;
+    public model: UserProfile;
+    public toasterconfig: ToasterConfig = new ToasterConfig({
+        positionClass: 'toast-top-right',
+        showCloseButton: true
+    });
+    public showButtonLoading: boolean;
+
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        public translator: TranslatorService,
+        private userService: UserService,
+        public toasterService: ToasterService) { }
+
+    public ngOnInit() {
+        this.route.params.pipe(flatMap(p => this.userService.getDetails(p["username"]))).subscribe(result => this.model = result.data);
+        this.errors = [];
+        this.showButtonLoading = false;
+    }
+
+    public update() {
+
+        this.showButtonLoading = true;
+        try {
+
+            this.userService.update(this.model).subscribe(
+                registerResult => {
+                    if (registerResult.data) {
+                        this.showSuccessMessage();
+                        this.router.navigate(["/identity-resource"]);
+                    }
+                },
+                err => {
+                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                    this.showButtonLoading = false;
+                }
+            );
+        } catch (error) {
+            this.errors = [];
+            this.errors.push("Unknown error while trying to register");
+            this.showButtonLoading = false;
+            return Observable.throw("Unknown error while trying to register");
+        }
+
+    }
+
+    public showSuccessMessage() {
+        this.translator.translate.get('toasterMessages').subscribe(a => {
+            this.toasterService.pop("success", a["title-success"], a["message-success"]);
+        });
+    }
+}

@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Identity.Services;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
@@ -18,30 +18,27 @@ namespace Jp.Management.Controllers
     public class ManagementController : ApiController
     {
         private readonly IUserManageAppService _userAppService;
-        private readonly IUserManager _userManager;
         private readonly IMapper _mapper;
 
         public ManagementController(
             IUserManageAppService userAppService,
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
-            IUserManager userManager,
             IMapper mapper) : base(notifications, mediator)
         {
             _userAppService = userAppService;
-            _userManager = userManager;
             this._mapper = mapper;
         }
 
         [Route("user-data"), HttpGet]
-        public async Task<ActionResult<DefaultResponse<ProfileViewModel>>> UserData()
+        public async Task<ActionResult<DefaultResponse<UserViewModel>>> UserData()
         {
-            var user = await _userManager.GetUserAsync(GetUserId().Value);
-            return Response(_mapper.Map<ProfileViewModel>(user));
+            var user = await _userAppService.GetUserAsync(GetUserId());
+            return Response(user);
         }
 
         [Route("update-profile"), HttpPost]
-        public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfile([FromBody] ProfileViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfile([FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -106,12 +103,12 @@ namespace Jp.Management.Controllers
         }
 
         [HttpGet, Route("has-password")]
-        public async Task<ActionResult<DefaultResponse<bool>>> HasPassword() => Response(await _userAppService.HasPassword(GetUserId().Value));
+        public async Task<ActionResult<DefaultResponse<bool>>> HasPassword() => Response(await _userAppService.HasPassword(GetUserId()));
 
         [HttpGet, Route("logs")]
         public ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>> GetLogs()
         {
-            return Response(_userAppService.GetHistoryLogs(GetUserId().Value));
+            return Response(_userAppService.GetHistoryLogs(GetUserId()));
         }
 
     }

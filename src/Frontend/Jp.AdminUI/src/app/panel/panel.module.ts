@@ -16,7 +16,8 @@ const routes: Routes = [
             { path: "clients", loadChildren: "app/panel/clients/clients.module#ClientsModule" },
             { path: "identity-resource", loadChildren: "app/panel/identity-resources/identity-resource.module#IdentityResourceModule" },
             { path: "api-resource", loadChildren: "app/panel/api-resources/api-resource.module#ApiResourceModule" },
-            { path: "persisted-grants", loadChildren: "app/panel/persisted-grants/persisted-grants.module#PersistedGrantsModule" }
+            { path: "persisted-grants", loadChildren: "app/panel/persisted-grants/persisted-grants.module#PersistedGrantsModule" },
+            { path: "users", loadChildren: "app/panel/users/user.module#UserModule" }
         ]
     },
 ];

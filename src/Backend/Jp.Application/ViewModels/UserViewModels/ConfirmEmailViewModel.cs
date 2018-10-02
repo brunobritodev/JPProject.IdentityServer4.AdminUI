@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Jp.Domain.Core.Models;
 
-namespace Jp.Application.ViewModels
+namespace Jp.Application.ViewModels.UserViewModels
 {
     public class ConfirmEmailViewModel
     {

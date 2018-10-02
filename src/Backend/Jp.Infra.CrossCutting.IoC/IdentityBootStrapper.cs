@@ -23,7 +23,6 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddTransient<IEmailSender, AuthEmailMessageSender>();
             services.AddTransient<ISmsSender, AuthSMSMessageSender>();
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IUserManager, UserService>();
             services.AddSingleton<IEmailConfiguration>(config.GetSection("EmailConfiguration").Get<EmailConfiguration>());
             services.AddSingleton<IImageStorage, AzureImageStoreService>();
 
