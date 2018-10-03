@@ -10,21 +10,19 @@ namespace Jp.Application.ViewModels.UserViewModels
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Phone]
-        [Display(Name = "Telephone")]
-        public string PhoneNumber { get; set; }
+        [Phone] [Display(Name = "Telephone")] public string PhoneNumber { get; set; }
 
         [Required]
         [Display(Name = "Username")]
         public string Name { get; set; }
 
 
-        [Display(Name = "Picture")]
-        public string Picture { get; set; }
+        [Display(Name = "Picture")] public string Picture { get; set; }
 
         [Required]
         [Display(Name = "Username")]
         public string UserName { get; set; }
+
         public string Url { get; set; }
         public string Company { get; set; }
         public string Bio { get; set; }

@@ -17,8 +17,10 @@ namespace Jp.Application.Interfaces
         Task RemoveAccount(RemoveAccountViewModel model);
         Task<bool> HasPassword(Guid userId);
         IEnumerable<EventHistoryData> GetHistoryLogs(Guid value);
-        Task<IEnumerable<UserViewModel>> GetUsers();
+        Task<IEnumerable<UserListViewModel>> GetUsers();
         Task<UserViewModel> GetUserDetails(string username);
         Task<UserViewModel> GetUserAsync(Guid value);
+        Task UpdateUser(UserViewModel model);
+
     }
 }

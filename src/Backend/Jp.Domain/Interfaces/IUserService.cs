@@ -30,5 +30,6 @@ namespace Jp.Domain.Interfaces
         Task<User> FindByNameAsync(string username);
         Task<User> FindByProviderAsync(string provider, string providerUserId);
         Task<User> GetUserAsync(Guid user);
+        Task UpdateUserAsync(User user);
     }
 }

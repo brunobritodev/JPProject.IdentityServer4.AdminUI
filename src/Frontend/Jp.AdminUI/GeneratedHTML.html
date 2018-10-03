@@ -1,37 +1,57 @@
 <!--Input - text -->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.name-tooltip' | translate">{{  'apiResource.scope.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.userName-tooltip' | translate">{{  'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="model-name" [placeholder]="'apiResource.scope.name-tooltip' | translate" [(ngModel)]="model.name" />
+        <input class="form-control" autocomplete="model-userName" [placeholder]="'users.edit.userName-tooltip' | translate" [(ngModel)]="model.userName" />
     </div>
 </div>
 </fieldset>
 <!--Input - text -->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.displayName-tooltip' | translate">{{  'apiResource.scope.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.displayName-tooltip' | translate">{{  'users.edit.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="model-displayName" [placeholder]="'apiResource.scope.displayName-tooltip' | translate" [(ngModel)]="model.displayName" />
+        <input class="form-control" autocomplete="model-displayName" [placeholder]="'users.edit.displayName-tooltip' | translate" [(ngModel)]="model.displayName" />
     </div>
 </div>
 </fieldset>
 <!--Input - text -->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.description-tooltip' | translate">{{  'apiResource.scope.description' | translate }} <i class="fa fa-comment-dots"></i></label>
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{  'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <input class="form-control" autocomplete="model-description" [placeholder]="'apiResource.scope.description-tooltip' | translate" [(ngModel)]="model.description" />
+        <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [(ngModel)]="model.email" />
     </div>
 </div>
 </fieldset>
 <!--Checkbox-->
 <fieldset>
 <div class="form-group row">
-    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.required-tooltip' | translate">{{  'apiResource.scope.required' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.emailConfirmed-tooltip' | translate">{{  'users.edit.emailConfirmed' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
         <label class="switch m-0">
-            <input type="checkbox" [(ngModel)]="model.required" />
+            <input type="checkbox" [(ngModel)]="model.emailConfirmed" />
+            <span></span>
+        </label>
+    </div>
+</div>
+</fieldset><!--Input - text -->
+<fieldset>
+<div class="form-group row">
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.phoneNumber-tooltip' | translate">{{  'users.edit.phoneNumber' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <div class="col-xl-8">
+        <input class="form-control" autocomplete="model-phoneNumber" [placeholder]="'users.edit.phoneNumber-tooltip' | translate" [(ngModel)]="model.phoneNumber" />
+    </div>
+</div>
+</fieldset>
+<!--Checkbox-->
+<fieldset>
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.phoneNumberConfirmed-tooltip' | translate">{{  'users.edit.phoneNumberConfirmed' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <div class="col-xl-8">
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.phoneNumberConfirmed" />
             <span></span>
         </label>
     </div>
@@ -39,20 +59,40 @@
 </fieldset><!--Checkbox-->
 <fieldset>
 <div class="form-group row">
-    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.Emphasize-tooltip' | translate">{{  'apiResource.scope.Emphasize' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.twoFactorEnabled-tooltip' | translate">{{  'users.edit.twoFactorEnabled' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
         <label class="switch m-0">
-            <input type="checkbox" [(ngModel)]="model.Emphasize" />
+            <input type="checkbox" [(ngModel)]="model.twoFactorEnabled" />
             <span></span>
         </label>
     </div>
 </div>
-</fieldset><!--Select with tags-->
+</fieldset><!--Datepicker-->
+        <fieldset>
+            <div class="form-group row mb">
+                       <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.lockoutEnd-tooltip' | translate">{{  'users.edit.lockoutEnd' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9">
+                    <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [(bsValue)]="model.expiration"
+                        name="dp-basic" [bsConfig]="bsConfig">
+                </div>
+            </div>
+        </fieldset><!--Checkbox-->
 <fieldset>
 <div class="form-group row">
-        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{  'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.lockoutEnabled-tooltip' | translate">{{  'users.edit.lockoutEnabled' | translate }} <i class="fa fa-comment-dots"></i></label>
     <div class="col-xl-8">
-        <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.scope.userClaims' | translate" [(ngModel)]="model.userClaims"></tag-input>
+        <label class="switch m-0">
+            <input type="checkbox" [(ngModel)]="model.lockoutEnabled" />
+            <span></span>
+        </label>
+    </div>
+</div>
+</fieldset><!--Input - Number -->
+<fieldset>
+<div class="form-group row">
+    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.accessFailedCount-tooltip' | translate">{{  'users.edit.accessFailedCount' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <div class="col-xl-8">
+         <input class="form-control" autocomplete="model-accessFailedCount" [placeholder]="'users.edit.accessFailedCount-tooltip' | translate" [(ngModel)]="model.accessFailedCount" numbersOnly />
     </div>
 </div>
 </fieldset>

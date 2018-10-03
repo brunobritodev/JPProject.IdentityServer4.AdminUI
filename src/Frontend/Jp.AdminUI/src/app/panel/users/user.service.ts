@@ -8,6 +8,7 @@ import { UserProfile } from "../../shared/viewModel/userProfile.model";
 @Injectable()
 export class UserService {
 
+
     constructor(private http: HttpClient) {
     }
 
@@ -32,10 +33,12 @@ export class UserService {
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/remove", removeCommand);
     }
 
-    public update(model: UserProfile): Observable<DefaultResponse<boolean>> {
-        const updateCommand = {
-            model: model
-        };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/remove", updateCommand);
+    public update(updateCommand: UserProfile): Observable<DefaultResponse<boolean>> {
+
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
+    }
+    public save(model: UserProfile): Observable<DefaultResponse<boolean>> {
+
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/save", model);
     }
 }

@@ -98,6 +98,7 @@ namespace Jp.Application.Services
             return _mapper.Map<RegisterUserViewModel>(model);
         }
 
+     
 
         public void Dispose()
         {

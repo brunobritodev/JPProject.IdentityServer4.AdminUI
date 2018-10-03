@@ -10,13 +10,13 @@ import { UserService } from "../user.service";
 
 
 @Component({
-    selector: "app-user-edit",
-    templateUrl: "./user-edit.component.html",
-    styleUrls: ["./user-edit.component.scss"],
+    selector: "app-user-add",
+    templateUrl: "./user-add.component.html",
+    styleUrls: ["./user-add.component.scss"],
     providers: [UserService],
     encapsulation: ViewEncapsulation.None
 })
-export class UserEditComponent implements OnInit {
+export class UserAddComponent implements OnInit {
 
     public errors: Array<string>;
     public model: UserProfile;
@@ -37,11 +37,7 @@ export class UserEditComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(flatMap(p => this.userService.getDetails(p["username"]))).subscribe(result => {
-            this.model = result.data;
-            if (this.model.lockoutEnd != null)
-                this.model.lockoutEnd = new Date(this.model.lockoutEnd);
-        });
+        this.model = new UserProfile();
         this.errors = [];
         this.showButtonLoading = false;
     }
@@ -51,7 +47,7 @@ export class UserEditComponent implements OnInit {
         this.showButtonLoading = true;
         try {
 
-            this.userService.update(this.model).subscribe(
+            this.userService.save(this.model).subscribe(
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();

@@ -11,6 +11,7 @@ using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Commands.PersistedGrant;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
+using System;
 
 namespace Jp.Application.AutoMapper
 {
@@ -38,6 +39,7 @@ namespace Jp.Application.AutoMapper
              * User Management commands
              */
             CreateMap<UserViewModel, UpdateProfileCommand>().ConstructUsing(c => new UpdateProfileCommand(c.Id, c.Url, c.Bio, c.Company, c.JobTitle, c.Name, c.PhoneNumber));
+            CreateMap<UserViewModel, UpdateUserCommand>().ConstructUsing(c => new UpdateUserCommand(c.Email, c.UserName, c.Name, c.PhoneNumber, c.EmailConfirmed, c.PhoneNumberConfirmed, c.TwoFactorEnabled, c.LockoutEnd, c.LockoutEnabled, c.AccessFailedCount));
             CreateMap<ProfilePictureViewModel, UpdateProfilePictureCommand>().ConstructUsing(c => new UpdateProfilePictureCommand(c.Id));
 
             CreateMap<ChangePasswordViewModel, ChangePasswordCommand>().ConstructUsing(c => new ChangePasswordCommand(c.Id, c.OldPassword, c.NewPassword, c.ConfirmPassword));
