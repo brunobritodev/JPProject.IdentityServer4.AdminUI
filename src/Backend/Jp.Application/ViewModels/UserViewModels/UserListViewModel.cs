@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
 {
@@ -16,5 +17,7 @@ namespace Jp.Application.ViewModels.UserViewModels
 
         [Display(Name = "UserName")]
         public string UserName { get; set; }
+
+        public Guid? Id { get; set; }
     }
 }

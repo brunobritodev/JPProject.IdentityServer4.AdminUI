@@ -42,7 +42,7 @@ export class UserAddComponent implements OnInit {
         this.showButtonLoading = false;
     }
 
-    public update() {
+    public save() {
 
         this.showButtonLoading = true;
         try {
@@ -51,7 +51,7 @@ export class UserAddComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.router.navigate(["/users"]);
+                        this.router.navigate(["/users/edit", this.model.userName]);
                     }
                 },
                 err => {

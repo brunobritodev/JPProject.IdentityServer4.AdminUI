@@ -104,7 +104,7 @@ namespace Jp.Domain.CommandHandlers
                 return;
             }
 
-            var savedClient = await _clientRepository.GetByClientId(request.ClientId);
+            var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));

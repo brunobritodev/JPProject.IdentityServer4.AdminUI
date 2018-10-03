@@ -9,6 +9,7 @@ using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Events;
 using Jp.Domain.Models;
 using System.Globalization;
+using System.Security.Claims;
 
 namespace Jp.Application.AutoMapper
 {
@@ -24,9 +25,10 @@ namespace Jp.Application.AutoMapper
             CreateMap<Client, ClientListViewModel>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.Secret, SecretViewModel>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientProperty, ClientPropertyViewModel>();
-            CreateMap<IdentityServer4.EntityFramework.Entities.ClientClaim, ClientClaimViewModel>();
+            CreateMap<IdentityServer4.EntityFramework.Entities.ClientClaim, ClaimViewModel>();
             CreateMap<IdentityServer4.EntityFramework.Entities.IdentityResource, IdentityResourceListView>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.ApiScope, ScopeViewModel>(MemberList.Destination);
+            CreateMap<Claim, ClaimViewModel>(MemberList.Destination);
         }
     }
 }

@@ -154,7 +154,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpGet, Route("claims")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ClientClaimViewModel>>>> Claims(string clientId)
+        public async Task<ActionResult<DefaultResponse<IEnumerable<ClaimViewModel>>>> Claims(string clientId)
         {
             var clients = await _clientAppService.GetClaims(clientId);
             return Response(clients);

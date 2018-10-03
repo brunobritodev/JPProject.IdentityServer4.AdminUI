@@ -1,12 +1,14 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Jp.Domain.Commands.User;
+﻿using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Events.User;
 using Jp.Domain.Events.UserManagement;
 using Jp.Domain.Interfaces;
 using MediatR;
+using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jp.Domain.CommandHandlers
 {
@@ -16,7 +18,9 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<SetPasswordCommand>,
         IRequestHandler<ChangePasswordCommand>,
         IRequestHandler<RemoveAccountCommand>,
-        IRequestHandler<UpdateUserCommand>
+        IRequestHandler<UpdateUserCommand>,
+        IRequestHandler<SaveUserClaimCommand>,
+        IRequestHandler<RemoveUserClaimCommand>
     {
         private readonly IUserService _userService;
 
@@ -120,6 +124,54 @@ namespace Jp.Domain.CommandHandlers
             user.PhoneNumber = request.PhoneNumber;
             user.PhoneNumberConfirmed = request.PhoneNumberConfirmed;
             await _userService.UpdateUserAsync(user);
+        }
+
+        public async Task Handle(SaveUserClaimCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var userDb = await _userService.FindByNameAsync(request.Username);
+            if (userDb == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var claim = new Claim(request.Type, request.Value);
+
+            var success = await _userService.SaveClaim(userDb.Id, claim);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new NewUserClaimEvent(request.Username, request.Type, request.Value));
+            }
+        }
+
+        public async Task Handle(RemoveUserClaimCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var userDb = await _userService.FindByNameAsync(request.Username);
+            if (userDb == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.RemoveClaim(userDb.Id, request.Type);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserClaimRemovedEvent(request.Username, request.Type));
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+import { Claim } from "./claim.model";
 
 export class ClientSecret {
     constructor() {
@@ -22,10 +23,8 @@ export class Subject {
     roleClaimType: string;
 }
 
-export class Claim {
-    id: number;
-    type: string;
-    value: string;
+
+export class ClientClaim extends Claim {
     clientId: string;
 }
 

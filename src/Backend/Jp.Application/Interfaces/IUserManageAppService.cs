@@ -22,5 +22,8 @@ namespace Jp.Application.Interfaces
         Task<UserViewModel> GetUserAsync(Guid value);
         Task UpdateUser(UserViewModel model);
 
+        Task<IEnumerable<ClaimViewModel>> GetClaims(string userName);
+        Task SaveClaim(SaveUserClaimViewModel model);
+        Task RemoveClaim(RemoveUserClaimViewModel model);
     }
 }

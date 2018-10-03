@@ -1,4 +1,3 @@
-import { Claim } from "./client.model";
 
 export class IdentityResource {
     constructor() {

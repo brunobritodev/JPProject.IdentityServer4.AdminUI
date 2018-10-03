@@ -71,14 +71,18 @@ export class ApiResourceScopesComponent implements OnInit {
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                    if (this.errors[0] == undefined) {
+                        this.errors = [];
+                        this.errors.push("Unknown error while trying to remove");
+                    }
                     this.showButtonLoading = false;
                 }
             );
         } catch (error) {
             this.errors = [];
-            this.errors.push("Unknown error while trying to register");
+            this.errors.push("Unknown error while trying to remove");
             this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
+            return Observable.throw("Unknown error while trying to remove");
         }
 
     }
@@ -102,14 +106,18 @@ export class ApiResourceScopesComponent implements OnInit {
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                    if (this.errors[0] == undefined) {
+                        this.errors = [];
+                        this.errors.push("Unknown error while trying to save");
+                    }
                     this.showButtonLoading = false;
                 }
             );
         } catch (error) {
             this.errors = [];
-            this.errors.push("Unknown error while trying to register");
+            this.errors.push("Unknown error while trying to save");
             this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
+            return Observable.throw("Unknown error while trying to save");
         }
     }
 
