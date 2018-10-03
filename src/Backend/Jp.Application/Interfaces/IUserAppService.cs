@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Jp.Application.ViewModels;
+﻿using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
-using Jp.Domain.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Interfaces
 {

@@ -58,6 +58,7 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<SendResetLinkCommand>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<ResetPasswordCommand>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<ConfirmEmailCommand>, UserCommandHandler>();
+            
 
             /*
              * User manager
@@ -67,6 +68,7 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<SetPasswordCommand>, UserManagementCommandHandler>();
             services.AddScoped<IRequestHandler<ChangePasswordCommand>, UserManagementCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveAccountCommand>, UserManagementCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateUserCommand>, UserManagementCommandHandler>();
         }
     }
 }

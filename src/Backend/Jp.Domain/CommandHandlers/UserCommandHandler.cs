@@ -137,6 +137,7 @@ namespace Jp.Domain.CommandHandlers
             if (result.HasValue)
                 await Bus.RaiseEvent(new EmailConfirmedEvent(request.Email, request.Code, result.Value));
         }
+
     }
 
 

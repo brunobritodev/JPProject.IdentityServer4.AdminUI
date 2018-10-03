@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -14,7 +15,8 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<UpdateProfilePictureCommand>,
         IRequestHandler<SetPasswordCommand>,
         IRequestHandler<ChangePasswordCommand>,
-        IRequestHandler<RemoveAccountCommand>
+        IRequestHandler<RemoveAccountCommand>,
+        IRequestHandler<UpdateUserCommand>
     {
         private readonly IUserService _userService;
 
@@ -91,6 +93,33 @@ namespace Jp.Domain.CommandHandlers
             var result = await _userService.RemoveAccountAsync(request);
             if (result)
                 await Bus.RaiseEvent(new AccountRemovedEvent(request.Id.Value));
+        }
+
+
+        public async Task Handle(UpdateUserCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+            user.Email = request.Email;
+            user.EmailConfirmed = request.EmailConfirmed;
+            user.AccessFailedCount = request.AccessFailedCount;
+            user.LockoutEnabled = request.LockoutEnabled;
+            user.LockoutEnd = request.LockoutEnd;
+            user.Name = request.Name;
+            user.TwoFactorEnabled = request.TwoFactorEnabled;
+            user.PhoneNumber = request.PhoneNumber;
+            user.PhoneNumberConfirmed = request.PhoneNumberConfirmed;
+            await _userService.UpdateUserAsync(user);
         }
     }
 }

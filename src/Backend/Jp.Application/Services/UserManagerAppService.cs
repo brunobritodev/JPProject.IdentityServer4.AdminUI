@@ -6,6 +6,7 @@ using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
+using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
@@ -83,10 +84,10 @@ namespace Jp.Application.Services
             return history;
         }
 
-        public async Task<IEnumerable<UserViewModel>> GetUsers()
+        public async Task<IEnumerable<UserListViewModel>> GetUsers()
         {
             var users = await _userService.GetUsers();
-            return _mapper.Map<IEnumerable<UserViewModel>>(users);
+            return _mapper.Map<IEnumerable<UserListViewModel>>(users);
         }
 
         public async Task<UserViewModel> GetUserDetails(string username)
@@ -99,6 +100,12 @@ namespace Jp.Application.Services
         {
             var users = await _userService.GetUserAsync(value);
             return _mapper.Map<UserViewModel>(users);
+        }
+
+        public Task UpdateUser(UserViewModel model)
+        {
+            var command = _mapper.Map<UpdateUserCommand>(model);
+            return Bus.SendCommand(command);
         }
     }
 }

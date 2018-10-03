@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Principal;
-using System.Threading.Tasks;
-using IdentityModel;
+﻿using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
@@ -15,9 +9,7 @@ using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Notifications;
-using Jp.Domain.Models;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
-using Jp.Infra.CrossCutting.Identity.Services;
 using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
@@ -27,6 +19,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Threading.Tasks;
 
 namespace Jp.UI.SSO.Controllers.Account
 {
@@ -519,7 +517,7 @@ namespace Jp.UI.SSO.Controllers.Account
 
             // find external user
             var user = await _userAppService.FindByProviderAsync(provider, providerUserId);
-            
+
             return (user, provider, providerUserId, claims);
         }
 

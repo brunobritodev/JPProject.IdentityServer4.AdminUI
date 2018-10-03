@@ -419,5 +419,20 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             var userDb = await _userManager.FindByIdAsync(user.ToString());
             return GetUser(userDb);
         }
+
+        public async Task UpdateUserAsync(User user)
+        {
+            var userDb = await _userManager.FindByNameAsync(user.UserName);
+            userDb.Email = user.Email;
+            userDb.EmailConfirmed = user.EmailConfirmed;
+            userDb.AccessFailedCount = user.AccessFailedCount;
+            userDb.LockoutEnabled = user.LockoutEnabled;
+            userDb.LockoutEnd = user.LockoutEnd;
+            userDb.Name = user.Name;
+            userDb.TwoFactorEnabled = user.TwoFactorEnabled;
+            userDb.PhoneNumber = user.PhoneNumber;
+            userDb.PhoneNumberConfirmed = user.PhoneNumberConfirmed;
+            await _userManager.UpdateAsync(userDb);
+        }
     }
 }

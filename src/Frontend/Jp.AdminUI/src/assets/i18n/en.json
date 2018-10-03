@@ -291,12 +291,11 @@
     },
     "users": {
         "description": "A user is a person or robot that can access resources and clients.",
-        "new-user":"New User",
+        "new-user": "New User",
         "list": {
             "email": "Email",
             "picture": "Picture",
             "name": "Name"
-            
         },
         "remove": {
             "title": "Are you sure",
@@ -305,6 +304,36 @@
             "cancelButtonText": "No, cancel plx!",
             "deleted": "User has been deleted.",
             "cancelled": "User is safe :)"
+        },
+        "edit": {
+            "userName": "UserName",
+            "userName-tooltip": "Gets or sets the user name for this user.",
+            "name": "Display Name",
+            "name-tooltip": "Gets or sets the user name",
+            "email": "Email",
+            "email-tooltip": "Gets or sets the email address for this user",
+            "emailConfirmed": "Email Confirmed",
+            "emailConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their email address",
+            "phoneNumber": "Phone Number",
+            "phoneNumber-tooltip": "Gets or sets a telephone number for the user",
+            "phoneNumberConfirmed": "Phone Number Confirmed",
+            "phoneNumberConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their telephone address",
+            "twoFactorEnabled": "TwoFactor Enabled",
+            "twoFactorEnabled-tooltip": "Gets or sets a flag indicating if two factor authentication is enabled for this user",
+            "lockoutEnd": "Lockout End",
+            "lockoutEnd-tooltip": "Gets or sets the date and time, in UTC, when any user lockout ends",
+            "lockoutEnabled": "lockout Enabled",
+            "lockoutEnabled-tooltip": "Gets or sets a flag indicating if the user could be locked out",
+            "accessFailedCount": "Access Failed Count",
+            "accessFailedCount-tooltip": "Gets or sets the number of failed login attempts for the current user",
+            "password": "Password",
+            "confirmPassword": "Confirm password",
+            "claims": "Claims",
+            "claims-tooltip": "Allows settings claims for the user (will be included in the access token)",
+            "roles": "Roles",
+            "roles-tooltip": "Allows settings roles for the user (will be included in the access token)",
+            "externalLogins": "External Logins",
+            "externalLogins-tooltip": "Manage user external login. e.g Google, Facebook"
         }
     },
     "toasterMessages": {

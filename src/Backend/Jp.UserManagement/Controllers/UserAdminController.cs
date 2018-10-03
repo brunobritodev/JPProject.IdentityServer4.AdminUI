@@ -28,7 +28,7 @@ namespace Jp.Management.Controllers
 
 
         [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<UserViewModel>>>> List()
+        public async Task<ActionResult<DefaultResponse<IEnumerable<UserListViewModel>>>> List()
         {
             var irs = await _userManageAppService.GetUsers();
             return Response(irs);
@@ -40,6 +40,20 @@ namespace Jp.Management.Controllers
             var irs = await _userManageAppService.GetUserDetails(username);
             return Response(irs);
         }
+
+
+        [HttpPost, Route("update")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UserViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _userManageAppService.UpdateUser(model);
+            return Response(true);
+        }
+
 
     }
 }
