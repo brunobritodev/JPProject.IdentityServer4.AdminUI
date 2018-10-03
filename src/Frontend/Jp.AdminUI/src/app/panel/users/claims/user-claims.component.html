@@ -1,13 +1,13 @@
 <div class="content-heading">
     <div>
-        💻 {{ 'general.clients' | translate }} - <b>Claims</b>
+        💻 {{ 'general.users' | translate }} - <b>Claims</b>
         <small><b [innerHTML]="'client.ClaimDescription' | translate"></b></small>
     </div>
 </div>
 
 <div class="card card-default">
     <div class="card-body">
-        <a [routerLink]="[ '/clients/edit', client]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+        <a [routerLink]="[ '/users/edit', userName]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
     </div>
 </div>
 
@@ -21,20 +21,20 @@
 
 <div class="card card-default" *ngIf="claims && claims.length > 0">
     <div class="card-header">
-        <h3>{{ client }}</h3>
+        <h3>{{ userName }}</h3>
     </div>
     <div class="card-body">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th></th>
-                    <th>{{ 'client.claims.type' | translate }}</th>
-                    <th>{{ 'client.claims.value' | translate }}</th>
+                    <th>{{ 'users.claims.type' | translate }}</th>
+                    <th>{{ 'users.claims.value' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let claim of claims">
-                    <td><button class="btn btn-danger btn-xs" placement="top"  [tooltip]="'general.remove' | translate" (click)="remove(claim.id)"><i class="fa fa-times"></i></button></td>
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(claim.type)"><i class="fa fa-times"></i></button></td>
                     <td>{{claim.type}}</td>
                     <td>{{claim.value}}</td>
                 </tr>
@@ -45,17 +45,17 @@
 
 <div class="card card-default">
     <div class="card-header">
-        <h3>{{ client }}</h3>
+        <h3>{{ userName }}</h3>
     </div>
     <div class="card-body">
 
         <!--Select with tags-->
         <fieldset>
             <div class="form-group row">
-                <label class="col-xl-3 col-form-label">{{ 'client.claims.type' | translate }} <i class="fa fa-comment-dots"
-                        placement="top" [tooltip]="'client.claims.type-tooltip' | translate"></i></label>
+                <label class="col-xl-3 col-form-label">{{ 'users.claims.type' | translate }} <i class="fa fa-comment-dots"
+                        placement="top" [tooltip]="'users.claims.type-tooltip' | translate"></i></label>
                 <div class="col-xl-9">
-                        <input class="form-control" autocomplete="claims-type" [placeholder]="'client.claims.type-tooltip' | translate"
+                        <input class="form-control" autocomplete="claims-type" [placeholder]="'users.claims.type-tooltip' | translate"
                         [(ngModel)]="model.type" />
                 </div>
                 <div class="col-xl-9 offset-3">
@@ -70,10 +70,10 @@
         <!--Input - text -->
         <fieldset>
             <div class="form-group row">
-                <label class="col-xl-3 col-form-label">{{ 'client.claims.value' | translate }} <i class="fa fa-comment-dots"
-                        placement="top" [tooltip]="'client.claims.value-tooltip' | translate"></i></label>
+                <label class="col-xl-3 col-form-label">{{ 'users.claims.value' | translate }} <i class="fa fa-comment-dots"
+                        placement="top" [tooltip]="'users.claims.value-tooltip' | translate"></i></label>
                 <div class="col-xl-9">
-                    <input class="form-control" autocomplete="claims-value" [placeholder]="'client.claims.value-tooltip' | translate"
+                    <input class="form-control" autocomplete="claims-value" [placeholder]="'users.claims.value-tooltip' | translate"
                         [(ngModel)]="model.value" />
                 </div>
             </div>
@@ -82,7 +82,7 @@
     </div>
     <div class="card-footer">
         <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
-        <a class="mb-1 btn btn-secondary" [routerLink]="['/clients/edit', client]">Cancel</a>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/users/edit', userName]">Cancel</a>
     </div>
 </div>
 

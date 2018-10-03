@@ -19,9 +19,4 @@ namespace Jp.Application.ViewModels.UserViewModels
         public string StatusMessage { get; set; }
         public Guid? Id { get; set; }
     }
-
-    public class RemoveAccountViewModel
-    {
-        public Guid? Id { get; set; }
-    }
 }

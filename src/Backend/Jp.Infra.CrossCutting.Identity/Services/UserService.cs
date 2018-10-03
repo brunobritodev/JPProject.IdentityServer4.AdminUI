@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Jp.Domain.Commands.User;
+﻿using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -17,6 +11,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Identity.Services
 {
@@ -119,7 +119,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         private async Task AddClaims(UserIdentity user)
         {
             var claims = new List<Claim>();
-            claims.Add(new Claim("anme", user.Name));
+            claims.Add(new Claim("name", user.Name));
             claims.Add(new Claim("email", user.Email));
 
             if (!string.IsNullOrEmpty(user.Picture))
@@ -433,6 +433,42 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             userDb.PhoneNumber = user.PhoneNumber;
             userDb.PhoneNumberConfirmed = user.PhoneNumberConfirmed;
             await _userManager.UpdateAsync(userDb);
+        }
+
+        public async Task<IEnumerable<Claim>> GetClaimByName(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            var claims = await _userManager.GetClaimsAsync(user);
+
+            return claims;
+        }
+
+        public async Task<bool> SaveClaim(Guid userDbId, Claim claim)
+        {
+            var user = await _userManager.FindByIdAsync(userDbId.ToString());
+            var result = await _userManager.AddClaimAsync(user, claim);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<bool> RemoveClaim(Guid userId, string type)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            var claims = await _userManager.GetClaimsAsync(user);
+            var claimToRemove = claims.First(c => c.Type == type);
+          var result =  await _userManager.RemoveClaimAsync(user, claimToRemove);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
         }
     }
 }

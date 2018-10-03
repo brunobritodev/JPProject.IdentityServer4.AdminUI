@@ -7,12 +7,14 @@ import { TagInputModule } from 'ngx-chips';
 import { UserListComponent } from "./list/user-list.component";
 import { UserEditComponent } from "./edit/user-edit.component";
 import { UserAddComponent } from "./add/user-add.component";
+import { UserClaimsComponent } from "./claims/user-claims.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
     { path: "list", component: UserListComponent },
     { path: "edit/:username", component: UserEditComponent },
     { path: "add", component: UserAddComponent },
+    { path: "claims/:username", component: UserClaimsComponent },
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const routes: Routes = [
     declarations: [
         UserListComponent,
         UserEditComponent,
-        UserAddComponent
+        UserAddComponent,
+        UserClaimsComponent
     ],
     exports: [
         RouterModule

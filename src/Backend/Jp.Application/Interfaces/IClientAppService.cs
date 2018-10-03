@@ -18,7 +18,7 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<ClientPropertyViewModel>> GetProperties(string clientId);
         Task RemoveProperty(RemovePropertyViewModel model);
         Task SaveProperty(SaveClientPropertyViewModel model);
-        Task<IEnumerable<ClientClaimViewModel>> GetClaims(string clientId);
+        Task<IEnumerable<ClaimViewModel>> GetClaims(string clientId);
         Task RemoveClaim(RemoveClientClaimViewModel model);
         Task SaveClaim(SaveClientClaimViewModel model);
         //Task Save(SaveClientViewModel client);

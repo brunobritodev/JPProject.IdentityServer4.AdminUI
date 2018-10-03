@@ -92,9 +92,9 @@ namespace Jp.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
-        public async Task<IEnumerable<ClientClaimViewModel>> GetClaims(string clientId)
+        public async Task<IEnumerable<ClaimViewModel>> GetClaims(string clientId)
         {
-            return _mapper.Map<IEnumerable<ClientClaimViewModel>>(await _clientClaimRepository.GetByClientId(clientId));
+            return _mapper.Map<IEnumerable<ClaimViewModel>>(await _clientClaimRepository.GetByClientId(clientId));
         }
 
         public Task RemoveClaim(RemoveClientClaimViewModel model)

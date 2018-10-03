@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
         this.userService.getUsers().subscribe(a => this.users = a.data);
     }
 
-    public remove(name: string) {
+    public remove(id: string) {
         this.translator.translate.get('identityResource.remove').subscribe(m => {
             swal({
                 title: m['title'],
@@ -41,7 +41,7 @@ export class UserListComponent implements OnInit {
             }, (isConfirm) => {
                 if (isConfirm) {
 
-                    this.userService.remove(name).subscribe(
+                    this.userService.remove(id).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadResources();

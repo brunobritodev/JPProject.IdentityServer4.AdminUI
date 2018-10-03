@@ -334,6 +334,12 @@
             "roles-tooltip": "Allows settings roles for the user (will be included in the access token)",
             "externalLogins": "External Logins",
             "externalLogins-tooltip": "Manage user external login. e.g Google, Facebook"
+        },
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Value",
+            "value-tooltip": "Value"
         }
     },
     "toasterMessages": {

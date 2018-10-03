@@ -10,7 +10,6 @@ using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
-using Jp.Domain.Models;
 
 namespace Jp.Application.Services
 {
@@ -106,6 +105,23 @@ namespace Jp.Application.Services
         {
             var command = _mapper.Map<UpdateUserCommand>(model);
             return Bus.SendCommand(command);
+        }
+
+        public async Task<IEnumerable<ClaimViewModel>> GetClaims(string userName)
+        {
+            return _mapper.Map<IEnumerable<ClaimViewModel>>(await _userService.GetClaimByName(userName));
+        }
+
+        public Task SaveClaim(SaveUserClaimViewModel model)
+        {
+            var registerCommand = _mapper.Map<SaveUserClaimCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
+        public Task RemoveClaim(RemoveUserClaimViewModel model)
+        {
+            var registerCommand = _mapper.Map<RemoveUserClaimCommand>(model);
+            return Bus.SendCommand(registerCommand);
         }
     }
 }
