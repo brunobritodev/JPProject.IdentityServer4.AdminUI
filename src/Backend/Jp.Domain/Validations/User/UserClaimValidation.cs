@@ -5,7 +5,7 @@ namespace Jp.Domain.Validations.User
 {
     public abstract class UserClaimValidation<T> : AbstractValidator<T> where T : UserClaimCommand
     {
-        
+
         protected void ValidateUsername()
         {
             RuleFor(c => c.Username).NotEmpty().WithMessage("Username must be set");

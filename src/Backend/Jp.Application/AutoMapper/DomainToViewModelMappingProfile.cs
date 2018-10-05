@@ -29,6 +29,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<IdentityServer4.EntityFramework.Entities.IdentityResource, IdentityResourceListView>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.ApiScope, ScopeViewModel>(MemberList.Destination);
             CreateMap<Claim, ClaimViewModel>(MemberList.Destination);
+            CreateMap<Role, RoleViewModel>(MemberList.Destination);
         }
     }
 }

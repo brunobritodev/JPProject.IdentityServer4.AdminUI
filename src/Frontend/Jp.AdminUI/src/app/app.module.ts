@@ -28,7 +28,13 @@ let dev = [
         multi: true
     }
 ];
-
+let INTERCEPTORS = [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+    }
+];
 // if production clear dev imports and set to prod mode
 if (process.env.NODE_ENV === "production") {
     dev = [];
@@ -61,6 +67,7 @@ if (process.env.NODE_ENV === "production") {
     ],
     providers: [
         ...dev,
+        ...INTERCEPTORS
     ],
     bootstrap: [AppComponent]
 })

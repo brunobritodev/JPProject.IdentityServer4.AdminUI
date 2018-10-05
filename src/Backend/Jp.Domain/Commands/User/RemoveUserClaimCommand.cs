@@ -1,3 +1,4 @@
+using System;
 using Jp.Domain.Validations.User;
 
 namespace Jp.Domain.Commands.User

@@ -8,6 +8,7 @@ import { UserListComponent } from "./list/user-list.component";
 import { UserEditComponent } from "./edit/user-edit.component";
 import { UserAddComponent } from "./add/user-add.component";
 import { UserClaimsComponent } from "./claims/user-claims.component";
+import { UserRolesComponent } from "./roles/user-roles.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: "edit/:username", component: UserEditComponent },
     { path: "add", component: UserAddComponent },
     { path: "claims/:username", component: UserClaimsComponent },
+    { path: "roles/:username", component: UserRolesComponent },
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const routes: Routes = [
         UserListComponent,
         UserEditComponent,
         UserAddComponent,
-        UserClaimsComponent
+        UserClaimsComponent,
+        UserRolesComponent
     ],
     exports: [
         RouterModule

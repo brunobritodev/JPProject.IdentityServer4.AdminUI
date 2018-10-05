@@ -20,18 +20,22 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<RemoveAccountCommand>,
         IRequestHandler<UpdateUserCommand>,
         IRequestHandler<SaveUserClaimCommand>,
-        IRequestHandler<RemoveUserClaimCommand>
+        IRequestHandler<RemoveUserClaimCommand>,
+        IRequestHandler<RemoveUserRoleCommand>
     {
         private readonly IUserService _userService;
+        private readonly ISystemUser _user;
 
         public UserManagementCommandHandler(
             IUnitOfWork uow,
             IMediatorHandler bus,
             INotificationHandler<DomainNotification> notifications,
-            IUserService userService)
+            IUserService userService,
+            ISystemUser user)
             : base(uow, bus, notifications)
         {
             _userService = userService;
+            _user = user;
         }
 
         public async Task Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
@@ -171,6 +175,29 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserClaimRemovedEvent(request.Username, request.Type));
+            }
+        }
+
+        public async Task Handle(RemoveUserRoleCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var userDb = await _userService.FindByNameAsync(request.Username);
+            if (userDb == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.RemoveRole(userDb.Id, request.Role);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserRoleRemovedEvent(_user.UserId, request.Username, request.Role));
             }
         }
     }

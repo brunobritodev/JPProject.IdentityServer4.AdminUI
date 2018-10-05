@@ -35,5 +35,7 @@ namespace Jp.Domain.Interfaces
         Task<IEnumerable<Claim>> GetClaimByName(string userName);
         Task<bool> SaveClaim(Guid userId, Claim claim);
         Task<bool> RemoveClaim(Guid userId, string claimType);
+        Task<IEnumerable<string>> GetRoles(string userName);
+        Task<bool> RemoveRole(Guid userDbId, string requestRole);
     }
 }
