@@ -25,5 +25,6 @@ namespace Jp.Application.Interfaces
         Task Save(SaveClientViewModel client);
         Task Remove(RemoveClientViewModel client);
         Task Copy(CopyClientViewModel client);
+        Task<Client> GetClientDefaultDetails(string clientId);
     }
 }

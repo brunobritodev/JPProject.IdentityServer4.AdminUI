@@ -340,6 +340,17 @@
             "type-tooltip": "Type",
             "value": "Value",
             "value-tooltip": "Value"
+        },
+        "roles": {
+            "role": "Role",
+            "role-tooltip": "Select user role",
+            "name": "Name"
+        },
+        "logins": {
+            "loginProvider": "Provider",
+            "providerDisplayName": "Name",
+            "providerKey": "Key",
+            "nologins": "There is no available logins"
         }
     },
     "toasterMessages": {

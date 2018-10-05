@@ -42,8 +42,8 @@ export class ApiResourceEditComponent implements OnInit {
     }
 
     public update() {
-
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.apiResourceService.update(this.model).subscribe(

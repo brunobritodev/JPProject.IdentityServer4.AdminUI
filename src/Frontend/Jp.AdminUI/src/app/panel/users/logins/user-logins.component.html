@@ -1,0 +1,54 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.users' | translate }} - <b>Logins</b>
+        <small><b [innerHTML]="'client.ClaimDescription' | translate"></b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/users/edit', userName]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<app-loading *ngIf="showButtonLoading"></app-loading>
+
+<div class="card card-default">
+    <div class="card-header">
+        <h3>{{ userName }}</h3>
+    </div>
+    <div class="card-body">
+        <p>{{'users.logins.nologins' | translate}}</p>
+        <table class="table table-striped" [hidden]="logins.length <= 0">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ 'users.logins.loginProvider' | translate }}</th>
+                    <th>{{ 'users.logins.providerDisplayName' | translate }}</th>
+                    <th>{{ 'users.logins.providerKey' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let login of logins">
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(login.loginProvider, login.providerKey)"><i class="fa fa-times"></i></button></td>
+                    <td>{{login.loginProvider}}</td>
+                    <td>{{login.providerDisplayName}}</td>
+                    <td>{{login.providerKey}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

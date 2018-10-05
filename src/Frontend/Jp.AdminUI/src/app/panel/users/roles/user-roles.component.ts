@@ -7,19 +7,21 @@ import { DefaultResponse } from "../../../shared/viewModel/default-response.mode
 import { Observable } from "rxjs";
 import { UserService } from "../user.service";
 import { UserRole } from "../../../shared/viewModel/user-role.model";
+import { RoleService } from "../../../shared/services/role.service";
 
 
 @Component({
     selector: "app-user-roles",
     templateUrl: "./user-roles.component.html",
     styleUrls: ["./user-roles.component.scss"],
-    providers: [UserService],
+    providers: [UserService, RoleService],
 })
 export class UserRolesComponent implements OnInit {
 
     public errors: Array<string>;
     public model: UserRole;
     public userRoles: UserRole[];
+    public roles: string[];
 
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
@@ -30,20 +32,22 @@ export class UserRolesComponent implements OnInit {
     public bsConfig = {
         containerClass: 'theme-angle'
     };
-    public standardClaims: string[];
 
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         public translator: TranslatorService,
         private userService: UserService,
-        public toasterService: ToasterService) { }
+        public toasterService: ToasterService,
+        public roleService: RoleService) { }
 
     public ngOnInit() {
         this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserRoles(m.toString()))).subscribe(result => this.userRoles = result.data);
         this.errors = [];
         this.model = new UserRole();
         this.showButtonLoading = false;
+        this.roleService.getAvailableRoles().subscribe(roles => this.roles = roles.data.map(r => r.name));
+        
     }
 
     public showSuccessMessage() {
@@ -55,9 +59,10 @@ export class UserRolesComponent implements OnInit {
     public remove(role: string) {
 
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
-            this.userService.removeClaim(this.userName, role).subscribe(
+            this.userService.removeRole(this.userName, role).subscribe(
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
@@ -89,6 +94,7 @@ export class UserRolesComponent implements OnInit {
 
     public save() {
         this.showButtonLoading = true;
+        this.errors = [];
         try {
             this.model.userName = this.userName;
             this.userService.saveRole(this.model).subscribe(

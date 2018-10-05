@@ -33,7 +33,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let role of userRoles">
-                    <td><button class="btn btn-danger btn-xs" (click)="remove(role.type)"><i class="fa fa-times"></i></button></td>
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(role.name)"><i class="fa fa-times"></i></button></td>
                     <td>{{role.name}}</td>
                 </tr>
             </tbody>
@@ -47,26 +47,13 @@
     </div>
     <div class="card-body">
 
-        <!--Select with tags-->
+        <!--Select-->
         <fieldset>
             <div class="form-group row">
-                <label class="col-xl-3 col-form-label">{{ 'users.claims.type' | translate }} <i class="fa fa-comment-dots"
-                        placement="top" [tooltip]="'users.claims.type-tooltip' | translate"></i></label>
-                <div class="col-xl-9">
-                        <input class="form-control" autocomplete="claims-type" [placeholder]="'users.claims.type-tooltip' | translate"
-                        [(ngModel)]="model.type" />
-                </div>
-            </div>
-        </fieldset>
-
-        <!--Input - text -->
-        <fieldset>
-            <div class="form-group row">
-                <label class="col-xl-3 col-form-label">{{ 'users.claims.value' | translate }} <i class="fa fa-comment-dots"
-                        placement="top" [tooltip]="'users.claims.value-tooltip' | translate"></i></label>
-                <div class="col-xl-9">
-                    <input class="form-control" autocomplete="claims-value" [placeholder]="'users.claims.value-tooltip' | translate"
-                        [(ngModel)]="model.value" />
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.roles.role-tooltip' | translate">{{
+                    'users.roles.role' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <ngx-select [items]="roles" [(ngModel)]="model.role" [placeholder]="'users.roles.role-tooltip' | translate"></ngx-select>
                 </div>
             </div>
         </fieldset>

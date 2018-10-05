@@ -490,5 +490,37 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
+
+        public async Task<bool> SaveRole(Guid userId, string role)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            var result = await _userManager.AddToRoleAsync(user, role);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<IEnumerable<UserLogin>> GetUserLogins(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            var logins = await _userManager.GetLoginsAsync(user);
+            return logins.Select(a => new UserLogin { LoginProvider = a.LoginProvider, ProviderDisplayName = a.ProviderDisplayName, ProviderKey = a.ProviderKey });
+        }
+        
+        public async Task<bool> RemoveLogin(Guid userId, string loginProvider, string providerKey)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            var result = await _userManager.RemoveLoginAsync(user, loginProvider, providerKey);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
     }
 }

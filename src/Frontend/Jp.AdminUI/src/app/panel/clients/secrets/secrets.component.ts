@@ -60,6 +60,7 @@ export class ClientSecretsComponent implements OnInit {
     public remove(id: number) {
 
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.clientService.removeSecret(this.client, id).subscribe(
@@ -95,6 +96,7 @@ export class ClientSecretsComponent implements OnInit {
 
     public save() {
         this.showButtonLoading = true;
+        this.errors = [];
         try {
             this.model.clientId = this.client;
             this.clientService.saveSecret(this.model).subscribe(

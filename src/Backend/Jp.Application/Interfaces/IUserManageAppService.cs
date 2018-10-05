@@ -28,5 +28,7 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<RoleViewModel>> GetRoles(string userName);
         Task RemoveRole(RemoveUserRoleViewModel model);
         Task SaveRole(SaveUserRoleViewModel model);
+        Task<IEnumerable<UserLoginViewModel>> GetLogins(string userName);
+        Task RemoveLogin(RemoveUserLoginViewModel model);
     }
 }

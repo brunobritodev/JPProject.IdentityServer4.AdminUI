@@ -41,7 +41,7 @@ export class ApiResourceAddComponent implements OnInit {
     }
 
     public save() {
-
+        this.errors = [];
         this.showButtonLoading = true;
         try {
 
