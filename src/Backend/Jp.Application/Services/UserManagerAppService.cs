@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
@@ -10,6 +7,10 @@ using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Services
 {
@@ -120,7 +121,25 @@ namespace Jp.Application.Services
 
         public Task RemoveClaim(RemoveUserClaimViewModel model)
         {
-            var registerCommand = _mapper.Map<RemoveUserClaimCommand>(model);
+            var removeCommand = _mapper.Map<RemoveUserClaimCommand>(model);
+            return Bus.SendCommand(removeCommand);
+        }
+
+        public async Task<IEnumerable<RoleViewModel>> GetRoles(string userName)
+        {
+            var roles = await _userService.GetRoles(userName);
+            return roles.Select(s => new RoleViewModel() { Name = s });
+        }
+
+        public Task RemoveRole(RemoveUserRoleViewModel model)
+        {
+            var removeCommand = _mapper.Map<RemoveUserRoleCommand>(model);
+            return Bus.SendCommand(removeCommand);
+        }
+
+        public Task SaveRole(SaveUserRoleViewModel model)
+        {
+            var registerCommand = _mapper.Map<SaveUserRoleCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
     }

@@ -461,7 +461,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             var user = await _userManager.FindByIdAsync(userId.ToString());
             var claims = await _userManager.GetClaimsAsync(user);
             var claimToRemove = claims.First(c => c.Type == type);
-          var result =  await _userManager.RemoveClaimAsync(user, claimToRemove);
+            var result = await _userManager.RemoveClaimAsync(user, claimToRemove);
 
             foreach (var error in result.Errors)
             {
@@ -470,5 +470,25 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
             return result.Succeeded;
         }
+
+        public async Task<IEnumerable<string>> GetRoles(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            return await _userManager.GetRolesAsync(user);
+        }
+
+        public async Task<bool> RemoveRole(Guid userDbId, string requestRole)
+        {
+            var user = await _userManager.FindByIdAsync(userDbId.ToString());
+            var result = await _userManager.RemoveFromRoleAsync(user, requestRole);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
     }
 }

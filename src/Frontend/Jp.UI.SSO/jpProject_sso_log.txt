@@ -37109,3 +37109,2791 @@ System.OperationCanceledException: The operation was canceled.
 2018-10-03 11:17:06.981 -03:00 [INF] Clearing 0 tokens
 2018-10-03 11:17:22.031 -03:00 [INF] Clearing 0 tokens
 2018-10-03 11:17:37.046 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:41:44.027 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-04 21:41:44.116 -03:00 [INF] SigninCredentialExtension adding Temporary Signing Credential
+2018-10-04 21:41:49.845 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-04 21:41:49.861 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-04 21:41:49.863 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-04 21:41:49.868 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-04 21:41:49.870 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-04 21:41:49.994 -03:00 [DBG] Starting token cleanup
+2018-10-04 21:42:05.049 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:42:20.073 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:42:35.085 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:42:50.101 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:43:05.120 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:43:20.140 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:43:35.151 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:43:50.169 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:44:05.190 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:44:20.212 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:44:35.226 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:44:50.240 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:45:05.257 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:45:20.272 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:45:35.288 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:45:50.302 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:46:05.319 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:46:20.336 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:46:35.350 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:46:50.366 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:47:05.371 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:47:20.387 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:47:35.405 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:47:50.423 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:48:05.443 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:48:20.458 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:48:35.477 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:48:50.488 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:49:05.506 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:49:20.521 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:49:35.543 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:49:50.565 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:50:05.572 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:50:20.589 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:50:35.600 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:50:50.616 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:51:05.631 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:51:20.647 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:51:35.662 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:51:50.678 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:52:05.690 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:52:20.714 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:52:35.739 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:52:50.756 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:53:05.771 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:53:20.791 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:53:35.807 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:53:50.819 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:54:05.837 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:54:20.857 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:54:35.866 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:54:50.884 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:55:05.898 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:55:20.915 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:55:35.934 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:55:50.955 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:56:05.963 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:56:20.982 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:56:35.990 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:56:40.959 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-04 21:56:41.077 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:41.081 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:41.151 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-04 21:56:41.163 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-04 21:56:41.167 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-04 21:56:41.175 -03:00 [DBG] Start discovery request
+2018-10-04 21:56:41.603 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-04 21:56:41.656 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-04 21:56:41.661 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:41.664 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:41.667 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-04 21:56:41.692 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-04 21:56:41.695 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-04 21:56:41.701 -03:00 [DBG] Start key discovery request
+2018-10-04 21:56:51.013 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:56:53.028 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-04 21:56:53.036 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:53.041 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:53.048 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-04 21:56:53.054 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-04 21:56:53.058 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-04 21:56:53.065 -03:00 [DBG] Start discovery request
+2018-10-04 21:56:53.108 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-04 21:56:53.131 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-04 21:56:53.149 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:53.157 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:53.162 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-04 21:56:53.166 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-04 21:56:53.170 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-04 21:56:53.174 -03:00 [DBG] Start key discovery request
+2018-10-04 21:56:53.436 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-04 21:56:53.445 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-04 21:56:53.448 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-04 21:56:53.454 -03:00 [DBG] Start authorize request
+2018-10-04 21:56:53.464 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-04 21:56:53.470 -03:00 [DBG] Start authorize request protocol validation
+2018-10-04 21:56:53.668 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-04 21:56:53.707 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-04 21:56:53.749 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-04 21:56:53.769 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-04 21:56:53.785 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-04 21:56:53.795 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-04 21:56:53.807 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email management-api.identityserver4-manager",
+  "State": "yp66co5xwsM4SibPEbLMpjZ2rOyXmc7Y5fPjKViW",
+  "Nonce": "yp66co5xwsM4SibPEbLMpjZ2rOyXmc7Y5fPjKViW",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "yp66co5xwsM4SibPEbLMpjZ2rOyXmc7Y5fPjKViW",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email management-api.identityserver4-manager",
+    "nonce": "yp66co5xwsM4SibPEbLMpjZ2rOyXmc7Y5fPjKViW"
+  }
+}
+2018-10-04 21:56:53.867 -03:00 [DBG] HBtIY8O1manXiKSAFXBFzlc7w1F9RjV1V2m3nnF+7IE= found in database: true
+2018-10-04 21:56:53.875 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-04 21:56:53.883 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-04 21:56:53.894 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2018-10-04 21:56:53.898 -03:00 [DBG] Getting claims for access token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-04 21:56:53.966 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: IS4-Admin
+2018-10-04 21:56:53.970 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-04 21:56:53.992 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email management-api.identityserver4-manager",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****dg4A"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****Uw7A"
+    }
+  ],
+  "ActivityId": "0HLHABLKLTG02:00000001",
+  "TimeStamp": "2018-10-05T00:56:53Z",
+  "ProcessId": 14084,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-04 21:56:54.003 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "State": "yp66co5xwsM4SibPEbLMpjZ2rOyXmc7Y5fPjKViW",
+  "Scope": "openid profile email management-api.identityserver4-manager"
+}
+2018-10-04 21:56:55.140 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-04 21:56:55.145 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:55.154 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:55.160 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-04 21:56:55.166 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-04 21:56:55.173 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-04 21:56:55.178 -03:00 [DBG] Start discovery request
+2018-10-04 21:56:55.201 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-04 21:56:55.219 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-04 21:56:55.228 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:55.235 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:55.239 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-04 21:56:55.242 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-04 21:56:55.245 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-04 21:56:55.248 -03:00 [DBG] Start key discovery request
+2018-10-04 21:56:56.412 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-04 21:56:56.419 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:56.423 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:56.528 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-04 21:56:56.535 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:56:56.538 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:56:56.540 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-04 21:56:56.546 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-04 21:56:56.549 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-04 21:56:56.561 -03:00 [DBG] Start userinfo request
+2018-10-04 21:56:56.568 -03:00 [DBG] Bearer token found in header
+2018-10-04 21:56:56.621 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-04 21:56:56.646 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-04 21:56:56.658 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-04 21:56:56.666 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538701013,
+    "exp": 1538704613,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-04 21:56:56.678 -03:00 [DBG] Creating userinfo response
+2018-10-04 21:56:56.684 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-04 21:56:56.688 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-04 21:56:56.697 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-04 21:56:56.701 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-04 21:56:56.703 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-04 21:56:56.709 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-04 21:56:56.732 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-04 21:56:56.736 -03:00 [DBG] End userinfo request
+2018-10-04 21:57:00.130 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-04 21:57:00.137 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-04 21:57:00.141 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-04 21:57:00.148 -03:00 [DBG] Start discovery request
+2018-10-04 21:57:00.165 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-04 21:57:00.248 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-04 21:57:00.256 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-04 21:57:00.259 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-04 21:57:00.265 -03:00 [DBG] Start key discovery request
+2018-10-04 21:57:06.025 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:57:21.043 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:57:36.059 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:57:51.071 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:58:06.087 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:58:21.101 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:58:36.114 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:58:51.131 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:59:06.145 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:59:21.163 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:59:25.029 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-04 21:59:25.037 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:59:25.041 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:59:25.047 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-04 21:59:25.055 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-04 21:59:25.060 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-04 21:59:25.064 -03:00 [DBG] Start discovery request
+2018-10-04 21:59:25.087 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-04 21:59:25.118 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-04 21:59:25.126 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:59:25.130 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:59:25.134 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-04 21:59:25.138 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-04 21:59:25.142 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-04 21:59:25.147 -03:00 [DBG] Start key discovery request
+2018-10-04 21:59:25.640 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-04 21:59:25.646 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:59:25.649 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:59:25.740 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-04 21:59:25.748 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 21:59:25.752 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 21:59:25.758 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-04 21:59:25.768 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-04 21:59:25.774 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-04 21:59:25.800 -03:00 [DBG] Start userinfo request
+2018-10-04 21:59:25.804 -03:00 [DBG] Bearer token found in header
+2018-10-04 21:59:25.847 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-04 21:59:25.874 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-04 21:59:25.887 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-04 21:59:25.900 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538701013,
+    "exp": 1538704613,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-04 21:59:25.910 -03:00 [DBG] Creating userinfo response
+2018-10-04 21:59:25.915 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-04 21:59:25.919 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-04 21:59:25.927 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-04 21:59:25.931 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-04 21:59:25.934 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-04 21:59:25.940 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-04 21:59:25.971 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-04 21:59:25.975 -03:00 [DBG] End userinfo request
+2018-10-04 21:59:36.191 -03:00 [INF] Clearing 0 tokens
+2018-10-04 21:59:51.221 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:00:06.244 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:00:21.261 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:00:36.272 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:00:51.290 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:01:06.306 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:01:21.322 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:01:36.335 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:01:51.353 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:02:06.373 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:02:21.388 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:02:36.405 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:02:51.412 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:03:06.427 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:03:21.432 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:03:36.446 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:03:51.464 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:03:58.796 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-04 22:03:58.801 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 22:03:58.804 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 22:03:58.807 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-04 22:03:58.810 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-04 22:03:58.813 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-04 22:03:58.817 -03:00 [DBG] Start discovery request
+2018-10-04 22:03:58.832 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-04 22:03:58.851 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-04 22:03:58.858 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-04 22:03:58.861 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-04 22:03:58.864 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-04 22:03:58.868 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-04 22:03:58.871 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-04 22:03:58.874 -03:00 [DBG] Start key discovery request
+2018-10-04 22:04:06.475 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:04:21.490 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:04:36.505 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:04:51.521 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:05:06.538 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:05:21.553 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:05:36.569 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:05:51.590 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:06:06.600 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:06:21.619 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:06:36.636 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:06:51.654 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:07:06.670 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:07:21.685 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:07:36.693 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:07:51.709 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:08:06.726 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:08:21.741 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:08:36.758 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:08:51.774 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:09:06.780 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:09:21.786 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:09:36.802 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:09:51.818 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:10:06.835 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:10:21.854 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:10:36.868 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:10:51.884 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:11:06.896 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:11:21.914 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:11:36.930 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:11:51.946 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:12:06.959 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:12:21.975 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:12:36.989 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:12:52.005 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:13:07.022 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:13:22.037 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:13:37.053 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:13:52.108 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:14:07.193 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:14:22.212 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:14:37.227 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:14:52.240 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:15:07.257 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:15:22.273 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:15:37.293 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:15:52.312 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:16:07.318 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:16:22.333 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:16:37.350 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:16:52.370 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:17:07.382 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:17:22.397 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:17:37.417 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:17:52.428 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:18:07.442 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:18:22.460 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:18:37.480 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:18:52.487 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:19:07.503 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:19:22.523 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:19:37.543 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:19:52.555 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:20:07.573 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:20:22.591 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:20:37.599 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:20:52.615 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:21:07.631 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:21:22.636 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:21:37.655 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:21:52.663 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:22:07.682 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:22:22.695 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:22:37.710 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:22:52.724 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:23:07.741 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:23:22.759 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:23:37.775 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:23:52.788 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:24:07.805 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:24:22.818 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:24:37.834 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:24:52.853 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:25:07.870 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:25:22.881 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:25:37.886 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:25:52.905 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:26:07.915 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:26:22.928 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:26:37.942 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:26:52.962 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:27:07.974 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:27:22.991 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:27:38.009 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:27:53.029 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:28:08.036 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:28:23.052 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:28:38.069 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:28:53.085 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:29:08.106 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:29:23.125 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:29:38.134 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:29:53.149 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:30:08.162 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:30:23.178 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:30:38.193 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:30:53.208 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:31:08.227 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:31:23.246 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:31:38.268 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:31:53.275 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:32:08.293 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:32:23.311 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:32:38.333 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:32:53.350 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:33:08.366 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:33:23.384 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:33:38.398 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:33:53.418 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:34:08.438 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:34:23.444 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:34:38.463 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:34:53.476 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:35:08.489 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:35:23.506 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:35:38.522 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:35:53.537 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:36:08.553 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:36:23.568 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:36:38.587 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:36:53.602 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:37:08.610 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:37:23.615 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:37:38.631 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:37:53.639 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:38:08.645 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:38:23.663 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:38:38.677 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:38:53.685 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:39:08.703 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:39:23.710 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:39:38.724 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:39:53.744 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:40:08.760 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:40:23.775 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:40:38.792 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:40:53.805 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:41:08.826 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:41:23.834 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:41:38.848 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:41:53.865 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:42:08.870 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:42:23.884 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:42:38.900 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:42:53.918 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:43:08.927 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:43:23.948 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:43:38.958 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:43:53.973 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:44:08.989 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:44:24.005 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:44:39.022 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:44:54.038 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:45:09.057 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:45:24.074 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:45:39.089 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:45:54.106 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:46:09.125 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:46:24.133 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:46:39.150 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:46:54.166 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:47:09.178 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:47:24.193 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:47:39.210 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:47:54.225 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:48:09.230 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:48:24.247 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:48:39.265 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:48:54.273 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:49:09.287 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:49:24.303 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:49:39.318 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:49:54.335 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:50:09.354 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:50:24.370 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:50:39.389 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:50:54.409 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:51:09.427 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:51:24.437 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:51:39.449 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:51:54.464 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:52:09.479 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:52:24.494 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:52:39.507 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:52:54.523 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:53:09.536 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:53:24.555 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:53:39.569 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:53:54.577 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:54:09.587 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:54:24.605 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:54:39.636 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:54:54.672 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:55:09.693 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:55:24.712 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:55:39.725 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:55:54.757 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:56:09.764 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:56:24.774 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:56:39.791 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:56:54.809 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:57:09.823 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:57:24.836 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:57:39.851 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:57:54.866 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:58:09.882 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:58:24.900 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:58:39.914 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:58:54.926 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:59:09.932 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:59:24.944 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:59:39.960 -03:00 [INF] Clearing 0 tokens
+2018-10-04 22:59:54.980 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:00:09.998 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:00:25.018 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:00:40.037 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:00:55.058 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:01:10.071 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:01:25.084 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:01:40.103 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:01:55.119 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:02:10.137 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:02:25.157 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:02:40.164 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:02:55.180 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:03:10.196 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:03:25.214 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:03:40.234 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:03:55.256 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:04:10.273 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:04:25.286 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:04:40.301 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:04:55.319 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:05:10.340 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:05:25.356 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:05:40.374 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:05:55.382 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:06:10.403 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:06:25.422 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:06:40.437 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:06:55.459 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:07:10.475 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:07:25.491 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:07:40.511 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:07:55.529 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:08:10.543 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:08:25.562 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:08:40.568 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:08:55.586 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:09:10.602 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:09:25.617 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:09:40.631 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:09:55.647 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:10:10.667 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:10:25.685 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:10:40.692 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:10:55.709 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:11:10.726 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:11:25.739 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:11:40.757 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:11:55.776 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:12:10.791 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:12:25.807 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:12:40.823 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:12:55.840 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:13:10.858 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:13:25.864 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:13:40.881 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:13:55.896 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:14:10.913 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:14:25.922 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:14:40.929 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:14:55.945 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:15:10.960 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:15:25.975 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:15:40.994 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:15:56.009 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:16:11.024 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:16:26.039 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:16:41.054 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:16:56.070 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:17:11.084 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:17:26.103 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:17:41.118 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:17:56.134 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:18:11.152 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:18:26.174 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:18:41.192 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:18:56.213 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:19:11.225 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:19:26.244 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:19:41.261 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:19:56.274 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:20:11.287 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:20:26.304 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:20:41.317 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:20:56.336 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:21:11.352 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:21:26.367 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:21:41.382 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:21:56.398 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:22:11.413 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:22:26.428 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:22:41.443 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:22:56.462 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:23:11.474 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:23:26.491 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:23:41.506 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:23:56.522 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:24:11.536 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:24:26.554 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:24:41.571 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:24:56.588 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:25:11.606 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:25:26.620 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:25:41.634 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:25:56.647 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:26:11.664 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:26:26.679 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:26:41.687 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:26:56.697 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:27:11.715 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:27:26.731 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:27:41.750 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:27:56.757 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:28:11.773 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:28:26.781 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:28:41.789 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:28:56.802 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:29:11.821 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:29:26.838 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:29:41.854 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:29:56.870 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:30:11.892 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:30:26.914 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:30:41.930 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:30:56.948 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:31:11.958 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:31:26.976 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:31:41.993 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:31:57.009 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:32:12.024 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:32:27.042 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:32:42.057 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:32:57.069 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:33:12.087 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:33:27.101 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:33:42.108 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:33:57.115 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:34:12.133 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:34:27.148 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:34:42.162 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:34:57.175 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:35:12.193 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:35:27.214 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:35:42.227 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:35:57.243 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:36:12.263 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:36:27.280 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:36:42.287 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:36:57.306 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:37:12.318 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:37:27.335 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:37:42.349 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:37:57.365 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:38:12.382 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:38:27.396 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:38:42.411 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:38:57.428 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:39:12.442 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:39:27.458 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:39:42.475 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:39:57.489 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:40:12.495 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:40:27.510 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:40:42.527 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:40:57.539 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:41:12.556 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:41:27.572 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:41:42.577 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:41:57.585 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:42:12.599 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:42:27.618 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:42:42.635 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:42:57.652 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:43:12.669 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:43:27.682 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:43:42.697 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:43:57.712 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:44:12.728 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:44:27.743 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:44:42.758 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:44:57.779 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:45:12.800 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:45:27.812 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:45:42.819 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:45:57.834 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:46:12.851 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:46:27.859 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:46:42.879 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:46:57.886 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:47:12.898 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:47:27.911 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:47:42.933 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:47:57.946 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:48:12.959 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:48:27.975 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:48:42.989 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:48:58.009 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:49:13.023 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:49:28.036 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:49:43.054 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:49:58.068 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:50:13.087 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:50:28.104 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:50:43.120 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:50:58.139 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:51:13.146 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:51:28.157 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:51:43.163 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:51:58.178 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:52:13.198 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:52:28.208 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:52:43.224 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:52:58.240 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:53:13.259 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:53:28.276 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:53:43.294 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:53:58.303 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:54:13.319 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:54:28.334 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:54:43.349 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:54:58.355 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:55:13.372 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:55:28.382 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:55:43.399 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:55:58.419 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:56:13.435 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:56:28.453 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:56:43.464 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:56:58.483 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:57:13.495 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:57:28.511 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:57:43.527 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:57:58.541 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:58:13.557 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:58:28.577 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:58:43.591 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:58:58.599 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:59:13.619 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:59:28.630 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:59:43.636 -03:00 [INF] Clearing 0 tokens
+2018-10-04 23:59:58.656 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:00:13.662 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:00:28.678 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:00:43.693 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:00:58.700 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:01:13.708 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:01:28.716 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:01:43.735 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:01:58.743 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:02:13.758 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:02:28.772 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:02:43.789 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:02:58.804 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:03:13.812 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:03:28.819 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:03:43.839 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:03:58.850 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:04:13.855 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:04:28.873 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:04:43.884 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:04:58.902 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:05:13.917 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:05:28.927 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:05:43.934 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:05:58.948 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:06:13.963 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:06:28.974 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:06:43.989 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:06:59.007 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:07:14.024 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:07:29.036 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:07:44.053 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:07:59.068 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:08:14.074 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:08:29.088 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:08:44.106 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:08:59.121 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:09:14.142 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:09:29.148 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:09:44.163 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:09:59.180 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:10:14.193 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:10:29.210 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:10:44.230 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:10:59.244 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:11:14.259 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:11:29.270 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:11:44.289 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:11:59.307 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:12:14.318 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:12:29.337 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:12:44.357 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:12:59.375 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:13:14.389 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:13:29.403 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:13:44.417 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:13:59.433 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:14:14.453 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:14:29.459 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:14:44.464 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:14:59.479 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:15:14.490 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:15:29.506 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:15:44.517 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:15:59.537 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:16:14.556 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:16:29.572 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:16:44.587 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:16:59.602 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:17:14.619 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:17:29.636 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:17:44.655 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:17:59.663 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:18:14.677 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:18:29.694 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:18:44.708 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:18:59.725 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:19:14.735 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:19:29.742 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:19:44.758 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:19:59.771 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:20:14.780 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:20:29.787 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:20:44.792 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:20:59.802 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:21:14.821 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:21:29.836 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:21:44.849 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:21:59.866 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:22:14.881 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:22:29.896 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:22:44.917 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:22:59.928 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:23:14.949 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:23:29.959 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:23:44.975 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:23:59.989 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:24:15.007 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:24:30.024 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:24:45.037 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:25:00.057 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:25:15.073 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:25:30.091 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:25:45.111 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:26:00.130 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:26:15.146 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:26:30.164 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:26:45.182 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:27:00.192 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:27:15.209 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:27:30.226 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:27:45.240 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:28:00.257 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:28:15.270 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:28:30.288 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:28:45.305 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:29:00.323 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:29:15.338 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:29:30.359 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:29:45.382 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:30:00.400 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:30:15.423 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:30:30.446 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:30:45.462 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:31:00.478 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:31:15.493 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:31:30.513 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:31:45.533 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:32:00.555 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:32:15.572 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:32:30.588 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:32:45.594 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:33:00.604 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:33:15.630 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:33:30.647 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:33:45.679 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:34:00.699 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:34:15.718 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:34:30.725 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:34:45.740 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:35:00.744 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:35:15.763 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:35:30.780 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:35:45.786 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:36:00.802 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:36:15.819 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:36:30.831 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:36:45.837 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:37:00.853 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:37:15.864 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:37:30.881 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:37:45.898 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:38:00.914 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:38:15.929 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:38:30.945 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:38:45.959 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:39:00.979 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:39:15.990 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:39:31.011 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:39:46.030 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:40:01.037 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:40:16.055 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:40:31.068 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:40:46.084 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:41:01.105 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:41:16.126 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:41:31.147 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:41:46.168 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:42:01.192 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:42:16.197 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:42:31.211 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:42:46.225 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:43:01.252 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:43:16.258 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:43:31.274 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:43:46.291 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:44:01.305 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:44:16.323 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:44:31.337 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:44:46.353 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:45:01.360 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:45:16.367 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:45:31.380 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:45:46.398 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:46:01.416 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:46:16.430 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:46:31.445 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:46:46.459 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:47:01.470 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:47:16.479 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:47:31.490 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:47:46.510 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:48:01.523 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:48:16.537 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:48:31.556 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:48:46.568 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:49:01.589 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:49:16.603 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:49:31.618 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:49:46.632 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:50:01.655 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:50:16.662 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:50:31.678 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:50:46.699 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:51:01.713 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:51:16.731 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:51:31.742 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:51:46.756 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:52:01.781 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:52:16.788 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:52:31.804 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:52:46.819 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:53:01.839 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:53:16.859 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:53:31.866 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:53:46.880 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:54:01.898 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:54:16.912 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:54:31.929 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:54:46.945 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:55:01.960 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:55:16.979 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:55:31.995 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:55:47.013 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:56:02.030 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:56:17.038 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:56:32.055 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:56:47.073 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:57:02.084 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:57:17.101 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:57:32.121 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:57:47.129 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:58:02.136 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:58:17.150 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:58:32.165 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:58:47.178 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:59:02.193 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:59:17.212 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:59:32.229 -03:00 [INF] Clearing 0 tokens
+2018-10-05 00:59:47.249 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:00:02.259 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:00:17.273 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:00:32.289 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:00:47.304 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:01:02.319 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:01:17.334 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:01:32.351 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:01:47.365 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:02:02.381 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:02:17.400 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:02:32.413 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:02:47.429 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:03:02.443 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:03:17.462 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:03:32.476 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:03:47.489 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:04:02.507 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:04:17.525 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:04:32.538 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:04:47.553 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:05:02.560 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:05:17.567 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:05:32.573 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:05:47.588 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:06:02.604 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:06:17.617 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:06:32.631 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:06:47.645 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:07:02.661 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:07:17.679 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:07:32.693 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:07:47.711 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:08:02.724 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:08:17.742 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:08:32.757 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:08:47.776 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:09:02.795 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:09:17.811 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:09:32.817 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:09:47.840 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:10:02.852 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:10:17.865 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:10:32.886 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:10:47.903 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:11:02.916 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:11:17.931 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:11:32.948 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:11:47.958 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:11:51.943 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:11:51.952 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:11:51.967 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:11:51.982 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:11:51.994 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:11:52.005 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:11:52.010 -03:00 [DBG] Start discovery request
+2018-10-05 01:11:52.036 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:11:52.052 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:11:52.059 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:11:52.063 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:11:52.067 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:11:52.072 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:11:52.077 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:11:52.082 -03:00 [DBG] Start key discovery request
+2018-10-05 01:11:52.165 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-05 01:11:52.169 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-05 01:11:52.173 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-05 01:11:52.178 -03:00 [DBG] Start authorize request
+2018-10-05 01:11:52.182 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:11:52.186 -03:00 [DBG] Start authorize request protocol validation
+2018-10-05 01:11:52.214 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:11:52.222 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:11:52.236 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:11:52.243 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:11:52.255 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:11:52.258 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-05 01:11:52.262 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email management-api.identityserver4-manager",
+  "State": "LzjTLnxFWWsseh8dgOW65hroXVQOiq6kfvfYPh0v",
+  "Nonce": "LzjTLnxFWWsseh8dgOW65hroXVQOiq6kfvfYPh0v",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "LzjTLnxFWWsseh8dgOW65hroXVQOiq6kfvfYPh0v",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email management-api.identityserver4-manager",
+    "nonce": "LzjTLnxFWWsseh8dgOW65hroXVQOiq6kfvfYPh0v"
+  }
+}
+2018-10-05 01:11:52.270 -03:00 [DBG] HBtIY8O1manXiKSAFXBFzlc7w1F9RjV1V2m3nnF+7IE= found in database: true
+2018-10-05 01:11:52.279 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-05 01:11:52.282 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-05 01:11:52.285 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2018-10-05 01:11:52.289 -03:00 [DBG] Getting claims for access token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:11:52.310 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: IS4-Admin
+2018-10-05 01:11:52.313 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-05 01:11:52.320 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email management-api.identityserver4-manager",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****LB2w"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****oSfg"
+    }
+  ],
+  "ActivityId": "0HLHABLKLTG07:00000001",
+  "TimeStamp": "2018-10-05T04:11:52Z",
+  "ProcessId": 14084,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-05 01:11:52.326 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "State": "LzjTLnxFWWsseh8dgOW65hroXVQOiq6kfvfYPh0v",
+  "Scope": "openid profile email management-api.identityserver4-manager"
+}
+2018-10-05 01:11:53.340 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:11:53.348 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:11:53.353 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:11:53.360 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:11:53.365 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:11:53.369 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:11:53.375 -03:00 [DBG] Start discovery request
+2018-10-05 01:11:53.397 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:11:53.414 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:11:53.424 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:11:53.432 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:11:53.435 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:11:53.440 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:11:53.444 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:11:53.448 -03:00 [DBG] Start key discovery request
+2018-10-05 01:11:54.601 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:11:54.607 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:11:54.611 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:11:54.683 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:11:54.692 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:11:54.696 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:11:54.700 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:11:54.705 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:11:54.709 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:11:54.716 -03:00 [DBG] Start userinfo request
+2018-10-05 01:11:54.719 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:11:54.748 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:11:54.775 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:11:54.783 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:11:54.785 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538712712,
+    "exp": 1538716312,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:11:54.790 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:11:54.792 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:11:54.796 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:11:54.801 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:11:54.804 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:11:54.807 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:11:54.813 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:11:54.832 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:11:54.834 -03:00 [DBG] End userinfo request
+2018-10-05 01:12:02.975 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:12:17.994 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:12:33.006 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:12:48.021 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:13:03.041 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:13:18.060 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:13:33.136 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:13:38.879 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:13:38.896 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:13:38.900 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:13:38.905 -03:00 [DBG] Start discovery request
+2018-10-05 01:13:38.925 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:13:39.105 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:13:39.117 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:13:39.132 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:13:39.140 -03:00 [DBG] Start key discovery request
+2018-10-05 01:13:39.331 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-05 01:13:39.373 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-05 01:13:39.378 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-05 01:13:39.392 -03:00 [DBG] Start authorize request
+2018-10-05 01:13:39.400 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:13:39.408 -03:00 [DBG] Start authorize request protocol validation
+2018-10-05 01:13:39.449 -03:00 [DBG] skoruba_identity_admin found in database: true
+2018-10-05 01:13:39.475 -03:00 [DBG] Found ["openid","profile","email","roles"] identity scopes in database
+2018-10-05 01:13:39.500 -03:00 [DBG] Found [] API scopes in database
+2018-10-05 01:13:39.536 -03:00 [DBG] Found ["openid","profile","email","roles"] identity scopes in database
+2018-10-05 01:13:39.551 -03:00 [DBG] Found [] API scopes in database
+2018-10-05 01:13:39.570 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-05 01:13:39.588 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "skoruba_identity_admin",
+  "ClientName": "skoruba_identity_admin",
+  "RedirectUri": "http://localhost:9000/signin-oidc",
+  "AllowedRedirectUris": [
+    "http://localhost:9000/signin-oidc"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email roles",
+  "State": "CfDJ8GSgSaSHrdVBj_NZ1rXz9fiFpVKkQ1MyI7UlTIKy94c79heTgXvFj8f8ImmkyWvlbtCrlb3kSDBiCV_SMtSc_1VhuXvwo68IdIpLYry3wft7DnRYdGibLU05uq5ChLFKIhGNDW19GOkjxGQb3OjXkTVgtC8cftraIqMlmTEG-wiMxyQgObvoQxJZ200SxiwD2wL3ix7JzpLVNW4WGgvwgTWrEMJzz9xqGiCwFIG461bYd48sDzcaZ8_QKjqRsqEJUwCBnRpgnp1S1i6ES7qgJVumaG_kU3i4ZsqHXkqRG9I8VvdxQNqCu9vIO-GMDTzq1A",
+  "Nonce": "636743096192305370.NDc1ODYwMjEtOTczOS00NmQyLThkZDgtM2M5MTRjMDVkZTA1NzRkZTYwNWEtYjQ3OC00YWI2LWIwMzYtYzViZDhmOTAyMjNh",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "client_id": "skoruba_identity_admin",
+    "redirect_uri": "http://localhost:9000/signin-oidc",
+    "response_type": "id_token",
+    "scope": "openid profile email roles",
+    "response_mode": "form_post",
+    "nonce": "636743096192305370.NDc1ODYwMjEtOTczOS00NmQyLThkZDgtM2M5MTRjMDVkZTA1NzRkZTYwNWEtYjQ3OC00YWI2LWIwMzYtYzViZDhmOTAyMjNh",
+    "state": "CfDJ8GSgSaSHrdVBj_NZ1rXz9fiFpVKkQ1MyI7UlTIKy94c79heTgXvFj8f8ImmkyWvlbtCrlb3kSDBiCV_SMtSc_1VhuXvwo68IdIpLYry3wft7DnRYdGibLU05uq5ChLFKIhGNDW19GOkjxGQb3OjXkTVgtC8cftraIqMlmTEG-wiMxyQgObvoQxJZ200SxiwD2wL3ix7JzpLVNW4WGgvwgTWrEMJzz9xqGiCwFIG461bYd48sDzcaZ8_QKjqRsqEJUwCBnRpgnp1S1i6ES7qgJVumaG_kU3i4ZsqHXkqRG9I8VvdxQNqCu9vIO-GMDTzq1A",
+    "x-client-SKU": "ID_NETSTANDARD1_4",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-10-05 01:13:39.649 -03:00 [DBG] VS+ohC0jRRASE3G+c1YO21VoPm4KhNWXvIZYs55eXhU= found in database: true
+2018-10-05 01:13:39.662 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-05 01:13:39.669 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-05 01:13:39.686 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: skoruba_identity_admin
+2018-10-05 01:13:39.796 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "skoruba_identity_admin",
+  "ClientName": "skoruba_identity_admin",
+  "RedirectUri": "http://localhost:9000/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email roles",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****5SaA"
+    }
+  ],
+  "ActivityId": "0HLHABLKLTG07:00000002",
+  "TimeStamp": "2018-10-05T04:13:39Z",
+  "ProcessId": 14084,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-05 01:13:39.897 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "skoruba_identity_admin",
+  "RedirectUri": "http://localhost:9000/signin-oidc",
+  "State": "CfDJ8GSgSaSHrdVBj_NZ1rXz9fiFpVKkQ1MyI7UlTIKy94c79heTgXvFj8f8ImmkyWvlbtCrlb3kSDBiCV_SMtSc_1VhuXvwo68IdIpLYry3wft7DnRYdGibLU05uq5ChLFKIhGNDW19GOkjxGQb3OjXkTVgtC8cftraIqMlmTEG-wiMxyQgObvoQxJZ200SxiwD2wL3ix7JzpLVNW4WGgvwgTWrEMJzz9xqGiCwFIG461bYd48sDzcaZ8_QKjqRsqEJUwCBnRpgnp1S1i6ES7qgJVumaG_kU3i4ZsqHXkqRG9I8VvdxQNqCu9vIO-GMDTzq1A",
+  "Scope": "openid profile email roles"
+}
+2018-10-05 01:13:48.146 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:14:03.165 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:38:50.463 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-05 01:38:50.639 -03:00 [INF] SigninCredentialExtension adding Temporary Signing Credential
+2018-10-05 01:38:55.866 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-05 01:38:55.883 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-05 01:38:55.886 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-05 01:38:55.889 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-05 01:38:55.894 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-05 01:38:56.025 -03:00 [DBG] Starting token cleanup
+2018-10-05 01:39:11.081 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:39:26.105 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:39:41.119 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:39:56.136 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:40:11.156 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:40:26.162 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:40:41.178 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:40:56.197 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:41:08.295 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:41:08.427 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:08.431 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:08.470 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:41:08.477 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:41:08.481 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:41:08.488 -03:00 [DBG] Start discovery request
+2018-10-05 01:41:08.795 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:41:08.854 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:41:08.861 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:08.864 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:08.867 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:41:08.871 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:41:08.874 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:41:08.880 -03:00 [DBG] Start key discovery request
+2018-10-05 01:41:11.218 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:41:15.177 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:41:15.187 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:15.193 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:15.204 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:41:15.214 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:41:15.220 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:41:15.229 -03:00 [DBG] Start discovery request
+2018-10-05 01:41:15.267 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:41:15.310 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:41:15.334 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:15.348 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:15.351 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:41:15.356 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:41:15.360 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:41:15.365 -03:00 [DBG] Start key discovery request
+2018-10-05 01:41:15.455 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-05 01:41:15.468 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-05 01:41:15.475 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-05 01:41:15.483 -03:00 [DBG] Start authorize request
+2018-10-05 01:41:15.496 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:41:15.506 -03:00 [DBG] Start authorize request protocol validation
+2018-10-05 01:41:15.783 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:41:15.821 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:41:15.872 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:41:15.898 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:41:15.912 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:41:15.926 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-05 01:41:15.939 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email management-api.identityserver4-manager",
+  "State": "1I5xQwSiRvvxZ8Zb2VpPdd3vC1N6D88841zAYAVM",
+  "Nonce": "1I5xQwSiRvvxZ8Zb2VpPdd3vC1N6D88841zAYAVM",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "1I5xQwSiRvvxZ8Zb2VpPdd3vC1N6D88841zAYAVM",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email management-api.identityserver4-manager",
+    "nonce": "1I5xQwSiRvvxZ8Zb2VpPdd3vC1N6D88841zAYAVM"
+  }
+}
+2018-10-05 01:41:16.035 -03:00 [DBG] HBtIY8O1manXiKSAFXBFzlc7w1F9RjV1V2m3nnF+7IE= found in database: true
+2018-10-05 01:41:16.048 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-05 01:41:16.062 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-05 01:41:16.077 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2018-10-05 01:41:16.081 -03:00 [DBG] Getting claims for access token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:41:16.352 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: IS4-Admin
+2018-10-05 01:41:16.358 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-05 01:41:16.386 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email management-api.identityserver4-manager",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****gywQ"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****DRVA"
+    }
+  ],
+  "ActivityId": "0HLHAFJ28H4LH:00000001",
+  "TimeStamp": "2018-10-05T04:41:16Z",
+  "ProcessId": 11536,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-05 01:41:16.396 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "State": "1I5xQwSiRvvxZ8Zb2VpPdd3vC1N6D88841zAYAVM",
+  "Scope": "openid profile email management-api.identityserver4-manager"
+}
+2018-10-05 01:41:17.676 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:41:17.685 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:17.705 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:17.721 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:41:17.732 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:41:17.739 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:41:17.749 -03:00 [DBG] Start discovery request
+2018-10-05 01:41:17.787 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:41:17.797 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:41:17.803 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:17.806 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:17.809 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:41:17.812 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:41:17.815 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:41:17.819 -03:00 [DBG] Start key discovery request
+2018-10-05 01:41:19.009 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:41:19.018 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:19.023 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:19.114 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:41:19.124 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:41:19.128 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:41:19.133 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:41:19.142 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:41:19.148 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:41:19.166 -03:00 [DBG] Start userinfo request
+2018-10-05 01:41:19.174 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:41:19.235 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:41:19.260 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:41:19.272 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:41:19.280 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714476,
+    "exp": 1538718076,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:41:19.293 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:41:19.298 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:41:19.303 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:41:19.312 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:41:19.316 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:41:19.320 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:41:19.326 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:41:19.352 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:41:19.356 -03:00 [DBG] End userinfo request
+2018-10-05 01:41:26.240 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:41:41.256 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:41:56.276 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:42:11.287 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:42:26.305 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:42:41.319 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:42:56.333 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:43:11.351 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:43:15.706 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:43:15.714 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:43:15.717 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:43:15.722 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:43:15.727 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:43:15.731 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:43:15.736 -03:00 [DBG] Start discovery request
+2018-10-05 01:43:15.750 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:43:15.767 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:43:15.774 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:43:15.778 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:43:15.781 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:43:15.784 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:43:15.788 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:43:15.792 -03:00 [DBG] Start key discovery request
+2018-10-05 01:43:15.886 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:43:15.892 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:43:15.895 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:43:15.987 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:43:16.027 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:43:16.037 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:43:16.051 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:43:16.063 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:43:16.073 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:43:16.098 -03:00 [DBG] Start userinfo request
+2018-10-05 01:43:16.106 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:43:16.147 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:43:16.180 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:43:16.196 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:43:16.203 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714476,
+    "exp": 1538718076,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:43:16.217 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:43:16.223 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:43:16.229 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:43:16.252 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:43:16.257 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:43:16.267 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:43:16.275 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:43:16.308 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:43:16.313 -03:00 [DBG] End userinfo request
+2018-10-05 01:43:19.692 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:43:19.705 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:43:19.710 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:43:19.713 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:43:19.720 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:43:19.725 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:43:19.731 -03:00 [DBG] Start userinfo request
+2018-10-05 01:43:19.735 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:43:19.766 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:43:19.795 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:43:19.803 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:43:19.807 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714476,
+    "exp": 1538718076,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:43:19.813 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:43:19.816 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:43:19.821 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:43:19.827 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:43:19.832 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:43:19.836 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:43:19.842 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:43:19.861 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:43:19.867 -03:00 [DBG] End userinfo request
+2018-10-05 01:43:26.370 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:43:41.383 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:43:56.397 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:44:11.412 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:44:26.428 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:44:41.443 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:44:56.466 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:45:11.492 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:45:26.508 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:45:41.526 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:45:47.344 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:45:47.350 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:47.355 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:47.359 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:45:47.364 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:45:47.369 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:45:47.373 -03:00 [DBG] Start discovery request
+2018-10-05 01:45:47.389 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:45:47.401 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:45:47.406 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:47.412 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:47.415 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:45:47.418 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:45:47.422 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:45:47.426 -03:00 [DBG] Start key discovery request
+2018-10-05 01:45:48.430 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:45:48.438 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:48.442 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:48.496 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:45:48.502 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:48.505 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:48.510 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:45:48.513 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:45:48.517 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:45:48.521 -03:00 [DBG] Start userinfo request
+2018-10-05 01:45:48.525 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:45:48.549 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:45:48.568 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:45:48.587 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:45:48.593 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714476,
+    "exp": 1538718076,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:45:48.600 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:45:48.605 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:45:48.608 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:45:48.616 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:45:48.620 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:45:48.624 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:45:48.632 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:45:48.652 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:45:48.655 -03:00 [DBG] End userinfo request
+2018-10-05 01:45:56.544 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:45:58.700 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:45:58.709 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:58.713 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:58.717 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:45:58.723 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:45:58.729 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:45:58.734 -03:00 [DBG] Start discovery request
+2018-10-05 01:45:58.754 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:45:58.790 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:45:58.797 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:58.803 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:58.806 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:45:58.811 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:45:58.815 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:45:58.819 -03:00 [DBG] Start key discovery request
+2018-10-05 01:45:58.958 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:45:58.967 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:58.970 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:59.016 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:45:59.031 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:45:59.036 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:45:59.039 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:45:59.044 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:45:59.047 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:45:59.051 -03:00 [DBG] Start userinfo request
+2018-10-05 01:45:59.054 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:45:59.073 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:45:59.102 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:45:59.112 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:45:59.116 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714476,
+    "exp": 1538718076,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:45:59.124 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:45:59.130 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:45:59.134 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:45:59.142 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:45:59.145 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:45:59.149 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:45:59.166 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:45:59.201 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:45:59.209 -03:00 [DBG] End userinfo request
+2018-10-05 01:46:11.562 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:46:13.252 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:46:13.265 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:46:13.273 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:46:13.318 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:46:13.324 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:46:13.328 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:46:13.332 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:46:13.336 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:46:13.340 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:46:13.344 -03:00 [DBG] Start userinfo request
+2018-10-05 01:46:13.347 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:46:13.375 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:46:13.401 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:46:13.410 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:46:13.415 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714476,
+    "exp": 1538718076,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:46:13.422 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:46:13.425 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:46:13.430 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:46:13.438 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:46:13.443 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:46:13.447 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:46:13.456 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:46:13.478 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:46:13.482 -03:00 [DBG] End userinfo request
+2018-10-05 01:46:16.033 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:46:16.040 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:46:16.046 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:46:16.050 -03:00 [DBG] Start discovery request
+2018-10-05 01:46:16.065 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:46:16.145 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:46:16.150 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:46:16.154 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:46:16.158 -03:00 [DBG] Start key discovery request
+2018-10-05 01:46:26.569 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:46:40.873 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:46:40.882 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:46:40.887 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:46:40.892 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:46:40.896 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:46:40.903 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:46:40.909 -03:00 [DBG] Start discovery request
+2018-10-05 01:46:40.931 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:46:40.954 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:46:40.965 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:46:40.983 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:46:40.989 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:46:40.996 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:46:41.001 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:46:41.006 -03:00 [DBG] Start key discovery request
+2018-10-05 01:46:41.588 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:46:56.602 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:47:00.907 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:47:00.921 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:47:00.925 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:47:00.935 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:47:00.940 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:47:00.949 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:47:00.954 -03:00 [DBG] Start discovery request
+2018-10-05 01:47:00.977 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:47:01.010 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:47:01.054 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:47:01.061 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:47:01.068 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:47:01.081 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:47:01.100 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:47:01.139 -03:00 [DBG] Start key discovery request
+2018-10-05 01:47:01.260 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-05 01:47:01.265 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-05 01:47:01.269 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-05 01:47:01.273 -03:00 [DBG] Start authorize request
+2018-10-05 01:47:01.276 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:47:01.280 -03:00 [DBG] Start authorize request protocol validation
+2018-10-05 01:47:01.310 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:47:01.318 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:47:01.335 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:47:01.345 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:47:01.359 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:47:01.362 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-05 01:47:01.366 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email management-api.identityserver4-manager",
+  "State": "aAnipAq5t6bOf4STX8kEWqvWQFxkaEBPqfMBgMTz",
+  "Nonce": "aAnipAq5t6bOf4STX8kEWqvWQFxkaEBPqfMBgMTz",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "aAnipAq5t6bOf4STX8kEWqvWQFxkaEBPqfMBgMTz",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email management-api.identityserver4-manager",
+    "nonce": "aAnipAq5t6bOf4STX8kEWqvWQFxkaEBPqfMBgMTz"
+  }
+}
+2018-10-05 01:47:01.378 -03:00 [DBG] HBtIY8O1manXiKSAFXBFzlc7w1F9RjV1V2m3nnF+7IE= found in database: true
+2018-10-05 01:47:01.386 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-05 01:47:01.390 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-05 01:47:01.393 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2018-10-05 01:47:01.396 -03:00 [DBG] Getting claims for access token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:47:01.423 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: IS4-Admin
+2018-10-05 01:47:01.428 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-05 01:47:01.434 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email management-api.identityserver4-manager",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****7P9Q"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****_vTA"
+    }
+  ],
+  "ActivityId": "0HLHAFJ28H4LK:00000001",
+  "TimeStamp": "2018-10-05T04:47:01Z",
+  "ProcessId": 11536,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-05 01:47:01.441 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "State": "aAnipAq5t6bOf4STX8kEWqvWQFxkaEBPqfMBgMTz",
+  "Scope": "openid profile email management-api.identityserver4-manager"
+}
+2018-10-05 01:47:03.303 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:47:03.311 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:47:03.316 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:47:03.320 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:47:03.325 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:47:03.329 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:47:03.334 -03:00 [DBG] Start discovery request
+2018-10-05 01:47:03.355 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:47:03.400 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:47:03.409 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:47:03.417 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:47:03.433 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:47:03.438 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:47:03.448 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:47:03.454 -03:00 [DBG] Start key discovery request
+2018-10-05 01:47:04.691 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:47:04.699 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:47:04.703 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:47:04.801 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:47:04.814 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:47:04.820 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:47:04.825 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:47:04.830 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:47:04.834 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:47:04.843 -03:00 [DBG] Start userinfo request
+2018-10-05 01:47:04.849 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:47:04.882 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:47:04.903 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:47:04.911 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:47:04.917 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714821,
+    "exp": 1538718421,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:47:04.923 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:47:04.925 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:47:04.931 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:47:04.937 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:47:04.940 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:47:04.944 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:47:04.952 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:47:04.970 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:47:04.974 -03:00 [DBG] End userinfo request
+2018-10-05 01:47:11.618 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:47:26.631 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:47:41.654 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:47:56.668 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:48:02.770 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:48:02.783 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:48:02.795 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:48:02.802 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:48:02.820 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:48:02.825 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:48:02.831 -03:00 [DBG] Start discovery request
+2018-10-05 01:48:02.855 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:48:02.887 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:48:02.897 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:48:02.902 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:48:02.906 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:48:02.910 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:48:02.915 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:48:02.919 -03:00 [DBG] Start key discovery request
+2018-10-05 01:48:03.792 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:48:03.799 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:48:03.803 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:48:04.004 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:48:04.018 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:48:04.030 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:48:04.059 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:48:04.091 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:48:04.101 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:48:04.113 -03:00 [DBG] Start userinfo request
+2018-10-05 01:48:04.123 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:48:04.171 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:48:04.220 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:48:04.247 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:48:04.276 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714821,
+    "exp": 1538718421,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:48:04.323 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:48:04.328 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:48:04.342 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:48:04.353 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:48:04.360 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:48:04.364 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:48:04.375 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:48:04.425 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:48:04.432 -03:00 [DBG] End userinfo request
+2018-10-05 01:48:11.681 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:48:26.695 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:48:41.699 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:48:56.708 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:49:11.726 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:49:26.740 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:49:41.746 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:49:56.757 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:50:11.779 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:50:26.790 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:50:41.808 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:50:50.381 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:50:50.390 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:50:50.396 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:50:50.399 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:50:50.405 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:50:50.410 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:50:50.416 -03:00 [DBG] Start discovery request
+2018-10-05 01:50:50.436 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:50:50.487 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:50:50.495 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:50:50.498 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:50:50.503 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:50:50.507 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:50:50.512 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:50:50.516 -03:00 [DBG] Start key discovery request
+2018-10-05 01:50:51.406 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:50:51.413 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:50:51.416 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:50:51.496 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:50:51.505 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:50:51.510 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:50:51.519 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:50:51.526 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:50:51.531 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:50:51.536 -03:00 [DBG] Start userinfo request
+2018-10-05 01:50:51.542 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:50:51.583 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:50:51.612 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:50:51.625 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:50:51.629 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714821,
+    "exp": 1538718421,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:50:51.638 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:50:51.641 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:50:51.646 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:50:51.654 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:50:51.659 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:50:51.663 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:50:51.672 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:50:51.705 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:50:51.711 -03:00 [DBG] End userinfo request
+2018-10-05 01:50:56.821 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:51:11.834 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:51:26.848 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:51:35.826 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:51:35.836 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:51:35.841 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:51:35.845 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:51:35.851 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:51:35.858 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:51:35.864 -03:00 [DBG] Start discovery request
+2018-10-05 01:51:35.883 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:51:35.930 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:51:35.940 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:51:35.946 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:51:35.950 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:51:35.954 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:51:35.959 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:51:35.963 -03:00 [DBG] Start key discovery request
+2018-10-05 01:51:36.667 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:51:36.674 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:51:36.677 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:51:36.775 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:51:36.785 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:51:36.793 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:51:36.807 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:51:36.816 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:51:36.823 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:51:36.841 -03:00 [DBG] Start userinfo request
+2018-10-05 01:51:36.845 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:51:36.887 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:51:36.925 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:51:36.945 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:51:36.964 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538714821,
+    "exp": 1538718421,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:51:36.971 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:51:36.977 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:51:36.982 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:51:36.995 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:51:37.011 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:51:37.015 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:51:37.027 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:51:37.060 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:51:37.066 -03:00 [DBG] End userinfo request
+2018-10-05 01:51:41.857 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:51:56.865 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:52:11.881 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:52:26.896 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:52:41.915 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:52:56.932 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:53:11.949 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:53:26.973 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:53:41.991 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:53:57.006 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:54:12.022 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:54:14.774 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:54:14.782 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:14.790 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:14.799 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:54:14.806 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:54:14.812 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:54:14.818 -03:00 [DBG] Start discovery request
+2018-10-05 01:54:14.842 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:54:14.883 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:54:14.892 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:14.901 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:14.908 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:54:14.914 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:54:14.952 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:54:14.969 -03:00 [DBG] Start key discovery request
+2018-10-05 01:54:27.037 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:54:34.844 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:54:34.854 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:34.862 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:34.876 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:54:34.885 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:54:34.899 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:54:34.914 -03:00 [DBG] Start discovery request
+2018-10-05 01:54:34.951 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:54:35.016 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:54:35.023 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:35.065 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:35.075 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:54:35.082 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:54:35.092 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:54:35.098 -03:00 [DBG] Start key discovery request
+2018-10-05 01:54:35.180 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-05 01:54:35.187 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-05 01:54:35.191 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-05 01:54:35.197 -03:00 [DBG] Start authorize request
+2018-10-05 01:54:35.201 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:54:35.205 -03:00 [DBG] Start authorize request protocol validation
+2018-10-05 01:54:35.234 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:54:35.245 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:54:35.263 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:54:35.275 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:54:35.299 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 01:54:35.304 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-05 01:54:35.309 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email management-api.identityserver4-manager",
+  "State": "y1icpW5XYeOoneJ6KGokPfQRS1TbBpPG46NqhRuA",
+  "Nonce": "y1icpW5XYeOoneJ6KGokPfQRS1TbBpPG46NqhRuA",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "y1icpW5XYeOoneJ6KGokPfQRS1TbBpPG46NqhRuA",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email management-api.identityserver4-manager",
+    "nonce": "y1icpW5XYeOoneJ6KGokPfQRS1TbBpPG46NqhRuA"
+  }
+}
+2018-10-05 01:54:35.331 -03:00 [DBG] HBtIY8O1manXiKSAFXBFzlc7w1F9RjV1V2m3nnF+7IE= found in database: true
+2018-10-05 01:54:35.340 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-05 01:54:35.345 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-05 01:54:35.349 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2018-10-05 01:54:35.353 -03:00 [DBG] Getting claims for access token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 01:54:35.385 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: IS4-Admin
+2018-10-05 01:54:35.390 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-05 01:54:35.400 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email management-api.identityserver4-manager",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****qpyQ"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****KzYQ"
+    }
+  ],
+  "ActivityId": "0HLHAFJ28H4LN:00000001",
+  "TimeStamp": "2018-10-05T04:54:35Z",
+  "ProcessId": 11536,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-05 01:54:35.408 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "State": "y1icpW5XYeOoneJ6KGokPfQRS1TbBpPG46NqhRuA",
+  "Scope": "openid profile email management-api.identityserver4-manager"
+}
+2018-10-05 01:54:37.251 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:54:37.260 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:37.267 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:37.278 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:54:37.292 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:54:37.319 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:54:37.341 -03:00 [DBG] Start discovery request
+2018-10-05 01:54:37.376 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:54:37.434 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:54:37.457 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:37.465 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:37.472 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:54:37.478 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:54:37.486 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:54:37.492 -03:00 [DBG] Start key discovery request
+2018-10-05 01:54:38.705 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:54:38.712 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:38.716 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:38.814 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:54:38.826 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:38.833 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:38.840 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:54:38.850 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:54:38.859 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:54:38.865 -03:00 [DBG] Start userinfo request
+2018-10-05 01:54:38.868 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:54:38.892 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:54:38.915 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:54:38.923 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:54:38.927 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538715275,
+    "exp": 1538718875,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:54:38.935 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:54:38.939 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:54:38.944 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:54:38.951 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:54:38.955 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:54:38.959 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:54:38.966 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:54:38.986 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:54:38.990 -03:00 [DBG] End userinfo request
+2018-10-05 01:54:42.057 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:54:45.132 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:54:45.146 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:45.157 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:45.169 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:54:45.184 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:54:45.212 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:54:45.225 -03:00 [DBG] Start discovery request
+2018-10-05 01:54:45.260 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:54:45.382 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:54:45.398 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:45.406 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:45.411 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:54:45.430 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:54:45.437 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:54:45.455 -03:00 [DBG] Start key discovery request
+2018-10-05 01:54:45.590 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:54:45.598 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:45.605 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:45.794 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:54:45.825 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:54:45.840 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:54:45.850 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:54:45.858 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:54:45.867 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:54:45.875 -03:00 [DBG] Start userinfo request
+2018-10-05 01:54:45.881 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:54:45.924 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:54:45.960 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:54:45.975 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:54:45.981 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538715275,
+    "exp": 1538718875,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:54:45.991 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:54:45.996 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:54:46.002 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:54:46.011 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:54:46.016 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:54:46.027 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:54:46.036 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:54:46.082 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:54:46.094 -03:00 [DBG] End userinfo request
+2018-10-05 01:54:57.072 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:55:01.850 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:55:01.870 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:55:01.875 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:55:01.881 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:55:01.894 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:55:01.902 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:55:01.908 -03:00 [DBG] Start discovery request
+2018-10-05 01:55:01.930 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:55:01.963 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:55:01.975 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:55:01.981 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:55:01.986 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:55:01.991 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:55:01.995 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:55:02.001 -03:00 [DBG] Start key discovery request
+2018-10-05 01:55:02.644 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:55:02.650 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:55:02.653 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:55:02.748 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:55:02.758 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:55:02.765 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:55:02.771 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:55:02.778 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:55:02.785 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:55:02.793 -03:00 [DBG] Start userinfo request
+2018-10-05 01:55:02.797 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:55:02.846 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:55:02.875 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:55:02.896 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:55:02.901 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538715275,
+    "exp": 1538718875,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:55:02.907 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:55:02.914 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:55:02.917 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:55:02.930 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:55:02.936 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:55:02.942 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:55:02.957 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:55:02.988 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:55:02.994 -03:00 [DBG] End userinfo request
+2018-10-05 01:55:12.090 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:55:27.109 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:55:42.130 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:55:57.146 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:56:12.164 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:56:16.322 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 01:56:16.335 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:56:16.348 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:56:16.360 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 01:56:16.375 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 01:56:16.382 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 01:56:16.402 -03:00 [DBG] Start discovery request
+2018-10-05 01:56:16.423 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 01:56:16.465 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 01:56:16.474 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:56:16.483 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:56:16.487 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 01:56:16.494 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 01:56:16.498 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 01:56:16.508 -03:00 [DBG] Start key discovery request
+2018-10-05 01:56:17.624 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:56:17.633 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:56:17.636 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:56:17.735 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2018-10-05 01:56:17.745 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 01:56:17.751 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 01:56:17.755 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-05 01:56:17.762 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-05 01:56:17.766 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-05 01:56:17.773 -03:00 [DBG] Start userinfo request
+2018-10-05 01:56:17.778 -03:00 [DBG] Bearer token found in header
+2018-10-05 01:56:17.807 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:56:17.831 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 01:56:17.852 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-05 01:56:17.859 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1538715275,
+    "exp": 1538718875,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "management-api"
+    ],
+    "client_id": "IS4-Admin",
+    "sub": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+    "auth_time": 1538444564,
+    "idp": "local",
+    "email": "bruno@allto.com.br",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "management-api.identityserver4-manager"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-05 01:56:17.868 -03:00 [DBG] Creating userinfo response
+2018-10-05 01:56:17.872 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:56:17.878 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:56:17.888 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:56:17.899 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender picture profile preferred_username nickname middle_name given_name family_name name website email_verified email
+2018-10-05 01:56:17.904 -03:00 [DBG] Scopes in access token: openid profile email management-api.identityserver4-manager
+2018-10-05 01:56:17.915 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 01:56:18.019 -03:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-10-05 01:56:18.027 -03:00 [DBG] End userinfo request
+2018-10-05 01:56:27.178 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:56:42.193 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:56:57.212 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:57:12.229 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:57:27.259 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:57:42.277 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:57:57.295 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:58:12.303 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:58:27.321 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:58:42.335 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:58:57.355 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:59:12.371 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:59:27.382 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:59:42.403 -03:00 [INF] Clearing 0 tokens
+2018-10-05 01:59:57.429 -03:00 [INF] Clearing 0 tokens
+2018-10-05 02:00:12.446 -03:00 [INF] Clearing 0 tokens
+2018-10-05 02:00:27.472 -03:00 [INF] Clearing 0 tokens
+2018-10-05 02:00:42.496 -03:00 [INF] Clearing 0 tokens
+2018-10-05 02:00:57.512 -03:00 [INF] Clearing 0 tokens
+2018-10-05 02:01:10.193 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 02:01:10.202 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 02:01:10.207 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 02:01:10.214 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 02:01:10.220 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 02:01:10.225 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 02:01:10.230 -03:00 [DBG] Start discovery request
+2018-10-05 02:01:10.250 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 02:01:10.327 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 02:01:10.335 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 02:01:10.339 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 02:01:10.342 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 02:01:10.346 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 02:01:10.352 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 02:01:10.357 -03:00 [DBG] Start key discovery request
+2018-10-05 02:01:12.527 -03:00 [INF] Clearing 0 tokens
+2018-10-05 02:01:19.351 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-10-05 02:01:19.363 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 02:01:19.370 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 02:01:19.375 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-05 02:01:19.381 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-05 02:01:19.386 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-05 02:01:19.394 -03:00 [DBG] Start discovery request
+2018-10-05 02:01:19.418 -03:00 [DBG] Found ["openid","profile","email","picture","roles","management-api-permissions","IS4-Permission","management-api.owner-content","management-api.identityserver4-manager"] as all scopes in database
+2018-10-05 02:01:19.497 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-10-05 02:01:19.507 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-10-05 02:01:19.514 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-10-05 02:01:19.520 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-05 02:01:19.526 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-05 02:01:19.532 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-05 02:01:19.538 -03:00 [DBG] Start key discovery request
+2018-10-05 02:01:19.578 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-05 02:01:19.585 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-05 02:01:19.590 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-05 02:01:19.596 -03:00 [DBG] Start authorize request
+2018-10-05 02:01:19.603 -03:00 [DBG] User in authorize request: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 02:01:19.609 -03:00 [DBG] Start authorize request protocol validation
+2018-10-05 02:01:19.640 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-05 02:01:19.648 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 02:01:19.663 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 02:01:19.672 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-05 02:01:19.686 -03:00 [DBG] Found ["management-api.owner-content","management-api.identityserver4-manager"] API scopes in database
+2018-10-05 02:01:19.690 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-05 02:01:19.695 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email management-api.identityserver4-manager",
+  "State": "D08Fe36uJzd2KLh3zWfZPR7YbryOc9cmU1Lorxzi",
+  "Nonce": "D08Fe36uJzd2KLh3zWfZPR7YbryOc9cmU1Lorxzi",
+  "SessionId": "62680b53907bfa26729ec70e14f20d8c",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "D08Fe36uJzd2KLh3zWfZPR7YbryOc9cmU1Lorxzi",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email management-api.identityserver4-manager",
+    "nonce": "D08Fe36uJzd2KLh3zWfZPR7YbryOc9cmU1Lorxzi"
+  }
+}
+2018-10-05 02:01:19.712 -03:00 [DBG] HBtIY8O1manXiKSAFXBFzlc7w1F9RjV1V2m3nnF+7IE= found in database: true
+2018-10-05 02:01:19.719 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2018-10-05 02:01:19.723 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-05 02:01:19.726 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2018-10-05 02:01:19.729 -03:00 [DBG] Getting claims for access token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1
+2018-10-05 02:01:19.762 -03:00 [DBG] Getting claims for identity token for subject: 08d62807-d0bd-b4b0-689d-ce36be0859e1 and client: IS4-Admin
+2018-10-05 02:01:19.767 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-05 02:01:19.775 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "Scopes": "openid profile email management-api.identityserver4-manager",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****BEQA"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****GmgQ"
+    }
+  ],
+  "ActivityId": "0HLHAFJ28H4LO:00000001",
+  "TimeStamp": "2018-10-05T05:01:19Z",
+  "ProcessId": 11536,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-05 02:01:19.780 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d62807-d0bd-b4b0-689d-ce36be0859e1",
+  "ClientId": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "State": "D08Fe36uJzd2KLh3zWfZPR7YbryOc9cmU1Lorxzi",
+  "Scope": "openid profile email management-api.identityserver4-manager"
+}

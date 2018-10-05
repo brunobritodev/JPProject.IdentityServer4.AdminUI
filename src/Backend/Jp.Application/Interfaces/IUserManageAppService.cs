@@ -25,5 +25,8 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<ClaimViewModel>> GetClaims(string userName);
         Task SaveClaim(SaveUserClaimViewModel model);
         Task RemoveClaim(RemoveUserClaimViewModel model);
+        Task<IEnumerable<RoleViewModel>> GetRoles(string userName);
+        Task RemoveRole(RemoveUserRoleViewModel model);
+        Task SaveRole(SaveUserRoleViewModel model);
     }
 }
