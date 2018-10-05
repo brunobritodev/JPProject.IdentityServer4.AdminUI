@@ -9,6 +9,7 @@ import { UserEditComponent } from "./edit/user-edit.component";
 import { UserAddComponent } from "./add/user-add.component";
 import { UserClaimsComponent } from "./claims/user-claims.component";
 import { UserRolesComponent } from "./roles/user-roles.component";
+import { UserLoginsComponent } from "./logins/user-logins.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: "add", component: UserAddComponent },
     { path: "claims/:username", component: UserClaimsComponent },
     { path: "roles/:username", component: UserRolesComponent },
+    { path: "logins/:username", component: UserLoginsComponent },
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const routes: Routes = [
         UserEditComponent,
         UserAddComponent,
         UserClaimsComponent,
-        UserRolesComponent
+        UserRolesComponent,
+        UserLoginsComponent
     ],
     exports: [
         RouterModule

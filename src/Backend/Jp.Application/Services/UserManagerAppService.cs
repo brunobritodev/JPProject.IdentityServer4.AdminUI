@@ -142,6 +142,18 @@ namespace Jp.Application.Services
             var registerCommand = _mapper.Map<SaveUserRoleCommand>(model);
             return Bus.SendCommand(registerCommand);
         }
+
+        public async Task<IEnumerable<UserLoginViewModel>> GetLogins(string userName)
+        {
+            return _mapper.Map<IEnumerable<UserLoginViewModel>>(await _userService.GetUserLogins(userName));
+        }
+
+        public Task RemoveLogin(RemoveUserLoginViewModel model)
+        {
+            var registerCommand = _mapper.Map<RemoveUserLoginCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
     }
 }
 

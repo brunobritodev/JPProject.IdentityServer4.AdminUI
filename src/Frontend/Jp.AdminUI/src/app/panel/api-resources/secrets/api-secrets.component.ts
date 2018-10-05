@@ -58,8 +58,8 @@ export class ApiResourceSecretsComponent implements OnInit {
     }
 
     public remove(id: number) {
-
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.apiResourceService.removeSecret(this.resourceName, id).subscribe(
@@ -89,12 +89,12 @@ export class ApiResourceSecretsComponent implements OnInit {
     }
 
     private loadSecrets(): void {
-
         this.apiResourceService.getSecrets(this.resourceName).subscribe(c => this.apiSecrets = c.data);
     }
 
     public save() {
         this.showButtonLoading = true;
+        this.errors = [];
         try {
             this.model.resourceName = this.resourceName;
             this.apiResourceService.saveSecret(this.model).subscribe(

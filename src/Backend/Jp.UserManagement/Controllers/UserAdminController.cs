@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
@@ -10,7 +8,6 @@ using Jp.Domain.Core.Notifications;
 using Jp.Domain.Interfaces;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
@@ -20,7 +17,6 @@ namespace Jp.Management.Controllers
     {
         private readonly IUserManageAppService _userManageAppService;
         private readonly ISystemUser _user;
-        private readonly IRoleManagerAppService _roleManagerAppService;
 
         public UserAdminController(
             INotificationHandler<DomainNotification> notifications, 
@@ -31,7 +27,6 @@ namespace Jp.Management.Controllers
         {
             _userManageAppService = userManageAppService;
             _user = user;
-            _roleManagerAppService = roleManagerAppService;
         }
 
 
@@ -124,7 +119,6 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-
         [HttpPost, Route("save-role")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveRole([FromBody] SaveUserRoleViewModel model)
         {
@@ -137,11 +131,26 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpGet, Route("all-roles")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<RoleViewModel>>>> AllRoles()
+        [HttpGet, Route("logins")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<UserLoginViewModel>>>> Logins(string userName)
         {
-            var clients = await _roleManagerAppService.GetAllRoles();
+            var clients = await _userManageAppService.GetLogins(userName);
             return Response(clients);
         }
+
+        [HttpGet, Route("remove-login")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveLogin([FromBody] RemoveUserLoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _userManageAppService.RemoveLogin(model);
+            return Response(true);
+
+        }
+
+
     }
 }

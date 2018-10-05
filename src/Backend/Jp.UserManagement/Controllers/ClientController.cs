@@ -85,7 +85,7 @@ namespace Jp.Management.Controllers
         [HttpGet, Route("details")]
         public async Task<ActionResult<DefaultResponse<Client>>> Details(string clientId)
         {
-            var clients = await _clientAppService.GetClientDetails(clientId);
+            var clients = await _clientAppService.GetClientDefaultDetails(clientId);
             return Response(clients);
         }
 

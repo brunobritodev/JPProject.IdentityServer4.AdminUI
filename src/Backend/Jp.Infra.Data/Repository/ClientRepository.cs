@@ -21,10 +21,10 @@ namespace Jp.Infra.Data.Repository
                 .Include(x => x.RedirectUris)
                 .Include(x => x.PostLogoutRedirectUris)
                 .Include(x => x.AllowedScopes)
-                .Include(x => x.ClientSecrets)
-                .Include(x => x.Claims)
                 .Include(x => x.IdentityProviderRestrictions)
                 .Include(x => x.AllowedCorsOrigins)
+                .Include(x => x.ClientSecrets)
+                .Include(x => x.Claims)
                 .Include(x => x.Properties)
                 .AsNoTracking()
                 .Where(x => x.ClientId == clientId)
@@ -34,6 +34,20 @@ namespace Jp.Infra.Data.Repository
         public Task<Client> GetByClientId(string clientId)
         {
             return DbSet.Where(x => x.ClientId == clientId).SingleOrDefaultAsync();
+        }
+
+        public Task<Client> GetClientDefaultDetails(string clientId)
+        {
+            return DbSet
+                .Include(x => x.AllowedGrantTypes)
+                .Include(x => x.RedirectUris)
+                .Include(x => x.PostLogoutRedirectUris)
+                .Include(x => x.AllowedScopes)
+                .Include(x => x.IdentityProviderRestrictions)
+                .Include(x => x.AllowedCorsOrigins)
+                .AsNoTracking()
+                .Where(x => x.ClientId == clientId)
+                .SingleOrDefaultAsync();
         }
 
         public async Task UpdateWithChildrens(Client client)

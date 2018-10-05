@@ -127,6 +127,12 @@ namespace Jp.Application.Services
             return Bus.SendCommand(command);
         }
 
+        public async Task<Client> GetClientDefaultDetails(string clientId)
+        {
+            var resultado = await _clientRepository.GetClientDefaultDetails(clientId);
+            return _mapper.Map<Client>(resultado);
+        }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);

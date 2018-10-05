@@ -10,6 +10,7 @@ namespace Jp.Domain.Interfaces
         Task<Client> GetClient(string clientId);
         Task UpdateWithChildrens(Client client);
         Task<Client> GetByClientId(string requestClientId);
-        
+
+        Task<Client> GetClientDefaultDetails(string clientId);
     }
 }

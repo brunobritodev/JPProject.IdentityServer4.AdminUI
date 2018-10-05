@@ -43,6 +43,7 @@ export class IdentityResourceAddComponent implements OnInit {
     public save() {
 
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.identityResourceService.save(this.model).subscribe(

@@ -21,7 +21,8 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<UpdateUserCommand>,
         IRequestHandler<SaveUserClaimCommand>,
         IRequestHandler<RemoveUserClaimCommand>,
-        IRequestHandler<RemoveUserRoleCommand>
+        IRequestHandler<RemoveUserRoleCommand>,
+        IRequestHandler<SaveUserRoleCommand>
     {
         private readonly IUserService _userService;
         private readonly ISystemUser _user;
@@ -198,6 +199,52 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserRoleRemovedEvent(_user.UserId, request.Username, request.Role));
+            }
+        }
+
+        public async Task Handle(SaveUserRoleCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.SaveRole(user.Id, request.Role);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserRoleSavedEvent(_user.UserId, request.Username, request.Role));
+            }
+        }
+
+        public async Task Handle(RemoveUserLoginCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.RemoveLogin(user.Id, request.LoginProvider, request.ProviderKey);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserLoginRemovedEvent(_user.UserId, request.Username, request.LoginProvider, request.ProviderKey));
             }
         }
     }

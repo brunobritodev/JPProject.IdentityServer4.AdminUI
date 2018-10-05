@@ -43,8 +43,8 @@ export class IdentityResourceEditComponent implements OnInit {
 
     public update() {
 
-
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.identityResourceService.update(this.model).subscribe(

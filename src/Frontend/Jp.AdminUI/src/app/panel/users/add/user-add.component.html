@@ -26,7 +26,8 @@
                     'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
                     <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate"
-                        [(ngModel)]="model.userName" />
+                        [(ngModel)]="model.userName" (keyup)="checkIfUniquenameExists()" (blur)="checkIfUniquenameExists()" [ngClass]="getClassUsernameExist()"
+                        required />
                 </div>
             </div>
         </fieldset>
@@ -48,7 +49,7 @@
                     'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
                     <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate"
-                        [(ngModel)]="model.email" />
+                        [(ngModel)]="model.email" (keyup)="checkIfEmailExists()" (blur)="checkIfEmailExists()" [ngClass]="getClassEmailExist()" required />
                 </div>
             </div>
         </fieldset>

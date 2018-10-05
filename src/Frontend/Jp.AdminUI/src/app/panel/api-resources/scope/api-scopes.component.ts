@@ -57,8 +57,8 @@ export class ApiResourceScopesComponent implements OnInit {
     }
 
     public remove(id: number) {
-
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.apiResourceService.removeScope(this.resourceName, id).subscribe(
@@ -93,6 +93,7 @@ export class ApiResourceScopesComponent implements OnInit {
 
     public save() {
         this.showButtonLoading = true;
+        this.errors = [];
         try {
             this.model.resourceName = this.resourceName;
             this.apiResourceService.saveScope(this.model).subscribe(

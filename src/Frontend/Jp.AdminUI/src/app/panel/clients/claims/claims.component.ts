@@ -65,6 +65,7 @@ export class ClientClaimsComponent implements OnInit {
     public remove(id: number) {
 
         this.showButtonLoading = true;
+        this.errors = [];
         try {
 
             this.clientService.removeClaim(this.client, id).subscribe(
@@ -99,6 +100,7 @@ export class ClientClaimsComponent implements OnInit {
 
     public save() {
         this.showButtonLoading = true;
+        this.errors = [];
         try {
             this.model.clientId = this.client;
             this.clientService.saveClaim(this.model).subscribe(

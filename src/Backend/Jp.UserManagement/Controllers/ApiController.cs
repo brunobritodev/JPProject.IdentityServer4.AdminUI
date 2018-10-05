@@ -71,13 +71,6 @@ namespace Jp.Management.Controllers
             }
         }
 
-        protected Guid GetUserId()
-        {
-            if (User == null)
-                throw new ArgumentNullException(nameof(User));
-
-            return Guid.Parse(User.FindFirst(JwtClaimTypes.Subject)?.Value);
-        }
 
     }
 }

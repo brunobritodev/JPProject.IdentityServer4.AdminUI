@@ -13,7 +13,7 @@ namespace Jp.Domain.Validations.User
 
         protected void ValidateRole()
         {
-            RuleFor(c => c.Username).NotEmpty().WithMessage("Role must be set");
+            RuleFor(c => c.Role).NotEmpty().WithMessage("Role must be set");
         }
     }
 }

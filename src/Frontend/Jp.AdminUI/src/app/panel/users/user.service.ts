@@ -6,10 +6,11 @@ import { DefaultResponse } from "../../shared/viewModel/default-response.model";
 import { UserProfile } from "../../shared/viewModel/userProfile.model";
 import { UserClaim } from "../../shared/viewModel/user-claim.model";
 import { UserRole } from "../../shared/viewModel/user-role.model";
+import { UserLogin } from "../../shared/viewModel/user-login.model";
 
 @Injectable()
 export class UserService {
-
+    
     constructor(private http: HttpClient) {
     }
 
@@ -51,9 +52,9 @@ export class UserService {
         return this.http.get<DefaultResponse<UserClaim[]>>(environment.ResourceServer + "UserAdmin/claims", options);
     }
 
-    public removeClaim(username: string, type: string): Observable<DefaultResponse<boolean>> {
+    public removeClaim(username: string, role: string): Observable<DefaultResponse<boolean>> {
         const removeCommand = {
-            type: type,
+            role: role,
             username: username
         };
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/remove-claim", removeCommand);
@@ -86,5 +87,37 @@ export class UserService {
 
     public getAvailableRoles(): Observable<DefaultResponse<UserRole[]>>  {
         return this.http.get<DefaultResponse<UserRole[]>>(environment.ResourceServer + "UserAdmin/all-roles");
+    }
+
+    public getUserLogins(username: string): Observable<DefaultResponse<UserLogin[]>> {
+        let options = {
+            params: {
+                userName: username
+            }
+        };
+        return this.http.get<DefaultResponse<UserLogin[]>>(environment.ResourceServer + "UserAdmin/logins", options);
+    }
+
+    public removeLogin(userName: string, loginProvider: string, providerKey: string): any {
+        const removeCommand = {
+            loginProvider: loginProvider,
+            providerKey: providerKey,
+            username: userName
+        };
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/remove-login", removeCommand);
+    }
+
+    public checkUserName(userName: string): Observable<DefaultResponse<boolean>> {
+        const params = {
+            username: userName
+        };
+        return this.http.get<DefaultResponse<boolean>>(environment.ResourceServer + "user/checkUsername", { params: params });
+    }
+
+    public checkEmail(email: string): Observable<DefaultResponse<boolean>> {
+        const params = {
+            email: email
+        };
+        return this.http.get<DefaultResponse<boolean>>(environment.ResourceServer + "user/checkEmail", { params: params });
     }
 }
