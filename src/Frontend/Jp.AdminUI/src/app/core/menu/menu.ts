@@ -75,6 +75,22 @@ const Users = {
     ]
 };
 
+const Roles = {
+    text: "Roles",
+    link: "/roles",
+    icon: "fas fa-user-tag",
+    submenu: [
+        {
+            text: "List",
+            link: "/roles/list"
+        },
+        {
+            text: "Add",
+            link: "/roles/add"
+        }
+    ]
+};
+
 const headingMain = {
     text: "Main Navigation",
     heading: true
@@ -87,5 +103,6 @@ export const menu = [
     IdentityResource,
     ApiResource,
     PersistedGrants,
-    Users
+    Users,
+    Roles
 ];

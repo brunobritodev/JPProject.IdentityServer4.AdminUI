@@ -1,0 +1,44 @@
+<div class="content-heading">
+    <div>
+        🔑 {{ 'general.roles' | translate }}
+        <small><b> {{ 'roles.description' | translate }}</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="roles == null"></app-loading>
+
+<div class="container-fluid" *ngIf="roles">
+    <div class="col-xl-12 col-md-12 col-lg-12">
+        <div class="card">
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th> {{ 'roles.name' | translate }}</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let role of roles">
+                                <th>
+                                    <button class="btn btn-primary btn-xs" (click)="details(role.name)" placement="top"
+                                        [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
+                                    &nbsp;
+                                </th>
+                                <td>{{role.name}}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                        (click)="remove(role.name)"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

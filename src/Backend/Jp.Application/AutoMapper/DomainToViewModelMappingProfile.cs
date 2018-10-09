@@ -31,6 +31,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<Claim, ClaimViewModel>(MemberList.Destination);
             CreateMap<Role, RoleViewModel>(MemberList.Destination);
             CreateMap<UserLogin, UserLoginViewModel>(MemberList.Destination);
+            
         }
     }
 }

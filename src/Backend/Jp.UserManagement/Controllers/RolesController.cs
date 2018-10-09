@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
@@ -30,6 +31,18 @@ namespace Jp.Management.Controllers
         {
             var clients = await _roleManagerAppService.GetAllRoles();
             return Response(clients);
+        }
+
+        [HttpPost, Route("remove")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveRoleViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _roleManagerAppService.Remove(model);
+            return Response(true);
         }
     }
 }

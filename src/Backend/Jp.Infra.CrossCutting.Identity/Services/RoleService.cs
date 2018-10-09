@@ -34,5 +34,12 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             var roles = await _roleManager.Roles.ToListAsync();
             return roles.Select(s => new Role() { Id = s.Id, Name = s.Name }).ToList();
         }
+
+        public async Task Remove(string name)
+        {
+            var roleClaim = await _roleManager.Roles.Where(x => x.Name == name).SingleOrDefaultAsync();
+
+            await _roleManager.DeleteAsync(roleClaim);
+        }
     }
 }
