@@ -24309,3 +24309,96 @@ LIMIT 1
 2018-10-05 16:49:39.165 -03:00 [INF] Route matched with {action = "UpdateProfilePicture", controller = "Management"}. Executing action Jp.Management.Controllers.ManagementController.UpdateProfilePicture (Jp.Management)
 2018-10-05 16:49:39.168 -03:00 [INF] Authorization was successful.
 2018-10-05 16:49:39.173 -03:00 [INF] Executing action method Jp.Management.Controllers.ManagementController.UpdateProfilePicture (Jp.Management) with arguments (["Jp.Application.ViewModels.ProfilePictureViewModel"]) - Validation state: "Valid"
+2018-10-08 18:06:02.980 -03:00 [INF] Authority URI: https://localhost:5000
+2018-10-08 18:06:04.216 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 18:56:52.961 -03:00 [INF] Authority URI: https://localhost:5000
+2018-10-08 18:56:54.273 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 19:32:50.121 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-08 19:32:50.136 -03:00 [INF] Policy execution successful.
+2018-10-08 19:32:50.141 -03:00 [INF] Request finished in 23.4642ms 204 
+2018-10-08 19:32:50.163 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-08 19:32:50.165 -03:00 [INF] Policy execution successful.
+2018-10-08 19:32:50.407 -03:00 [INF] Successfully validated the token.
+2018-10-08 19:32:50.413 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-08 19:32:50.511 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-08 19:32:50.608 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-08 19:32:51.061 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-08 19:32:51.361 -03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-08 19:32:51.473 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 855.7303ms.
+2018-10-08 19:32:51.483 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-08 19:32:51.497 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 980.8953ms
+2018-10-08 19:32:51.509 -03:00 [INF] Request finished in 1346.5456ms 200 application/json; charset=utf-8
+2018-10-08 19:32:59.132 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-08 19:32:59.135 -03:00 [INF] Policy execution successful.
+2018-10-08 19:32:59.138 -03:00 [INF] Request finished in 6.5144ms 204 
+2018-10-08 19:32:59.232 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-08 19:32:59.238 -03:00 [INF] Policy execution successful.
+2018-10-08 19:32:59.247 -03:00 [INF] Successfully validated the token.
+2018-10-08 19:32:59.252 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-08 19:32:59.258 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-08 19:32:59.267 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-08 19:32:59.276 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-08 19:32:59.363 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-08 19:32:59.372 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 97.7895ms.
+2018-10-08 19:32:59.391 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-08 19:32:59.401 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 135.7868ms
+2018-10-08 19:32:59.407 -03:00 [INF] Request finished in 174.6752ms 200 application/json; charset=utf-8
+2018-10-08 19:33:13.380 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-08 19:33:13.382 -03:00 [INF] Policy execution successful.
+2018-10-08 19:33:13.386 -03:00 [INF] Request finished in 5.8074ms 204 
+2018-10-08 19:33:13.512 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-08 19:33:13.516 -03:00 [INF] Policy execution successful.
+2018-10-08 19:33:13.524 -03:00 [INF] Successfully validated the token.
+2018-10-08 19:33:13.528 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-08 19:33:13.532 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-08 19:33:13.539 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-08 19:33:13.547 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-08 19:33:13.576 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-08 19:33:13.583 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 35.935500000000005ms.
+2018-10-08 19:33:13.589 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-08 19:33:13.598 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 59.0152ms
+2018-10-08 19:33:13.603 -03:00 [INF] Request finished in 91.0317ms 200 application/json; charset=utf-8
+2018-10-08 19:33:18.659 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-08 19:33:18.684 -03:00 [INF] Policy execution successful.
+2018-10-08 19:33:18.688 -03:00 [INF] Request finished in 28.6786ms 204 
+2018-10-08 19:33:18.765 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-08 19:33:18.769 -03:00 [INF] Policy execution successful.
+2018-10-08 19:33:18.774 -03:00 [INF] Successfully validated the token.
+2018-10-08 19:33:18.778 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-08 19:33:18.782 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-08 19:33:18.788 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-08 19:33:18.792 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-08 19:33:18.806 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-08 19:33:18.813 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 21.2576ms.
+2018-10-08 19:33:18.819 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-08 19:33:18.824 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 36.1685ms
+2018-10-08 19:33:18.830 -03:00 [INF] Request finished in 65.5258ms 200 application/json; charset=utf-8
+2018-10-08 20:36:25.388 -03:00 [INF] Authority URI: https://localhost:5000
+2018-10-08 20:36:26.679 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 20:37:40.982 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-08 20:37:41.000 -03:00 [INF] Policy execution successful.
+2018-10-08 20:37:41.006 -03:00 [INF] Request finished in 26.8652ms 204 
+2018-10-08 20:37:41.025 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-08 20:37:41.027 -03:00 [INF] Policy execution successful.
+2018-10-08 20:37:41.282 -03:00 [INF] Successfully validated the token.
+2018-10-08 20:37:41.288 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-08 20:37:41.385 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-08 20:37:41.479 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-08 20:37:41.960 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-08 20:37:42.289 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-08 20:37:42.392 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 904.4409ms.
+2018-10-08 20:37:42.402 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-08 20:37:42.415 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 1025.3039ms
+2018-10-08 20:37:42.429 -03:00 [INF] Request finished in 1403.4732ms 200 application/json; charset=utf-8
+2018-10-08 20:41:59.480 -03:00 [INF] Authority URI: https://localhost:5000
+2018-10-08 20:42:00.559 -03:00 [INF] User profile is available. Using 'C:\Users\Bruno\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.

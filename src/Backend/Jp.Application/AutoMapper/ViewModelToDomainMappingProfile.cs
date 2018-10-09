@@ -4,11 +4,13 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ApiResouceViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Application.ViewModels.IdentityResourceViewModels;
+using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Commands.PersistedGrant;
+using Jp.Domain.Commands.Role;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 
@@ -82,6 +84,10 @@ namespace Jp.Application.AutoMapper
             CreateMap<RemoveApiScopeViewModel, RemoveApiScopeCommand>().ConstructUsing(c => new RemoveApiScopeCommand(c.Id, c.ResourceName));
             CreateMap<SaveApiScopeViewModel, SaveApiScopeCommand>().ConstructUsing(c => new SaveApiScopeCommand(c.ResourceName, c.Name, c.Description, c.DisplayName, c.Emphasize, c.ShowInDiscoveryDocument, c.UserClaims));
 
+            /*
+             * Role commands
+             */
+            CreateMap<RemoveRoleViewModel, RemoveRoleCommand>().ConstructUsing(c => new RemoveRoleCommand(c.Name));
 
         }
     }

@@ -8,10 +8,15 @@ import { Role } from "../viewModel/role.model";
 @Injectable()
 export class RoleService {
 
+
     constructor(private http: HttpClient) {
     }
 
-    public getAvailableRoles(): Observable<DefaultResponse<Role[]>>  {
+    public getAvailableRoles(): Observable<DefaultResponse<Role[]>> {
         return this.http.get<DefaultResponse<Role[]>>(environment.ResourceServer + "Roles/all-roles");
+    }
+
+    public remove(name: string): any {
+        throw new Error("Method not implemented.");
     }
 }

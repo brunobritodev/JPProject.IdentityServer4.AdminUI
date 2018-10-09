@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
-using Jp.Domain.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Jp.Application.ViewModels.RoleViewModels;
+using Jp.Domain.Commands.Role;
 
 namespace Jp.Application.Services
 {
@@ -29,8 +30,6 @@ namespace Jp.Application.Services
             _eventStoreRepository = eventStoreRepository;
         }
 
-
-
         public void Dispose()
         {
             GC.SuppressFinalize(this);
@@ -39,6 +38,12 @@ namespace Jp.Application.Services
         public async Task<IEnumerable<RoleViewModel>> GetAllRoles()
         {
             return _mapper.Map<IEnumerable<RoleViewModel>>(await _roleService.GetAllRoles());
+        }
+
+        public Task Remove(RemoveRoleViewModel model)
+        {
+            var command = _mapper.Map<RemoveRoleCommand>(model);
+            return Bus.SendCommand(command);
         }
     }
 }

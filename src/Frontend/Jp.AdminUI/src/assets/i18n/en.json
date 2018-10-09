@@ -353,6 +353,10 @@
             "nologins": "There is no available logins"
         }
     },
+    "roles": {
+        "description": "Represents a role in the identity system",
+        "name":"Name"
+    },
     "toasterMessages": {
         "title-success": "Success",
         "message-success": "Well done!"
