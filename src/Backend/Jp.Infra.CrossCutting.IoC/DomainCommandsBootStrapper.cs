@@ -16,8 +16,17 @@ namespace Jp.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IRequestHandler<RemovePersistedGrantCommand>, PersistedGrantCommandHandler>();
+
+            /*
+             * Role commands
+             */
             services.AddScoped<IRequestHandler<RemoveRoleCommand>, RoleCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveUserFromRoleCommand>, RoleCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateRoleCommand>, RoleCommandHandler>();
+            services.AddScoped<IRequestHandler<SaveRoleCommand>, RoleCommandHandler>();
             
+            
+
             /*
              * Api Resource  commands
              */

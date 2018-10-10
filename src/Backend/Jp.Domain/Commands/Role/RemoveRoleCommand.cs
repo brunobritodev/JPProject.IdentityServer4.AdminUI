@@ -2,7 +2,7 @@
 
 namespace Jp.Domain.Commands.Role
 {
-    public class RemoveRoleCommand: RoleCommand
+    public class RemoveRoleCommand : RoleCommand
     {
         public RemoveRoleCommand(string name)
         {

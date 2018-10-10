@@ -355,7 +355,22 @@
     },
     "roles": {
         "description": "Represents a role in the identity system",
-        "name":"Name"
+        "name":"Name",
+        "selectedRole": "Selected Role",
+        "new-role": "New role",
+        "edit":{
+            "roleName": "Name",
+            "roleName-tooltip": "Gets or sets the role name."               
+        },
+        "add":{
+            "roleName": "Name",
+            "roleName-tooltip": "Gets or sets the role name."               
+        },
+        "list": {
+            "email": "Email",
+            "picture": "Picture",
+            "name": "Name"
+        }
     },
     "toasterMessages": {
         "title-success": "Success",

@@ -510,11 +510,33 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             var logins = await _userManager.GetLoginsAsync(user);
             return logins.Select(a => new UserLogin { LoginProvider = a.LoginProvider, ProviderDisplayName = a.ProviderDisplayName, ProviderKey = a.ProviderKey });
         }
-        
+
         public async Task<bool> RemoveLogin(Guid userId, string loginProvider, string providerKey)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
             var result = await _userManager.RemoveLoginAsync(user, loginProvider, providerKey);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<IEnumerable<User>> GetUserFromRole(string[] role)
+        {
+            var users = new List<UserIdentity>();
+            foreach (var s in role)
+            {
+                users.AddRange(await _userManager.GetUsersInRoleAsync(s));
+            }
+            return users.Select(GetUser);
+        }
+
+        public async Task<bool> RemoveUserFromRole(string name, string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            var result = await _userManager.RemoveFromRoleAsync(user, name);
             foreach (var error in result.Errors)
             {
                 await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));

@@ -1,0 +1,34 @@
+<div class="content-heading">
+    <div>
+        🔑 {{ 'general.roles' | translate }}
+        <small><b> {{ 'roles.description' | translate }}</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="model == null"></app-loading>
+
+<div class="container-fluid" *ngIf="model">
+    <div class="col-xl-12 col-md-12 col-lg-12">
+        <div class="card">
+
+            <div class="card-body">
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'roles.edit.roleName-tooltip' | translate">{{
+                            'roles.edit.roleName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-8">
+                            <input class="form-control" autocomplete="model-roleName" [placeholder]="'roles.edit.roleName-tooltip' | translate"
+                                [(ngModel)]="model.name" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="card-footer">
+                <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
+                <a class="mb-1 btn btn-secondary" [routerLink]="['/roles']">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

@@ -45,5 +45,28 @@ namespace Jp.Application.Services
             var command = _mapper.Map<RemoveRoleCommand>(model);
             return Bus.SendCommand(command);
         }
+
+        public async Task<RoleViewModel> GetDetails(string name)
+        {
+            return _mapper.Map<RoleViewModel>(await _roleService.Details(name));
+        }
+
+        public Task Save(SaveRoleViewModel model)
+        {
+            var command = _mapper.Map<SaveRoleCommand>(model);
+            return Bus.SendCommand(command);
+        }
+
+        public Task Update(UpdateRoleViewModel model)
+        {
+            var command = _mapper.Map<UpdateRoleCommand>(model);
+            return Bus.SendCommand(command);
+        }
+
+        public Task RemoveUserFromRole(RemoveUserFromRoleViewModel model)
+        {
+            var command = _mapper.Map<RemoveUserFromRoleCommand>(model);
+            return Bus.SendCommand(command);
+        }
     }
 }

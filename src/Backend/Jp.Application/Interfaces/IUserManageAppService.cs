@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Models;
 
@@ -30,5 +31,6 @@ namespace Jp.Application.Interfaces
         Task SaveRole(SaveUserRoleViewModel model);
         Task<IEnumerable<UserLoginViewModel>> GetLogins(string userName);
         Task RemoveLogin(RemoveUserLoginViewModel model);
+        Task<IEnumerable<UserListViewModel>> GetUsersInRole(string[] role);
     }
 }

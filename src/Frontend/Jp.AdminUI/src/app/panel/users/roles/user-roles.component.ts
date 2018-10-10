@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
 import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
-import { UserService } from "../user.service";
+import { UserService } from "../../../shared/services/user.service";
 import { UserRole } from "../../../shared/viewModel/user-role.model";
 import { RoleService } from "../../../shared/services/role.service";
 
@@ -85,7 +85,6 @@ export class UserRolesComponent implements OnInit {
             this.showButtonLoading = false;
             return Observable.throw("Unknown error while trying to remove");
         }
-
     }
 
     private loadClaims(): void {
