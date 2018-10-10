@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "../../../core/translator/translator.service";
-import { UserService } from "../user.service";
+import { UserService } from "../../../shared/services/user.service";
 import { UserProfile } from "../../../shared/viewModel/userProfile.model";
 const swal = require('sweetalert');
 

@@ -40,5 +40,7 @@ namespace Jp.Domain.Interfaces
         Task<bool> SaveRole(Guid userId, string role);
         Task<IEnumerable<UserLogin>> GetUserLogins(string userName);
         Task<bool> RemoveLogin(Guid userId, string requestLoginProvider, string requestProviderKey);
+        Task<IEnumerable<User>> GetUserFromRole(string[] role);
+        Task<bool> RemoveUserFromRole(string name, string username);
     }
 }

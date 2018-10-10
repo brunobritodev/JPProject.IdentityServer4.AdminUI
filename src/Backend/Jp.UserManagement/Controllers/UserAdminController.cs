@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -148,9 +149,14 @@ namespace Jp.Management.Controllers
             }
             await _userManageAppService.RemoveLogin(model);
             return Response(true);
-
         }
 
+        [HttpGet, Route("users-from-role")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<UserListViewModel>>>> UsersFromRole(string[] role)
+        {
+            var clients = await _userManageAppService.GetUsersInRole(role);
+            return Response(clients);
+        }
 
     }
 }

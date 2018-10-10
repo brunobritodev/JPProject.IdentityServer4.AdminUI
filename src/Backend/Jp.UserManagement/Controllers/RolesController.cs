@@ -44,5 +44,49 @@ namespace Jp.Management.Controllers
             await _roleManagerAppService.Remove(model);
             return Response(true);
         }
+
+        [HttpGet, Route("details")]
+        public async Task<ActionResult<DefaultResponse<RoleViewModel>>> Details(string name)
+        {
+            var clients = await _roleManagerAppService.GetDetails(name);
+            return Response(clients);
+        }
+
+        [HttpPost, Route("save")]
+        public async Task<ActionResult<DefaultResponse<bool>>> NewRole([FromBody] SaveRoleViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _roleManagerAppService.Save(model);
+            return Response(true);
+        }
+
+        [HttpPost, Route("update")]
+        public async Task<ActionResult<DefaultResponse<bool>>> UpdateRole([FromBody] UpdateRoleViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _roleManagerAppService.Update(model);
+            return Response(true);
+        }
+
+        [HttpPost, Route("remove-user")]
+        public async Task<ActionResult<DefaultResponse<bool>>> RemoveUser([FromBody] RemoveUserFromRoleViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            await _roleManagerAppService.RemoveUserFromRole(model);
+            return Response(true);
+        }
     }
 }

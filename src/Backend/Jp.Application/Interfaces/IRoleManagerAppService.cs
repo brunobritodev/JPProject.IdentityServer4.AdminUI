@@ -11,5 +11,9 @@ namespace Jp.Application.Interfaces
     {
         Task<IEnumerable<RoleViewModel>> GetAllRoles();
         Task Remove(RemoveRoleViewModel model);
+        Task<RoleViewModel> GetDetails(string name);
+        Task Save(SaveRoleViewModel model);
+        Task Update(UpdateRoleViewModel model);
+        Task RemoveUserFromRole(RemoveUserFromRoleViewModel model);
     }
 }

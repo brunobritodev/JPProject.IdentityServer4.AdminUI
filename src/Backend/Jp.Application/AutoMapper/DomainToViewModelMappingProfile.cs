@@ -10,6 +10,7 @@ using Jp.Domain.Core.Events;
 using Jp.Domain.Models;
 using System.Globalization;
 using System.Security.Claims;
+using Jp.Application.ViewModels.RoleViewModels;
 
 namespace Jp.Application.AutoMapper
 {

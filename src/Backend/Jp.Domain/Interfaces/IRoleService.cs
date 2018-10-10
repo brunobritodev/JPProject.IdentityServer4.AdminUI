@@ -8,5 +8,8 @@ namespace Jp.Domain.Interfaces
     {
         Task<IEnumerable<Role>> GetAllRoles();
         Task Remove(string name);
+        Task<Role> Details(string name);
+        Task<bool> Save(string name);
+        Task<bool> Update(string name, string oldName);
     }
 }

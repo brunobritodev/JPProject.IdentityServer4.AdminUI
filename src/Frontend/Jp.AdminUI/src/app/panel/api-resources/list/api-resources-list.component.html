@@ -28,11 +28,11 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let resource of apiResources">
-                                <th>
+                                <td>
                                     <a [routerLink]="['/api-resource/edit', resource.name]" class="btn btn-primary btn-xs"
                                         placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                                     &nbsp;
-                                </th>
+                                </td>
                                 <td>{{resource.name}}</td>
                                 <td>{{resource.description}}</td>
                                 <td>

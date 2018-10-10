@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jp.Application.ViewModels
+namespace Jp.Application.ViewModels.RoleViewModels
 {
     public class RoleViewModel
     {

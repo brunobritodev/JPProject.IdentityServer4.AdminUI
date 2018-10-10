@@ -1,4 +1,5 @@
 ﻿using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.Notifications;
 using Jp.Domain.Interfaces;
 using Jp.Domain.Models;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
@@ -19,7 +20,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
         public RoleService(
             RoleManager<UserIdentityRole> roleManager,
-            IEmailSender emailSender,
             IMediatorHandler bus,
             ILoggerFactory loggerFactory)
         {
@@ -41,5 +41,37 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
             await _roleManager.DeleteAsync(roleClaim);
         }
+
+        public async Task<Role> Details(string name)
+        {
+            var s = await _roleManager.Roles.FirstAsync(f => f.Name == name);
+            return new Role() { Id = s.Id, Name = s.Name };
+        }
+
+        public async Task<bool> Save(string name)
+        {
+            var result = await _roleManager.CreateAsync(new UserIdentityRole() { Name = name });
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<bool> Update(string name, string oldName)
+        {
+            var s = await _roleManager.Roles.FirstAsync(f => f.Name == oldName);
+            s.Name = name;
+            var result = await _roleManager.UpdateAsync(s);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+       
     }
 }

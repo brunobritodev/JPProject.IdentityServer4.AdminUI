@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Jp.Application.ViewModels.RoleViewModels;
 
 namespace Jp.Application.Services
 {
@@ -154,6 +155,10 @@ namespace Jp.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
+        public async Task<IEnumerable<UserListViewModel>> GetUsersInRole(string[] role)
+        {
+            return _mapper.Map<IEnumerable<UserListViewModel>>(await _userService.GetUserFromRole(role));
+        }
     }
 }
 

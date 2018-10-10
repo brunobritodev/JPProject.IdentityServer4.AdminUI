@@ -5,10 +5,14 @@ import { DndModule } from "ng2-dnd";
 import { NgxSelectModule } from 'ngx-select-ex';
 import { TagInputModule } from 'ngx-chips';
 import { RolesListComponent } from "./list/roles-list.component";
+import { RoleEditComponent } from "./edit/role-edit.component";
+import { RoleAddComponent } from "./add/role-add.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
     { path: "list", component: RolesListComponent },
+    { path: "edit/:role", component: RoleEditComponent },
+    { path: "add", component: RoleAddComponent }
 ];
 
 @NgModule({
@@ -21,6 +25,8 @@ const routes: Routes = [
     ],
     declarations: [
         RolesListComponent,
+        RoleEditComponent,
+        RoleAddComponent
     ],
     exports: [
         RouterModule

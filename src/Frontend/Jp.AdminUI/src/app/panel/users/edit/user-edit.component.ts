@@ -6,7 +6,7 @@ import { ToasterConfig, ToasterService } from "angular2-toaster";
 import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
 import { UserProfile } from "../../../shared/viewModel/userProfile.model";
-import { UserService } from "../user.service";
+import { UserService } from "../../../shared/services/user.service";
 
 
 @Component({
