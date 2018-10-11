@@ -35,11 +35,16 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return roles.Select(s => new Role() { Id = s.Id, Name = s.Name }).ToList();
         }
 
-        public async Task Remove(string name)
+        public async Task<bool> Remove(string name)
         {
             var roleClaim = await _roleManager.Roles.Where(x => x.Name == name).SingleOrDefaultAsync();
+            var result = await _roleManager.DeleteAsync(roleClaim);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
 
-            await _roleManager.DeleteAsync(roleClaim);
+            return result.Succeeded;
         }
 
         public async Task<Role> Details(string name)
@@ -72,6 +77,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-       
+
     }
 }

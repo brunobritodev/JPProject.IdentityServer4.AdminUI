@@ -13,7 +13,7 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<RemoveRoleCommand>,
         IRequestHandler<SaveRoleCommand>,
         IRequestHandler<UpdateRoleCommand>,
-        IRequestHandler<RemoveUserFromRoleCommand> 
+        IRequestHandler<RemoveUserFromRoleCommand>
     {
         private readonly IRoleService _roleService;
         private readonly IUserService _userService;
@@ -38,9 +38,9 @@ namespace Jp.Domain.CommandHandlers
             }
 
             // Businness logic here
-            await _roleService.Remove(request.Name);
+            var result = await _roleService.Remove(request.Name);
 
-            if (Commit())
+            if (result)
             {
                 await Bus.RaiseEvent(new RoleRemovedEvent(request.Name));
             }

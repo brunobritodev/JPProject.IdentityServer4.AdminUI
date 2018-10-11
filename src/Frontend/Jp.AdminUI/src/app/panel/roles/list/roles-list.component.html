@@ -16,10 +16,10 @@
 <div class="container-fluid" *ngIf="roles">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
-                <div class="card-header">
-                        <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/roles/add' ]"><i class="fa fa-plus-circle"></i>
-                            {{ 'roles.new-role' | translate }}</a>
-                    </div>
+            <div class="card-header">
+                <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/roles/add' ]"><i class="fa fa-plus-circle"></i>
+                    {{ 'roles.new-role' | translate }}</a>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -56,7 +56,7 @@
 </div>
 
 
-<div class="container-fluid" *ngIf="users$">
+<div class="container-fluid" *ngIf="users$ || selectedRole">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-header">

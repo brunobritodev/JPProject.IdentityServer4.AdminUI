@@ -57,7 +57,7 @@ export class RolesListComponent implements OnInit {
                 closeOnCancel: false
             }, (isConfirm) => {
                 if (isConfirm) {
-
+                    this.selectedRole = null;
                     this.roleService.remove(name).subscribe(
                         registerResult => {
                             if (registerResult.data) {

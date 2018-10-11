@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
