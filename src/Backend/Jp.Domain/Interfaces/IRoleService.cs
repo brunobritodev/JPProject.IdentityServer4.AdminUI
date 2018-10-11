@@ -7,7 +7,7 @@ namespace Jp.Domain.Interfaces
     public interface IRoleService
     {
         Task<IEnumerable<Role>> GetAllRoles();
-        Task Remove(string name);
+        Task<bool> Remove(string name);
         Task<Role> Details(string name);
         Task<bool> Save(string name);
         Task<bool> Update(string name, string oldName);
