@@ -32051,3 +32051,758 @@ FROM `Clients` AS `a`
 2018-10-11 10:02:00.361 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
 2018-10-11 10:02:00.363 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 11.0737ms
 2018-10-11 10:02:00.365 -03:00 [INF] Request finished in 19.681ms 200 application/json; charset=utf-8
+2018-10-11 12:54:30.159 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 12:54:30.162 -03:00 [INF] Policy execution successful.
+2018-10-11 12:54:30.164 -03:00 [INF] Request finished in 4.4954ms 204 
+2018-10-11 12:54:30.182 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 12:54:30.184 -03:00 [INF] Policy execution successful.
+2018-10-11 12:54:30.186 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:54:30.188 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:54:30.190 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 12:54:30.193 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:54:30.195 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:54:30.220 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 12:54:30.224 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 27.9723ms.
+2018-10-11 12:54:30.225 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:54:30.227 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 34.848800000000004ms
+2018-10-11 12:54:30.228 -03:00 [INF] Request finished in 46.045ms 200 application/json; charset=utf-8
+2018-10-11 12:54:32.715 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-11 12:54:32.717 -03:00 [INF] Policy execution successful.
+2018-10-11 12:54:32.719 -03:00 [INF] Request finished in 3.8897ms 204 
+2018-10-11 12:54:32.734 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-11 12:54:32.736 -03:00 [INF] Policy execution successful.
+2018-10-11 12:54:32.738 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:54:32.739 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:54:32.741 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-11 12:54:32.742 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:54:32.744 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:54:32.747 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-11 12:54:32.751 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.1608ms.
+2018-10-11 12:54:32.752 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:54:32.754 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 12.151ms
+2018-10-11 12:54:32.756 -03:00 [INF] Request finished in 21.9754ms 200 application/json; charset=utf-8
+2018-10-11 12:54:35.690 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/UserAdmin/list  
+2018-10-11 12:54:35.692 -03:00 [INF] Policy execution successful.
+2018-10-11 12:54:35.694 -03:00 [INF] Request finished in 3.9934ms 204 
+2018-10-11 12:54:35.708 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/UserAdmin/list  
+2018-10-11 12:54:35.709 -03:00 [INF] Policy execution successful.
+2018-10-11 12:54:35.711 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:54:35.712 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:54:35.713 -03:00 [INF] Route matched with {action = "List", controller = "UserAdmin"}. Executing action Jp.Management.Controllers.UserAdminController.List (Jp.Management)
+2018-10-11 12:54:35.716 -03:00 [INF] Executing action method Jp.Management.Controllers.UserAdminController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:54:35.717 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:54:35.722 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`AccessFailedCount`, `u`.`Bio`, `u`.`Company`, `u`.`ConcurrencyStamp`, `u`.`Email`, `u`.`EmailConfirmed`, `u`.`JobTitle`, `u`.`LockoutEnabled`, `u`.`LockoutEnd`, `u`.`Name`, `u`.`NormalizedEmail`, `u`.`NormalizedUserName`, `u`.`PasswordHash`, `u`.`PhoneNumber`, `u`.`PhoneNumberConfirmed`, `u`.`Picture`, `u`.`SecurityStamp`, `u`.`TwoFactorEnabled`, `u`.`Url`, `u`.`UserName`
+FROM `Users` AS `u`
+2018-10-11 12:54:35.724 -03:00 [INF] Executed action method Jp.Management.Controllers.UserAdminController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.1007000000000007ms.
+2018-10-11 12:54:35.726 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.UserViewModels.UserListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:54:35.727 -03:00 [INF] Executed action Jp.Management.Controllers.UserAdminController.List (Jp.Management) in 12.0945ms
+2018-10-11 12:54:35.728 -03:00 [INF] Request finished in 20.6898ms 200 application/json; charset=utf-8
+2018-10-11 12:55:11.982 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/UserAdmin/list  
+2018-10-11 12:55:11.983 -03:00 [INF] Policy execution successful.
+2018-10-11 12:55:11.984 -03:00 [INF] Request finished in 2.415ms 204 
+2018-10-11 12:55:12.043 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/UserAdmin/list  
+2018-10-11 12:55:12.044 -03:00 [INF] Policy execution successful.
+2018-10-11 12:55:12.046 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:55:12.048 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:55:12.050 -03:00 [INF] Route matched with {action = "List", controller = "UserAdmin"}. Executing action Jp.Management.Controllers.UserAdminController.List (Jp.Management)
+2018-10-11 12:55:12.054 -03:00 [INF] Executing action method Jp.Management.Controllers.UserAdminController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:55:12.056 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:55:12.065 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`AccessFailedCount`, `u`.`Bio`, `u`.`Company`, `u`.`ConcurrencyStamp`, `u`.`Email`, `u`.`EmailConfirmed`, `u`.`JobTitle`, `u`.`LockoutEnabled`, `u`.`LockoutEnd`, `u`.`Name`, `u`.`NormalizedEmail`, `u`.`NormalizedUserName`, `u`.`PasswordHash`, `u`.`PhoneNumber`, `u`.`PhoneNumberConfirmed`, `u`.`Picture`, `u`.`SecurityStamp`, `u`.`TwoFactorEnabled`, `u`.`Url`, `u`.`UserName`
+FROM `Users` AS `u`
+2018-10-11 12:55:12.069 -03:00 [INF] Executed action method Jp.Management.Controllers.UserAdminController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.6513ms.
+2018-10-11 12:55:12.072 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.UserViewModels.UserListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:55:12.074 -03:00 [INF] Executed action Jp.Management.Controllers.UserAdminController.List (Jp.Management) in 21.6282ms
+2018-10-11 12:55:12.077 -03:00 [INF] Request finished in 33.938ms 200 application/json; charset=utf-8
+2018-10-11 12:56:45.497 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-11 12:56:45.500 -03:00 [INF] Policy execution successful.
+2018-10-11 12:56:45.501 -03:00 [INF] Request finished in 3.7734ms 204 
+2018-10-11 12:56:45.512 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-11 12:56:45.514 -03:00 [INF] Policy execution successful.
+2018-10-11 12:56:45.516 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:56:45.519 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:56:45.521 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-11 12:56:45.522 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:56:45.524 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:56:45.527 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-11 12:56:45.529 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.5199000000000007ms.
+2018-10-11 12:56:45.531 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:56:45.533 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 11.0669ms
+2018-10-11 12:56:45.536 -03:00 [INF] Request finished in 23.5775ms 200 application/json; charset=utf-8
+2018-10-11 12:58:08.416 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/Roles/all-roles  
+2018-10-11 12:58:08.418 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:08.420 -03:00 [INF] Request finished in 3.619ms 204 
+2018-10-11 12:58:08.430 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/Roles/all-roles  
+2018-10-11 12:58:08.434 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:08.437 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:58:08.439 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:58:08.442 -03:00 [INF] Route matched with {action = "AllRoles", controller = "Roles"}. Executing action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management)
+2018-10-11 12:58:08.444 -03:00 [INF] Executing action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:58:08.445 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:58:08.449 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `Roles` AS `r`
+2018-10-11 12:58:08.453 -03:00 [INF] Executed action method Jp.Management.Controllers.RolesController.AllRoles (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.2982ms.
+2018-10-11 12:58:08.455 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.RoleViewModels.RoleViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:58:08.456 -03:00 [INF] Executed action Jp.Management.Controllers.RolesController.AllRoles (Jp.Management) in 12.779300000000001ms
+2018-10-11 12:58:08.458 -03:00 [INF] Request finished in 27.6063ms 200 application/json; charset=utf-8
+2018-10-11 12:58:11.173 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 12:58:11.176 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:11.178 -03:00 [INF] Request finished in 4.9797ms 204 
+2018-10-11 12:58:11.198 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 12:58:11.200 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:11.201 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:58:11.202 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:58:11.203 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 12:58:11.205 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:58:11.207 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:58:11.210 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 12:58:11.213 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.6837ms.
+2018-10-11 12:58:11.214 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:58:11.215 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 10.894400000000001ms
+2018-10-11 12:58:11.217 -03:00 [INF] Request finished in 18.7725ms 200 application/json; charset=utf-8
+2018-10-11 12:58:14.396 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/details?clientId=Swagger  
+2018-10-11 12:58:14.398 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:14.401 -03:00 [INF] Request finished in 5.4394ms 204 
+2018-10-11 12:58:14.410 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/details?clientId=Swagger  
+2018-10-11 12:58:14.412 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:14.414 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:58:14.416 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:58:14.417 -03:00 [INF] Route matched with {action = "Details", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.Details (Jp.Management)
+2018-10-11 12:58:14.419 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:58:14.421 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.Details (Jp.Management) with arguments (["Swagger"]) - Validation state: "Valid"
+2018-10-11 12:58:14.425 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x`.`Id`, `x`.`AbsoluteRefreshTokenLifetime`, `x`.`AccessTokenLifetime`, `x`.`AccessTokenType`, `x`.`AllowAccessTokensViaBrowser`, `x`.`AllowOfflineAccess`, `x`.`AllowPlainTextPkce`, `x`.`AllowRememberConsent`, `x`.`AlwaysIncludeUserClaimsInIdToken`, `x`.`AlwaysSendClientClaims`, `x`.`AuthorizationCodeLifetime`, `x`.`BackChannelLogoutSessionRequired`, `x`.`BackChannelLogoutUri`, `x`.`ClientClaimsPrefix`, `x`.`ClientId`, `x`.`ClientName`, `x`.`ClientUri`, `x`.`ConsentLifetime`, `x`.`Description`, `x`.`EnableLocalLogin`, `x`.`Enabled`, `x`.`FrontChannelLogoutSessionRequired`, `x`.`FrontChannelLogoutUri`, `x`.`IdentityTokenLifetime`, `x`.`IncludeJwtId`, `x`.`LogoUri`, `x`.`PairWiseSubjectSalt`, `x`.`ProtocolType`, `x`.`RefreshTokenExpiration`, `x`.`RefreshTokenUsage`, `x`.`RequireClientSecret`, `x`.`RequireConsent`, `x`.`RequirePkce`, `x`.`SlidingRefreshTokenLifetime`, `x`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `x`
+WHERE `x`.`ClientId` = @__clientId_0
+ORDER BY `x`.`Id`
+LIMIT 2
+2018-10-11 12:58:14.429 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedGrantTypes`.`Id`, `x.AllowedGrantTypes`.`ClientId`, `x.AllowedGrantTypes`.`GrantType`
+FROM `ClientGrantTypes` AS `x.AllowedGrantTypes`
+INNER JOIN (
+    SELECT `x0`.`Id`
+    FROM `Clients` AS `x0`
+    WHERE `x0`.`ClientId` = @__clientId_0
+    ORDER BY `x0`.`Id`
+    LIMIT 1
+) AS `t` ON `x.AllowedGrantTypes`.`ClientId` = `t`.`Id`
+ORDER BY `t`.`Id`
+2018-10-11 12:58:14.433 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.RedirectUris`.`Id`, `x.RedirectUris`.`ClientId`, `x.RedirectUris`.`RedirectUri`
+FROM `ClientRedirectUris` AS `x.RedirectUris`
+INNER JOIN (
+    SELECT `x1`.`Id`
+    FROM `Clients` AS `x1`
+    WHERE `x1`.`ClientId` = @__clientId_0
+    ORDER BY `x1`.`Id`
+    LIMIT 1
+) AS `t0` ON `x.RedirectUris`.`ClientId` = `t0`.`Id`
+ORDER BY `t0`.`Id`
+2018-10-11 12:58:14.437 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.PostLogoutRedirectUris`.`Id`, `x.PostLogoutRedirectUris`.`ClientId`, `x.PostLogoutRedirectUris`.`PostLogoutRedirectUri`
+FROM `ClientPostLogoutRedirectUris` AS `x.PostLogoutRedirectUris`
+INNER JOIN (
+    SELECT `x2`.`Id`
+    FROM `Clients` AS `x2`
+    WHERE `x2`.`ClientId` = @__clientId_0
+    ORDER BY `x2`.`Id`
+    LIMIT 1
+) AS `t1` ON `x.PostLogoutRedirectUris`.`ClientId` = `t1`.`Id`
+ORDER BY `t1`.`Id`
+2018-10-11 12:58:14.441 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedScopes`.`Id`, `x.AllowedScopes`.`ClientId`, `x.AllowedScopes`.`Scope`
+FROM `ClientScopes` AS `x.AllowedScopes`
+INNER JOIN (
+    SELECT `x3`.`Id`
+    FROM `Clients` AS `x3`
+    WHERE `x3`.`ClientId` = @__clientId_0
+    ORDER BY `x3`.`Id`
+    LIMIT 1
+) AS `t2` ON `x.AllowedScopes`.`ClientId` = `t2`.`Id`
+ORDER BY `t2`.`Id`
+2018-10-11 12:58:14.445 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.IdentityProviderRestrictions`.`Id`, `x.IdentityProviderRestrictions`.`ClientId`, `x.IdentityProviderRestrictions`.`Provider`
+FROM `ClientIdPRestrictions` AS `x.IdentityProviderRestrictions`
+INNER JOIN (
+    SELECT `x4`.`Id`
+    FROM `Clients` AS `x4`
+    WHERE `x4`.`ClientId` = @__clientId_0
+    ORDER BY `x4`.`Id`
+    LIMIT 1
+) AS `t3` ON `x.IdentityProviderRestrictions`.`ClientId` = `t3`.`Id`
+ORDER BY `t3`.`Id`
+2018-10-11 12:58:14.450 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedCorsOrigins`.`Id`, `x.AllowedCorsOrigins`.`ClientId`, `x.AllowedCorsOrigins`.`Origin`
+FROM `ClientCorsOrigins` AS `x.AllowedCorsOrigins`
+INNER JOIN (
+    SELECT `x5`.`Id`
+    FROM `Clients` AS `x5`
+    WHERE `x5`.`ClientId` = @__clientId_0
+    ORDER BY `x5`.`Id`
+    LIMIT 1
+) AS `t4` ON `x.AllowedCorsOrigins`.`ClientId` = `t4`.`Id`
+ORDER BY `t4`.`Id`
+2018-10-11 12:58:14.453 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.Details (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.7363ms.
+2018-10-11 12:58:14.454 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[IdentityServer4.Models.Client, IdentityServer4, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-11 12:58:14.455 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.Details (Jp.Management) in 36.578ms
+2018-10-11 12:58:14.457 -03:00 [INF] Request finished in 47.0013ms 200 application/json; charset=utf-8
+2018-10-11 12:58:17.827 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 12:58:17.829 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:17.830 -03:00 [INF] Request finished in 3.2502ms 204 
+2018-10-11 12:58:17.838 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 12:58:17.839 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:17.841 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:58:17.843 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:58:17.844 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 12:58:17.845 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:58:17.847 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:58:17.851 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 12:58:17.855 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.9928ms.
+2018-10-11 12:58:17.856 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:58:17.858 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 13.719700000000001ms
+2018-10-11 12:58:17.860 -03:00 [INF] Request finished in 22.1023ms 200 application/json; charset=utf-8
+2018-10-11 12:58:20.686 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/details?clientId=UserManagementUI  
+2018-10-11 12:58:20.689 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:20.690 -03:00 [INF] Request finished in 3.9121ms 204 
+2018-10-11 12:58:20.701 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/details?clientId=UserManagementUI  
+2018-10-11 12:58:20.703 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:20.704 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:58:20.705 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:58:20.706 -03:00 [INF] Route matched with {action = "Details", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.Details (Jp.Management)
+2018-10-11 12:58:20.708 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:58:20.710 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.Details (Jp.Management) with arguments (["UserManagementUI"]) - Validation state: "Valid"
+2018-10-11 12:58:20.714 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x`.`Id`, `x`.`AbsoluteRefreshTokenLifetime`, `x`.`AccessTokenLifetime`, `x`.`AccessTokenType`, `x`.`AllowAccessTokensViaBrowser`, `x`.`AllowOfflineAccess`, `x`.`AllowPlainTextPkce`, `x`.`AllowRememberConsent`, `x`.`AlwaysIncludeUserClaimsInIdToken`, `x`.`AlwaysSendClientClaims`, `x`.`AuthorizationCodeLifetime`, `x`.`BackChannelLogoutSessionRequired`, `x`.`BackChannelLogoutUri`, `x`.`ClientClaimsPrefix`, `x`.`ClientId`, `x`.`ClientName`, `x`.`ClientUri`, `x`.`ConsentLifetime`, `x`.`Description`, `x`.`EnableLocalLogin`, `x`.`Enabled`, `x`.`FrontChannelLogoutSessionRequired`, `x`.`FrontChannelLogoutUri`, `x`.`IdentityTokenLifetime`, `x`.`IncludeJwtId`, `x`.`LogoUri`, `x`.`PairWiseSubjectSalt`, `x`.`ProtocolType`, `x`.`RefreshTokenExpiration`, `x`.`RefreshTokenUsage`, `x`.`RequireClientSecret`, `x`.`RequireConsent`, `x`.`RequirePkce`, `x`.`SlidingRefreshTokenLifetime`, `x`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `x`
+WHERE `x`.`ClientId` = @__clientId_0
+ORDER BY `x`.`Id`
+LIMIT 2
+2018-10-11 12:58:20.719 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedGrantTypes`.`Id`, `x.AllowedGrantTypes`.`ClientId`, `x.AllowedGrantTypes`.`GrantType`
+FROM `ClientGrantTypes` AS `x.AllowedGrantTypes`
+INNER JOIN (
+    SELECT `x0`.`Id`
+    FROM `Clients` AS `x0`
+    WHERE `x0`.`ClientId` = @__clientId_0
+    ORDER BY `x0`.`Id`
+    LIMIT 1
+) AS `t` ON `x.AllowedGrantTypes`.`ClientId` = `t`.`Id`
+ORDER BY `t`.`Id`
+2018-10-11 12:58:20.723 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.RedirectUris`.`Id`, `x.RedirectUris`.`ClientId`, `x.RedirectUris`.`RedirectUri`
+FROM `ClientRedirectUris` AS `x.RedirectUris`
+INNER JOIN (
+    SELECT `x1`.`Id`
+    FROM `Clients` AS `x1`
+    WHERE `x1`.`ClientId` = @__clientId_0
+    ORDER BY `x1`.`Id`
+    LIMIT 1
+) AS `t0` ON `x.RedirectUris`.`ClientId` = `t0`.`Id`
+ORDER BY `t0`.`Id`
+2018-10-11 12:58:20.726 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.PostLogoutRedirectUris`.`Id`, `x.PostLogoutRedirectUris`.`ClientId`, `x.PostLogoutRedirectUris`.`PostLogoutRedirectUri`
+FROM `ClientPostLogoutRedirectUris` AS `x.PostLogoutRedirectUris`
+INNER JOIN (
+    SELECT `x2`.`Id`
+    FROM `Clients` AS `x2`
+    WHERE `x2`.`ClientId` = @__clientId_0
+    ORDER BY `x2`.`Id`
+    LIMIT 1
+) AS `t1` ON `x.PostLogoutRedirectUris`.`ClientId` = `t1`.`Id`
+ORDER BY `t1`.`Id`
+2018-10-11 12:58:20.730 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedScopes`.`Id`, `x.AllowedScopes`.`ClientId`, `x.AllowedScopes`.`Scope`
+FROM `ClientScopes` AS `x.AllowedScopes`
+INNER JOIN (
+    SELECT `x3`.`Id`
+    FROM `Clients` AS `x3`
+    WHERE `x3`.`ClientId` = @__clientId_0
+    ORDER BY `x3`.`Id`
+    LIMIT 1
+) AS `t2` ON `x.AllowedScopes`.`ClientId` = `t2`.`Id`
+ORDER BY `t2`.`Id`
+2018-10-11 12:58:20.735 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.IdentityProviderRestrictions`.`Id`, `x.IdentityProviderRestrictions`.`ClientId`, `x.IdentityProviderRestrictions`.`Provider`
+FROM `ClientIdPRestrictions` AS `x.IdentityProviderRestrictions`
+INNER JOIN (
+    SELECT `x4`.`Id`
+    FROM `Clients` AS `x4`
+    WHERE `x4`.`ClientId` = @__clientId_0
+    ORDER BY `x4`.`Id`
+    LIMIT 1
+) AS `t3` ON `x.IdentityProviderRestrictions`.`ClientId` = `t3`.`Id`
+ORDER BY `t3`.`Id`
+2018-10-11 12:58:20.738 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedCorsOrigins`.`Id`, `x.AllowedCorsOrigins`.`ClientId`, `x.AllowedCorsOrigins`.`Origin`
+FROM `ClientCorsOrigins` AS `x.AllowedCorsOrigins`
+INNER JOIN (
+    SELECT `x5`.`Id`
+    FROM `Clients` AS `x5`
+    WHERE `x5`.`ClientId` = @__clientId_0
+    ORDER BY `x5`.`Id`
+    LIMIT 1
+) AS `t4` ON `x.AllowedCorsOrigins`.`ClientId` = `t4`.`Id`
+ORDER BY `t4`.`Id`
+2018-10-11 12:58:20.741 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.Details (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.395000000000003ms.
+2018-10-11 12:58:20.742 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[IdentityServer4.Models.Client, IdentityServer4, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-11 12:58:20.744 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.Details (Jp.Management) in 35.896ms
+2018-10-11 12:58:20.745 -03:00 [INF] Request finished in 44.9102ms 200 application/json; charset=utf-8
+2018-10-11 12:58:22.455 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 12:58:22.457 -03:00 [INF] Policy execution successful.
+2018-10-11 12:58:22.461 -03:00 [INF] Successfully validated the token.
+2018-10-11 12:58:22.462 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 12:58:22.464 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 12:58:22.466 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 12:58:22.468 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 12:58:22.472 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 12:58:22.476 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.5556ms.
+2018-10-11 12:58:22.477 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 12:58:22.478 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 12.693100000000001ms
+2018-10-11 12:58:22.480 -03:00 [INF] Request finished in 24.8766ms 200 application/json; charset=utf-8
+2018-10-11 13:19:11.632 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/PersistedGrants/list  
+2018-10-11 13:19:11.634 -03:00 [INF] Policy execution successful.
+2018-10-11 13:19:11.636 -03:00 [INF] Request finished in 3.8761ms 204 
+2018-10-11 13:19:11.645 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/PersistedGrants/list  
+2018-10-11 13:19:11.647 -03:00 [INF] Policy execution successful.
+2018-10-11 13:19:11.649 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:19:11.650 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:19:11.660 -03:00 [INF] Route matched with {action = "List", controller = "PersistedGrants"}. Executing action Jp.Management.Controllers.PersistedGrantsController.List (Jp.Management)
+2018-10-11 13:19:11.664 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:19:11.666 -03:00 [INF] Executing action method Jp.Management.Controllers.PersistedGrantsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:19:11.697 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Key`, `p`.`ClientId`, `p`.`CreationTime`, `p`.`Data`, `p`.`Expiration`, `p`.`SubjectId`, `p`.`Type`
+FROM `PersistedGrants` AS `p`
+2018-10-11 13:19:11.724 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:19:11.753 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `w`.`Id`, `w`.`AccessFailedCount`, `w`.`Bio`, `w`.`Company`, `w`.`ConcurrencyStamp`, `w`.`Email`, `w`.`EmailConfirmed`, `w`.`JobTitle`, `w`.`LockoutEnabled`, `w`.`LockoutEnd`, `w`.`Name`, `w`.`NormalizedEmail`, `w`.`NormalizedUserName`, `w`.`PasswordHash`, `w`.`PhoneNumber`, `w`.`PhoneNumberConfirmed`, `w`.`Picture`, `w`.`SecurityStamp`, `w`.`TwoFactorEnabled`, `w`.`Url`, `w`.`UserName`
+FROM `Users` AS `w`
+WHERE CONVERT(`w`.`Id`, CHAR(36)) IN ('08d62af6-9588-f6d4-ae12-48ebc2cf76f5', '08d62af6-9588-f6d4-ae12-48ebc2cf76f5')
+2018-10-11 13:19:11.757 -03:00 [INF] Executed action method Jp.Management.Controllers.PersistedGrantsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 89.5416ms.
+2018-10-11 13:19:11.760 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.PersistedGrantViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:19:11.769 -03:00 [INF] Executed action Jp.Management.Controllers.PersistedGrantsController.List (Jp.Management) in 106.75710000000001ms
+2018-10-11 13:19:11.772 -03:00 [INF] Request finished in 127.043ms 200 application/json; charset=utf-8
+2018-10-11 13:29:58.121 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:29:58.122 -03:00 [INF] Policy execution successful.
+2018-10-11 13:29:58.124 -03:00 [INF] Request finished in 3.4994ms 204 
+2018-10-11 13:29:58.154 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:29:58.155 -03:00 [INF] Policy execution successful.
+2018-10-11 13:29:58.157 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:29:58.159 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:29:58.162 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:29:58.164 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:29:58.166 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:29:58.173 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:29:58.176 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.4248000000000012ms.
+2018-10-11 13:29:58.178 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:29:58.180 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 16.6643ms
+2018-10-11 13:29:58.183 -03:00 [INF] Request finished in 28.7529ms 200 application/json; charset=utf-8
+2018-10-11 13:30:08.727 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/details?clientId=IS4-Admin  
+2018-10-11 13:30:08.729 -03:00 [INF] Policy execution successful.
+2018-10-11 13:30:08.731 -03:00 [INF] Request finished in 3.9908ms 204 
+2018-10-11 13:30:08.742 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/details?clientId=IS4-Admin  
+2018-10-11 13:30:08.744 -03:00 [INF] Policy execution successful.
+2018-10-11 13:30:08.745 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:30:08.747 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:30:08.748 -03:00 [INF] Route matched with {action = "Details", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.Details (Jp.Management)
+2018-10-11 13:30:08.750 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:30:08.751 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.Details (Jp.Management) with arguments (["IS4-Admin"]) - Validation state: "Valid"
+2018-10-11 13:30:08.756 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x`.`Id`, `x`.`AbsoluteRefreshTokenLifetime`, `x`.`AccessTokenLifetime`, `x`.`AccessTokenType`, `x`.`AllowAccessTokensViaBrowser`, `x`.`AllowOfflineAccess`, `x`.`AllowPlainTextPkce`, `x`.`AllowRememberConsent`, `x`.`AlwaysIncludeUserClaimsInIdToken`, `x`.`AlwaysSendClientClaims`, `x`.`AuthorizationCodeLifetime`, `x`.`BackChannelLogoutSessionRequired`, `x`.`BackChannelLogoutUri`, `x`.`ClientClaimsPrefix`, `x`.`ClientId`, `x`.`ClientName`, `x`.`ClientUri`, `x`.`ConsentLifetime`, `x`.`Description`, `x`.`EnableLocalLogin`, `x`.`Enabled`, `x`.`FrontChannelLogoutSessionRequired`, `x`.`FrontChannelLogoutUri`, `x`.`IdentityTokenLifetime`, `x`.`IncludeJwtId`, `x`.`LogoUri`, `x`.`PairWiseSubjectSalt`, `x`.`ProtocolType`, `x`.`RefreshTokenExpiration`, `x`.`RefreshTokenUsage`, `x`.`RequireClientSecret`, `x`.`RequireConsent`, `x`.`RequirePkce`, `x`.`SlidingRefreshTokenLifetime`, `x`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `x`
+WHERE `x`.`ClientId` = @__clientId_0
+ORDER BY `x`.`Id`
+LIMIT 2
+2018-10-11 13:30:08.759 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedGrantTypes`.`Id`, `x.AllowedGrantTypes`.`ClientId`, `x.AllowedGrantTypes`.`GrantType`
+FROM `ClientGrantTypes` AS `x.AllowedGrantTypes`
+INNER JOIN (
+    SELECT `x0`.`Id`
+    FROM `Clients` AS `x0`
+    WHERE `x0`.`ClientId` = @__clientId_0
+    ORDER BY `x0`.`Id`
+    LIMIT 1
+) AS `t` ON `x.AllowedGrantTypes`.`ClientId` = `t`.`Id`
+ORDER BY `t`.`Id`
+2018-10-11 13:30:08.764 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.RedirectUris`.`Id`, `x.RedirectUris`.`ClientId`, `x.RedirectUris`.`RedirectUri`
+FROM `ClientRedirectUris` AS `x.RedirectUris`
+INNER JOIN (
+    SELECT `x1`.`Id`
+    FROM `Clients` AS `x1`
+    WHERE `x1`.`ClientId` = @__clientId_0
+    ORDER BY `x1`.`Id`
+    LIMIT 1
+) AS `t0` ON `x.RedirectUris`.`ClientId` = `t0`.`Id`
+ORDER BY `t0`.`Id`
+2018-10-11 13:30:08.768 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.PostLogoutRedirectUris`.`Id`, `x.PostLogoutRedirectUris`.`ClientId`, `x.PostLogoutRedirectUris`.`PostLogoutRedirectUri`
+FROM `ClientPostLogoutRedirectUris` AS `x.PostLogoutRedirectUris`
+INNER JOIN (
+    SELECT `x2`.`Id`
+    FROM `Clients` AS `x2`
+    WHERE `x2`.`ClientId` = @__clientId_0
+    ORDER BY `x2`.`Id`
+    LIMIT 1
+) AS `t1` ON `x.PostLogoutRedirectUris`.`ClientId` = `t1`.`Id`
+ORDER BY `t1`.`Id`
+2018-10-11 13:30:08.772 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedScopes`.`Id`, `x.AllowedScopes`.`ClientId`, `x.AllowedScopes`.`Scope`
+FROM `ClientScopes` AS `x.AllowedScopes`
+INNER JOIN (
+    SELECT `x3`.`Id`
+    FROM `Clients` AS `x3`
+    WHERE `x3`.`ClientId` = @__clientId_0
+    ORDER BY `x3`.`Id`
+    LIMIT 1
+) AS `t2` ON `x.AllowedScopes`.`ClientId` = `t2`.`Id`
+ORDER BY `t2`.`Id`
+2018-10-11 13:30:08.777 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.IdentityProviderRestrictions`.`Id`, `x.IdentityProviderRestrictions`.`ClientId`, `x.IdentityProviderRestrictions`.`Provider`
+FROM `ClientIdPRestrictions` AS `x.IdentityProviderRestrictions`
+INNER JOIN (
+    SELECT `x4`.`Id`
+    FROM `Clients` AS `x4`
+    WHERE `x4`.`ClientId` = @__clientId_0
+    ORDER BY `x4`.`Id`
+    LIMIT 1
+) AS `t3` ON `x.IdentityProviderRestrictions`.`ClientId` = `t3`.`Id`
+ORDER BY `t3`.`Id`
+2018-10-11 13:30:08.781 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedCorsOrigins`.`Id`, `x.AllowedCorsOrigins`.`ClientId`, `x.AllowedCorsOrigins`.`Origin`
+FROM `ClientCorsOrigins` AS `x.AllowedCorsOrigins`
+INNER JOIN (
+    SELECT `x5`.`Id`
+    FROM `Clients` AS `x5`
+    WHERE `x5`.`ClientId` = @__clientId_0
+    ORDER BY `x5`.`Id`
+    LIMIT 1
+) AS `t4` ON `x.AllowedCorsOrigins`.`ClientId` = `t4`.`Id`
+ORDER BY `t4`.`Id`
+2018-10-11 13:30:08.784 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.Details (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 30.4955ms.
+2018-10-11 13:30:08.786 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[IdentityServer4.Models.Client, IdentityServer4, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-11 13:30:08.787 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.Details (Jp.Management) in 37.766000000000005ms
+2018-10-11 13:30:08.789 -03:00 [INF] Request finished in 47.8793ms 200 application/json; charset=utf-8
+2018-10-11 13:30:13.325 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:30:13.328 -03:00 [INF] Policy execution successful.
+2018-10-11 13:30:13.330 -03:00 [INF] Request finished in 4.8844ms 204 
+2018-10-11 13:30:13.339 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:30:13.341 -03:00 [INF] Policy execution successful.
+2018-10-11 13:30:13.342 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:30:13.344 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:30:13.345 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:30:13.347 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:30:13.349 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:30:13.352 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:30:13.354 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.5044ms.
+2018-10-11 13:30:13.356 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:30:13.357 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 10.719000000000001ms
+2018-10-11 13:30:13.359 -03:00 [INF] Request finished in 19.7548ms 200 application/json; charset=utf-8
+2018-10-11 13:32:11.302 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:32:11.304 -03:00 [INF] Policy execution successful.
+2018-10-11 13:32:11.305 -03:00 [INF] Request finished in 2.907ms 204 
+2018-10-11 13:32:11.372 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:32:11.374 -03:00 [INF] Policy execution successful.
+2018-10-11 13:32:11.376 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:32:11.379 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:32:11.381 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:32:11.384 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:32:11.386 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:32:11.391 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:32:11.395 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.6478ms.
+2018-10-11 13:32:11.397 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:32:11.400 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 16.7662ms
+2018-10-11 13:32:11.403 -03:00 [INF] Request finished in 30.1704ms 200 application/json; charset=utf-8
+2018-10-11 13:34:53.774 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:34:53.776 -03:00 [INF] Policy execution successful.
+2018-10-11 13:34:53.778 -03:00 [INF] Request finished in 4.6146ms 204 
+2018-10-11 13:34:53.819 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:34:53.821 -03:00 [INF] Policy execution successful.
+2018-10-11 13:34:53.824 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:34:53.825 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:34:53.826 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:34:53.829 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:34:53.830 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:34:53.833 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:34:53.836 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.6476000000000006ms.
+2018-10-11 13:34:53.838 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:34:53.839 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 11.450000000000001ms
+2018-10-11 13:34:53.841 -03:00 [INF] Request finished in 22.1647ms 200 application/json; charset=utf-8
+2018-10-11 13:35:05.435 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/ApiResource/list  
+2018-10-11 13:35:05.437 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:05.438 -03:00 [INF] Request finished in 3.5727ms 204 
+2018-10-11 13:35:05.451 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/ApiResource/list  
+2018-10-11 13:35:05.452 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:05.455 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:35:05.456 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:35:05.463 -03:00 [INF] Route matched with {action = "List", controller = "ApiResource"}. Executing action Jp.Management.Controllers.ApiResourceController.List (Jp.Management)
+2018-10-11 13:35:05.467 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:35:05.469 -03:00 [INF] Executing action method Jp.Management.Controllers.ApiResourceController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:35:05.488 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Description`, `s`.`DisplayName`, `s`.`Enabled`, `s`.`Name`
+FROM `ApiResources` AS `s`
+ORDER BY `s`.`Id`
+2018-10-11 13:35:05.503 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s.UserClaims`.`Id`, `s.UserClaims`.`ApiResourceId`, `s.UserClaims`.`Type`
+FROM `ApiClaims` AS `s.UserClaims`
+INNER JOIN (
+    SELECT `s0`.`Id`
+    FROM `ApiResources` AS `s0`
+) AS `t` ON `s.UserClaims`.`ApiResourceId` = `t`.`Id`
+ORDER BY `t`.`Id`
+2018-10-11 13:35:05.537 -03:00 [INF] Executed action method Jp.Management.Controllers.ApiResourceController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 66.5196ms.
+2018-10-11 13:35:05.539 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ApiResouceViewModels.ApiResourceListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:35:05.543 -03:00 [INF] Executed action Jp.Management.Controllers.ApiResourceController.List (Jp.Management) in 76.572200000000009ms
+2018-10-11 13:35:05.545 -03:00 [INF] Request finished in 94.4705ms 200 application/json; charset=utf-8
+2018-10-11 13:35:16.836 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:35:16.838 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:16.839 -03:00 [INF] Request finished in 2.9439ms 204 
+2018-10-11 13:35:16.844 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:35:16.847 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:16.848 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:35:16.849 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:35:16.850 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:35:16.852 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:35:16.853 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:35:16.857 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:35:16.859 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.8166ms.
+2018-10-11 13:35:16.861 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:35:16.863 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 11.443900000000001ms
+2018-10-11 13:35:16.866 -03:00 [INF] Request finished in 21.3364ms 200 application/json; charset=utf-8
+2018-10-11 13:35:18.049 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/details?clientId=IS4-Admin  
+2018-10-11 13:35:18.050 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:18.052 -03:00 [INF] Request finished in 3.0322ms 204 
+2018-10-11 13:35:18.064 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/details?clientId=IS4-Admin  
+2018-10-11 13:35:18.066 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:18.067 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:35:18.068 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:35:18.069 -03:00 [INF] Route matched with {action = "Details", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.Details (Jp.Management)
+2018-10-11 13:35:18.070 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:35:18.072 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.Details (Jp.Management) with arguments (["IS4-Admin"]) - Validation state: "Valid"
+2018-10-11 13:35:18.078 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x`.`Id`, `x`.`AbsoluteRefreshTokenLifetime`, `x`.`AccessTokenLifetime`, `x`.`AccessTokenType`, `x`.`AllowAccessTokensViaBrowser`, `x`.`AllowOfflineAccess`, `x`.`AllowPlainTextPkce`, `x`.`AllowRememberConsent`, `x`.`AlwaysIncludeUserClaimsInIdToken`, `x`.`AlwaysSendClientClaims`, `x`.`AuthorizationCodeLifetime`, `x`.`BackChannelLogoutSessionRequired`, `x`.`BackChannelLogoutUri`, `x`.`ClientClaimsPrefix`, `x`.`ClientId`, `x`.`ClientName`, `x`.`ClientUri`, `x`.`ConsentLifetime`, `x`.`Description`, `x`.`EnableLocalLogin`, `x`.`Enabled`, `x`.`FrontChannelLogoutSessionRequired`, `x`.`FrontChannelLogoutUri`, `x`.`IdentityTokenLifetime`, `x`.`IncludeJwtId`, `x`.`LogoUri`, `x`.`PairWiseSubjectSalt`, `x`.`ProtocolType`, `x`.`RefreshTokenExpiration`, `x`.`RefreshTokenUsage`, `x`.`RequireClientSecret`, `x`.`RequireConsent`, `x`.`RequirePkce`, `x`.`SlidingRefreshTokenLifetime`, `x`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `x`
+WHERE `x`.`ClientId` = @__clientId_0
+ORDER BY `x`.`Id`
+LIMIT 2
+2018-10-11 13:35:18.084 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedGrantTypes`.`Id`, `x.AllowedGrantTypes`.`ClientId`, `x.AllowedGrantTypes`.`GrantType`
+FROM `ClientGrantTypes` AS `x.AllowedGrantTypes`
+INNER JOIN (
+    SELECT `x0`.`Id`
+    FROM `Clients` AS `x0`
+    WHERE `x0`.`ClientId` = @__clientId_0
+    ORDER BY `x0`.`Id`
+    LIMIT 1
+) AS `t` ON `x.AllowedGrantTypes`.`ClientId` = `t`.`Id`
+ORDER BY `t`.`Id`
+2018-10-11 13:35:18.091 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.RedirectUris`.`Id`, `x.RedirectUris`.`ClientId`, `x.RedirectUris`.`RedirectUri`
+FROM `ClientRedirectUris` AS `x.RedirectUris`
+INNER JOIN (
+    SELECT `x1`.`Id`
+    FROM `Clients` AS `x1`
+    WHERE `x1`.`ClientId` = @__clientId_0
+    ORDER BY `x1`.`Id`
+    LIMIT 1
+) AS `t0` ON `x.RedirectUris`.`ClientId` = `t0`.`Id`
+ORDER BY `t0`.`Id`
+2018-10-11 13:35:18.095 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.PostLogoutRedirectUris`.`Id`, `x.PostLogoutRedirectUris`.`ClientId`, `x.PostLogoutRedirectUris`.`PostLogoutRedirectUri`
+FROM `ClientPostLogoutRedirectUris` AS `x.PostLogoutRedirectUris`
+INNER JOIN (
+    SELECT `x2`.`Id`
+    FROM `Clients` AS `x2`
+    WHERE `x2`.`ClientId` = @__clientId_0
+    ORDER BY `x2`.`Id`
+    LIMIT 1
+) AS `t1` ON `x.PostLogoutRedirectUris`.`ClientId` = `t1`.`Id`
+ORDER BY `t1`.`Id`
+2018-10-11 13:35:18.100 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedScopes`.`Id`, `x.AllowedScopes`.`ClientId`, `x.AllowedScopes`.`Scope`
+FROM `ClientScopes` AS `x.AllowedScopes`
+INNER JOIN (
+    SELECT `x3`.`Id`
+    FROM `Clients` AS `x3`
+    WHERE `x3`.`ClientId` = @__clientId_0
+    ORDER BY `x3`.`Id`
+    LIMIT 1
+) AS `t2` ON `x.AllowedScopes`.`ClientId` = `t2`.`Id`
+ORDER BY `t2`.`Id`
+2018-10-11 13:35:18.103 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.IdentityProviderRestrictions`.`Id`, `x.IdentityProviderRestrictions`.`ClientId`, `x.IdentityProviderRestrictions`.`Provider`
+FROM `ClientIdPRestrictions` AS `x.IdentityProviderRestrictions`
+INNER JOIN (
+    SELECT `x4`.`Id`
+    FROM `Clients` AS `x4`
+    WHERE `x4`.`ClientId` = @__clientId_0
+    ORDER BY `x4`.`Id`
+    LIMIT 1
+) AS `t3` ON `x.IdentityProviderRestrictions`.`ClientId` = `t3`.`Id`
+ORDER BY `t3`.`Id`
+2018-10-11 13:35:18.106 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `x.AllowedCorsOrigins`.`Id`, `x.AllowedCorsOrigins`.`ClientId`, `x.AllowedCorsOrigins`.`Origin`
+FROM `ClientCorsOrigins` AS `x.AllowedCorsOrigins`
+INNER JOIN (
+    SELECT `x5`.`Id`
+    FROM `Clients` AS `x5`
+    WHERE `x5`.`ClientId` = @__clientId_0
+    ORDER BY `x5`.`Id`
+    LIMIT 1
+) AS `t4` ON `x.AllowedCorsOrigins`.`ClientId` = `t4`.`Id`
+ORDER BY `t4`.`Id`
+2018-10-11 13:35:18.109 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.Details (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 34.5812ms.
+2018-10-11 13:35:18.111 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[IdentityServer4.Models.Client, IdentityServer4, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-11 13:35:18.112 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.Details (Jp.Management) in 42.0337ms
+2018-10-11 13:35:18.115 -03:00 [INF] Request finished in 51.1534ms 200 application/json; charset=utf-8
+2018-10-11 13:35:35.992 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:35:35.995 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:35.997 -03:00 [INF] Request finished in 4.4777ms 204 
+2018-10-11 13:35:36.011 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:35:36.014 -03:00 [INF] Policy execution successful.
+2018-10-11 13:35:36.016 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:35:36.017 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:35:36.018 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:35:36.020 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:35:36.022 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:35:36.025 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:35:36.029 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.6770000000000005ms.
+2018-10-11 13:35:36.031 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:35:36.033 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 13.846ms
+2018-10-11 13:35:36.034 -03:00 [INF] Request finished in 23.3784ms 200 application/json; charset=utf-8
+2018-10-11 13:36:51.827 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:36:51.829 -03:00 [INF] Policy execution successful.
+2018-10-11 13:36:51.833 -03:00 [INF] Request finished in 6.2833ms 204 
+2018-10-11 13:36:51.893 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:36:51.895 -03:00 [INF] Policy execution successful.
+2018-10-11 13:36:51.897 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:36:51.899 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:36:51.902 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:36:51.905 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:36:51.908 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:36:51.914 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:36:51.919 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.8393ms.
+2018-10-11 13:36:51.926 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:36:51.930 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 25.2866ms
+2018-10-11 13:36:51.933 -03:00 [INF] Request finished in 39.4866ms 200 application/json; charset=utf-8
+2018-10-11 13:37:43.059 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/IdentityResource/list  
+2018-10-11 13:37:43.061 -03:00 [INF] Policy execution successful.
+2018-10-11 13:37:43.062 -03:00 [INF] Request finished in 3.0682ms 204 
+2018-10-11 13:37:43.079 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/IdentityResource/list  
+2018-10-11 13:37:43.081 -03:00 [INF] Policy execution successful.
+2018-10-11 13:37:43.083 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:37:43.084 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:37:43.086 -03:00 [INF] Route matched with {action = "List", controller = "IdentityResource"}. Executing action Jp.Management.Controllers.IdentityResourceController.List (Jp.Management)
+2018-10-11 13:37:43.089 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:37:43.092 -03:00 [INF] Executing action method Jp.Management.Controllers.IdentityResourceController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:37:43.096 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Description`, `s`.`DisplayName`, `s`.`Emphasize`, `s`.`Enabled`, `s`.`Name`, `s`.`Required`, `s`.`ShowInDiscoveryDocument`
+FROM `IdentityResources` AS `s`
+2018-10-11 13:37:43.100 -03:00 [INF] Executed action method Jp.Management.Controllers.IdentityResourceController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.6469000000000005ms.
+2018-10-11 13:37:43.101 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.IdentityResourceViewModels.IdentityResourceListView, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:37:43.103 -03:00 [INF] Executed action Jp.Management.Controllers.IdentityResourceController.List (Jp.Management) in 14.558100000000001ms
+2018-10-11 13:37:43.105 -03:00 [INF] Request finished in 26.1963ms 200 application/json; charset=utf-8
+2018-10-11 13:37:45.363 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/ApiResource/list  
+2018-10-11 13:37:45.365 -03:00 [INF] Policy execution successful.
+2018-10-11 13:37:45.367 -03:00 [INF] Request finished in 3.4133ms 204 
+2018-10-11 13:37:45.376 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/ApiResource/list  
+2018-10-11 13:37:45.377 -03:00 [INF] Policy execution successful.
+2018-10-11 13:37:45.379 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:37:45.380 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:37:45.381 -03:00 [INF] Route matched with {action = "List", controller = "ApiResource"}. Executing action Jp.Management.Controllers.ApiResourceController.List (Jp.Management)
+2018-10-11 13:37:45.383 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:37:45.385 -03:00 [INF] Executing action method Jp.Management.Controllers.ApiResourceController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:37:45.388 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Description`, `s`.`DisplayName`, `s`.`Enabled`, `s`.`Name`
+FROM `ApiResources` AS `s`
+ORDER BY `s`.`Id`
+2018-10-11 13:37:45.391 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s.UserClaims`.`Id`, `s.UserClaims`.`ApiResourceId`, `s.UserClaims`.`Type`
+FROM `ApiClaims` AS `s.UserClaims`
+INNER JOIN (
+    SELECT `s0`.`Id`
+    FROM `ApiResources` AS `s0`
+) AS `t` ON `s.UserClaims`.`ApiResourceId` = `t`.`Id`
+ORDER BY `t`.`Id`
+2018-10-11 13:37:45.394 -03:00 [INF] Executed action method Jp.Management.Controllers.ApiResourceController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.268ms.
+2018-10-11 13:37:45.396 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ApiResouceViewModels.ApiResourceListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:37:45.398 -03:00 [INF] Executed action Jp.Management.Controllers.ApiResourceController.List (Jp.Management) in 15.638900000000001ms
+2018-10-11 13:37:45.400 -03:00 [INF] Request finished in 23.9904ms 200 application/json; charset=utf-8
+2018-10-11 13:37:47.062 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:37:47.064 -03:00 [INF] Policy execution successful.
+2018-10-11 13:37:47.065 -03:00 [INF] Request finished in 3.7569ms 204 
+2018-10-11 13:37:47.073 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:37:47.075 -03:00 [INF] Policy execution successful.
+2018-10-11 13:37:47.077 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:37:47.078 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:37:47.080 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:37:47.082 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:37:47.085 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:37:47.090 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:37:47.096 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.8104ms.
+2018-10-11 13:37:47.099 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:37:47.101 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 19.168100000000003ms
+2018-10-11 13:37:47.104 -03:00 [INF] Request finished in 30.4357ms 200 application/json; charset=utf-8
+2018-10-11 13:38:05.337 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:38:05.338 -03:00 [INF] Policy execution successful.
+2018-10-11 13:38:05.339 -03:00 [INF] Request finished in 2.2961ms 204 
+2018-10-11 13:38:05.393 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:38:05.395 -03:00 [INF] Policy execution successful.
+2018-10-11 13:38:05.396 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:38:05.398 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:38:05.400 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:38:05.402 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:38:05.405 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:38:05.410 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:38:05.415 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.9411000000000005ms.
+2018-10-11 13:38:05.417 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:38:05.419 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 17.4173ms
+2018-10-11 13:38:05.424 -03:00 [INF] Request finished in 30.9047ms 200 application/json; charset=utf-8
+2018-10-11 13:38:21.828 -03:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5003/clients/list  
+2018-10-11 13:38:21.830 -03:00 [INF] Policy execution successful.
+2018-10-11 13:38:21.831 -03:00 [INF] Request finished in 3.6399ms 204 
+2018-10-11 13:38:21.898 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5003/clients/list  
+2018-10-11 13:38:21.900 -03:00 [INF] Policy execution successful.
+2018-10-11 13:38:21.902 -03:00 [INF] Successfully validated the token.
+2018-10-11 13:38:21.904 -03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-11 13:38:21.906 -03:00 [INF] Route matched with {action = "List", controller = "Clients"}. Executing action Jp.Management.Controllers.ClientsController.List (Jp.Management)
+2018-10-11 13:38:21.908 -03:00 [INF] Entity Framework Core 2.1.2-rtm-30932 initialized 'JpContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Jp.Infra.Migrations.MySql.Identity 
+2018-10-11 13:38:21.911 -03:00 [INF] Executing action method Jp.Management.Controllers.ClientsController.List (Jp.Management) - Validation state: "Valid"
+2018-10-11 13:38:21.916 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AbsoluteRefreshTokenLifetime`, `a`.`AccessTokenLifetime`, `a`.`AccessTokenType`, `a`.`AllowAccessTokensViaBrowser`, `a`.`AllowOfflineAccess`, `a`.`AllowPlainTextPkce`, `a`.`AllowRememberConsent`, `a`.`AlwaysIncludeUserClaimsInIdToken`, `a`.`AlwaysSendClientClaims`, `a`.`AuthorizationCodeLifetime`, `a`.`BackChannelLogoutSessionRequired`, `a`.`BackChannelLogoutUri`, `a`.`ClientClaimsPrefix`, `a`.`ClientId`, `a`.`ClientName`, `a`.`ClientUri`, `a`.`ConsentLifetime`, `a`.`Description`, `a`.`EnableLocalLogin`, `a`.`Enabled`, `a`.`FrontChannelLogoutSessionRequired`, `a`.`FrontChannelLogoutUri`, `a`.`IdentityTokenLifetime`, `a`.`IncludeJwtId`, `a`.`LogoUri`, `a`.`PairWiseSubjectSalt`, `a`.`ProtocolType`, `a`.`RefreshTokenExpiration`, `a`.`RefreshTokenUsage`, `a`.`RequireClientSecret`, `a`.`RequireConsent`, `a`.`RequirePkce`, `a`.`SlidingRefreshTokenLifetime`, `a`.`UpdateAccessTokenClaimsOnRefresh`
+FROM `Clients` AS `a`
+2018-10-11 13:38:21.920 -03:00 [INF] Executed action method Jp.Management.Controllers.ClientsController.List (Jp.Management), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.9976ms.
+2018-10-11 13:38:21.922 -03:00 [INF] Executing ObjectResult, writing value of type 'Jp.Infra.CrossCutting.Tools.Model.DefaultResponse`1[[System.Collections.Generic.IEnumerable`1[[Jp.Application.ViewModels.ClientsViewModels.ClientListViewModel, Jp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-11 13:38:21.925 -03:00 [INF] Executed action Jp.Management.Controllers.ClientsController.List (Jp.Management) in 16.6569ms
+2018-10-11 13:38:21.927 -03:00 [INF] Request finished in 29.6096ms 200 application/json; charset=utf-8
