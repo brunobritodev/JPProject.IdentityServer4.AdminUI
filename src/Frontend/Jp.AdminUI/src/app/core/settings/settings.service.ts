@@ -30,7 +30,8 @@ export class SettingsService {
         this.app = {
             name: "Jp Project - IS4Admin",
             description: "IdentityServer4 Admin Panel",
-            year: ((new Date()).getFullYear())
+            year: ((new Date()).getFullYear()),
+            version: "1.0.0"
         };
 
         // Layout Settings
