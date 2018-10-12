@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "../../../core/translator/translator.service";
 import { PersistedGrantsService } from "../persisted-grants.service";
 import { PersistedGrant } from "../../../shared/viewModel/persisted-grants.model";
+import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 
 const swal = require('sweetalert');
 
@@ -54,7 +55,8 @@ export class PersistedGrantListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Cancelled", "Unknown error while trying to remove", 'error');
+                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            swal("Error!", errors[0], 'error');
                         }
                     );
 

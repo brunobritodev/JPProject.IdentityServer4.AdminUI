@@ -9,11 +9,12 @@ using Jp.Domain.Core.Notifications;
 using Jp.Domain.Interfaces;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
     public class UserAdminController : ApiController
     {
         private readonly IUserManageAppService _userManageAppService;
@@ -46,7 +47,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("update")]
+        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
@@ -59,7 +60,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [Route("remove-account"), HttpPost]
+        [Route("remove-account"), HttpPost, Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveAccount([FromBody] RemoveAccountViewModel model)
         {
             await _userManageAppService.RemoveAccount(model);
@@ -74,7 +75,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-claim")]
+        [HttpPost, Route("remove-claim"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveClaim([FromBody] RemoveUserClaimViewModel model)
         {
             if (!ModelState.IsValid)
@@ -87,7 +88,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("save-claim")]
+        [HttpPost, Route("save-claim"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveClaim([FromBody] SaveUserClaimViewModel model)
         {
             if (!ModelState.IsValid)
@@ -106,7 +107,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-role")]
+        [HttpPost, Route("remove-role"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveRole([FromBody] RemoveUserRoleViewModel model)
         {
             if (!ModelState.IsValid)
@@ -120,7 +121,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("save-role")]
+        [HttpPost, Route("save-role"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveRole([FromBody] SaveUserRoleViewModel model)
         {
             if (!ModelState.IsValid)

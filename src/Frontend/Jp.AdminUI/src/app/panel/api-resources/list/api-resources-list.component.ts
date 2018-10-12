@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "../../../core/translator/translator.service";
 import { ApiResourceService } from "../api-resource.service";
 import { ApiResource } from "../../../shared/viewModel/api-resource.model";
+import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 const swal = require('sweetalert');
 
 @Component({
@@ -49,7 +50,8 @@ export class ApiResourceListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Cancelled", "Unknown error while trying to remove", 'error');
+                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            swal("Error!", errors[0], 'error');
                         }
                     );
 

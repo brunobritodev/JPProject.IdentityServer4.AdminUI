@@ -5,7 +5,11 @@
     </div>
 </div>
 
-<app-loading *ngIf="showButtonLoading"></app-loading>
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/users' ]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
 
 <div *ngIf="errors.length > 0">
     <alert type="danger">
@@ -13,6 +17,7 @@
     </alert>
 </div>
 
+<app-loading *ngIf="showButtonLoading"></app-loading>
 <div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
     <div class="card-header">
         <h3>{{ 'users.new-user' | translate }}</h3>

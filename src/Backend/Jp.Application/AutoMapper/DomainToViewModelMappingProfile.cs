@@ -28,7 +28,9 @@ namespace Jp.Application.AutoMapper
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientProperty, ClientPropertyViewModel>();
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientClaim, ClaimViewModel>();
             CreateMap<IdentityServer4.EntityFramework.Entities.IdentityResource, IdentityResourceListView>(MemberList.Destination);
-            CreateMap<IdentityServer4.EntityFramework.Entities.ApiScope, ScopeViewModel>(MemberList.Destination);
+            CreateMap<IdentityServer4.EntityFramework.Entities.ApiScope, ScopeViewModel>();
+            CreateMap<IdentityServer4.EntityFramework.Entities.UserClaim, ClaimViewModel>(MemberList.Destination);
+
             CreateMap<Claim, ClaimViewModel>(MemberList.Destination);
             CreateMap<Role, RoleViewModel>(MemberList.Destination);
             CreateMap<UserLogin, UserLoginViewModel>(MemberList.Destination);

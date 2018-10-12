@@ -4,6 +4,7 @@ import { ClientService } from "../clients.service";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { ClientList } from "../../../shared/viewModel/client-list.model";
+import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 const swal = require('sweetalert');
 
 @Component({
@@ -51,7 +52,8 @@ export class ClientListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Error!", "Unknown error while trying to clone", 'error');
+                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            swal("Error!", errors[0], 'error');
                         }
                     );
                 } else {
@@ -84,7 +86,8 @@ export class ClientListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Cancelled", "Unknown error while trying to remove", 'error');
+                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            swal("Error!", errors[0], 'error');
                         }
                     );
 

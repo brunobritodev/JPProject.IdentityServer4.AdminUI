@@ -58,9 +58,7 @@ namespace Jp.UI.SSO.Util
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        "roles",
-                        "management-api.identityserver4-manager",
-                        "IS4-Permission"
+                        "jp_api.is4"
                     }
                 },
 
@@ -83,7 +81,7 @@ namespace Jp.UI.SSO.Util
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        "management-api.owner-content",
+                        "jp_api.user",
                     }
                 },
                 new Client
@@ -98,8 +96,8 @@ namespace Jp.UI.SSO.Util
                     },
                     AllowedScopes =
                     {
-                        "management-api.owner-content",
-                        "management-api.identityserver4-manager",
+                        "jp_api.user",
+                        "jp_api.is4",
                     }
                 }
 

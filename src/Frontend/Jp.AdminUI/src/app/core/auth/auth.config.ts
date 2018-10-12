@@ -7,6 +7,6 @@ export const authConfig: AuthConfig = {
     clientId: "IS4-Admin",
     postLogoutRedirectUri: "http://localhost:4300/",
     redirectUri: window.location.origin + "/login-callback",
-    scope: "openid profile email management-api.identityserver4-manager",
+    scope: "openid profile email jp_api.is4",
     oidc: true,
 };

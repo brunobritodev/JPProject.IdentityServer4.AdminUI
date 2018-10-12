@@ -29,8 +29,6 @@ namespace Jp.UI.SSO.Configuration
                             var identity = (ClaimsIdentity)context.Principal.Identity;
                             var profileImg = context.User["image"].Value<string>("url");
                             identity.AddClaim(new Claim(JwtClaimTypes.Picture, profileImg));
-                            identity.AddClaim(new Claim("IsExternalLogin", "true"));
-                            identity.AddClaim(new Claim("ExternalProvider", "Google"));
                             return Task.CompletedTask;
                         }
                     };
@@ -52,8 +50,6 @@ namespace Jp.UI.SSO.Configuration
                                 var identity = (ClaimsIdentity)context.Principal.Identity;
                                 var profileImg = context.User["picture"]["data"].Value<string>("url");
                                 identity.AddClaim(new Claim(JwtClaimTypes.Picture, profileImg));
-                                identity.AddClaim(new Claim("IsExternalLogin", "true"));
-                                identity.AddClaim(new Claim("ExternalProvider", "Facebook"));
                                 return Task.CompletedTask;
                             }
                         };

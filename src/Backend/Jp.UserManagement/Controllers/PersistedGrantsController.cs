@@ -7,12 +7,11 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"),
-    // Authorize(Policy = "IS4-ReadOnly")
-    ]
+    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
     public class PersistedGrantsController : ApiController
     {
         private readonly IPersistedGrantAppService _persistedGrantAppService;
@@ -33,7 +32,7 @@ namespace Jp.Management.Controllers
             return Response(irs);
         }
 
-        [HttpPost, Route("remove")]
+        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemovePersistedGrantViewModel model)
         {
             if (!ModelState.IsValid)

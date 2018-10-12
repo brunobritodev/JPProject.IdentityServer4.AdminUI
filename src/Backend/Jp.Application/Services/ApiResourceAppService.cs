@@ -89,7 +89,8 @@ namespace Jp.Application.Services
 
         public async Task<IEnumerable<ScopeViewModel>> GetScopes(string name)
         {
-            return _mapper.Map<IEnumerable<ScopeViewModel>>(await _apiScopeRepository.GetScopesByResource(name));
+            var scopes = await _apiScopeRepository.GetScopesByResource(name);
+            return _mapper.Map<IEnumerable<ScopeViewModel>>(scopes);
         }
 
         public Task RemoveScope(RemoveApiScopeViewModel model)

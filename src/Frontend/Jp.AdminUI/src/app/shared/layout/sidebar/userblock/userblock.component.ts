@@ -20,6 +20,13 @@ export class UserblockComponent implements OnInit {
         this.settings.getUserProfile().subscribe(a => this.user = a);
     }
 
+    public getUserImage(): string {
+        if (this.user != null && this.user.picture != null)
+            return this.user.picture;
+
+        return "assets/img/dummy.png";
+    }
+
     userBlockIsVisible() {
         return this.userblockService.getVisibility();
     }

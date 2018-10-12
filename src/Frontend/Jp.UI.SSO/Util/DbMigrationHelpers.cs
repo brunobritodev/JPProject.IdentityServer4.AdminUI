@@ -62,9 +62,9 @@ namespace Jp.UI.SSO.Util
             RoleManager<UserIdentityRole> roleManager)
         {
             // Create admin role
-            if (!await roleManager.RoleExistsAsync("Administrator"))
+            if (!await roleManager.RoleExistsAsync("Administrador"))
             {
-                var role = new UserIdentityRole { Name = "Administrator" };
+                var role = new UserIdentityRole { Name = "Administrador" };
 
                 await roleManager.CreateAsync(role);
             }
@@ -84,8 +84,8 @@ namespace Jp.UI.SSO.Util
 
             if (result.Succeeded)
             {
-                await userManager.AddClaimAsync(user, new Claim("IS4-Permission", "Manager"));
-                await userManager.AddToRoleAsync(user, AuthorizationConsts.AdministrationRole);
+                await userManager.AddClaimAsync(user, new Claim("is4-rights", "manager"));
+                await userManager.AddToRoleAsync(user, "Administrador");
             }
         }
 

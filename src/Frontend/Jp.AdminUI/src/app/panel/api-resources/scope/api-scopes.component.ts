@@ -34,6 +34,7 @@ export class ApiResourceScopesComponent implements OnInit {
         containerClass: 'theme-angle'
     };
     public standardClaims: string[];
+    public selectedScope: Scope;
 
     constructor(
         private route: ActivatedRoute,
@@ -71,10 +72,6 @@ export class ApiResourceScopesComponent implements OnInit {
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    if (this.errors[0] == undefined) {
-                        this.errors = [];
-                        this.errors.push("Unknown error while trying to remove");
-                    }
                     this.showButtonLoading = false;
                 }
             );
@@ -107,10 +104,6 @@ export class ApiResourceScopesComponent implements OnInit {
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    if (this.errors[0] == undefined) {
-                        this.errors = [];
-                        this.errors.push("Unknown error while trying to save");
-                    }
                     this.showButtonLoading = false;
                 }
             );
@@ -120,6 +113,10 @@ export class ApiResourceScopesComponent implements OnInit {
             this.showButtonLoading = false;
             return Observable.throw("Unknown error while trying to save");
         }
+    }
+
+    public details(scope: Scope) {
+        this.selectedScope = scope;
     }
 
     public addClaim(claim: string) {
