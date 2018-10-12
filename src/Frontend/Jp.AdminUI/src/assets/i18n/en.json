@@ -253,7 +253,9 @@
             "Emphasize": "Emphasize",
             "Emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
             "userClaims": "User Claims",
-            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+            "userClaims-tooltip": "List of associated user claim types that should be included in the access token.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true"
         }
     },
     "secrets": {

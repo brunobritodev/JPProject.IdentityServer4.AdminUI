@@ -5,13 +5,12 @@ using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"),
-    // Authorize(Policy = "IS4-ReadOnly")
-    ]
+    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
     public class ScopesController : ApiController
     {
         private readonly IScopesAppService _scopesAppService;

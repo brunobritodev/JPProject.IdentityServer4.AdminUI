@@ -52,9 +52,9 @@ export class UserService {
         return this.http.get<DefaultResponse<UserClaim[]>>(environment.ResourceServer + "UserAdmin/claims", options);
     }
 
-    public removeClaim(username: string, role: string): Observable<DefaultResponse<boolean>> {
+    public removeClaim(username: string, type: string): Observable<DefaultResponse<boolean>> {
         const removeCommand = {
-            role: role,
+            type: type,
             username: username
         };
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/remove-claim", removeCommand);

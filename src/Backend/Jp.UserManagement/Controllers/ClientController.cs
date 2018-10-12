@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
@@ -8,13 +9,12 @@ using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"),
-    // Authorize(Policy = "IS4-ReadOnly")
-    ]
+    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
     public class ClientsController : ApiController
     {
         private readonly IClientAppService _clientAppService;
@@ -34,7 +34,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("save")]
+        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] SaveClientViewModel client)
         {
             if (!ModelState.IsValid)
@@ -46,7 +46,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("update")]
+        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
         {
             if (!ModelState.IsValid)
@@ -58,7 +58,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("remove")]
+        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveClientViewModel client)
         {
             if (!ModelState.IsValid)
@@ -70,7 +70,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("copy")]
+        [HttpPost, Route("copy"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Copy([FromBody] CopyClientViewModel client)
         {
             if (!ModelState.IsValid)
@@ -96,7 +96,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-secret")]
+        [HttpPost, Route("remove-secret"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveClientSecretViewModel model)
         {
             if (!ModelState.IsValid)
@@ -109,7 +109,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("save-secret")]
+        [HttpPost, Route("save-secret"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveSecret([FromBody] SaveClientSecretViewModel model)
         {
             if (!ModelState.IsValid)
@@ -128,7 +128,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-property")]
+        [HttpPost, Route("remove-property"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveProperty([FromBody] RemovePropertyViewModel model)
         {
             if (!ModelState.IsValid)
@@ -141,7 +141,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("save-property")]
+        [HttpPost, Route("save-property"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveProperty([FromBody] SaveClientPropertyViewModel model)
         {
             if (!ModelState.IsValid)
@@ -160,7 +160,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-claim")]
+        [HttpPost, Route("remove-claim"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveClaim([FromBody] RemoveClientClaimViewModel model)
         {
             if (!ModelState.IsValid)
@@ -173,7 +173,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("save-claim")]
+        [HttpPost, Route("save-claim"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveClaim([FromBody] SaveClientClaimViewModel model)
         {
             if (!ModelState.IsValid)

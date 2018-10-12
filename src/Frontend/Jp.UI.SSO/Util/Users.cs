@@ -4,6 +4,6 @@
     {
         public const string AdminUserName = "bruno";
         public const string AdminPassword = "Pa$$word123";
-        public const string AdminEmail = "bruno@allto.com.br";
+        public const string AdminEmail = "bhdebrito@gmail.com";
     }
 }

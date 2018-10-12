@@ -6,11 +6,12 @@ using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
     public class RolesController : ApiController
     {
         private readonly IRoleManagerAppService _roleManagerAppService;
@@ -30,7 +31,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove")]
+        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveRoleViewModel model)
         {
             if (!ModelState.IsValid)
@@ -49,7 +50,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("save")]
+        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> NewRole([FromBody] SaveRoleViewModel model)
         {
 
@@ -62,7 +63,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("update")]
+        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> UpdateRole([FromBody] UpdateRoleViewModel model)
         {
             if (!ModelState.IsValid)
@@ -74,7 +75,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("remove-user")]
+        [HttpPost, Route("remove-user"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveUser([FromBody] RemoveUserFromRoleViewModel model)
         {
             if (!ModelState.IsValid)

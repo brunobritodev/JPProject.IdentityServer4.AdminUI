@@ -9,11 +9,12 @@ using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
     public class ApiResourceController : ApiController
     {
         private readonly IApiResourceAppService _apiResourceAppService;
@@ -41,7 +42,7 @@ namespace Jp.Management.Controllers
             return Response(irs);
         }
 
-        [HttpPost, Route("save")]
+        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] ApiResource model)
         {
             if (!ModelState.IsValid)
@@ -53,7 +54,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("update")]
+        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] ApiResource model)
         {
             if (!ModelState.IsValid)
@@ -65,7 +66,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("remove")]
+        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveApiResourceViewModel model)
         {
             if (!ModelState.IsValid)
@@ -86,7 +87,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-secret")]
+        [HttpPost, Route("remove-secret"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveApiSecretViewModel model)
         {
             if (!ModelState.IsValid)
@@ -99,7 +100,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("save-secret")]
+        [HttpPost, Route("save-secret"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveSecret([FromBody] SaveApiSecretViewModel model)
         {
             if (!ModelState.IsValid)
@@ -118,7 +119,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("remove-scope")]
+        [HttpPost, Route("remove-scope"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveScope([FromBody] RemoveApiScopeViewModel model)
         {
             if (!ModelState.IsValid)
@@ -131,7 +132,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("save-scope")]
+        [HttpPost, Route("save-scope"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> SaveScope([FromBody] SaveApiScopeViewModel model)
         {
             if (!ModelState.IsValid)

@@ -67,10 +67,6 @@ export class UserLoginsComponent implements OnInit {
                 },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    if (this.errors[0] == undefined) {
-                        this.errors = [];
-                        this.errors.push("Unknown error while trying to remove");
-                    }
                     this.showButtonLoading = false;
                 }
             );

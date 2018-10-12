@@ -15,7 +15,7 @@ namespace Jp.Infra.Data.Repository
         }
 
         public Task<List<ApiScope>> SearchScopes(string search) => DbSet.Where(id => id.Name.Contains(search)).ToListAsync();
-        public Task<List<ApiScope>> GetScopesByResource(string search) => DbSet.Where(id => id.ApiResource.Name == search).ToListAsync();
+        public Task<List<ApiScope>> GetScopesByResource(string search) => DbSet.Include(s => s.UserClaims).Where(id => id.ApiResource.Name == search).ToListAsync();
 
     }
 }

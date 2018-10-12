@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]"), AllowAnonymous]
     public class UserController : ApiController
     {
         private readonly IUserAppService _userAppService;

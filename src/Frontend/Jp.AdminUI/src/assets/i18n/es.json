@@ -253,7 +253,9 @@
             "Emphasize": "Enfatizar",
             "Emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. El valor predeterminado es falso.",
             "userClaims": "Reclamaciones del usuario",
-            "userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de acceso."
+            "userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de acceso.",
+            "showInDiscoveryDocument": "Mostrar en el documento de descubrimiento",
+            "showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. Por defecto es verdadero"
         }
     },
     "secrets": {

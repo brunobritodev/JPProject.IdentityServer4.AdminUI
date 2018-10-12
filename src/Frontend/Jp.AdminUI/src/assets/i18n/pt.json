@@ -253,7 +253,9 @@
             "Emphasize": "Enfatizar",
             "Emphasize-tooltip": "Especifica se a tela de consentimento enfatizará esse escopo (se a tela de consentimento quiser implementar esse recurso). Use essa configuração para escopos importantes ou importantes. O padrão é falso.",
             "userClaims": "Reivindicações de usuários",
-            "userClaims-tooltip": "Lista de tipos de declaração de usuários associados que devem ser incluídos no token de acesso."
+            "userClaims-tooltip": "Lista de tipos de declaração de usuários associados que devem ser incluídos no token de acesso.",
+            "showInDiscoveryDocument": "Mostrar no documento de descoberta",
+            "showInDiscoveryDocument-tooltip": "Especifica se este escopo é mostrado no documento de descoberta. Padrões para true"
         }
     },
     "secrets": {

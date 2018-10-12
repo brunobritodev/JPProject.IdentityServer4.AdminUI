@@ -7,6 +7,12 @@
 
 <app-loading *ngIf="model == null"></app-loading>
 
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
 <div class="container-fluid" *ngIf="model">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
@@ -30,5 +36,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
 </div>
 <toaster-container [toasterconfig]="toasterconfig"></toaster-container>

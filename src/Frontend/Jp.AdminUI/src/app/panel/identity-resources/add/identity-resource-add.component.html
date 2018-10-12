@@ -5,6 +5,12 @@
     </div>
 </div>
 
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/identity-resource' ]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
 <app-loading *ngIf="model == null || showButtonLoading"></app-loading>
 
 <div *ngIf="errors.length > 0">

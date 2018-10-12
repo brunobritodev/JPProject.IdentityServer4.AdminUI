@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "../../../core/translator/translator.service";
 import { IdentityResourceService } from "../identity-resource.service";
 import { IdentityResource } from "../../../shared/viewModel/identity-resource.model";
+import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
 const swal = require('sweetalert');
 
 @Component({
@@ -49,7 +50,8 @@ export class IdentityResourceListComponent implements OnInit {
                             }
                         },
                         err => {
-                            swal("Cancelled", "Unknown error while trying to remove", 'error');
+                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            swal("Error!", errors[0], 'error');
                         }
                     );
 

@@ -7,46 +7,42 @@
 
 <app-loading *ngIf="users == null"></app-loading>
 
-<div class="container-fluid" *ngIf="users">
-    <div class="col-xl-12 col-md-12 col-lg-12">
-        <div class="card">
-            <div class="card-header">
-                <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/users/add' ]"><i class="fa fa-plus-circle"></i>
-                    {{ 'users.new-user' | translate }}</a>
-            </div>
+<div class="card card-default" *ngIf="users">
+    <div class="card-header">
+        <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/users/add' ]"><i class="fa fa-plus-circle"></i>
+            {{ 'users.new-user' | translate }}</a>
+    </div>
 
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <td> {{ 'users.list.picture' | translate }}</td>
-                                <th> {{ "users.list.name" | translate }}</th>
-                                <th> {{ "users.list.email" | translate }} </th>
-                                <th></th>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <td> {{ 'users.list.picture' | translate }}</td>
+                        <th> {{ "users.list.name" | translate }}</th>
+                        <th> {{ "users.list.email" | translate }} </th>
+                        <th></th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let user of users">
-                                <th>
-                                    <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs"
-                                        placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
-                                    &nbsp;
-                                </th>
-                                <td><img *ngIf="user.picture" width="32" [src]="user.picture" /></td>
-                                <td>{{user.name}}</td>
-                                <td>{{user.email}}</td>
-                                <td>
-                                    <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
-                                        (click)="remove(user.id)"><i class="fa fa-times"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <th>
+                            <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs" placement="top"
+                                [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                        </th>
+                        <td><img *ngIf="user.picture" width="32" [src]="user.picture" /></td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                (click)="remove(user.id)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

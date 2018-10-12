@@ -1,7 +1,7 @@
 <div class="content-heading">
     <div>
         ☁️ {{ 'general.api-resource' | translate }} - <b>Scopes</b>
-        <small><b [innerHTML]="'apiResource.scope-description' | translate"></b></small>
+        <small><b> {{ 'apiResource.description' | translate }}</b></small>
     </div>
 </div>
 
@@ -30,6 +30,7 @@
                     <th></th>
                     <th>{{ 'apiResource.scope.name' | translate }}</th>
                     <th>{{ 'apiResource.scope.description' | translate }}</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -37,9 +38,97 @@
                     <td><button class="btn btn-danger btn-xs" (click)="remove(scope.id)"><i class="fa fa-times"></i></button></td>
                     <td>{{scope.name}}</td>
                     <td>{{scope.description}}</td>
+                    <td><button class="btn btn-info btn-xs" (click)="details(scope)"><i class="fas fa-info"></i></button></td>
                 </tr>
             </tbody>
         </table>
+        <br>
+        <div *ngIf="selectedScope != null" class="row">
+            <div class="col-md-8 offset-2">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4><button class="btn btn-info btn-xs" (click)="selectedScope = null"><i class="fas fa-times"></i></button> {{'general.details' | translate}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <!--Input - text -->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.name-tooltip' | translate">{{
+                                    'apiResource.scope.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <label class="col-xl-8">{{selectedScope.name}}</label>
+                            </div>
+                        </fieldset>
+                        <!--Input - text -->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.displayName-tooltip' | translate">{{
+                                    'apiResource.scope.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <label class="col-xl-8">{{selectedScope.displayName}}</label>
+                            </div>
+                        </fieldset>
+                        <!--Input - text -->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.description-tooltip' | translate">{{
+                                    'apiResource.scope.description' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <label class="col-xl-8">{{selectedScope.description}}</label>
+                            </div>
+                        </fieldset>
+                        <!--Checkbox-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.required-tooltip' | translate">{{
+                                    'apiResource.scope.required' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <label class="switch m-0">
+                                        <input type="checkbox" disabled="disabled" [(ngModel)]="selectedScope.required" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Checkbox-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.showInDiscoveryDocument-tooltip' | translate">{{
+                                    'apiResource.scope.showInDiscoveryDocument' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <label class="switch m-0">
+                                        <input type="checkbox" disabled="disabled" [(ngModel)]="selectedScope.showInDiscoveryDocument" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Checkbox-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.Emphasize-tooltip' | translate">{{
+                                    'apiResource.scope.Emphasize' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <label class="switch m-0">
+                                        <input type="checkbox" disabled="disabled" [(ngModel)]="selectedScope.Emphasize" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Select with tags-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{
+                                    'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <tag-input theme='bootstrap' [disable]="true" name="apiScopes" [modelAsStrings]="true"
+                                        [identifyBy]="'id'" [displayBy]="'type'" [(ngModel)]="selectedScope.userClaims"></tag-input>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
@@ -89,6 +178,19 @@
                 <div class="col-xl-8">
                     <label class="switch m-0">
                         <input type="checkbox" [(ngModel)]="model.required" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.showInDiscoveryDocument-tooltip' | translate">{{
+                    'apiResource.scope.showInDiscoveryDocument' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.showInDiscoveryDocument" />
                         <span></span>
                     </label>
                 </div>

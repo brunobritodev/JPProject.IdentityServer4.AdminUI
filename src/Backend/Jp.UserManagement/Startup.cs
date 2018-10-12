@@ -42,7 +42,7 @@ namespace Jp.Management
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            
             services.AddIdentityMySql(Configuration);
 
             services.ConfigureCors();
