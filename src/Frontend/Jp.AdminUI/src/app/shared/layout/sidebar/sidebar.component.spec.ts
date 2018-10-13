@@ -3,8 +3,8 @@ import { TestBed, async, inject } from "@angular/core/testing";
 import { SidebarComponent } from "./sidebar.component";
 import { RouterModule, Router } from "@angular/router";
 
-import { MenuService } from "../../../core/menu/menu.service";
-import { SettingsService } from "../../../core/settings/settings.service";
+import { MenuService } from "@core/menu/menu.service";
+import { SettingsService } from "@core/settings/settings.service";
 import { HttpClientModule } from "@angular/common/http";
 
 describe("Component: Sidebar", () => {

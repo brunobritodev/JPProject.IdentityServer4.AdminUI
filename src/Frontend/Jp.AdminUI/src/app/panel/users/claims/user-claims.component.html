@@ -1,0 +1,94 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.users' | translate }} - <b>Claims</b>
+        <small><b [innerHTML]="'client.ClaimDescription' | translate"></b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/users/edit', userName]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<app-loading *ngIf="model == null || showButtonLoading"></app-loading>
+
+<div class="card card-default" *ngIf="claims && claims.length > 0">
+    <div class="card-header">
+        <h3>{{ userName }}</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ 'users.claims.type' | translate }}</th>
+                    <th>{{ 'users.claims.value' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let claim of claims">
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(claim.type)"><i class="fa fa-times"></i></button></td>
+                    <td>{{claim.type}}</td>
+                    <td>{{claim.value}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-header">
+        <h3>{{ userName }}</h3>
+    </div>
+    <div class="card-body">
+
+        <!--Select with tags-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-3 col-form-label">{{ 'users.claims.type' | translate }} <i class="fa fa-comment-dots"
+                        placement="top" [tooltip]="'users.claims.type-tooltip' | translate"></i></label>
+                <div class="col-xl-9">
+                        <input class="form-control" autocomplete="claims-type" [placeholder]="'users.claims.type-tooltip' | translate"
+                        [(ngModel)]="model.type" />
+                </div>
+                <div class="col-xl-9 offset-3">
+                    <small>Sugestions</small>
+                    <br>
+                    <button class="btn btn-xs btn-outline-info" *ngFor="let item of standardClaims" (click)="selectType(item)">{{item}} <i class="fa fa-plus-circle"></i>&nbsp;</button>
+
+                </div>
+            </div>
+        </fieldset>
+
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-3 col-form-label">{{ 'users.claims.value' | translate }} <i class="fa fa-comment-dots"
+                        placement="top" [tooltip]="'users.claims.value-tooltip' | translate"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" autocomplete="claims-value" [placeholder]="'users.claims.value-tooltip' | translate"
+                        [(ngModel)]="model.value" />
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/users/edit', userName]">Cancel</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

@@ -16,7 +16,6 @@ namespace Jp.UI.SSO.Controllers.Consent
     /// <summary>
     /// This controller processes the consent UI
     /// </summary>
-    [SecurityHeaders]
     [Authorize]
     public class ConsentController : Controller
     {

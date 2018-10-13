@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 declare var $: any;
 
-import { SettingsService } from "../../../core/settings/settings.service";
-import { ThemesService } from "../../../core/themes/themes.service";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { SettingsService } from "@core/settings/settings.service";
+import { ThemesService } from "@core/themes/themes.service";
+import { TranslatorService } from "@core/translator/translator.service";
 
 @Component({
     selector: "app-offsidebar",

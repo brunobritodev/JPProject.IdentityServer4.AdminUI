@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Jp.UserManagement.Configuration
+namespace Jp.Management.Configuration
 {
     public static class SwaggerConfig
     {
@@ -23,9 +24,10 @@ namespace Jp.UserManagement.Configuration
                 options.AddSecurityDefinition("oauth2", new OAuth2Scheme
                 {
                     Flow = "implicit",
-                    AuthorizationUrl = "http://localhost:5000/connect/authorize",
+                    AuthorizationUrl = $"{JpProjectConfiguration.IdentityServerUrl}/connect/authorize",
                     Scopes = new Dictionary<string, string> {
-                        { "UserManagementApi.owner-content", "User Management API - full access" },
+                        { "management-api.owner-content", "User Management API - full access" },
+                        { "management-api.identityserver4-manager", "IS4 Management API - full access" },
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();

@@ -1,0 +1,9 @@
+<!--Input - text -->
+<fieldset>
+<div class="form-group row">
+        <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'roles.edit.roleName-tooltip' | translate">{{  'roles.edit.roleName' | translate }} <i class="fa fa-comment-dots"></i></label>
+    <div class="col-xl-8">
+        <input class="form-control" autocomplete="model-roleName" [placeholder]="'roles.edit.roleName-tooltip' | translate" [(ngModel)]="model.roleName" />
+    </div>
+</div>
+</fieldset>

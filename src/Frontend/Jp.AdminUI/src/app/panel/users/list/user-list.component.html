@@ -1,0 +1,84 @@
+<div class="content-heading">
+    <div>
+        👨‍👩‍👧‍👦 &nbsp;&nbsp;{{ 'general.users' | translate }}
+        <small><b> {{ 'users.description' | translate }}.</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="users == null"></app-loading>
+
+<div class="card card-default" *ngIf="users">
+    <div class="card-header">
+        <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/users/add' ]"><i class="fa fa-plus-circle"></i>
+            {{ 'users.new-user' | translate }}</a>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <td> {{ 'users.list.picture' | translate }}</td>
+                        <th> {{ "users.list.username" | translate }}</th>
+                        <th> {{ "users.list.name" | translate }}</th>
+                        <th> {{ "users.list.email" | translate }} </th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <th>
+                            <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs" placement="top"
+                                [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                            <button (click)="showLogs(user)" class="btn btn-outline-primary btn-xs" placement="top"
+                                [tooltip]="'users.list.log-tooltip' | translate"><i class="fas fa-history"></i></button>
+                        </th>
+                        <td><img *ngIf="user.picture" width="32" [src]="user.picture" /></td>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                (click)="remove(user.id)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card card-default" *ngIf="historyData$ | async as history">
+    <div class="card-header">
+        <h3>Logs - {{selectedUser.userName}}</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-responsive-sm table-bordered">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>When</th>
+                    <th>Who</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let history of history">
+                    <td>{{history.action}}</td>
+                    <td>{{history.when}}</td>
+                    <td>{{history.who}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="history.show = !history.show"><i class="far fa-clock"></i></button>
+                        <div *ngIf="history.show"><br>
+                            <pre>{{ parse(history.details) | json}}</pre>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

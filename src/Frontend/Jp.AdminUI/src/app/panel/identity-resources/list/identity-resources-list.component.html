@@ -1,0 +1,46 @@
+<div class="content-heading">
+    <div>
+        🔖 {{ 'general.identity-resource' | translate }}
+        <small><b> {{ 'identityResource.description' | translate }}.</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="identityResources == null"></app-loading>
+
+<div class="card card-default" *ngIf="identityResources">
+    <div class="card-header">
+        <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/identity-resource/add' ]"><i class="fa fa-plus-circle"></i>
+            {{ 'identityResource.newIr' | translate }}</a>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> {{ "identityResource.list.name" | translate }}</th>
+                        <th> {{"identityResource.list.description" | translate }} </th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let resource of identityResources">
+                        <th>
+                            <a [routerLink]="['/identity-resource/edit', resource.name]" class="btn btn-primary btn-xs"
+                                placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                        </th>
+                        <td>{{resource.name}}</td>
+                        <td>{{resource.description}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                (click)="remove(resource.name)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

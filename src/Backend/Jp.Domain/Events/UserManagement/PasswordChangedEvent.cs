@@ -8,7 +8,7 @@ namespace Jp.Domain.Events.UserManagement
 
         public PasswordChangedEvent(Guid aggregateId)
         {
-            AggregateId = aggregateId;
+            AggregateId = aggregateId.ToString();
         }
     }
 }

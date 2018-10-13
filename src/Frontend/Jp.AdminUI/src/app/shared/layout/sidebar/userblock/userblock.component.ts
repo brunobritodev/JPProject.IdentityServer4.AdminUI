@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { UserblockService } from "./userblock.service";
-import { SettingsService } from "../../../../core/settings/settings.service";
-import { UserProfile } from "../../../viewModel/userProfile.model";
-import { Observable } from "rxjs/Observable";
+import { SettingsService } from "@core/settings/settings.service";
 
 @Component({
     selector: "app-userblock",
@@ -12,14 +10,21 @@ import { Observable } from "rxjs/Observable";
 })
 export class UserblockComponent implements OnInit {
 
-    public user: UserProfile;
+    public user: any;
 
     constructor(public userblockService: UserblockService,
         public settings: SettingsService) {
     }
 
     ngOnInit() {
-        this.settings.getProfile().subscribe(a => this.user = a);
+        this.settings.getUserProfile().subscribe(a => this.user = a);
+    }
+
+    public getUserImage(): string {
+        if (this.user != null && this.user.picture != null)
+            return this.user.picture;
+
+        return "assets/img/dummy.png";
     }
 
     userBlockIsVisible() {

@@ -1,16 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { LayoutComponent } from "./shared/layout/layout.component";
-import { SharedModule } from "./shared/shared.module";
 import { MenuService } from "./core/menu/menu.service";
 import { TranslatorService } from "./core/translator/translator.service";
 import { menu } from "./core/menu/menu";
-import { Error404Component } from "./pages/error404/error404.component";
 import { PagesModule } from "./pages/pages.module";
 
 export const routes = [
 
-    { path: "", redirectTo: "sign-in", pathMatch: "full" },
+    { path: "", redirectTo: "login", pathMatch: "full" },
     {
         path: "",
         component: LayoutComponent,

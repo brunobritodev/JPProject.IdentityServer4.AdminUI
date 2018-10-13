@@ -1,7 +1,7 @@
 {
-  "name": "@coreui/coreui-free-angular-admin-template",
+  "name": "jpproject-usermanagement-ui",
   "version": "2.0.0-rc.4",
-  "description": "CoreUI Free Angular 2+ Admin Template",
+  "description": "Jp Project - User management UI",
   "author": {
     "name": "Bruno Brito",
     "url": "http://www.brunobrito.net.br",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

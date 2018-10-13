@@ -1,0 +1,138 @@
+<div class="content-heading">
+    <div>
+        🔖 {{ 'general.identity-resource' | translate }}
+        <small><b> {{ 'identityResource.description' | translate }}.</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="model == null || showButtonLoading"></app-loading>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
+    <div class="card-header">
+        <h3>{{model.name}}</h3>
+    </div>
+    <div class="card-body">
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.name-tooltip' | translate">{{
+                    'identityResource.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-name" [placeholder]="'identityResource.edit.name-tooltip' | translate"
+                        [(ngModel)]="model.name" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.displayName-tooltip' | translate">{{
+                    'identityResource.edit.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-displayName" [placeholder]="'identityResource.edit.displayName-tooltip' | translate"
+                        [(ngModel)]="model.displayName" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.description-tooltip' | translate">{{
+                    'identityResource.edit.description' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-description" [placeholder]="'identityResource.edit.description-tooltip' | translate"
+                        [(ngModel)]="model.description" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.enabled-tooltip' | translate">{{
+                    'identityResource.edit.enabled' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.enabled" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.showInDiscoveryDocument-tooltip' | translate">{{
+                    'identityResource.edit.showInDiscoveryDocument' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.showInDiscoveryDocument" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.required-tooltip' | translate">{{
+                    'identityResource.edit.required' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.required" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.emphasize-tooltip' | translate">{{
+                    'identityResource.edit.emphasize' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.emphasize" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Select with tags-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'identityResource.edit.userClaims-tooltip' | translate">{{
+                    'identityResource.edit.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" placeholder="+Claim"
+                        [(ngModel)]="model.userClaims">
+                        <tag-input-dropdown [autocompleteItems]='standardClaims'>
+                        </tag-input-dropdown>
+                    </tag-input>
+                </div>
+                <div class="col-xl-8 offset-4">
+                    <small>Sugestions</small>
+                    <br>
+                    <button class="btn btn-xs btn-outline-info" *ngFor="let item of standardClaims" (click)="addClaim(item)">{{item}} <i class="fa fa-plus-circle"></i>&nbsp;</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/identity-resource']">Cancel</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

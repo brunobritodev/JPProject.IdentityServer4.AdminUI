@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using IdentityModel;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
@@ -13,14 +8,20 @@ using Jp.Domain.Models;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.CrossCutting.Identity.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ServiceStack;
-using ServiceStack.Text;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Identity.Services
 {
-    public class UserService : IUserService, IUserManager
+    public class UserService : IUserService
     {
         private readonly UserManager<UserIdentity> _userManager;
         private readonly IEmailSender _emailSender;
@@ -46,9 +47,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
         public Task<Guid?> CreateUserWithPass(IDomainUser user, string password)
         {
-
             return CreateUser(user, password, null, null);
-
         }
 
         public Task<Guid?> CreateUserWithProvider(IDomainUser user, string provider, string providerUserId)
@@ -121,11 +120,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         private async Task AddClaims(UserIdentity user)
         {
             var claims = new List<Claim>();
-            claims.Add(new Claim("anme", user.Name));
-            claims.Add(new Claim("email", user.Email));
+            claims.Add(new Claim("username", user.UserName));
+            claims.Add(new Claim(JwtClaimTypes.Email, user.Email));
 
             if (!string.IsNullOrEmpty(user.Picture))
-                claims.Add(new Claim("picture", user.Picture));
+                claims.Add(new Claim(JwtClaimTypes.Picture, user.Picture));
 
             var identityResult = await _userManager.AddClaimsAsync(user, claims);
         }
@@ -145,13 +144,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         public async Task<User> FindByLoginAsync(string provider, string providerUserId)
         {
             var model = await _userManager.FindByLoginAsync(provider, providerUserId);
-
-            return Get(model);
+            return GetUser(model);
         }
 
         public async Task<Guid?> SendResetLink(string requestEmail, string requestUsername)
         {
-
             var user = await _userManager.FindByEmailAsync(requestEmail);
             if (user == null)
             {
@@ -247,8 +244,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 return true;
             }
 
-
-
             foreach (var error in result.Errors)
             {
                 await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
@@ -263,7 +258,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
             user.Picture = command.Picture;
 
-
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
@@ -271,7 +265,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 await AddOrUpdateClaimAsync(user, claims, "picture", user.Picture);
                 return true;
             }
-
 
             foreach (var error in result.Errors)
             {
@@ -353,6 +346,45 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return await _userManager.HasPasswordAsync(user);
         }
 
+        public async Task<IEnumerable<User>> GetByIdAsync(params string[] id)
+        {
+            var users = await _userManager.Users.Where(w => id.Contains(w.Id.ToString())).ToListAsync();
+
+            return users.Select(GetUser).ToList(); ;
+        }
+
+        private User GetUser(UserIdentity s)
+        {
+            if (s == null)
+                return null;
+            return new User
+            {
+                Id = s.Id,
+                Name = s.Name,
+                SecurityStamp = s.SecurityStamp,
+                AccessFailedCount = s.AccessFailedCount,
+                Bio = s.Bio,
+                Company = s.Company,
+                Email = s.Email,
+                EmailConfirmed = s.EmailConfirmed,
+                JobTitle = s.JobTitle,
+                LockoutEnabled = s.LockoutEnabled,
+                LockoutEnd = s.LockoutEnd,
+                PhoneNumber = s.PhoneNumber,
+                PhoneNumberConfirmed = s.PhoneNumberConfirmed,
+                Picture = s.Picture,
+                TwoFactorEnabled = s.TwoFactorEnabled,
+                Url = s.Url,
+                UserName = s.UserName,
+            };
+        }
+
+        public async Task<IEnumerable<User>> GetUsers()
+        {
+            var users = await this._userManager.Users.ToListAsync();
+            return users.Select(GetUser);
+        }
+
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)
         {
             var result = await _userManager.AddLoginAsync(user, new UserLoginInfo(provider, providerUserId, provider));
@@ -365,30 +397,166 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-
-        private User Get(UserIdentity user)
+        public async Task<User> FindByEmailAsync(string email)
         {
-            return JsonSerializer.DeserializeFromString<User>(JsonSerializer.SerializeToString(user));
+            var user = await _userManager.FindByEmailAsync(email);
+            return GetUser(user);
         }
 
-        public Task<UserIdentity> FindByEmailAsync(string email)
+        public async Task<User> FindByNameAsync(string username)
         {
-            return _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByNameAsync(username);
+            return GetUser(user);
         }
 
-        public Task<UserIdentity> FindByNameAsync(string username)
+        public async Task<User> FindByProviderAsync(string provider, string providerUserId)
         {
-            return _userManager.FindByNameAsync(username);
+            var user = await _userManager.FindByLoginAsync(provider, providerUserId);
+            return GetUser(user);
         }
 
-        public Task<UserIdentity> FindByProviderAsync(string provider, string providerUserId)
+        public async Task<User> GetUserAsync(Guid user)
         {
-            return _userManager.FindByLoginAsync(provider, providerUserId);
+            var userDb = await _userManager.FindByIdAsync(user.ToString());
+            return GetUser(userDb);
         }
 
-        public Task<UserIdentity> GetUserAsync(Guid user)
+        public async Task UpdateUserAsync(User user)
         {
-            return _userManager.FindByIdAsync(user.ToString());
+            var userDb = await _userManager.FindByNameAsync(user.UserName);
+            userDb.Email = user.Email;
+            userDb.EmailConfirmed = user.EmailConfirmed;
+            userDb.AccessFailedCount = user.AccessFailedCount;
+            userDb.LockoutEnabled = user.LockoutEnabled;
+            userDb.LockoutEnd = user.LockoutEnd;
+            userDb.Name = user.Name;
+            userDb.TwoFactorEnabled = user.TwoFactorEnabled;
+            userDb.PhoneNumber = user.PhoneNumber;
+            userDb.PhoneNumberConfirmed = user.PhoneNumberConfirmed;
+            await _userManager.UpdateAsync(userDb);
+        }
+
+        public async Task<IEnumerable<Claim>> GetClaimByName(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            var claims = await _userManager.GetClaimsAsync(user);
+
+            return claims;
+        }
+
+        public async Task<bool> SaveClaim(Guid userDbId, Claim claim)
+        {
+            var user = await _userManager.FindByIdAsync(userDbId.ToString());
+            var result = await _userManager.AddClaimAsync(user, claim);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<bool> RemoveClaim(Guid userId, string type)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            var claims = await _userManager.GetClaimsAsync(user);
+            var claimToRemove = claims.First(c => c.Type == type);
+            var result = await _userManager.RemoveClaimAsync(user, claimToRemove);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<IEnumerable<string>> GetRoles(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            return await _userManager.GetRolesAsync(user);
+        }
+
+        public async Task<bool> RemoveRole(Guid userDbId, string requestRole)
+        {
+            var user = await _userManager.FindByIdAsync(userDbId.ToString());
+            var result = await _userManager.RemoveFromRoleAsync(user, requestRole);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+
+        public async Task<bool> SaveRole(Guid userId, string role)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            var result = await _userManager.AddToRoleAsync(user, role);
+
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<IEnumerable<UserLogin>> GetUserLogins(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            var logins = await _userManager.GetLoginsAsync(user);
+            return logins.Select(a => new UserLogin { LoginProvider = a.LoginProvider, ProviderDisplayName = a.ProviderDisplayName, ProviderKey = a.ProviderKey });
+        }
+
+        public async Task<bool> RemoveLogin(Guid userId, string loginProvider, string providerKey)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            var result = await _userManager.RemoveLoginAsync(user, loginProvider, providerKey);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<IEnumerable<User>> GetUserFromRole(string[] role)
+        {
+            var users = new List<UserIdentity>();
+            foreach (var s in role)
+            {
+                users.AddRange(await _userManager.GetUsersInRoleAsync(s));
+            }
+            return users.Select(GetUser);
+        }
+
+        public async Task<bool> RemoveUserFromRole(string name, string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            var result = await _userManager.RemoveFromRoleAsync(user, name);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<bool> ResetPasswordAsync(string username, string password)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            await _userManager.RemovePasswordAsync(user);
+            var result = await _userManager.AddPasswordAsync(user, password);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
         }
     }
 }

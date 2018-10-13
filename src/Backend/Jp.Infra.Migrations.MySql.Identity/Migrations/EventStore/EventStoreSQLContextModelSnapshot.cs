@@ -22,7 +22,7 @@ namespace Jp.Infra.Migrations.MySql.Identity.Migrations.EventStore
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid>("AggregateId");
+                    b.Property<string>("AggregateId");
 
                     b.Property<string>("Data");
 

@@ -3,6 +3,7 @@ using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using Jp.Infra.CrossCutting.Identity.Constants;
+using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 
 namespace Jp.UI.SSO.Util
 
@@ -18,54 +19,51 @@ namespace Jp.UI.SSO.Util
                 /*
                  * JP Project ID4 Admin Client
                  */
-	           new Client
-               {
+                new Client
+                {
 
-                   ClientId = AuthorizationConsts.OidcClientId,
-                   ClientName = AuthorizationConsts.OidcClientId,
-                   ClientUri = AuthorizationConsts.IdentityAdminBaseUrl,
-
-                   AllowedGrantTypes = GrantTypes.Implicit,
-                   AllowAccessTokensViaBrowser = true,
-
-                   RedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signin-oidc"},
-                   FrontChannelLogoutUri = $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-oidc",
-                   PostLogoutRedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-callback-oidc"},
-                   AllowedCorsOrigins = { AuthorizationConsts.IdentityAdminBaseUrl },
-
-                   AllowedScopes =
-                   {
-                       IdentityServerConstants.StandardScopes.OpenId,
-                       IdentityServerConstants.StandardScopes.Profile,
-                       IdentityServerConstants.StandardScopes.Email,
-                       "roles"
-                   }
-               },
-
-                /*
-                 * User Management Client - OpenID Connect implicit flow client
-                // */
-                new Client {
-                    ClientId = "UserManagementUI",
-                    ClientName = "User Management UI",
-                    //AccessTokenLifetime = 600, // 10 minutes, default 60 minutes
+                    ClientId = "IS4-Admin",
+                    ClientName = "IS4-Admin",
+                    ClientUri = JpProjectConfiguration.IdentityServerAdminUrl,
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    RequireConsent = true,
-                    RedirectUris = { "http://localhost:4200/login-callback" },
-                    PostLogoutRedirectUris =  { "http://localhost:4200/" },
-                    AllowedCorsOrigins = { "http://localhost:4200" },
-                    LogoUri = "~/images/clientLogo/1.jpg",
-                    AccessTokenType = AccessTokenType.Reference,
+                    RedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}/login-callback"},
+                    AllowedCorsOrigins = { JpProjectConfiguration.IdentityServerAdminUrl},
+
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        JwtClaimTypes.Picture,
-                        "UserManagementApi.owner-content",
+                        "jp_api.is4"
                     }
                 },
+
+                /*
+                 * User Management Client - OpenID Connect implicit flow client
+                 */
+                new Client {
+                    ClientId = "UserManagementUI",
+                    ClientName = "User Management UI",
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = true,
+                    RedirectUris = { $"{JpProjectConfiguration.UserManagementUrl}/login-callback" },
+                    PostLogoutRedirectUris =  { $"{JpProjectConfiguration.UserManagementUrl}" },
+                    AllowedCorsOrigins = { $"{JpProjectConfiguration.UserManagementUrl}" },
+                    LogoUri = "~/images/clientLogo/1.jpg",
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "jp_api.user",
+                    }
+                },
+                /*
+                 * Swagger
+                 */
                 new Client
                 {
                     ClientId = "Swagger",
@@ -74,11 +72,12 @@ namespace Jp.UI.SSO.Util
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris =
                     {
-                        "https://localhost:5003/swagger/oauth2-redirect.html"
+                        $"{JpProjectConfiguration.ResourceServer}/swagger/oauth2-redirect.html"
                     },
                     AllowedScopes =
                     {
-                        "UserManagementApi.owner-content"
+                        "jp_api.user",
+                        "jp_api.is4",
                     }
                 }
 

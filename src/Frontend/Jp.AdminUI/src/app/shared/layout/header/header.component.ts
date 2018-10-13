@@ -4,9 +4,8 @@ const browser = require("jquery.browser");
 declare var $: any;
 
 import { UserblockService } from "../sidebar/userblock/userblock.service";
-import { SettingsService } from "../../../core/settings/settings.service";
-import { MenuService } from "../../../core/menu/menu.service";
-import { AuthenticationService } from "../../services/authentication.service";
+import { SettingsService } from "@core/settings/settings.service";
+import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
 
 
@@ -14,7 +13,7 @@ import { Router } from "@angular/router";
     selector: "app-header",
     templateUrl: "./header.component.html",
     styleUrls: ["./header.component.scss"],
-    providers: [AuthenticationService]
+    providers: []
 })
 export class HeaderComponent implements OnInit {
 
@@ -28,7 +27,6 @@ export class HeaderComponent implements OnInit {
         public menu: MenuService,
         public userblockService: UserblockService,
         public settings: SettingsService,
-        public authService: AuthenticationService,
         private router: Router) {
 
         // show only a few items on demo
@@ -44,10 +42,7 @@ export class HeaderComponent implements OnInit {
     }
 
     public async logout() {
-        let result = await this.authService.logout().toPromise();
-        if (result.data) {
-            this.router.navigate(["/"]);
-        }
+        await this.settings.logout();
     }
 
     toggleUserBlock(event) {

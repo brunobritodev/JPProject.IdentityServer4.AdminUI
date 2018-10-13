@@ -1,0 +1,89 @@
+<div class="content-heading">
+    <div>
+        🔑 {{ 'general.roles' | translate }}
+        <small><b> {{ 'roles.description' | translate }}</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="roles == null"></app-loading>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<div class="card card-default" *ngIf="roles">
+    <div class="card-header">
+        <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/roles/add' ]"><i class="fa fa-plus-circle"></i>
+            {{ 'roles.new-role' | translate }}</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> {{ 'roles.name' | translate }}</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let role of roles">
+                        <td>
+                            <button class="btn btn-primary btn-xs" (click)="details(role.name)" placement="top"
+                                [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
+                            &nbsp;
+                            <a [routerLink]="['/roles/edit', role.name]" class="btn btn-primary btn-xs" placement="top"
+                                [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                        </td>
+                        <td>{{role.name}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                (click)="remove(role.name)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card card-default" *ngIf="users$ || selectedRole">
+    <div class="card-header">
+        <h3>{{ 'roles.selectedRole' | translate }}: {{selectedRole}}</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <td> {{ 'roles.list.picture' | translate }}</td>
+                        <th> {{ "roles.list.name" | translate }}</th>
+                        <th> {{ "roles.list.email" | translate }} </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users$ | async">
+                        <td>
+                            <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs" placement="top"
+                                [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                        </td>
+                        <td><img *ngIf="user.picture" width="32" [src]="user.picture" /></td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                (click)="removeFromRole(user.userName, selectedRole)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

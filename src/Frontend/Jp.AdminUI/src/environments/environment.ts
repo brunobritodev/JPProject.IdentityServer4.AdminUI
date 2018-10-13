@@ -5,5 +5,8 @@
 
 export const environment = {
   production: false,
-  API_URL: "http://localhost:51750/api/",
+  ResourceServer: "https://localhost:5003/",
+  IssuerUri:  "https://localhost:5000",
+  RequireHttps: false,
+  Uri: "http://localhost:4300"
 };

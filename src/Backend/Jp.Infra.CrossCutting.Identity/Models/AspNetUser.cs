@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Claims;
+using IdentityModel;
 using Jp.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 
@@ -14,8 +16,9 @@ namespace Jp.Infra.CrossCutting.Identity.Models
             _accessor = accessor;
         }
 
-        public string Username => _accessor.HttpContext.User.FindFirst("email")?.Value;
+        public string Username => _accessor.HttpContext.User.FindFirst("username")?.Value;
 
+        public Guid UserId => Guid.Parse(_accessor.HttpContext.User.FindFirst(JwtClaimTypes.Subject)?.Value);
         public bool IsAuthenticated()
         {
             return _accessor.HttpContext.User.Identity.IsAuthenticated;

@@ -2,19 +2,20 @@
 using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.EntityFramework.Extensions;
 using IdentityServer4.EntityFramework.Interfaces;
+using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 
 namespace Jp.Infra.CrossCutting.IdentityServer.Context
 {
-    public class IdentityServerContext : DbContext
+    public class JpContext : DbContext
         , IConfigurationDbContext
         , IPersistedGrantDbContext
     {
         private readonly ConfigurationStoreOptions _storeOptions;
         private readonly OperationalStoreOptions _operationalOptions;
 
-        public IdentityServerContext(DbContextOptions<IdentityServerContext> options,
+        public JpContext(DbContextOptions<JpContext> options,
             ConfigurationStoreOptions storeOptions,
             OperationalStoreOptions operationalOptions
             ) : base(options)
@@ -63,7 +64,6 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.ConfigureClientContext(_storeOptions);
             modelBuilder.ConfigureResourcesContext(_storeOptions);
             modelBuilder.ConfigurePersistedGrantContext(_operationalOptions);

@@ -1,0 +1,78 @@
+<div class="content-heading">
+    <div>
+        🔑 {{ 'general.persisted-grants' | translate }}
+        <small><b> {{ 'persistedGrant.description' | translate }}</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="persistedGrants == null"></app-loading>
+
+<!-- START card-->
+<div class="card card-default" *ngIf="persistedGrants">
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> {{ 'persistedGrant.list.picture' | translate }} </th>
+                        <th> {{ 'persistedGrant.list.email' | translate }}</th>
+                        <th> {{ 'persistedGrant.list.clientId' | translate }}</th>
+                        <th> {{ 'persistedGrant.list.type' | translate }} </th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let grant of persistedGrants">
+                        <th>
+                            <button class="btn btn-primary btn-xs" (click)="details(grant.key)" placement="top"
+                                [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
+                            &nbsp;
+                        </th>
+                        <td><img *ngIf="grant.picture" width="32" [src]="grant.picture" /></td>
+                        <td>{{grant.email}}</td>
+                        <td>{{grant.clientId}}</td>
+                        <td>{{grant.type}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.revoke' | translate"
+                                (click)="remove(grant.key)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END card-->
+
+<!-- START card-->
+<div class="card card-default" *ngIf="grantDetail">
+    <div class="card-header">
+        <h3>{{ 'general.details' | translate }} - {{grantDetail.clientId}} for {{grantDetail.email}}</h3>
+    </div>
+    <div class="card-body">
+        <img *ngIf="grantDetail.picture" [src]="grantDetail.picture" />
+        <dl class="row">
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.email' | translate }}</dt>
+            <dd class="col-sm-9">{{grantDetail.email}}</dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.key' | translate }}</dt>
+            <dd class="col-sm-9">{{grantDetail.key}}</dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.type' | translate }}</dt>
+            <dd class="col-sm-9">{{grantDetail.type}}</dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.clientId' | translate }}</dt>
+            <dd class="col-sm-9">{{grantDetail.clientId}}</dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.creationTime' | translate }}</dt>
+            <dd class="col-sm-9">{{grantDetail.creationTime}}</dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.expiration' | translate }}</dt>
+            <dd class="col-sm-9">{{grantDetail.expiration}}</dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.scopes' | translate }}</dt>
+            <dd class="col-sm-9">
+                <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [disable]="true" [(ngModel)]="grantDetail.parsedData.Scopes">
+                </tag-input>
+            </dd>
+        </dl>
+    </div>
+</div>
+<!-- END card-->

@@ -1,15 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Jp.UserManagement.Controllers
+namespace Jp.Management.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]"), AllowAnonymous]
     public class UserController : ApiController
     {
         private readonly IUserAppService _userAppService;
@@ -23,7 +24,7 @@ namespace Jp.UserManagement.Controllers
         }
 
         [HttpPost, Route("register")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Register([FromBody] UserViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> Register([FromBody] RegisterUserViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -37,7 +38,7 @@ namespace Jp.UserManagement.Controllers
         }
 
         [HttpPost, Route("register-provider")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RegisterWithProvider([FromBody] UserViewModel model)
+        public async Task<ActionResult<DefaultResponse<bool>>> RegisterWithProvider([FromBody] RegisterUserViewModel model)
         {
             if (!ModelState.IsValid)
             {

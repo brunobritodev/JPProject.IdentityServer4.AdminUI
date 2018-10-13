@@ -1,11 +1,14 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Events.User;
 using Jp.Domain.Events.UserManagement;
 using Jp.Domain.Interfaces;
 using MediatR;
+using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jp.Domain.CommandHandlers
 {
@@ -14,18 +17,27 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<UpdateProfilePictureCommand>,
         IRequestHandler<SetPasswordCommand>,
         IRequestHandler<ChangePasswordCommand>,
-        IRequestHandler<RemoveAccountCommand>
+        IRequestHandler<RemoveAccountCommand>,
+        IRequestHandler<UpdateUserCommand>,
+        IRequestHandler<SaveUserClaimCommand>,
+        IRequestHandler<RemoveUserClaimCommand>,
+        IRequestHandler<RemoveUserRoleCommand>,
+        IRequestHandler<SaveUserRoleCommand>,
+        IRequestHandler<AdminChangePasswordCommand>
     {
         private readonly IUserService _userService;
+        private readonly ISystemUser _user;
 
         public UserManagementCommandHandler(
             IUnitOfWork uow,
             IMediatorHandler bus,
             INotificationHandler<DomainNotification> notifications,
-            IUserService userService)
+            IUserService userService,
+            ISystemUser user)
             : base(uow, bus, notifications)
         {
             _userService = userService;
+            _user = user;
         }
 
         public async Task Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
@@ -91,6 +103,173 @@ namespace Jp.Domain.CommandHandlers
             var result = await _userService.RemoveAccountAsync(request);
             if (result)
                 await Bus.RaiseEvent(new AccountRemovedEvent(request.Id.Value));
+        }
+
+
+        public async Task Handle(UpdateUserCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+            user.Email = request.Email;
+            user.EmailConfirmed = request.EmailConfirmed;
+            user.AccessFailedCount = request.AccessFailedCount;
+            user.LockoutEnabled = request.LockoutEnabled;
+            user.LockoutEnd = request.LockoutEnd;
+            user.Name = request.Name;
+            user.TwoFactorEnabled = request.TwoFactorEnabled;
+            user.PhoneNumber = request.PhoneNumber;
+            user.PhoneNumberConfirmed = request.PhoneNumberConfirmed;
+            await _userService.UpdateUserAsync(user);
+        }
+
+        public async Task Handle(SaveUserClaimCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var userDb = await _userService.FindByNameAsync(request.Username);
+            if (userDb == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var claim = new Claim(request.Type, request.Value);
+
+            var success = await _userService.SaveClaim(userDb.Id, claim);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new NewUserClaimEvent(request.Username, request.Type, request.Value));
+            }
+        }
+
+        public async Task Handle(RemoveUserClaimCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var userDb = await _userService.FindByNameAsync(request.Username);
+            if (userDb == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.RemoveClaim(userDb.Id, request.Type);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserClaimRemovedEvent(request.Username, request.Type));
+            }
+        }
+
+        public async Task Handle(RemoveUserRoleCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var userDb = await _userService.FindByNameAsync(request.Username);
+            if (userDb == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.RemoveRole(userDb.Id, request.Role);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserRoleRemovedEvent(_user.UserId, request.Username, request.Role));
+            }
+        }
+
+        public async Task Handle(SaveUserRoleCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.SaveRole(user.Id, request.Role);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserRoleSavedEvent(_user.UserId, request.Username, request.Role));
+            }
+        }
+
+        public async Task Handle(RemoveUserLoginCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.RemoveLogin(user.Id, request.LoginProvider, request.ProviderKey);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new UserLoginRemovedEvent(_user.UserId, request.Username, request.LoginProvider, request.ProviderKey));
+            }
+        }
+
+        public async Task Handle(AdminChangePasswordCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.ResetPasswordAsync(request.Username, request.Password);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new AdminChangedPasswordEvent(user.Id, request.Username));
+            }
         }
     }
 }

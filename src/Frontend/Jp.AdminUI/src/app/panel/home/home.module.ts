@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { HomeComponent } from "./home.component";
 import { Routes, RouterModule } from "@angular/router";
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from "@shared/shared.module";
 import { DndModule } from "ng2-dnd";
 
 const routes: Routes = [

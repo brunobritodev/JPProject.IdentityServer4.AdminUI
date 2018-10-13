@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
 {
-    [DbContext(typeof(IdentityServerContext))]
+    [DbContext(typeof(JpContext))]
     partial class IdentityServerContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -354,7 +354,7 @@ namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
                     b.Property<int?>("ClientId")
                         .IsRequired();
 
-                    b.Property<string>("Key")
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasMaxLength(250);
 
@@ -491,7 +491,7 @@ namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.PersistedGrant", b =>
                 {
-                    b.Property<string>("Key")
+                    b.Property<string>("Type")
                         .HasMaxLength(200);
 
                     b.Property<string>("ClientId")
@@ -513,7 +513,7 @@ namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.HasKey("Key");
+                    b.HasKey("Type");
 
                     b.HasIndex("SubjectId", "ClientId", "Type");
 

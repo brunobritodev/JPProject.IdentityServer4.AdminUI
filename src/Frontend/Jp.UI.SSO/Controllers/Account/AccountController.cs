@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Principal;
-using System.Threading.Tasks;
-using IdentityModel;
+﻿using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
@@ -13,9 +7,10 @@ using IdentityServer4.Services;
 using IdentityServer4.Stores;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
-using Jp.Infra.CrossCutting.Identity.Services;
+using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
 using MediatR;
@@ -24,13 +19,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Threading.Tasks;
 
 namespace Jp.UI.SSO.Controllers.Account
 {
-    [SecurityHeaders]
     public class AccountController : Controller
     {
-        private readonly IUserManager _userService;
         private readonly SignInManager<UserIdentity> _signInManager;
         private readonly IUserAppService _userAppService;
         private readonly IIdentityServerInteractionService _interaction;
@@ -41,7 +40,6 @@ namespace Jp.UI.SSO.Controllers.Account
         private readonly DomainNotificationHandler _notifications;
 
         public AccountController(
-            IUserManager userService,
             SignInManager<UserIdentity> signInManager,
             IUserAppService userAppService,
             IIdentityServerInteractionService interaction,
@@ -51,7 +49,6 @@ namespace Jp.UI.SSO.Controllers.Account
             INotificationHandler<DomainNotification> notifications,
             IConfiguration configuration)
         {
-            _userService = userService;
             _signInManager = signInManager;
             _userAppService = userAppService;
             _interaction = interaction;
@@ -83,13 +80,13 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public IActionResult Register()
         {
-            var url = $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? _configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/register";
+            var url = $"{JpProjectConfiguration.UserManagementUrl}/register";
             return Redirect(url);
         }
 
         public IActionResult ForgotPassword()
         {
-            var url = $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? _configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/recover";
+            var url = $"{JpProjectConfiguration.UserManagementUrl}/recover";
             return Redirect(url);
         }
         /// <summary>
@@ -122,15 +119,15 @@ namespace Jp.UI.SSO.Controllers.Account
 
             if (ModelState.IsValid)
             {
-                UserIdentity userIdentity;
+                UserViewModel userIdentity;
                 if (model.IsUsernameEmail())
                 {
-                    userIdentity = await _userService.FindByEmailAsync(model.Username);
+                    userIdentity = await _userAppService.FindByEmailAsync(model.Username);
 
                 }
                 else
                 {
-                    userIdentity = await _userService.FindByNameAsync(model.Username);
+                    userIdentity = await _userAppService.FindByNameAsync(model.Username);
                 }
 
                 if (userIdentity == null)
@@ -154,6 +151,11 @@ namespace Jp.UI.SSO.Controllers.Account
                         }
 
                         return Redirect("~/");
+                    }
+                    else
+                    {
+                        await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials"));
+                        ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
                     }
                 }
             }
@@ -230,7 +232,27 @@ namespace Jp.UI.SSO.Controllers.Account
             // we must issue the cookie maually, and can't use the SignInManager because
             // it doesn't expose an API to issue additional claims from the login workflow
             // I don't have pride of this.
-            var principal = await _signInManager.CreateUserPrincipalAsync(user);
+            var s = new UserIdentity()
+            {
+                Id = user.Id,
+                Name = user.Name,
+                SecurityStamp = user.SecurityStamp,
+                AccessFailedCount = user.AccessFailedCount,
+                Bio = user.Bio,
+                Company = user.Company,
+                Email = user.Email,
+                EmailConfirmed = user.EmailConfirmed,
+                JobTitle = user.JobTitle,
+                LockoutEnabled = user.LockoutEnabled,
+                LockoutEnd = user.LockoutEnd,
+                PhoneNumber = user.PhoneNumber,
+                PhoneNumberConfirmed = user.PhoneNumberConfirmed,
+                Picture = user.Picture,
+                TwoFactorEnabled = user.TwoFactorEnabled,
+                Url = user.Url,
+                UserName = user.UserName,
+            };
+            var principal = await _signInManager.CreateUserPrincipalAsync(s);
             additionalLocalClaims.AddRange(principal.Claims);
             var name = principal.FindFirst(JwtClaimTypes.Name)?.Value ?? user.Id.ToString();
             await _events.RaiseAsync(new UserLoginSuccessEvent(provider, providerUserId, user.Id.ToString(), name));
@@ -474,7 +496,7 @@ namespace Jp.UI.SSO.Controllers.Account
             }
         }
 
-        private async Task<(UserIdentity user, string provider, string providerUserId, IEnumerable<Claim> claims)>
+        private async Task<(UserViewModel user, string provider, string providerUserId, IEnumerable<Claim> claims)>
             FindUserFromExternalProviderAsync(AuthenticateResult result)
         {
             var externalUser = result.Principal;
@@ -494,12 +516,12 @@ namespace Jp.UI.SSO.Controllers.Account
             var providerUserId = userIdClaim.Value;
 
             // find external user
-            var user = await _userService.FindByProviderAsync(provider, providerUserId);
+            var user = await _userAppService.FindByProviderAsync(provider, providerUserId);
 
             return (user, provider, providerUserId, claims);
         }
 
-        private async Task<UserIdentity> AutoProvisionUserAsync(string provider, string providerUserId, IEnumerable<Claim> claims)
+        private async Task<UserViewModel> AutoProvisionUserAsync(string provider, string providerUserId, IEnumerable<Claim> claims)
         {
             // create a list of claims that we want to transfer into our store
             var filtered = new List<Claim>();
@@ -552,7 +574,7 @@ namespace Jp.UI.SSO.Controllers.Account
             };
             await _userAppService.RegisterWithoutPassword(user);
 
-            return await _userService.FindByProviderAsync(provider, providerUserId);
+            return await _userAppService.FindByProviderAsync(provider, providerUserId);
         }
 
         private void ProcessLoginCallbackForOidc(AuthenticateResult externalResult, List<Claim> localClaims, AuthenticationProperties localSignInProps)
