@@ -9,6 +9,7 @@ namespace Jp.Domain.Events.Role
 
         public RoleUpdatedEvent(string name, string oldName)
         {
+            AggregateId = name;
             Name = name;
             OldName = oldName;
         }

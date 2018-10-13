@@ -16,29 +16,6 @@ namespace Jp.UI.SSO.Util
 
             return new List<Client>
             {
-                new Client
-                {
-
-                    ClientId = AuthorizationConsts.OidcClientId,
-                    ClientName = AuthorizationConsts.OidcClientId,
-                    ClientUri = AuthorizationConsts.IdentityAdminBaseUrl,
-
-                    AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowAccessTokensViaBrowser = true,
-
-                    RedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signin-oidc"},
-                    FrontChannelLogoutUri = $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-oidc",
-                    PostLogoutRedirectUris = { $"{AuthorizationConsts.IdentityAdminBaseUrl}/signout-callback-oidc"},
-                    AllowedCorsOrigins = { AuthorizationConsts.IdentityAdminBaseUrl },
-
-                    AllowedScopes =
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.Email,
-                        "roles"
-                    }
-                },
                 /*
                  * JP Project ID4 Admin Client
                  */
@@ -64,7 +41,7 @@ namespace Jp.UI.SSO.Util
 
                 /*
                  * User Management Client - OpenID Connect implicit flow client
-                // */
+                 */
                 new Client {
                     ClientId = "UserManagementUI",
                     ClientName = "User Management UI",
@@ -84,6 +61,9 @@ namespace Jp.UI.SSO.Util
                         "jp_api.user",
                     }
                 },
+                /*
+                 * Swagger
+                 */
                 new Client
                 {
                     ClientId = "Swagger",

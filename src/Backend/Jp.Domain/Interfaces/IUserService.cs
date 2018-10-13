@@ -42,5 +42,6 @@ namespace Jp.Domain.Interfaces
         Task<bool> RemoveLogin(Guid userId, string requestLoginProvider, string requestProviderKey);
         Task<IEnumerable<User>> GetUserFromRole(string[] role);
         Task<bool> RemoveUserFromRole(string name, string username);
+        Task<bool> ResetPasswordAsync(string username, string password);
     }
 }

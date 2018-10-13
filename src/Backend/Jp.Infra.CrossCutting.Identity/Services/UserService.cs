@@ -1,4 +1,5 @@
-﻿using Jp.Domain.Commands.User;
+﻿using IdentityModel;
+using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -119,11 +120,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         private async Task AddClaims(UserIdentity user)
         {
             var claims = new List<Claim>();
-            claims.Add(new Claim("name", user.Name));
-            claims.Add(new Claim("email", user.Email));
+            claims.Add(new Claim("username", user.UserName));
+            claims.Add(new Claim(JwtClaimTypes.Email, user.Email));
 
             if (!string.IsNullOrEmpty(user.Picture))
-                claims.Add(new Claim("picture", user.Picture));
+                claims.Add(new Claim(JwtClaimTypes.Picture, user.Picture));
 
             var identityResult = await _userManager.AddClaimsAsync(user, claims);
         }
@@ -537,6 +538,19 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         {
             var user = await _userManager.FindByNameAsync(username);
             var result = await _userManager.RemoveFromRoleAsync(user, name);
+            foreach (var error in result.Errors)
+            {
+                await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));
+            }
+
+            return result.Succeeded;
+        }
+
+        public async Task<bool> ResetPasswordAsync(string username, string password)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            await _userManager.RemovePasswordAsync(user);
+            var result = await _userManager.AddPasswordAsync(user, password);
             foreach (var error in result.Errors)
             {
                 await _bus.RaiseEvent(new DomainNotification(result.ToString(), error.Description));

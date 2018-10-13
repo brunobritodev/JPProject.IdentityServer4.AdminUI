@@ -34,7 +34,8 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
+        [HttpPost, Route("save"), Authorize(Policy = "Admin")
+        ]
         public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] SaveClientViewModel client)
         {
             if (!ModelState.IsValid)
@@ -46,7 +47,8 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
+        [HttpPost, Route("update"), Authorize(Policy = "Admin")
+        ]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
         {
             if (!ModelState.IsValid)

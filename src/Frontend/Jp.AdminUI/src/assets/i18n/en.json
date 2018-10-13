@@ -297,7 +297,9 @@
         "list": {
             "email": "Email",
             "picture": "Picture",
-            "name": "Name"
+            "name": "Name",
+            "log-tooltip": "Show logs",
+            "username": "Username"
         },
         "remove": {
             "title": "Are you sure",
@@ -329,13 +331,18 @@
             "accessFailedCount": "Access Failed Count",
             "accessFailedCount-tooltip": "Gets or sets the number of failed login attempts for the current user",
             "password": "Password",
+            "password-tooltip": "Password",
             "confirmPassword": "Confirm password",
+            "confirmPassword-tooltip": "Confirm password",
             "claims": "Claims",
             "claims-tooltip": "Allows settings claims for the user (will be included in the access token)",
             "roles": "Roles",
             "roles-tooltip": "Allows settings roles for the user (will be included in the access token)",
             "externalLogins": "External Logins",
-            "externalLogins-tooltip": "Manage user external login. e.g Google, Facebook"
+            "externalLogins-tooltip": "Manage user external login. e.g Google, Facebook",
+            "change-password":"Change password",
+            "user-data": "User Data"
+            
         },
         "claims": {
             "type": "Type",

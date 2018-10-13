@@ -10,6 +10,7 @@ namespace Jp.Domain.Events.User
 
         public NewUserClaimEvent(string username, string type, string value)
         {
+            AggregateId = username;
             Username = username;
             Type = type;
             Value = value;

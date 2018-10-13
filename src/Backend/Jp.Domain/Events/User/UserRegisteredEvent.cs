@@ -10,7 +10,7 @@ namespace Jp.Domain.Events.User
 
         public UserRegisteredEvent(Guid aggregateId, string userName, string userEmail)
         {
-            AggregateId = aggregateId;
+            AggregateId = aggregateId.ToString();
             Username = userName;
             UserEmail = userEmail;
         }

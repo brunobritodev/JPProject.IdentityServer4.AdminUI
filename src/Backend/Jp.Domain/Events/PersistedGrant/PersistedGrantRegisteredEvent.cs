@@ -11,6 +11,7 @@ namespace Jp.Domain.Events.PersistedGrant
         public PersistedGrantRemovedEvent(string key)
         {
             Key = key;
+            AggregateId = key;
         }
     }
 }

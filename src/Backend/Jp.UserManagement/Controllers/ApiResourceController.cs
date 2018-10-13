@@ -1,16 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using IdentityServer4.Models;
+﻿using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ApiResouceViewModels;
-using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
@@ -20,7 +19,7 @@ namespace Jp.Management.Controllers
         private readonly IApiResourceAppService _apiResourceAppService;
 
         public ApiResourceController(
-            INotificationHandler<DomainNotification> notifications, 
+            INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IApiResourceAppService apiResourceAppService) : base(notifications, mediator)
         {

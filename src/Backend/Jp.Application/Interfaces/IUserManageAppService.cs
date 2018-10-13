@@ -17,7 +17,7 @@ namespace Jp.Application.Interfaces
         Task CreatePassword(SetPasswordViewModel model);
         Task RemoveAccount(RemoveAccountViewModel model);
         Task<bool> HasPassword(Guid userId);
-        IEnumerable<EventHistoryData> GetHistoryLogs(Guid value);
+        Task<IEnumerable<EventHistoryData>> GetHistoryLogs(string username);
         Task<IEnumerable<UserListViewModel>> GetUsers();
         Task<UserViewModel> GetUserDetails(string username);
         Task<UserViewModel> GetUserAsync(Guid value);
@@ -32,5 +32,6 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<UserLoginViewModel>> GetLogins(string userName);
         Task RemoveLogin(RemoveUserLoginViewModel model);
         Task<IEnumerable<UserListViewModel>> GetUsersInRole(string[] role);
+        Task ResetPassword(AdminChangePasswordViewodel model);
     }
 }

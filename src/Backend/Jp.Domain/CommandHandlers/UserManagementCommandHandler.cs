@@ -22,7 +22,8 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<SaveUserClaimCommand>,
         IRequestHandler<RemoveUserClaimCommand>,
         IRequestHandler<RemoveUserRoleCommand>,
-        IRequestHandler<SaveUserRoleCommand>
+        IRequestHandler<SaveUserRoleCommand>,
+        IRequestHandler<AdminChangePasswordCommand>
     {
         private readonly IUserService _userService;
         private readonly ISystemUser _user;
@@ -245,6 +246,29 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserLoginRemovedEvent(_user.UserId, request.Username, request.LoginProvider, request.ProviderKey));
+            }
+        }
+
+        public async Task Handle(AdminChangePasswordCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return;
+            }
+
+            var user = await _userService.FindByNameAsync(request.Username);
+            if (user == null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
+                return;
+            }
+
+            var success = await _userService.ResetPasswordAsync(request.Username, request.Password);
+
+            if (success)
+            {
+                await Bus.RaiseEvent(new AdminChangedPasswordEvent(user.Id, request.Username));
             }
         }
     }

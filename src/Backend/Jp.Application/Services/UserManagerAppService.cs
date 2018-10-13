@@ -2,6 +2,7 @@
 using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
@@ -11,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Jp.Application.ViewModels.RoleViewModels;
 
 namespace Jp.Application.Services
 {
@@ -79,10 +79,10 @@ namespace Jp.Application.Services
             return _userService.HasPassword(userId);
         }
 
-        public IEnumerable<EventHistoryData> GetHistoryLogs(Guid id)
+        public async Task<IEnumerable<EventHistoryData>> GetHistoryLogs(string username)
         {
-            var history = _mapper.Map<IEnumerable<EventHistoryData>>(_eventStoreRepository.All(id));
-            return history;
+            var history = await _eventStoreRepository.All(username);
+            return _mapper.Map<IEnumerable<EventHistoryData>>(history);
         }
 
         public async Task<IEnumerable<UserListViewModel>> GetUsers()
@@ -158,6 +158,12 @@ namespace Jp.Application.Services
         public async Task<IEnumerable<UserListViewModel>> GetUsersInRole(string[] role)
         {
             return _mapper.Map<IEnumerable<UserListViewModel>>(await _userService.GetUserFromRole(role));
+        }
+
+        public Task ResetPassword(AdminChangePasswordViewodel model)
+        {
+            var registerCommand = _mapper.Map<AdminChangePasswordCommand>(model);
+            return Bus.SendCommand(registerCommand);
         }
     }
 }

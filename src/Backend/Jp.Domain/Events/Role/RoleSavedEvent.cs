@@ -4,11 +4,9 @@ namespace Jp.Domain.Events.Role
 {
     public class RoleSavedEvent : Event
     {
-        public string Name { get; }
-
         public RoleSavedEvent(string name)
         {
-            Name = name;
+            AggregateId = name;
         }
     }
 }

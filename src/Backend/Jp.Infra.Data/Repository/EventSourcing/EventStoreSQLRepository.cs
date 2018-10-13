@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Jp.Domain.Core.Events;
 using Jp.Domain.Interfaces;
 using Jp.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jp.Infra.Data.Repository.EventSourcing
 {
@@ -16,9 +18,9 @@ namespace Jp.Infra.Data.Repository.EventSourcing
             _context = context;
         }
 
-        public IEnumerable<StoredEvent> All(Guid aggregateId)
+        public Task<List<StoredEvent>> All(string username)
         {
-            return (from e in _context.StoredEvent where e.AggregateId == aggregateId orderby e.Timestamp descending select e).ToList();
+            return (from e in _context.StoredEvent where e.User == username orderby e.Timestamp descending select e).ToListAsync();
         }
 
         public void Store(StoredEvent theEvent)

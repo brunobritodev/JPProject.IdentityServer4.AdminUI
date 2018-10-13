@@ -19,7 +19,7 @@ namespace Jp.Infra.Data.EventSourcing
         {
             var serializedData = JsonConvert.SerializeObject(theEvent);
 
-            var storedEvent = new StoredEvent(
+             var storedEvent = new StoredEvent(
                 theEvent,
                 serializedData,
                 _systemUser.Username);
