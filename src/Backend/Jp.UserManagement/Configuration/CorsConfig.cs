@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Jp.UserManagement.Configuration
+namespace Jp.Management.Configuration
 {
     public static class CorsConfig
     {

@@ -1,0 +1,71 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.users' | translate }} - <b>Roles</b>
+        <small><b [innerHTML]="'client.ClaimDescription' | translate"></b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/users/edit', userName]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<app-loading *ngIf="model == null || showButtonLoading"></app-loading>
+
+<div class="card card-default" *ngIf="userRoles && userRoles.length > 0">
+    <div class="card-header">
+        <h3>{{ userName }}</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ 'users.roles.name' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of userRoles">
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(role.name)"><i class="fa fa-times"></i></button></td>
+                    <td>{{role.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-header">
+        <h3>{{ userName }}</h3>
+    </div>
+    <div class="card-body">
+        <!--Select-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.roles.role-tooltip' | translate">{{
+                    'users.roles.role' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <ngx-select [items]="roles" [(ngModel)]="model.role" [placeholder]="'users.roles.role-tooltip' | translate"></ngx-select>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/users/edit', userName]">Cancel</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

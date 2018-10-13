@@ -6,7 +6,21 @@
     "module": "es2015",
     "types": [
         "node"
-    ]
+    ],
+    "paths": {
+        "@shared/*": [
+            "app/shared/*"
+        ],
+        "@app/*": [
+            "app/panel/*"
+        ],
+        "@core/*": [
+            "app/core/*"
+        ],
+        "@env/*": [
+            "environments/*"
+        ]
+    }
   },
   "exclude": [
     "test.ts",

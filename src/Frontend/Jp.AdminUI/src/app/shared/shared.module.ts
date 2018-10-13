@@ -21,6 +21,7 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { PopoverModule } from "ngx-bootstrap/popover";
 import { TypeaheadModule } from "ngx-bootstrap/typeahead";
 import { DatepickerModule } from "ngx-bootstrap/datepicker";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { FlotDirective } from "./directives/flot/flot.directive";
 import { SparklineDirective } from "./directives/sparkline/sparkline.directive";
@@ -32,6 +33,9 @@ import { ScrollableDirective } from "./directives/scrollable/scrollable.directiv
 import { JqcloudDirective } from "./directives/jqcloud/jqcloud.directive";
 import { ColorsService } from "./services/colors.service";
 import {TextMaskModule} from "angular2-text-mask";
+import { SpinnersComponent } from "./components/spinners/spinners.component";
+import { NumberDirective } from "./directives/numberCheck/numbers-only.directive";
+
 
 // https://angular.io/styleguide#!#04-10
 @NgModule({
@@ -46,6 +50,7 @@ import {TextMaskModule} from "angular2-text-mask";
         CarouselModule.forRoot(),
         CollapseModule.forRoot(),
         DatepickerModule.forRoot(),
+        BsDatepickerModule.forRoot(),
         BsDropdownModule.forRoot(),
         ModalModule.forRoot(),
         PaginationModule.forRoot(),
@@ -56,7 +61,8 @@ import {TextMaskModule} from "angular2-text-mask";
         TooltipModule.forRoot(),
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToasterModule
+        ToasterModule,
+        BsDatepickerModule.forRoot(),
     ],
     providers: [
         ColorsService
@@ -69,7 +75,9 @@ import {TextMaskModule} from "angular2-text-mask";
         VectormapDirective,
         NowDirective,
         ScrollableDirective,
-        JqcloudDirective
+        JqcloudDirective,
+        SpinnersComponent,
+        NumberDirective,
     ],
     exports: [
         CommonModule,
@@ -83,6 +91,7 @@ import {TextMaskModule} from "angular2-text-mask";
         CarouselModule,
         CollapseModule,
         DatepickerModule,
+        BsDatepickerModule,
         BsDropdownModule,
         ModalModule,
         PaginationModule,
@@ -102,7 +111,9 @@ import {TextMaskModule} from "angular2-text-mask";
         NowDirective,
         ScrollableDirective,
         JqcloudDirective,
-        TextMaskModule
+        TextMaskModule,
+        SpinnersComponent,
+        NumberDirective,
     ]
 })
 

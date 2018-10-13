@@ -11,7 +11,7 @@ import { APP_BASE_HREF } from "@angular/common";
 import { RoutesModule } from "./app.routing.module";
 import { HttpClientModule } from "@angular/common/http";
 
-describe("App: Equinox", () => {
+describe("App: JpProject", () => {
     beforeEach(() => {
 
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;

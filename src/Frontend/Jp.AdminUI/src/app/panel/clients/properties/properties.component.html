@@ -1,0 +1,88 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.clients' | translate }} - <b>Properties</b>
+        <small><b [innerHTML]="'client.PropertiesDescription' | translate"></b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/clients/edit', client]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<app-loading *ngIf="model == null || showButtonLoading"></app-loading>
+
+<div class="card card-default" *ngIf="clientProperties && clientProperties.length > 0">
+    <div class="card-header">
+        <h3>{{ client }}</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ 'client.property.key' | translate }}</th>
+                    <th>{{ 'client.property.value' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let property of clientProperties">
+                    <td><button class="btn btn-danger" (click)="remove(property.id)"><i class="fa fa-times"></i></button></td>
+                    <td>{{property.key}}</td>
+                    <td>{{property.value}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-header">
+        <h3>{{ client }}</h3>
+    </div>
+    <div class="card-body">
+        
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-3 col-form-label">{{ 'client.property.key' | translate }} <i class="fa fa-comment-dots"
+                        placement="top" [tooltip]="'client.property.key-tooltip' | translate"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" autocomplete="property-value" [placeholder]="'client.property.key-tooltip' | translate"
+                        [(ngModel)]="model.key" />
+                </div>
+            </div>
+        </fieldset>
+        
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-3 col-form-label">{{ 'client.property.value' | translate }} <i class="fa fa-comment-dots"
+                        placement="top" [tooltip]="'client.property.value-tooltip' | translate"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" autocomplete="property-value" [placeholder]="'client.property.value-tooltip' | translate"
+                        [(ngModel)]="model.value" />
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/clients/edit', client]">Cancel</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

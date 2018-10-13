@@ -1,0 +1,231 @@
+<div class="content-heading">
+    <div>
+        👨‍👩‍👧‍👦 &nbsp;&nbsp;{{ 'general.users' | translate }}
+        <small><b> {{ 'users.description' | translate }}.</b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <button (click)="showChangeData()" class="btn btn-outline-info">{{ 'users.edit.user-data' |
+            translate }}</button>&nbsp;
+        <button (click)="showChangePass()" class="btn btn-outline-warning">{{ 'users.edit.change-password' |
+            translate }}</button>
+    </div>
+</div>
+
+<app-loading *ngIf="showButtonLoading"></app-loading>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<!-- BEGIN CHANGE PASSWORD FORM -->
+<div *ngIf="shouldChangePass" [hidden]="showButtonLoading">
+    <div class="card card-default">
+        <div class="card-body">
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-3 col-form-label" placement="top" [tooltip]="'users.edit.password-tooltip' | translate">{{
+                        'users.edit.password' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="resetPassword.password" />
+                    </div>
+                </div>
+            </fieldset>
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-3 col-form-label" placement="top" [tooltip]="'users.edit.confirmPassword-tooltip' | translate">{{
+                        'users.edit.confirmPassword' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="resetPassword.confirmPassword" />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="card-footer">
+            <button class="mb-1 btn btn-primary" (click)="resetPass()" type="button">Save</button>
+            <a class="mb-1 btn btn-secondary" [routerLink]="['/users']">Cancel</a>
+        </div>
+    </div>
+</div>
+<!-- END CHANGE PASSWORD FORM -->
+
+<!-- BEGIN CHANGE USER DATA -->
+<div *ngIf="shouldChangeUserData && model" [hidden]="showButtonLoading">
+    <div class="card card-default">
+        <div class="card-header">
+            <h3>{{model.name}}</h3>
+        </div>
+        <div class="card-body">
+
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.userName-tooltip' | translate">{{
+                        'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <label class="label label-info">{{ model.userName }} </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.name-tooltip' | translate">{{
+                        'users.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate"
+                            [(ngModel)]="model.name" />
+                    </div>
+                </div>
+            </fieldset>
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{
+                        'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate"
+                            [(ngModel)]="model.email" />
+                    </div>
+                </div>
+            </fieldset>
+            <!--Checkbox-->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.emailConfirmed-tooltip' | translate">{{
+                        'users.edit.emailConfirmed' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <label class="switch m-0">
+                            <input type="checkbox" [(ngModel)]="model.emailConfirmed" />
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.phoneNumber-tooltip' | translate">{{
+                        'users.edit.phoneNumber' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input class="form-control" autocomplete="model-phoneNumber" [placeholder]="'users.edit.phoneNumber-tooltip' | translate"
+                            [(ngModel)]="model.phoneNumber" />
+                    </div>
+                </div>
+            </fieldset>
+            <!--Checkbox-->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.phoneNumberConfirmed-tooltip' | translate">{{
+                        'users.edit.phoneNumberConfirmed' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <label class="switch m-0">
+                            <input type="checkbox" [(ngModel)]="model.phoneNumberConfirmed" />
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Checkbox-->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.twoFactorEnabled-tooltip' | translate">{{
+                        'users.edit.twoFactorEnabled' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <label class="switch m-0">
+                            <input type="checkbox" [(ngModel)]="model.twoFactorEnabled" />
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Datepicker-->
+            <fieldset>
+                <div class="form-group row mb">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.lockoutEnd-tooltip' | translate">{{
+                        'users.edit.lockoutEnd' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [(bsValue)]="model.lockoutEnd"
+                            name="dp-basic" [bsConfig]="bsConfig">
+                    </div>
+                </div>
+            </fieldset>
+            <!--Checkbox-->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.lockoutEnabled-tooltip' | translate">{{
+                        'users.edit.lockoutEnabled' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <label class="switch m-0">
+                            <input type="checkbox" [(ngModel)]="model.lockoutEnabled" />
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Input - Number -->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.accessFailedCount-tooltip' | translate">{{
+                        'users.edit.accessFailedCount' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input class="form-control" autocomplete="model-accessFailedCount" [placeholder]="'users.edit.accessFailedCount-tooltip' | translate"
+                            [(ngModel)]="model.accessFailedCount" numbersOnly />
+                    </div>
+                </div>
+            </fieldset>
+            <!--Button-->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'users.edit.claims-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                        'users.edit.claims' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <a [routerLink]="['/users/claims', model.userName]" class="btn btn-primary">{{
+                            'users.edit.claims' | translate }}</a>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Button-->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'users.edit.roles-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                        'users.edit.roles' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <a [routerLink]="['/users/roles', model.userName]" class="btn btn-primary">{{
+                            'users.edit.roles' | translate }}</a>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Button-->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'users.edit.externalLogins-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                        'users.edit.externalLogins' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <a [routerLink]="['/users/logins', model.userName]" class="btn btn-primary">{{
+                            'users.edit.externalLogins' | translate }}</a>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+        <div class="card-footer">
+            <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
+            <a class="mb-1 btn btn-secondary" [routerLink]="['/users']">Cancel</a>
+        </div>
+    </div>
+</div>
+<!-- END CHANGE USER DATA -->
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

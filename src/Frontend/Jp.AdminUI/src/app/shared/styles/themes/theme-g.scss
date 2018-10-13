@@ -5,14 +5,11 @@
 @import '../app/variables';
 
 
-//
-// Variables to change general look
-//
-
 // LAYOUT
 
 $content-bg:                    #f5f7fa;
 $aside-bg:                      $gray-dark;
+
 // NAVBAR TOP
 
 $nav-top-bg:                    $purple-dark;
@@ -20,11 +17,8 @@ $nav-top-bg-start:              $nav-top-bg;
 $nav-top-bg-end:                $purple;
 $nav-header-bg:                 transparent;
 
-$nav-top-item-mobile:           $nav-top-bg;
-$nav-top-item-mobile-active:    darken($nav-top-item-mobile, 20%);
-
-$nav-top-item-desktop:          #fff;
-$nav-top-item-desktop-active:   darken($nav-top-item-desktop, 20%);
+$nav-top-item:                  #fff;
+$nav-top-item-active:           darken($nav-top-bg, 20%);
 
 // SIDEBAR
 
@@ -49,6 +43,7 @@ $offsidebar-bg:           #fff;
 $offsidebar-border-color: greyscale(darken($offsidebar-bg, 20%));
 $offsidebar-color:        $body-color;
 
+
 /* ========================================================================
    Component: layout
  ========================================================================== */
@@ -63,86 +58,33 @@ body, .wrapper .section-container {
 /* ========================================================================
    Component: top-navbar
  ========================================================================== */
-
-// Navbar Mobile General styles
-// ------------------------------
-
 .topnavbar {
-    background-color: $nav-header-bg;
+    background-color: $nav-top-bg;
     @include gradient-x($nav-top-bg-start, $nav-top-bg-end);
 
-    .navbar-header {
-        @include media-breakpoint-up(md) {
-            background-image: none;
-        }
-
-    }
-
-    .navbar-nav > li > .navbar-text {
-        color: $nav-top-item-mobile;
-    }
-
-    .navbar-nav > li > a, .navbar-nav > .open > a {
-        color: $nav-top-item-mobile;
-
-        &:hover, &:focus {
-            color: $nav-top-item-mobile-active;
-        }
-
-    }
-
-    // Navbar link active style
-    .navbar-nav > .active > a, .navbar-nav > .open   > a {
-        &, &:hover, &:focus {
-            background-color: transparent;
-        }
-
-    }
-
-    // the button to toggle search
-    .navbar-nav > li > [data-toggle='navbar-search'] {
-        color: $nav-top-item-desktop;
-    }
-
-    .nav-wrapper {
-        background-color: $nav-top-bg;
-        @include gradient-x($nav-top-bg-start, $nav-top-bg-end);
-    }
-
-}
-
-// Navbar Desktop styles
-// ------------------------------
-
-@include media-breakpoint-up(md) {
-    // Navbar top styles
-    .topnavbar {
-        background-color: $nav-top-bg;
-        @include gradient-x($nav-top-bg-start, $nav-top-bg-end);
-
-        .navbar-nav > .open > a {
+    @include media-breakpoint-up(lg) {
+        .navbar-nav > .nav-item.show > .nav-link {
             &, &:hover, &:focus {
-                box-shadow: 0 -3px 0 rgba(255, 255, 255, .5) inset;
+                box-shadow: 0 -3px 0 darken($nav-top-bg, 6%) inset;
             }
-
         }
-
-        .navbar-nav > li > .navbar-text {
-            color: $nav-top-item-desktop;
-        }
-
-        .navbar-nav > li > a, .navbar-nav > .open > a {
-            color: $nav-top-item-desktop;
-
-            &:hover, &:focus {
-                color: $nav-top-item-mobile-active;
-            }
-
-        }
-
     }
 
-    // .topnavbar
+    .navbar-nav > .nav-item > .navbar-text {
+        color: $nav-top-item;
+    }
+
+    .navbar-nav > .nav-item > .nav-link,
+    .navbar-nav > .nav-item.show > .nav-link {
+        color: $nav-top-item;
+        &:hover, &:focus {
+            color: $nav-top-item-active;
+        }
+    }
+
+    .dropdown-item.active, .dropdown-item:active {
+        background-color: $nav-top-bg;
+    }
 }
 
 /* ========================================================================
@@ -226,7 +168,6 @@ body, .wrapper .section-container {
 
     }
 
-    // li
 }
 
 /* ========================================================================

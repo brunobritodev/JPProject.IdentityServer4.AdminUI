@@ -1,6 +1,6 @@
-export class ResetPasswordModel {
+
+export class ResetPassword {
     public password: string;
     public confirmPassword: string;
-    public code: string;
-    public email: string;
+    public username: string;
 }

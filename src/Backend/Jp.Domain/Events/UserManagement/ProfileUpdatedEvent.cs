@@ -10,7 +10,7 @@ namespace Jp.Domain.Events.UserManagement
 
         public ProfileUpdatedEvent(Guid aggregateId,UpdateProfileCommand request)
         {
-            AggregateId = aggregateId;
+            AggregateId = aggregateId.ToString();
             Request = request;
         }
     }

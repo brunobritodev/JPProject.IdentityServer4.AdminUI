@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using IdentityModel;
+﻿using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
+using System.Collections.Generic;
 
 namespace Jp.UI.SSO.Util
 {
@@ -15,9 +15,12 @@ namespace Jp.UI.SSO.Util
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
                 new IdentityResources.Email(),
-
+                new IdentityResource("username", new []{ "username"}),
                 // custom identity resource with some consolidated claims
-                new IdentityResource("picture", new[] { JwtClaimTypes.Picture }),
+                new IdentityResource("roles", "Roles", new[] { JwtClaimTypes.Role }),
+
+                // add additional identity resource
+                new IdentityResource("is4-rights", "IdentityServer4 Admin Panel Permissions", new [] { "is4-rights"})
 
             };
         }
@@ -26,39 +29,39 @@ namespace Jp.UI.SSO.Util
         {
             return new[]
             {
-                // simple version with ctor
-                // new ApiResource("api1", "Some API 1")
-                //                {
-                //    // this is needed for introspection when using reference tokens
-                //    ApiSecrets = { new Secret("secret".Sha256()) }
-                                //},
-                //new ApiResource("demo_api", "Demo API with Swagger"),
-                // expanded version if more control is needed
                 new ApiResource
                                 {
-                                    Name = "UserManagementApi",
-                                    DisplayName = "User Management API",
-                                    Description = "API with default and protected actions to register and manager User",
+                                    Name = "jp_api",
+                                    DisplayName = "JP API",
+                                    Description = "OAuth2 Server Management Api",
                                     ApiSecrets = { new Secret("Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++".Sha256()) },
-                                    
+
                                     UserClaims =
                                     {
                                         IdentityServerConstants.StandardScopes.OpenId,
                                         IdentityServerConstants.StandardScopes.Profile,
                                         IdentityServerConstants.StandardScopes.Email,
-                                        
+                                        "is4-rights",
+                                        "username",
+                                        "roles"
                                     },
-                                    
+
                                     Scopes =
                                     {
                                         new Scope()
                                         {
-                                            Name = "UserManagementApi.owner-content",
+                                            Name = "jp_api.user",
                                             DisplayName = "User Management - Full access",
                                             Description = "Full access to User Management",
                                             Required = true
+                                        },
+                                        new Scope()
+                                        {
+                                            Name = "jp_api.is4",
+                                            DisplayName = "OAuth2 Server",
+                                            Description = "Manage mode to IS4",
+                                            Required = true
                                         }
-
                                     }
                                 }
                         };

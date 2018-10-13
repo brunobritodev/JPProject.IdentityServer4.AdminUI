@@ -1,0 +1,226 @@
+<div class="col-lg-12">
+    <div class="card card-default">
+        <div class="card-header"><span>{{ 'general.loading' | translate }}</span></div>
+        <div class="card-body loader-demo d-flex align-items-center justify-content-center">
+            <div class="ball-pulse" *ngIf="spinner == 1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-grid-pulse" *ngIf="spinner == 2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-clip-rotate" *ngIf="spinner == 3">
+                <div></div>
+            </div>
+            <div class="ball-clip-rotate-pulse" *ngIf="spinner == 4">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="square-spin" *ngIf="spinner == 5">
+                <div></div>
+            </div>
+            <div class="ball-clip-rotate-multiple" *ngIf="spinner == 6">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-pulse-rise" *ngIf="spinner == 7">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-rotate" *ngIf="spinner == 8">
+                <div></div>
+            </div>
+            <div class="cube-transition" *ngIf="spinner == 9">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-zig-zag" *ngIf="spinner == 10">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-zig-zag-deflect" *ngIf="spinner == 11">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-triangle-path" *ngIf="spinner == 12">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-scale" *ngIf="spinner == 13">
+                <div></div>
+            </div>
+            <div class="line-scale" *ngIf="spinner == 14">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="line-scale-party" *ngIf="spinner == 15">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-scale-multiple" *ngIf="spinner == 16">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-pulse-sync" *ngIf="spinner == 17">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-beat" *ngIf="spinner == 18">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="line-scale-pulse-out" *ngIf="spinner == 19">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="line-scale-pulse-out-rapid" *ngIf="spinner == 20">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-scale-ripple" *ngIf="spinner == 21">
+                <div></div>
+            </div>
+            <div class="ball-scale-ripple-multiple" *ngIf="spinner == 22">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-spin-fade-loader" *ngIf="spinner == 23">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="line-spin-fade-loader" *ngIf="spinner == 24">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="triangle-skew-spin" *ngIf="spinner == 25">
+                <div></div>
+            </div>
+            <div class="pacman" *ngIf="spinner == 26">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="ball-grid-beat" *ngIf="spinner == 27">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="semi-circle-spin" *ngIf="spinner == 28">
+                <div></div>
+            </div>
+            <div class="sk-rotating-plane" *ngIf="spinner == 29"></div>
+            <div class="sk-double-bounce" *ngIf="spinner == 30">
+                <div class="sk-child sk-double-bounce1"></div>
+                <div class="sk-child sk-double-bounce2"></div>
+            </div>
+            <div class="sk-wave" *ngIf="spinner == 31">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+            </div>
+            <div class="sk-wandering-cubes" *ngIf="spinner == 32">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+            </div>
+            <div class="sk-spinner sk-spinner-pulse" *ngIf="spinner == 33"></div>
+            <div class="sk-chasing-dots" *ngIf="spinner == 34">
+                <div class="sk-child sk-dot1"></div>
+                <div class="sk-child sk-dot2"></div>
+            </div>
+            <div class="sk-three-bounce" *ngIf="spinner == 35">
+                <div class="sk-child sk-bounce1"></div>
+                <div class="sk-child sk-bounce2"></div>
+                <div class="sk-child sk-bounce3"></div>
+            </div>
+            <div class="sk-circle" *ngIf="spinner == 36">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+            <div class="sk-cube-grid" *ngIf="spinner == 37">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+            <div class="sk-fading-circle" *ngIf="spinner == 38">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+        </div>
+    </div>
+</div>

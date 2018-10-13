@@ -10,7 +10,7 @@ import { UserblockService } from "./sidebar/userblock/userblock.service";
 import { FooterComponent } from "./footer/footer.component";
 
 import { SharedModule } from "../shared.module";
-import { AccountManagementService } from "../services/account-management.service";
+import { NotificationsComponent } from "./header/notifications/notifications.component";
 
 @NgModule({
     imports: [
@@ -18,7 +18,6 @@ import { AccountManagementService } from "../services/account-management.service
     ],
     providers: [
         UserblockService,
-        AccountManagementService
     ],
     declarations: [
         LayoutComponent,
@@ -27,7 +26,8 @@ import { AccountManagementService } from "../services/account-management.service
         HeaderComponent,
         NavsearchComponent,
         OffsidebarComponent,
-        FooterComponent
+        FooterComponent,
+        NotificationsComponent
     ],
     exports: [
         LayoutComponent,
@@ -36,7 +36,8 @@ import { AccountManagementService } from "../services/account-management.service
         HeaderComponent,
         NavsearchComponent,
         OffsidebarComponent,
-        FooterComponent
+        FooterComponent,
+        NotificationsComponent
     ]
 })
 export class LayoutModule { }

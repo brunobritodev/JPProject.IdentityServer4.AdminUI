@@ -4,10 +4,10 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="#/">
             <div class="brand-logo">
-                <img class="img-fluid" src="assets/img/logo.png" alt="App Logo" />
+                <img class="img-fluid" src="assets/img/brand/logo.png" alt="App Logo" />
             </div>
             <div class="brand-logo-collapsed">
-                <img class="img-fluid" src="assets/img/logo-single-small.png" alt="App Logo" />
+                <img class="img-fluid" src="assets/img/brand/logo-min.png" alt="App Logo" />
             </div>
         </a>
        <button class="navbar-toggler" type="button" (click)="navCollapsed = !navCollapsed">
@@ -37,19 +37,12 @@
         <!-- End Navbar Menu-->
         <!-- START Right Navbar-->
         <ul class="navbar-nav flex-row">
-            <!-- START lock screen-->
-            <li class="nav-item">
-                <a class="nav-link" title="Lock screen" [routerLink]="'/lock'">
-                    <em class="icon-lock"></em>
-                </a>
-            </li>
-            <!-- END lock screen-->
-            <!-- Search icon-->
-            <li class="nav-item">
+            <!-- Search icon - Disabled by now, maybe in future -->
+            <!-- <li class="nav-item">
                 <a class="nav-link" (click)="openNavSearch($event)">
                     <em class="icon-magnifier"></em>
                 </a>
-            </li>
+            </li> -->
             <!-- Fullscreen (only desktops)-->
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link" #fsbutton (click)="toggleFullScreen($event)">

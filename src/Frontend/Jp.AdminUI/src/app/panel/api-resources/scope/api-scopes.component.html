@@ -1,0 +1,243 @@
+<div class="content-heading">
+    <div>
+        ☁️ {{ 'general.api-resource' | translate }} - <b>Scopes</b>
+        <small><b> {{ 'apiResource.description' | translate }}</b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/api-resource/edit', resourceName]" class="btn btn-outline-primary">{{ 'general.goback' |
+            translate }}</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<app-loading *ngIf="showButtonLoading"></app-loading>
+
+<div class="card card-default" *ngIf="apiScopes && apiScopes.length > 0" [hidden]="showButtonLoading">
+    <div class="card-header">
+        <h3>{{ resourceName }}</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ 'apiResource.scope.name' | translate }}</th>
+                    <th>{{ 'apiResource.scope.description' | translate }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let scope of apiScopes">
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(scope.id)"><i class="fa fa-times"></i></button></td>
+                    <td>{{scope.name}}</td>
+                    <td>{{scope.description}}</td>
+                    <td><button class="btn btn-info btn-xs" (click)="details(scope)"><i class="fas fa-info"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div *ngIf="selectedScope != null" class="row">
+            <div class="col-md-8 offset-2">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4><button class="btn btn-info btn-xs" (click)="selectedScope = null"><i class="fas fa-times"></i></button> {{'general.details' | translate}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <!--Input - text -->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.name-tooltip' | translate">{{
+                                    'apiResource.scope.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <label class="col-xl-8">{{selectedScope.name}}</label>
+                            </div>
+                        </fieldset>
+                        <!--Input - text -->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.displayName-tooltip' | translate">{{
+                                    'apiResource.scope.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <label class="col-xl-8">{{selectedScope.displayName}}</label>
+                            </div>
+                        </fieldset>
+                        <!--Input - text -->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.description-tooltip' | translate">{{
+                                    'apiResource.scope.description' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <label class="col-xl-8">{{selectedScope.description}}</label>
+                            </div>
+                        </fieldset>
+                        <!--Checkbox-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.required-tooltip' | translate">{{
+                                    'apiResource.scope.required' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <label class="switch m-0">
+                                        <input type="checkbox" disabled="disabled" [(ngModel)]="selectedScope.required" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Checkbox-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.showInDiscoveryDocument-tooltip' | translate">{{
+                                    'apiResource.scope.showInDiscoveryDocument' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <label class="switch m-0">
+                                        <input type="checkbox" disabled="disabled" [(ngModel)]="selectedScope.showInDiscoveryDocument" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Checkbox-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.Emphasize-tooltip' | translate">{{
+                                    'apiResource.scope.Emphasize' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <label class="switch m-0">
+                                        <input type="checkbox" disabled="disabled" [(ngModel)]="selectedScope.Emphasize" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Select with tags-->
+                        <fieldset>
+                            <div class="form-group row">
+                                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{
+                                    'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
+                                <div class="col-xl-8">
+                                    <tag-input theme='bootstrap' [disable]="true" name="apiScopes" [modelAsStrings]="true"
+                                        [identifyBy]="'id'" [displayBy]="'type'" [(ngModel)]="selectedScope.userClaims"></tag-input>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="card card-default" [hidden]="showButtonLoading">
+    <div class="card-header">
+        <h3>{{ resourceName }}</h3>
+    </div>
+    <div class="card-body">
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.name-tooltip' | translate">{{
+                    'apiResource.scope.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-name" [placeholder]="'apiResource.scope.name-tooltip' | translate"
+                        [(ngModel)]="model.name" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.displayName-tooltip' | translate">{{
+                    'apiResource.scope.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-displayName" [placeholder]="'apiResource.scope.displayName-tooltip' | translate"
+                        [(ngModel)]="model.displayName" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.description-tooltip' | translate">{{
+                    'apiResource.scope.description' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-description" [placeholder]="'apiResource.scope.description-tooltip' | translate"
+                        [(ngModel)]="model.description" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.required-tooltip' | translate">{{
+                    'apiResource.scope.required' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.required" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.showInDiscoveryDocument-tooltip' | translate">{{
+                    'apiResource.scope.showInDiscoveryDocument' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.showInDiscoveryDocument" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.Emphasize-tooltip' | translate">{{
+                    'apiResource.scope.Emphasize' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                        <input type="checkbox" [(ngModel)]="model.Emphasize" />
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <!--Select with tags-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{
+                    'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.scope.userClaims' | translate"
+                        [(ngModel)]="model.userClaims"></tag-input>
+                </div>
+                <div class="col-xl-8 offset-4">
+                    <small>Sugestions</small>
+                    <br>
+                    <button class="btn btn-xs btn-outline-info" *ngFor="let item of standardClaims" (click)="addClaim(item)">{{item}}
+                        <i class="fa fa-plus-circle"></i>&nbsp;</button>
+                </div>
+            </div>
+        </fieldset>
+
+
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/api-resource/edit', resourceName]">Cancel</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

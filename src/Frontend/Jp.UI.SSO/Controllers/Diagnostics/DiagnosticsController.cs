@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.UI.SSO.Controllers.Diagnostics
 {
-    [SecurityHeaders]
     [Authorize]
     public class DiagnosticsController : Controller
     {

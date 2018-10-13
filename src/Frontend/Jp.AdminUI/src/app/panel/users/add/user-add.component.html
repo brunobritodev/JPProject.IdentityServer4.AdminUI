@@ -1,0 +1,94 @@
+<div class="content-heading">
+    <div>
+        👨‍👩‍👧‍👦 &nbsp;&nbsp;{{ 'general.users' | translate }}
+        <small><b> {{ 'users.description' | translate }}.</b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/users' ]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<app-loading *ngIf="showButtonLoading"></app-loading>
+<div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
+    <div class="card-header">
+        <h3>{{ 'users.new-user' | translate }}</h3>
+    </div>
+    <div class="card-body">
+
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.userName-tooltip' | translate">{{
+                    'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate"
+                        [(ngModel)]="model.userName" (keyup)="checkIfUniquenameExists()" (blur)="checkIfUniquenameExists()" [ngClass]="getClassUsernameExist()"
+                        required />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.name-tooltip' | translate">{{
+                    'users.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate"
+                        [(ngModel)]="model.name" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{
+                    'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate"
+                        [(ngModel)]="model.email" (keyup)="checkIfEmailExists()" (blur)="checkIfEmailExists()" [ngClass]="getClassEmailExist()" required />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label">{{
+                    'users.edit.password' | translate }}</label>
+                <div class="col-xl-8">
+                        <input class="form-control" autocomplete="current-password" type="password" [(ngModel)]="model.password" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label">{{
+                    'users.edit.confirmPassword' | translate }}</label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="current-password" [(ngModel)]="model.confirmPassword" type="password" />
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/users']">Cancel</a>
+    </div>
+</div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

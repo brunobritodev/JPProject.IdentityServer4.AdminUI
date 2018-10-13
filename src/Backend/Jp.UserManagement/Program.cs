@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace Jp.UserManagement
+namespace Jp.Management
 {
     public class Program
     {

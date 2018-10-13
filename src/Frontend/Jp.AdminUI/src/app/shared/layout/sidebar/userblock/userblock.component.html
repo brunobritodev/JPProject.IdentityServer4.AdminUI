@@ -1,8 +1,8 @@
 <div class="item user-block" *ngIf="userBlockIsVisible()">
     <!-- User picture-->
-    <div class="user-block-picture" [routerLink]="'/user/profile'">
+    <div class="user-block-picture" [routerLink]="'/home'">
         <div class="user-block-status">
-            <img class="img-thumbnail rounded-circle" *ngIf="user" [src]="user?.picture" alt="Avatar" />
+            <img class="img-thumbnail rounded-circle" *ngIf="user" [src]="getUserImage()" alt="Avatar" />
             <div class="circle bg-success circle-lg"></div>
         </div>
     </div>

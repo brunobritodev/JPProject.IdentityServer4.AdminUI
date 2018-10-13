@@ -1,0 +1,51 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.clients' | translate }}
+        <small><b> {{ 'client.ClientDescription' | translate }}.</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="clientList == null"></app-loading>
+
+<div class="card card-default" *ngIf="clientList">
+    <div class="card">
+        <div class="card-header">
+            <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/clients/add' ]"><i class="fa fa-plus-circle"></i>
+                {{'general.add' | translate}} {{ 'general.clients' | translate }}</a>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th> {{ "client.Image" | translate }}</th>
+                            <th> {{"client.TableClientName" | translate }} </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let client of clientList">
+                            <th>
+                                <a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary btn-xs"
+                                    placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                                &nbsp;
+                                <button (click)="copy(client.clientId)" class="btn btn-outline-info btn-xs" placement="top"
+                                    [tooltip]="'general.copy' | translate"><i class="fa fa-copy"></i></button>
+                            </th>
+                            <td><img *ngIf="client.logoUri" height="33" [src]="client.logoUri" /></td>
+                            <td>{{client.clientName}}</td>
+                            <td>
+                                <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                    (click)="remove(client.clientId)"><i class="fa fa-times"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>

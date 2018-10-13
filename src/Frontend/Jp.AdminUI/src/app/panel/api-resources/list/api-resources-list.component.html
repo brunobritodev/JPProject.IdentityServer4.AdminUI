@@ -1,0 +1,45 @@
+<div class="content-heading">
+    <div>
+        ☁️ {{ 'general.api-resource' | translate }}
+        <small><b> {{ 'apiResource.description' | translate }}</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="apiResources == null"></app-loading>
+
+<div class="card card-default" *ngIf="apiResources">
+    <div class="card-header">
+        <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/api-resource/add' ]"><i class="fa fa-plus-circle"></i>
+            {{ 'apiResource.new-api' | translate }}</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> {{ "apiResource.list.name" | translate }}</th>
+                        <th> {{"apiResource.list.description" | translate }} </th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let resource of apiResources">
+                        <td>
+                            <a [routerLink]="['/api-resource/edit', resource.name]" class="btn btn-primary btn-xs"
+                                placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                        </td>
+                        <td>{{resource.name}}</td>
+                        <td>{{resource.description}}</td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
+                                (click)="remove(resource.name)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

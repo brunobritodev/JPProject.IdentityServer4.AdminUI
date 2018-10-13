@@ -1,18 +1,17 @@
-﻿using System.IO;
-using Jp.Infra.CrossCutting.IdentityServer.Configuration;
+﻿using Jp.Infra.CrossCutting.IdentityServer.Configuration;
 using Jp.Infra.CrossCutting.IoC;
+using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Jp.Infra.Migrations.MySql.Identity.Configuration;
 using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
-using Jp.Infra.Migrations.Sql.Identity.Configuration;
 using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using IdentityServerConfig = Jp.Infra.CrossCutting.IdentityServer.Configuration.IdentityServerConfig;
 
 namespace Jp.UI.SSO
 {
@@ -24,7 +23,7 @@ namespace Jp.UI.SSO
 
         public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
         {
-             
+
             _logger = logger;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(environment.ContentRootPath)
@@ -46,7 +45,8 @@ namespace Jp.UI.SSO
         {
             // configure identity
             services.AddMvc();
-            services.AddIdentitySqlServer(Configuration);
+
+            services.ConfigureIdentityDatabase(Configuration);
 
             // For linux ambient DataProtection
             // https://github.com/aspnet/Home/issues/2941
@@ -62,7 +62,7 @@ namespace Jp.UI.SSO
             });
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, _environment, _logger).UseIdentityServerSqlDatabase(services, Configuration, _logger);
+            services.ConfigureIdentityServerDatabase(Configuration, _environment, _logger);
 
             // Configure authentication and external logins
             services.AddSocialIntegration(Configuration);
@@ -85,12 +85,7 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-                app.UseHttpsRedirection();
-            }
-
+            app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

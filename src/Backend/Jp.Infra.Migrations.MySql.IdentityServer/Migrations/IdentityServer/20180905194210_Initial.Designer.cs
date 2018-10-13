@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jp.Infra.Migrations.MySql.IdentityServer.Migrations.IdentityServer
 {
-    [DbContext(typeof(IdentityServerContext))]
+    [DbContext(typeof(JpContext))]
     [Migration("20180905194210_Initial")]
     partial class Initial
     {
@@ -342,7 +342,7 @@ namespace Jp.Infra.Migrations.MySql.IdentityServer.Migrations.IdentityServer
                     b.Property<int?>("ClientId")
                         .IsRequired();
 
-                    b.Property<string>("Key")
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasMaxLength(250);
 
@@ -474,7 +474,7 @@ namespace Jp.Infra.Migrations.MySql.IdentityServer.Migrations.IdentityServer
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.PersistedGrant", b =>
                 {
-                    b.Property<string>("Key")
+                    b.Property<string>("Type")
                         .HasMaxLength(200);
 
                     b.Property<string>("ClientId")
@@ -496,7 +496,7 @@ namespace Jp.Infra.Migrations.MySql.IdentityServer.Migrations.IdentityServer
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.HasKey("Key");
+                    b.HasKey("Type");
 
                     b.HasIndex("SubjectId", "ClientId", "Type");
 

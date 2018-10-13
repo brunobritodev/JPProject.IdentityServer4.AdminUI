@@ -1,6 +1,6 @@
 import { browser, by, element } from "protractor";
 
-export class EquinoxWebAppPage {
+export class JpProjectWebAppPage {
     navigateTo() {
         return browser.get("/");
     }

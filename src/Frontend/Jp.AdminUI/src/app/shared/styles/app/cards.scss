@@ -55,9 +55,9 @@
             color: #c1c2c3;
         }
     } // right floated labels adjust position
-    >.badge.pull-right {
+    >.badge.float-right {
         margin-top: 3px;
-        +.badge.pull-right {
+        +.badge.float-right {
             margin-right: 10px;
         }
     }

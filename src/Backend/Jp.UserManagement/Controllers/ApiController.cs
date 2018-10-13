@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using IdentityModel;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Tools.Model;
@@ -9,7 +7,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Jp.UserManagement.Controllers
+namespace Jp.Management.Controllers
 {
     public abstract class ApiController : ControllerBase
     {
@@ -71,13 +69,6 @@ namespace Jp.UserManagement.Controllers
             }
         }
 
-        protected Guid? GetUserId()
-        {
-            if (User == null)
-                throw new ArgumentNullException(nameof(User));
-
-            return Guid.Parse(User.FindFirst(JwtClaimTypes.Subject)?.Value);
-        }
 
     }
 }

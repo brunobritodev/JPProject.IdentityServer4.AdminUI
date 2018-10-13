@@ -1,0 +1,47 @@
+<div class="content-heading">
+    <div>
+        🔑 {{ 'general.roles' | translate }}
+        <small><b> {{ 'roles.description' | translate }}</b></small>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="card card-default">
+        <div class="card-body">
+            <a [routerLink]="[ '/roles' ]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+        </div>
+    </div>
+</div>
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
+<app-loading *ngIf="model == null"></app-loading>
+
+<div class="card card-default" *ngIf="model">
+    <div class="card-body">
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'roles.add.roleName-tooltip' | translate">{{
+                    'roles.add.roleName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" autocomplete="model-roleName" [placeholder]="'roles.add.roleName-tooltip' | translate"
+                        [(ngModel)]="model.name" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/roles']">Cancel</a>
+    </div>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>

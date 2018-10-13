@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Jp.Infra.Data.Migrations.EventStore
+namespace Jp.Infra.Migrations.Sql.Identity.Migrations.EventStore
 {
     [DbContext(typeof(EventStoreSQLContext))]
     partial class EventStoreSQLContextModelSnapshot : ModelSnapshot
@@ -24,7 +24,7 @@ namespace Jp.Infra.Data.Migrations.EventStore
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid>("AggregateId");
+                    b.Property<string>("AggregateId");
 
                     b.Property<string>("Data");
 

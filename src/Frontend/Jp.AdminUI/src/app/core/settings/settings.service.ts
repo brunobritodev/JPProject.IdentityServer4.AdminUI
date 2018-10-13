@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
-import { UserProfile } from "../../shared/viewModel/userProfile.model";
-import { DefaultResponse } from "../../shared/viewModel/defaultResponse.model";
-import { environment } from "../../../environments/environment";
+import { UserProfile } from "@shared/viewModel/userProfile.model";
+import { environment } from "@env/environment";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-import { of } from "rxjs/observable/of";
+import { OAuthService } from "angular-oauth2-oidc";
+import { of, from, Observable, defer } from "rxjs";
+import { Router } from "@angular/router";
+import { map, switchMap, share, tap } from "rxjs/operators";
 
 declare var $: any;
 
@@ -14,16 +15,23 @@ export class SettingsService {
     private user: UserProfile;
     public app: any;
     public layout: any;
+    userProfileObservable: Observable<object>;
+    loadDiscoveryDocumentAndTryLoginObservable: Observable<any>;
+    doc: any;
 
-    constructor(private http: HttpClient) {
+    constructor(
+        private http: HttpClient,
+        private oauthService: OAuthService,
+        private router: Router) {
 
 
         // App Settings
         // -----------------------------------
         this.app = {
-            name: "Equinox",
-            description: "Equinox Project WebApp - Angular 5",
-            year: ((new Date()).getFullYear())
+            name: "Jp Project - IS4Admin",
+            description: "IdentityServer4 Admin Panel",
+            year: ((new Date()).getFullYear()),
+            version: "1.0.0"
         };
 
         // Layout Settings
@@ -51,35 +59,53 @@ export class SettingsService {
             this.layout = JSON.parse(savedLayout);
             this.layout.offsidebarOpen = false;
         }
+
+        /**
+         * Defer makes promise cold
+         * https://blog.angularindepth.com/observable-frompromise-cold-or-hot-531229818255
+         */
+        this.userProfileObservable = defer(() => from(this.oauthService.loadUserProfile())).pipe(share());
+        this.loadDiscoveryDocumentAndTryLoginObservable = defer(() => from(this.oauthService.loadDiscoveryDocument())).pipe(share()).pipe(tap(a => this.doc = a)).pipe(switchMap(a => this.oauthService.tryLogin())).pipe(map(() => this.doc));
+
+    }
+
+    public logout() {
+        this.oauthService.logOut();
+    }
+
+    public loadDiscoveryDocumentAndTryLogin(): Observable<any> {
+        if (this.doc == null)
+            return this.loadDiscoveryDocumentAndTryLoginObservable;
+
+        return of(this.doc);
+    }
+
+    public setDoc(doc: any) { this.doc = doc; }
+
+    public getUserProfile(): Observable<object> {
+        if (this.user == null) {
+            return this.userProfileObservable;
+        }
+        return of(this.user);
+    }
+
+    set userpicture(image: string) {
+        this.user.picture = image;
+    }
+
+    public login() {
+        if (!this.oauthService.hasValidIdToken() || !this.oauthService.hasValidAccessToken()) {
+            this.oauthService.initImplicitFlow();
+        } else {
+            // for race conditions, sometimes dashboard don't load
+            setTimeout(() => {
+                this.router.navigate(["/home"]);
+            }, 1000);
+        }
     }
 
     public saveLayout($event) {
         localStorage.setItem("LayoutSettings", JSON.stringify(this.layout));
-    }
-
-    public getProfile(): Observable<UserProfile> {
-
-        if (this.user == null)
-            return this.getUserFromApi().debounceTime(5000);
-        else
-            return of(this.user);
-    }
-
-    private getUserFromApi() {
-        return this.http.get<DefaultResponse<UserProfile>>(environment.API_URL + "v1/account-management/profile").map(a => {
-            if (a.success) {
-                if (a.data.picture == null)
-                    a.data.picture = "assets/img/user/13.jpg";
-                this.user = a.data;
-            }
-            return a.data;
-        });
-    }
-
-    public setProfile(user: UserProfile) {
-        if (user.picture == null)
-            user.picture = "assets/img/user/13.jpg";
-        this.user = user;
     }
 
     public getAppSetting(name) {

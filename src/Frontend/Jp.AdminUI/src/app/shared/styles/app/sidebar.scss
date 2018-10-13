@@ -86,7 +86,6 @@ $scrollbar-wd:                    17px;
                 width: 1.8em;
                 display: inline-block;
                 font-style: normal;
-                font-weight: normal;
                 line-height: 1;
                 -webkit-font-smoothing: antialiased;
                 color: $sidebar-icon-color;
@@ -178,10 +177,13 @@ $tablet-landscape: 1025px;
         border: 1px solid rgba(0, 0, 0, 0.15);
         margin-left: -1px; // we resuse the collapse element so we need to override
         &,
-        .collapse {
+        .collapse, .sidebar-subnav {
             height: auto !important;
             display: block !important;
             visibility: visible !important;
+            &.opening {
+                animation: none !important;
+            }
         }
         >.sidebar-subnav-header {
             display: block;
