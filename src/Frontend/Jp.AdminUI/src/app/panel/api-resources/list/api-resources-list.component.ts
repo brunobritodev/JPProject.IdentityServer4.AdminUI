@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { TranslatorService } from "@core/translator/translator.service";
 import { ApiResourceService } from "../api-resource.service";
-import { ApiResource } from "../../../shared/viewModel/api-resource.model";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { ApiResource } from "@shared/viewModel/api-resource.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 const swal = require('sweetalert');
 
 @Component({

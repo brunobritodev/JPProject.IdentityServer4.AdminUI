@@ -2,8 +2,8 @@ import { Component, OnInit, Injector, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
 declare var $: any;
 
-import { MenuService } from "../../../core/menu/menu.service";
-import { SettingsService } from "../../../core/settings/settings.service";
+import { MenuService } from "@core/menu/menu.service";
+import { SettingsService } from "@core/settings/settings.service";
 
 @Component({
     selector: "app-sidebar",

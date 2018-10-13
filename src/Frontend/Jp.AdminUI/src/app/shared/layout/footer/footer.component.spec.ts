@@ -3,7 +3,7 @@
 import { TestBed, async, inject } from "@angular/core/testing";
 import { FooterComponent } from "./footer.component";
 
-import { SettingsService } from "../../../core/settings/settings.service";
+import { SettingsService } from "@core/settings/settings.service";
 import { HttpClientModule } from "@angular/common/http";
 
 describe("Component: Footer", () => {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { TranslatorService } from "@core/translator/translator.service";
 import { PersistedGrantsService } from "../persisted-grants.service";
-import { PersistedGrant } from "../../../shared/viewModel/persisted-grants.model";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { PersistedGrant } from "@shared/viewModel/persisted-grants.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 
 const swal = require('sweetalert');
 

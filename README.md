@@ -1,6 +1,7 @@
 ![image](https://github.com/brunohbrito/JP-Project/blob/master/docs/images/logo.png?raw=true)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/08v6mg6q439x16xt?svg=true)](https://ci.appveyor.com/project/brunohbrito/jp-project)
+[![Build Status](https://dev.azure.com/brunohbrito/Jp-Project/_apis/build/status/brunohbrito.JP-Project)](https://dev.azure.com/brunohbrito/Jp-Project/_build/latest?definitionId=1)
 [![License](https://img.shields.io/github/license/brunohbrito/jp-project.svg)](LICENSE)
 
 Jp Project is a Open Source Quickstart for IdentityServer4. 

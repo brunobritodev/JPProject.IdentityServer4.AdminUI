@@ -1,4 +1,5 @@
 ﻿@using IdentityServer4.Extensions
+@using Jp.Infra.CrossCutting.Tools.DefaultConfig
 @{
 
     if (Context.User.IsAuthenticated())
@@ -14,7 +15,7 @@
 @if (Context.User.IsAuthenticated())
 {
     @section breadcrumb
-    {
+        {
 
         <!-- Breadcrumb-->
         <ol class="breadcrumb">
@@ -25,47 +26,88 @@
         </ol>
     }
 }
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card p-8">
+                <div class="card-body">
+                    <div class="clearfix">
+                        <div class="d-none d-lg-block">
+                            <img class="icon img-fluid" src="@Url.Content("~/images/brand/logo.png")">
+                        </div>
+                        <div class="d-lg-none text-center">
+                            <img class="icon img-fluid" src="@Url.Content("~/images/brand/logo-min.png")">
+                        </div>
 
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card p-8">
-            <div class="card-body">
-                <div class="clearfix">
-                    <div class="d-none d-lg-block">
-                        <img class="icon" src="@Url.Content("~/images/brand/logo.png")">
+                        <h2 class="pt-3">Welcome to JP Project SSO.</h2>
+                        <p>A Single Sign On Server, User Management and Admin for ID4.</p>
                     </div>
-                    <div class="d-lg-none text-center">
-                        <img class="icon" src="@Url.Content("~/images/brand/logo-min.png")">
-                    </div>
-
-                    <h4 class="pt-3">Welcome to JP Project SSO.</h4>
-                    <p class="text-muted">A Single Sign On Server, User Management and Admin for ID4.</p>
-                </div>
-                <div class="row">
-                    <div class="col-sm-8">
-                        <img class="icon" src="@Url.Content("~/icon.jpg")">
-                        <p>
-                            IdentityServer publishes a
-                            <a href="~/.well-known/openid-configuration">discovery document</a>
-                            where you can find metadata and links to all the endpoints, key material, etc.
-                        </p>
-                    </div>
-                    <div class="col-sm-8">
-                        <p>
-                            Click <a asp-action="Index" asp-controller="Grants">here</a> to manage your stored grants.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-8">
-                        <p>
-                            Here are links to the
-                            <a href="https://github.com/identityserver/IdentityServer4">source code repository</a>,
-                            and <a href="https://github.com/identityserver/IdentityServer4.Samples">ready to use samples</a>.
-                        </p>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>
+                                Here are links to the
+                                <a href="https://github.com/brunohbrito/JP-Project">source code repository</a>,
+                                and <a href="https://jp-project.readthedocs.io/en/latest/index.html">docs to more info</a>.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-3 col-sm-4">
+            <div class="card text-white bg-dark">
+                <div class="card-body text-center">
+                    <div class="text-muted small text-uppercase font-weight-bold">Single Sign On</div>
+                    <img class="icon" src="@Url.Content("~/icon.jpg")">
+                    <p>
+                        IdentityServer publishes a
+                        <a href="~/.well-known/openid-configuration">discovery document</a>
+                        where you can find metadata and links to all the endpoints, key material, etc.
+                    </p>
+                    <p>
+                        Click <a asp-action="Index" asp-controller="Grants">here</a> to manage your stored grants.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+            <div class="card text-white bg-info">
+                <div class="card-body text-center">
+                    <div class="text-muted small text-uppercase font-weight-bold">IS4 Admin UI</div>
+                    <a href="@JpProjectConfiguration.IdentityServerAdminUrl">
+                        <img class="icon" height="64" src="@Url.Content("~/images/brand/logo.png")">
+                    </a>
+                    <p>
+                        The main goal of Jp Project is provide a
+                        <a class="text-black-50" href="@JpProjectConfiguration.IdentityServerAdminUrl">Admin User Interface</a>
+                        to manage Identity Server 4.
+                    </p>
+                    <p>
+                        A rich UI, developed in Angular 6.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="text-muted small text-uppercase font-weight-bold">User Management</div>
+                    <a href="@JpProjectConfiguration.UserManagementUrl">
+                        <img class="icon" height="64" src="@Url.Content("~/images/clientLogo/1.jpg")">
+                    </a>
+                    <p>
+                        <a href="@JpProjectConfiguration.UserManagementUrl">User Management UI</a> is an UI for users to manage himself data.
+                        you can change your profile, update password and so on.
+                    </p>
+                    <p>
+                        A rich UI, developed in Core UI Angular 6 template.
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

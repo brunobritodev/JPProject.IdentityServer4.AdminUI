@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { TranslatorService } from "@core/translator/translator.service";
 import { IdentityResourceService } from "../identity-resource.service";
-import { IdentityResource } from "../../../shared/viewModel/identity-resource.model";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { IdentityResource } from "@shared/viewModel/identity-resource.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 const swal = require('sweetalert');
 
 @Component({

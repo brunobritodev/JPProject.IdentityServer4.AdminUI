@@ -1,5 +1,4 @@
 ﻿using Jp.Infra.CrossCutting.IoC;
-using Jp.Infra.Migrations.MySql.Identity.Configuration;
 using Jp.Management.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -39,7 +38,8 @@ namespace Jp.Management
         {
             services.AddMvc();
             
-            services.AddIdentityMySql(Configuration);
+            // Identity Database
+            services.ConfigureIdentityDatabase(Configuration);
 
             services.ConfigureCors();
 

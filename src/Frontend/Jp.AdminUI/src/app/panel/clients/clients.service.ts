@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Client, ClientSecret, ClientProperty, NewClient, ClientClaim } from "../../shared/viewModel/client.model";
+import { Client, ClientSecret, ClientProperty, NewClient, ClientClaim } from "@shared/viewModel/client.model";
 
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 import { Observable } from "rxjs";
-import { DefaultResponse } from "../../shared/viewModel/default-response.model";
-import { ClientList } from "../../shared/viewModel/client-list.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
+import { ClientList } from "@shared/viewModel/client-list.model";
 
 @Injectable()
 export class ClientService {

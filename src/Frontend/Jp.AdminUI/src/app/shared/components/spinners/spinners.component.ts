@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { TranslatorService } from "@core/translator/translator.service";
 
 @Component({
     selector: "app-loading",

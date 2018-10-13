@@ -11,11 +11,14 @@ $paramsUI= "/c cd " + $ui + " && npm start";
 $paramsAdminUI= "/c cd " + $adminui + " && npm start";
 
 Write-Information Restore deps
-dotnet restore $sso
-dotnet restore $api
+dotnet build $sso
+dotnet build $api
 # The best way to npm install is from src folder
 cd $ui; npm install
 cd $currentPath
+cd $adminui; npm install
+cd $currentPath
+
 
 # Start-Process -Verb runas "cmd.exe" $paramsSSO;
 Start-Process "cmd.exe" $paramsAPI;

@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { TranslatorService } from "@core/translator/translator.service";
 import { flatMap, tap } from "rxjs/operators";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
-import { UserProfile } from "../../../shared/viewModel/userProfile.model";
-import { UserService } from "../../../shared/services/user.service";
-import { ResetPassword } from "../../../shared/viewModel/reset-password.model";
+import { UserProfile } from "@shared/viewModel/userProfile.model";
+import { UserService } from "@shared/services/user.service";
+import { ResetPassword } from "@shared/viewModel/reset-password.model";
 
 
 @Component({
