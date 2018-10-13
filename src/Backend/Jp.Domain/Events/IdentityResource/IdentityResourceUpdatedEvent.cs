@@ -9,6 +9,7 @@ namespace Jp.Domain.Events.IdentityResource
         public IdentityResourceUpdatedEvent(IdentityServer4.Models.IdentityResource resource)
         {
             Resource = resource;
+            AggregateId = resource.Name;
         }
     }
 }

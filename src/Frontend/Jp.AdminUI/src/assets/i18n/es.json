@@ -297,7 +297,9 @@
         "list": {
             "email": "Email",
             "picture": "Imagen",
-            "name": "Nombre"
+            "name": "Nombre",
+            "log-tooltip": "Mostrar registros",
+            "username": "Username"
         },
         "remove": {
             "title": "Estás seguro",
@@ -330,12 +332,15 @@
             "accessFailedCount-tooltip": "Obtiene o establece el número de intentos de inicio de sesión fallidos para el usuario actual",
             "password": "Contraseña",
             "confirmPassword": "Confirmar contraseña",
+            "password-tooltip": "Contraseña",
+            "confirmPassword-tooltip": "Confirmar contraseña",
             "claims": "Reclamaciones",
             "claims-tooltip": "Permite las reclamaciones de configuración para el usuario (se incluirán en el token de acceso)",
             "roles": "Roles",
             "roles-tooltip": "Permite la configuración de roles para el usuario (se incluirá en el token de acceso)",
             "externalLogins": "Inicios de sesión externos",
-            "externalLogins-tooltip": "Administrar el inicio de sesión externo del usuario. por ejemplo, google, facebook"
+            "externalLogins-tooltip": "Administrar el inicio de sesión externo del usuario. por ejemplo, google, facebook",
+            "change-password":"Cambia la contraseña"
         },
         "claims": {
             "type": "Tipo",

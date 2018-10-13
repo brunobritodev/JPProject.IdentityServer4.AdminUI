@@ -1,11 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using IdentityServer4.AccessTokenValidation;
-using Jp.Infra.CrossCutting.IoC;
+﻿using Jp.Infra.CrossCutting.IoC;
 using Jp.Infra.Migrations.MySql.Identity.Configuration;
 using Jp.Management.Configuration;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

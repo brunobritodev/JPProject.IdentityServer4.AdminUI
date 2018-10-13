@@ -297,7 +297,9 @@
         "list": {
             "email": "O email",
             "picture": "Cenário",
-            "name": "Nome"
+            "name": "Nome",
+            "log-tooltip": "Exibir logs",
+            "username": "Username"
         },
         "remove": {
             "title": "Você tem certeza",
@@ -330,12 +332,15 @@
             "accessFailedCount-tooltip": "Obtém ou define o número de tentativas de login com falha para o usuário atual",
             "password": "Senha",
             "confirmPassword": "Confirme a Senha",
+            "password-tooltip": "Senha",
+            "confirmPassword-tooltip": "Confirmar senha",
             "claims": "Reivindicações",
             "claims-tooltip": "Permite declarações de configurações para o usuário (serão incluídas no token de acesso)",
             "roles": "Papéis",
             "roles-tooltip": "Permite funções de configurações para o usuário (serão incluídas no token de acesso)",
             "externalLogins": "Logins Externos",
-            "externalLogins-tooltip": "Gerenciar login externo do usuário. por exemplo, Google, Facebook"
+            "externalLogins-tooltip": "Gerenciar login externo do usuário. por exemplo, Google, Facebook",
+            "change-password":"Trocar Senha"
         },
         "claims": {
             "type": "Tipo",

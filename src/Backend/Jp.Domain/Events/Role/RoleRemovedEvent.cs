@@ -7,11 +7,9 @@ namespace Jp.Domain.Events.Role
 {
     public class RoleRemovedEvent : Event
     {
-        public string Name { get; }
-
         public RoleRemovedEvent(string name)
         {
-            Name = name;
+            AggregateId = name;
         }
     }
 }

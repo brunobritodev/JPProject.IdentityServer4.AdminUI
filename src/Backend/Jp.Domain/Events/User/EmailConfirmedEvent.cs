@@ -12,7 +12,7 @@ namespace Jp.Domain.Events.User
         {
             Email = email;
             Code = code;
-            AggregateId = aggregateId;
+            AggregateId = aggregateId.ToString();
         }
     }
 }

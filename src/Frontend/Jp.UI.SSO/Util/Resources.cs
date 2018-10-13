@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using IdentityModel;
+﻿using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
+using System.Collections.Generic;
 
 namespace Jp.UI.SSO.Util
 {
@@ -15,9 +15,8 @@ namespace Jp.UI.SSO.Util
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
                 new IdentityResources.Email(),
-
+                new IdentityResource("username", new []{ "username"}),
                 // custom identity resource with some consolidated claims
-                new IdentityResource("picture", new[] { JwtClaimTypes.Picture }),
                 new IdentityResource("roles", "Roles", new[] { JwtClaimTypes.Role }),
 
                 // add additional identity resource
@@ -43,6 +42,7 @@ namespace Jp.UI.SSO.Util
                                         IdentityServerConstants.StandardScopes.Profile,
                                         IdentityServerConstants.StandardScopes.Email,
                                         "is4-rights",
+                                        "username",
                                         "roles"
                                     },
 

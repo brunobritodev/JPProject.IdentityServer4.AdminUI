@@ -10,6 +10,7 @@ namespace Jp.Domain.Events.Client
         public ClientUpdatedEvent(UpdateClientCommand request)
         {
             Request = request;
+            AggregateId = request.Client.ClientId;
         }
     }
 }

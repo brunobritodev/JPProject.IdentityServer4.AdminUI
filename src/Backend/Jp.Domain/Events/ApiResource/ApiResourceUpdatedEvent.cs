@@ -11,6 +11,7 @@ namespace Jp.Domain.Events.ApiResource
         public ApiResourceUpdatedEvent(IdentityServer4.Models.ApiResource api)
         {
             ApiResource = api;
+            AggregateId = api.Name;
         }
     }
 }

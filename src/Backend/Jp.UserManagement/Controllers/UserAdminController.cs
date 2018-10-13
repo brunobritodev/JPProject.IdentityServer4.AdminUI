@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.RoleViewModels;
@@ -156,6 +157,26 @@ namespace Jp.Management.Controllers
         public async Task<ActionResult<DefaultResponse<IEnumerable<UserListViewModel>>>> UsersFromRole(string[] role)
         {
             var clients = await _userManageAppService.GetUsersInRole(role);
+            return Response(clients);
+        }
+
+        [Route("reset-password"), HttpPost, Authorize(Policy = "Admin")]
+        public async Task<ActionResult<DefaultResponse<bool>>> ResetPassword([FromBody] AdminChangePasswordViewodel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+            
+            await _userManageAppService.ResetPassword(model);
+            return Response(true);
+        }
+
+        [HttpGet, Route("show-logs")]
+        public async Task<ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>>> ShowLogs(string username)
+        {
+            var clients = await _userManageAppService.GetHistoryLogs(username);
             return Response(clients);
         }
 

@@ -9,6 +9,7 @@ namespace Jp.Domain.Events.Client
 
         public ClientClonedEvent(string from, string to)
         {
+            AggregateId = @from;
             From = @from;
             To = to;
         }

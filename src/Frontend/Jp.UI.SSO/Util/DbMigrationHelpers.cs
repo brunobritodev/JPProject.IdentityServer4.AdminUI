@@ -85,6 +85,8 @@ namespace Jp.UI.SSO.Util
             if (result.Succeeded)
             {
                 await userManager.AddClaimAsync(user, new Claim("is4-rights", "manager"));
+                await userManager.AddClaimAsync(user, new Claim("username", Users.AdminUserName));
+                await userManager.AddClaimAsync(user, new Claim("email", Users.AdminEmail));
                 await userManager.AddToRoleAsync(user, "Administrador");
             }
         }

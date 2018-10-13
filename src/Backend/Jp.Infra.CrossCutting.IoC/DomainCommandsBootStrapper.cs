@@ -85,6 +85,7 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<RemoveUserClaimCommand>, UserManagementCommandHandler>();
             services.AddScoped<IRequestHandler<SaveUserRoleCommand>, UserManagementCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveUserRoleCommand>, UserManagementCommandHandler>();
+            services.AddScoped<IRequestHandler<AdminChangePasswordCommand>, UserManagementCommandHandler>();
         }
     }
 }

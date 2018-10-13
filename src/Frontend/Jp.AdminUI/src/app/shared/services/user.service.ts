@@ -7,6 +7,8 @@ import { UserProfile } from "../viewModel/userProfile.model";
 import { UserClaim } from "../viewModel/user-claim.model";
 import { UserRole } from "../viewModel/user-role.model";
 import { UserLogin } from "../viewModel/user-login.model";
+import { ResetPassword } from "../viewModel/reset-password.model";
+import { EventHistoryData } from "../viewModel/event-history-data.model";
 
 @Injectable()
 export class UserService {
@@ -130,4 +132,16 @@ export class UserService {
         return this.http.get<DefaultResponse<UserProfile[]>>(environment.ResourceServer + "UserAdmin/users-from-role", options).map(a => a.data);
     }
 
+    public resetPassword(resetPassword: ResetPassword): Observable<DefaultResponse<boolean>> {
+        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/reset-password", resetPassword);
+    }
+
+    public showLogs(username: string): Observable<EventHistoryData[]> {
+        let options = {
+            params: {
+                username: username
+            }
+        };
+        return this.http.get<DefaultResponse<EventHistoryData[]>>(environment.ResourceServer + "UserAdmin/show-logs", options).map(a => a.data);
+    }
 }

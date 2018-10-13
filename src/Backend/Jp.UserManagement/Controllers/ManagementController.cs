@@ -113,9 +113,9 @@ namespace Jp.Management.Controllers
         }
 
         [HttpGet, Route("logs")]
-        public ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>> GetLogs()
+        public async Task<ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>>> GetLogs()
         {
-            return Response(_userAppService.GetHistoryLogs(_systemUser.UserId));
+            return Response(await _userAppService.GetHistoryLogs(_systemUser.Username));
         }
 
     }

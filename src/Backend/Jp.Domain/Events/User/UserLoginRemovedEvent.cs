@@ -11,7 +11,7 @@ namespace Jp.Domain.Events.User
 
         public UserLoginRemovedEvent(Guid aggregateId, string username, string loginProvider, string providerKey)
         {
-            AggregateId = aggregateId;
+            AggregateId = aggregateId.ToString();
             Username = username;
             LoginProvider = loginProvider;
             ProviderKey = providerKey;

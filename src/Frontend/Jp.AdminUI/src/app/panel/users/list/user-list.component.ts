@@ -3,6 +3,8 @@ import { TranslatorService } from "../../../core/translator/translator.service";
 import { UserService } from "../../../shared/services/user.service";
 import { UserProfile } from "../../../shared/viewModel/userProfile.model";
 import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { Observable } from "rxjs";
+import { EventHistoryData } from "../../../shared/viewModel/event-history-data.model";
 const swal = require('sweetalert');
 
 @Component({
@@ -14,6 +16,8 @@ const swal = require('sweetalert');
 export class UserListComponent implements OnInit {
 
     public users: UserProfile[];
+    public historyData$: Observable<EventHistoryData[]>;
+    public selectedUser: UserProfile;
 
     constructor(
         public translator: TranslatorService,
@@ -61,7 +65,14 @@ export class UserListComponent implements OnInit {
                 }
             });
         });
+    }
 
+    public showLogs(user: UserProfile) {
+        this.selectedUser = user;
+        this.historyData$ = this.userService.showLogs(user.userName);
+    }
 
+    parse(details: string) {
+        return JSON.parse(details);
     }
 }
