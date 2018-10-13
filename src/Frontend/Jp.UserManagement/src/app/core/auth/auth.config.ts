@@ -5,8 +5,8 @@ export const authConfig: AuthConfig = {
     issuer: environment.IssuerUri,
     requireHttps: environment.RequireHttps,
     clientId: "UserManagementUI",
-    postLogoutRedirectUri: "http://localhost:4200/",
-    redirectUri: window.location.origin + "/login-callback",
+    postLogoutRedirectUri: environment.Uri,
+    redirectUri: environment.Uri + "/login-callback",
     scope: "openid profile email jp_api.user",
     oidc: true
 };

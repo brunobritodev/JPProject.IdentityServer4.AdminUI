@@ -1,11 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SettingsService } from "../../core/settings/settings.service";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { Router, ActivatedRoute } from "@angular/router";
-import { OAuthService, JwksValidationHandler } from "angular-oauth2-oidc";
-import { authConfig } from "../../core/auth/auth.config";
-import { environment } from "../../../environments/environment";
-import { tap } from "rxjs/operators";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-login",

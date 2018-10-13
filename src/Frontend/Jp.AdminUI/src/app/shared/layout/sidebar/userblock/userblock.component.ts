@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { UserblockService } from "./userblock.service";
-import { SettingsService } from "../../../../core/settings/settings.service";
+import { SettingsService } from "@core/settings/settings.service";
 
 @Component({
     selector: "app-userblock",

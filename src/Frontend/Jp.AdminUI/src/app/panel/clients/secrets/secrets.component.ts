@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
-import { ClientService } from "../clients.service";
+import { TranslatorService } from "@core/translator/translator.service";
 import { flatMap, tap, map } from "rxjs/operators";
-import { Client, ClientSecret } from "../../../shared/viewModel/client.model";
+import { ClientService } from "@app/clients/clients.service";
+import { ClientSecret } from "@shared/viewModel/client.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
 
 

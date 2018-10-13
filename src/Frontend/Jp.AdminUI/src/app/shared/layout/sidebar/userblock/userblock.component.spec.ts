@@ -4,7 +4,7 @@ import { TestBed, async, inject } from "@angular/core/testing";
 
 import { UserblockComponent } from "./userblock.component";
 import { UserblockService } from "./userblock.service";
-import { SettingsService } from "../../../../core/settings/settings.service";
+import { SettingsService } from "@core/settings/settings.service";
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
 import { AppComponent } from "../../../../app.component";
 import { HttpClientModule } from "@angular/common/http";

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

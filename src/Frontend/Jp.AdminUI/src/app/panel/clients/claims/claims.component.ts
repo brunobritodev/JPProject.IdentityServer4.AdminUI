@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
-import { ClientService } from "../clients.service";
+import { TranslatorService } from "@core/translator/translator.service";
+import { ClientService } from "@app/clients/clients.service";
 import { flatMap, tap, map } from "rxjs/operators";
-import { ClientClaim } from "../../../shared/viewModel/client.model";
+import { ClientClaim } from "@shared/viewModel/client.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
-import { ScopeService } from "../../../shared/services/scope.service";
-import { StandardClaims } from "../../../shared/viewModel/standard-claims.model";
+import { ScopeService } from "@shared/services/scope.service";
+import { StandardClaims } from "@shared/viewModel/standard-claims.model";
 
 
 @Component({

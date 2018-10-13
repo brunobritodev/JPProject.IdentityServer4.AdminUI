@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
-import { UserService } from "../../../shared/services/user.service";
-import { UserProfile } from "../../../shared/viewModel/userProfile.model";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { TranslatorService } from "@core/translator/translator.service";
+import { UserService } from "@shared/services/user.service";
+import { UserProfile } from "@shared/viewModel/userProfile.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
-import { EventHistoryData } from "../../../shared/viewModel/event-history-data.model";
+import { EventHistoryData } from "@shared/viewModel/event-history-data.model";
 const swal = require('sweetalert');
 
 @Component({

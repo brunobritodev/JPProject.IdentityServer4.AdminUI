@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
-import { RoleService } from "../../../shared/services/role.service";
-import { Role } from "../../../shared/viewModel/role.model";
+import { TranslatorService } from "@core/translator/translator.service";
+import { RoleService } from "@shared/services/role.service";
+import { Role } from "@shared/viewModel/role.model";
 import { Observable } from "rxjs";
-import { UserService } from "../../../shared/services/user.service";
-import { UserProfile } from "../../../shared/viewModel/userProfile.model";
+import { UserService } from "@shared/services/user.service";
+import { UserProfile } from "@shared/viewModel/userProfile.model";
 import { ToasterService } from "angular2-toaster";
 import { Router } from "@angular/router";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 
 const swal = require('sweetalert');
 

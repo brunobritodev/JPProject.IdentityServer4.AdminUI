@@ -3,9 +3,8 @@ import { TestBed, async, inject } from "@angular/core/testing";
 import { HeaderComponent } from "./header.component";
 
 import { UserblockService } from "../sidebar/userblock/userblock.service";
-import { SettingsService } from "../../../core/settings/settings.service";
-import { MenuService } from "../../../core/menu/menu.service";
-import { AuthenticationService } from "../../services/authentication.service";
+import { SettingsService } from "@core/settings/settings.service";
+import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -21,7 +20,6 @@ describe("Component: Header", () => {
                 MenuService,
                 UserblockService,
                 SettingsService,
-                AuthenticationService,
                 { provide: Router, useValue: mockRouter }]
         }).compileComponents();
     });
@@ -30,11 +28,10 @@ describe("Component: Header", () => {
         MenuService,
         UserblockService,
         SettingsService,
-        AuthenticationService,
         Router],
-        (menuService, userblockService, settingsService, authService, router) => {
+        (menuService, userblockService, settingsService, router) => {
 
-            let component = new HeaderComponent(menuService, userblockService, settingsService, authService, router);
+            let component = new HeaderComponent(menuService, userblockService, settingsService, router);
             expect(component).toBeTruthy();
         })));
 });

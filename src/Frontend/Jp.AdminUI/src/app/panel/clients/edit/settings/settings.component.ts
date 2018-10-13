@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Client } from "../../../../shared/viewModel/client.model";
-import { TranslatorService } from "../../../../core/translator/translator.service";
+import { Client } from "@shared/viewModel/client.model";
+import { TranslatorService } from "@core/translator/translator.service";
 import { Observable } from "rxjs";
-import { ScopeService } from "../../../../shared/services/scope.service";
+import { ScopeService } from "@shared/services/scope.service";
 import { map, debounceTime } from "rxjs/operators";
 
 

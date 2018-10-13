@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "../../../core/translator/translator.service";
+import { TranslatorService } from "@core/translator/translator.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "../../../shared/viewModel/default-response.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
 import { ApiResourceService } from "../api-resource.service";
-import { StandardClaims } from "../../../shared/viewModel/standard-claims.model";
-import { ApiResource } from "../../../shared/viewModel/api-resource.model";
+import { StandardClaims } from "@shared/viewModel/standard-claims.model";
+import { ApiResource } from "@shared/viewModel/api-resource.model";
 
 
 @Component({

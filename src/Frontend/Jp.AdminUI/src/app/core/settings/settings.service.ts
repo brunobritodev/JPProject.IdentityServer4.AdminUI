@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { UserProfile } from "../../shared/viewModel/userProfile.model";
-import { environment } from "../../../environments/environment";
+import { UserProfile } from "@shared/viewModel/userProfile.model";
+import { environment } from "@env/environment";
 import { HttpClient } from "@angular/common/http";
 import { OAuthService } from "angular-oauth2-oidc";
 import { of, from, Observable, defer } from "rxjs";

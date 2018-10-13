@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 import { Observable } from "rxjs";
-import { DefaultResponse } from "../../shared/viewModel/default-response.model";
-import { IdentityResource } from "../../shared/viewModel/identity-resource.model";
+import { DefaultResponse } from "@shared/viewModel/default-response.model";
+import { IdentityResource } from "@shared/viewModel/identity-resource.model";
 
 @Injectable()
 export class IdentityResourceService {
