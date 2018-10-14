@@ -5,17 +5,17 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Interfaces;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Jp.Domain.Interfaces;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize]
+    [Route("[controller]"), Authorize(Policy = "UserManagement")]
     public class ManagementController : ApiController
     {
         private readonly IUserManageAppService _userAppService;

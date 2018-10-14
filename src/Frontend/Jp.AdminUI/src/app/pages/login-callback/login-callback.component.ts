@@ -14,7 +14,7 @@ export class LoginCallbackComponent implements OnInit {
     constructor(
         private oauthService: OAuthService,
         private router: Router,
-        private settingsService: SettingsService) { }
+        public settingsService: SettingsService) { }
 
     ngOnInit() {
         this.settingsService.loadDiscoveryDocumentAndTryLogin().subscribe(doc => {

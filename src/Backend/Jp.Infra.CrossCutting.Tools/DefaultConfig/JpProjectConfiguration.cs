@@ -16,9 +16,9 @@ namespace Jp.Infra.CrossCutting.Tools.DefaultConfig
                                                            .Build());
 
 
-        public static string IdentityServerUrl => $"{Environment.GetEnvironmentVariable("AUTHORITY") ?? Configuration.GetSection("ApplicationSettings").GetSection("Is4URL").Value}";
+        public static string IdentityServerUrl => $"{Environment.GetEnvironmentVariable("AUTHORITY") ?? Configuration.GetSection("ApplicationSettings").GetSection("Authority").Value}";
         public static string UserManagementUrl => $"{Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? Configuration.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}";
-        public static string IdentityServerAdminUrl => $"{Environment.GetEnvironmentVariable("IS4_MANAGEMENT_URI") ?? Configuration.GetSection("ApplicationSettings").GetSection("Is4ManagementURL").Value}";
+        public static string IdentityServerAdminUrl => $"{Environment.GetEnvironmentVariable("IS4_ADMIN_UI") ?? Configuration.GetSection("ApplicationSettings").GetSection("IS4AdminUi").Value}";
         public static string ResourceServer => $"{Environment.GetEnvironmentVariable("RESOURCE_SERVER_URI") ?? Configuration.GetSection("ApplicationSettings").GetSection("ResourceServerURL").Value}";
 
         public static bool DatabaseType(string type)

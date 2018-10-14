@@ -26,8 +26,8 @@ namespace Jp.Management.Configuration
                     Flow = "implicit",
                     AuthorizationUrl = $"{JpProjectConfiguration.IdentityServerUrl}/connect/authorize",
                     Scopes = new Dictionary<string, string> {
-                        { "management-api.owner-content", "User Management API - full access" },
-                        { "management-api.identityserver4-manager", "IS4 Management API - full access" },
+                        { "jp_api.user", "User Management API - full access" },
+                        { "jp_api.is4", "IS4 Management API - full access" },
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();

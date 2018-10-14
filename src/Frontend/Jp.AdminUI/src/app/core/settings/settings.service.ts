@@ -104,7 +104,7 @@ export class SettingsService {
         }
     }
 
-    public saveLayout($event) {
+    public saveLayout() {
         localStorage.setItem("LayoutSettings", JSON.stringify(this.layout));
     }
 

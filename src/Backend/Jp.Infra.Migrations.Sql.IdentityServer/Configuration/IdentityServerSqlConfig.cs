@@ -13,7 +13,7 @@ namespace Jp.Infra.Migrations.Sql.IdentityServer.Configuration
         public static IIdentityServerBuilder UseIdentityServerSqlDatabase(this IIdentityServerBuilder builder,
             IServiceCollection services, IConfiguration configuration, ILogger logger)
         {
-            var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+            var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));

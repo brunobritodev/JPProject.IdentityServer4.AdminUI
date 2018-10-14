@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
     providers: []
 })
 export class LoginComponent implements OnInit {
-    constructor(private settingsService: SettingsService,
+    constructor(public settingsService: SettingsService,
         private router: Router) {
 
     }

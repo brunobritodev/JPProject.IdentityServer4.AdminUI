@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  ResourceServer: "https://localhost:5003/",
-  IssuerUri:  "https://localhost:5000",
-  RequireHttps: false,
-  Uri: "http://localhost:4300"
+  ResourceServer: "https://jpproject.azurewebsites.net/api/",
+  IssuerUri:  "https://jpproject.azurewebsites.net/sso",
+  RequireHttps: true,
+  Uri: "https://jpproject.azurewebsites.net/admin-ui"
 };

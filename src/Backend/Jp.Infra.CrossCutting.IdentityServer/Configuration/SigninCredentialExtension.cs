@@ -36,7 +36,6 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
             switch (keyType)
             {
                 case Temporary:
-                    logger.LogInformation($"SigninCredentialExtension adding Temporary Signing Credential");
                     builder.AddDeveloperSigningCredential(false);
                     break;
 
@@ -52,7 +51,7 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
                     AddCertificateFromEnvironment(builder, logger);
                     break;
             }
-
+            logger.LogInformation($"SigninCredentialExtension added");
             return builder;
         }
 

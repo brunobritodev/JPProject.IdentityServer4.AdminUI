@@ -85,6 +85,7 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseDeveloperExceptionPage();
             app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();

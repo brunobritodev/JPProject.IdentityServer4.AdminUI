@@ -53,6 +53,7 @@ export class NewClient {
 export class Client {
     enabled: boolean;
     clientId: string;
+    description: string;
     protocolType: string;
     clientSecrets: ClientSecret[];
     requireClientSecret: boolean;

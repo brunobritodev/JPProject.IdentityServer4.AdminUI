@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../../shared/models/user.model";
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
 import { SetPassword } from "../../shared/view-model/set-password.model";
 import { ChangePassword } from "../../shared/view-model/change-password.model";

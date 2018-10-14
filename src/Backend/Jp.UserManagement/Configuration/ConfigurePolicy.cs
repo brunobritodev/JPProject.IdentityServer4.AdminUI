@@ -1,4 +1,5 @@
 ﻿using IdentityServer4.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Jp.Management.Configuration
@@ -19,6 +20,9 @@ namespace Jp.Management.Configuration
                         c.User.IsAuthenticated() || 
                         c.User.HasClaim("is4-rights", "manager") || 
                         c.User.IsInRole("Administrador")));
+
+                options.AddPolicy("UserManagement", policy =>
+                    policy.RequireAuthenticatedUser());
             });
 
         }

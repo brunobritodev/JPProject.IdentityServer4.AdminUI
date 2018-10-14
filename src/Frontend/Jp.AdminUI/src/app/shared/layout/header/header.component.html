@@ -4,10 +4,14 @@
     <div class="navbar-header">
         <a class="navbar-brand">
             <div class="brand-logo">
-                <img class="img-fluid" src="assets/img/brand/logo.png" height="40px" alt="App Logo" />
+                <a [href]="ssoUri">
+                    <img class="img-fluid" src="assets/img/brand/logo.png" height="40px" alt="App Logo" />
+                </a>
             </div>
             <div class="brand-logo-collapsed">
-                <img class="img-fluid" src="assets/img/brand/logo-min.png" width="45" height="45px" alt="App Logo" />
+                <a [href]="ssoUri">
+                    <img class="img-fluid" src="assets/img/brand/logo-min.png" width="45" height="45px" alt="App Logo" />
+                </a>
             </div>
         </a>
     </div>
@@ -16,7 +20,8 @@
     <ul class="navbar-nav mr-auto flex-row">
         <li class="nav-item">
             <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-            <a class="nav-link d-none d-md-block d-lg-block d-xl-block" trigger-resize="" (click)="toggleCollapsedSideabar()" *ngIf="!isCollapsedText()">
+            <a class="nav-link d-none d-md-block d-lg-block d-xl-block" trigger-resize="" (click)="toggleCollapsedSideabar()"
+                *ngIf="!isCollapsedText()">
                 <em class="fa fa-navicon"></em>
             </a>
             <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
@@ -36,7 +41,7 @@
     <!-- END Left navbar-->
     <!-- START Right Navbar-->
     <ul class="navbar-nav flex-row">
-         <!-- Search icon - Disabled by now, maybe in future -->
+        <!-- Search icon - Disabled by now, maybe in future -->
         <!-- <li class="nav-item"  placement="bottom" tooltip="Search">
             <a class="nav-link" (click)="openNavSearch($event)">
                 <em class="icon-magnifier"></em>
@@ -49,7 +54,7 @@
             </a>
         </li>
         <!-- START Alert menu-->
-        <li class="nav-item dropdown dropdown-list"  placement="bottom" tooltip="Notifications" dropdown>
+        <li class="nav-item dropdown dropdown-list" placement="bottom" tooltip="Notifications" dropdown>
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" dropdownToggle>
                 <em class="icon-bell"></em>
                 <span class="badge badge-danger">1</span>
