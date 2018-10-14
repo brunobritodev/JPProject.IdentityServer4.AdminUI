@@ -45,6 +45,22 @@ SSO Variables
      - http://localhost:4200
      - 
      - The path Url of User Management UI after published
+   * - IS4_ADMIN_UI
+     - http://localhost:4300
+     - 
+     - The path Url of Admin UI
+   * - RESOURCE_SERVER_URI
+     - https://localhost:5003
+     - 
+     - The path Url of Management API
+   * - CUSTOMCONNSTR_DATABASE_CONNECTION
+     - <YOUR CONN STRING>
+     - 
+     - Database Connection String
+   * - DATABASE_TYPE
+     - ``MySql`` or ``SqlServer``
+     - 
+     - Which database will be used.
 
 
 
@@ -80,3 +96,24 @@ User Management API Variables
      - https://localhost:5000
      - 
      - The path Url of SSO
+   * - USER_MANAGEMENT_URI
+     - http://localhost:4200
+     - 
+     - The path Url of User Management UI after published
+   * - IS4_ADMIN_UI
+     - http://localhost:4300
+     - 
+     - The path Url of Admin UI
+   * - RESOURCE_SERVER_URI
+     - https://localhost:5003
+     - 
+     - The path Url of Management API
+   * - CUSTOMCONNSTR_DATABASE_CONNECTION
+     - <YOUR CONN STRING>
+     - 
+     - Database Connection String
+   * - DATABASE_TYPE
+     - ``MySql`` or ``SqlServer``
+     - 
+     - Which database will be used.
+     

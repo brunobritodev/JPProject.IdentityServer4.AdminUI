@@ -18,7 +18,11 @@ User Management UI
 
 A SPA application responsible for create and manager users. Send reset links. E-mail validation. Profile validation, and so on.
 
-User Management API
+Management API
 -------------------
 
 This API serve UI.
+
+Admin UI
+--------
+It's the Admin user interface to manage identity Server 4.

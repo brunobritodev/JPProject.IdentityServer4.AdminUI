@@ -14,7 +14,9 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 
 Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-See it in action
+Now we are online! `See it in action <https://jpproject.azurewebsites.net/signin-google>`_
+
+There is a intro video too!
 
 .. raw:: html
 
@@ -23,7 +25,7 @@ See it in action
     </div>
 
 Give a Star ⭐!
-------------
+----------------
 
 Do you love it? give us a :yellow:`Star!` ⭐
 
@@ -33,7 +35,7 @@ Wanna contribute? Feel free to do that!
 
 But remember to check the `Contributing Section <intro/contributing.html>`_
 
-Take you special place in our heart!
+Take a special place in our heart!
 
 All contributors has a heart💓! See them in `Contributor list <https://github.com/brunohbrito/JP-Project/blob/master/CONTRIBUTORS.md>`_
 
@@ -69,8 +71,7 @@ There are several ways we can help you out.
    :hidden:
    :caption: Configuration
 
-   configuration/sql_server
-   configuration/mysql
+   configuration/databaseType
    configuration/serilog
    configuration/application_insights
    configuration/certificate
