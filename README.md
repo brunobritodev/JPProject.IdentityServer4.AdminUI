@@ -10,6 +10,10 @@ Jp Project is a Open Source Quickstart for IdentityServer4.
 Written in ASP.NET Core and Angular 6.
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management. Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
+# We are online at Azure. Check it now! 
+[Jp Project](https://jpproject.azurewebsites.net/sso/)
+<small> New users are readonly</small>
+
 ## Give a Star! ⭐
 
 Do you love it? give us a Star!
@@ -20,9 +24,12 @@ Jp Project is built against ASP.NET Core 2.1.
 * [Install](https://www.microsoft.com/net/download/core#/current) the latest .NET Core 2.1 SDK
 * Run `build.ps1` (Powershell) or `build.bat` (cmd)
 
-Wait for ng to complete his proccess then go to http://localhost:4200!
+Wait for ng to complete his proccess then go to http://localhost:5000!
 
 # Expected after start project.
+
+## Admin UI
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/admin-home.jpg?raw=true" width="480" />
 
 ## Login page
 <img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/login.JPG?raw=true" width="480" />
@@ -50,8 +57,6 @@ There are several ways we can help you out.
 
 # What comes next?
 
-Admin panel to manage IdentityServer4 configuration.
-
-Translation
-
 Code coverage
+
+Thinking about create separated repo's for each part of solution.

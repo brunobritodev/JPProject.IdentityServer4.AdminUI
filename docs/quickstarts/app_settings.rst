@@ -41,7 +41,34 @@ To take from Facebook, see `docs here <https://developers.facebook.com/docs/face
 ApplicationSettings
 ^^^^^^^^^^^^^^^^^^^
 
-You need to set **UserManagementURL**, so when user cliks on Register link, SSO takes this value to redirect him.
+These settings will be override by Environment Variables if set.
+
+.. list-table:: Ambient Variables
+   :widths: 15 25 60
+   :header-rows: 1
+
+   * - Variable
+     - Value
+     - Description
+   * - Authority
+     - https://localhost:5000
+     - The path Url of SSO
+   * - UserManagementURL
+     - http://localhost:4200
+     - The path Url of User Management UI after published
+   * - IS4AdminUi
+     - http://localhost:4300
+     - The path Url of Admin UI
+   * - ResourceServerURL
+     - https://localhost:5003
+     - The path Url of Management API
+   * - CUSTOMCONNSTR_DATABASE_CONNECTION
+     - <YOUR CONN STRING>
+     - Database Connection String
+   * - DatabaseType
+     - ``MySql`` or ``SqlServer``
+     - Which database will be used.
+
 
 User Management API
 -------------------
@@ -62,6 +89,13 @@ EmailConfiguration
 ^^^^^^^^^^^^^^^^^^
 
 E-mail settings to provide the capabilities to send e-mail after a new user and reset link.
+
+ApplicationSettings
+^^^^^^^^^^^^^^^^^^^
+
+Need to provide the **DatabaseType**.
+
+This settings will be override by Environment Variables if set.
 
 User Management UI
 ------------------
@@ -87,3 +121,28 @@ To change settings from UI, you need to open environment file. Located at src/en
      - Base Url from SSO
    * - **RequireHttps** 
      - True if IsuerUri has a HTTPS.
+   * - **Uri**
+     - Final URL of App.
+
+Admin UI
+------------------
+
+environment files
+^^^^^^^^^^^^^^^^^
+
+To change settings from UI, you need to open environment file. Located at src/environment.
+
+.. list-table:: UI Variables
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Variable
+     - Description
+   * - **ResourceServer** 
+     - Base Url from User Management API
+   * - **IssuerUri** 
+     - Base Url from SSO
+   * - **RequireHttps** 
+     - True if IsuerUri has a HTTPS.
+   * - **Uri**
+     - Final URL of App.
