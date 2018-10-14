@@ -4,15 +4,19 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="#/">
             <div class="brand-logo">
-                <img class="img-fluid" src="assets/img/brand/logo.png" alt="App Logo" />
+                <a [href]="ssoUri">
+                    <img class="img-fluid" src="assets/img/brand/logo.png" alt="App Logo" />
+                </a>
             </div>
             <div class="brand-logo-collapsed">
-                <img class="img-fluid" src="assets/img/brand/logo-min.png" alt="App Logo" />
+                <a [href]="ssoUri">
+                    <img class="img-fluid" src="assets/img/brand/logo-min.png" alt="App Logo" />
+                </a>
             </div>
         </a>
-       <button class="navbar-toggler" type="button" (click)="navCollapsed = !navCollapsed">
-          <span class="navbar-toggler-icon"></span>
-       </button>
+        <button class="navbar-toggler" type="button" (click)="navCollapsed = !navCollapsed">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
     <!-- END navbar header-->
     <!-- START Nav wrapper-->
@@ -28,7 +32,7 @@
                 </a>
                 <!-- START Dropdown menu-->
                 <div *dropdownMenu class="dropdown-menu animated fadeInUp">
-                    <a class="dropdown-item" *ngFor="let subitem of item.submenu" [routerLink]="subitem.link" [title]="subitem.text" >
+                    <a class="dropdown-item" *ngFor="let subitem of item.submenu" [routerLink]="subitem.link" [title]="subitem.text">
                         <span>{{(subitem.translate | translate) || subitem.text}}</span>
                     </a>
                 </div>
@@ -60,49 +64,49 @@
                     <div class="dropdown-item">
                         <!-- START list group-->
                         <div class="list-group">
-                           <!-- list item-->
-                           <div class="list-group-item list-group-item-action">
-                              <div class="media">
-                                 <div class="align-self-start mr-2">
-                                    <em class="fa fa-twitter fa-2x text-info"></em>
-                                 </div>
-                                 <div class="media-body">
-                                    <p class="m-0">New followers</p>
-                                    <p class="m-0 text-muted text-sm">1 new follower</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <!-- list item-->
-                           <div class="list-group-item list-group-item-action">
-                              <div class="media">
-                                 <div class="align-self-start mr-2">
-                                    <em class="fa fa-envelope fa-2x text-warning"></em>
-                                 </div>
-                                 <div class="media-body">
-                                    <p class="m-0">New e-mails</p>
-                                    <p class="m-0 text-muted text-sm">You have 10 new emails</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <!-- list item-->
-                           <div class="list-group-item list-group-item-action">
-                              <div class="media">
-                                 <div class="align-self-start mr-2">
-                                    <em class="fa fa-tasks fa-2x text-success"></em>
-                                 </div>
-                                 <div class="media-body">
-                                    <p class="m-0">Pending Tasks</p>
-                                    <p class="m-0 text-muted text-sm">11 pending task</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <!-- last list item-->
-                           <div class="list-group-item list-group-item-action">
-                              <span class="d-flex align-items-center">
-                                 <span class="text-sm">More notifications</span>
-                                 <span class="badge badge-danger ml-auto">14</span>
-                              </span>
-                           </div>
+                            <!-- list item-->
+                            <div class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <div class="align-self-start mr-2">
+                                        <em class="fa fa-twitter fa-2x text-info"></em>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="m-0">New followers</p>
+                                        <p class="m-0 text-muted text-sm">1 new follower</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- list item-->
+                            <div class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <div class="align-self-start mr-2">
+                                        <em class="fa fa-envelope fa-2x text-warning"></em>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="m-0">New e-mails</p>
+                                        <p class="m-0 text-muted text-sm">You have 10 new emails</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- list item-->
+                            <div class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <div class="align-self-start mr-2">
+                                        <em class="fa fa-tasks fa-2x text-success"></em>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="m-0">Pending Tasks</p>
+                                        <p class="m-0 text-muted text-sm">11 pending task</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- last list item-->
+                            <div class="list-group-item list-group-item-action">
+                                <span class="d-flex align-items-center">
+                                    <span class="text-sm">More notifications</span>
+                                    <span class="badge badge-danger ml-auto">14</span>
+                                </span>
+                            </div>
                         </div>
                         <!-- END list group-->
                     </div>

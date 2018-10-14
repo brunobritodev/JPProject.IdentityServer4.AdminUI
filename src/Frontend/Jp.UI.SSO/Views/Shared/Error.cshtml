@@ -20,51 +20,53 @@
 }
 @if (Context.User.IsAuthenticated())
 {
-@section breadcrumb
-{
+    @section breadcrumb
+        {
 
-    <!-- Breadcrumb-->
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a asp-action="Index" asp-controller="Home">User</a>
-        </li>
-        <li class="breadcrumb-item">
-            Error
-        </li>
-    </ol>
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-action="Index" asp-controller="Home">User</a>
+            </li>
+            <li class="breadcrumb-item">
+                Error
+            </li>
+        </ol>
+    }
 }
-}
 
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card p-8">
-            <div class="card-body">
-                <div class="alert alert-danger">
-                    Sorry, there was an error
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-8">
+                <div class="card-body">
+                    <div class="alert alert-danger">
+                        Sorry, there was an error
 
-                    @if (error != null)
-                    {
-                        <strong>
-                            <em>
-                                : @error
-                            </em>
-                        </strong>
-
-                        if (errorDescription != null)
+                        @if (error != null)
                         {
-                            <div>@errorDescription</div>
-                        }
-                    }
-                </div>
+                            <strong>
+                                <em>
+                                    : @error
+                                </em>
+                            </strong>
 
-                @if (request_id != null)
-                {
-                    <div class="request-id">Request Id: @request_id</div>
-                }
-                
-                <p>
-                    Click <a asp-controller="Account" asp-action="Login">here</a> to go back.
-                </p>
+                            if (errorDescription != null)
+                            {
+                                <div>@errorDescription</div>
+                            }
+                        }
+                    </div>
+
+                    @if (request_id != null)
+                    {
+                        <div class="request-id">Request Id: @request_id</div>
+                    }
+
+                    <p>
+                        Click <a asp-controller="Account" asp-action="Login">here</a> to go back.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

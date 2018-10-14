@@ -1,5 +1,5 @@
 import { AuthConfig } from "angular-oauth2-oidc";
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 export const authConfig: AuthConfig = {
 
     issuer: environment.IssuerUri,

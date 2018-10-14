@@ -7,6 +7,7 @@ import { UserblockService } from "../sidebar/userblock/userblock.service";
 import { SettingsService } from "@core/settings/settings.service";
 import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
+import { environment } from "@env/environment.prod";
 
 
 @Component({
@@ -22,19 +23,20 @@ export class HeaderComponent implements OnInit {
 
     isNavSearchVisible: boolean;
     @ViewChild("fsbutton") fsbutton;  // the fullscreen button
+    public ssoUri: string;
 
     constructor(
         public menu: MenuService,
         public userblockService: UserblockService,
         public settings: SettingsService,
         private router: Router) {
-
         // show only a few items on demo
         this.menuItems = menu.getMenu().slice(0, 4); // for horizontal layout
 
     }
 
     ngOnInit() {
+        this.ssoUri = environment.IssuerUri;
         this.isNavSearchVisible = false;
         if (browser.msie) { // Not supported under IE
             this.fsbutton.nativeElement.style.display = "none";

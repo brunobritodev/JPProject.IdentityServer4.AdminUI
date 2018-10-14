@@ -13,7 +13,7 @@ namespace Jp.Infra.Migrations.MySql.IdentityServer.Configuration
         public static IIdentityServerBuilder UseIdentityServerMySqlDatabase(this IIdentityServerBuilder builder,
             IServiceCollection services, IConfiguration configuration, ILogger logger)
         {
-            var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+            var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<JpContext>(options => options.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
@@ -30,8 +30,8 @@ namespace Jp.Infra.Migrations.MySql.IdentityServer.Configuration
                         b.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
 
                     // this enables automatic token cleanup. this is optional.
-                    options.EnableTokenCleanup = true;
-                    options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
+                    //options.EnableTokenCleanup = true;
+                    //options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
 
             

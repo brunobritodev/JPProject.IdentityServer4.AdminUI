@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { navItems } from "../../_nav";
 import { SettingsService } from "../settings/settings.service";
 import { tap } from "rxjs/operators";
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 import { Router } from "@angular/router";
 
 @Component({

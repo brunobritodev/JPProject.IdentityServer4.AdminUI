@@ -3,15 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { DefaultResponse } from "../view-model/default-response.model";
 import { User } from "../models/user.model";
 import { Observable } from "rxjs";
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 import { ForgotPassword } from "../view-model/forgot-password.model";
 import { ResetPassword } from "../view-model/reset-password.model";
 import { ConfirmEmail } from "../view-model/confirm-email.model";
 
 @Injectable()
 export class UserService {
-    
-    
     
     constructor(private http: HttpClient) {
         // set token if saved in local storage

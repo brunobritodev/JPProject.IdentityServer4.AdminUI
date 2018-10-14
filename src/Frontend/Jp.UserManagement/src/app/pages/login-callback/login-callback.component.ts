@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { OAuthService, AuthConfig } from "angular-oauth2-oidc";
 import { Router } from "@angular/router";
-import { environment } from "../../../environments/environment";
+import { environment } from "@env/environment";
 import { SettingsService } from "../../core/settings/settings.service";
 
 @Component({

@@ -1,11 +1,10 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { map, catchError } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '@env/environment';
+
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

@@ -15,7 +15,7 @@ namespace Jp.Infra.Migrations.MySql.Identity.Configuration
     {
         public static IServiceCollection AddIdentityMySql(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+            var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityConfig).GetTypeInfo().Assembly.GetName().Name;
 
             var operationalStoreOptions = new OperationalStoreOptions();
