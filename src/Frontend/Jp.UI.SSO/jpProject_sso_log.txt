@@ -3370,3 +3370,81 @@ System.IO.IOException: Authentication failed because the remote party has closed
 2018-10-14 14:53:53.467 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
 2018-10-14 14:53:53.484 -03:00 [INF] Profile service returned to the following claim types: sub email picture preferred_username name email email_verified
 2018-10-14 14:53:53.488 -03:00 [DBG] End userinfo request
+2018-10-15 10:44:11.103 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-15 10:44:11.304 -03:00 [INF] SigninCredentialExtension added
+2018-10-15 10:44:13.886 -03:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `StoredEvent` (
+    `Action` varchar(100) NULL,
+    `AggregateId` longtext NULL,
+    `CreationDate` datetime(6) NOT NULL,
+    `Id` char(36) NOT NULL,
+    `Data` longtext NULL,
+    `User` longtext NULL,
+    CONSTRAINT `PK_StoredEvent` PRIMARY KEY (`Id`)
+);
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'StoredEvent' already exists ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'StoredEvent' already exists
+   at MySqlConnector.Core.ServerSession.TryAsyncContinuation(Task`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 1245
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 42
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 74
+   at MySql.Data.MySqlClient.MySqlDataReader.ReadFirstResultSetAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 299
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(MySqlCommand command, CommandBehavior behavior, ResultSetProtocol resultSetProtocol, IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 284
+   at MySqlConnector.Core.TextCommandExecutor.ExecuteReaderAsync(String commandText, MySqlParameterCollection parameterCollection, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\TextCommandExecutor.cs:line 37
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlCommand.cs:line 261
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+2018-10-15 10:44:46.645 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-15 10:44:46.784 -03:00 [INF] SigninCredentialExtension added
+2018-10-15 10:44:52.253 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-15 10:44:52.269 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-15 10:44:52.272 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-15 10:44:52.274 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-15 10:44:52.277 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-15 10:45:16.411 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-10-15 10:45:16.424 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-10-15 10:45:16.427 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-10-15 10:45:16.434 -03:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-10-15 10:45:16.449 -03:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-10-15 11:10:13.903 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-15 11:10:14.088 -03:00 [INF] SigninCredentialExtension added
+2018-10-15 11:10:18.066 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-15 11:10:18.081 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-15 11:10:18.084 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-15 11:10:18.085 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-15 11:10:18.087 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-15 15:33:22.804 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-15 15:33:22.938 -03:00 [INF] SigninCredentialExtension added
+2018-10-15 15:33:25.240 -03:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `StoredEvent` (
+    `Action` varchar(100) NULL,
+    `AggregateId` longtext NULL,
+    `CreationDate` datetime(6) NOT NULL,
+    `Id` char(36) NOT NULL,
+    `Data` longtext NULL,
+    `User` longtext NULL,
+    CONSTRAINT `PK_StoredEvent` PRIMARY KEY (`Id`)
+);
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'StoredEvent' already exists ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'StoredEvent' already exists
+   at MySqlConnector.Core.ServerSession.TryAsyncContinuation(Task`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 1245
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 42
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 74
+   at MySql.Data.MySqlClient.MySqlDataReader.ReadFirstResultSetAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 299
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(MySqlCommand command, CommandBehavior behavior, ResultSetProtocol resultSetProtocol, IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 284
+   at MySqlConnector.Core.TextCommandExecutor.ExecuteReaderAsync(String commandText, MySqlParameterCollection parameterCollection, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\TextCommandExecutor.cs:line 37
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlCommand.cs:line 261
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+2018-10-15 15:34:18.472 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-15 15:34:18.618 -03:00 [INF] SigninCredentialExtension added
+2018-10-15 15:34:35.725 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-15 15:34:35.740 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-15 15:34:35.742 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-15 15:34:35.746 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-15 15:34:35.748 -03:00 [DBG] Using Identity.Application as default scheme for forbid
