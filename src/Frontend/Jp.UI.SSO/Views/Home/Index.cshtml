@@ -28,31 +28,16 @@
 }
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card p-8">
-                <div class="card-body">
-                    <div class="clearfix">
-                        <div class="d-none d-lg-block">
-                            <img class="icon img-fluid" src="@Url.Content("~/images/brand/logo.png")">
-                        </div>
-                        <div class="d-lg-none text-center">
-                            <img class="icon img-fluid" src="@Url.Content("~/images/brand/logo-min.png")">
-                        </div>
-
-                        <h2 class="pt-3">Welcome to JP Project SSO.</h2>
-                        <p>A Single Sign On Server, User Management and Admin for ID4.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <p>
-                                Here are links to the
-                                <a href="https://github.com/brunohbrito/JP-Project">source code repository</a>,
-                                and <a href="https://jp-project.readthedocs.io/en/latest/index.html">docs to more info</a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="jumbotron bg-primary text-white">
+            <h1 class="display-4">Wellcome!</h1>
+            <p class="lead">Jp Project is composed by 3 WebApp: A Single Sign On Server, User Management and Admin for ID4.</p>
+            <hr class="my-4">
+            <p>Access below each of them.</p>
+            <p>
+                Here are links to the
+                <a class="text-white-50" href="https://github.com/brunohbrito/JP-Project">source code repository</a>,
+                and <a class="text-white-50" href="https://jp-project.readthedocs.io/en/latest/index.html">docs to more info</a>.
+            </p>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -73,33 +58,38 @@
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-4">
-            <div class="card text-white bg-info">
+        <div class="col-md-4 col-sm-4">
+            <div class="card">
                 <div class="card-body text-center">
-                    <div class="text-muted small text-uppercase font-weight-bold">IS4 Admin UI</div>
+                    <h2>IS4 Admin UI</h2>
                     <a href="@JpProjectConfiguration.IdentityServerAdminUrl">
-                        <img class="icon" height="64" src="@Url.Content("~/images/brand/logo.png")">
+                        <div class="d-none d-lg-block">
+                            <img class="icon img-fluid" src="@Url.Content("~/images/brand/logo.png")">
+                        </div>
+                        <div class="d-lg-none text-center">
+                            <img class="icon img-fluid" src="@Url.Content("~/images/brand/logo-min.png")">
+                        </div>
                     </a>
                     <p>
                         The main goal of Jp Project is provide a
                         <a class="text-black-50" href="@JpProjectConfiguration.IdentityServerAdminUrl">Admin User Interface</a>
-                        to manage Identity Server 4.
+                        to manage Identity Server 4. A rich UI, developed in Angular 6.
                     </p>
                     <p>
-                        A rich UI, developed in Angular 6.
+                        Click <a href="@JpProjectConfiguration.IdentityServerAdminUrl">here</a> to manage Server.
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-sm-4">
-            <div class="card">
+            <div class="card text-white bg-info">
                 <div class="card-body text-center">
                     <div class="text-muted small text-uppercase font-weight-bold">User Management</div>
                     <a href="@JpProjectConfiguration.UserManagementUrl">
-                        <img class="icon" height="64" src="@Url.Content("~/images/clientLogo/1.jpg")">
+                        <img class="icon" height="64" src="@Url.Content("~/images/clientLogo/1.png")">
                     </a>
                     <p>
-                        <a href="@JpProjectConfiguration.UserManagementUrl">User Management UI</a> is an UI for users to manage himself data.
+                        <a class="text-white" href="@JpProjectConfiguration.UserManagementUrl">User Management UI</a> is an UI for users to manage himself data.
                         you can change your profile, update password and so on.
                     </p>
                     <p>
