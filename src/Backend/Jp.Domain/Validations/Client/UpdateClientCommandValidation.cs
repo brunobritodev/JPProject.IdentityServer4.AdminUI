@@ -7,6 +7,7 @@ namespace Jp.Domain.Validations.Client
         public UpdateClientCommandValidation()
         {
             ValidateGrantType();
+            ValidateOldClientId();
         }
     }
 }

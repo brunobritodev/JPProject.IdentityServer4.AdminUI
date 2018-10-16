@@ -49,7 +49,7 @@ namespace Jp.Management.Controllers
 
         [HttpPost, Route("update"), Authorize(Policy = "Admin")
         ]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] ClientViewModel client)
         {
             if (!ModelState.IsValid)
             {

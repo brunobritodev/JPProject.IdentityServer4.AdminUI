@@ -97,7 +97,7 @@ namespace Jp.Management.Controllers
             await _userAppService.CreatePassword(model);
             return Response(true);
         }
-
+           
         [Route("remove-account"), HttpPost]
         public async Task<ActionResult<DefaultResponse<bool>>> RemoveAccount()
         {

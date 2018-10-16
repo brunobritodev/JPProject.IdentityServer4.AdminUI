@@ -16,6 +16,11 @@ namespace Jp.Domain.Validations.Client
             RuleFor(c => c.Client.ClientId).NotEmpty().WithMessage("ClientId must be set");
         }
 
+        protected void ValidateOldClientId()
+        {
+            RuleFor(c => c.OldClientId).NotEmpty().WithMessage("Last ClientId must be set");
+        }
+
         protected void ValidateClientName()
         {
             RuleFor(c => c.Client.ClientName).NotEmpty().WithMessage("Client Name must be set");

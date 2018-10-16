@@ -94,6 +94,7 @@ export class Client {
     pairWiseSubjectSalt: string;
     allowedCorsOrigins: string[];
     properties: ClientProperty[];
+    oldClientId: string;
 
     public static isValid(client: Client, errors: string[]): boolean {
         errors.length = 0;
