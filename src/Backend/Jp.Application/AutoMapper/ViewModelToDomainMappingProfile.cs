@@ -54,7 +54,7 @@ namespace Jp.Application.AutoMapper
             /*
              * Client commands
              */
-            CreateMap<Client, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c));
+            CreateMap<ClientViewModel, UpdateClientCommand>().ConstructUsing(c => new UpdateClientCommand(c, c.OldClientId));
             CreateMap<RemoveClientSecretViewModel, RemoveClientSecretCommand>().ConstructUsing(c => new RemoveClientSecretCommand(c.Id, c.ClientId));
             CreateMap<RemovePropertyViewModel, RemovePropertyCommand>().ConstructUsing(c => new RemovePropertyCommand(c.Id, c.ClientId));
             CreateMap<SaveClientSecretViewModel, SaveClientSecretCommand>().ConstructUsing(c => new SaveClientSecretCommand(c.ClientId, c.Description, c.Value, c.Type, c.Expiration, (int)c.Hash.GetValueOrDefault(HashType.Sha256)));
@@ -64,7 +64,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<RemoveClientViewModel, RemoveClientCommand>().ConstructUsing(c => new RemoveClientCommand(c.ClientId));
             CreateMap<CopyClientViewModel, CopyClientCommand>().ConstructUsing(c => new CopyClientCommand(c.ClientId));
             CreateMap<SaveClientViewModel, SaveClientCommand>().ConstructUsing(c => new SaveClientCommand(c.ClientId, c.ClientName, c.ClientUri, c.LogoUri, c.Description, c.ClientType));
-
+            
             /*
              * Identity Resource commands
              */

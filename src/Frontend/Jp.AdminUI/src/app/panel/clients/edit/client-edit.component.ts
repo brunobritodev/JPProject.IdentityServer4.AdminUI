@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ClientService } from "@app/clients/clients.service";
-import { flatMap } from "rxjs/operators";
+import { flatMap, tap } from "rxjs/operators";
 import { Client } from "@shared/viewModel/client.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
@@ -24,6 +24,7 @@ export class ClientEditComponent implements OnInit {
         showCloseButton: true
     });
     public showButtonLoading: boolean;
+    public clientId: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -33,7 +34,7 @@ export class ClientEditComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(flatMap(p => this.clientService.getClientDetails(p["clientId"]))).subscribe(result => this.model = result.data);
+        this.route.params.pipe(tap(p => this.clientId = p["clientId"])).pipe(flatMap(p => this.clientService.getClientDetails(p["clientId"]))).subscribe(result => this.model = result.data);
         this.errors = [];
         this.showButtonLoading = false;
     }
@@ -45,7 +46,7 @@ export class ClientEditComponent implements OnInit {
         this.showButtonLoading = true;
         this.errors = [];
         try {
-
+            this.model.oldClientId = this.clientId;
             this.clientService.update(this.model).subscribe(
                 registerResult => {
                     if (registerResult.data) {
