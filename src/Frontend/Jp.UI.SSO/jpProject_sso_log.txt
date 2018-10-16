@@ -3448,3 +3448,396 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'StoredEvent' already 
 2018-10-15 15:34:35.742 -03:00 [DBG] Using Identity.External as default scheme for sign-out
 2018-10-15 15:34:35.746 -03:00 [DBG] Using Identity.Application as default scheme for challenge
 2018-10-15 15:34:35.748 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-16 10:08:51.633 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-16 10:08:51.831 -03:00 [INF] SigninCredentialExtension added
+2018-10-16 10:08:55.667 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-16 10:08:55.681 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-16 10:08:55.684 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-16 10:08:55.686 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-16 10:08:55.688 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-16 10:09:54.158 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-10-16 10:09:54.274 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:09:54.281 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:09:54.312 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-16 10:09:54.323 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-16 10:09:54.328 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-16 10:09:54.333 -03:00 [DBG] Start discovery request
+2018-10-16 10:09:54.595 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-10-16 10:09:54.642 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-10-16 10:09:54.650 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:09:54.653 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:09:54.656 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-16 10:09:54.659 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-16 10:09:54.661 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-16 10:09:54.666 -03:00 [DBG] Start key discovery request
+2018-10-16 10:09:54.701 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-10-16 10:09:54.709 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-10-16 10:09:54.712 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-10-16 10:09:54.718 -03:00 [DBG] Start authorize request
+2018-10-16 10:09:54.726 -03:00 [DBG] No user present in authorize request
+2018-10-16 10:09:54.731 -03:00 [DBG] Start authorize request protocol validation
+2018-10-16 10:09:54.905 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:09:54.942 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:09:54.978 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:09:54.993 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:09:55.001 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:09:55.009 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-16 10:09:55.020 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.user",
+  "State": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "Nonce": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email jp_api.user",
+    "nonce": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp"
+  }
+}
+2018-10-16 10:09:55.030 -03:00 [INF] Showing login: User is not authenticated
+2018-10-16 10:09:55.147 -03:00 [DBG] Start authorize request protocol validation
+2018-10-16 10:09:55.162 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:09:55.167 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:09:55.175 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:09:55.180 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:09:55.187 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:09:55.189 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-16 10:09:55.205 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:00.848 -03:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-10-16 10:10:01.049 -03:00 [DBG] Augmenting SignInContext
+2018-10-16 10:10:01.053 -03:00 [DBG] Adding idp claim with value: local
+2018-10-16 10:10:01.055 -03:00 [DBG] Adding amr claim with value: pwd
+2018-10-16 10:10:01.057 -03:00 [DBG] Adding auth_time claim with value: 1539695401
+2018-10-16 10:10:01.068 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-10-16 10:10:01.083 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bruno",
+  "SubjectId": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+  "DisplayName": "bruno",
+  "Endpoint": "UI",
+  "ActivityId": "0HLHJD2KKMALS:00000004",
+  "TimeStamp": "2018-10-16T13:10:01Z",
+  "ProcessId": 22828,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-16 10:10:01.118 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-10-16 10:10:01.122 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-10-16 10:10:01.124 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-10-16 10:10:01.130 -03:00 [DBG] Start authorize callback request
+2018-10-16 10:10:01.135 -03:00 [DBG] User in authorize request: 08d632a4-6133-35d1-b9e3-f32cd121a327
+2018-10-16 10:10:01.138 -03:00 [DBG] Start authorize request protocol validation
+2018-10-16 10:10:01.151 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:01.156 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:01.163 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:01.168 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:01.176 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:01.178 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-16 10:10:01.181 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.user",
+  "State": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "Nonce": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "SessionId": "5c3c00bd90e24b7fd4c4dffd83942822",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email jp_api.user",
+    "nonce": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp"
+  }
+}
+2018-10-16 10:10:01.228 -03:00 [DBG] pxDeYq4TjC6m7Pk2RnPrNxdNuJb8lt6XOnW5e0mVpUA= found in database: false
+2018-10-16 10:10:01.231 -03:00 [DBG] user_consent grant with value: UserManagementUI|08d632a4-6133-35d1-b9e3-f32cd121a327 not found in store.
+2018-10-16 10:10:01.233 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-10-16 10:10:01.235 -03:00 [INF] Showing consent: User has not yet consented
+2018-10-16 10:10:01.254 -03:00 [DBG] Start authorize request protocol validation
+2018-10-16 10:10:01.268 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:01.273 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:01.280 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:01.284 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:01.292 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:01.295 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-16 10:10:01.308 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:01.312 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:01.324 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:03.028 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-10-16 10:10:03.045 -03:00 [DBG] Start authorize request protocol validation
+2018-10-16 10:10:03.062 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:03.068 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:03.076 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:03.080 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:03.100 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:03.103 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-16 10:10:03.124 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-10-16 10:10:03.128 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-10-16 10:10:03.131 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-10-16 10:10:03.133 -03:00 [DBG] Start authorize callback request
+2018-10-16 10:10:03.138 -03:00 [DBG] User in authorize request: 08d632a4-6133-35d1-b9e3-f32cd121a327
+2018-10-16 10:10:03.141 -03:00 [DBG] Start authorize request protocol validation
+2018-10-16 10:10:03.153 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:03.160 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:03.169 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:03.174 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:03.181 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-10-16 10:10:03.184 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-10-16 10:10:03.186 -03:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.user",
+  "State": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "Nonce": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "SessionId": "5c3c00bd90e24b7fd4c4dffd83942822",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email jp_api.user",
+    "nonce": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp"
+  }
+}
+2018-10-16 10:10:03.195 -03:00 [DBG] pxDeYq4TjC6m7Pk2RnPrNxdNuJb8lt6XOnW5e0mVpUA= found in database: false
+2018-10-16 10:10:03.198 -03:00 [DBG] user_consent grant with value: UserManagementUI|08d632a4-6133-35d1-b9e3-f32cd121a327 not found in store.
+2018-10-16 10:10:03.200 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2018-10-16 10:10:03.207 -03:00 [INF] User consented to scopes: ["openid","profile","email","jp_api.user"]
+2018-10-16 10:10:03.210 -03:00 [DBG] User indicated to remember consent for scopes: ["openid","profile","email","jp_api.user"]
+2018-10-16 10:10:03.215 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 08d632a4-6133-35d1-b9e3-f32cd121a327
+2018-10-16 10:10:03.230 -03:00 [DBG] pxDeYq4TjC6m7Pk2RnPrNxdNuJb8lt6XOnW5e0mVpUA= not found in database
+2018-10-16 10:10:03.411 -03:00 [DBG] Creating Implicit Flow response.
+2018-10-16 10:10:03.429 -03:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-10-16 10:10:03.432 -03:00 [DBG] Getting claims for access token for subject: 08d632a4-6133-35d1-b9e3-f32cd121a327
+2018-10-16 10:10:03.495 -03:00 [DBG] Getting claims for identity token for subject: 08d632a4-6133-35d1-b9e3-f32cd121a327 and client: UserManagementUI
+2018-10-16 10:10:03.499 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-10-16 10:10:03.512 -03:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+  "Scopes": "openid profile email jp_api.user",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****ohrw"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****yCcA"
+    }
+  ],
+  "ActivityId": "0HLHJD2KKMALS:00000009",
+  "TimeStamp": "2018-10-16T13:10:03Z",
+  "ProcessId": 22828,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-16 10:10:03.519 -03:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+  "ClientId": "UserManagementUI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "State": "6vxbZ6saHvFqIMTpPyAz7rLGuhkjEZ6g1Wcq5uDp",
+  "Scope": "openid profile email jp_api.user"
+}
+2018-10-16 10:10:03.535 -03:00 [DBG] Augmenting SignInContext
+2018-10-16 10:10:03.538 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-10-16 10:10:04.444 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-10-16 10:10:04.450 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:04.453 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:04.455 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-16 10:10:04.458 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-16 10:10:04.460 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-16 10:10:04.462 -03:00 [DBG] Start discovery request
+2018-10-16 10:10:04.476 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-10-16 10:10:04.515 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-10-16 10:10:04.525 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:04.528 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:04.532 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-16 10:10:04.537 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-16 10:10:04.541 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-16 10:10:04.544 -03:00 [DBG] Start key discovery request
+2018-10-16 10:10:05.629 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-10-16 10:10:05.636 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:05.639 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:05.683 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-10-16 10:10:05.690 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:05.693 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:05.696 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-16 10:10:05.701 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-16 10:10:05.703 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-16 10:10:05.711 -03:00 [DBG] Start userinfo request
+2018-10-16 10:10:05.715 -03:00 [DBG] Bearer token found in header
+2018-10-16 10:10:05.751 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:05.766 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:05.775 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-16 10:10:05.781 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1539695403,
+    "exp": 1539699003,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "jp_api"
+    ],
+    "client_id": "UserManagementUI",
+    "sub": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+    "auth_time": 1539695401,
+    "idp": "local",
+    "is4-rights": "manager",
+    "username": "bruno",
+    "email": "bhdebrito@gmail.com",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "jp_api.user"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-16 10:10:05.790 -03:00 [DBG] Creating userinfo response
+2018-10-16 10:10:05.795 -03:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-10-16 10:10:05.799 -03:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-10-16 10:10:05.805 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:05.808 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email_verified email
+2018-10-16 10:10:05.811 -03:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-10-16 10:10:05.815 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:05.830 -03:00 [INF] Profile service returned to the following claim types: sub email preferred_username name email email_verified
+2018-10-16 10:10:05.833 -03:00 [DBG] End userinfo request
+2018-10-16 10:10:07.623 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-16 10:10:07.627 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-16 10:10:07.629 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-16 10:10:07.631 -03:00 [DBG] Start discovery request
+2018-10-16 10:10:07.640 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-10-16 10:10:07.687 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-16 10:10:07.691 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-16 10:10:07.693 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-16 10:10:07.695 -03:00 [DBG] Start key discovery request
+2018-10-16 10:10:16.099 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-10-16 10:10:16.106 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:16.110 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:16.114 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-16 10:10:16.120 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-16 10:10:16.125 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-16 10:10:16.131 -03:00 [DBG] Start discovery request
+2018-10-16 10:10:16.149 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-10-16 10:10:16.305 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-10-16 10:10:16.311 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:16.313 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:16.316 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-16 10:10:16.320 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-16 10:10:16.325 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-16 10:10:16.329 -03:00 [DBG] Start key discovery request
+2018-10-16 10:10:16.373 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-10-16 10:10:16.378 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:16.382 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:16.429 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-10-16 10:10:16.442 -03:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-10-16 10:10:16.449 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-10-16 10:10:16.453 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-10-16 10:10:16.461 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-10-16 10:10:16.466 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-10-16 10:10:16.471 -03:00 [DBG] Start userinfo request
+2018-10-16 10:10:16.489 -03:00 [DBG] Bearer token found in header
+2018-10-16 10:10:16.533 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:16.576 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-16 10:10:16.585 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-10-16 10:10:16.589 -03:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1539695403,
+    "exp": 1539699003,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "jp_api"
+    ],
+    "client_id": "UserManagementUI",
+    "sub": "08d632a4-6133-35d1-b9e3-f32cd121a327",
+    "auth_time": 1539695401,
+    "idp": "local",
+    "is4-rights": "manager",
+    "username": "bruno",
+    "email": "bhdebrito@gmail.com",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "jp_api.user"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-10-16 10:10:16.594 -03:00 [DBG] Creating userinfo response
+2018-10-16 10:10:16.596 -03:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-10-16 10:10:16.599 -03:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-10-16 10:10:16.605 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:16.610 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email_verified email
+2018-10-16 10:10:16.613 -03:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-10-16 10:10:16.619 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-10-16 10:10:16.637 -03:00 [INF] Profile service returned to the following claim types: sub email preferred_username name email email_verified
+2018-10-16 10:10:16.640 -03:00 [DBG] End userinfo request
+2018-10-16 10:13:45.747 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-16 10:13:45.898 -03:00 [INF] SigninCredentialExtension added
+2018-10-16 10:13:49.695 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-16 10:13:49.711 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-16 10:13:49.714 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-16 10:13:49.716 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-16 10:13:49.719 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-16 10:13:50.993 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-10-16 10:13:51.007 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-10-16 10:13:51.010 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-10-16 10:13:51.015 -03:00 [DBG] Start discovery request
+2018-10-16 10:13:51.345 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-10-16 10:13:51.428 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-10-16 10:13:51.433 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-10-16 10:13:51.437 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-10-16 10:13:51.441 -03:00 [DBG] Start key discovery request
