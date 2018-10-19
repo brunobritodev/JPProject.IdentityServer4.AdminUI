@@ -11,7 +11,7 @@ Jp Project is a Open Source Admin UI for IdentityServer4.
 
 Check it now at [Jp Project](https://jpproject.azurewebsites.net/admin-ui/).
 
-You can check also [SSO](https://jpproject.azurewebsites.net/sso/) and [User Management]((https://jpproject.azurewebsites.net/user-management/)
+You can check also [SSO](https://jpproject.azurewebsites.net/sso/) and [User Management](https://jpproject.azurewebsites.net/user-management/)
 
 _New users are readonly_
 
