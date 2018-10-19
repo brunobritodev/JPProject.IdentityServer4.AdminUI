@@ -14,7 +14,7 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 
 Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-Now we are online! `See it in action <https://jpproject.azurewebsites.net/signin-google>`_
+Now we are online! `See it in action <https://jpproject.azurewebsites.net/admin-ui>`_
 
 There is a intro video too!
 
