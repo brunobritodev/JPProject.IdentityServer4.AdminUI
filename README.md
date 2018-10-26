@@ -3,12 +3,15 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/08v6mg6q439x16xt?svg=true)](https://ci.appveyor.com/project/brunohbrito/jp-project)
 [![Build Status](https://dev.azure.com/brunohbrito/Jp-Project/_apis/build/status/brunohbrito.JP-Project)](https://dev.azure.com/brunohbrito/Jp-Project/_build/latest?definitionId=1)
 [![License](https://img.shields.io/github/license/brunohbrito/jp-project.svg)](LICENSE)
+![DOCS](https://readthedocs.org/projects/jp-project/badge/?version=latest&style=flat)
 
 Jp Project is a Open Source Admin UI for IdentityServer4. 
 
 # We are online at Azure. 
 
-Check it now at [Jp Project](https://jpproject.azurewebsites.net/sso/).
+Check it now at [Jp Project](https://jpproject.azurewebsites.net/admin-ui/).
+
+You can check also [SSO](https://jpproject.azurewebsites.net/sso/) and [User Management](https://jpproject.azurewebsites.net/user-management/)
 
 _New users are readonly_
 
