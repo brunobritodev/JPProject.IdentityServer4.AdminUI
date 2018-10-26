@@ -30,7 +30,7 @@ export class ApiResourceSecretsComponent implements OnInit {
     public showButtonLoading: boolean;
     public resourceName: string;
     public hashTypes: { id: number; text: string; }[];
-    public secretTypes: { id: number; text: string; }[];
+    public secretTypes: { id: string; text: string; }[];
     public bsConfig = {
         containerClass: 'theme-angle'
     };
@@ -48,7 +48,7 @@ export class ApiResourceSecretsComponent implements OnInit {
         this.model = new ApiResourceSecret();
         this.showButtonLoading = false;
         this.hashTypes = [{ id: 0, text: "Sha256" }, { id: 1, text: "Sha512" }];
-        this.secretTypes = [{ id: 0, text: "SharedSecret" }, { id: 1, text: "X509Thumbprint" }, { id: 2, text: "X509Name" }, { id: 3, text: "X509CertificateBase64" }];
+        this.secretTypes = [{ id: 'SharedSecret', text: "Shared Secret" }, { id: "X509Thumbprint", text: "X509 Thumbprint" }, { id: "X509Name", text: "X509 Name" }, { id: "X509CertificateBase64", text: "X509 Certificate Base64" }];
     }
 
     public showSuccessMessage() {
