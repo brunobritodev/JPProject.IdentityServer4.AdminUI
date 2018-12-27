@@ -4,7 +4,7 @@ import { of, from, Observable, defer } from "rxjs";
 import { Router } from "@angular/router";
 import { map, switchMap, share, tap } from "rxjs/operators";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class SettingsService {
 
 

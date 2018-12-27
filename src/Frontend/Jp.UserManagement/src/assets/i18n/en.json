@@ -1,0 +1,100 @@
+{
+	"app": {
+		"ANGULAR-BLOG": "Angular blog",
+		"CLI": "CLI Documentation",
+		"HELP-YOU": "Here are some links to help you start:",
+		"HEROES": "Tour of Heroes",
+		"WELCOME-TO": "WELCOME-TO"
+	},
+	"confirm-email": {
+		"E-MAIL-CONFIRMATION": "E-mail confirmation",
+		"SUCCESS": "Success",
+		"THANK-YOU.": "THANK YOU.",
+		"VALIDATING-E-MAIL": "Validating e-mail"
+	},
+	"error": {
+		"404": "404",
+		"500": "500",
+		"OOPS": "Oops! You're lost.",
+		"PAGE-NOT-FOUND": "The page you are looking for was not found.",
+		"PROBLEM": "Houston, we have a problem!",
+		"UNAVAILABLE": "The page you are looking for is temporarily unavailable."
+	},
+	"general": {
+		"AVAILABLE-LANGUAGES": "Available Languages",
+		"LOGIN": "Login",
+		"NO": "No",
+		"SEARCH": "Search",
+		"YES": "Yes"
+	},
+	"home": {
+		"LEARN-MORE": "Learn more",
+		"MANAGEMENT": "This is User Management UI for JP Project. Here the user can manage password (change, add) and update profile data.",
+		"WELCOME": "Welcome!"
+	},
+	"login": {
+		"LOADING": "Wait while server is loading some info.",
+		"REGISTER-NOW": "Register Now!",
+		"SIGN-UP": "Sign up"
+	},
+	"login-callback": {
+		"LOADING": "Loading user data"
+	},
+	"recover": {
+		"CHECK": "Check your e-mail.",
+		"LOADING": "Loading",
+		"RESET": "Send reset link",
+		"SENDING-EMAIL": "Sending e-mail",
+		"SUCCESS": "Success",
+		"USERNAME-EMAIL": "Please provide your username or e-mail."
+	},
+	"register": {
+		"CREATE-ACCOUNT": "Create your account",
+		"FACEBOOK": "Facebook",
+		"GOOGLE+": "Google+",
+		"REGISTER": "Register"
+	},
+	"reset-password": {
+		"RESET": "Reset",
+		"RESET-PASSWORD": "Reset your password"
+	},
+	"unauthorized": {
+		"ADMINISTRATOR": "Contact administrator",
+		"DO-NOT-ACCESS": "You do not have access to this area.",
+		"UNAUTHORIZED": "Unauthorized"
+	},
+	"user": {
+		"account": {
+			"ARE-YOU-SURE": "Are you sure?",
+			"CONFIRM-PASSWORD": "Confirm password",
+			"CREATE-PASSWORD": "Create password",
+			"CURRENT-PASSWORD": "Current password",
+			"DELETE-ACCOUNT": "Delete account",
+			"DELETE-CONFIRMATION": "You will be asked for confirmation before delete account.",
+			"NEW-PASSWORD": "New password",
+			"REMOVE-ACCOUNT": "Remove Account",
+			"TITLE": "Account",
+			"UPDATE-PASSWORD": "Update password"
+		},
+		"history": {
+			"ACTION": "Action",
+			"DETAILS": "Details",
+			"TITLE": "Logs",
+			"WHEN": "When",
+			"WHO": "Who"
+		},
+		"profile": {
+			"BIO": "Bio",
+			"CHOOSE-FILE": "Choose File",
+			"COMPANY": "Company",
+			"JOB TITLE": "Job Title",
+			"NAME": "Name",
+			"PHONE NUMBER": "Phone Number",
+			"PICTURE": "Picture",
+			"PROFILE": "Profile",
+			"UPDATE-SETTINGS": "Update Settings",
+			"UPLOAD": "Upload",
+			"URL": "URL"
+		}
+	}
+}

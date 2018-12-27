@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Welcome" xml:space="preserve">
+    <value>&lt;h1 class="display-4"&gt;Bem vindo!&lt;/h1&gt;
+                &lt;p class="lead"&gt;Jp Project é composto por 3 WebApp: Single Sign On Server, Administração de usuário e painel de Administração para IdentityServer4.&lt;/p&gt;
+                &lt;hr class="my-4"&gt;
+                &lt;p&gt;Abaixo é possivel acessar cada um deles.&lt;/p&gt;
+                &lt;p&gt;
+                    Aqui estão os links para o
+                    &lt;a class="text-white-50" href="https://github.com/brunohbrito/JP-Project"&gt;source code repository&lt;/a&gt;,
+                    e também a&lt;a class="text-white-50" href="https://jp-project.readthedocs.io/en/latest/index.html"&gt;documentação para informações adicionais&lt;/a&gt;.
+                &lt;/p&gt;</value>
+  </data>
+  <data name="Menu-Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Menu-User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Body-Click" xml:space="preserve">
+    <value>Clique</value>
+  </data>
+  <data name="Body-Demo" xml:space="preserve">
+    <value>Escolha um demo</value>
+  </data>
+  <data name="Body-Document" xml:space="preserve">
+    <value>O IdentityServer publica um
+                            &lt;a href="~/.well-known/openid-configuration"&gt;discovery document&lt;/a&gt;. Lá você pode encontrar os metadados, links, endpoints e outras informações úteis do SSO.</value>
+  </data>
+  <data name="Body-Here" xml:space="preserve">
+    <value>aqui</value>
+  </data>
+  <data name="Body-HimselfData" xml:space="preserve">
+    <value>é uma interface para gerenciar o profile do usuário. Pode ser atualizado a senha, foto de perfil e muito mais.</value>
+  </data>
+  <data name="Body-IS4-Main-Goal" xml:space="preserve">
+    <value>O objetivo principal do Jp Project é prover um</value>
+  </data>
+  <data name="Body-Jp-Description" xml:space="preserve">
+    <value>&lt;h1 class="mb-3 text-sm-nowrap"&gt;Jp Project&lt;/h1&gt;
+                    &lt;h2 class="mb-3 text-sm-nowrap"&gt;Painel de Administração gratuito do IdentityServer4&lt;/h2&gt;
+                    &lt;p class="lead"&gt;
+                        Um solução completa baseado em Bootstrap para criar teu próprio servidor de&lt;strong&gt; Single Sign On&lt;/strong&gt;.
+                    &lt;/p&gt;
+                    &lt;p class="lead mb-4"&gt;
+                        Jp Project é uma iniciativa open source. Contruído com Bootstrap 4, Angular 7 e .Net Core 2.2.
+                    &lt;/p&gt;
+                    &lt;div class="d-flex flex-column flex-md-row lead mb-3"&gt;
+                        &lt;a href="#live-preview" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;Veja agora&lt;/a&gt;
+                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;Download Jp Project&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class="version text-small mt-3"&gt;
+                        Library version: &lt;strong&gt;1.1&lt;/strong&gt; · Admin template version: &lt;strong&gt;1.1&lt;/strong&gt;
+                    &lt;/div&gt;</value>
+  </data>
+  <data name="Body-Manage" xml:space="preserve">
+    <value>para gerenciar suas permissões concedidas.</value>
+  </data>
+  <data name="Body-ManageServer" xml:space="preserve">
+    <value>para gerenciar o server.</value>
+  </data>
+  <data name="Body-RichUI" xml:space="preserve">
+    <value>para gerenciar o Identity Server 4. Uma interface rica desenvolvida em Angular 7.</value>
+  </data>
+  <data name="Body-SSO" xml:space="preserve">
+    <value>Single Sign On</value>
+  </data>
+  <data name="Body-UIAngular7" xml:space="preserve">
+    <value>Uma interface rica desenvolvida em Angular 7 e Core UI template.</value>
+  </data>
+  <data name="Body-User-Interface" xml:space="preserve">
+    <value>Admin User Interface</value>
+  </data>
+  <data name="Body-UserManagement" xml:space="preserve">
+    <value>User Management UI</value>
+  </data>
+</root>

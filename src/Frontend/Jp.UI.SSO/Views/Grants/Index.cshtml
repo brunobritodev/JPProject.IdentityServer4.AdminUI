@@ -1,14 +1,17 @@
 ﻿@using Jp.UI.SSO.Controllers.Grants
 @model Jp.UI.SSO.Controllers.Grants.GrantsViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @section breadcrumb
     {
     <!-- Breadcrumb-->
+    <!-- Breadcrumb-->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">@Localizer["Title-Home"]</li>
         <li class="breadcrumb-item">
-            <a asp-action="Index" asp-controller="Home">User</a>
+            <a asp-action="Index" asp-controller="Home">@Localizer["Title-User"]</a>
         </li>
-        <li class="breadcrumb-item active">Grants</li>
+        <li class="breadcrumb-item active">@Localizer["Body-Grants"]</li>
     </ol>
 }
 @if (!Model.Grants.Any())
@@ -16,11 +19,11 @@
     <div class="row justify-content-center">
         <div class="col-lg-6">
             <div class="card">
-                <div class="card-header">Client Application Access.</div>
+                <div class="card-header">@Localizer["Body-Client-Application-Access"]</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-8">
-                            <div class="alert alert-warning" role="alert">You have not given access to any applications!</div>
+                            <div class="alert alert-warning" role="alert">@Localizer["Body-Applications"]</div>
                         </div>
                     </div>
 
@@ -47,18 +50,18 @@
                             </div>
                             <div class="col-sm-8">
                                 <p>
-                                    <span class="created">Created:</span> @grant.Created.ToString("yyyy-MM-dd")
+                                    <span class="created">@Localizer["Body-Created"]</span> @grant.Created.ToString("yyyy-MM-dd")
                                 </p>
                                 @if (grant.Expires.HasValue)
                                 {
                                     <p>
-                                        <span class="expires">Expires:</span> @grant.Expires.Value.ToString("yyyy-MM-dd")
+                                        <span class="expires">@Localizer["Body-Expires"]</span> @grant.Expires.Value.ToString("yyyy-MM-dd")
                                     </p>
                                 }
                                 @if (grant.IdentityGrantNames.Any())
                                 {
                                     <p>
-                                        <div class="granttype">Identity Grants</div>
+                                        <div class="granttype">@Localizer["Body-Identity-Grants"]</div>
                                         <ul>
                                             @foreach (var name in grant.IdentityGrantNames)
                                             {
@@ -70,7 +73,7 @@
                                 @if (grant.ApiGrantNames.Any())
                                 {
                                     <p>
-                                        <div class="granttype">API Grants</div>
+                                        <div class="granttype">@Localizer["Body-API-Grants"]</div>
                                         <ul>
                                             @foreach (var name in grant.ApiGrantNames)
                                             {
@@ -85,7 +88,7 @@
                     <div class="card-footer">
                         <form asp-action="Revoke">
                             <input type="hidden" name="clientId" value="@grant.ClientId">
-                            <button class="btn btn-danger">Revoke Access</button>
+                            <button class="btn btn-danger">@Localizer["Body-Revoke-Access"]</button>
                         </form>
                     </div>
                 </div>

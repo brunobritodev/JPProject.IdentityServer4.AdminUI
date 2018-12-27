@@ -13,7 +13,10 @@
             ],
             "@env/*": [
                 "environments/*"
-            ]
+            ],
+            "@core/*": [
+                "app/core/*"
+            ],
         }
     },
     "exclude": [

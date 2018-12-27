@@ -1,0 +1,100 @@
+{
+	"app": {
+		"ANGULAR-BLOG": "Blog angular",
+		"CLI": "Documentación CLI",
+		"HELP-YOU": "Aquí hay algunos enlaces para ayudarte a comenzar:",
+		"HEROES": "Tour de heroes",
+		"WELCOME-TO": "Bienvenido a"
+	},
+	"confirm-email": {
+		"E-MAIL-CONFIRMATION": "Confirmación de correo electrónico",
+		"SUCCESS": "Éxito",
+		"THANK-YOU.": "GRACIAS.",
+		"VALIDATING-E-MAIL": "Validando el correo electrónico"
+	},
+	"error": {
+		"404": "404",
+		"500": "500",
+		"OOPS": "Ups! Estas perdido.",
+		"PAGE-NOT-FOUND": "No se encontró la página que busca.",
+		"PROBLEM": "¡Houston, tenemos un problema!",
+		"UNAVAILABLE": "La página que está buscando no está disponible temporalmente."
+	},
+	"general": {
+		"AVAILABLE-LANGUAGES": "Idiomas Disponibles",
+		"LOGIN": "Iniciar sesión",
+		"NO": "No",
+		"SEARCH": "Buscar",
+		"YES": "Sí"
+	},
+	"home": {
+		"LEARN-MORE": "aprende más",
+		"MANAGEMENT": "Esta es la UI de gestión de usuarios para JP Project. Aquí el usuario puede administrar la contraseña (cambiar, agregar) y actualizar los datos del perfil.",
+		"WELCOME": "¡Bienvenido!"
+	},
+	"login": {
+		"LOADING": "Espere mientras el servidor está cargando alguna información.",
+		"REGISTER-NOW": "¡Regístrate ahora!",
+		"SIGN-UP": "Regístrate"
+	},
+	"login-callback": {
+		"LOADING": "Cargando datos de usuario"
+	},
+	"recover": {
+		"CHECK": "Consultar su correo electrónico.",
+		"LOADING": "Cargando",
+		"RESET": "Enviar enlace de restablecimiento",
+		"SENDING-EMAIL": "Enviando correo electronico",
+		"SUCCESS": "Éxito",
+		"USERNAME-EMAIL": "Por favor ingrese su nombre de usuario o correo electrónico."
+	},
+	"register": {
+		"CREATE-ACCOUNT": "Crea tu cuenta",
+		"FACEBOOK": "Facebook",
+		"GOOGLE+": "GOOGLE",
+		"REGISTER": "Registro"
+	},
+	"reset-password": {
+		"RESET": "Reiniciar",
+		"RESET-PASSWORD": "Restablecer su contraseña"
+	},
+	"unauthorized": {
+		"ADMINISTRATOR": "Contactar administrador",
+		"DO-NOT-ACCESS": "Usted no tiene acceso a esta área.",
+		"UNAUTHORIZED": "No autorizado"
+	},
+	"user": {
+		"account": {
+			"ARE-YOU-SURE": "¿Estás seguro?",
+			"CONFIRM-PASSWORD": "Confirmar contraseña",
+			"CREATE-PASSWORD": "Crear contraseña",
+			"CURRENT-PASSWORD": "Contraseña actual",
+			"DELETE-ACCOUNT": "Borrar cuenta",
+			"DELETE-CONFIRMATION": "Se le pedirá confirmación antes de eliminar la cuenta.",
+			"NEW-PASSWORD": "Nueva contraseña",
+			"REMOVE-ACCOUNT": "Eliminar cuenta",
+			"TITLE": "Cuenta",
+			"UPDATE-PASSWORD": "Actualiza contraseña"
+		},
+		"history": {
+			"ACTION": "Acción",
+			"DETAILS": "Detalles",
+			"TITLE": "registros",
+			"WHEN": "Cuándo",
+			"WHO": "Quien"
+		},
+		"profile": {
+			"BIO": "Bio",
+			"CHOOSE-FILE": "Elija el archivo",
+			"COMPANY": "Empresa",
+			"JOB TITLE": "Título profesional",
+			"NAME": "Nombre",
+			"PHONE NUMBER": "Número de teléfono",
+			"PICTURE": "Imagen",
+			"PROFILE": "Perfil",
+			"UPDATE-SETTINGS": "Ajustes de actualización",
+			"UPLOAD": "Subir",
+			"URL": "Url"
+		}
+	}
+}

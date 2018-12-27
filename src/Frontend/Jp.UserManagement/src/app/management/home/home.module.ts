@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -19,6 +19,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         FormsModule,
+        TranslateModule,
         RouterModule.forChild(routes),
     ],
     declarations: [
@@ -27,5 +28,5 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class HomeModule {
-
+    
 }

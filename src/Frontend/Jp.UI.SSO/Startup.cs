@@ -61,6 +61,9 @@ namespace Jp.UI.SSO
                 iis.AutomaticAuthentication = false;
             });
 
+            // Add localization
+            services.AddMvcLocalization();
+
             // Configure identity server
             services.ConfigureIdentityServerDatabase(Configuration, _environment, _logger);
 
@@ -89,6 +92,7 @@ namespace Jp.UI.SSO
             app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
+            app.UseLocalization();
             app.UseMvcWithDefaultRoute();
         }
 

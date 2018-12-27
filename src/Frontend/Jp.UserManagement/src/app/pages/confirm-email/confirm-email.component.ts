@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ConfirmEmail } from "../../shared/view-model/confirm-email.model";
 import { UserService } from "../../shared/services/user.service";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
+import { TranslatorService } from '@core/translator/translator.service';
 
 @Component({
     selector: "app-dashboard",
     templateUrl: "./confirm-email.component.html",
-    providers: [UserService]
+    providers: [UserService,TranslatorService]
 })
 export class ConfirmEmailComponent implements OnInit, OnDestroy {
 
@@ -21,7 +22,7 @@ export class ConfirmEmailComponent implements OnInit, OnDestroy {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private authService: UserService) {
+        private authService: UserService,public translator: TranslatorService) {
 
     }
 

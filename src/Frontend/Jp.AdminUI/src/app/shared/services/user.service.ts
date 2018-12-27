@@ -31,7 +31,7 @@ export class UserService {
 
     public update(updateCommand: UserProfile): Observable<DefaultResponse<boolean>> {
 
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
     }
     public save(model: UserProfile): Observable<DefaultResponse<boolean>> {
 
@@ -133,7 +133,7 @@ export class UserService {
     }
 
     public resetPassword(resetPassword: ResetPassword): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/reset-password", resetPassword);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/reset-password", resetPassword);
     }
 
     public showLogs(username: string): Observable<EventHistoryData[]> {

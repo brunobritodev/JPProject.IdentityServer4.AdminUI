@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-5 col-md-5">
             <div class="card b">
-                <div class="card-header bg-primary text-bold">Account</div>
+                <div class="card-header bg-primary text-bold">{{ 'user.account.TITLE' | translate }}</div>
                 <div class="card-body">
                     <div *ngIf="errors.length > 0">
                         <alert type="danger">
@@ -21,19 +21,18 @@
                     </div>
                     <div *ngIf="hasPassword">
                         <div class="form-group">
-                            <label>Current password</label>
+                            <label>{{ 'user.account.CURRENT-PASSWORD' | translate }}</label>
                             <input class="form-control" type="password" autocomplete="current-password" [(ngModel)]="changePass.oldPassword" />
                         </div>
                         <div class="form-group">
-                            <label>New password</label>
+                            <label>{{ 'user.account.NEW-PASSWORD' | translate }}</label>
                             <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="changePass.newPassword" />
                         </div>
                         <div class="form-group">
-                            <label>Confirm new password</label>
+                            <label>{{ 'user.account.CONFIRM-PASSWORD' | translate }}</label>
                             <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="changePass.confirmPassword" />
                         </div>
-                        <button class="btn btn-primary" type="button" (click)="changePassword()" *ngIf="!changingPassword">Update
-                            password
+                        <button class="btn btn-primary" type="button" (click)="changePassword()" *ngIf="!changingPassword">{{ 'user.account.UPDATE-PASSWORD' | translate }}
                         </button>
                         <div class="progress mb-3" *ngIf="changingPassword">
                             <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
@@ -43,15 +42,14 @@
                     <div *ngIf="!hasPassword">
 
                         <div class="form-group">
-                            <label>New password</label>
+                            <label>{{ 'user.account.NEW-PASSWORD' | translate }}</label>
                             <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="setPassword.newPassword" />
                         </div>
                         <div class="form-group">
-                            <label>Confirm new password</label>
+                            <label>{{ 'user.account.CONFIRM-PASSWORD' | translate }}</label>
                             <input class="form-control" type="password" autocomplete="new-password" [(ngModel)]="setPassword.confirmPassword" />
                         </div>
-                        <button class="btn btn-primary" type="button" (click)="createPassword()" *ngIf="!changingPassword">Create
-                            password
+                        <button class="btn btn-primary" type="button" (click)="createPassword()" *ngIf="!changingPassword">{{ 'user.account.CREATE-PASSWORD' | translate }}
                         </button>
                         <div class="progress mb-3" *ngIf="changingPassword">
                             <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
@@ -63,11 +61,11 @@
         </div>
         <div class="col-lg-5 col-md-5">
             <div class="card b">
-                <div class="card-header bg-danger text-bold">Delete account</div>
+                <div class="card-header bg-danger text-bold">{{ 'user.account.DELETE-ACCOUNT' | translate }}</div>
                 <div class="card-body bt">
-                    <p>You will be asked for confirmation before delete account.</p>
+                    <p>{{ 'user.account.DELETE-CONFIRMATION' | translate }}</p>
                     <button type="button" class="btn btn-danger" data-toggle="modal" (click)="dangerModal.show()">
-                        Delete account
+                        {{ 'user.account.DELETE-ACCOUNT' | translate }}
                     </button>
                 </div>
             </div>
@@ -80,17 +78,17 @@
     <div class="modal-dialog modal-danger" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Remove Account</h4>
+                <h4 class="modal-title">{{ 'user.account.REMOVE-ACCOUNT' | translate }}</h4>
                 <button type="button" class="close" (click)="dangerModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Are you sure?&hellip;</p>
+                <p>{{ 'user.account.ARE-YOU-SURE' | translate }}&hellip;</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" (click)="dangerModal.hide()">No</button>
-                <button type="button" class="btn btn-danger" (click)="removeAccount()">Yes</button>
+                <button type="button" class="btn btn-secondary" (click)="dangerModal.hide()">{{ 'user.account.NO' | translate }}</button>
+                <button type="button" class="btn btn-danger" (click)="removeAccount()">{{ 'user.account.YES' | translate }}</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

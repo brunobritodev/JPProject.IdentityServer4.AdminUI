@@ -18,19 +18,19 @@
     },
     "Jp.UI.SSO": {
       "commandName": "Project",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "https://+:5000;http://+:5001",
-        "APPINSIGHTS_INSTRUMENTATIONKEY": "d8ad6580-77c5-4e92-904a-43e8fbed5936",
-        
-        // "USER_MANAGEMENT_URI": "http://localhost:4200"
-        // "CERTIFICATE_TYPE": "File",
-        // "DATABASE_CONNECTION": "Server=.,1433;Initial Catalog=JpProjectTest;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;",
-        // For Docker certificate
-        // "ASPNETCORE_Kestrel__Certificates__Default__Password": ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3",
-        // "ASPNETCORE_Kestrel__Certificates__Default__Path": "/root/.dotnet/https/jpproject.pfx",
-        // Types:: File / Environment / Temporary / Store
-      },
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "ASPNETCORE_URLS": "https://+:5000;http://+:5001",
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "205fabcd-09ee-46f5-bb74-95780fc873da"
+
+            // "USER_MANAGEMENT_URI": "http://localhost:4200"
+            // "CERTIFICATE_TYPE": "File",
+            // "DATABASE_CONNECTION": "Server=.,1433;Initial Catalog=JpProjectTest;Persist Security Info=False;User ID=sa;Password=@Password1;MultipleActiveResultSets=False;Connection Timeout=30;",
+            // For Docker certificate
+            // "ASPNETCORE_Kestrel__Certificates__Default__Password": ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3",
+            // "ASPNETCORE_Kestrel__Certificates__Default__Path": "/root/.dotnet/https/jpproject.pfx",
+            // Types:: File / Environment / Temporary / Store
+        },
       "applicationUrl": "https://localhost:5000;http://localhost:5001"
     }
   }

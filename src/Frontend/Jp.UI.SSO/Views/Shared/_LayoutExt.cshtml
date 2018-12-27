@@ -38,10 +38,24 @@
     <meta name="theme-color" content="#ffffff">
     <link href="@Url.Content("~/css/jp.min.css")" rel="stylesheet">
 </head>
-<body class="app flex-row align-items-center">
+<body>
+    <div class="bg-danger text-center text-white p-3" style="background-color: #4776e6;background-image: linear-gradient(to right, #4776e6, #8e54e9);">
+        💪💪💪 Please help us on Github. Give us a star ⭐️ 🙏🙏 ➡
+        <span onclick="ga('send', 'event', 'Give us a star', 'Click', 'Top banner');" style="position:absolute;margin-left:10px;margin-top:-4px;">
 
-    @RenderBody()
-
+            <span>
+                <!-- Place this tag where you want the button to render. -->
+                <a class="github-button" href="https://github.com/brunohbrito/JP-Project" data-size="large" aria-label="Star brunohbrito/JP-Project on GitHub">Star</a>
+            </span>
+        </span>
+    </div>
+    <div class="app flex-row align-items-center">
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
     <script src="@Url.Content("~/js/jquery.min.js")"></script>
     <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
     <script src="@Url.Content("~/js/popper.min.js")"></script>

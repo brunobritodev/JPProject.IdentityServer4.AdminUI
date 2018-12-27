@@ -1,5 +1,7 @@
 ﻿@using Jp.UI.SSO.Controllers.Consent
 @model Jp.UI.SSO.Controllers.Consent.ScopeViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 <li class="list-group-item list-group-item-info">
     <div class="form-group row">
@@ -20,7 +22,7 @@
                 {
                     <input type="hidden"
                            name="ScopesConsented"
-                           value="@Model.Name"/>
+                           value="@Model.Name" />
                 }
                 <strong>@Model.DisplayName</strong>
                 @if (Model.Emphasize)
@@ -31,7 +33,7 @@
 
             @if (Model.Required)
             {
-                <span><em>(required)</em></span>
+                <span><em>@Localizer["Body-(required)"]</em></span>
             }
             @if (Model.Description != null)
             {

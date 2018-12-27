@@ -34,6 +34,8 @@
     "@coreui/coreui": "^2.0.4",
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
     "@coreui/icons": "0.2.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "angular-6-social-login-v2": "^1.0.5",
     "angular-oauth2-oidc": "^4.0.2",
     "bootstrap": "^4.1.3",

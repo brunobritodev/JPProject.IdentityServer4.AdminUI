@@ -4,11 +4,12 @@ import { Subscription } from "rxjs/Subscription";
 import { UserService } from "../../shared/services/user.service";
 import { ResetPassword } from "../../shared/view-model/reset-password.model";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
+import { TranslatorService } from '@core/translator/translator.service';
 
 @Component({
     selector: "app-dashboard",
     templateUrl: "./reset-password.component.html",
-    providers: [UserService]
+    providers: [UserService,TranslatorService]
 })
 export class ResetPasswordComponent implements OnInit, OnDestroy {
 
@@ -23,7 +24,8 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     constructor(
         private authService: UserService,
         private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        public translator: TranslatorService) {
     }
 
 

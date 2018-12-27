@@ -5,10 +5,11 @@ import { ProfilePictureViewModel } from '../../../shared/view-model/file-upload.
 import { DefaultResponse } from '../../../shared/view-model/default-response.model';
 import { AccountManagementService } from '../account-management.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslatorService } from '@core/translator/translator.service';
 
 @Component({
     templateUrl: 'profile.component.html',
-    providers: [AccountManagementService],
+    providers: [AccountManagementService,TranslatorService],
 
 })
 export class ProfileComponent implements OnInit {
@@ -27,7 +28,8 @@ export class ProfileComponent implements OnInit {
     constructor(
         private settings: SettingsService, 
         private profileService: AccountManagementService,
-        private toastr: ToastrService
+        private toastr: ToastrService,
+        public translator: TranslatorService
     ) {
 
     }

@@ -6,6 +6,7 @@ export const authConfig: AuthConfig = {
     clientId: "IS4-Admin",
     postLogoutRedirectUri: environment.Uri,
     redirectUri: environment.Uri + "/login-callback",
+    silentRefreshRedirectUri: environment.Uri + '/silent-refresh.html',
     scope: "openid profile email jp_api.is4",
     oidc: true,
 };

@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from "@angular/common/http";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
 import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
@@ -66,18 +66,31 @@ import { CoreModule } from "./core/core.module";
 import { AuthInterceptor } from "./core/interceptors/AuthInterceptor";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslatorService } from "./core/translator/translator.service";
+
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
+        }),
         OAuthModule.forRoot({
             resourceServer: {
                 allowedUrls: ["https://localhost:5003"],
                 sendAccessToken: true
             }
         }),
-        CoreModule.forRoot(),
         BrowserAnimationsModule, 
         ToastrModule.forRoot(),
         AppRoutingModule,
@@ -99,6 +112,7 @@ import { ToastrModule } from "ngx-toastr";
     providers: [
         { provide: AuthServiceConfig, useFactory: getAuthServiceConfigs },
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+
     ],
     bootstrap: [AppComponent]
 })
