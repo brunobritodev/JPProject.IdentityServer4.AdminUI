@@ -14,6 +14,7 @@ import { ConfirmEmailComponent } from "./confirm-email/confirm-email.component";
 import { P404Component } from "./error/404.component";
 import { P500Component } from "./error/500.component";
 import { NgxMaskModule } from "ngx-mask";
+import { TranslateModule } from "@ngx-translate/core";
 
 const routes: Routes = [
     { path: "login", component: LoginComponent, data: { title: "Login Page" } },
@@ -33,6 +34,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes, { enableTracing: true }),
         FormsModule,
         CommonModule,
+        TranslateModule,
         ReactiveFormsModule,
         AlertModule.forRoot(),
         NgxMaskModule.forRoot(),

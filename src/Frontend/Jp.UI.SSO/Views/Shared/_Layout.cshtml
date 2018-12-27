@@ -42,77 +42,84 @@
     <meta name="theme-color" content="#ffffff">
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
-<body class="app header-fixed sidebar-fixed aside-menu-fixed">
-    <header class="app-header navbar">
-        <a class="navbar-brand" href="#">
-            <div class="d-none d-lg-block">
-                <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo.png")" height="40" alt="JP Logo">
-                <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo.png")" width="40" alt="JP Logo">
-            </div>
-            <div class="d-lg-none text-left">
-                <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo-min.png")" height="40" alt="JP Logo">
-                <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo-min.png")" width="40" alt="JP Logo">
-            </div>
-        </a>
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link d-none d-md-block" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="img-avatar" src="@Url.Content(image)" alt="@name">@name
-                </a>
-                <a class="nav-link d-md-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="img-avatar" src="@Url.Content(image)" alt="@name">
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header text-center">
-                        <strong>Account</strong>
-                    </div>
-                    <a class="dropdown-item"
-                       asp-action="Index"
-                       asp-controller="Grants">
-                        <i class="fa fa-tasks"></i>
-                        <span>Grants</span>
-                    </a>
+<body>
+    <div class="bg-danger text-center text-white p-3">
+        💪💪💪 Please help us on Github. Give us a star ⭐️ 🙏🙏 ➡
 
-                    <a class="dropdown-item"
-                       asp-action="Logout"
-                       asp-controller="Account">
-                        <i class="fa fa-lock"></i> Logout
-                    </a>
-                    <div class="dropdown-header text-center">
-                        <strong>Settings</strong>
-                    </div>
-                    <a class="dropdown-item"
-                       asp-action="Index"
-                       asp-controller="Diagnostics">
-                        <i class="fa fa-server"></i>
-                        <span>Diagnostic</span>
-                    </a>
-                </div>
-            </li>
-        </ul>
-
-    </header>
-
-    <div class="app-body">
-        <main class="main">
-            @RenderSection("breadcrumb", false)
-            <div class="container-fluid">
-                <div class="animated fadeIn">
-                    @RenderBody()
-                </div>
-            </div>
-        </main>
+        <span>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/brunohbrito/JP-Project" data-size="large" aria-label="Star brunohbrito/JP-Project on GitHub">Star</a>
+        </span>
     </div>
-    <footer class="app-footer">
-        <div>
-            <a href="https://github.com/brunohbrito/JP-Project" target="_blank"><img class="icon" width="15%" src="@Url.Content("~/images/brand/logo.png")"></a>&nbsp;
-            <span>&copy; 2018.</span>
+    <div class="app sidebar-fixed footer-fixed aside-menu-fixed">
+        <header class="app-header navbar">
+            <a class="navbar-brand" href="#">
+                <div class="d-none d-lg-block">
+                    <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo.png")" height="40" alt="JP Logo">
+                    <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo.png")" width="40" alt="JP Logo">
+                </div>
+                <div class="d-lg-none text-left">
+                    <img class="navbar-brand-full" src="@Url.Content("~/images/brand/logo-min.png")" height="40" alt="JP Logo">
+                    <img class="navbar-brand-minimized" src="@Url.Content("~/images/brand/logo-min.png")" width="40" alt="JP Logo">
+                </div>
+            </a>
+            <ul class="nav navbar-nav ml-auto">
+                @await Html.PartialAsync("_SelectLanguagePartial")
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-none d-md-block" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-avatar" src="@Url.Content(image)" alt="@name">@name
+                    </a>
+                    <a class="nav-link d-md-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-avatar" src="@Url.Content(image)" alt="@name">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-header text-center">
+                            <strong>Account</strong>
+                        </div>
+                        <a class="dropdown-item"
+                           asp-action="Index"
+                           asp-controller="Grants">
+                            <i class="fa fa-tasks"></i>
+                            <span>Grants</span>
+                        </a>
+
+                        <a class="dropdown-item"
+                           asp-action="Logout"
+                           asp-controller="Account">
+                            <i class="fa fa-lock"></i> Logout
+                        </a>
+                        <div class="dropdown-header text-center">
+                            <strong>Settings</strong>
+                        </div>
+                        <a class="dropdown-item"
+                           asp-action="Index"
+                           asp-controller="Diagnostics">
+                            <i class="fa fa-server"></i>
+                            <span>Diagnostic</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+        </header>
+
+        <div class="app-body">
+            <main class="main">
+                @RenderSection("breadcrumb", false)
+                @RenderBody()
+            </main>
         </div>
-        <div class="ml-auto">
-            <span>Powered by</span>
-            <a href="https://coreui.io">CoreUI</a>
-        </div>
-    </footer>
+        <footer class="app-footer">
+            <div>
+                <a href="https://github.com/brunohbrito/JP-Project" target="_blank"><img class="icon" width="15%" src="@Url.Content("~/images/brand/logo.png")"></a>&nbsp;
+                <span>&copy; 2018.</span>
+            </div>
+            <div class="ml-auto">
+                <span>Powered by</span>
+                <a href="https://coreui.io">CoreUI</a>
+            </div>
+        </footer>
+    </div>
     <script src="@Url.Content("~/js/jquery.min.js")"></script>
     <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
     <script src="@Url.Content("~/js/popper.min.js")"></script>

@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../shared/services/user.service";
 import { AlertConfig } from "ngx-bootstrap/alert";
 import { ForgotPassword } from "../../shared/view-model/forgot-password.model";
+import { TranslatorService } from '@core/translator/translator.service';
+
+
 
 export function getAlertConfig(): AlertConfig {
     return Object.assign(new AlertConfig(), { type: "success" });
@@ -12,6 +15,7 @@ export function getAlertConfig(): AlertConfig {
     templateUrl: "recover.component.html",
     providers: [
         UserService,
+        TranslatorService,
         { provide: AlertConfig, useFactory: getAlertConfig }
     ]
 })
@@ -20,8 +24,10 @@ export class RecoverComponent implements OnInit {
     public emailSent: boolean;
     public showButtonLoading: boolean;
     public model: ForgotPassword;
+    
 
-    constructor(private authService: UserService) {
+    constructor(private authService: UserService,
+                public translator: TranslatorService) {
     }
 
     public recover() {

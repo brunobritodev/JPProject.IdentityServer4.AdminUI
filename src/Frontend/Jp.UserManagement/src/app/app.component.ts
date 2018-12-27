@@ -5,16 +5,19 @@ import { authConfig } from "./core/auth/auth.config";
 import { environment } from "../environments/environment";
 import { SettingsService } from "./core/settings/settings.service";
 import { tap } from "rxjs/operators";
+import { TranslatorService } from '@core/translator/translator.service';
 
 @Component({
     // tslint:disable-next-line
     selector: 'body',
-    template: "<router-outlet></router-outlet>"
+    template: "<router-outlet></router-outlet>",
+    providers: [TranslatorService]
 })
 export class AppComponent implements OnInit {
     constructor(private router: Router,
         private oauthService: OAuthService,
-        private settingsService: SettingsService) {
+        private settingsService: SettingsService,
+        public translator: TranslatorService) {
         this.configureWithNewConfigApi();
     }
 
@@ -26,7 +29,9 @@ export class AppComponent implements OnInit {
         this.settingsService.loadDiscoveryDocumentAndTryLogin().pipe(tap(doc => {
             if (!environment.production)
                 console.log(doc);
-        })).subscribe();
+        })).subscribe(a => {
+            this.oauthService.setupAutomaticSilentRefresh();
+        });
         // this.oauthService.loadDiscoveryDocument().then(doc => {
         //     if (!environment.production)
         //     console.log(doc);

@@ -6,10 +6,10 @@
                     <div class="card mx-4">
                         <div class="card-body p-4">
                             <form>
-                                <h1>E-mail confirmation</h1>
+                                <h1>{{ 'confirm-email.E-MAIL-CONFIRMATION' | translate }}</h1>
                                 <div *ngIf="showButtonLoading">
                                     <div class="col-md-8 mx-auto">
-                                        <p class="text-center"><span>Validating e-mail</span></p>
+                                        <p class="text-center"><span>{{ 'confirm-email.VALIDATING-E-MAIL' | translate }}</span></p>
                                         <div class="progress mb-3">
                                             <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
                                                 aria-valuemax="100"></div>
@@ -18,7 +18,7 @@
                                 </div>
                                 <div *ngIf="!showButtonLoading && errors.length == 0">
                                     <alert type="success">
-                                        <div><strong>Success</strong> thank you.</div>
+                                        <div><strong>{{ 'confirm-email.SUCCESS' | translate }}</strong>{{ 'confirm-email.THANK-YOU.' | translate }}</div>
                                     </alert>
                                 </div>
                                 <div *ngIf="errors.length > 0">

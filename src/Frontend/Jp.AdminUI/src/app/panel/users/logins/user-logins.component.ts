@@ -41,7 +41,6 @@ export class UserLoginsComponent implements OnInit {
     public ngOnInit() {
         this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserLogins(m.toString()))).subscribe(result => this.logins = result.data);
         this.errors = [];
-        this.logins = [];
         this.showButtonLoading = false;
     }
 

@@ -32,7 +32,7 @@ export class RoleService {
     }
 
     public update(model: Role): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "Roles/update", model);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "Roles/update", model);
     }
 
     public removeUserFromRole(user: string, role: string): Observable<DefaultResponse<boolean>> {

@@ -1,0 +1,100 @@
+{
+	"app": {
+		"ANGULAR-BLOG": "Angular blog",
+		"CLI": "CLI Documentation",
+		"HELP-YOU": "Aqui estão alguns links para ajudar a iniciar:",
+		"HEROES": "Tour of Heroes",
+		"WELCOME-TO": "Bem-Vindo"
+	},
+	"confirm-email": {
+		"E-MAIL-CONFIRMATION": "Confirmação de E-mail",
+		"SUCCESS": "Sucesso",
+		"THANK-YOU.": "Obrigada",
+		"VALIDATING-E-MAIL": "Validação de e-mail"
+	},
+	"error": {
+		"404": "404",
+		"500": "500",
+		"OOPS": "Oops!Você está perdido.",
+		"PAGE-NOT-FOUND": "A página que está procurando não foi localizada.",
+		"PROBLEM": "Houston, nós temos um problema!",
+		"UNAVAILABLE": "A página que você está procurando esta temporariamente indisponivel."
+	},
+	"general": {
+		"AVAILABLE-LANGUAGES": "Idiomas disponíveis",
+		"LOGIN": "Login",
+		"NO": "Não",
+		"SEARCH": "Procurar",
+		"YES": "Sim"
+	},
+	"home": {
+		"LEARN-MORE": "Saiba mais",
+		"MANAGEMENT": "Este é o gerenciamento de usuários UI para JP Project. Aqui o usuário pode gerenciar a senha(trocar, add) e atualizar dados do perfil.",
+		"WELCOME": "Bom dia!"
+	},
+	"login": {
+		"LOADING": "Aguarde enquanto o servidor está carregando algumas informações.",
+		"REGISTER-NOW": "Registre-se agora",
+		"SIGN-UP": "Inscreva-se"
+	},
+	"login-callback": {
+		"LOADING": "Loading user data"
+	},
+	"recover": {
+		"CHECK": "Verifique seu e-mail.",
+		"LOADING": "Carregando dados do usuário",
+		"RESET": "Enviar link de redefinição",
+		"SENDING-EMAIL": "Enviando e-mail.",
+		"SUCCESS": "Sucesso",
+		"USERNAME-EMAIL": "Por favor, forneça seu o usuário ou e-mail."
+	},
+	"register": {
+		"CREATE-ACCOUNT": "Crie a sua conta",
+		"FACEBOOK": "Facebook",
+		"GOOGLE+": "Google+",
+		"REGISTER": "Registre-se"
+	},
+	"reset-password": {
+		"RESET": "Redefinir",
+		"RESET-PASSWORD": "Redefinir sua senha"
+	},
+	"unauthorized": {
+		"ADMINISTRATOR": "Entre em contato com o Administrador",
+		"DO-NOT-ACCESS": "Você não tem acesso a está área.",
+		"UNAUTHORIZED": "Indisponível "
+	},
+	"user": {
+		"account": {
+			"ARE-YOU-SURE": "Você tem certeza?",
+			"CONFIRM-PASSWORD": "Confirmação de senha",
+			"CREATE-PASSWORD": "Criar senha",
+			"CURRENT-PASSWORD": "Senha atual",
+			"DELETE-ACCOUNT": "Deletar conta",
+			"DELETE-CONFIRMATION": "Você será solicitado a confirmar antes de excluir a conta.",
+			"NEW-PASSWORD": "Nova senha",
+			"REMOVE-ACCOUNT": "Remover a conta",
+			"TITLE": "Conta",
+			"UPDATE-PASSWORD": "Atualizar senha"
+		},
+		"history": {
+			"ACTION": "Ação",
+			"DETAILS": "Detalhes",
+			"TITLE": "Logs",
+			"WHEN": "Quando",
+			"WHO": "Quem"
+		},
+		"profile": {
+			"BIO": "Bio",
+			"CHOOSE-FILE": "Escolha um arquivo",
+			"COMPANY": "Empresa",
+			"JOB TITLE": "Cargo",
+			"NAME": "Nome",
+			"PHONE NUMBER": "Número de telefone",
+			"PICTURE": "Fotos",
+			"PROFILE": "Perfil",
+			"UPDATE-SETTINGS": "Atualizar configuções",
+			"UPLOAD": "Upload",
+			"URL": "URL"
+		}
+	}
+}

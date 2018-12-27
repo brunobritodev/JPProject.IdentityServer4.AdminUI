@@ -36,11 +36,14 @@ export class AppComponent implements OnInit {
         this.oauthService.configure(authConfig);
         this.oauthService.setStorage(localStorage);
         this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+        
 
         this.settings.loadDiscoveryDocumentAndTryLogin().pipe(tap(doc => {
             if (!environment.production)
                 console.log(doc);
-        })).subscribe();
+        })).subscribe(a => {
+            this.oauthService.setupAutomaticSilentRefresh();
+        });
         // this.oauthService.loadDiscoveryDocument().then(doc => {
         //     if (!environment.production)
         //     console.log(doc);

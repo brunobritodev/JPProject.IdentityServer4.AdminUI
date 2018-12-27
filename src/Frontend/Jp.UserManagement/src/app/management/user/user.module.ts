@@ -10,6 +10,7 @@ import { AccountManagementService } from './account-management.service';
 import { NgxMaskModule } from 'ngx-mask';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { UserHistoryComponent } from './history/user-history.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -33,7 +34,8 @@ const routes: Routes = [
         AlertModule.forRoot(),
         ImageCropperModule,
         NgxMaskModule.forRoot(),
-        ModalModule.forRoot()
+        ModalModule.forRoot(),
+        TranslateModule,
     ],
     declarations: [
         ProfileComponent,

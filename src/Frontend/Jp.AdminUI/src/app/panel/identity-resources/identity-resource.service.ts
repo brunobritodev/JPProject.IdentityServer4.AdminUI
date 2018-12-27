@@ -33,7 +33,7 @@ export class IdentityResourceService {
     }
 
     public update(model: IdentityResource): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/update", model);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "IdentityResource/update", model);
     }
 
     public remove(name: string): any {

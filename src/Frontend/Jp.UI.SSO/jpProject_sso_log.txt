@@ -5164,3 +5164,1312 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'StoredEvent' already 
 2018-10-26 13:57:09.308 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
 2018-10-26 13:57:09.325 -03:00 [INF] Profile service returned to the following claim types: sub email preferred_username name email email_verified
 2018-10-26 13:57:09.328 -03:00 [DBG] End userinfo request
+2018-12-27 14:13:18.718 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 14:13:18.920 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 14:13:23.000 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 14:13:23.016 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 14:13:23.018 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 14:13:23.021 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 14:13:23.022 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 14:13:39.508 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:13:39.529 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:17:48.182 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:17:48.187 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:17:51.551 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:17:51.555 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:18:29.441 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:18:29.458 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:18:29.734 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:18:29.738 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:12.715 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:12.719 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:22.774 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:22.780 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:24.371 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:24.376 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.879 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.885 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.893 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.893 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.888 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.903 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.905 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:19:31.909 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.039 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.044 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.190 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.190 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.201 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.202 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.207 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.217 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.230 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:20:26.241 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.336 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.341 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.622 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.625 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.625 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.627 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.633 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.636 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.637 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:30.652 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:35.868 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:35.872 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.144 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.146 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.151 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.148 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.146 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.159 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.164 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:22:36.169 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.407 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.412 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.697 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.703 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.704 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.710 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.710 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.725 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.715 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:23:01.735 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.226 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.233 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.555 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.562 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.567 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.571 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.578 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.588 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.589 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:28:26.594 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:09.904 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:09.908 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.192 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.199 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.268 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.272 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.274 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.281 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.289 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.299 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.304 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:10.314 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:28.186 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:28.191 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:28.506 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:30:28.512 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.610 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.613 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.973 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.978 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.982 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.982 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.983 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.994 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:08.999 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:09.021 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.527 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.532 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.574 -02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-12-27 14:34:41.583 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.586 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.923 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.929 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.938 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.938 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.938 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.948 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.954 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:34:41.955 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.167 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.170 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.323 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.324 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.331 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.334 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.337 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.337 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.340 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:17.346 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.281 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.287 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.289 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.287 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.292 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.301 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.309 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:19.315 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.449 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.456 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.870 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.874 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.984 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.984 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.984 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.990 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.991 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:36:20.994 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.255 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.259 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.574 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.574 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.578 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.582 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.584 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.587 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.596 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:41.608 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.472 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.477 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.780 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.791 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.797 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.823 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.835 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.856 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.853 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:37:55.875 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:24.985 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:24.989 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.319 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.319 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.319 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.329 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.332 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.333 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.333 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:39:25.350 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.069 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.074 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.420 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.425 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.440 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.425 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.453 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.457 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.457 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:12.474 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:55.464 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:41:55.470 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:15.261 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:15.265 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:19.931 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:19.935 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:44.337 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:44.340 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.760 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.760 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.769 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.772 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.773 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.772 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.781 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:42:47.786 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:03.802 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:03.807 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.133 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.138 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.140 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.147 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.150 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.157 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.158 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:04.168 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.126 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.131 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.444 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.444 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.454 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.456 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.459 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.471 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.471 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:28.489 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.806 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.813 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.820 -02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-12-27 14:43:34.832 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.835 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.971 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.976 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.978 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.985 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.989 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:34.998 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:35.001 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:35.010 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:36.987 -02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-12-27 14:43:36.995 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:36.999 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.199 -02:00 [WRN] Invalid password for user 08d63f70-4221-b653-dab1-104670f115da.
+2018-12-27 14:43:37.205 -02:00 [WRN] User 08d63f70-4221-b653-dab1-104670f115da failed to provide the correct password.
+2018-12-27 14:43:37.532 -02:00 [INF] {
+  "Name": "User Login Failure",
+  "Category": "Authentication",
+  "EventType": "Failure",
+  "Id": 1001,
+  "Username": "bhdebrito@Gmail.com",
+  "Endpoint": "UI",
+  "Message": "invalid credentials",
+  "ActivityId": "0HLJC2P1J7U6R:00000002",
+  "TimeStamp": "2018-12-27T16:43:37Z",
+  "ProcessId": 8048,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 14:43:37.680 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.683 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.683 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.687 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.683 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.698 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.694 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:37.710 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:39.544 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:39.549 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:39.566 -02:00 [INF] AuthenticationScheme: Google was challenged.
+2018-12-27 14:43:45.196 -02:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-12-27 14:43:45.207 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:45.211 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:45.506 -02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Google",
+  "ProviderUserId": "102696868227620762147",
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLJC2P1J7U6S:00000002",
+  "TimeStamp": "2018-12-27T16:43:45Z",
+  "ProcessId": 8048,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 14:43:45.534 -02:00 [DBG] Augmenting SignInContext
+2018-12-27 14:43:45.539 -02:00 [DBG] Adding amr claim with value: external
+2018-12-27 14:43:45.546 -02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2018-12-27 14:43:45.552 -02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-27 14:43:45.559 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 14:43:45.608 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 14:46:45.384 -02:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-12-27 14:46:45.400 -02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-12-27 14:46:45.405 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 14:46:45.409 -02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-12-27 14:46:45.418 -02:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLJC2P1J7U7F:00000005",
+  "TimeStamp": "2018-12-27T16:46:45Z",
+  "ProcessId": 8048,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 15:01:20.819 -02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-12-27 15:01:23.543 -02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-12-27 15:01:23.580 -02:00 [WRN] Invalid password for user 08d63f70-4221-b653-dab1-104670f115da.
+2018-12-27 15:01:23.584 -02:00 [WRN] User 08d63f70-4221-b653-dab1-104670f115da failed to provide the correct password.
+2018-12-27 15:01:23.666 -02:00 [INF] {
+  "Name": "User Login Failure",
+  "Category": "Authentication",
+  "EventType": "Failure",
+  "Id": 1001,
+  "Username": "bhdebrito@Gmail.com",
+  "Endpoint": "UI",
+  "Message": "invalid credentials",
+  "ActivityId": "0HLJC2P1J7U8A:0000000B",
+  "TimeStamp": "2018-12-27T17:01:23Z",
+  "ProcessId": 8048,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 15:01:26.273 -02:00 [INF] AuthenticationScheme: Google was challenged.
+2018-12-27 15:01:32.345 -02:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-12-27 15:01:32.387 -02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Google",
+  "ProviderUserId": "102696868227620762147",
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLJC2P1J7U8D:00000005",
+  "TimeStamp": "2018-12-27T17:01:32Z",
+  "ProcessId": 8048,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 15:01:32.392 -02:00 [DBG] Augmenting SignInContext
+2018-12-27 15:01:32.394 -02:00 [DBG] Adding amr claim with value: external
+2018-12-27 15:01:32.397 -02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-27 15:01:32.402 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 15:01:32.412 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 15:02:29.792 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 15:24:04.480 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 15:24:04.878 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 15:24:10.263 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 15:24:10.278 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 15:24:10.281 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 15:24:10.283 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 15:24:10.285 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 15:33:18.469 -02:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-12-27 15:33:18.541 -02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-12-27 15:33:18.548 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 15:33:18.551 -02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-12-27 15:33:18.579 -02:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLJC40HBEKR5:00000005",
+  "TimeStamp": "2018-12-27T17:33:18Z",
+  "ProcessId": 21020,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 15:38:35.640 -02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-12-27 15:38:38.619 -02:00 [INF] AuthenticationScheme: Google was challenged.
+2018-12-27 15:38:45.121 -02:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-12-27 15:38:45.327 -02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Google",
+  "ProviderUserId": "102696868227620762147",
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLJC40HBEKRH:00000003",
+  "TimeStamp": "2018-12-27T17:38:45Z",
+  "ProcessId": 21020,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 15:38:45.344 -02:00 [DBG] Augmenting SignInContext
+2018-12-27 15:38:45.350 -02:00 [DBG] Adding amr claim with value: external
+2018-12-27 15:38:45.356 -02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-27 15:38:45.360 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 15:38:45.425 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 15:39:06.746 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-12-27 15:39:06.820 -02:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-12-27 15:39:06.825 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-12-27 15:39:06.830 -02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-12-27 15:39:06.838 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-12-27 15:39:06.842 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-12-27 15:39:06.851 -02:00 [DBG] Start discovery request
+2018-12-27 15:39:07.152 -02:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-12-27 15:39:07.184 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-12-27 15:39:07.192 -02:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-12-27 15:39:07.197 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-12-27 15:39:07.200 -02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-12-27 15:39:07.205 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-12-27 15:39:07.210 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-12-27 15:39:07.216 -02:00 [DBG] Start key discovery request
+2018-12-27 15:39:07.252 -02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-12-27 15:39:07.269 -02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-12-27 15:39:07.274 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-12-27 15:39:07.282 -02:00 [DBG] Start authorize request
+2018-12-27 15:39:07.292 -02:00 [DBG] User in authorize request: 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 15:39:07.300 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 15:39:07.522 -02:00 [DBG] IS4-Admin found in database: true
+2018-12-27 15:39:07.563 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 15:39:07.608 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 15:39:07.629 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 15:39:07.643 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 15:39:07.653 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 15:39:07.665 -02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.is4",
+  "State": "CSQfWfCRt2ilzoWgKpaVDNO1Z9jJh3ifZ7azWBBf",
+  "Nonce": "CSQfWfCRt2ilzoWgKpaVDNO1Z9jJh3ifZ7azWBBf",
+  "SessionId": "a8fef289586407ace070027bfac1d102",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "CSQfWfCRt2ilzoWgKpaVDNO1Z9jJh3ifZ7azWBBf",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email jp_api.is4",
+    "nonce": "CSQfWfCRt2ilzoWgKpaVDNO1Z9jJh3ifZ7azWBBf"
+  }
+}
+2018-12-27 15:39:07.711 -02:00 [DBG] t9fe5uPNMwyLR03ZFCe9ccJKn+YP/IKjzlPhk+3vg4U= found in database: false
+2018-12-27 15:39:07.716 -02:00 [DBG] user_consent grant with value: IS4-Admin|9e30284d-6c07-41d2-bb48-76da2c8e5946 not found in store.
+2018-12-27 15:39:07.720 -02:00 [DBG] Found no prior consent from consent store, consent is required
+2018-12-27 15:39:07.723 -02:00 [INF] Showing consent: User has not yet consented
+2018-12-27 15:39:07.750 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 15:39:07.776 -02:00 [DBG] IS4-Admin found in database: true
+2018-12-27 15:39:07.783 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 15:39:07.796 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 15:39:07.804 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 15:39:07.819 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 15:39:07.823 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 15:39:07.850 -02:00 [DBG] IS4-Admin found in database: true
+2018-12-27 15:39:07.857 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 15:39:07.871 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 15:44:13.902 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 15:45:36.330 -02:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-12-27 15:45:36.341 -02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-12-27 15:45:36.345 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 15:45:36.350 -02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-12-27 15:45:36.355 -02:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLJC40HBEKS3:00000018",
+  "TimeStamp": "2018-12-27T17:45:36Z",
+  "ProcessId": 21020,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 16:09:22.917 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 16:09:23.157 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 16:09:27.063 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 16:09:27.077 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 16:09:27.079 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 16:09:27.081 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 16:09:27.083 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 16:14:11.780 -02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-12-27 16:14:20.810 -02:00 [INF] AuthenticationScheme: Google was challenged.
+2018-12-27 16:14:25.012 -02:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-12-27 16:14:25.316 -02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Google",
+  "ProviderUserId": "102696868227620762147",
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLJC4PODF8TL:00000003",
+  "TimeStamp": "2018-12-27T18:14:25Z",
+  "ProcessId": 16184,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 16:14:25.340 -02:00 [DBG] Augmenting SignInContext
+2018-12-27 16:14:25.346 -02:00 [DBG] Adding amr claim with value: external
+2018-12-27 16:14:25.355 -02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-27 16:14:25.363 -02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-12-27 16:14:25.413 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 16:43:56.914 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 16:43:57.088 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 16:44:01.271 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 16:44:01.289 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 16:44:01.292 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 16:44:01.294 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 16:44:01.297 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 16:46:29.245 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 16:46:29.406 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 16:46:33.045 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 16:46:33.060 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 16:46:33.063 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 16:46:33.065 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 16:46:33.067 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 16:56:06.610 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 16:56:06.773 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 16:56:10.267 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 16:56:10.282 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 16:56:10.284 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 16:56:10.286 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 16:56:10.288 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:00:56.754 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:00:56.916 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:01:00.406 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:01:00.423 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:01:00.426 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:01:00.428 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:01:00.432 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:06:27.099 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:06:27.263 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:06:31.057 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:06:31.071 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:06:31.074 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:06:31.076 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:06:31.077 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:10:29.942 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:10:30.095 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:10:33.763 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:10:33.778 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:10:33.781 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:10:33.783 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:10:33.785 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:14:12.441 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:14:12.605 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:14:16.164 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:14:16.179 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:14:16.182 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:14:16.184 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:14:16.186 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:16:12.700 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:16:12.785 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:16:15.621 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:16:15.632 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:16:15.634 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:16:15.636 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:16:15.639 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:17:04.557 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:17:04.632 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:17:07.611 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:17:07.626 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:17:07.629 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:17:07.631 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:17:07.634 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:18:54.746 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:18:54.821 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:18:57.636 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:18:57.647 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:18:57.650 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:18:57.652 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:18:57.654 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:19:48.948 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:19:49.019 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:19:51.721 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:19:51.732 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:19:51.734 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:19:51.737 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:19:51.739 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:20:35.370 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:20:35.447 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:20:38.269 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:20:38.280 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:20:38.282 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:20:38.284 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:20:38.286 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:27:12.828 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:27:12.905 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:27:15.731 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:27:15.742 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:27:15.744 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:27:15.746 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:27:15.748 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:27:21.491 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:27:21.562 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:27:24.420 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:27:24.432 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:27:24.434 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:27:24.436 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:27:24.438 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:29:06.685 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:29:06.753 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:29:09.500 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:29:09.512 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:29:09.514 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:29:09.516 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:29:09.518 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:29:44.798 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:29:44.866 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:29:47.610 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:29:47.621 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:29:47.624 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:29:47.626 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:29:47.627 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:32:42.570 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:32:42.640 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:32:45.507 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:32:45.518 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:32:45.520 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:32:45.522 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:32:45.524 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:34:03.023 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:34:03.096 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:34:07.480 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:34:07.492 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:34:07.494 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:34:07.496 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:34:07.499 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:35:51.924 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:35:51.992 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:35:56.291 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:35:56.301 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:35:56.304 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:35:56.306 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:35:56.308 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:43:55.863 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:43:55.949 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:43:59.167 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:43:59.178 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:43:59.180 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:43:59.182 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:43:59.183 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:44:07.391 -02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-27 17:44:42.449 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:44:42.519 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:44:47.309 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:44:47.321 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:44:47.323 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:44:47.325 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:44:47.327 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:45:06.461 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:45:06.534 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:45:09.583 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:45:09.595 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:45:09.598 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:45:09.601 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:45:09.603 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:45:14.899 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:45:14.972 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:45:17.965 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:45:17.976 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:45:17.978 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:45:17.980 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:45:17.982 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:55:25.016 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:55:25.087 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:55:28.054 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:55:28.066 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:55:28.068 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:55:28.071 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:55:28.073 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 17:56:11.446 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 17:56:11.517 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 17:56:14.714 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 17:56:14.725 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 17:56:14.730 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 17:56:14.732 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 17:56:14.734 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:18:49.575 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:18:49.665 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:18:52.790 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:18:52.802 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:18:52.804 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:18:52.805 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:18:52.807 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:19:27.750 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:19:27.823 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:19:30.763 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:19:30.774 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:19:30.776 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:19:30.778 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:19:30.779 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:19:39.055 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:19:39.126 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:19:42.247 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:19:42.258 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:19:42.260 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:19:42.261 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:19:42.263 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:25:32.594 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:25:32.666 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:25:35.812 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:25:35.831 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:25:35.833 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:25:35.835 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:25:35.838 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:25:37.880 -02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-27 18:27:04.233 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-12-27 18:27:04.388 -02:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-12-27 18:27:04.393 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-12-27 18:27:04.404 -02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-12-27 18:27:04.416 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-12-27 18:27:04.418 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-12-27 18:27:04.425 -02:00 [DBG] Start discovery request
+2018-12-27 18:27:04.790 -02:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-12-27 18:29:17.503 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:29:17.594 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:29:21.068 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:29:21.082 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:29:21.084 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:29:21.085 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:29:21.087 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:29:46.495 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:29:46.565 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:29:49.520 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:29:49.531 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:29:49.533 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:29:49.535 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:29:49.538 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:31:09.730 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:31:09.798 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:31:12.692 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:31:12.702 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:31:12.704 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:31:12.706 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:31:12.707 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:31:54.344 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:31:54.415 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:31:57.340 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:31:57.351 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:31:57.353 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:31:57.354 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:31:57.355 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:32:34.659 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:32:34.732 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:32:37.771 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:32:37.781 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:32:37.783 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:32:37.785 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:32:37.787 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:32:57.607 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:32:57.675 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:33:00.896 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:33:00.907 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:33:00.909 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:33:00.910 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:33:00.912 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:35:11.855 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:35:11.924 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:35:14.881 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:35:14.893 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:35:14.895 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:35:14.896 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:35:14.898 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:35:35.152 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:35:35.230 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:35:38.435 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:35:38.451 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:35:38.453 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:35:38.454 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:35:38.457 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:46:17.128 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:46:17.287 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:46:21.218 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:46:21.236 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:46:21.240 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:46:21.243 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:46:21.246 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:46:50.970 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:46:51.041 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:46:54.150 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:46:54.160 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:46:54.162 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:46:54.163 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:46:54.165 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:47:58.566 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:47:58.636 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:48:01.814 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:48:01.825 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:48:01.827 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:48:01.828 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:48:01.829 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:48:07.691 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:48:07.762 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:48:10.626 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:48:10.637 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:48:10.639 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:48:10.640 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:48:10.641 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:50:44.843 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2018-12-27 18:50:44.928 -02:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-12-27 18:50:44.934 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-12-27 18:50:44.937 -02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-12-27 18:50:44.941 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-12-27 18:50:44.943 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-12-27 18:50:44.948 -02:00 [DBG] Start discovery request
+2018-12-27 18:50:45.199 -02:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-12-27 18:50:45.224 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2018-12-27 18:50:45.229 -02:00 [DBG] Origin http://localhost:4300 is allowed: true
+2018-12-27 18:50:45.231 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2018-12-27 18:50:45.232 -02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-12-27 18:50:45.234 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-12-27 18:50:45.237 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-12-27 18:50:45.241 -02:00 [DBG] Start key discovery request
+2018-12-27 18:50:45.259 -02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-12-27 18:50:45.263 -02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-12-27 18:50:45.265 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-12-27 18:50:45.269 -02:00 [DBG] Start authorize request
+2018-12-27 18:50:45.277 -02:00 [DBG] User in authorize request: 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:50:45.283 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 18:50:45.473 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:50:45.486 -02:00 [DBG] IS4-Admin found in database: true
+2018-12-27 18:50:45.524 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 18:50:45.571 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 18:50:45.585 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 18:50:45.601 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 18:50:45.610 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 18:50:45.621 -02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "IS4-Admin",
+  "ClientName": "IS4-Admin",
+  "RedirectUri": "http://localhost:4300/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4300/login-callback"
+  ],
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.is4",
+  "State": "f4f3kzI2W0u5YfU6gUeE6eUJ8Reo5aEyIBgwd6qn",
+  "Nonce": "f4f3kzI2W0u5YfU6gUeE6eUJ8Reo5aEyIBgwd6qn",
+  "SessionId": "29dc94b6fb11cddf201f647d9c369e26",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "IS4-Admin",
+    "state": "f4f3kzI2W0u5YfU6gUeE6eUJ8Reo5aEyIBgwd6qn",
+    "redirect_uri": "http://localhost:4300/login-callback",
+    "scope": "openid profile email jp_api.is4",
+    "nonce": "f4f3kzI2W0u5YfU6gUeE6eUJ8Reo5aEyIBgwd6qn"
+  }
+}
+2018-12-27 18:50:45.661 -02:00 [DBG] t9fe5uPNMwyLR03ZFCe9ccJKn+YP/IKjzlPhk+3vg4U= found in database: false
+2018-12-27 18:50:45.663 -02:00 [DBG] user_consent grant with value: IS4-Admin|9e30284d-6c07-41d2-bb48-76da2c8e5946 not found in store.
+2018-12-27 18:50:45.665 -02:00 [DBG] Found no prior consent from consent store, consent is required
+2018-12-27 18:50:45.667 -02:00 [INF] Showing consent: User has not yet consented
+2018-12-27 18:50:45.708 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 18:50:45.730 -02:00 [DBG] IS4-Admin found in database: true
+2018-12-27 18:50:45.736 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 18:50:45.749 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 18:50:45.756 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 18:50:45.768 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 18:50:45.771 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 18:50:45.793 -02:00 [DBG] IS4-Admin found in database: true
+2018-12-27 18:50:45.798 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 18:50:45.810 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 18:50:49.992 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:51:19.729 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:51:19.798 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:51:22.818 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:51:22.828 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:51:22.830 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:51:22.831 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:51:22.833 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:51:24.348 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:53:29.081 -02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
+D:\workspace\Laboratorio\JP-Project\src\Frontend\Jp.UI.SSO\Views\Account\Logout.cshtml(31,65): error CS1061: 'LogoutViewModel' does not contain a definition for 'PostLogoutRedirectUri' and no extension method 'PostLogoutRedirectUri' accepting a first argument of type 'LogoutViewModel' could be found (are you missing a using directive or an assembly reference?)
+D:\workspace\Laboratorio\JP-Project\src\Frontend\Jp.UI.SSO\Views\Account\Logout.cshtml(37,37): error CS1061: 'LogoutViewModel' does not contain a definition for 'PostLogoutRedirectUri' and no extension method 'PostLogoutRedirectUri' accepting a first argument of type 'LogoutViewModel' could be found (are you missing a using directive or an assembly reference?)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(RazorCodeDocument codeDocument, String generatedCode)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.OnCacheMiss(String normalizedPath)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRazorPageFactoryProvider.CreateFactory(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.CreateCacheResult(HashSet`1 expirationTokens, String relativePath, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.OnCacheMiss(ViewLocationExpanderContext expanderContext, ViewLocationCacheKey cacheKey)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.LocatePageFromViewLocations(ActionContext actionContext, String pageName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewEngines.CompositeViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.FindView(ActionContext actionContext, ViewResult viewResult)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 72
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\BaseUrlMiddleware.cs:line 43
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-27 18:53:52.004 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:53:52.074 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:53:55.005 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:53:55.017 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:53:55.019 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:53:55.022 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:53:55.024 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:55:43.946 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:55:44.047 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:55:47.719 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:55:47.733 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:55:47.735 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:55:47.736 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:55:47.738 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:56:09.565 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:56:15.217 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:56:18.922 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:56:38.900 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:56:38.969 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:56:41.842 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:56:41.854 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:56:41.855 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:56:41.857 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:56:41.858 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:56:49.889 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:56:49.959 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:56:52.892 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:56:52.903 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:56:52.904 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:56:52.906 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:56:52.907 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:57:16.749 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:57:16.820 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:57:19.994 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:57:20.005 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:57:20.007 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:57:20.008 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:57:20.009 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:57:20.998 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:57:35.891 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:57:35.961 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:57:39.190 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:57:39.202 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:57:39.203 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:57:39.205 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:57:39.206 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:57:39.901 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:57:40.838 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:58:09.152 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:58:09.220 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:58:12.330 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:58:12.340 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:58:12.342 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:58:12.343 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:58:12.345 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 18:58:16.240 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:58:18.766 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:58:20.831 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:58:22.580 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:58:25.887 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 18:58:47.897 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-12-27 18:58:47.969 -02:00 [INF] SigninCredentialExtension added
+2018-12-27 18:58:51.030 -02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-12-27 18:58:51.051 -02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-12-27 18:58:51.053 -02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-12-27 18:58:51.055 -02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-12-27 18:58:51.057 -02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-12-27 19:16:11.375 -02:00 [DBG] 0 persisted grants found for 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 19:16:17.213 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-12-27 19:16:17.357 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:17.360 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:17.364 -02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-12-27 19:16:17.373 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-12-27 19:16:17.375 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-12-27 19:16:17.380 -02:00 [DBG] Start discovery request
+2018-12-27 19:16:17.682 -02:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-12-27 19:16:17.718 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-12-27 19:16:17.726 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:17.729 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:17.730 -02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-12-27 19:16:17.732 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-12-27 19:16:17.734 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-12-27 19:16:17.737 -02:00 [DBG] Start key discovery request
+2018-12-27 19:16:17.763 -02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-12-27 19:16:17.766 -02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-12-27 19:16:17.769 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-12-27 19:16:17.773 -02:00 [DBG] Start authorize request
+2018-12-27 19:16:17.781 -02:00 [DBG] User in authorize request: 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 19:16:17.788 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 19:16:17.973 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:18.010 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:18.060 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:18.074 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:18.087 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:18.095 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 19:16:18.104 -02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.user",
+  "State": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+  "Nonce": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+  "SessionId": "29dc94b6fb11cddf201f647d9c369e26",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email jp_api.user",
+    "nonce": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle"
+  }
+}
+2018-12-27 19:16:18.174 -02:00 [DBG] Iu5IR+Tc2eOwBxgVEMOglLBGQJtO2l/aVH0npFkQX+M= found in database: false
+2018-12-27 19:16:18.177 -02:00 [DBG] user_consent grant with value: UserManagementUI|9e30284d-6c07-41d2-bb48-76da2c8e5946 not found in store.
+2018-12-27 19:16:18.178 -02:00 [DBG] Found no prior consent from consent store, consent is required
+2018-12-27 19:16:18.180 -02:00 [INF] Showing consent: User has not yet consented
+2018-12-27 19:16:18.230 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 19:16:18.257 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:18.262 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:18.274 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:18.280 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:18.291 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:18.293 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 19:16:18.317 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:18.322 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:18.336 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:22.184 -02:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-12-27 19:16:22.218 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 19:16:22.244 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:22.251 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:22.264 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:22.270 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:22.283 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:22.286 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 19:16:22.304 -02:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-12-27 19:16:22.308 -02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-12-27 19:16:22.309 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-12-27 19:16:22.315 -02:00 [DBG] Start authorize callback request
+2018-12-27 19:16:22.322 -02:00 [DBG] User in authorize request: 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 19:16:22.324 -02:00 [DBG] Start authorize request protocol validation
+2018-12-27 19:16:22.354 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:22.359 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:22.381 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:22.388 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:22.399 -02:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2018-12-27 19:16:22.401 -02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-12-27 19:16:22.403 -02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "AllowedRedirectUris": [
+    "http://localhost:4200/login-callback"
+  ],
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile email jp_api.user",
+  "State": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+  "Nonce": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+  "SessionId": "29dc94b6fb11cddf201f647d9c369e26",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "UserManagementUI",
+    "state": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+    "redirect_uri": "http://localhost:4200/login-callback",
+    "scope": "openid profile email jp_api.user",
+    "nonce": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle"
+  }
+}
+2018-12-27 19:16:22.412 -02:00 [DBG] Iu5IR+Tc2eOwBxgVEMOglLBGQJtO2l/aVH0npFkQX+M= found in database: false
+2018-12-27 19:16:22.414 -02:00 [DBG] user_consent grant with value: UserManagementUI|9e30284d-6c07-41d2-bb48-76da2c8e5946 not found in store.
+2018-12-27 19:16:22.416 -02:00 [DBG] Found no prior consent from consent store, consent is required
+2018-12-27 19:16:22.421 -02:00 [INF] User consented to scopes: ["openid","profile","email","jp_api.user"]
+2018-12-27 19:16:22.425 -02:00 [DBG] User indicated to remember consent for scopes: ["openid","profile","email","jp_api.user"]
+2018-12-27 19:16:22.430 -02:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 19:16:22.447 -02:00 [DBG] Iu5IR+Tc2eOwBxgVEMOglLBGQJtO2l/aVH0npFkQX+M= not found in database
+2018-12-27 19:16:22.627 -02:00 [DBG] Creating Implicit Flow response.
+2018-12-27 19:16:22.636 -02:00 [DBG] Getting claims for access token for client: UserManagementUI
+2018-12-27 19:16:22.638 -02:00 [DBG] Getting claims for access token for subject: 9e30284d-6c07-41d2-bb48-76da2c8e5946
+2018-12-27 19:16:22.787 -02:00 [DBG] Getting claims for identity token for subject: 9e30284d-6c07-41d2-bb48-76da2c8e5946 and client: UserManagementUI
+2018-12-27 19:16:22.789 -02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-12-27 19:16:22.809 -02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "UserManagementUI",
+  "ClientName": "User Management UI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "Endpoint": "Authorize",
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "Scopes": "openid profile email jp_api.user",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****K6IQ"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****lJWg"
+    }
+  ],
+  "ActivityId": "0HLJC7ODF1DO0:0000000B",
+  "TimeStamp": "2018-12-27T21:16:22Z",
+  "ProcessId": 18056,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-12-27 19:16:22.816 -02:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+  "ClientId": "UserManagementUI",
+  "RedirectUri": "http://localhost:4200/login-callback",
+  "State": "MJPyASB2mIWwb93YqkhAb0YtUE3AbzDOTD6rvsle",
+  "Scope": "openid profile email jp_api.user"
+}
+2018-12-27 19:16:22.834 -02:00 [DBG] Augmenting SignInContext
+2018-12-27 19:16:22.843 -02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-27 19:16:23.769 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-12-27 19:16:23.774 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:23.776 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:23.778 -02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-12-27 19:16:23.780 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-12-27 19:16:23.781 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-12-27 19:16:23.784 -02:00 [DBG] Start discovery request
+2018-12-27 19:16:23.801 -02:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-12-27 19:16:23.808 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2018-12-27 19:16:23.812 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-12-27 19:16:23.814 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:23.818 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:23.819 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:23.820 -02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-12-27 19:16:23.823 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:23.825 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-12-27 19:16:23.826 -02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-12-27 19:16:23.827 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-12-27 19:16:23.830 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-12-27 19:16:23.832 -02:00 [DBG] Start discovery request
+2018-12-27 19:16:23.833 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-12-27 19:16:23.837 -02:00 [DBG] Start key discovery request
+2018-12-27 19:16:23.853 -02:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2018-12-27 19:16:23.893 -02:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2018-12-27 19:16:23.901 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:23.904 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:23.906 -02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-12-27 19:16:23.908 -02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-12-27 19:16:23.909 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-12-27 19:16:23.911 -02:00 [DBG] Start key discovery request
+2018-12-27 19:16:24.951 -02:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-12-27 19:16:24.959 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:24.961 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:25.018 -02:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-12-27 19:16:25.025 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:25.028 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:25.031 -02:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-12-27 19:16:25.036 -02:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-12-27 19:16:25.040 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-12-27 19:16:25.046 -02:00 [DBG] Start userinfo request
+2018-12-27 19:16:25.051 -02:00 [DBG] Bearer token found in header
+2018-12-27 19:16:25.094 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:25.119 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:25.126 -02:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-12-27 19:16:25.129 -02:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1545945382,
+    "exp": 1545948982,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "jp_api"
+    ],
+    "client_id": "UserManagementUI",
+    "sub": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+    "auth_time": 1545934465,
+    "idp": "Google",
+    "email": "bhdebrito@gmail.com",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "jp_api.user"
+    ],
+    "amr": "external"
+  }
+}
+2018-12-27 19:16:25.141 -02:00 [DBG] Creating userinfo response
+2018-12-27 19:16:25.145 -02:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-12-27 19:16:25.148 -02:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-12-27 19:16:25.155 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:25.158 -02:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email_verified email
+2018-12-27 19:16:25.160 -02:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-12-27 19:16:25.166 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:25.180 -02:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-12-27 19:16:25.182 -02:00 [DBG] End userinfo request
+2018-12-27 19:16:39.956 -02:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-12-27 19:16:39.963 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:39.965 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:39.971 -02:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4200
+2018-12-27 19:16:39.977 -02:00 [DBG] Origin http://localhost:4200 is allowed: true
+2018-12-27 19:16:39.980 -02:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2018-12-27 19:16:39.982 -02:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-12-27 19:16:39.984 -02:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-12-27 19:16:39.986 -02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-12-27 19:16:39.988 -02:00 [DBG] Start userinfo request
+2018-12-27 19:16:39.989 -02:00 [DBG] Bearer token found in header
+2018-12-27 19:16:40.014 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:40.037 -02:00 [DBG] UserManagementUI found in database: true
+2018-12-27 19:16:40.042 -02:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-12-27 19:16:40.043 -02:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1545945382,
+    "exp": 1545948982,
+    "iss": "https://localhost:5000",
+    "aud": [
+      "https://localhost:5000/resources",
+      "jp_api"
+    ],
+    "client_id": "UserManagementUI",
+    "sub": "9e30284d-6c07-41d2-bb48-76da2c8e5946",
+    "auth_time": 1545934465,
+    "idp": "Google",
+    "email": "bhdebrito@gmail.com",
+    "scope": [
+      "openid",
+      "profile",
+      "email",
+      "jp_api.user"
+    ],
+    "amr": "external"
+  }
+}
+2018-12-27 19:16:40.047 -02:00 [DBG] Creating userinfo response
+2018-12-27 19:16:40.048 -02:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-12-27 19:16:40.050 -02:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-12-27 19:16:40.055 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:40.058 -02:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email_verified email
+2018-12-27 19:16:40.060 -02:00 [DBG] Scopes in access token: openid profile email jp_api.user
+2018-12-27 19:16:40.065 -02:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2018-12-27 19:16:40.076 -02:00 [INF] Profile service returned to the following claim types: sub preferred_username name email email_verified
+2018-12-27 19:16:40.078 -02:00 [DBG] End userinfo request

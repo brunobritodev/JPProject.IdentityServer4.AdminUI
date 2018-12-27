@@ -48,7 +48,7 @@ export class ClientSecretsComponent implements OnInit {
         this.model = new ClientSecret();
         this.showButtonLoading = false;
         this.hashTypes = [{ id: 0, text: "Sha256" }, { id: 1, text: "Sha512" }];
-        this.secretTypes = [{ id: 'SharedSecret', text: "Shared Secret" }, { id: "X509Thumbprint", text: "X509 Thumbprint" }, { id: "X509Name", text: "X509 Name" }, { id: "X509CertificateBase64", text: "X509 Certificate Base64" }];
+        this.secretTypes = [{ id: 'SharedSecret', text: "Shared Secret" }, { id: 'X509Thumbprint', text: "X509 Thumbprint" }, { id: 'X509Name', text: "X509 Name" }, { id: 'X509CertificateBase64', text: "X509 Certificate Base64" }];
     }
 
     public showSuccessMessage() {

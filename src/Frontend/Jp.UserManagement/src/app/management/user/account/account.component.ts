@@ -7,12 +7,12 @@ import { User } from '../../../shared/models/user.model';
 import { forkJoin, Observable } from 'rxjs';
 import { SetPassword } from '../../../shared/view-model/set-password.model';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { ModalDirective } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { TranslatorService } from '@core/translator/translator.service';
 
 @Component({
     templateUrl: './account.component.html',
-    providers: [AccountManagementService]
+    providers: [AccountManagementService, TranslatorService]
 })
 export class AccountComponent implements OnInit {
 
@@ -28,7 +28,8 @@ export class AccountComponent implements OnInit {
         private settings: SettingsService,
         private accountManagementService: AccountManagementService,
         private oauthService: OAuthService,
-        private toastr: ToastrService) {
+        private toastr: ToastrService,
+        public translator: TranslatorService) {
 
     }
 

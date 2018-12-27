@@ -33,7 +33,7 @@ export class ClientService {
     }
 
     public update(model: Client): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "clients/update", model);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "clients/update", model);
     }
 
     public remove(clientId: string): any {

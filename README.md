@@ -89,6 +89,17 @@ We'll love it! Please [Read the docs](https://jp-project.readthedocs.io/en/lates
 If you need help building or running your Jp Project platform
 There are several ways we can help you out.
 
+## v1.1
+- Minor bugs correction
+- Added localization feature to SSO
+- Added translation feature to User Management
+- Silent refresh for angular-oauth2-oidc both for User Management and Admin
+- Changed Security Headers to accept Azure Application Insights
+ 
+
+## v1.0
+* First release
+
 # What comes next?
 
 Code coverage

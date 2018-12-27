@@ -399,6 +399,7 @@ namespace Jp.UI.SSO.Controllers.Account
             }
 
             var context = await _interaction.GetLogoutContextAsync(logoutId);
+            vm.PostLogoutRedirectUri = context?.PostLogoutRedirectUri;
             if (context?.ShowSignoutPrompt == false)
             {
                 // it's safe to automatically sign-out

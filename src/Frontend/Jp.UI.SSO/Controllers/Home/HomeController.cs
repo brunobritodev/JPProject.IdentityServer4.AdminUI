@@ -1,10 +1,8 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jp.UI.SSO.Controllers.Home
@@ -53,6 +51,22 @@ namespace Jp.UI.SSO.Controllers.Home
             }
 
             return View("Error", vm);
+        }
+
+
+        [HttpGet]
+        public IActionResult SetLanguage(string culture, string returnUrl = "")
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = System.DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            if (string.IsNullOrEmpty(returnUrl))
+                return RedirectToAction("Index");
+
+            return LocalRedirect(returnUrl);
         }
     }
 }

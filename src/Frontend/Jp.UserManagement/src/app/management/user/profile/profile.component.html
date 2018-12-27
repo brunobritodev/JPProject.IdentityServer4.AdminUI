@@ -13,34 +13,33 @@
         <div class="col-lg-5 col-md-5" >
 
             <div class="card b">
-                <div class="card-header bg-primary text-bold">Profile</div>
+                <div class="card-header bg-primary text-bold">{{ 'user.profile.PROFILE' | translate }}</div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Name</label>
+                        <label>{{ 'user.profile.NAME' | translate }}</label>
                         <input class="form-control" autocomplete="name" name="name" [(ngModel)]="user.name" type="text" />
                     </div>
                     <div class="form-group">
-                        <label>Phone Number</label>
+                        <label>{{ 'user.profile.PHONE NUMBER' | translate }}</label>
                         <input class="form-control" name="phoneNumber" mask="(000) 000-0000}"  autocomplete="tel" [(ngModel)]="user.phoneNumber" type="text" />
                     </div>
                     <div class="form-group">
-                        <label>Bio</label>
+                        <label>{{ 'user.profile.BIO' | translate }}</label>
                         <textarea class="form-control" name="bio" [(ngModel)]="user.bio" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>URL</label>
+                        <label>{{ 'user.profile.URL' | translate }}</label>
                         <input class="form-control" name="url" [(ngModel)]="user.url" type="text" />
                     </div>
                     <div class="form-group">
-                        <label>Company</label>
+                        <label>{{ 'user.profile.COMPANY' | translate }}</label>
                         <input class="form-control" name="company" autocomplete="organization" [(ngModel)]="user.company" type="text" />
                     </div>
                     <div class="form-group">
-                        <label>Job title</label>
+                        <label>{{ 'user.profile.JOB TITLE' | translate }}</label>
                         <input class="form-control" name="jobTitle" autocomplete="organization-title" [(ngModel)]="user.jobTitle" type="text" />
                     </div>
-                    <button class="btn btn-primary" type="button" (click)="updateProfile()" *ngIf="!updatingProfile">Update
-                        settings
+                    <button class="btn btn-primary" type="button" (click)="updateProfile()" *ngIf="!updatingProfile">{{ 'user.profile.UPDATE-SETTINGS' | translate }}
                     </button>
                     <div class="progress mb-3" *ngIf="updatingProfile">
                         <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
@@ -53,7 +52,7 @@
         <div class="col-lg-5 col-md-5">
 
             <div class="card b">
-                <div class="card-header bg-secondary text-bold">Picture</div>
+                <div class="card-header bg-secondary text-bold">{{ 'user.profile.PICTURE' | translate }}</div>
                 <div class="card-body">
                     <div class="row" *ngIf="imageReadyToUpload">
                         <div class="col-lg-3 col-md-12 justify-content-between">
@@ -75,14 +74,14 @@
                         <div class="input-group mb-3">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" (change)="fileChangeEvent($event)" id="pictureFile">
-                                <label class="custom-file-label" for="pictureFile">Choose file
+                                <label class="custom-file-label" for="pictureFile">{{ 'user.profile.CHOOSE-FILE' | translate }}
                                 </label>
                             </div>
 
                         </div>
                     </div>
                     <div *ngIf="imageReadyToUpload && !updatingImage">
-                        <button class="btn btn-outline-info" (click)="uploadImage()" type="button">Upload</button>
+                        <button class="btn btn-outline-info" (click)="uploadImage()" type="button">{{ 'user.profile.UPLOAD' | translate }}</button>
                     </div>
                     <div class="progress mb-3" *ngIf="updatingImage">
                             <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"

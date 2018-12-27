@@ -1,5 +1,7 @@
 ﻿@using Jp.UI.SSO.Models
 @model Jp.UI.SSO.Models.LoginViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     Layout = "~/Views/Shared/_LayoutExt.cshtml";
 }
@@ -13,8 +15,8 @@
                 {
                     <div class="card p-4">
                         <div class="card-body">
-                            <h1>Login</h1>
-                            <p class="text-muted">Sign In to your account</p>
+                            <h1>@Localizer["Title-Login"]</h1>
+                            <p class="text-muted">@Localizer["Body-Sign"]</p>
                             <form asp-route="Login">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -22,7 +24,7 @@
                                             <i class="icon-user"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
+                                    <input class="form-control" placeholder="Username" asp-for=Username autofocus>
                                 </div>
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
@@ -30,47 +32,47 @@
                                             <i class="icon-lock"></i>
                                         </span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
+                                    <input type="password" class="form-control" placeholder="Password" asp-for=Password autocomplete="off">
                                 </div>
                                 @if (Model.AllowRememberLogin)
                                 {
                                     <div class="input-group mb-4">
-                                        <label asp-for="RememberLogin">
-                                            <input asp-for="RememberLogin">
-                                            <strong>Remember My Login</strong>
+                                        <label asp-for=RememberLogin>
+                                            <input asp-for=RememberLogin>
+                                            <strong>@Localizer["Body-RememberLogin"]</strong>
                                         </label>
                                     </div>
                                 }
                                 <div class="row">
                                     <div class="col-6">
-                                        <button class="btn btn-primary px-4" name="button" value="login">Login</button>
+                                        <button class="btn btn-primary px-4" name="button" value="login">@Localizer["Body-Login"]</button>
                                     </div>
                                     <div class="col-6 text-right">
-                                        <a class="btn btn-link px-0" asp-action="ForgotPassword">Forgot password?</a>
+                                        <a class="btn btn-link px-0" asp-action="ForgotPassword">@Localizer["Body-Forgot"]</a>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <!--Please, help us, do not remove this info-->
                         <div class="d-none d-lg-block text-center">
-                            <small>Jp Project is an Open Source Identity Server4 initiative - </small> <a href="https://github.com/brunohbrito/JP-Project" target="_blank"><img class="icon" width="25%" src="@Url.Content("~/images/brand/logo.png")"></a>
+                            <small>@Localizer["Body-Jp Project"] - </small> <a href="https://github.com/brunohbrito/JP-Project" target="_blank"><img class="icon" width="25%" src="@Url.Content("~/images/brand/logo.png")"></a>
                         </div>
                         <div class="d-lg-none text-center">
-                            <small>Jp Project is an Open Source Identity Server4 initiative - </small>  <a href="https://github.com/brunohbrito/JP-Project" target="_blank"><img class="icon" src="@Url.Content("~/images/brand/logo-min.png")"></a>
+                            <small>@Localizer["Body-Jp Project"] - </small>  <a href="https://github.com/brunohbrito/JP-Project" target="_blank"><img class="icon" src="@Url.Content("~/images/brand/logo-min.png")"></a>
                         </div>
                     </div>
                 }
                 <div class="card text-white bg-primary p-4">
                     <div class="card-body text-center">
 
-                        <h2>Sign up</h2>
+                        <h2>@Localizer["Body-Sign-up"]</h2>
                         @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
                         {
                             <p>
-                                There are no login schemes configured for this client.
+                                @Localizer["Body-Configured-login"].
                             </p>
                         }
-                        <a class="btn btn-primary active mt-3" asp-action="Register" type="button">Register Now!</a>
+                        <a class="btn btn-primary active mt-3" asp-action="Register" type="button">@Localizer["Body-Register-now"]</a>
                         <br />
                         <br />
                         @if (Model.VisibleExternalProviders.Any())
@@ -83,7 +85,7 @@
                                        asp-route-provider="Google"
                                        asp-route-returnUrl="@Model.ReturnUrl">
                                         <i class="fa fa-google-plus"></i>
-                                        <span>Google+</span>
+                                        <span>@Localizer["Body-Google+"]</span>
                                     </a>
                                 }
                                 @if (Model.VisibleExternalProviders.Any(a => a.DisplayName.ToLower() == "twitter"))
@@ -93,7 +95,7 @@
                                        asp-route-provider="Twitter"
                                        asp-route-returnUrl="@Model.ReturnUrl">
                                         <i class="fa fa-twitter"></i>
-                                        <span>Twitter</span>
+                                        <span>@Localizer["Body-Twitter"]</span>
                                     </a>
                                 }
                                 @if (Model.VisibleExternalProviders.Any(a => a.DisplayName.ToLower() == "facebook"))
@@ -103,7 +105,7 @@
                                        asp-route-provider="Facebook"
                                        asp-route-returnUrl="@Model.ReturnUrl">
                                         <i class="fa fa-facebook"></i>
-                                        <span>Facebook</span>
+                                        <span>@Localizer["Body-Facebook"]</span>
                                     </a>
                                 }
                             </p>

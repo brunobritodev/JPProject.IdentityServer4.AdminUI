@@ -9,6 +9,7 @@ import { Subject } from "rxjs";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
 import { AlertConfig } from "ngx-bootstrap/alert";
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider, VkontakteLoginProvider } from "angular-6-social-login-v2";
+import { TranslatorService } from '@core/translator/translator.service';
 
 export function getAlertConfig(): AlertConfig {
     return Object.assign(new AlertConfig(), { type: "success" });
@@ -19,8 +20,9 @@ export function getAlertConfig(): AlertConfig {
     templateUrl: "register.component.html",
     providers: [
         UserService,
+        TranslatorService,
         { provide: AlertConfig, useFactory: getAlertConfig },
-        AuthService]
+        AuthService,]
 })
 export class RegisterComponent implements OnInit {
 
@@ -38,7 +40,8 @@ export class RegisterComponent implements OnInit {
         private userService: UserService,
         private router: Router,
         private route: ActivatedRoute,
-        private socialAuthService: AuthService) { }
+        private socialAuthService: AuthService,
+        public translator: TranslatorService) { }
 
     public ngOnInit() {
         this.errors = [];
