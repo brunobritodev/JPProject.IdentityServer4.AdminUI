@@ -3370,3 +3370,68 @@ System.IO.IOException: Authentication failed because the remote party has closed
 2018-10-14 14:53:53.467 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
 2018-10-14 14:53:53.484 -03:00 [INF] Profile service returned to the following claim types: sub email picture preferred_username name email email_verified
 2018-10-14 14:53:53.488 -03:00 [DBG] End userinfo request
+2018-10-14 17:58:20.492 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2018-10-14 17:58:20.715 -03:00 [INF] SigninCredentialExtension added
+2018-10-14 17:58:25.041 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-14 17:58:25.060 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-14 17:58:25.065 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-14 17:58:25.070 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-14 17:58:25.077 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-14 17:58:48.769 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-10-14 17:58:48.820 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-10-14 17:58:48.825 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-10-14 17:58:48.828 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-10-14 17:58:48.840 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "d36b7160-b58b-4e68-8d0a-fe959d445f4b",
+  "DisplayName": "bhdebrito@gmail.com",
+  "ActivityId": "0HLHI2V9Q872A:00000008",
+  "TimeStamp": "2018-10-14T20:58:48Z",
+  "ProcessId": 11844,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-14 17:58:48.965 -03:00 [DBG] Request path /connect/endsession/callback matched to endpoint type Endsession
+2018-10-14 17:58:48.976 -03:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionCallbackEndpoint
+2018-10-14 17:58:48.981 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionCallbackEndpoint for /connect/endsession/callback
+2018-10-14 17:58:48.992 -03:00 [DBG] Processing signout callback request
+2018-10-14 17:58:49.457 -03:00 [DBG] UserManagementUI found in database: true
+2018-10-14 17:58:49.493 -03:00 [DBG] IS4-Admin found in database: true
+2018-10-14 17:58:49.496 -03:00 [DBG] No client front-channel logout URLs
+2018-10-14 17:58:49.499 -03:00 [DBG] No client back-channel logout URLs
+2018-10-14 17:58:49.504 -03:00 [INF] Successful signout callback.
+2018-10-14 17:58:49.507 -03:00 [DBG] No client front-channel iframe urls
+2018-10-14 17:58:49.511 -03:00 [DBG] No client back-channel iframe urls
+2018-10-14 17:58:51.453 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-10-14 17:59:03.013 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2018-10-14 17:59:03.118 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Provider": "Google",
+  "ProviderUserId": "102696868227620762147",
+  "SubjectId": "d36b7160-b58b-4e68-8d0a-fe959d445f4b",
+  "DisplayName": "bhdebrito@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLHI2V9Q872A:0000000E",
+  "TimeStamp": "2018-10-14T20:59:03Z",
+  "ProcessId": 11844,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-10-14 17:59:03.131 -03:00 [DBG] Augmenting SignInContext
+2018-10-14 17:59:03.136 -03:00 [DBG] Adding amr claim with value: external
+2018-10-14 17:59:03.142 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-10-14 17:59:03.145 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-02-03 02:59:28.462 -02:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-02-03 02:59:28.667 -02:00 [INF] SigninCredentialExtension added
+2019-02-03 02:59:30.565 -02:00 [ERR] An error occurred using the connection to database '' on server 'localhost'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'bruno'@'172.18.0.1' (using password: YES)
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 356
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 416
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 175
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
