@@ -1,11 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Jp.Infra.CrossCutting.Identity.Constants;
+﻿using Jp.Infra.CrossCutting.Identity.Constants;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using System;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Identity.Context
 {

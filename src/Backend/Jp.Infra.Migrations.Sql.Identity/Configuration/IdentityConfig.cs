@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Jp.Infra.Migrations.Sql.Identity.Configuration
+namespace Jp.Infra.Migrations.Sql.Configuration
 {
     public static class IdentityConfig
     {
@@ -26,7 +26,7 @@ namespace Jp.Infra.Migrations.Sql.Identity.Configuration
 
             services.AddEntityFrameworkSqlServer().AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
-            services.AddDbContext<EventStoreSQLContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<EventStoreContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
 
             services.AddIdentity<UserIdentity, UserIdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

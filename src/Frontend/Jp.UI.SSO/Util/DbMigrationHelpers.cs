@@ -40,7 +40,7 @@ namespace Jp.UI.SSO.Util
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
 
                 var id4Context = scope.ServiceProvider.GetRequiredService<JpContext>();
-                var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreSQLContext>();
+                var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
 
                 await id4Context.Database.MigrateAsync();
                 await userContext.Database.MigrateAsync();

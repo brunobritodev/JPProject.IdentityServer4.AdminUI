@@ -1,15 +1,13 @@
-﻿using System.IO;
-using Jp.Domain.Core.Events;
+﻿using Jp.Domain.Core.Events;
 using Jp.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Jp.Infra.Data.Context
 {
-    public class EventStoreSQLContext : DbContext
+    public class EventStoreContext : DbContext
     {
         public DbSet<StoredEvent> StoredEvent { get; set; }
-        public EventStoreSQLContext(DbContextOptions<EventStoreSQLContext> options) : base(options) {}
+        public EventStoreContext(DbContextOptions<EventStoreContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
