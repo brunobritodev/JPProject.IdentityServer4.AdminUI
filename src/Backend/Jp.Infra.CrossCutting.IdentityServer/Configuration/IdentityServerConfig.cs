@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Reflection;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

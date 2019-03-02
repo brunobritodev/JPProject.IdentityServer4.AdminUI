@@ -1,9 +1,4 @@
-﻿using Jp.Infra.CrossCutting.IdentityServer.Configuration;
-using Jp.Infra.CrossCutting.IoC;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
-using Jp.Infra.Migrations.MySql.Identity.Configuration;
-using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
-using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
+﻿using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -11,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using IdentityServerConfig = Jp.Infra.CrossCutting.IdentityServer.Configuration.IdentityServerConfig;
 
 namespace Jp.UI.SSO
 {

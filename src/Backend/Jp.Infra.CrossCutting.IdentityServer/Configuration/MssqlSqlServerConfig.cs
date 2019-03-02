@@ -1,20 +1,19 @@
-﻿using Jp.Infra.Data.Context;
+﻿using System;
+using Jp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Reflection;
 
-namespace Jp.Infra.Migrations.Sql.IdentityServer.Configuration
+namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
 {
-    public static class IdentityServerSqlConfig
+    public static class MssqlSqlServerConfig
     {
         public static IIdentityServerBuilder UseIdentityServerSqlDatabase(this IIdentityServerBuilder builder,
             IServiceCollection services, IConfiguration configuration, ILogger logger)
         {
             var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
-            var migrationsAssembly = typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
+            var migrationsAssembly = "Jp.Infra.Migrations.Sql.Identity";//typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             // this adds the config data from DB (clients, resources)

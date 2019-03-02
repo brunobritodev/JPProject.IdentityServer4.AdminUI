@@ -9,6 +9,7 @@ import { UserRole } from "../viewModel/user-role.model";
 import { UserLogin } from "../viewModel/user-login.model";
 import { ResetPassword } from "../viewModel/reset-password.model";
 import { EventHistoryData } from "../viewModel/event-history-data.model";
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class UserService {
@@ -129,7 +130,7 @@ export class UserService {
                 role: role
             }
         };
-        return this.http.get<DefaultResponse<UserProfile[]>>(environment.ResourceServer + "UserAdmin/users-from-role", options).map(a => a.data);
+        return this.http.get<DefaultResponse<UserProfile[]>>(environment.ResourceServer + "UserAdmin/users-from-role", options).pipe(map(a => a.data));
     }
 
     public resetPassword(resetPassword: ResetPassword): Observable<DefaultResponse<boolean>> {
@@ -142,6 +143,6 @@ export class UserService {
                 username: username
             }
         };
-        return this.http.get<DefaultResponse<EventHistoryData[]>>(environment.ResourceServer + "UserAdmin/show-logs", options).map(a => a.data);
+        return this.http.get<DefaultResponse<EventHistoryData[]>>(environment.ResourceServer + "UserAdmin/show-logs", options).pipe(map(a => a.data));
     }
 }

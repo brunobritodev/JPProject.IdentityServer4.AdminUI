@@ -1,9 +1,7 @@
 ﻿using Jp.Infra.CrossCutting.IdentityServer.Configuration;
 using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Jp.Infra.Migrations.MySql.Identity.Configuration;
-using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
 using Jp.Infra.Migrations.Sql.Identity.Configuration;
-using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
