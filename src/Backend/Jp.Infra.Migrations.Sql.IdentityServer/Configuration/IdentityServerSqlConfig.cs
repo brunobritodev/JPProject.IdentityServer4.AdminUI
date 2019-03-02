@@ -1,10 +1,10 @@
-﻿using System;
-using System.Reflection;
-using Jp.Infra.CrossCutting.IdentityServer.Context;
+﻿using Jp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Reflection;
 
 namespace Jp.Infra.Migrations.Sql.IdentityServer.Configuration
 {
@@ -34,7 +34,7 @@ namespace Jp.Infra.Migrations.Sql.IdentityServer.Configuration
                     options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
 
-            
+
 
             return builder;
         }
