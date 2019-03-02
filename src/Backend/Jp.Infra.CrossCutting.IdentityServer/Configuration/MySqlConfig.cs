@@ -3,20 +3,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Reflection;
-using Jp.Infra.Data.Context;
 
-namespace Jp.Infra.Migrations.MySql.IdentityServer.Configuration
+namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
 {
-    public static class IdentityServerSqlConfig
+    public static class MySqlConfig
     {
         public static IIdentityServerBuilder UseIdentityServerMySqlDatabase(this IIdentityServerBuilder builder,
             IServiceCollection services, IConfiguration configuration, ILogger logger)
         {
             var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
-            var migrationsAssembly = typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
+            var migrationsAssembly = "Jp.Infra.Migrations.MySql.Identity"; //typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
 
-            services.AddDbContext<JpContext>(options => options.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             // this adds the config data from DB (clients, resources)
             builder.AddConfigurationStore(options =>
                 {

@@ -40,9 +40,7 @@
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.Data\Jp.Infra.Data.csproj" />
-    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.MySql.IdentityServer\Jp.Infra.Migrations.MySql.IdentityServer.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.MySql.Identity\Jp.Infra.Migrations.MySql.Identity.csproj" />
-    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.Sql.IdentityServer\Jp.Infra.Migrations.Sql.IdentityServer.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.Identity.csproj" />
   </ItemGroup>
 
