@@ -3620,3 +3620,30 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'brun
 2019-03-02 09:11:59.132 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
 2019-03-02 09:11:59.135 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2019-03-02 09:11:59.137 -03:00 [DBG] Start key discovery request
+2019-03-02 10:24:19.626 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-02 10:24:19.807 -03:00 [INF] SigninCredentialExtension added
+2019-03-02 10:24:50.750 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-02 10:24:50.945 -03:00 [INF] SigninCredentialExtension added
+2019-03-02 10:24:52.828 -03:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `ApiResources` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Enabled` bit NOT NULL,
+    `Name` varchar(200) NOT NULL,
+    `DisplayName` varchar(200) NULL,
+    `Description` varchar(1000) NULL,
+    CONSTRAINT `PK_ApiResources` PRIMARY KEY (`Id`)
+);
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'ApiResources' already exists ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'ApiResources' already exists
+   at MySqlConnector.Core.ServerSession.TryAsyncContinuation(Task`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 1245
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 42
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 74
+   at MySql.Data.MySqlClient.MySqlDataReader.ReadFirstResultSetAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 299
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(MySqlCommand command, CommandBehavior behavior, ResultSetProtocol resultSetProtocol, IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 284
+   at MySqlConnector.Core.TextCommandExecutor.ExecuteReaderAsync(String commandText, MySqlParameterCollection parameterCollection, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\TextCommandExecutor.cs:line 37
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlCommand.cs:line 261
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)

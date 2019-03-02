@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Jp.Infra.Data.Repository.EventSourcing
 {
-    public class EventStoreSQLRepository : IEventStoreRepository
+    public class EventStoreRepository : IEventStoreRepository
     {
-        private readonly EventStoreSQLContext _context;
+        private readonly EventStoreContext _context;
 
-        public EventStoreSQLRepository(EventStoreSQLContext context)
+        public EventStoreRepository(EventStoreContext context)
         {
             _context = context;
         }
