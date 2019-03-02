@@ -17,8 +17,8 @@ namespace Jp.UI.SSO.Util
     {
         /// <summary>
         /// Generate migrations before running this method, you can use command bellow:
-        /// Nuget package manager: Add-Migration DbInit -context ApplicationDbContext -output Data/Migrations
-        /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationDbContext -o Data/Migrations
+        /// Nuget package manager: Add-Migration DbInit -context ApplicationIdentityContext -output Data/Migrations
+        /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationIdentityContext -o Data/Migrations
         /// </summary>
         /// <param name="host"></param>
         public static async Task EnsureSeedData(IWebHost host)
@@ -35,7 +35,7 @@ namespace Jp.UI.SSO.Util
         {
             using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var userContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var userContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityContext>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
 

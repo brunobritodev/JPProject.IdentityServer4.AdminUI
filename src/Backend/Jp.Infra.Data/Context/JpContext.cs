@@ -59,6 +59,7 @@ namespace Jp.Infra.Data.Context
         public DbSet<ClientProperty> ClientProperties { get; set; }
 
         public DbSet<PersistedGrant> PersistedGrants { get; set; }
+        public DbSet<DeviceFlowCodes> DeviceFlowCodes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
