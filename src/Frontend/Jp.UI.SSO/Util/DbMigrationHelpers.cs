@@ -1,18 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Mappers;
-using Jp.Infra.CrossCutting.Identity.Constants;
+﻿using IdentityServer4.EntityFramework.Mappers;
 using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
-using Jp.Infra.CrossCutting.IdentityServer.Context;
 using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using JpContext = Jp.Infra.CrossCutting.IdentityServer.Context.JpContext;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Jp.UI.SSO.Util
 {
@@ -77,7 +74,7 @@ namespace Jp.UI.SSO.Util
                 UserName = Users.AdminUserName,
                 Email = Users.AdminEmail,
                 EmailConfirmed = true,
-                
+
             };
 
             var result = await userManager.CreateAsync(user, Users.AdminPassword);
