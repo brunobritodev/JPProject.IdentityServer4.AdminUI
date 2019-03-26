@@ -15,10 +15,4 @@
     <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Jp.Infra.Data">
-      <HintPath>bin\Debug\netcoreapp2.1\Jp.Infra.Data.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+﻿using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +11,7 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
         public static IIdentityServerBuilder AddIdentityServer(this IServiceCollection services,
             IConfiguration configuration, IHostingEnvironment environment, ILogger logger)
         {
-            
+
             var builder = services.AddIdentityServer(
                     options =>
                     {

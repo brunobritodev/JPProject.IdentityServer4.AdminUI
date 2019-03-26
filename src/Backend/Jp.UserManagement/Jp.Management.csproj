@@ -4,19 +4,17 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>9c91d295-54c5-4d09-9bd6-fa56fb74011b</UserSecretsId>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ApplicationInsightsResourceId>/subscriptions/ce40329b-ac99-4c5f-ab72-539cc648b3c1/resourcegroups/NewNasa/providers/microsoft.insights/components/Allto-SSO</ApplicationInsightsResourceId>
-    <ApplicationInsightsAnnotationResourceId>/subscriptions/ce40329b-ac99-4c5f-ab72-539cc648b3c1/resourcegroups/NewNasa/providers/microsoft.insights/components/Allto-SSO</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="IdentityServer4" Version="2.3.2" />
+    <PackageReference Include="IdentityServer4" Version="2.4.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="3.0.2" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
@@ -34,8 +32,4 @@
     <ProjectReference Include="..\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services" />
-  </ItemGroup>
-  
 </Project>
