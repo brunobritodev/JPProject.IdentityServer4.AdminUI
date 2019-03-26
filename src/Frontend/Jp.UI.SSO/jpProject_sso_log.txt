@@ -13276,3 +13276,14 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'brun
 2019-03-26 14:03:53.902 -03:00 [ERR] Request validation failed
 2019-03-26 14:03:53.904 -03:00 [INF] {"ClientId":"IS4-Admin","ClientName":"IS4-Admin","RedirectUri":null,"AllowedRedirectUris":["http://localhost:4300/login-callback"],"SubjectId":"08d6b1ee-652e-7a17-4017-ba937f52c84a","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"response_type":"id_token token","client_id":"IS4-Admin","state":"NYVnw0ZEwHBkbpOBnXf5MAioBMygz9LLlJzUzLZX","redirect_uri":"http://localhost:4300/silent-refresh.html","scope":"openid profile email jp_api.is4","nonce":"NYVnw0ZEwHBkbpOBnXf5MAioBMygz9LLlJzUzLZX","prompt":"none"},"$type":"AuthorizeRequestValidationLog"}
 2019-03-26 14:03:53.915 -03:00 [INF] {"ClientId":"IS4-Admin","ClientName":"IS4-Admin","RedirectUri":null,"Endpoint":"Authorize","SubjectId":"08d6b1ee-652e-7a17-4017-ba937f52c84a","Scopes":"","GrantType":null,"Error":"unauthorized_client","ErrorDescription":"Invalid redirect_uri","Category":"Token","Name":"Token Issued Failure","EventType":"Failure","Id":2001,"Message":null,"ActivityId":"0HLLI1FO36GQL:00000001","TimeStamp":"2019-03-26T17:03:53.0000000Z","ProcessId":50980,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"TokenIssuedFailureEvent"}
+2019-03-26 17:05:04.036 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-26 17:05:04.210 -03:00 [INF] SigninCredentialExtension added
+2019-03-26 17:05:40.199 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-26 17:05:40.377 -03:00 [INF] SigninCredentialExtension added
+2019-03-26 17:05:45.290 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-26 17:05:45.328 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-26 17:05:45.332 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-26 17:05:45.337 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-26 17:05:45.339 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-26 17:05:45.342 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-26 17:05:45.343 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid

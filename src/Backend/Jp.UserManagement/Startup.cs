@@ -89,7 +89,7 @@ namespace Jp.Management
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
-            NativeInjectorBootStrapper.RegisterServices(services);
+            NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }
 }

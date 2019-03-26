@@ -11,15 +11,9 @@ namespace Jp.Infra.CrossCutting.IoC
 {
     internal class IdentityBootStrapper
     {
-        public static void RegisterServices(IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services, IConfiguration config)
         {
-            // get the configuration from the app settings
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-            // Infra - Identity Services
+           // Infra - Identity Services
             services.AddTransient<IEmailSender, AuthEmailMessageSender>();
             services.AddTransient<ISmsSender, AuthSMSMessageSender>();
             services.AddTransient<IUserService, UserService>();
