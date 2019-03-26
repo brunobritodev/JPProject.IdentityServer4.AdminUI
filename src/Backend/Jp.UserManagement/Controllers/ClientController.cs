@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IdentityServer4.Models;
+﻿using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
@@ -11,6 +8,8 @@ using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
@@ -47,9 +46,8 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("update"), Authorize(Policy = "Admin")
-        ]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] ClientViewModel client)
+        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] Client client)
         {
             if (!ModelState.IsValid)
             {

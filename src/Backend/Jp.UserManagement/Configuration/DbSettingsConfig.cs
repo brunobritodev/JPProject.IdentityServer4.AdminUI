@@ -1,6 +1,6 @@
 ﻿using Jp.Infra.CrossCutting.Tools.DefaultConfig;
-using Jp.Infra.Migrations.MySql.Identity.Configuration;
-using Jp.Infra.Migrations.Sql.Identity.Configuration;
+using Jp.Infra.Migrations.MySql.Configuration;
+using Jp.Infra.Migrations.Sql.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

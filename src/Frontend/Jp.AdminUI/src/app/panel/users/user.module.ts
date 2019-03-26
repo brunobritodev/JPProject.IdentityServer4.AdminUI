@@ -10,6 +10,7 @@ import { UserAddComponent } from "./add/user-add.component";
 import { UserClaimsComponent } from "./claims/user-claims.component";
 import { UserRolesComponent } from "./roles/user-roles.component";
 import { UserLoginsComponent } from "./logins/user-logins.component";
+import { Ng2TableModule } from 'ng2-table/ng2-table';
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -27,7 +28,8 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         DndModule.forRoot(),
         NgxSelectModule,
-        TagInputModule
+        TagInputModule,
+        Ng2TableModule
     ],
     declarations: [
         UserListComponent,

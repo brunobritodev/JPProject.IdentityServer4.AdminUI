@@ -1,17 +1,13 @@
-﻿using Jp.Infra.CrossCutting.IdentityServer.Configuration;
-using Jp.Infra.CrossCutting.IoC;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
-using Jp.Infra.Migrations.MySql.Identity.Configuration;
-using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
-using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
+﻿using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using IdentityServerConfig = Jp.Infra.CrossCutting.IdentityServer.Configuration.IdentityServerConfig;
+using System.IO;
 
 namespace Jp.UI.SSO
 {
@@ -48,12 +44,11 @@ namespace Jp.UI.SSO
 
             services.ConfigureIdentityDatabase(Configuration);
 
-            // For linux ambient DataProtection
-            // https://github.com/aspnet/Home/issues/2941
-            // You can remove it in ISS
-            //if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
-            //    Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
-            //services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
+
+            if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
+                Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
+
+            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
 
             services.Configure<IISOptions>(iis =>
             {
@@ -88,7 +83,6 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseDeveloperExceptionPage();
             app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();

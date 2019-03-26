@@ -1,10 +1,9 @@
-﻿using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Entities;
+﻿using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.EntityFramework.Extensions;
 using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.Data.Context
 {
@@ -60,6 +59,7 @@ namespace Jp.Infra.Data.Context
         public DbSet<ClientProperty> ClientProperties { get; set; }
 
         public DbSet<PersistedGrant> PersistedGrants { get; set; }
+        public DbSet<DeviceFlowCodes> DeviceFlowCodes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
