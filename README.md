@@ -5,24 +5,41 @@
 [![License](https://img.shields.io/github/license/brunohbrito/jp-project.svg)](LICENSE)
 ![DOCS](https://readthedocs.org/projects/jp-project/badge/?version=latest&style=flat)
 
-Jp Project is a Open Source Admin UI for IdentityServer4. 
+Jp Project is a Open Source UI Administration Panel for IdentityServer4. 
+
+
+## Admin UI
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/jp-adminui.gif"  width="480" />
+
+## Login page
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/login.JPG?raw=true" width="480" />
+
+## Consent page
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/consent-page.JPG?raw=true" width="480" />
+
+## Profile 
+<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/jp-usermanagement.gif" width="480" />
+
 
 # We are online at Azure. 
+
+<img align="right" width="100px" src="https://www.developpez.net/forums/attachments/p289604d1/a/a/a" />
 
 Check it now at [Jp Project](https://jpproject.azurewebsites.net/admin-ui/).
 
 You can check also [SSO](https://jpproject.azurewebsites.net/sso/) and [User Management](https://jpproject.azurewebsites.net/user-management/)
 
+
 _New users are readonly_
 
-<img align="right" width="100px" src="https://www.developpez.net/forums/attachments/p289604d1/a/a/a" />
+
 Written in ASP.NET Core and Angular 6.
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management. Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-# Features
+# How it was written
 - Angular 6
 - Rich UI interface
-- ASP.NET Core 2.1
+- ASP.NET Core 2.2
 - ASP.NET MVC Core 
 - ASP.NET WebApi Core
 - ASP.NET Identity Core
@@ -60,19 +77,7 @@ Jp Project is built against ASP.NET Core 2.1.
 
 Wait for ng to complete his proccess then go to http://localhost:5000!
 
-# Screen Shots.
 
-## Admin UI
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/admin-home.jpg?raw=true" width="480" />
-
-## Login page
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/login.JPG?raw=true" width="480" />
-
-## Consent page
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/consent-page.JPG?raw=true" width="480" />
-
-## Profile 
-<img src="https://github.com/brunohbrito/JP-Project/blob/master/docs/images/profile.JPG?raw=true" width="480" />
 
 Any doubts? Go to docs
 

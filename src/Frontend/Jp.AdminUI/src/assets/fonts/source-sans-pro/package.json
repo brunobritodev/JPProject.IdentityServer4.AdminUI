@@ -1,0 +1,59 @@
+{
+  "_from": "source-sans-pro@2.20.2",
+  "_id": "source-sans-pro@2.20.2",
+  "_inBundle": false,
+  "_integrity": "sha512-/HW4xC0C9KjeyE/lmZxZKYaQgdde1QTBQG3ynNpvWJKb1l93dsiBF31OlGmxJAZH2oeLeWAn9v7g7z2aDkrEUw==",
+  "_location": "/source-sans-pro",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "source-sans-pro@2.20.2",
+    "name": "source-sans-pro",
+    "escapedName": "source-sans-pro",
+    "rawSpec": "2.20.2",
+    "saveSpec": null,
+    "fetchSpec": "2.20.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.20.2.tgz",
+  "_shasum": "ee24a6f9680af4e05736be9c1afee3d714618782",
+  "_spec": "source-sans-pro@2.20.2",
+  "_where": "D:\\workspace\\JP.Project\\src\\Frontend\\Jp.AdminUI",
+  "author": {
+    "name": "Paul D. Hunt"
+  },
+  "bugs": {
+    "url": "https://github.com/adobe-fonts/source-sans-pro/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Miguel Sousa"
+    }
+  ],
+  "deprecated": false,
+  "description": "Source Sans Pro is a set of OpenType fonts that have been designed to work well in user interface (UI) environments.",
+  "homepage": "https://adobe-fonts.github.io/source-sans-pro",
+  "keywords": [
+    "font",
+    "sans-serif",
+    "Adobe",
+    "OpenType",
+    "otf",
+    "ttf",
+    "woff",
+    "woff2",
+    "eot"
+  ],
+  "license": "SIL Open Font License 1.1",
+  "name": "source-sans-pro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adobe-fonts/source-sans-pro.git#release"
+  },
+  "version": "2.20.2"
+}
