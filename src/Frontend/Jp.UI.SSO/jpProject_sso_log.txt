@@ -4181,3 +4181,240 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'ApiResources' already
 2019-03-02 12:41:02.408 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
 2019-03-02 12:41:02.425 -03:00 [INF] Profile service returned the following claim types: sub email preferred_username name email email_verified
 2019-03-02 12:41:02.427 -03:00 [DBG] End userinfo request
+2019-03-25 23:39:11.419 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-25 23:39:11.621 -03:00 [INF] SigninCredentialExtension added
+2019-03-25 23:39:17.029 -03:00 [WRN] No XML encryptor configured. Key "7d9f03a7-626f-4e7f-bf5f-cb549f6b51a2" may be persisted to storage in unencrypted form.
+2019-03-25 23:39:21.339 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-25 23:39:21.369 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-25 23:39:21.372 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-25 23:39:21.375 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-25 23:39:21.377 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-25 23:39:21.379 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-25 23:39:21.381 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-25 23:39:58.188 -03:00 [DBG] Login Url: /Account/Login
+2019-03-25 23:39:58.198 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-25 23:39:58.200 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-25 23:39:58.203 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-25 23:39:58.205 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-25 23:39:58.208 -03:00 [DBG] Error Url: /home/error
+2019-03-25 23:39:58.210 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-25 23:39:58.215 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:39:58.227 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:04.402 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:04.405 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:04.433 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-25 23:41:04.441 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:04.444 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:12.619 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-25 23:41:12.622 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:12.625 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:12.706 -03:00 [WRN] Invalid password for user 08d6b194-3db5-99fe-6c1c-7d85d66713d6.
+2019-03-25 23:41:12.709 -03:00 [WRN] User 08d6b194-3db5-99fe-6c1c-7d85d66713d6 failed to provide the correct password.
+2019-03-25 23:41:12.799 -03:00 [INF] {"Username":"bhdebrito@Gmail.com","Endpoint":"UI","Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"0HLLHIH9CG5B7:00000003","TimeStamp":"2019-03-26T02:41:12.0000000Z","ProcessId":19660,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2019-03-25 23:41:22.267 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-25 23:41:22.273 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:22.276 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:22.299 -03:00 [WRN] Invalid password for user 08d6b194-3db5-99fe-6c1c-7d85d66713d6.
+2019-03-25 23:41:22.302 -03:00 [WRN] User 08d6b194-3db5-99fe-6c1c-7d85d66713d6 failed to provide the correct password.
+2019-03-25 23:41:22.370 -03:00 [INF] {"Username":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"0HLLHIH9CG5B7:00000004","TimeStamp":"2019-03-26T02:41:22.0000000Z","ProcessId":19660,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2019-03-25 23:41:27.194 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-25 23:41:27.199 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:27.202 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:41:27.219 -03:00 [WRN] Invalid password for user 08d6b194-3db5-99fe-6c1c-7d85d66713d6.
+2019-03-25 23:41:27.223 -03:00 [WRN] User 08d6b194-3db5-99fe-6c1c-7d85d66713d6 failed to provide the correct password.
+2019-03-25 23:41:27.243 -03:00 [INF] {"Username":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"0HLLHIH9CG5B7:00000005","TimeStamp":"2019-03-26T02:41:27.0000000Z","ProcessId":19660,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2019-03-25 23:42:00.775 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-25 23:42:00.780 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:42:00.783 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:42:00.974 -03:00 [DBG] Augmenting SignInContext
+2019-03-25 23:42:00.978 -03:00 [DBG] Adding idp claim with value: local
+2019-03-25 23:42:00.980 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-25 23:42:00.982 -03:00 [DBG] Adding auth_time claim with value: 1553568120
+2019-03-25 23:42:00.988 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-25 23:42:00.998 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-25 23:42:01.006 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLHIH9CG5B7:00000006","TimeStamp":"2019-03-26T02:42:01.0000000Z","ProcessId":19660,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-25 23:42:01.052 -03:00 [DBG] 0 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-25 23:42:03.594 -03:00 [DBG] 0 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-25 23:47:40.493 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-25 23:47:40.656 -03:00 [INF] SigninCredentialExtension added
+2019-03-25 23:47:44.615 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-25 23:47:44.652 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-25 23:47:44.655 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-25 23:47:44.657 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-25 23:47:44.659 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-25 23:47:44.661 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-25 23:47:44.663 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-26 00:22:11.829 -03:00 [DBG] Login Url: /Account/Login
+2019-03-26 00:22:11.841 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-26 00:22:11.844 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-26 00:22:11.849 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-26 00:22:11.851 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-26 00:22:11.854 -03:00 [DBG] Error Url: /home/error
+2019-03-26 00:22:11.858 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-26 00:22:11.880 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-03-26 00:22:11.892 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-03-26 00:22:11.895 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-26 00:22:11.900 -03:00 [DBG] Start discovery request
+2019-03-26 00:22:12.373 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2019-03-26 00:22:12.486 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-03-26 00:22:12.494 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-03-26 00:22:12.497 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-26 00:22:12.502 -03:00 [DBG] Start key discovery request
+2019-03-26 00:22:12.769 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-03-26 00:22:12.776 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-03-26 00:22:12.779 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-03-26 00:22:12.786 -03:00 [DBG] Start authorize request
+2019-03-26 00:22:12.797 -03:00 [DBG] User in authorize request: 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-26 00:22:12.805 -03:00 [DBG] Start authorize request protocol validation
+2019-03-26 00:22:12.918 -03:00 [DBG] skoruba_identity_admin found in database: false
+2019-03-26 00:22:12.931 -03:00 [ERR] Unknown client or not enabled: skoruba_identity_admin
+{"ClientId":null,"ClientName":null,"RedirectUri":null,"AllowedRedirectUris":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"skoruba_identity_admin","redirect_uri":"http://localhost:9000/signin-oidc","response_type":"id_token","scope":"openid profile email roles","response_mode":"form_post","nonce":"636891673325332856.ZmIyYzNkZWItNmM1MS00YTBlLWJkOTYtY2ViMWYzNDc2ZGQzYjQ0ZTVkZTMtZTdmNC00MGQ5LWE4NTQtNTU1NGJjNGMzMjNl","state":"CfDJ8B3nFXvkMn5NkBzoICtEmD5grgjuJ_oP6mFMA4GuRa27fKRiaPwKz7L962LD7S0PN9pDlejPhU0jFDF1sv3PfqLnWOPAjEVrYCV-uaM7YLMOrbLGC0PR5Ilny9_NKLar_J1BGU4tZKBREX00LDCZ_eA-czLO-DBDF6va-7OsZbdXqhZlCoxX0cWwAgYtxE6jr3npmTi4l61DllzTH8OIp09aBMc7eeEGhU1wJz45mOmKTSRM58CQkxFcb_B0WJVRcxELO1FPuXmUg_BcK9LdLP0Zabes7TXVJVPgg5rAY4pociQrgRHFA0aDGXpino3jHw","x-client-SKU":"ID_NETSTANDARD2_0","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2019-03-26 00:22:12.946 -03:00 [ERR] Request validation failed
+2019-03-26 00:22:12.948 -03:00 [INF] {"ClientId":null,"ClientName":null,"RedirectUri":null,"AllowedRedirectUris":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"skoruba_identity_admin","redirect_uri":"http://localhost:9000/signin-oidc","response_type":"id_token","scope":"openid profile email roles","response_mode":"form_post","nonce":"636891673325332856.ZmIyYzNkZWItNmM1MS00YTBlLWJkOTYtY2ViMWYzNDc2ZGQzYjQ0ZTVkZTMtZTdmNC00MGQ5LWE4NTQtNTU1NGJjNGMzMjNl","state":"CfDJ8B3nFXvkMn5NkBzoICtEmD5grgjuJ_oP6mFMA4GuRa27fKRiaPwKz7L962LD7S0PN9pDlejPhU0jFDF1sv3PfqLnWOPAjEVrYCV-uaM7YLMOrbLGC0PR5Ilny9_NKLar_J1BGU4tZKBREX00LDCZ_eA-czLO-DBDF6va-7OsZbdXqhZlCoxX0cWwAgYtxE6jr3npmTi4l61DllzTH8OIp09aBMc7eeEGhU1wJz45mOmKTSRM58CQkxFcb_B0WJVRcxELO1FPuXmUg_BcK9LdLP0Zabes7TXVJVPgg5rAY4pociQrgRHFA0aDGXpino3jHw","x-client-SKU":"ID_NETSTANDARD2_0","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2019-03-26 00:22:12.962 -03:00 [INF] {"ClientId":"skoruba_identity_admin","ClientName":null,"RedirectUri":null,"Endpoint":"Authorize","SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","Scopes":"","GrantType":null,"Error":"unauthorized_client","ErrorDescription":"Unknown client or client not enabled","Category":"Token","Name":"Token Issued Failure","EventType":"Failure","Id":2001,"Message":null,"ActivityId":"0HLLHJ4073MHP:00000001","TimeStamp":"2019-03-26T03:22:12.0000000Z","ProcessId":4736,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"TokenIssuedFailureEvent"}
+2019-03-26 00:22:27.118 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-26 00:22:27.225 -03:00 [DBG] Augmenting SignInContext
+2019-03-26 00:22:27.229 -03:00 [DBG] Adding idp claim with value: local
+2019-03-26 00:22:27.231 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-26 00:22:27.234 -03:00 [DBG] Adding auth_time claim with value: 1553570547
+2019-03-26 00:22:27.241 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-26 00:22:27.247 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLHJ4073MHP:00000008","TimeStamp":"2019-03-26T03:22:27.0000000Z","ProcessId":4736,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-26 00:22:28.995 -03:00 [DBG] 0 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-26 01:19:36.342 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2019-03-26 01:19:36.409 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2019-03-26 01:19:36.412 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2019-03-26 01:19:36.416 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-03-26 01:19:36.420 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-03-26 01:19:36.423 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-26 01:19:36.427 -03:00 [DBG] Start discovery request
+2019-03-26 01:19:36.449 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2019-03-26 01:19:36.458 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2019-03-26 01:19:36.464 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2019-03-26 01:19:36.467 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2019-03-26 01:19:36.469 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-03-26 01:19:36.472 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-03-26 01:19:36.475 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-26 01:19:36.478 -03:00 [DBG] Start key discovery request
+2019-03-26 01:19:36.533 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-03-26 01:19:36.536 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-03-26 01:19:36.540 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-03-26 01:19:36.543 -03:00 [DBG] Start authorize request
+2019-03-26 01:19:36.546 -03:00 [DBG] User in authorize request: 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-26 01:19:36.549 -03:00 [DBG] Start authorize request protocol validation
+2019-03-26 01:19:36.696 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:36.704 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:36.751 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:36.802 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:36.819 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:36.833 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:36.843 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-03-26 01:19:36.846 -03:00 [INF] ValidatedAuthorizeRequest
+{"ClientId":"IS4-Admin","ClientName":"IS4-Admin","RedirectUri":"http://localhost:4300/login-callback","AllowedRedirectUris":["http://localhost:4300/login-callback"],"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile email jp_api.is4","State":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","UiLocales":null,"Nonce":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"acaa8b2351c94cb83e099bd9dc5be698","Raw":{"response_type":"id_token token","client_id":"IS4-Admin","state":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","redirect_uri":"http://localhost:4300/login-callback","scope":"openid profile email jp_api.is4","nonce":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0"},"$type":"AuthorizeRequestValidationLog"}
+2019-03-26 01:19:36.878 -03:00 [DBG] yTuFTpP1LnO05Mf+rXz8fU/dAjD+jMTPNfFF3xj7Pks= found in database: false
+2019-03-26 01:19:36.882 -03:00 [DBG] user_consent grant with value: IS4-Admin|08d6b194-3db5-99fe-6c1c-7d85d66713d6 not found in store.
+2019-03-26 01:19:36.884 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2019-03-26 01:19:36.886 -03:00 [INF] Showing consent: User has not yet consented
+2019-03-26 01:19:36.901 -03:00 [DBG] Start authorize request protocol validation
+2019-03-26 01:19:36.925 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:36.927 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:36.935 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:36.951 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:36.958 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:36.973 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:36.975 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-03-26 01:19:37.002 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:37.004 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:37.012 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:37.029 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:39.441 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-26 01:19:39.456 -03:00 [DBG] Start authorize request protocol validation
+2019-03-26 01:19:39.484 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:39.486 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:39.494 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:39.511 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:39.519 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:39.534 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:39.537 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-03-26 01:19:39.552 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2019-03-26 01:19:39.558 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2019-03-26 01:19:39.561 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2019-03-26 01:19:39.567 -03:00 [DBG] Start authorize callback request
+2019-03-26 01:19:39.573 -03:00 [DBG] User in authorize request: 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-26 01:19:39.576 -03:00 [DBG] Start authorize request protocol validation
+2019-03-26 01:19:39.603 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:39.606 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:39.613 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:39.629 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:39.636 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:39.655 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-26 01:19:39.658 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-03-26 01:19:39.663 -03:00 [INF] ValidatedAuthorizeRequest
+{"ClientId":"IS4-Admin","ClientName":"IS4-Admin","RedirectUri":"http://localhost:4300/login-callback","AllowedRedirectUris":["http://localhost:4300/login-callback"],"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile email jp_api.is4","State":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","UiLocales":null,"Nonce":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"acaa8b2351c94cb83e099bd9dc5be698","Raw":{"response_type":"id_token token","client_id":"IS4-Admin","state":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","redirect_uri":"http://localhost:4300/login-callback","scope":"openid profile email jp_api.is4","nonce":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0"},"$type":"AuthorizeRequestValidationLog"}
+2019-03-26 01:19:39.684 -03:00 [DBG] yTuFTpP1LnO05Mf+rXz8fU/dAjD+jMTPNfFF3xj7Pks= found in database: false
+2019-03-26 01:19:39.687 -03:00 [DBG] user_consent grant with value: IS4-Admin|08d6b194-3db5-99fe-6c1c-7d85d66713d6 not found in store.
+2019-03-26 01:19:39.690 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2019-03-26 01:19:39.696 -03:00 [INF] User consented to scopes: ["openid","profile","email","jp_api.is4"]
+2019-03-26 01:19:39.700 -03:00 [DBG] User indicated to remember consent for scopes: ["openid","profile","email","jp_api.is4"]
+2019-03-26 01:19:39.705 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-26 01:19:39.724 -03:00 [DBG] yTuFTpP1LnO05Mf+rXz8fU/dAjD+jMTPNfFF3xj7Pks= not found in database
+2019-03-26 01:19:39.901 -03:00 [DBG] Creating Implicit Flow response.
+2019-03-26 01:19:39.911 -03:00 [DBG] Getting claims for access token for client: IS4-Admin
+2019-03-26 01:19:39.913 -03:00 [DBG] Getting claims for access token for subject: 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-26 01:19:39.985 -03:00 [DBG] Getting claims for identity token for subject: 08d6b194-3db5-99fe-6c1c-7d85d66713d6 and client: IS4-Admin
+2019-03-26 01:19:39.987 -03:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2019-03-26 01:19:39.996 -03:00 [INF] {"ClientId":"IS4-Admin","ClientName":"IS4-Admin","RedirectUri":"http://localhost:4300/login-callback","Endpoint":"Authorize","SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","Scopes":"openid profile email jp_api.is4","GrantType":"implicit","Tokens":[{"TokenType":"id_token","TokenValue":"****Hwhg","$type":"Token"},{"TokenType":"access_token","TokenValue":"****4hUg","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLLHJ4073MHT:00000004","TimeStamp":"2019-03-26T04:19:39.0000000Z","ProcessId":4736,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"TokenIssuedSuccessEvent"}
+2019-03-26 01:19:40.003 -03:00 [INF] Authorize endpoint response
+{"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","ClientId":"IS4-Admin","RedirectUri":"http://localhost:4300/login-callback","State":"3iFNc9xuNeumvKwlh4wbG4FIUITjsdAs4xzQtuM0","Scope":"openid profile email jp_api.is4","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2019-03-26 01:19:40.020 -03:00 [DBG] Augmenting SignInContext
+2019-03-26 01:19:40.022 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-26 01:19:41.194 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4300
+2019-03-26 01:19:41.200 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2019-03-26 01:19:41.203 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2019-03-26 01:19:41.206 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-03-26 01:19:41.209 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-03-26 01:19:41.212 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-26 01:19:41.216 -03:00 [DBG] Start discovery request
+2019-03-26 01:19:41.240 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2019-03-26 01:19:41.257 -03:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4300
+2019-03-26 01:19:41.266 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2019-03-26 01:19:41.270 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2019-03-26 01:19:41.282 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-03-26 01:19:41.291 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-03-26 01:19:41.295 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-26 01:19:41.299 -03:00 [DBG] Start key discovery request
+2019-03-26 01:19:42.438 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2019-03-26 01:19:42.445 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2019-03-26 01:19:42.448 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2019-03-26 01:19:42.500 -03:00 [DBG] CORS request made for path: /connect/userinfo from origin: http://localhost:4300
+2019-03-26 01:19:42.506 -03:00 [DBG] Origin http://localhost:4300 is allowed: true
+2019-03-26 01:19:42.510 -03:00 [DBG] CorsPolicyService allowed origin: http://localhost:4300
+2019-03-26 01:19:42.513 -03:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-03-26 01:19:42.517 -03:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-03-26 01:19:42.520 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-03-26 01:19:42.529 -03:00 [DBG] Start userinfo request
+2019-03-26 01:19:42.535 -03:00 [DBG] Bearer token found in header
+2019-03-26 01:19:42.595 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:42.598 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:42.626 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-26 01:19:42.628 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-26 01:19:42.638 -03:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-03-26 01:19:42.643 -03:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1553573979,"exp":1553577579,"iss":"https://localhost:5000","aud":["https://localhost:5000/resources","jp_api"],"client_id":"IS4-Admin","sub":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","auth_time":1553570547,"idp":"local","is4-rights":"manager","username":"bruno","email":"bhdebrito@gmail.com","scope":["openid","profile","email","jp_api.is4"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-03-26 01:19:42.657 -03:00 [DBG] Creating userinfo response
+2019-03-26 01:19:42.664 -03:00 [DBG] Scopes in access token: openid profile email jp_api.is4
+2019-03-26 01:19:42.669 -03:00 [DBG] Scopes in access token: openid profile email jp_api.is4
+2019-03-26 01:19:42.699 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:42.702 -03:00 [DBG] Requested claim types: sub updated_at locale zoneinfo birthdate gender website picture profile preferred_username nickname middle_name given_name family_name name email_verified email
+2019-03-26 01:19:42.706 -03:00 [DBG] Scopes in access token: openid profile email jp_api.is4
+2019-03-26 01:19:42.716 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-26 01:19:42.734 -03:00 [INF] Profile service returned the following claim types: sub email preferred_username name email email_verified
+2019-03-26 01:19:42.738 -03:00 [DBG] End userinfo request
+2019-03-26 01:19:47.048 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-03-26 01:19:47.052 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-03-26 01:19:47.055 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-26 01:19:47.057 -03:00 [DBG] Start discovery request
+2019-03-26 01:19:47.075 -03:00 [DBG] Found ["openid","profile","email","username","roles","is4-rights","jp_api.user","jp_api.is4"] as all scopes in database
+2019-03-26 01:19:47.151 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-03-26 01:19:47.154 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-03-26 01:19:47.156 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-26 01:19:47.160 -03:00 [DBG] Start key discovery request
