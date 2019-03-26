@@ -4,8 +4,6 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
       <UserSecretsId>aspnet-jpproject-04C6939F-E672-4E56-B4A5-5F064EB67F23</UserSecretsId>
       <DockerTargetOS>Linux</DockerTargetOS>
-      <ApplicationInsightsResourceId>/subscriptions/ce40329b-ac99-4c5f-ab72-539cc648b3c1/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Jp.UI.SSO</ApplicationInsightsResourceId>
-      <ApplicationInsightsAnnotationResourceId>/subscriptions/ce40329b-ac99-4c5f-ab72-539cc648b3c1/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Jp.UI.SSO</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -53,9 +51,6 @@
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>
-
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services" />
-  </ItemGroup>
+    
 
 </Project>

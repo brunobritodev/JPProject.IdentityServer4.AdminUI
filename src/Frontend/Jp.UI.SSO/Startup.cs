@@ -19,7 +19,6 @@ namespace Jp.UI.SSO
 
         public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
         {
-
             _logger = logger;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(environment.ContentRootPath)
@@ -94,7 +93,7 @@ namespace Jp.UI.SSO
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
-            NativeInjectorBootStrapper.RegisterServices(services);
+            NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }
 

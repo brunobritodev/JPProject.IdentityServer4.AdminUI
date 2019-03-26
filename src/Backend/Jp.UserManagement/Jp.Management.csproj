@@ -32,4 +32,10 @@
     <ProjectReference Include="..\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.csproj" />
   </ItemGroup>
 
+    <ItemGroup>
+        <Content Update="appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
 </Project>

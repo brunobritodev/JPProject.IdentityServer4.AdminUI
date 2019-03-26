@@ -29,22 +29,20 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         private readonly IEmailSender _emailSender;
         private readonly IMediatorHandler _bus;
         private readonly ILogger _logger;
-        private readonly IConfigurationRoot _config;
+        private readonly IConfiguration _config;
 
         public UserService(
             UserManager<UserIdentity> userManager,
             IEmailSender emailSender,
             IMediatorHandler bus,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            IConfiguration config)
         {
             _userManager = userManager;
             _emailSender = emailSender;
             _bus = bus;
+            _config = config;
             _logger = loggerFactory.CreateLogger<UserService>(); ;
-            _config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
         }
 
         public Task<Guid?> CreateUserWithPass(IDomainUser user, string password)
@@ -161,15 +159,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             if (user == null)
                 return null;
 
-            // get the configuration from the app settings
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+            
             // For more information on how to enable account confirmation and password reset please
             // visit https://go.microsoft.com/fwlink/?LinkID=532713
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var callbackUrl = $"{configuration.GetSection("WebAppUrl").Value}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
+            var callbackUrl = $"{_config.GetSection("WebAppUrl").Value}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
 
             await _emailSender.SendEmailAsync(user.Email, "Reset Password", $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
 
