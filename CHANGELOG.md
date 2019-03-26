@@ -34,7 +34,6 @@ Updated components from UI:
 |bootstrap| 4.1.1| → 4.3.1|
 |chart.js| 2.7.2| → 2.8.0|
 |codemirror| 5.37.0| → 5.45.0|
-|core-js| 2.5.4| → 3.0.0|
 |enhanced-resolve| 3.3.0| → 4.1.0|
 |fullcalendar| 3.9.0| → 3.10.0|
 |lodash| 4.17.10| → 4.17.11|
