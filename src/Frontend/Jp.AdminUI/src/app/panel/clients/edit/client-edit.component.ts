@@ -12,8 +12,7 @@ import { TranslatorService } from "@core/translator/translator.service";
 @Component({
     selector: "app-client-edit",
     templateUrl: "./client-edit.component.html",
-    styleUrls: ["./client-edit.component.scss"],
-    providers: [ClientService]
+    styleUrls: ["./client-edit.component.scss"]
 })
 export class ClientEditComponent implements OnInit {
 

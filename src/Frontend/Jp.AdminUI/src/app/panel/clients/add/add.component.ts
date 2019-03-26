@@ -12,7 +12,6 @@ import { Observable } from "rxjs";
     selector: "app-client-add",
     templateUrl: "./add.component.html",
     styleUrls: ["./add.component.scss"],
-    providers: [ClientService],
     encapsulation: ViewEncapsulation.None
 })
 export class ClientAddComponent implements OnInit {

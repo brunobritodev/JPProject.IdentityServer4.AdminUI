@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Jp.Application.EventSourcedNormalizers;
+﻿using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.RoleViewModels;
@@ -12,6 +10,10 @@ using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
+using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Management.Controllers
 {
@@ -22,21 +24,27 @@ namespace Jp.Management.Controllers
         private readonly ISystemUser _user;
 
         public UserAdminController(
-            INotificationHandler<DomainNotification> notifications, 
+            INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IUserManageAppService userManageAppService,
             ISystemUser user,
             IRoleManagerAppService roleManagerAppService) : base(notifications, mediator)
         {
+
             _userManageAppService = userManageAppService;
             _user = user;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="q">Quantity - At least 1 and max 50</param>
+        /// <param name="p">Page - For pagination</param>
+        /// <returns></returns>
         [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<UserListViewModel>>>> List()
+        public async Task<ActionResult<DefaultResponse<ListOfUsersViewModel>>> List([Range(1, 50)] int? q = 10, [Range(1, int.MaxValue)] int? p = 1, string s = null)
         {
-            var irs = await _userManageAppService.GetUsers();
+            var irs = await _userManageAppService.GetUsers(new PagingViewModel(q?? 10, p ?? 1, s));
             return Response(irs);
         }
 
@@ -168,7 +176,7 @@ namespace Jp.Management.Controllers
                 NotifyModelStateErrors();
                 return Response(false);
             }
-            
+
             await _userManageAppService.ResetPassword(model);
             return Response(true);
         }

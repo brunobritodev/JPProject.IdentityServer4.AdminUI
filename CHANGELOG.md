@@ -3,9 +3,10 @@
 * Now you can run through a docker! ❤️
     * Unfortunately you need to change hosts for it. Because Authority URL. I can't do anything to face it. It's security feature from OAuth2 to keep same Authority name for each Token.
 
+* Pagination for Users and Persisted Grants
 
-* Update of main Context, JpProject
-* Removed previous components from MySql.Migrations and Sql.Migrations. Unified in same project.
+* Update of main DbContext, JpProject
+* Removed previous components from MySql.IdentityServer and Sql.IdentityServer. Unifying them at same project.
 
 * Client Page:
     * Changed Claims button to be under Token - Following Docs from [IdentityServer4](https://identityserver4.readthedocs.io/en/latest/reference/client.html#token)
@@ -13,7 +14,7 @@
 
 Updates:
 * @angular/cli to 7.3.6
-* @angular/core to 7.2.10 (ng update @angular/core, then it updated other dep's)|
+* @angular/core to 7.2.10 (ng update @angular/core, then updated other dep's by itself)|
     * @angular/language-service @ "7.2.10" (was "6.0.0")...
     * @angular/compiler-cli @ "7.2.10" (was "6.0.0")...
     * @angular/animations @ "7.2.10" (was "6.0.0")...

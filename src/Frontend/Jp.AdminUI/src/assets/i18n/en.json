@@ -300,6 +300,7 @@
         "description": "A user is a person or robot that can access resources and clients.",
         "new-user": "New User",
         "list": {
+            "info": "User information",
             "email": "Email",
             "picture": "Picture",
             "name": "Name",

@@ -10,7 +10,9 @@ import { UserAddComponent } from "./add/user-add.component";
 import { UserClaimsComponent } from "./claims/user-claims.component";
 import { UserRolesComponent } from "./roles/user-roles.component";
 import { UserLoginsComponent } from "./logins/user-logins.component";
-import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -29,7 +31,7 @@ const routes: Routes = [
         DndModule.forRoot(),
         NgxSelectModule,
         TagInputModule,
-        Ng2TableModule
+        NgbPaginationModule
     ],
     declarations: [
         UserListComponent,

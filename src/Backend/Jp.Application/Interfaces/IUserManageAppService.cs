@@ -5,6 +5,7 @@ using Jp.Application.EventSourcedNormalizers;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Models;
 
 namespace Jp.Application.Interfaces
@@ -18,7 +19,7 @@ namespace Jp.Application.Interfaces
         Task RemoveAccount(RemoveAccountViewModel model);
         Task<bool> HasPassword(Guid userId);
         Task<IEnumerable<EventHistoryData>> GetHistoryLogs(string username);
-        Task<IEnumerable<UserListViewModel>> GetUsers();
+        
         Task<UserViewModel> GetUserDetails(string username);
         Task<UserViewModel> GetUserAsync(Guid value);
         Task UpdateUser(UserViewModel model);
@@ -33,5 +34,6 @@ namespace Jp.Application.Interfaces
         Task RemoveLogin(RemoveUserLoginViewModel model);
         Task<IEnumerable<UserListViewModel>> GetUsersInRole(string[] role);
         Task ResetPassword(AdminChangePasswordViewodel model);
+        Task<ListOfUsersViewModel> GetUsers(PagingViewModel page);
     }
 }

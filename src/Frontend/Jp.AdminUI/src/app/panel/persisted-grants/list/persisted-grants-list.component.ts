@@ -17,6 +17,9 @@ export class PersistedGrantListComponent implements OnInit {
     public persistedGrants: PersistedGrant[];
     grantDetail: PersistedGrant;
 
+    public total: number;
+    public page: number = 1;
+    public quantity: number = 10;
     constructor(
         public translator: TranslatorService,
         private persistedGrantService: PersistedGrantsService) { }
@@ -26,8 +29,9 @@ export class PersistedGrantListComponent implements OnInit {
     }
 
     public loadGrants() {
-        this.persistedGrantService.getPersistedGrants().subscribe(a => {
-            this.persistedGrants = a.data;
+        this.persistedGrantService.getPersistedGrants(this.quantity, this.page).subscribe(a => {
+            this.persistedGrants = a.data.persistedGrants;
+            this.total = a.data.total;
             this.persistedGrants.forEach(grant => grant.parsedData = JSON.parse(grant.data));
         });
     }
