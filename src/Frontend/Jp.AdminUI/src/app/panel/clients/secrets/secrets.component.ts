@@ -13,7 +13,6 @@ import { Observable } from "rxjs";
     selector: "app-client-secrets",
     templateUrl: "./secrets.component.html",
     styleUrls: ["./secrets.component.scss"],
-    providers: [ClientService],
     encapsulation: ViewEncapsulation.None
 })
 export class ClientSecretsComponent implements OnInit {

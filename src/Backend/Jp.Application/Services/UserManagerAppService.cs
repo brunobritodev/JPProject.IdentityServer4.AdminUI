@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Application.Services
 {
@@ -85,10 +86,11 @@ namespace Jp.Application.Services
             return _mapper.Map<IEnumerable<EventHistoryData>>(history);
         }
 
-        public async Task<IEnumerable<UserListViewModel>> GetUsers()
+        public async Task<ListOfUsersViewModel> GetUsers(PagingViewModel paging)
         {
-            var users = await _userService.GetUsers();
-            return _mapper.Map<IEnumerable<UserListViewModel>>(users);
+            var users = await _userService.GetUsers(paging);
+            var total = await _userService.Count(paging.Search);
+            return new ListOfUsersViewModel(_mapper.Map<IEnumerable<UserListViewModel>>(users), total);
         }
 
         public async Task<UserViewModel> GetUserDetails(string username)

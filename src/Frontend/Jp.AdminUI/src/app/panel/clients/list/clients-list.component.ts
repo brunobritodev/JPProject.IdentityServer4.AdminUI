@@ -9,7 +9,6 @@ const swal = require('sweetalert');
     selector: "app-clients-list",
     templateUrl: "./clients-list.component.html",
     styleUrls: ["./clients-list.component.scss"],
-    providers: [ClientService]
 })
 export class ClientListComponent implements OnInit {
 

@@ -3,6 +3,7 @@ using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using Jp.Domain.Models;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
@@ -16,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -379,10 +381,21 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             };
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers(PagingViewModel paging)
         {
-            var users = await this._userManager.Users.ToListAsync();
+            List<UserIdentity> users = null;
+            if (!string.IsNullOrEmpty(paging.Search))
+                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+            else
+                users = await _userManager.Users.Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
             return users.Select(GetUser);
+        }
+
+        private static Expression<Func<UserIdentity, bool>> UserFind(string search)
+        {
+            return w => w.UserName.Contains(search) ||
+                        w.Email.Contains(search) ||
+                        w.Name.Contains(search);
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)
@@ -557,6 +570,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             }
 
             return result.Succeeded;
+        }
+
+        public Task<int> Count(string search)
+        {
+            return !string.IsNullOrEmpty(search) ? _userManager.Users.Where(UserFind(search)).CountAsync() : _userManager.Users.CountAsync();
         }
     }
 }

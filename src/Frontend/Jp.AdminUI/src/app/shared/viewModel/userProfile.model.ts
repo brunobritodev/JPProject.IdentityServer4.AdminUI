@@ -23,3 +23,8 @@ export class UserProfile {
         return re.test(String(this.email).toLowerCase());
     }
 }
+
+export class ListOfUsers {
+    public total: number;
+    public users: Array<UserProfile>;
+}

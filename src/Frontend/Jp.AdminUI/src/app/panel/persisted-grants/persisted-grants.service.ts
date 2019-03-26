@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "@env/environment";
 import { Observable } from "rxjs";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { PersistedGrant } from "@shared/viewModel/persisted-grants.model";
+import { ListOfPersistedGrant } from "@shared/viewModel/persisted-grants.model";
 
 @Injectable()
 export class PersistedGrantsService {
@@ -12,8 +12,8 @@ export class PersistedGrantsService {
     }
 
 
-    public getPersistedGrants(): Observable<DefaultResponse<PersistedGrant[]>> {
-        return this.http.get<DefaultResponse<PersistedGrant[]>>(environment.ResourceServer + "PersistedGrants/list");
+    public getPersistedGrants(quantity: number, page: number): Observable<DefaultResponse<ListOfPersistedGrant>> {
+        return this.http.get<DefaultResponse<ListOfPersistedGrant>>(environment.ResourceServer + `PersistedGrants/list?q=${quantity}&p=${page}`);
     }
 
     public remove(key: string): any {

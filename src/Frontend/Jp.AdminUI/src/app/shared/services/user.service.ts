@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "@env/environment";
 import { Observable } from "rxjs";
 import { DefaultResponse } from "../viewModel/default-response.model";
-import { UserProfile } from "../viewModel/userProfile.model";
+import { UserProfile, ListOfUsers } from "../viewModel/userProfile.model";
 import { UserClaim } from "../viewModel/user-claim.model";
 import { UserRole } from "../viewModel/user-role.model";
 import { UserLogin } from "../viewModel/user-login.model";
@@ -13,12 +13,17 @@ import { map } from "rxjs/operators";
 
 @Injectable()
 export class UserService {
+    
 
     constructor(private http: HttpClient) {
     }
 
-    public getUsers(): Observable<DefaultResponse<UserProfile[]>> {
-        return this.http.get<DefaultResponse<UserProfile[]>>(environment.ResourceServer + "UserAdmin/list");
+    public getUsers(quantity: number, page: number): Observable<DefaultResponse<ListOfUsers>> {
+        return this.http.get<DefaultResponse<ListOfUsers>>(environment.ResourceServer + `UserAdmin/list?q=${quantity}&p=${page}`);
+    }
+    
+    public findUsers(text: string, quantity: number, page: number): Observable<DefaultResponse<ListOfUsers>> {
+        return this.http.get<DefaultResponse<ListOfUsers>>(environment.ResourceServer + `UserAdmin/list?q=${quantity}&p=${page}&s=${text}`);
     }
 
     public getDetails(username: string): Observable<DefaultResponse<UserProfile>> {
