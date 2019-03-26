@@ -16,8 +16,6 @@ import { map, debounceTime } from "rxjs/operators";
 })
 export class ClientSettingsComponent implements OnInit {
 
-
-
     @Input()
     public model: Client;
 

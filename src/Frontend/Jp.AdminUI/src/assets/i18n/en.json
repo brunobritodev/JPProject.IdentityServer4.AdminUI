@@ -114,7 +114,12 @@
             "logoUri": "Logo Uri (Https)",
             "logoUri-tooltip": "URI to client logo (used on consent screen). Must be Https",
             "claims": "Claims",
-            "claims-tooltip": "Allows settings claims for the client (will be included in the access token)"
+            "claims-tooltip": "Allows settings claims for the client (will be included in the access token)",
+            "userCodeType":"User Code Type",
+            "userCodeType-tooltip":"Specifies the type of user code to use for the client. Otherwise falls back to default",
+            "deviceCodeLifetime":"Device Code Lifetime",
+            "deviceCodeLifetime-tooltip":"Lifetime to device code in seconds (defaults to 300 seconds / 5 minutes)",
+            "deviceFlow":"Device Flow"
         },
         "property": {
             "key": "Key",

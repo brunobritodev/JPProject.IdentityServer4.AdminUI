@@ -1,0 +1,28 @@
+<div class="form-horizontal">
+    <!--Input - text -->
+    <fieldset>
+        <div class="form-group row">
+            <label placement="top" [tooltip]="'client.details.userCodeType-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
+                'client.details.userCodeType' | translate }} <i class="fa fa-comment-dots"></i></label>
+            <div class="col-xl-9">
+                <input class="form-control" [placeholder]="'client.details.userCodeType-tooltip' | translate"
+                    [(ngModel)]="model.userCodeType" />
+            </div>
+        </div>
+    </fieldset>
+
+    <!--Input - Number -->
+    <fieldset>
+        <div class="form-group row">
+            <label class="col-xl-3 col-form-label" placement="top"
+                [tooltip]="'client.details.deviceCodeLifetime-tooltip' | translate">{{
+            'client.details.deviceCodeLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
+            <div class="col-xl-9">
+                <input class="form-control" autocomplete="client-deviceCodeLifetime"
+                    [placeholder]="'client.details.deviceCodeLifetime-tooltip' | translate"
+                    [(ngModel)]="model.deviceCodeLifetime" numbersOnly />
+            </div>
+        </div>
+    </fieldset>
+</div>
