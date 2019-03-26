@@ -165,6 +165,22 @@
                     <!-- END card-->
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4 offset-4">
+                     <!-- START card-->
+                     <div class="card bg-dark pointer" (click)="selectClient(6)">
+                        <div class="card-body text-center text-light">
+                            <div class="text-lg m-0">📺</div>
+                            <p>Devices - TVs, gaming consoles, printers, cash registers, audio appliances etc</p>
+                            <small>Device Flow</small>
+                            <div class="mb-3"></div>
+                            <button class="btn btn-oval btn-secondary text-success btn-xs" *ngIf="model.clientType == 6"><i class="fa fa-check"></i></button>
+                        </div>
+                    </div>
+                    <!-- END card-->
+                </div>
+                
+            </div>
             
         </div>
 

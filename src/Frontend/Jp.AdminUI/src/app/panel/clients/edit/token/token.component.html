@@ -173,4 +173,15 @@
             </div>
         </div>
     </fieldset>
+    <!--Button-->
+    <fieldset>
+        <div class="form-group row">
+            <label placement="top" [tooltip]="'client.details.claims-tooltip' | translate" class="col-xl-4 col-form-label">{{
+                'client.details.claims' | translate }} <i class="fa fa-comment-dots"></i></label>
+            <div class="col-xl-8">
+                <a [routerLink]="['/clients/claims', model.clientId]" class="btn btn-primary">{{
+                    'client.details.claims' | translate }}</a>
+            </div>
+        </div>
+    </fieldset>
 </div>

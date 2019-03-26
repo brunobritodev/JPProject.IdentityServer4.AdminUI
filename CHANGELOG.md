@@ -1,5 +1,16 @@
 ## v1.1.0
 
+* Now you can run through a docker! ❤️
+    * Unfortunately you need to change hosts for it. Because Authority URL. I can't do anything to face it. It's security feature from OAuth2 to keep same Authority name for each Token.
+
+
+* Update of main Context, JpProject
+* Removed previous components from MySql.Migrations and Sql.Migrations. Unified in same project.
+
+* Client Page:
+    * Changed Claims button to be under Token - Following Docs from [IdentityServer4](https://identityserver4.readthedocs.io/en/latest/reference/client.html#token)
+    * Included Device Flow options
+
 Updates:
 * @angular/cli to 7.3.6
 * @angular/core to 7.2.10 (ng update @angular/core, then it updated other dep's)|
@@ -46,30 +57,16 @@ Updated components from UI:
 |ngx-infinite-scroll| 0.8.4| → 7.1.0|
 |popper.js| 1.14.3| → 1.14.7|
 |screenfull| 3.3.2| → 4.1.0|
-|source-sans-pro| 2.20.2| → 2.45.0|
 |summernote| 0.8.10| → 0.8.11|
 |sweetalert| 1.1.3| → 2.1.2|
-|ts-helpers| 1.1.1| → 1.1.2|
+|ts-helpers| 1.1.1| **removed**|
 |web-animations-js| 2.2.1| → 2.3.1|
 |zone.js| 0.8.29| → 0.9.0|
 |@angular-devkit/build-angular| 0.6.1| → 0.13.6|
-|@types/codemirror| 0.0.56| → 0.0.72|
-|@types/jasmine| 2.8.6| → 3.3.12|
-|@types/jasminewd2| 2.0.3| → 2.0.6|
 |@types/lodash| 4.14.108| → 4.14.123|
-|@types/node| 8.9.4| → 11.11.7|
 |codelyzer| 4.2.1| → 5.0.0-beta.2|
-|jasmine-core| 2.99.1| → 3.3.0|
-|karma| 1.7.1| → 4.0.1|
-|karma-cli| 1.0.1| → 2.0.0|
-|karma-coverage-istanbul-reporter| 1.4.2| → 2.0.5|
-|karma-jasmine| 1.1.1| → 2.0.1|
-|karma-jasmine-html-reporter| 0.2.2| → 1.4.0|
-|protractor| 5.3.0| → 6.0.0|
 |ts-node| 5.0.1| → 8.0.3|
 |tslint| 5.9.1| → 5.14.0|
-|typescript| 3.2.4| → 3.3.4000|
-|webdriver-manager| 10.2.5| → 13.0.0|
 
 ## v1.0.0
 

@@ -77,7 +77,6 @@ namespace Jp.Domain.CommandHandlers
                 return;
             }
 
-            // Businness logic here
             var savedClient = await _clientRepository.GetClient(request.Client.ClientId);
             if (savedClient == null)
             {
@@ -291,9 +290,7 @@ namespace Jp.Domain.CommandHandlers
                 return;
             }
 
-            PrepareClientTypeForNewClient(request);
-            var client = request.Client.ToEntity();
-            client.Description = request.Description;
+            var client = request.ToEntity();
 
             _clientRepository.Add(client);
 
@@ -303,33 +300,7 @@ namespace Jp.Domain.CommandHandlers
             }
         }
 
-        private void PrepareClientTypeForNewClient(SaveClientCommand command)
-        {
-            switch (command.ClientType)
-            {
-                case ClientType.Empty:
-                    break;
-                case ClientType.WebImplicit:
-                    command.Client.AllowedGrantTypes = GrantTypes.Implicit;
-                    command.Client.AllowAccessTokensViaBrowser = true;
-                    break;
-                case ClientType.WebHybrid:
-                    command.Client.AllowedGrantTypes = GrantTypes.Hybrid;
-                    break;
-                case ClientType.Spa:
-                    command.Client.AllowedGrantTypes = GrantTypes.Implicit;
-                    command.Client.AllowAccessTokensViaBrowser = true;
-                    break;
-                case ClientType.Native:
-                    command.Client.AllowedGrantTypes = GrantTypes.Hybrid;
-                    break;
-                case ClientType.Machine:
-                    command.Client.AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+       
 
         public async Task Handle(CopyClientCommand request, CancellationToken cancellationToken)
         {
