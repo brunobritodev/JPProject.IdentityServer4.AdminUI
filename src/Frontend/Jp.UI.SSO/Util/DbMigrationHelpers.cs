@@ -10,6 +10,7 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Jp.UI.SSO.Configuration;
 
 namespace Jp.UI.SSO.Util
 {
@@ -42,6 +43,7 @@ namespace Jp.UI.SSO.Util
                 var id4Context = scope.ServiceProvider.GetRequiredService<JpContext>();
                 var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
 
+                await WaitForDb(id4Context);
                 await id4Context.Database.MigrateAsync();
                 await userContext.Database.MigrateAsync();
                 await storeDb.Database.MigrateAsync();
@@ -124,6 +126,26 @@ namespace Jp.UI.SSO.Util
 
                 await context.SaveChangesAsync();
             }
+        }
+
+        private static async Task WaitForDb(DbContext context)
+        {
+            var maxAttemps = 12;
+            var delay = 5000;
+
+            var healthChecker = new DbHealthChecker();
+            for (int i = 0; i < maxAttemps; i++)
+            {
+                if (healthChecker.TestConnection(context))
+                {
+                    return;
+                }
+                await Task.Delay(delay);
+            }
+
+            // after a few attemps we give up
+            throw new Exception("Error wating database");
+
         }
     }
 }

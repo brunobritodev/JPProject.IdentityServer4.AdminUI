@@ -2,8 +2,8 @@
 FROM node:10-alpine as builder
 
 # install and cache app dependencies
-COPY ["src/Frontend/Jp.UserManagement/package.json", "./"]
-COPY ["src/Frontend/Jp.UserManagement/package-lock.json", "./"]
+COPY ["src/Frontend/Jp.AdminUI/package.json", "./"]
+COPY ["src/Frontend/Jp.AdminUI/package-lock.json", "./"]
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
 
@@ -12,12 +12,12 @@ RUN npm ci && mkdir /app && mv ./node_modules ./app/
 WORKDIR /app
 
 # add app
-COPY ["src/Frontend/Jp.UserManagement/", "/app"]
+COPY ["src/Frontend/Jp.AdminUI/", "/app"]
 
 # rebuild node
 RUN npm rebuild node-sass
 # generate build
-RUN ng build --configuration=docker
+RUN npm run ng build -- --configuration=docker
 
 ##################
 ### production ###

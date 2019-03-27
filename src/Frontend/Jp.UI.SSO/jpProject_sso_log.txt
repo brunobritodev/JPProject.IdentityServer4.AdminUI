@@ -13287,3 +13287,6 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'brun
 2019-03-26 17:05:45.339 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
 2019-03-26 17:05:45.342 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
 2019-03-26 17:05:45.343 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 02:38:38.654 -03:00 [INF] SigninCredentialExtension keyType is File
+2019-03-27 02:38:38.773 -03:00 [INF] SigninCredentialExtension adding key from file jpproject.pfx
+2019-03-27 02:38:38.812 -03:00 [INF] SigninCredentialExtension added

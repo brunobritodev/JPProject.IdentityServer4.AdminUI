@@ -51,7 +51,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
-            }
+            },
+            "docker": {
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.docker.ts"
+                  }
+                ]
+              }
           }
         },
         "serve": {

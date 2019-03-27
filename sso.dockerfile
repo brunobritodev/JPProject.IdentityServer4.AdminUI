@@ -1,7 +1,7 @@
 FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
 WORKDIR /app
-EXPOSE 5000
-EXPOSE 5001
+EXPOSE 80
+EXPOSE 443
 
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
@@ -19,7 +19,7 @@ COPY ["src/Backend/Jp.Infra.CrossCutting.IoC/Jp.Infra.CrossCutting.IoC.csproj", 
 COPY ["src/Backend/Jp.Infra.CrossCutting.Tools/Jp.Infra.CrossCutting.Tools.csproj", "Backend/Jp.Infra.CrossCutting.Tools/"]
 
 RUN dotnet restore "Frontend/Jp.UI.SSO/Jp.UI.SSO.csproj"
-COPY src/ .
+COPY src/ . 
 WORKDIR "/src/Frontend/Jp.UI.SSO"
 RUN dotnet build "Jp.UI.SSO.csproj" -c Release -o /app
 
