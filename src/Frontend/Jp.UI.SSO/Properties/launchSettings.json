@@ -16,12 +16,12 @@
     },
     "Jp.UI.SSO": {
       "commandName": "Project",
-      "environmentVariables": {
-        "ASPNETCORE_URLS": "https://+:5000;http://+:5001",
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "APPINSIGHTS_INSTRUMENTATIONKEY": "205fabcd-09ee-46f5-bb74-95780fc873da"
-      },
-      "applicationUrl": "https://localhost:5000;http://localhost:5001"
+        "environmentVariables": {
+            "ASPNETCORE_URLS": "http://+:5000;https://localhost:5001",
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "205fabcd-09ee-46f5-bb74-95780fc873da"
+        },
+      "applicationUrl": "http://localhost:5000;https://localhost:5001"
     }
   }
 }

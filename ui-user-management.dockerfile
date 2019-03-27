@@ -17,7 +17,7 @@ COPY ["src/Frontend/Jp.UserManagement/", "/app"]
 # rebuild node
 RUN npm rebuild node-sass
 # generate build
-RUN ng build --configuration=docker
+RUN npm run ng build -- --configuration=docker
 
 ##################
 ### production ###

@@ -14,5 +14,6 @@ namespace Jp.UI.SSO.Controllers.Consent
 
         public bool HasValidationError => ValidationError != null;
         public string ValidationError { get; set; }
+        public string ClientId { get; set; }
     }
 }

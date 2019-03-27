@@ -62,7 +62,7 @@ namespace Jp.UI.SSO.Configuration
                 {
                     configuration.SelfSrc = true;
                     configuration.CustomSources = allowCspUrls;
-                    configuration.UnsafeInlineSrc = false;
+                    configuration.UnsafeInlineSrc = true;
                 });
 
             });
