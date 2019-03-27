@@ -7,18 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Assets\js\bootstrap.min.js" />
-    <Content Include="Assets\js\coreui.min.js" />
-    <Content Include="Assets\js\pace.min.js" />
-    <Content Include="Assets\js\perfect-scrollbar.min.js" />
-    <Content Include="Assets\js\popper.min.js" />
-    <Content Include="Assets\js\signin-redirect.js" />
-    <Content Include="Assets\js\signout-redirect.js" />
-    <Content Include="Assets\js\site.js" />
-    <Content Include="Assets\js\site.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />

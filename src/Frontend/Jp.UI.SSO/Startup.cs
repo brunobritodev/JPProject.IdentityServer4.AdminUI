@@ -43,12 +43,6 @@ namespace Jp.UI.SSO
 
             services.ConfigureIdentityDatabase(Configuration);
 
-
-            if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
-                Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
-
-            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
-
             services.Configure<IISOptions>(iis =>
             {
                 iis.AuthenticationDisplayName = "Windows";

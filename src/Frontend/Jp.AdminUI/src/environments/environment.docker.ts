@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   ResourceServer: "https://localhost:5003/",
-  IssuerUri:  "https://jpproject:5000",
+  IssuerUri:  "http://jpproject:5000",
   RequireHttps: false,
   Uri: "http://localhost:4300"
 };

@@ -13290,3 +13290,174 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'brun
 2019-03-27 02:38:38.654 -03:00 [INF] SigninCredentialExtension keyType is File
 2019-03-27 02:38:38.773 -03:00 [INF] SigninCredentialExtension adding key from file jpproject.pfx
 2019-03-27 02:38:38.812 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 16:53:54.180 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 16:53:54.449 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 16:53:58.690 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 16:53:58.730 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 16:53:58.734 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 16:53:58.740 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 16:53:58.742 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 16:53:58.744 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 16:53:58.746 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 16:56:22.132 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 16:56:22.301 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 16:56:26.253 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 16:56:26.294 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 16:56:26.298 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 16:56:26.302 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 16:56:26.305 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 16:56:26.308 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 16:56:26.311 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 16:56:35.781 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 16:56:35.793 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 16:56:35.796 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 16:56:35.799 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 16:56:35.802 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 16:56:35.805 -03:00 [DBG] Error Url: /home/error
+2019-03-27 16:56:35.808 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:07:31.388 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:07:31.580 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:07:35.617 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:07:35.656 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:07:35.659 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:07:35.663 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:07:35.665 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:07:35.680 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:07:35.683 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:07:36.580 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:07:36.591 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:07:36.593 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:07:36.595 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:07:36.597 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:07:36.599 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:07:36.600 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:09:34.295 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:09:34.473 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:09:39.052 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:09:39.093 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:09:39.096 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:09:39.099 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:09:39.105 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:09:39.108 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:09:39.110 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:09:39.485 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:09:39.497 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:09:39.499 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:09:39.501 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:09:39.503 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:09:39.505 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:09:39.508 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:16:33.374 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:16:33.536 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:16:37.451 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:16:37.492 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:16:37.496 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:16:37.499 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:16:37.504 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:16:37.506 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:16:37.508 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:16:41.459 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:16:41.471 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:16:41.474 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:16:41.477 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:16:41.479 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:16:41.481 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:16:41.483 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:16:50.139 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 17:16:50.451 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 17:16:50.464 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 17:16:50.467 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 17:16:50.471 -03:00 [DBG] Adding auth_time claim with value: 1553717810
+2019-03-27 17:16:50.486 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 17:16:50.503 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b1ee-652e-7a17-4017-ba937f52c84a","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLIU4G03HJ8:00000001","TimeStamp":"2019-03-27T20:16:50.0000000Z","ProcessId":27720,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 17:16:50.548 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 17:17:29.213 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 17:17:53.713 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 17:17:53.716 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 17:17:53.719 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 17:17:53.722 -03:00 [DBG] Adding auth_time claim with value: 1553717873
+2019-03-27 17:17:53.725 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 17:17:57.340 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b1ee-652e-7a17-4017-ba937f52c84a","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLIU4G03HJA:00000001","TimeStamp":"2019-03-27T20:17:57.0000000Z","ProcessId":27720,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 17:18:09.682 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 17:19:40.942 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 17:20:57.715 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:20:57.881 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:21:01.600 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:21:01.640 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:21:01.643 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:21:01.649 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:21:01.654 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:21:01.655 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:21:01.657 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:21:08.941 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:21:08.952 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:21:08.955 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:21:08.958 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:21:08.960 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:21:08.964 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:21:08.966 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:26:43.108 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:26:43.333 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:26:48.191 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:26:48.232 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:26:48.240 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:26:48.243 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:26:48.246 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:26:48.249 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:26:48.251 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:26:50.803 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:26:50.814 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:26:50.817 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:26:50.820 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:26:50.824 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:26:50.826 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:26:50.829 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:27:14.726 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:27:14.905 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:27:19.082 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:27:19.120 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:27:19.123 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:27:19.126 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:27:19.128 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:27:19.130 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:27:19.133 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:27:22.991 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:27:23.002 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:27:23.007 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:27:23.010 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:27:23.012 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:27:23.015 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:27:23.017 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 17:27:24.524 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 17:27:36.830 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 17:27:46.052 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 17:27:46.064 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 17:27:46.067 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 17:27:46.071 -03:00 [DBG] Adding auth_time claim with value: 1553718466
+2019-03-27 17:27:46.084 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 17:27:52.542 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b1ee-652e-7a17-4017-ba937f52c84a","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLIUAF3TV83:00000001","TimeStamp":"2019-03-27T20:27:52.0000000Z","ProcessId":28836,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 17:27:57.322 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 17:28:07.887 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 17:28:15.821 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 17:28:15.823 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 17:28:15.826 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 17:28:15.829 -03:00 [DBG] Adding auth_time claim with value: 1553718495
+2019-03-27 17:28:15.832 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 17:28:18.610 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b1ee-652e-7a17-4017-ba937f52c84a","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLIUAF3TV88:00000001","TimeStamp":"2019-03-27T20:28:18.0000000Z","ProcessId":28836,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 17:28:39.970 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 17:32:06.062 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 17:32:06.209 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 17:32:10.101 -03:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-27 17:32:10.141 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 17:32:10.143 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 17:32:10.152 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 17:32:10.154 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 17:32:10.156 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 17:32:10.157 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 17:32:18.299 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 17:32:18.311 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 17:32:18.313 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 17:32:18.315 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 17:32:18.318 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 17:32:18.320 -03:00 [DBG] Error Url: /home/error
+2019-03-27 17:32:18.322 -03:00 [DBG] Error Id Parameter: errorId
