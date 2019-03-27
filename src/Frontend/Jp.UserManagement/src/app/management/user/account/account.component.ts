@@ -1,10 +1,11 @@
+
+import {throwError as observableThrowError,  forkJoin, Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ChangePassword } from '../../../shared/view-model/change-password.model';
 import { SettingsService } from '../../../core/settings/settings.service';
 import { AccountManagementService } from '../account-management.service';
 import { DefaultResponse } from '../../../shared/view-model/default-response.model';
 import { User } from '../../../shared/models/user.model';
-import { forkJoin, Observable } from 'rxjs';
 import { SetPassword } from '../../../shared/view-model/set-password.model';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { ToastrService } from 'ngx-toastr';
@@ -66,7 +67,7 @@ export class AccountComponent implements OnInit {
 
         } catch (error) {
             this.errors.push("Unknown error while trying to change password");
-            return Observable.throw("Unknown error while trying to change password");
+            return observableThrowError("Unknown error while trying to change password");
 
         } finally {
             this.changingPassword = false;
@@ -110,7 +111,7 @@ export class AccountComponent implements OnInit {
 
         } catch (error) {
             this.errors.push("Unknown error while trying to create password");
-            return Observable.throw("Unknown error while trying to create password");
+            return observableThrowError("Unknown error while trying to create password");
 
         } finally {
             this.changingPassword = false;

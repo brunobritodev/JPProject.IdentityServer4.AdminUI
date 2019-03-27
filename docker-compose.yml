@@ -5,7 +5,7 @@ services:
     #############################
     # Database
     #############################
-    database:
+    jpdatabase:
       image: mysql
       command: --default-authentication-plugin=mysql_native_password
       restart: always
@@ -18,26 +18,25 @@ services:
     #############################
     # Server SSO
     #############################
-    sso:
+    jpproject:
         image: "jpproject-sso"
         build: 
           context: .
           dockerfile: sso.dockerfile
         ports:
-            - "5001:5001"
-            - "5000:5000"
+            - "5000:443"
+            - "5001:80"
         links:
-            - database
+            - jpdatabase
         depends_on:
-            - database
+            - jpdatabase
         environment: 
             DATABASE_TYPE: "MySql"
-            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=database,port=3306;database=jpproject;user=jp;password=10203040"
-            ASPNETCORE_ENVIRONMENT: "Development"
-            # ISSUER_URI: "http://localhost:5000"
+            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
             ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
             ASPNETCORE_Kestrel__Certificates__Default__Path: "/root/.dotnet/https/jpproject.pfx"
-            ASPNETCORE_URLS: https://+:5000;http://+:5001
+            ASPNETCORE_ENVIRONMENT: "Development"
+            ASPNETCORE_URLS: https://+:443;http://+:80
 
     #############################
     # Management API
@@ -51,21 +50,39 @@ services:
             - "5003:5003"
             - "5002:5002"
         depends_on:
-            - database
+            - jpdatabase
         environment: 
             DATABASE_TYPE: "MySql"
-            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=database,port=3306;database=jpproject;user=jp;password=10203040"
+            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            ASPNETCORE_Kestrel__Certificates__Default__Password: ".pxCpE]yttwC&b&hriw#,7K^_}A7xezRH3=EisJKn3]8.H}^Unzd+ebw]zzv_=d3"
+            ASPNETCORE_Kestrel__Certificates__Default__Path: "/root/.dotnet/https/jpproject.pfx"
             ASPNETCORE_ENVIRONMENT: "Development"
-            AUTHORITY: "http://localhost:5000"
+            AUTHORITY: "https://jpproject:5000"
             ASPNETCORE_URLS: "https://+:5003;http://+:5002"
 
     #############################
     # User management UI
     #############################
-    user-management-ui:
+    user-ui:
         container_name: jpproject-user-management-ui
         build: 
           context: .
           dockerfile: ui-user-management.dockerfile
+        depends_on:
+            - jpproject-api
+            - jpproject
+        ports:
+            - 4200:80
+    #############################
+    # Admin Ui
+    #############################
+    admin-ui:
+        container_name: jpproject-admin-ui
+        build: 
+          context: .
+          dockerfile: ui-user-management.dockerfile
+        depends_on:
+            - jpproject-api
+            - jpproject
         ports:
             - 4300:80

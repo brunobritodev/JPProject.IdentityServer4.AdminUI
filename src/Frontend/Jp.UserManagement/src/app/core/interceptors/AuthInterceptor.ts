@@ -1,10 +1,10 @@
+
+import {throwError as observableThrowError,  Observable ,  BehaviorSubject, of, from } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import { environment } from '@env/environment';
-import { BehaviorSubject, of, from } from 'rxjs';
 import { switchMap, catchError, take, tap, filter } from 'rxjs/operators';
 import { SettingsService } from '../settings/settings.service';
 
@@ -37,11 +37,11 @@ export class AuthInterceptor implements HttpInterceptor {
                         case 401:
                             {
                                 this.settingsService.login();
-                                return Observable.throw(error);
+                                return observableThrowError(error);
                             }
                     }
                 } else {
-                    return Observable.throw(error);
+                    return observableThrowError(error);
                 }
             }));
         }
@@ -56,7 +56,7 @@ export class AuthInterceptor implements HttpInterceptor {
             this.settingsService.login();
         }
 
-        return Observable.throw(error);
+        return observableThrowError(error);
     }
 
     // In case of silentRefresh()
@@ -104,7 +104,7 @@ export class AuthInterceptor implements HttpInterceptor {
     logoutUser() {
         // Route to the login page (implementation up to you)
 
-        return Observable.throw("");
+        return observableThrowError("");
     }
 
     addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {

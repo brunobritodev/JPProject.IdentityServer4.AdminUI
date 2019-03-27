@@ -28,6 +28,6 @@ RUN dotnet publish "Jp.Management.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-# COPY ["keys/jpproject.pfx", "/root/.dotnet/https/jpproject.pfx"]
+COPY ["keys/jpproject.pfx", "/root/.dotnet/https/jpproject.pfx"]
 
 ENTRYPOINT ["dotnet", "Jp.Management.dll"]

@@ -1,11 +1,10 @@
+
+import {throwError as observableThrowError,  Observable ,  Subject } from 'rxjs';
 import { Component, OnInit } from "@angular/core";
 import { User } from "../../shared/models/user.model";
 import { UserService } from "../../shared/services/user.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { Observable } from "rxjs/Observable";
-import { debounceTime } from "rxjs/operators";
-import { switchMap } from "rxjs/operators";
-import { Subject } from "rxjs";
+import { debounceTime ,  switchMap } from "rxjs/operators";
 import { DefaultResponse } from "../../shared/view-model/default-response.model";
 import { AlertConfig } from "ngx-bootstrap/alert";
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider, VkontakteLoginProvider } from "angular-6-social-login-v2";
@@ -113,7 +112,7 @@ export class RegisterComponent implements OnInit {
             this.errors = [];
             this.errors.push("Unknown error while trying to register");
             this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
+            return observableThrowError("Unknown error while trying to register");
         }
     }
 
