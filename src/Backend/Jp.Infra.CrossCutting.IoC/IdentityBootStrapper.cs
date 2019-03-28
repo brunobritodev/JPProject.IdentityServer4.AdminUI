@@ -14,11 +14,11 @@ namespace Jp.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services, IConfiguration config)
         {
            // Infra - Identity Services
+            services.AddSingleton<IEmailConfiguration>(config.GetSection("EmailConfiguration").Get<EmailConfiguration>());
             services.AddTransient<IEmailSender, AuthEmailMessageSender>();
             services.AddTransient<ISmsSender, AuthSMSMessageSender>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
-            services.AddSingleton<IEmailConfiguration>(config.GetSection("EmailConfiguration").Get<EmailConfiguration>());
             services.AddSingleton<IImageStorage, AzureImageStoreService>();
 
             // Infra - Identity
