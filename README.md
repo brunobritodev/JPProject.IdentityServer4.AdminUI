@@ -131,4 +131,3 @@ Check [Changelog.md](https://github.com/brunohbrito/JP-Project/blob/master/CHANG
 
 Code coverage
 
-Thinking about create separated repo's for each part of solution.
