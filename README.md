@@ -43,7 +43,7 @@ Wanna try? As easy as:
 Written in ASP.NET Core and Angular 6.
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management. Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-- Angular 6
+- Angular 7
 - Rich UI interface
 - ASP.NET Core 2.2
 - ASP.NET MVC Core 
@@ -51,7 +51,7 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 - ASP.NET Identity Core
 - MySql Ready
 - Sql Ready
-- Entity Framework Core 2.0
+- Entity Framework Core 2.2
 - .NET Core Native DI
 - AutoMapper
 - FluentValidator
@@ -99,6 +99,17 @@ We'll love it! Please [Read the docs](https://jp-project.readthedocs.io/en/lates
 
 If you need help building or running your Jp Project platform
 There are several ways we can help you out.
+
+## v1.2
+
+- Docker support
+- IdentityServer4 v2 (release 2.4.0)
+  - Device flow
+- ASP.NET Core 2.2 support
+- Plugins update
+- Angular 7.2
+
+Check [Changelog.md](https://github.com/brunohbrito/JP-Project/blob/master/CHANGELOG.md) for a complete list of changes.
 
 ## v1.1
 - Minor bugs correction
