@@ -1,4 +1,4 @@
-# v1.1.0
+# v1.2.0
 
 ## User Management
 
@@ -112,6 +112,13 @@ Updated components from UI:
     * clone client
 * Added bat to change hosts file
 
+# v1.1.0
+
+- Minor bugs correction
+- Added localization feature to SSO
+- Added translation feature to User Management
+- Silent refresh for angular-oauth2-oidc both for User Management and Admin
+- Changed Security Headers to accept Azure Application Insights
 
 # v1.0.0
 
