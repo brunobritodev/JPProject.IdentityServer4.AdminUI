@@ -43,7 +43,7 @@ Wanna try? As easy as:
 Written in ASP.NET Core and Angular 6.
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management. Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-- Angular 6
+- Angular 7
 - Rich UI interface
 - ASP.NET Core 2.2
 - ASP.NET MVC Core 
@@ -51,7 +51,7 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 - ASP.NET Identity Core
 - MySql Ready
 - Sql Ready
-- Entity Framework Core 2.0
+- Entity Framework Core 2.2
 - .NET Core Native DI
 - AutoMapper
 - FluentValidator
@@ -76,14 +76,18 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 Do you love it? give us a Star!
 
 ## How to build
-Jp Project is built against ASP.NET Core 2.1.
+Jp Project is built against ASP.NET Core 2.2.
 
-* [Install](https://www.microsoft.com/net/download/core#/current) the latest .NET Core 2.1 SDK
-* Run `build.ps1` (Powershell) or `build.bat` (cmd)
+* [Install](https://www.microsoft.com/net/download/core#/current) the latest .NET Core 2.2 SDK
+
+
+`src/JpProject.sln` Contains SSO and API
+
+For UI's use VSCode.
+- AdminUI -> Inside VSCode open folder `rootFolder/src/Frontend/Jp.AdminUI`, then terminal and `npm install && npm start`
+- User Management -> Inside VSCode open folder `rootFolder/src/Frontend/Jp.UserManagement`, then terminal and `npm install && npm start`
 
 Wait for ng to complete his proccess then go to http://localhost:5000!
-
-
 
 Any doubts? Go to docs
 
@@ -100,6 +104,18 @@ We'll love it! Please [Read the docs](https://jp-project.readthedocs.io/en/lates
 If you need help building or running your Jp Project platform
 There are several ways we can help you out.
 
+## v1.2
+
+- Docker support
+- Available at Docker Hub
+- IdentityServer4 v2 (release 2.4.0)
+  - Device flow
+- ASP.NET Core 2.2 support
+- Plugins update
+- Angular 7.2
+
+Check [Changelog.md](https://github.com/brunohbrito/JP-Project/blob/master/CHANGELOG.md) for a complete list of changes.
+
 ## v1.1
 - Minor bugs correction
 - Added localization feature to SSO
@@ -115,4 +131,3 @@ There are several ways we can help you out.
 
 Code coverage
 
-Thinking about create separated repo's for each part of solution.
