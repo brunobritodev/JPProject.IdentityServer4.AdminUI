@@ -34,8 +34,15 @@ _New users are readonly_
 # Docker Ready ❤️
 
 Wanna try? As easy as:
-* download docker.zip
-* Unzip and execute docker-build.bat (As administrator)
+
+Windows users:
+* download [jpproject-docker-windows.zip](https://github.com/brunohbrito/JP-Project/raw/master/build/jpproject-docker-windows.zip)
+* Unzip and execute docker-run.bat (As administrator)
+
+Linux users:
+* Download [docker-compose.yml](https://github.com/brunohbrito/JP-Project/raw/master/build/docker-compose.yml)
+* Add `127.0.0.1 jpproject` entry to hosts file (`/etc/hosts`)
+* `docker-compose up`
 
 
 # How it was made
