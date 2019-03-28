@@ -39,10 +39,10 @@ services:
     # # Management API
     # #############################
     jpproject-api:
-        container_name: jpproject-api
+        image: jpproject-api
         build: 
           context: .
-          dockerfile: user-management.dockerfile
+          dockerfile: api.dockerfile
         ports:
             - "5003:80"
         depends_on:
@@ -58,7 +58,7 @@ services:
     # User management UI
     #############################
     user-ui:
-        container_name: jpproject-user-management-ui
+        image: jpproject-user-management-ui
         build: 
           context: .
           dockerfile: ui-user-management.dockerfile
@@ -72,7 +72,7 @@ services:
     # Admin Ui
     #############################
     admin-ui:
-        container_name: jpproject-admin-ui
+        image: jpproject-admin-ui
         build: 
           context: .
           dockerfile: admin-ui.dockerfile
