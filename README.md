@@ -37,7 +37,7 @@ Wanna try? As easy as:
 
 Windows users:
 * download [jpproject-docker-windows.zip](https://github.com/brunohbrito/JP-Project/raw/master/build/jpproject-docker-windows.zip)
-* Unzip and execute docker-run.bat (As administrator)
+* Unzip and execute `docker-run.bat` (As administrator)
 
 Linux users:
 * Download [docker-compose.yml](https://github.com/brunohbrito/JP-Project/raw/master/build/docker-compose.yml)
