@@ -30,7 +30,7 @@ FROM nginx:1.13.3-alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # copy artifact build from the 'build environment'
-COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/
+COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 
