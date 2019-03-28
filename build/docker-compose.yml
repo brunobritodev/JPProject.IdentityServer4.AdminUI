@@ -1,0 +1,71 @@
+version: "3"
+
+services:
+
+    #############################
+    # Database
+    #############################
+    jpdatabase:
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_USER: jp
+          MYSQL_DATABASE: jpproject
+          MYSQL_PASSWORD: 10203040
+    
+    #############################
+    # Server SSO
+    #############################
+    jpproject:
+        image: bhdebrito/jpproject-sso
+        ports:
+            - "5000:5000"
+        links:
+            - jpdatabase
+        depends_on:
+            - jpdatabase
+        environment: 
+            DATABASE_TYPE: "MySql"
+            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            ASPNETCORE_ENVIRONMENT: "Development"
+            ASPNETCORE_URLS: http://+:5000
+
+    # #############################
+    # # Management API
+    # #############################
+    jpproject-api:
+        image: bhdebrito/jpproject-api
+        ports:
+            - "5003:80"
+        depends_on:
+            - jpdatabase
+        environment: 
+            DATABASE_TYPE: "MySql"
+            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            ASPNETCORE_ENVIRONMENT: "Development"
+            AUTHORITY: "http://jpproject:5000"
+            ASPNETCORE_URLS: http://+
+
+    #############################
+    # User management UI
+    #############################
+    user-ui:
+        image: bhdebrito/jpproject-user-management-ui
+        depends_on:
+            - jpproject-api
+            - jpproject
+        ports:
+            - 4200:80
+
+    #############################
+    # Admin Ui
+    #############################
+    admin-ui:
+        image: bhdebrito/jpproject-admin-ui
+        depends_on:
+            - jpproject-api
+            - jpproject
+        ports:
+            - 4300:80

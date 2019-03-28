@@ -1,3 +1,17 @@
+# v.1.2.1
+
+Now the components is available through Docker Hub.
+* Generated docker install file to easy test
+* Created a docker-compose based on images from Docker Hub
+* Updated packages for security alerts:
+  * bootstrap: [CVE-2019-8331](https://nvd.nist.gov/vuln/detail/CVE-2019-8331) -> Updated for version 4.3.1
+    * In Bootstrap 4 before 4.3.1 and Bootstrap 3 before 3.4.1, XSS is possible in the tooltip or popover data-template attribute. For more information, see: https://blog.getbootstrap.com/2019/02/13/bootstrap-4-3-1-and-3-4-1/
+  * lodash: [CVE-2018-16487](https://nvd.nist.gov/vuln/detail/CVE-2018-16487)
+    * A prototype pollution vulnerability was found in lodash <4.17.11 where the functions merge, mergeWith, and defaultsDeep can be tricked into adding or modifying properties of Object.prototype.
+  * webpack-dev-server [CVE-2018-14732](https://nvd.nist.gov/vuln/detail/CVE-2018-14732)
+    * An issue was discovered in lib/Server.js in webpack-dev-server before 3.1.11. Attackers are able to steal developer's code because the origin of requests is not checked by the WebSocket server, which is used for HMR (Hot Module Replacement). Anyone can receive the HMR message sent by the WebSocket server via a ws://127.0.0.1:8080/ connection from any origin
+
+
 # v1.2.0
 
 ## User Management
