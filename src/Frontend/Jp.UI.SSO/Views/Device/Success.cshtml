@@ -1,0 +1,23 @@
+@model string
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+{
+<!-- Breadcrumb-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">@Localizer["Title-Home"]</li>
+    <li class="breadcrumb-item">
+        <a asp-action="Index" asp-controller="Home">@Localizer["Title-User"]</a>
+    </li>
+    <li class="breadcrumb-item">@Localizer["Title-Device"]</li>
+</ol>
+}
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8 col-lg-4">
+        <div class="card">
+            <div class="card-header text-white bg-success"><strong>@Localizer["Success"]</strong></div>
+            <div class="card-body">
+                <h3>@Localizer["Info"]</h3>
+            </div>
+        </div>
+    </div>
+</div>

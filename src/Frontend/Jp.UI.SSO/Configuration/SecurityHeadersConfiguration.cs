@@ -14,74 +14,36 @@ namespace Jp.UI.SSO.Configuration
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
 
-            if (!env.IsDevelopment())
-            {
-                app.UseHsts(options => options.MaxAge(days: 365));
-                app.UseHttpsRedirection();
-            }
-
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
             app.UseXContentTypeOptions();
 
-
+            app.UseXfo(options => options.Deny());
             app.UseReferrerPolicy(options => options.NoReferrer());
-            var allowCspUrls = new List<string>
-            {
-                "https://fonts.googleapis.com",
-                "https://fonts.gstatic.com",
-                "https://res.cloudinary.com",
-                "https://jznasafiles.blob.core.windows.net",
-                // App Insights
-                "https://az416426.vo.msecnd.net",
-                "https://dc.services.visualstudio.com/v2/track",
-                "https://buttons.github.io"
-            };
 
             app.UseCsp(options =>
             {
-                options.DefaultSources(o =>
-                {
-                    o.SelfSrc = true;
-                    o.CustomSources = allowCspUrls;
+                options.DefaultSources(o => o.Self());
 
-                });
-
-
-                options.FrameAncestors(o => o.NoneSrc = true);
-                options.ObjectSources(o => o.NoneSrc = true);
-
+                options.FrameAncestors(o => o.None());
+                options.StyleSources(o => o.Self());
+                options.ObjectSources(o => o.None());
                 options.ImageSources(a =>
                 {
-                    a.SelfSrc = true;
+                    a.Self();
                     a.CustomSources = new[] { "data: https:" };
                 });
-                options.ScriptSources(configuration =>
+                options.FontSources(configuration =>
                 {
                     configuration.SelfSrc = true;
-                    configuration.CustomSources = new[]
-                    {
-                        // script APP INSIGHTS
-                        "'sha256-ens1+L1QiRof8iQt9GGprsLPJLm7aHpJpMjs/sYNZsQ='",
-                        "https://az416426.vo.msecnd.net/scripts/a/ai.0.js",
-
-                        // GitHub buttons
-                        "https://buttons.github.io/buttons.js",
-                        // Script for redirect after logout
-                        "'sha256-v44QeYZ1sjF8Msk4wkn9AbfmXuect8D2JeBtZOoGPo0='",
-                        // Script for hybrid flows
-                         "'sha256-r43669MWR28/ZEW1fD3aPcmhqe1QnbPzNKwC6Jq5bSw='",
-                    };
-                    configuration.UnsafeInlineSrc = false;
-                    configuration.UnsafeEvalSrc = false;
-
+                    configuration.CustomSources("https://fonts.googleapis.com/", "https://fonts.gstatic.com/");
                 });
-                options.StyleSources(o =>
-                {
-                    o.UnsafeInline();
-                    o.Self();
-                });
+                options.ConnectSources(s => s.CustomSources("https://dc.services.visualstudio.com"));
+                options.ScriptSources(s => s.Self().CustomSources("https://az416426.vo.msecnd.net"));
 
+                // Can be removed in your own build
+                options.ChildSources(s => s.CustomSources("https://ghbtns.com"));
             });
         }
+
     }
 }

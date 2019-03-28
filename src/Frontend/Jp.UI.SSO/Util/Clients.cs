@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using IdentityModel;
-using IdentityServer4;
+﻿using IdentityServer4;
 using IdentityServer4.Models;
-using Jp.Infra.CrossCutting.Identity.Constants;
 using Jp.Infra.CrossCutting.Tools.DefaultConfig;
+using System.Collections.Generic;
 
 namespace Jp.UI.SSO.Util
 

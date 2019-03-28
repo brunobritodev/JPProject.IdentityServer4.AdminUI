@@ -1,6 +1,4 @@
-﻿@using Jp.UI.SSO.Controllers.Consent
-@model Jp.UI.SSO.Controllers.Consent.ConsentViewModel
-@using Jp.UI.SSO.Controllers.Diagnostics
+﻿@model Jp.UI.SSO.Controllers.Consent.ConsentViewModel
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @section breadcrumb
@@ -52,7 +50,7 @@
                                         <ul class="list-group">
                                             @foreach (var scope in Model.IdentityScopes)
                                             {
-                                                @await Html.PartialAsync("_ScopeListItem", scope)
+                                                <partial name="_ScopeListItem" model="scope" />
                                             }
                                         </ul>
                                     </div>
@@ -70,7 +68,7 @@
                                         <ul class="list-group">
                                             @foreach (var scope in Model.ResourceScopes)
                                             {
-                                                @await Html.PartialAsync("_ScopeListItem", scope)
+                                                <partial name="_ScopeListItem" model="scope" />
                                             }
                                         </ul>
                                     </div>

@@ -3,6 +3,7 @@ using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using Jp.Domain.Models;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
@@ -16,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -27,22 +29,20 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         private readonly IEmailSender _emailSender;
         private readonly IMediatorHandler _bus;
         private readonly ILogger _logger;
-        private readonly IConfigurationRoot _config;
+        private readonly IConfiguration _config;
 
         public UserService(
             UserManager<UserIdentity> userManager,
             IEmailSender emailSender,
             IMediatorHandler bus,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            IConfiguration config)
         {
             _userManager = userManager;
             _emailSender = emailSender;
             _bus = bus;
+            _config = config;
             _logger = loggerFactory.CreateLogger<UserService>(); ;
-            _config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
         }
 
         public Task<Guid?> CreateUserWithPass(IDomainUser user, string password)
@@ -159,15 +159,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             if (user == null)
                 return null;
 
-            // get the configuration from the app settings
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+            
             // For more information on how to enable account confirmation and password reset please
             // visit https://go.microsoft.com/fwlink/?LinkID=532713
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var callbackUrl = $"{configuration.GetSection("WebAppUrl").Value}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
+            var callbackUrl = $"{_config.GetSection("WebAppUrl").Value}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
 
             await _emailSender.SendEmailAsync(user.Email, "Reset Password", $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
 
@@ -379,10 +375,21 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             };
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers(PagingViewModel paging)
         {
-            var users = await this._userManager.Users.ToListAsync();
+            List<UserIdentity> users = null;
+            if (!string.IsNullOrEmpty(paging.Search))
+                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+            else
+                users = await _userManager.Users.Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
             return users.Select(GetUser);
+        }
+
+        private static Expression<Func<UserIdentity, bool>> UserFind(string search)
+        {
+            return w => w.UserName.Contains(search) ||
+                        w.Email.Contains(search) ||
+                        w.Name.Contains(search);
         }
 
         private async Task<bool> AddLoginAsync(UserIdentity user, string provider, string providerUserId)
@@ -557,6 +564,11 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             }
 
             return result.Succeeded;
+        }
+
+        public Task<int> Count(string search)
+        {
+            return !string.IsNullOrEmpty(search) ? _userManager.Users.Where(UserFind(search)).CountAsync() : _userManager.Users.CountAsync();
         }
     }
 }

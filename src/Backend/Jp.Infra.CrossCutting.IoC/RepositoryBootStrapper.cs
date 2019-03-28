@@ -28,9 +28,9 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<JpContext>();
 
             // Infra - Data EventSourcing
-            services.AddScoped<IEventStoreRepository, EventStoreSQLRepository>();
+            services.AddScoped<IEventStoreRepository, EventStoreRepository>();
             services.AddScoped<IEventStore, SqlEventStore>();
-            services.AddScoped<EventStoreSQLContext>();
+            services.AddScoped<EventStoreContext>();
         }
     }
 }

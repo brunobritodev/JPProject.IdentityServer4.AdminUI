@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Domain.Interfaces
 {
@@ -26,7 +27,7 @@ namespace Jp.Domain.Interfaces
         Task<bool> RemoveAccountAsync(RemoveAccountCommand request);
         Task<bool> HasPassword(Guid userId);
         Task<IEnumerable<User>> GetByIdAsync(params string[] id);
-        Task<IEnumerable<User>> GetUsers();
+        Task<IEnumerable<User>> GetUsers(PagingViewModel page);
         Task<User> FindByEmailAsync(string email);
         Task<User> FindByNameAsync(string username);
         Task<User> FindByProviderAsync(string provider, string providerUserId);
@@ -43,5 +44,6 @@ namespace Jp.Domain.Interfaces
         Task<IEnumerable<User>> GetUserFromRole(string[] role);
         Task<bool> RemoveUserFromRole(string name, string username);
         Task<bool> ResetPasswordAsync(string username, string password);
+        Task<int> Count(string search);
     }
 }

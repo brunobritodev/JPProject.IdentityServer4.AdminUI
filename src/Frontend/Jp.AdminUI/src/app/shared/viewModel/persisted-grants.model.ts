@@ -60,3 +60,8 @@ export class PersistedGrant {
     public picture: string;
     public parsedData: any;
 }
+
+export class ListOfPersistedGrant {
+    public persistedGrants: Array<PersistedGrant>;
+    public total: number;
+}

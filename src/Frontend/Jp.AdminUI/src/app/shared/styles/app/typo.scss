@@ -2,49 +2,49 @@
      Component: typo
  ========================================================================== */
 
-@font-face{
+ @font-face{
     font-family: 'Source Sans Pro';
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
-    src: url('~/source-sans-pro/EOT/SourceSansPro-Light.eot') format('embedded-opentype'),
-         url('~/source-sans-pro/WOFF2/TTF/SourceSansPro-Light.ttf.woff2') format('woff2'),
-         url('~/source-sans-pro/WOFF/OTF/SourceSansPro-Light.otf.woff') format('woff'),
-         url('~/source-sans-pro/OTF/SourceSansPro-Light.otf') format('opentype'),
-         url('~/source-sans-pro/TTF/SourceSansPro-Light.ttf') format('truetype');
+    src: url('~/assets/fonts/source-sans-pro/EOT/SourceSansPro-Light.eot') format('embedded-opentype'),
+         url('~/assets/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Light.ttf.woff2') format('woff2'),
+         url('~/assets/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Light.otf.woff') format('woff'),
+         url('~/assets/fonts/source-sans-pro/OTF/SourceSansPro-Light.otf') format('opentype'),
+         url('~/assets/fonts/source-sans-pro/TTF/SourceSansPro-Light.ttf') format('truetype');
 }
 @font-face{
     font-family: 'Source Sans Pro';
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
-    src: url('~/source-sans-pro/EOT/SourceSansPro-Regular.eot') format('embedded-opentype'),
-         url('~/source-sans-pro/WOFF2/TTF/SourceSansPro-Regular.ttf.woff2') format('woff2'),
-         url('~/source-sans-pro/WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff'),
-         url('~/source-sans-pro/OTF/SourceSansPro-Regular.otf') format('opentype'),
-         url('~/source-sans-pro/TTF/SourceSansPro-Regular.ttf') format('truetype');
+    src: url('~/assets/fonts/source-sans-pro/EOT/SourceSansPro-Regular.eot') format('embedded-opentype'),
+         url('~/assets/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Regular.ttf.woff2') format('woff2'),
+         url('~/assets/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff'),
+         url('~/assets/fonts/source-sans-pro/OTF/SourceSansPro-Regular.otf') format('opentype'),
+         url('~/assets/fonts/source-sans-pro/TTF/SourceSansPro-Regular.ttf') format('truetype');
 }
 @font-face{
     font-family: 'Source Sans Pro';
     font-weight: 400;
     font-style: italic;
     font-stretch: normal;
-    src: url('~/source-sans-pro/EOT/SourceSansPro-It.eot') format('embedded-opentype'),
-         url('~/source-sans-pro/WOFF2/TTF/SourceSansPro-It.ttf.woff2') format('woff2'),
-         url('~/source-sans-pro/WOFF/OTF/SourceSansPro-It.otf.woff') format('woff'),
-         url('~/source-sans-pro/OTF/SourceSansPro-It.otf') format('opentype'),
-         url('~/source-sans-pro/TTF/SourceSansPro-It.ttf') format('truetype');
+    src: url('~/assets/fonts/source-sans-pro/EOT/SourceSansPro-It.eot') format('embedded-opentype'),
+         url('~/assets/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-It.ttf.woff2') format('woff2'),
+         url('~/assets/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-It.otf.woff') format('woff'),
+         url('~/assets/fonts/source-sans-pro/OTF/SourceSansPro-It.otf') format('opentype'),
+         url('~/assets/fonts/source-sans-pro/TTF/SourceSansPro-It.ttf') format('truetype');
 }
 @font-face{
     font-family: 'Source Sans Pro';
     font-weight: 600;
     font-style: normal;
     font-stretch: normal;
-    src: url('~/source-sans-pro/EOT/SourceSansPro-Semibold.eot') format('embedded-opentype'),
-         url('~/source-sans-pro/WOFF2/TTF/SourceSansPro-Semibold.ttf.woff2') format('woff2'),
-         url('~/source-sans-pro/WOFF/OTF/SourceSansPro-Semibold.otf.woff') format('woff'),
-         url('~/source-sans-pro/OTF/SourceSansPro-Semibold.otf') format('opentype'),
-         url('~/source-sans-pro/TTF/SourceSansPro-Semibold.ttf') format('truetype');
+    src: url('~/assets/fonts/source-sans-pro/EOT/SourceSansPro-Semibold.eot') format('embedded-opentype'),
+         url('~/assets/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Semibold.ttf.woff2') format('woff2'),
+         url('~/assets/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('~/assets/fonts/source-sans-pro/OTF/SourceSansPro-Semibold.otf') format('opentype'),
+         url('~/assets/fonts/source-sans-pro/TTF/SourceSansPro-Semibold.ttf') format('truetype');
 }
 
 

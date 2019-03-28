@@ -1,22 +1,23 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Jp.Application.Interfaces;
+﻿using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Tools.CloudServices.Storage
 {
     public class AzureImageStoreService : IImageStorage
     {
-        private IConfiguration _configuration;
-        private IConfiguration Configuration => _configuration ?? (_configuration = new ConfigurationBuilder()
-                                                    .SetBasePath(Directory.GetCurrentDirectory())
-                                                    .AddJsonFile("appsettings.json")
-                                                    .Build());
+        private readonly IConfiguration _configuration;
+
+        public AzureImageStoreService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
 
         public async Task<string> SaveAsync(ProfilePictureViewModel image)
@@ -32,7 +33,7 @@ namespace Jp.Infra.CrossCutting.Tools.CloudServices.Storage
 
         private async Task<CloudBlobContainer> GetBlobContainer()
         {
-            var storageCredentials = new StorageCredentials(Configuration.GetSection("Storage").GetSection("AccountName").Value, Configuration.GetSection("Storage").GetSection("AccountKey").Value);
+            var storageCredentials = new StorageCredentials(_configuration.GetSection("Storage").GetSection("AccountName").Value, _configuration.GetSection("Storage").GetSection("AccountKey").Value);
             var cloudStorageAccount = new CloudStorageAccount(storageCredentials, true);
             var cloudBlobClient = cloudStorageAccount.CreateCloudBlobClient();
             var container = cloudBlobClient.GetContainerReference("images");

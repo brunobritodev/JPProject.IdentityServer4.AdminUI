@@ -14,6 +14,8 @@ import { ClientSecretsComponent } from "./secrets/secrets.component";
 import { ClientPropertiesComponent } from "./properties/properties.component";
 import { ClientClaimsComponent } from "./claims/claims.component";
 import { ClientAddComponent } from "./add/add.component";
+import { ClientDeviceFlowComponent } from "./edit/device-flow/device-flow.component";
+import { ClientService } from "./clients.service";
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -39,11 +41,15 @@ const routes: Routes = [
         ClientSettingsComponent,
         ClientAuthComponent,
         ClientTokenComponent,
+        ClientDeviceFlowComponent,
         ClientBasicComponent,
         ClientSecretsComponent,
         ClientPropertiesComponent,
         ClientClaimsComponent,
         ClientAddComponent
+    ],
+    providers: [
+        ClientService
     ],
     exports: [
         RouterModule

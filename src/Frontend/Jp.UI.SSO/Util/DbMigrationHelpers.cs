@@ -1,18 +1,16 @@
-﻿using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Mappers;
-using Jp.Infra.CrossCutting.Identity.Constants;
+﻿using IdentityServer4.EntityFramework.Mappers;
 using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
-using Jp.Infra.CrossCutting.IdentityServer.Context;
 using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using JpContext = Jp.Infra.CrossCutting.IdentityServer.Context.JpContext;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Jp.UI.SSO.Configuration;
 
 namespace Jp.UI.SSO.Util
 {
@@ -20,8 +18,8 @@ namespace Jp.UI.SSO.Util
     {
         /// <summary>
         /// Generate migrations before running this method, you can use command bellow:
-        /// Nuget package manager: Add-Migration DbInit -context ApplicationDbContext -output Data/Migrations
-        /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationDbContext -o Data/Migrations
+        /// Nuget package manager: Add-Migration DbInit -context ApplicationIdentityContext -output Data/Migrations
+        /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationIdentityContext -o Data/Migrations
         /// </summary>
         /// <param name="host"></param>
         public static async Task EnsureSeedData(IWebHost host)
@@ -38,13 +36,14 @@ namespace Jp.UI.SSO.Util
         {
             using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var userContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var userContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityContext>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
 
                 var id4Context = scope.ServiceProvider.GetRequiredService<JpContext>();
-                var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreSQLContext>();
+                var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
 
+                await WaitForDb(id4Context);
                 await id4Context.Database.MigrateAsync();
                 await userContext.Database.MigrateAsync();
                 await storeDb.Database.MigrateAsync();
@@ -77,7 +76,7 @@ namespace Jp.UI.SSO.Util
                 UserName = Users.AdminUserName,
                 Email = Users.AdminEmail,
                 EmailConfirmed = true,
-                
+
             };
 
             var result = await userManager.CreateAsync(user, Users.AdminPassword);
@@ -127,6 +126,26 @@ namespace Jp.UI.SSO.Util
 
                 await context.SaveChangesAsync();
             }
+        }
+
+        private static async Task WaitForDb(DbContext context)
+        {
+            var maxAttemps = 12;
+            var delay = 5000;
+
+            var healthChecker = new DbHealthChecker();
+            for (int i = 0; i < maxAttemps; i++)
+            {
+                if (healthChecker.TestConnection(context))
+                {
+                    return;
+                }
+                await Task.Delay(delay);
+            }
+
+            // after a few attemps we give up
+            throw new Exception("Error wating database");
+
         }
     }
 }

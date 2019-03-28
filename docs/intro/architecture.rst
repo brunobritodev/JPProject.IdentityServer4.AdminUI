@@ -42,9 +42,8 @@ ASP.NET CORE
 * Repository and Generic Repository
 * Serilog
 
-Angular 6
+Angular 7
 ^^^^^^^^^^
 
 * OpenId Connect throug angular-oauth2-oidc plugin to manage login.
 * Bootstrap 4
-* angular-6-social-login-v2 to take profile from Google and Facebook before register new users

@@ -6,7 +6,9 @@ using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using Jp.Domain.Core.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Jp.Management.Controllers
@@ -26,9 +28,9 @@ namespace Jp.Management.Controllers
 
 
         [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<PersistedGrantViewModel>>>> List()
+        public async Task<ActionResult<DefaultResponse<ListOfPersistedGrantViewModel>>> List([Range(1, 50)] int? q = 10, [Range(1, int.MaxValue)] int? p = 1)
         {
-            var irs = await _persistedGrantAppService.GetPersistedGrants();
+            var irs = await _persistedGrantAppService.GetPersistedGrants(new PagingViewModel(q ?? 10, p ?? 1));
             return Response(irs);
         }
 
