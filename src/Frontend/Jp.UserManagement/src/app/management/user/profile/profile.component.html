@@ -2,7 +2,8 @@
     <div class="unwrap">
         <div class="bg-cover" style="background-image: url(assets/img/profile/profile-bg.jpg);">
             <div class="p-4 text-center text-white">
-                <img class="img-thumbnail rounded-circle thumb128" [src]="user?.picture" alt="Image" />
+                <img *ngIf="user?.picture" class="img-thumbnail rounded-circle thumb128" [src]="user?.picture" alt="user?.name" />
+                <img *ngIf="!user?.picture" class="img-thumbnail rounded-circle thumb128" src="/assets/img/dummy.png" alt="user?.name" />
                 <h3 class="m-0">{{user?.name}}</h3>
                 <p>{{user?.jobTitle}} - {{user?.company}}</p>
                 <p>{{user?.url}}</p>

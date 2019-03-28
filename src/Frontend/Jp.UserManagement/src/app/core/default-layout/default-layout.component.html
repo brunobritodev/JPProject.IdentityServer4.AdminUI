@@ -24,7 +24,8 @@
         <li class="nav-item dropdown" dropdown placement="bottom right">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
                 dropdownToggle (click)="false">
-                <img [src]="userProfile?.picture" *ngIf="userProfile" class="img-avatar" alt="userProfile?.name" />{{userProfile?.name}}&nbsp;&nbsp;
+                <img *ngIf="userProfile?.picture" class="img-avatar" [src]="userProfile?.picture" alt="userProfile?.name" />
+                <img *ngIf="!userProfile?.picture" class="img-avatar" src="/assets/img/dummy.png" alt="userProfile?.name" />{{userProfile?.name}}&nbsp;&nbsp;
             </a>
             <div class="dropdown-menu dropdown-menu-right pointer" *dropdownMenu aria-labelledby="simple-dropdown">
                 <div class="dropdown-header text-center"><strong>Account</strong></div>

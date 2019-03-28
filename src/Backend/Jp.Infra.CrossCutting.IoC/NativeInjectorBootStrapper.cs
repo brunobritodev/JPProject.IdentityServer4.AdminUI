@@ -5,13 +5,14 @@ using Jp.Infra.CrossCutting.Identity.Authorization;
 using Jp.Infra.CrossCutting.Tools.Serializer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Jp.Infra.CrossCutting.IoC
 {
     public class NativeInjectorBootStrapper
     {
-        public static void RegisterServices(IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
             // ASP.NET HttpContext dependency
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -36,7 +37,7 @@ namespace Jp.Infra.CrossCutting.IoC
             
 
             // Infra - Identity Services
-            IdentityBootStrapper.RegisterServices(services);
+            IdentityBootStrapper.RegisterServices(services, configuration);
 
             // Infra Tools
             // ASP.NET Authorization Polices

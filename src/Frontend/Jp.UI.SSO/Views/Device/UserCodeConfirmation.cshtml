@@ -1,0 +1,202 @@
+@model Jp.UI.SSO.Models.DeviceAuthorizationViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+{
+<!-- Breadcrumb-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">@Localizer["Title-Home"]</li>
+    <li class="breadcrumb-item">
+        <a asp-action="Index" asp-controller="Home">@Localizer["Title-User"]</a>
+    </li>
+    <li class="breadcrumb-item">@Localizer["Body-Consent"]</li>
+    <li class="breadcrumb-item active">@Model.ClientName</li>
+</ol>
+}
+<div class="page-header">
+    <div class="row page-header">
+        <div class="col-sm-10">
+            @if (Model.ClientLogoUrl != null)
+            {
+                <div class="client-logo"><img src="@Model.ClientLogoUrl"></div>
+            }
+            <h1>
+                @Model.ClientName
+                <small>is requesting your permission</small>
+            </h1>
+        </div>
+    </div>
+    @if (Model.ConfirmUserCode)
+    {
+        <div class="row">
+            <div class="col-sm-8">
+                <p>
+                    Please confirm that the authorization request quotes the code: "@Model.UserCode".
+                </p>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-sm-8">
+            <partial name="_ValidationSummary" />
+            <form asp-action="Callback" class="consent-form">
+                <input asp-for="UserCode" type="hidden" value="@Model.UserCode" />
+                <div>Uncheck the permissions you do not wish to grant.</div>
+                @if (Model.IdentityScopes.Any())
+                {
+                    <div class="panel panel-default consent-buttons">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-user"></span>
+                            Personal Information
+                        </div>
+                        <ul class="list-group">
+                            @foreach (var scope in Model.IdentityScopes)
+                            {
+                                <partial name="_ScopeListItem" model="@scope" />
+                            }
+                        </ul>
+                    </div>
+                }
+                @if (Model.ResourceScopes.Any())
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-tasks"></span>
+                            Application Access
+                        </div>
+                        <ul class="list-group">
+                            @foreach (var scope in Model.ResourceScopes)
+                            {
+                                <partial name="_ScopeListItem" model="scope" />
+                            }
+                        </ul>
+                    </div>
+                }
+                @if (Model.AllowRememberConsent)
+                {
+                    <div class="consent-remember">
+                        <label>
+                            <input class="consent-scopecheck" asp-for="RememberConsent" />
+                            <strong>Remember My Decision</strong>
+                        </label>
+                    </div>
+                }
+                <div class="consent-buttons">
+                    <button name="button" value="yes" class="btn btn-primary" autofocus>Yes, Allow</button>
+                    <button name="button" value="no" class="btn">No, Do Not Allow</button>
+                    @if (Model.ClientUrl != null)
+                    {
+                        <a class="pull-right btn btn-default" target="_blank" href="@Model.ClientUrl">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <strong>@Model.ClientName</strong>
+                        </a>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header text-white bg-warning"><strong>@Localizer["Menu-Authorize-Application"]</strong></div>
+            <div class="card-body">
+                <div class="col-sm-10">
+                    @if (Model.ClientLogoUrl != null)
+                    {
+                        <div class="client-logo"><img src="@Url.Content(Model.ClientLogoUrl)" class="img-fluid w-25"></div>
+                    }
+                    <h1>
+                        @Model.ClientName
+                        <br class="d-lg-none" /><small>@Localizer["Body-is requesting your permission"]</small>
+                    </h1>
+                </div>
+
+                @if (Model.ConfirmUserCode)
+                {
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>
+                                @Localizer["Body-ConfirmAuthCode"]: "@Model.UserCode".
+                            </p>
+                        </div>
+                    </div>
+                }
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-lg-10 col-md-12">
+                        @await Html.PartialAsync("_ValidationSummary")
+                        <br />
+                        <form asp-action="Index" class="consent-form">
+                            <input type="hidden" asp-for="ReturnUrl" />
+                            <div class="alert alert-warning" role="alert">@Localizer["Body-grant!"]</div>
+                            @if (Model.IdentityScopes.Any())
+                            {
+                                <div class="card">
+                                    <div class="card-header text-white bg-primary">
+                                        <i class="fa fa-user"></i>
+                                        @Localizer["Body-Personal-information"]
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            @foreach (var scope in Model.IdentityScopes)
+                                            {
+                                                <partial name="_ScopeListItem" model="scope" />
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                            @if (Model.ResourceScopes.Any())
+                            {
+                                <div class="card">
+                                    <div class="card-header text-white bg-primary">
+                                        <i class="fa fa-tasks"></i>
+                                        @Localizer["Body-Application-access"]
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            @foreach (var scope in Model.ResourceScopes)
+                                            {
+                                                <partial name="_ScopeListItem" model="scope" />
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                            @if (Model.AllowRememberConsent)
+                            {
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <div class="col-md-3 col-sm-3 col-lg-2">
+                                            <label class="switch switch-label switch-danger">
+                                                <input class="switch-input"
+                                                       id="rememberConsent"
+                                                       type="checkbox"
+                                                       asp-for="RememberConsent">
+                                                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-9 text-left">
+                                            <label for="rememberConsent" class="form-control-static">
+                                                <strong>@Localizer["Body-Remember-My-Decision"]</strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <div class="consent-buttons">
+                                <button name="button" value="yes" class="btn btn-primary" autofocus>@Localizer["Body-Yes-Allow"]</button>
+                                <button name="button" value="no" class="btn">@Localizer["Body-No-Do-Not-Allow"]</button>
+                                @if (Model.ClientUrl != null)
+                                {
+                                    <a class="pull-right btn btn-default" target="_blank" href="@Model.ClientUrl">
+                                        <span class="glyphicon glyphicon-info-sign"></span>
+                                        <strong>@Model.ClientName</strong>
+                                    </a>
+                                }
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

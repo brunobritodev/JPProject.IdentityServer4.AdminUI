@@ -25,6 +25,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using Jp.UI.SSO.Util;
 
 namespace Jp.UI.SSO.Controllers.Account
 {
@@ -36,7 +37,6 @@ namespace Jp.UI.SSO.Controllers.Account
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
-        private readonly IConfiguration _configuration;
         private readonly DomainNotificationHandler _notifications;
 
         public AccountController(
@@ -55,7 +55,6 @@ namespace Jp.UI.SSO.Controllers.Account
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
-            _configuration = configuration;
             _notifications = (DomainNotificationHandler)notifications;
         }
 
@@ -96,10 +95,11 @@ namespace Jp.UI.SSO.Controllers.Account
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginInputModel model, string button)
         {
+            // the user clicked the "cancel" button
+            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
+
             if (button != "login")
             {
-                // the user clicked the "cancel" button
-                var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
                 if (context != null)
                 {
                     // if the user cancels, send a result back into IdentityServer as if they 
@@ -143,14 +143,33 @@ namespace Jp.UI.SSO.Controllers.Account
                     {
                         await _events.RaiseAsync(new UserLoginSuccessEvent(userIdentity.UserName, userIdentity.Id.ToString(), userIdentity.UserName));
 
-                        // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
-                        // the IsLocalUrl check is only necessary if you want to support additional local pages, otherwise IsValidReturnUrl is more strict
-                        if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
+                        if (context != null)
                         {
+                            if (await _clientStore.IsPkceClientAsync(context.ClientId))
+                            {
+                                // if the client is PKCE then we assume it's native, so this change in how to
+                                // return the response is for better UX for the end user.
+                                return View("Redirect", new RedirectViewModel { RedirectUrl = model.ReturnUrl });
+                            }
+
+                            // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
                             return Redirect(model.ReturnUrl);
                         }
 
-                        return Redirect("~/");
+                        // request for a local page
+                        if (Url.IsLocalUrl(model.ReturnUrl))
+                        {
+                            return Redirect(model.ReturnUrl);
+                        }
+                        else if (string.IsNullOrEmpty(model.ReturnUrl))
+                        {
+                            return Redirect("~/");
+                        }
+                        else
+                        {
+                            // user might have clicked on a malicious link - should be logged
+                            throw new Exception("invalid return URL");
+                        }
                     }
                     else
                     {
@@ -172,6 +191,15 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
         {
+            if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
+
+            // validate returnUrl - either it is a valid OIDC URL or back to a local page
+            if (Url.IsLocalUrl(returnUrl) == false && _interaction.IsValidReturnUrl(returnUrl) == false)
+            {
+                // user might have clicked on a malicious link - should be logged
+                throw new Exception("invalid return URL");
+            }
+
             if (AccountOptions.WindowsAuthenticationSchemeName == provider)
             {
                 // windows authentication needs special handling
@@ -182,7 +210,7 @@ namespace Jp.UI.SSO.Controllers.Account
                 // start challenge and roundtrip the return URL and 
                 var props = new AuthenticationProperties()
                 {
-                    RedirectUri = Url.Action("ExternalLoginCallback"),
+                    RedirectUri = Url.Action(nameof(ExternalLoginCallback)),
                     Items =
                     {
                         { "returnUrl", returnUrl },
@@ -200,7 +228,7 @@ namespace Jp.UI.SSO.Controllers.Account
         public async Task<IActionResult> ExternalLoginCallback()
         {
             // read external identity from the temporary cookie
-            var result = await HttpContext.AuthenticateAsync(IdentityServerConstants.ExternalCookieAuthenticationScheme);
+            var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
             if (result?.Succeeded != true)
             {
                 throw new Exception("External authentication error");
@@ -263,9 +291,17 @@ namespace Jp.UI.SSO.Controllers.Account
 
             // validate return URL and redirect back to authorization endpoint or a local page
             var returnUrl = result.Properties.Items["returnUrl"];
-            if (_interaction.IsValidReturnUrl(returnUrl) || Url.IsLocalUrl(returnUrl))
+
+            // check if external login is in the context of an OIDC request
+            var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
+            if (context != null)
             {
-                return Redirect(returnUrl);
+                if (await _clientStore.IsPkceClientAsync(context.ClientId))
+                {
+                    // if the client is PKCE then we assume it's native, so this change in how to
+                    // return the response is for better UX for the end user.
+                    return View("Redirect", new RedirectViewModel { RedirectUrl = returnUrl });
+                }
             }
 
             return RedirectToAction("Index", "Home");
@@ -332,14 +368,22 @@ namespace Jp.UI.SSO.Controllers.Account
             var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (context?.IdP != null)
             {
+                var local = context.IdP == IdentityServerConstants.LocalIdentityProvider;
+
                 // this is meant to short circuit the UI and only trigger the one external IdP
-                return new LoginViewModel
+                var vm = new LoginViewModel
                 {
-                    EnableLocalLogin = false,
+                    EnableLocalLogin = local,
                     ReturnUrl = returnUrl,
                     Username = context?.LoginHint,
-                    ExternalProviders = new ExternalProvider[] { new ExternalProvider { AuthenticationScheme = context.IdP } }
                 };
+
+                if (!local)
+                {
+                    vm.ExternalProviders = new[] { new ExternalProvider { AuthenticationScheme = context.IdP } };
+                }
+
+                return vm;
             }
 
             var schemes = await _schemeProvider.GetAllSchemesAsync();
@@ -399,7 +443,6 @@ namespace Jp.UI.SSO.Controllers.Account
             }
 
             var context = await _interaction.GetLogoutContextAsync(logoutId);
-            vm.PostLogoutRedirectUri = context?.PostLogoutRedirectUri;
             if (context?.ShowSignoutPrompt == false)
             {
                 // it's safe to automatically sign-out
@@ -461,7 +504,7 @@ namespace Jp.UI.SSO.Controllers.Account
                 // auth the same as any other external authentication mechanism
                 var props = new AuthenticationProperties()
                 {
-                    RedirectUri = Url.Action("ExternalLoginCallback"),
+                    RedirectUri = Url.Action(nameof(ExternalLoginCallback)),
                     Items =
                     {
                         { "returnUrl", returnUrl },

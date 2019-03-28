@@ -14985,4 +14985,17 @@ body {
     breakpoint-lg: 992px;
     breakpoint-xl: 1200px;
 }
+
+/*
+CUSTOM CSS
+*/
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+  
+.github-button-span{
+    position:absolute;margin-left:10px;margin-top:-4px;
+}
+
 /*# sourceMappingURL=style.css.map */

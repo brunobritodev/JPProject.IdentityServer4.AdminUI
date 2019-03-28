@@ -1,17 +1,13 @@
-﻿using Jp.Infra.CrossCutting.IdentityServer.Configuration;
-using Jp.Infra.CrossCutting.IoC;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
-using Jp.Infra.Migrations.MySql.Identity.Configuration;
-using Jp.Infra.Migrations.MySql.IdentityServer.Configuration;
-using Jp.Infra.Migrations.Sql.IdentityServer.Configuration;
+﻿using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using IdentityServerConfig = Jp.Infra.CrossCutting.IdentityServer.Configuration.IdentityServerConfig;
 
 namespace Jp.UI.SSO
 {
@@ -23,7 +19,6 @@ namespace Jp.UI.SSO
 
         public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
         {
-
             _logger = logger;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(environment.ContentRootPath)
@@ -43,23 +38,19 @@ namespace Jp.UI.SSO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // configure identity
-            services.AddMvc();
-
-            services.ConfigureIdentityDatabase(Configuration);
-
-            // For linux ambient DataProtection
-            // https://github.com/aspnet/Home/issues/2941
-            // You can remove it in ISS
-            //if (!Directory.Exists(Path.Combine(_environment.ContentRootPath, "keys")))
-            //    Directory.CreateDirectory(Path.Combine(_environment.ContentRootPath, "keys"));
-            //services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(_environment.ContentRootPath, "keys"))).SetApplicationName("JpProject-SSO");
 
             services.Configure<IISOptions>(iis =>
             {
                 iis.AuthenticationDisplayName = "Windows";
                 iis.AutomaticAuthentication = false;
             });
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; })
+                .AddDataAnnotationsLocalization();
+
+            // Config identity
+            services.ConfigureIdentityDatabase(Configuration);
 
             // Add localization
             services.AddMvcLocalization();
@@ -68,7 +59,7 @@ namespace Jp.UI.SSO
             services.ConfigureIdentityServerDatabase(Configuration, _environment, _logger);
 
             // Configure authentication and external logins
-            services.AddSocialIntegration(Configuration);
+            services.AddAuth(Configuration);
 
             // Configure automapper
             services.AddAutoMapperSetup();
@@ -88,7 +79,12 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseDeveloperExceptionPage();
+            else
+            {
+                app.UseHsts(options => options.MaxAge(days: 365));
+                app.UseHttpsRedirection();
+            }
+
             app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
@@ -100,7 +96,7 @@ namespace Jp.UI.SSO
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
-            NativeInjectorBootStrapper.RegisterServices(services);
+            NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }
 

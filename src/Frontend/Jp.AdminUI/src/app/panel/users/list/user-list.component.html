@@ -16,46 +16,150 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-striped">
+
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>
+                            <div class="btn-group">
+                                <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs"
+                                    placement="top" [tooltip]="'general.edit' | translate"><i
+                                        class="fa fa-edit"></i></a>
+                                <button (click)="showLogs(user)" class="btn btn-outline-primary btn-xs" placement="top"
+                                    [tooltip]="'users.list.log-tooltip' | translate"><i
+                                        class="fas fa-history"></i></button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="media align-items-center">
+                                <a class="mr-3" href="#">
+                                    <img *ngIf="user.picture" class="img-fluid rounded thumb48" [src]="user.picture" />
+                                    <img *ngIf="!user.picture" class="img-fluid rounded thumb48" src="assets/img/dummy.png" alt="" />
+                                </a>
+                                <div class="media-body d-flex">
+                                    <div>
+                                        <h4 class="m-0">{{user.name}}</h4>
+                                        <small class="text-muted">{{user.userName}}</small>
+                                        <p><i class="fas fa-mail-bulk"></i> {{user.email}}</p>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <button class="btn btn-danger btn-sm" placement="top"
+                                            [tooltip]="'general.remove' | translate" (click)="remove(user.id)"><i
+                                                class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th></th>
-                        <td> {{ 'users.list.picture' | translate }}</td>
-                        <th> {{ "users.list.username" | translate }}</th>
-                        <th> {{ "users.list.name" | translate }}</th>
-                        <th> {{ "users.list.email" | translate }} </th>
-                        <th></th>
-
+                        <th>&nbsp;</th>
+                        <td> {{ 'users.list.name' | translate }}</td>
+                        <td>{{ 'users.list.username' | translate }}</td>
+                        <td>{{ 'users.list.email' | translate }}</td>
+                        <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of users">
-                        <th>
-                            <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs" placement="top"
-                                [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
-                            &nbsp;
-                            <button (click)="showLogs(user)" class="btn btn-outline-primary btn-xs" placement="top"
-                                [tooltip]="'users.list.log-tooltip' | translate"><i class="fas fa-history"></i></button>
-                        </th>
-                        <td><img *ngIf="user.picture" width="32" [src]="user.picture" /></td>
-                        <td>{{user.userName}}</td>
-                        <td>{{user.name}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs"
+                                    placement="top" [tooltip]="'general.edit' | translate"><i
+                                        class="fa fa-edit"></i></a>
+                                <button (click)="showLogs(user)" class="btn btn-outline-primary btn-xs" placement="top"
+                                    [tooltip]="'users.list.log-tooltip' | translate"><i
+                                        class="fas fa-history"></i></button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="media">
+                                <a class="float-left" href="#">
+                                    <img *ngIf="user.picture" class="img-fluid circle" [src]="user.picture" />
+                                </a>
+                                <div class="media-body">
+                                    <span>{{user.name}}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td> {{user.userName}}</td>
                         <td>{{user.email}}</td>
                         <td>
-                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate"
-                                (click)="remove(user.id)"><i class="fa fa-times"></i></button>
+                            <button class="btn btn-danger btn-xs" placement="top"
+                                [tooltip]="'general.remove' | translate" (click)="remove(user.id)"><i
+                                    class="fa fa-times"></i></button>
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <div class="d-flex">
+            <div>
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search" (keyup)="findUser($event)" (blur)="findUser($event)"  />
+                </div>
+            </div>
+            <div class="ml-auto">
+                <div class="input-group">
+                    <label class="col-form-label">Items per page:&nbsp;</label>
+                    <select class="custom-select" [(ngModel)]="quantity" (change)="loadResources()">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                    <ngb-pagination [collectionSize]="total" [(page)]="page" [maxSize]="5" [rotate]="true"
+                        [ellipses]="false" [boundaryLinks]="true" [pageSize]="quantity" (pageChange)="loadResources()">
+                    </ngb-pagination>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="card card-default" *ngIf="historyData$ | async as history">
     <div class="card-header">
-        <h3>Logs - {{selectedUser.userName}}</h3>
+        <div class="col-xl-6 col-lg-8 offset-2">
+            <!-- START card-->
+            <div class="card">
+                <div class="half-float">
+                    <img class="img-fluid" src="assets/img/bg3.jpg" alt="">
+                    <div class="half-float-bottom" *ngIf="selectedUser.picture">
+                        <img class="img-thumbnail circle thumb128" [src]="selectedUser.picture" />
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="m-0">{{selectedUser.name}}</h3>
+                    <p class="text-muted"><i class="fas fa-user"></i> {{selectedUser.userName}}</p>
+                    <p class="text-muted"><i class="fas fa-mail-bulk"></i> {{selectedUser.email}}</p>
+                </div>
+                <div class="card-body">
+                    <div class="card bg-danger-dark border-0">
+                        <div class="row align-items-center mx-0">
+                            <div class="col-4 text-center">
+                                <em class="icon-star fa-3x"></em>
+                            </div>
+                            <div class="col-8 py-4 bg-danger rounded-right">
+                                <div class="h1 m-0 text-bold">{{history.length}}</div>
+                                <div class="text-uppercase">Logs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END card-->
+        </div>
     </div>
     <div class="card-body">
+
         <table class="table table-responsive-sm table-bordered">
             <thead>
                 <tr>
@@ -71,7 +175,8 @@
                     <td>{{history.when}}</td>
                     <td>{{history.who}}</td>
                     <td>
-                        <button class="btn btn-primary" (click)="history.show = !history.show"><i class="far fa-clock"></i></button>
+                        <button class="btn btn-primary" (click)="history.show = !history.show"><i
+                                class="far fa-clock"></i></button>
                         <div *ngIf="history.show"><br>
                             <pre>{{ parse(history.details) | json}}</pre>
                         </div>

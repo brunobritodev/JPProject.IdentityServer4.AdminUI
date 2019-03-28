@@ -5,6 +5,7 @@ import { DndModule } from "ng2-dnd";
 import { NgxSelectModule } from 'ngx-select-ex';
 import { TagInputModule } from 'ngx-chips';
 import { PersistedGrantListComponent } from "./list/persisted-grants-list.component";
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
     { path: "", redirectTo: "list", pathMatch: "full" },
@@ -17,7 +18,8 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         DndModule.forRoot(),
         NgxSelectModule,
-        TagInputModule
+        TagInputModule,
+        NgbPaginationModule
     ],
     declarations: [
         PersistedGrantListComponent,

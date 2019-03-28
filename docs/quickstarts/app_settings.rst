@@ -17,12 +17,14 @@ The project use only one Database and all projects use the same Connection Strin
 CertificateOptions
 ^^^^^^^^^^^^^^^^^^
 
-There are two situation where you need to fill CertificateOptions.
+There are two options to provide CertificateOptions.
 
 * **File** - You need to provide
     * FileName: Entire path of certificate
     * FilePassword: Password of certificate
-* **Store** - You need to provide KeyStoreIssuer. The certificate is search by X509FindType.FindByIssuerName.
+* **Store** - You need to provide KeyStoreIssuer. The certificate is search by X509FindType.FindByIssuerName. (Good option for Azure SSL)
+* **Environment** - Will look into Env Var ASPNETCORE_Kestrel__Certificates__Default__Path and ASPNETCORE_Kestrel__Certificates__Default__Password to locate the certificate and it pass.
+* **Temporary** - It will create an auto signed Certificate. Use only on dev's environment.
 
 EmailConfiguration
 ^^^^^^^^^^^^^^^^^^
@@ -41,7 +43,7 @@ To take from Facebook, see `docs here <https://developers.facebook.com/docs/face
 ApplicationSettings
 ^^^^^^^^^^^^^^^^^^^
 
-These settings will be override by Environment Variables if set.
+These settings will be overrided by Environment Variables, if set.
 
 .. list-table:: Ambient Variables
    :widths: 15 25 60

@@ -1,34 +1,37 @@
 # base image
-FROM node:alpine as builder
-
-# set working directory
-WORKDIR /usr/src/app
-
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+FROM node:10-alpine as builder
 
 # install and cache app dependencies
-COPY ["src/Frontend/Jp.UserManagement/package.json", "/usr/src/app"]
-COPY ["src/Frontend/Jp.UserManagement/package-lock.json", "/usr/src/app"]
-RUN npm install
-RUN npm install -g @angular/cli@1.7.1 --unsafe
+COPY ["src/Frontend/Jp.UserManagement/package.json", "./"]
+COPY ["src/Frontend/Jp.UserManagement/package-lock.json", "./"]
+
+## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
+
+RUN npm ci && mkdir /app && mv ./node_modules ./app/
+
+WORKDIR /app
 
 # add app
-COPY ["src/Frontend/Jp.UserManagement/", "/usr/src/app"]
+COPY ["src/Frontend/Jp.UserManagement/", "/app"]
 
+# rebuild node
+RUN npm rebuild node-sass
 # generate build
-RUN npm run build
+RUN npm run ng build -- --configuration=docker
 
 ##################
 ### production ###
 ##################
 
 # base image
-FROM nginx:alpine
+FROM nginx:1.13.3-alpine
+
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
 
 # copy artifact build from the 'build environment'
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
-COPY  --from=builder /usr/src/app/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 
 # expose port 80

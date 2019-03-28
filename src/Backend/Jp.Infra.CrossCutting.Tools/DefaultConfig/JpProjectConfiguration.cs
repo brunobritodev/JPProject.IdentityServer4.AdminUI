@@ -12,7 +12,7 @@ namespace Jp.Infra.CrossCutting.Tools.DefaultConfig
         private static IConfiguration _configuration;
         private static IConfiguration Configuration => _configuration ?? (_configuration = new ConfigurationBuilder()
                                                            .SetBasePath(Directory.GetCurrentDirectory())
-                                                           .AddJsonFile("appsettings.json")
+                                                           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                                                            .Build());
 
 

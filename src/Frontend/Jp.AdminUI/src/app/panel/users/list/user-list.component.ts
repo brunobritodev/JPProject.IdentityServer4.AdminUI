@@ -1,10 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "@core/translator/translator.service";
 import { UserService } from "@shared/services/user.service";
-import { UserProfile } from "@shared/viewModel/userProfile.model";
+import { UserProfile, ListOfUsers } from "@shared/viewModel/userProfile.model";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { EventHistoryData } from "@shared/viewModel/event-history-data.model";
+import { debounceTime, switchMap } from "rxjs/operators";
 const swal = require('sweetalert');
 
 @Component({
@@ -19,16 +20,31 @@ export class UserListComponent implements OnInit {
     public historyData$: Observable<EventHistoryData[]>;
     public selectedUser: UserProfile;
 
+    public total: number;
+    public page: number = 1;
+    public quantity: number = 10;
+    private userSearch: Subject<string> = new Subject<string>();
+
     constructor(
         public translator: TranslatorService,
         private userService: UserService) { }
 
     ngOnInit() {
         this.loadResources();
+        this.userSearch
+            .pipe(debounceTime(500))
+            .pipe(switchMap(a => this.userService.findUsers(a, this.quantity, this.page)))
+            .subscribe((response: DefaultResponse<ListOfUsers>) => {
+                this.users = response.data.users;
+                this.total = response.data.total;
+            });
     }
 
     public loadResources() {
-        this.userService.getUsers().subscribe(a => this.users = a.data);
+        this.userService.getUsers(this.quantity, this.page).subscribe(a => {
+            this.users = a.data.users;
+            this.total = a.data.total;
+        });
     }
 
     public remove(id: string) {
@@ -75,4 +91,14 @@ export class UserListComponent implements OnInit {
     parse(details: string) {
         return JSON.parse(details);
     }
+
+
+    public findUser(event: any) {
+        if (event.target.value == null || event.target.value === "") {
+            this.loadResources();
+        }
+
+        this.userSearch.next(event.target.value);
+    }
+
 }

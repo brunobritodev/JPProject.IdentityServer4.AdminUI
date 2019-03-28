@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using IdentityServer4.Models;
 using Jp.Domain.Interfaces;
 
@@ -77,5 +78,17 @@ namespace Jp.Application.ViewModels
             Email = email;
             Picture = picture;
         }
+    }
+
+    public class ListOfPersistedGrantViewModel
+    {
+        public ListOfPersistedGrantViewModel(IEnumerable<PersistedGrantViewModel> persistedGrants,int total)
+        {
+            Total = total;
+            PersistedGrants = persistedGrants;
+        }
+
+        public int Total { get; set; }
+        public IEnumerable<PersistedGrantViewModel> PersistedGrants { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Jp.Domain.Commands.PersistedGrant;
+using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Application.Services
 {
@@ -32,11 +33,14 @@ namespace Jp.Application.Services
             _userService = userService;
         }
 
-        public async Task<IEnumerable<PersistedGrantViewModel>> GetPersistedGrants()
+        public async Task<ListOfPersistedGrantViewModel> GetPersistedGrants(PagingViewModel paging)
         {
-            var resultado = await _persistedGrantRepository.GetGrants();
+            var resultado = await _persistedGrantRepository.GetGrants(paging);
+            var total = await _persistedGrantRepository.Count();
             var subjects = await _userService.GetByIdAsync(resultado.Select(s => s.SubjectId).ToArray());
-            return resultado.Select(s => new PersistedGrantViewModel(s.Key, s.Type, s.SubjectId, s.ClientId, s.CreationTime, s.Expiration, s.Data, subjects.FirstOrDefault(f => f.Id.ToString().ToLower() == s.SubjectId.ToLower())?.Email, subjects.FirstOrDefault(f => f.Id.ToString().ToLower() == s.SubjectId.ToLower())?.Picture));
+
+            var grants = resultado.Select(s => new PersistedGrantViewModel(s.Key, s.Type, s.SubjectId, s.ClientId, s.CreationTime, s.Expiration, s.Data, subjects.FirstOrDefault(f => f.Id.ToString().ToLower() == s.SubjectId.ToLower())?.Email, subjects.FirstOrDefault(f => f.Id.ToString().ToLower() == s.SubjectId.ToLower())?.Picture));
+            return new ListOfPersistedGrantViewModel(grants, total);
         }
 
         public Task Remove(RemovePersistedGrantViewModel model)
