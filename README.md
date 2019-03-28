@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/brunohbrito/jp-project.svg)](LICENSE)
 ![DOCS](https://readthedocs.org/projects/jp-project/badge/?version=latest&style=flat)
 
-Jp Project is a Open Source UI Administration Panel for IdentityServer4. 
+Jp Project is a Open Source UI Administration Tools for IdentityServer4 v2 - release 2.4.0. 
 
 
 ## Admin UI
@@ -29,14 +29,20 @@ Check it now at [Jp Project](https://jpproject.azurewebsites.net/admin-ui/).
 
 You can check also [SSO](https://jpproject.azurewebsites.net/sso/) and [User Management](https://jpproject.azurewebsites.net/user-management/)
 
-
 _New users are readonly_
 
+# Docker Ready ❤️
+
+Wanna try? As easy as:
+* download docker.zip
+* Unzip and execute docker-build.bat (As administrator)
+
+
+# How it was made
 
 Written in ASP.NET Core and Angular 6.
 The main goal of project is to be a Management Ecosystem for IdentityServer4. Helping Startup's and Organization to Speed Up the Setup of User Management. Helping teams and entrepreneurs to achieve the company's primary purpose: Maximize shareholder value.
 
-# How it was written
 - Angular 6
 - Rich UI interface
 - ASP.NET Core 2.2
