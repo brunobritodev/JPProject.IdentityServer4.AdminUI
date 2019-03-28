@@ -76,14 +76,18 @@ The main goal of project is to be a Management Ecosystem for IdentityServer4. He
 Do you love it? give us a Star!
 
 ## How to build
-Jp Project is built against ASP.NET Core 2.1.
+Jp Project is built against ASP.NET Core 2.2.
 
-* [Install](https://www.microsoft.com/net/download/core#/current) the latest .NET Core 2.1 SDK
-* Run `build.ps1` (Powershell) or `build.bat` (cmd)
+* [Install](https://www.microsoft.com/net/download/core#/current) the latest .NET Core 2.2 SDK
+
+
+`src/JpProject.sln` Contains SSO and API
+
+For UI's use VSCode.
+- AdminUI -> Inside VSCode open folder `rootFolder/src/Frontend/Jp.AdminUI`, then terminal and `npm install && npm start`
+- User Management -> Inside VSCode open folder `rootFolder/src/Frontend/Jp.UserManagement`, then terminal and `npm install && npm start`
 
 Wait for ng to complete his proccess then go to http://localhost:5000!
-
-
 
 Any doubts? Go to docs
 
@@ -127,4 +131,3 @@ Check [Changelog.md](https://github.com/brunohbrito/JP-Project/blob/master/CHANG
 
 Code coverage
 
-Thinking about create separated repo's for each part of solution.
