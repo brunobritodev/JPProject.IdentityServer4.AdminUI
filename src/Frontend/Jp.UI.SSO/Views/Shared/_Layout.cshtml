@@ -1,5 +1,4 @@
-﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
-@using IdentityServer4.Extensions
+﻿@using IdentityServer4.Extensions
 @{
     string name = null;
     string image = null;
@@ -40,16 +39,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="@Url.Content("images/ms-icon-144x144.png")">
     <meta name="theme-color" content="#ffffff">
-    @Html.Raw(JavaScriptSnippet.FullScript)
+    <script asp-append-version="true" crossorigin="anonymous" src="~/js/app.insights.js"></script>
 </head>
 <body>
-    <div class="bg-danger text-center text-white p-3">
+    <div class="bg-marketing text-center text-white p-3">
         💪💪💪 Please help us on Github. Give us a star ⭐️ 🙏🙏 ➡
-
-        <span>
-            <!-- Place this tag where you want the button to render. -->
-            <a class="github-button" href="https://github.com/brunohbrito/JP-Project" data-size="large" aria-label="Star brunohbrito/JP-Project on GitHub">Star</a>
-        </span>
+        <iframe src="https://ghbtns.com/github-btn.html?user=brunohbrito&repo=JP-Project&type=star" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
     </div>
     <div class="app sidebar-fixed footer-fixed aside-menu-fixed">
         <header class="app-header navbar">
@@ -120,12 +115,7 @@
             </div>
         </footer>
     </div>
-    <script src="@Url.Content("~/js/jquery.min.js")"></script>
-    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
-    <script src="@Url.Content("~/js/popper.min.js")"></script>
-    <script src="@Url.Content("~/js/pace.min.js")"></script>
-    <script src="@Url.Content("~/js/perfect-scrollbar.min.js")"></script>
-    <script src="@Url.Content("~/js/coreui.min.js")"></script>
+    <script src="@Url.Content("~/js/jp.min.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

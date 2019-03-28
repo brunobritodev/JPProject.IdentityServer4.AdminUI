@@ -36,17 +36,12 @@
     <meta name="msapplication-TileImage" content="@Url.Content("images/ms-icon-144x144.png")">
     <meta name="theme-color" content="#ffffff">
     <link href="@Url.Content("~/css/jp.min.css")" rel="stylesheet">
+    <script asp-append-version="true" crossorigin="anonymous" src="~/js/app.insights.js"></script>
 </head>
 <body>
-    <div class="bg-danger text-center text-white p-3" style="background-color: #4776e6;background-image: linear-gradient(to right, #4776e6, #8e54e9);">
+    <div class="bg-marketing text-center text-white p-3">
         💪💪💪 Please help us on Github. Give us a star ⭐️ 🙏🙏 ➡
-        <span onclick="ga('send', 'event', 'Give us a star', 'Click', 'Top banner');" style="position:absolute;margin-left:10px;margin-top:-4px;">
-
-            <span>
-                <!-- Place this tag where you want the button to render. -->
-                <a class="github-button" href="https://github.com/brunohbrito/JP-Project" data-size="large" aria-label="Star brunohbrito/JP-Project on GitHub">Star</a>
-            </span>
-        </span>
+        <iframe src="https://ghbtns.com/github-btn.html?user=brunohbrito&repo=JP-Project&type=star" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
     </div>
     <div class="app flex-row align-items-center">
         <div class="container-fluid">
@@ -55,12 +50,7 @@
             </div>
         </div>
     </div>
-    <script src="@Url.Content("~/js/jquery.min.js")"></script>
-    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
-    <script src="@Url.Content("~/js/popper.min.js")"></script>
-    <script src="@Url.Content("~/js/pace.min.js")"></script>
-    <script src="@Url.Content("~/js/perfect-scrollbar.min.js")"></script>
-    <script src="@Url.Content("~/js/coreui.min.js")"></script>
+    <script src="@Url.Content("~/js/jp.min.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

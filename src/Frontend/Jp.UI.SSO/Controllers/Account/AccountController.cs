@@ -142,20 +142,6 @@ namespace Jp.UI.SSO.Controllers.Account
                     if (result.Succeeded)
                     {
                         await _events.RaiseAsync(new UserLoginSuccessEvent(userIdentity.UserName, userIdentity.Id.ToString(), userIdentity.UserName));
-                        // only set explicit expiration here if user chooses "remember me". 
-                        // otherwise we rely upon expiration configured in cookie middleware.
-                        AuthenticationProperties props = null;
-                        if (AccountOptions.AllowRememberLogin && model.RememberLogin)
-                        {
-                            props = new AuthenticationProperties
-                            {
-                                IsPersistent = true,
-                                ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.RememberMeLoginDuration)
-                            };
-                        };
-
-                        // issue authentication cookie with subject ID and username
-                        await HttpContext.SignInAsync(userIdentity.Id.ToString(), userIdentity.UserName, props);
 
                         if (context != null)
                         {
@@ -242,7 +228,7 @@ namespace Jp.UI.SSO.Controllers.Account
         public async Task<IActionResult> ExternalLoginCallback()
         {
             // read external identity from the temporary cookie
-            var result = await HttpContext.AuthenticateAsync(IdentityServerConstants.ExternalCookieAuthenticationScheme);
+            var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
             if (result?.Succeeded != true)
             {
                 throw new Exception("External authentication error");
@@ -301,7 +287,7 @@ namespace Jp.UI.SSO.Controllers.Account
             await HttpContext.SignInAsync(user.Id.ToString(), name, provider, localSignInProps, additionalLocalClaims.ToArray());
 
             // delete temporary cookie used during external authentication
-            await HttpContext.SignOutAsync(IdentityServerConstants.ExternalCookieAuthenticationScheme);
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             // validate return URL and redirect back to authorization endpoint or a local page
             var returnUrl = result.Properties.Items["returnUrl"];

@@ -13461,3 +13461,1067 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'brun
 2019-03-27 17:32:18.318 -03:00 [DBG] Consent Return Url Parameter: returnUrl
 2019-03-27 17:32:18.320 -03:00 [DBG] Error Url: /home/error
 2019-03-27 17:32:18.322 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 19:55:05.214 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 19:55:05.395 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 19:59:02.939 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 19:59:03.115 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 19:59:06.971 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 19:59:07.014 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 19:59:07.017 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 19:59:07.019 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 19:59:07.021 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 19:59:07.023 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 19:59:07.026 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 19:59:14.239 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 19:59:14.249 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 19:59:14.251 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 19:59:14.254 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 19:59:14.257 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 19:59:14.259 -03:00 [DBG] Error Url: /home/error
+2019-03-27 19:59:14.261 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 19:59:22.120 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 19:59:31.350 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 19:59:31.613 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 19:59:31.624 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 19:59:31.626 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 19:59:31.630 -03:00 [DBG] Adding auth_time claim with value: 1553727571
+2019-03-27 19:59:31.642 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 19:59:31.654 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ0V96MPOM:00000009","TimeStamp":"2019-03-27T22:59:31.0000000Z","ProcessId":23396,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 19:59:31.670 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 19:59:31.672 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 19:59:31.674 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 19:59:31.677 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 19:59:31.698 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:00:18.599 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:00:18.658 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:00:18.660 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:00:18.663 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:00:18.665 -03:00 [DBG] Adding auth_time claim with value: 1553727618
+2019-03-27 20:00:18.667 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:00:18.670 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ0V96MPOM:0000000C","TimeStamp":"2019-03-27T23:00:18.0000000Z","ProcessId":23396,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:00:20.994 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:00:20.997 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:00:20.999 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:00:21.002 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:00:27.140 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:00:45.552 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:00:45.589 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:00:45.592 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:00:45.595 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:00:45.598 -03:00 [DBG] Adding auth_time claim with value: 1553727645
+2019-03-27 20:00:45.601 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:00:45.604 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ0V96MPOS:00000007","TimeStamp":"2019-03-27T23:00:45.0000000Z","ProcessId":23396,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:00:48.936 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:00:48.940 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:00:48.943 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:00:48.945 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:00:48.954 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:04:42.768 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:04:42.924 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:04:46.868 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:04:46.904 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:04:46.907 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:04:46.910 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:04:46.913 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:04:46.915 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:04:46.917 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:05:03.947 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:05:03.969 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:05:03.971 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:05:03.975 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:05:03.977 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:05:03.979 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:05:03.981 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:05:03.983 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:05:03.990 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-27 20:05:04.005 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-27 20:05:06.103 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-27 20:05:06.106 -03:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-03-27 20:05:45.654 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:05:45.818 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:05:49.382 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:05:49.421 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:05:49.423 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:05:49.426 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:05:49.432 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:05:49.434 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:05:49.436 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:11:35.691 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:11:35.701 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:11:35.703 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:11:35.709 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:11:35.711 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:11:35.713 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:11:35.715 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:11:48.525 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:11:57.030 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:11:57.287 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:11:57.298 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:11:57.300 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:11:57.303 -03:00 [DBG] Adding auth_time claim with value: 1553728317
+2019-03-27 20:11:57.313 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:11:57.326 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1323N0F8:00000009","TimeStamp":"2019-03-27T23:11:57.0000000Z","ProcessId":13024,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:12:00.044 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:12:00.047 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:12:00.049 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:12:00.052 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:12:02.268 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:39:21.338 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:39:21.491 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:39:25.280 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:39:25.316 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:39:25.319 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:39:25.322 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:39:25.324 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:39:25.326 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:39:25.328 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:39:28.817 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:39:28.827 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:39:28.829 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:39:28.832 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:39:28.834 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:39:28.837 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:39:28.839 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:39:35.626 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:39:35.882 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:39:35.892 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:39:35.894 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:39:35.897 -03:00 [DBG] Adding auth_time claim with value: 1553729975
+2019-03-27 20:39:35.914 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:39:35.927 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1LQ5693H:00000004","TimeStamp":"2019-03-27T23:39:35.0000000Z","ProcessId":6768,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:39:35.969 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:43:14.492 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:43:14.661 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:43:18.470 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:43:18.516 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:43:18.519 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:43:18.521 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:43:18.523 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:43:18.525 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:43:18.528 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:43:35.510 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:43:35.540 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:43:35.543 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:43:35.545 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:43:35.548 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:43:35.550 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:43:35.551 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:43:35.554 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:43:36.049 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:43:36.059 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:43:36.061 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:43:36.063 -03:00 [DBG] Adding auth_time claim with value: 1553730216
+2019-03-27 20:43:36.075 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:43:36.088 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1O3LUNLF:00000001","TimeStamp":"2019-03-27T23:43:36.0000000Z","ProcessId":18696,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:43:36.169 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:44:05.110 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:44:05.148 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:44:05.150 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:44:05.153 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:44:05.155 -03:00 [DBG] Adding auth_time claim with value: 1553730245
+2019-03-27 20:44:05.158 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:44:05.161 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1O3LUNLG:00000004","TimeStamp":"2019-03-27T23:44:05.0000000Z","ProcessId":18696,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:44:05.172 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:45:53.303 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:45:53.449 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:45:57.105 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:45:57.141 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:45:57.144 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:45:57.146 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:45:57.149 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:45:57.151 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:45:57.153 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:47:40.611 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:47:40.624 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:47:40.627 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:47:40.632 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:47:40.637 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:47:40.640 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:47:40.645 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:47:40.676 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:47:41.199 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:47:41.213 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:47:41.215 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:47:41.218 -03:00 [DBG] Adding auth_time claim with value: 1553730461
+2019-03-27 20:47:41.239 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:47:41.256 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1QCNF2CD:00000001","TimeStamp":"2019-03-27T23:47:41.0000000Z","ProcessId":20288,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:47:41.332 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:47:58.106 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:47:58.256 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:48:02.719 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:48:02.754 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:48:02.757 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:48:02.759 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:48:02.762 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:48:02.764 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:48:02.767 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:48:03.130 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:48:03.139 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:48:03.142 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:48:03.144 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:48:03.146 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:48:03.148 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:48:03.150 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:48:05.409 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:48:05.694 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:48:05.705 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:48:05.708 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:48:05.711 -03:00 [DBG] Adding auth_time claim with value: 1553730485
+2019-03-27 20:48:05.723 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:48:05.738 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1QJE12V7:00000004","TimeStamp":"2019-03-27T23:48:05.0000000Z","ProcessId":4128,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:48:05.807 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:48:06.147 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:48:06.154 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:48:06.204 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:48:06.333 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:48:32.470 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:48:32.495 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2019-03-27 20:48:32.500 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-27 20:48:32.505 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2019-03-27 20:48:32.508 -03:00 [INF] {"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"0HLLJ1QJE12V7:0000000D","TimeStamp":"2019-03-27T23:48:32.0000000Z","ProcessId":4128,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2019-03-27 20:48:35.446 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-27 20:48:39.599 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2019-03-27 20:48:39.689 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: External authentication error
+   at Jp.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Controllers\Account\AccountController.cs:line 238
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-27 20:49:09.706 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 20:49:09.842 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 20:49:13.418 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 20:49:13.453 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 20:49:13.456 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 20:49:13.461 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 20:49:13.466 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 20:49:13.468 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 20:49:13.471 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 20:49:46.252 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 20:49:46.263 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 20:49:46.266 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 20:49:46.269 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 20:49:46.271 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 20:49:46.273 -03:00 [DBG] Error Url: /home/error
+2019-03-27 20:49:46.275 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 20:49:49.868 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-27 20:49:51.744 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:49:51.995 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 20:49:52.007 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 20:49:52.010 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 20:49:52.013 -03:00 [DBG] Adding auth_time claim with value: 1553730591
+2019-03-27 20:49:52.025 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 20:49:52.042 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1RARH78M:00000005","TimeStamp":"2019-03-27T23:49:52.0000000Z","ProcessId":1588,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 20:49:52.108 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:49:52.455 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:49:52.461 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:49:52.526 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:49:52.661 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:51:17.521 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:51:17.552 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:51:17.554 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:51:17.565 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:51:17.585 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:51:30.463 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:51:30.491 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:51:30.494 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:51:30.504 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:51:30.523 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:51:58.881 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:51:58.908 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:51:58.911 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:51:58.919 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:51:58.933 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:52:49.048 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:52:49.073 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:52:49.076 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:52:49.084 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:52:49.099 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:53:45.761 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 20:53:45.788 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 20:53:45.791 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 20:53:45.799 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 20:53:45.814 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 20:53:50.292 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 20:53:50.312 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2019-03-27 20:53:50.317 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-27 20:53:50.322 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2019-03-27 20:53:50.325 -03:00 [INF] {"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"0HLLJ1RARH78M:00000049","TimeStamp":"2019-03-27T23:53:50.0000000Z","ProcessId":1588,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2019-03-27 21:21:58.763 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 21:21:58.812 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 21:21:58.814 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 21:21:58.817 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 21:21:58.820 -03:00 [DBG] Adding auth_time claim with value: 1553732518
+2019-03-27 21:21:58.823 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 21:21:58.826 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1RARH798:0000000B","TimeStamp":"2019-03-28T00:21:58.0000000Z","ProcessId":1588,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 21:32:02.481 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 21:32:02.488 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2019-03-27 21:32:02.491 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-27 21:32:02.496 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2019-03-27 21:32:02.500 -03:00 [INF] {"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"0HLLJ1RARH79H:0000000D","TimeStamp":"2019-03-28T00:32:02.0000000Z","ProcessId":1588,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2019-03-27 21:32:09.907 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-27 21:32:09.947 -03:00 [DBG] Augmenting SignInContext
+2019-03-27 21:32:09.950 -03:00 [DBG] Adding idp claim with value: local
+2019-03-27 21:32:09.952 -03:00 [DBG] Adding amr claim with value: pwd
+2019-03-27 21:32:09.954 -03:00 [DBG] Adding auth_time claim with value: 1553733129
+2019-03-27 21:32:09.957 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-27 21:32:09.961 -03:00 [INF] {"Username":"bruno","Provider":null,"ProviderUserId":null,"SubjectId":"08d6b194-3db5-99fe-6c1c-7d85d66713d6","DisplayName":"bruno","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLJ1RARH79H:00000015","TimeStamp":"2019-03-28T00:32:09.0000000Z","ProcessId":1588,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-27 22:07:36.132 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:07:36.311 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:07:40.621 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:07:40.660 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:07:40.663 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:07:40.666 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:07:40.668 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:07:40.670 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:07:40.672 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:07:40.959 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 22:07:40.970 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 22:07:40.973 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 22:07:40.976 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 22:07:40.978 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 22:07:40.980 -03:00 [DBG] Error Url: /home/error
+2019-03-27 22:07:40.982 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 22:07:48.552 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:07:48.963 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:07:48.971 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:07:49.040 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:07:49.196 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:08:02.514 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:08:02.540 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:08:02.543 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:08:02.551 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:08:02.566 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:08:04.075 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:08:04.103 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:08:04.105 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:08:04.113 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:08:04.127 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:08:05.493 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:08:05.524 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:08:05.526 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:08:05.534 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:08:05.549 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:09:03.480 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:09:03.513 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:09:03.516 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:09:03.526 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:09:03.543 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:09:18.253 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:09:18.279 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:09:18.281 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:09:18.290 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:09:18.304 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:13:07.845 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:13:07.978 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:13:11.966 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:13:12.002 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:13:12.005 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:13:12.010 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:13:12.012 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:13:12.014 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:13:12.016 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:13:12.359 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 22:13:12.367 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 22:13:12.369 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 22:13:12.371 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 22:13:12.374 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 22:13:12.376 -03:00 [DBG] Error Url: /home/error
+2019-03-27 22:13:12.378 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 22:13:12.511 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:13:12.969 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:13:12.977 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:13:13.028 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:13:13.171 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:13:15.256 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:13:15.283 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:13:15.285 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:13:15.294 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:13:15.310 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:13:23.094 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:13:23.124 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:13:23.126 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:13:23.137 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:13:23.154 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:14:50.789 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:14:50.921 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:14:54.552 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:14:54.588 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:14:54.591 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:14:54.596 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:14:54.601 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:14:54.603 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:14:54.605 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:14:54.986 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 22:14:55.004 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 22:14:55.009 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 22:14:55.012 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 22:14:55.014 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 22:14:55.017 -03:00 [DBG] Error Url: /home/error
+2019-03-27 22:14:55.020 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 22:14:55.167 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:14:55.167 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:14:55.637 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:14:55.637 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:14:55.646 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:14:55.646 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:14:55.701 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:14:55.701 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:14:55.874 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:14:55.874 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:14:57.924 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:14:57.949 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:14:57.951 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:14:57.958 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:14:57.973 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:14:58.852 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:14:58.879 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:14:58.882 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:14:58.890 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:14:58.909 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:18:05.137 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:18:05.298 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:35:00.656 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:35:00.814 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:35:04.930 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:35:04.968 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:35:04.971 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:35:04.974 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:35:04.976 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:35:04.978 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:35:04.980 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:35:05.523 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 22:35:05.538 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 22:35:05.540 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 22:35:05.542 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 22:35:05.545 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 22:35:05.548 -03:00 [DBG] Error Url: /home/error
+2019-03-27 22:35:05.551 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 22:35:05.684 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:35:05.684 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:35:06.141 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:35:06.141 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:35:06.149 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:35:06.149 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:35:06.200 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:35:06.200 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:35:06.367 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:35:06.367 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:35:06.504 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Jp.UI.SSO.Configuration.ApplicationInsightsJsHelper' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-27 22:35:06.487 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Jp.UI.SSO.Configuration.ApplicationInsightsJsHelper' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-27 22:36:01.901 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:36:02.036 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:36:06.134 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:36:06.182 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:36:06.185 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:36:06.188 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:36:06.193 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:36:06.195 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:36:06.198 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:36:08.468 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 22:36:08.478 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 22:36:08.483 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 22:36:08.486 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 22:36:08.490 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 22:36:08.493 -03:00 [DBG] Error Url: /home/error
+2019-03-27 22:36:08.496 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 22:36:08.620 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:36:09.083 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:36:09.090 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:36:09.141 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:36:09.284 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 22:56:07.867 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:56:08.018 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:56:14.984 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:56:15.020 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:56:15.023 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:56:15.026 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:56:15.028 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:56:15.030 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:56:15.032 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:58:04.332 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 22:58:04.568 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 22:58:08.556 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 22:58:08.592 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 22:58:08.594 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 22:58:08.600 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 22:58:08.602 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 22:58:08.605 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 22:58:08.607 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 22:58:10.388 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 22:58:10.398 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 22:58:10.401 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 22:58:10.404 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 22:58:10.406 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 22:58:10.409 -03:00 [DBG] Error Url: /home/error
+2019-03-27 22:58:10.412 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 22:58:10.737 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 22:58:11.128 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 22:58:11.135 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 22:58:11.185 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 22:58:11.341 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:00:01.967 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:00:02.037 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:00:05.169 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:00:05.199 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:00:05.200 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:00:05.202 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:00:05.204 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:00:05.206 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:00:05.208 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:01:14.944 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:01:15.023 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:01:17.829 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:01:17.858 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:01:17.860 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:01:17.862 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:01:17.864 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:01:17.868 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:01:17.870 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:01:19.578 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:01:19.587 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:01:19.588 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:01:19.590 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:01:19.592 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:01:19.594 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:01:19.596 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:01:19.689 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:01:20.091 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:01:20.098 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:01:20.153 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:01:20.305 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:01:23.392 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:01:23.416 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:01:23.418 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:01:23.425 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:01:23.439 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:04:33.873 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:04:33.946 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:04:37.876 -03:00 [FTL] Application startup exception
+System.ArgumentException: Invalid source. Details: Invalid host in CSP source: *github.io
+Parameter name: sources ---> NWebsec.Core.Common.HttpHeaders.Csp.InvalidCspSourceException: Invalid host in CSP source: *github.io
+   at NWebsec.Core.Common.HttpHeaders.Csp.CspUriSource.Parse(String source)
+   at Microsoft.AspNetCore.Builder.CspDirectiveExtensions.<>c__DisplayClass2_0`1.<CustomSources>b__0(String s)
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Microsoft.AspNetCore.Builder.CspDirectiveExtensions.CustomSources[T](T directive, String[] sources)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Builder.CspDirectiveExtensions.CustomSources[T](T directive, String[] sources)
+   at Jp.UI.SSO.Configuration.SecurityHeadersConfiguration.<>c.<UseSecurityHeaders>b__0_10(ICspDirectiveConfiguration s) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Configuration\SecurityHeadersConfiguration.cs:line 48
+   at NWebsec.Core.Common.Middleware.Options.CspOptions.ScriptSources(Action`1 configurer)
+   at Jp.UI.SSO.Configuration.SecurityHeadersConfiguration.<>c__DisplayClass0_0.<UseSecurityHeaders>b__3(IFluentCspOptions options) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Configuration\SecurityHeadersConfiguration.cs:line 48
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderExtensions.UseCsp(IApplicationBuilder app, Action`1 configurer)
+   at Jp.UI.SSO.Configuration.SecurityHeadersConfiguration.UseSecurityHeaders(IApplicationBuilder app, IHostingEnvironment env) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Configuration\SecurityHeadersConfiguration.cs:line 30
+   at Jp.UI.SSO.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Startup.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Internal.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2019-03-27 23:04:54.098 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:04:54.169 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:04:58.065 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:04:58.095 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:04:58.098 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:04:58.102 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:04:58.105 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:04:58.107 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:04:58.109 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:04:58.484 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:04:58.504 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:04:58.507 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:04:58.510 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:04:58.512 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:04:58.515 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:04:58.517 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:04:58.630 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:04:59.012 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:04:59.018 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:04:59.065 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:04:59.204 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:05:00.582 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:05:00.609 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:05:00.611 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:05:00.618 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:05:00.633 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:06:13.373 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:06:13.446 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:06:16.752 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:06:16.786 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:06:16.788 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:06:16.791 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:06:16.793 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:06:16.795 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:06:16.797 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:06:17.032 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:06:17.040 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:06:17.042 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:06:17.044 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:06:17.046 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:06:17.048 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:06:17.050 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:06:17.140 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:06:17.183 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:06:17.581 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:06:17.581 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:06:17.597 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:06:17.597 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:06:17.648 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:06:17.648 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:06:17.798 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:06:17.798 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:06:43.031 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:06:43.105 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:06:46.328 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:06:46.357 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:06:46.359 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:06:46.361 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:06:46.363 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:06:46.366 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:06:46.368 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:07:10.585 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:07:10.658 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:07:13.580 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:07:13.609 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:07:13.611 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:07:13.614 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:07:13.616 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:07:13.618 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:07:13.620 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:07:19.768 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:07:19.777 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:07:19.779 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:07:19.781 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:07:19.783 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:07:19.785 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:07:19.787 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:07:19.882 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:07:20.260 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:07:20.266 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:07:20.313 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:07:20.451 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:07:49.676 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:07:49.756 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:07:52.935 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:07:52.969 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:07:52.972 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:07:52.974 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:07:52.976 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:07:52.978 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:07:52.980 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:08:18.737 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:08:18.746 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:08:18.748 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:08:18.750 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:08:18.751 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:08:18.753 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:08:18.755 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:08:18.858 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:08:19.324 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:08:19.330 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:08:19.376 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:08:19.536 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:10:12.362 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:10:12.389 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:10:12.391 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:10:12.397 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:10:12.413 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:10:13.713 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:10:13.763 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:10:13.766 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:10:13.775 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:10:13.795 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:10:31.441 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:10:31.528 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:10:35.574 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:10:35.607 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:10:35.609 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:10:35.612 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:10:35.614 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:10:35.616 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:10:35.618 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:10:58.156 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:10:58.228 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:11:01.280 -03:00 [FTL] Application startup exception
+System.ArgumentException: Invalid source. Details: Invalid port in CSP source: data: https:
+Parameter name: sources ---> NWebsec.Core.Common.HttpHeaders.Csp.InvalidCspSourceException: Invalid port in CSP source: data: https:
+   at NWebsec.Core.Common.HttpHeaders.Csp.CspUriSource.Parse(String source)
+   at Microsoft.AspNetCore.Builder.CspDirectiveExtensions.<>c__DisplayClass2_0`1.<CustomSources>b__0(String s)
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Microsoft.AspNetCore.Builder.CspDirectiveExtensions.CustomSources[T](T directive, String[] sources)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Builder.CspDirectiveExtensions.CustomSources[T](T directive, String[] sources)
+   at Jp.UI.SSO.Configuration.SecurityHeadersConfiguration.<>c.<UseSecurityHeaders>b__0_8(ICspDirectiveBasicConfiguration a) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Configuration\SecurityHeadersConfiguration.cs:line 37
+   at NWebsec.Core.Common.Middleware.Options.CspOptions.ImageSources(Action`1 configurer)
+   at Jp.UI.SSO.Configuration.SecurityHeadersConfiguration.<>c__DisplayClass0_0.<UseSecurityHeaders>b__3(IFluentCspOptions options) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Configuration\SecurityHeadersConfiguration.cs:line 35
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderExtensions.UseCsp(IApplicationBuilder app, Action`1 configurer)
+   at Jp.UI.SSO.Configuration.SecurityHeadersConfiguration.UseSecurityHeaders(IApplicationBuilder app, IHostingEnvironment env) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Configuration\SecurityHeadersConfiguration.cs:line 28
+   at Jp.UI.SSO.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in D:\workspace\JP.Project\src\Frontend\Jp.UI.SSO\Startup.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Internal.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2019-03-27 23:13:37.413 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:13:37.492 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:13:40.643 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:13:40.672 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:13:40.675 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:13:40.677 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:13:40.679 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:13:40.681 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:13:40.684 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:13:47.180 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:13:47.251 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:13:50.339 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:13:50.369 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:13:50.371 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:13:50.374 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:13:50.376 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:13:50.379 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:13:50.382 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:13:53.238 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:13:53.246 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:13:53.248 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:13:53.250 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:13:53.254 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:13:53.256 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:13:53.258 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:13:53.353 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:13:53.784 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:13:53.790 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:13:53.835 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:13:53.975 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:13:59.658 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:13:59.685 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:13:59.687 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:13:59.695 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:13:59.710 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:15:56.237 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:15:56.266 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:15:56.269 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:15:56.276 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:15:56.295 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:16:40.976 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:16:41.046 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:16:43.946 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:16:43.975 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:16:43.977 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:16:43.979 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:16:43.981 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:16:43.983 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:16:43.986 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:16:47.036 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:16:47.045 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:16:47.047 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:16:47.049 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:16:47.051 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:16:47.053 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:16:47.056 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:16:47.148 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:16:47.541 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:16:47.547 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:16:47.593 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:16:47.731 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:17:01.694 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:17:01.764 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:17:07.053 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:17:07.093 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:17:07.095 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:17:07.097 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:17:07.099 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:17:07.101 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:17:07.102 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:17:07.313 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:17:07.321 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:17:07.323 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:17:07.325 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:17:07.326 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:17:07.328 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:17:07.329 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:17:07.422 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:17:07.816 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:17:07.822 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:17:07.868 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:17:08.007 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:17:46.699 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:17:46.773 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:17:49.721 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:17:49.751 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:17:49.753 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:17:49.755 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:17:49.757 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:17:49.759 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:17:49.760 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:17:50.098 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:17:50.106 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:17:50.108 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:17:50.109 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:17:50.111 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:17:50.112 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:17:50.114 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:17:50.221 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:17:50.620 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:17:50.626 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:17:50.671 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:17:50.819 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:18:59.892 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:18:59.962 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:19:02.947 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:19:02.976 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:19:02.978 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:19:02.982 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:19:02.986 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:19:02.987 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:19:02.993 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:19:04.026 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:19:04.034 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:19:04.036 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:19:04.037 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:19:04.039 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:19:04.041 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:19:04.042 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:19:04.140 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:19:04.569 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:19:04.575 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:19:04.624 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:19:04.760 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:19:50.750 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:19:50.820 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:19:53.927 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:19:53.961 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:19:53.963 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:19:53.965 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:19:53.967 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:19:53.969 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:19:53.971 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:19:55.108 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:19:55.116 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:19:55.117 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:19:55.119 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:19:55.121 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:19:55.122 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:19:55.124 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:19:55.222 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:19:55.630 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:19:55.636 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:19:55.682 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:19:55.829 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:20:25.457 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:20:25.543 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:20:28.586 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:20:28.619 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:20:28.621 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:20:28.623 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:20:28.624 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:20:28.626 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:20:28.628 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:20:28.851 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:20:28.860 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:20:28.861 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:20:28.863 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:20:28.864 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:20:28.866 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:20:28.868 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:20:28.960 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:20:29.349 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:20:29.355 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:20:29.402 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:20:29.554 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:23:20.515 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:23:20.562 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:23:20.565 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:23:20.573 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:23:20.590 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:30:27.867 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:30:27.892 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:30:27.894 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:30:27.901 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:30:27.917 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:31:29.802 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:31:29.873 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:31:32.906 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:31:32.942 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:31:32.944 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:31:32.946 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:31:32.947 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:31:32.949 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:31:32.951 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:31:34.119 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:31:34.128 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:31:34.129 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:31:34.131 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:31:34.132 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:31:34.134 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:31:34.135 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:31:34.240 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:31:34.659 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:31:34.665 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:31:34.715 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:31:34.856 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:32:08.043 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:32:08.115 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:32:11.304 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:32:11.332 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:32:11.334 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:32:11.336 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:32:11.338 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:32:11.340 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:32:11.341 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:32:20.890 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:32:20.964 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:32:24.137 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:32:24.166 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:32:24.168 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:32:24.170 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:32:24.172 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:32:24.174 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:32:24.176 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:32:46.222 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:32:46.243 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:32:46.245 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:32:46.246 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:32:46.248 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:32:46.249 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:32:46.251 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:32:46.354 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:32:46.799 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:32:46.805 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:32:46.852 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:32:46.997 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:33:45.609 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:33:45.633 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:33:45.635 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:33:45.642 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:33:45.657 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:35:07.016 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:35:07.087 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:35:10.276 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:35:10.306 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:35:10.308 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:35:10.310 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:35:10.311 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:35:10.313 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:35:10.315 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-27 23:35:10.534 -03:00 [DBG] Login Url: /Account/Login
+2019-03-27 23:35:10.542 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-27 23:35:10.544 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-27 23:35:10.546 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-27 23:35:10.547 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-27 23:35:10.549 -03:00 [DBG] Error Url: /home/error
+2019-03-27 23:35:10.550 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-27 23:35:10.643 -03:00 [DBG] 1 persisted grants found for 08d6b194-3db5-99fe-6c1c-7d85d66713d6
+2019-03-27 23:35:11.053 -03:00 [DBG] IS4-Admin found in database: true
+2019-03-27 23:35:11.059 -03:00 [DBG] client configuration validation for client IS4-Admin succeeded.
+2019-03-27 23:35:11.104 -03:00 [DBG] Found ["openid","profile","email"] identity scopes in database
+2019-03-27 23:35:11.242 -03:00 [DBG] Found ["jp_api.user","jp_api.is4"] API scopes in database
+2019-03-27 23:35:30.108 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-27 23:35:30.176 -03:00 [INF] SigninCredentialExtension added
+2019-03-27 23:35:33.249 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-27 23:35:33.281 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-27 23:35:33.284 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-27 23:35:33.287 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-27 23:35:33.289 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-27 23:35:33.292 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-27 23:35:33.294 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid

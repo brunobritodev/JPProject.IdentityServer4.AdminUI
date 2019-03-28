@@ -10,10 +10,11 @@ namespace Jp.UI.SSO.Configuration
 {
     public static class SocialIntegrationConfig
     {
-        public static IServiceCollection AddSocialIntegration(this IServiceCollection services,
+        public static IServiceCollection AddAuth(this IServiceCollection services,
             IConfiguration configuration)
         {
             var authBuilder = services.AddAuthentication();
+
 
             if (configuration.GetSection("ExternalLogin").GetSection("Google").Exists())
             {

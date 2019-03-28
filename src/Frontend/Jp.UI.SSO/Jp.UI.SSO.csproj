@@ -7,6 +7,60 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\js\bootstrap.min.js" />
+    <None Remove="Assets\js\buttons.js" />
+    <None Remove="Assets\js\coreui.min.js" />
+    <None Remove="Assets\js\jquery.min.js" />
+    <None Remove="Assets\js\pace.min.js" />
+    <None Remove="Assets\js\perfect-scrollbar.min.js" />
+    <None Remove="Assets\js\popper-utils.min.js" />
+    <None Remove="Assets\js\popper.min.js" />
+    <None Remove="Assets\js\signin-redirect.js" />
+    <None Remove="Assets\js\signout-redirect.js" />
+    <None Remove="Assets\js\site.js" />
+    <None Remove="Assets\js\site.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\js\bootstrap.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\buttons.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\coreui.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\jquery.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\pace.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\perfect-scrollbar.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\popper-utils.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\popper.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\signin-redirect.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\signout-redirect.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\site.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\js\site.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
