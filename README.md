@@ -103,6 +103,7 @@ There are several ways we can help you out.
 ## v1.2
 
 - Docker support
+- Available at Docker Hub
 - IdentityServer4 v2 (release 2.4.0)
   - Device flow
 - ASP.NET Core 2.2 support
