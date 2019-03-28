@@ -2,12 +2,13 @@
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.IO;
 
 namespace Jp.UI.SSO
 {
@@ -38,16 +39,20 @@ namespace Jp.UI.SSO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // configure identity
-            services.AddMvc();
-
-            services.ConfigureIdentityDatabase(Configuration);
-
+            
             services.Configure<IISOptions>(iis =>
             {
                 iis.AuthenticationDisplayName = "Windows";
                 iis.AutomaticAuthentication = false;
             });
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix,
+                    opts => { opts.ResourcesPath = "Resources"; })
+                .AddDataAnnotationsLocalization();
+
+            // Config identity
+            services.ConfigureIdentityDatabase(Configuration);
 
             // Add localization
             services.AddMvcLocalization();
@@ -56,7 +61,7 @@ namespace Jp.UI.SSO
             services.ConfigureIdentityServerDatabase(Configuration, _environment, _logger);
 
             // Configure authentication and external logins
-            services.AddSocialIntegration(Configuration);
+            services.AddAuth(Configuration);
 
             // Configure automapper
             services.AddAutoMapperSetup();
@@ -76,6 +81,12 @@ namespace Jp.UI.SSO
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts(options => options.MaxAge(days: 365));
+                app.UseHttpsRedirection();
+            }
+
             app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
