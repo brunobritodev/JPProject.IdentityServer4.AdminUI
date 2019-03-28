@@ -25,7 +25,7 @@ namespace Jp.UI.SSO.Configuration
                 options.DefaultSources(o => o.Self());
 
                 options.FrameAncestors(o => o.None());
-                options.StyleSources(o => o.None());
+                options.StyleSources(o => o.Self());
                 options.ObjectSources(o => o.None());
                 options.ImageSources(a =>
                 {

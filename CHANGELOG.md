@@ -1,12 +1,48 @@
-## v1.1.0
+# v1.1.0
+
+## User Management
+
+* docker environment config
+* Some bug fix for users that doesn't have picture
+* @angular/cli to 7.3.6
+* @angular/core to 7.2.11 (ng update @angular/core, then updated other dep's by itself)|
+    * @angular/language-service @ "7.2.11" (was "6.0.0")...
+    * @angular/compiler-cli @ "7.2.11" (was "6.0.0")...
+    * @angular/animations @ "7.2.11" (was "6.0.0")...
+    * @angular/compiler @ "7.2.11" (was "6.0.0")...
+    * @angular/common @ "7.2.11" (was "6.0.0")...
+    * @angular/core @ "7.2.11" (was "6.0.0")...
+    * @angular/http @ "7.2.11" (was "6.0.0")...
+    * @angular/forms @ "7.2.11" (was "6.0.0")...
+    * @angular/platform-browser-dynamic @ "7.2.11" (was "6.0.0")...
+    * @angular/platform-browser @ "7.2.11" (was "6.0.0")...
+    * @angular/router @ "7.2.11" (was "6.0.0")...
+    * zone.js @ "0.8.29" (was "0.8.26")...
+    * rxjs @ "6.4.0" (was "6.0.0")...
+    * typescript @ "3.2.4" (was "2.7.2")
+ * ngx-image-cropper @ 1.3.8 (was 1.0.2)
+
+## SSO 
+
+* Updated SSO with latest version of QuickStart UI
+    * Device flow
+    * IdentityServer4@2.4.0
+
+## Docker support
 
 * Now you can run through a docker! ❤️
     * Unfortunately you need to change hosts for it. Because Authority URL. I can't do anything to face it. It's security feature from OAuth2 to keep same Authority name for each Token.
 
-* Pagination for Users and Persisted Grants
+## API
 
+* ASP.NET Core 2.2
+* Support for IdentityServer@2.4.0
 * Update of main DbContext, JpProject
 * Removed previous components from MySql.IdentityServer and Sql.IdentityServer. Unifying them at same project.
+
+## Admin UI - Updates
+
+* Pagination for Users and Persisted Grants
 
 * Client Page:
     * Changed Claims button to be under Token - Following Docs from [IdentityServer4](https://identityserver4.readthedocs.io/en/latest/reference/client.html#token)
@@ -69,6 +105,14 @@ Updated components from UI:
 |ts-node| 5.0.1| → 8.0.3|
 |tslint| 5.9.1| → 5.14.0|
 
-## v1.0.0
+## Other
+
+* Minor bugs correction
+    * .dockerignore
+    * clone client
+* Added bat to change hosts file
+
+
+# v1.0.0
 
 - First release

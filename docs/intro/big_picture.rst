@@ -21,7 +21,7 @@ A SPA application responsible for create and manager users. Send reset links. E-
 Management API
 -------------------
 
-This API serve UI.
+API to serve UI's.
 
 Admin UI
 --------

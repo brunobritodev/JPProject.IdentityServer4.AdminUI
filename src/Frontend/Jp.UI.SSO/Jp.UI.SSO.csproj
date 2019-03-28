@@ -6,59 +6,6 @@
       <DockerTargetOS>Linux</DockerTargetOS>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Assets\js\bootstrap.min.js" />
-    <None Remove="Assets\js\buttons.js" />
-    <None Remove="Assets\js\coreui.min.js" />
-    <None Remove="Assets\js\jquery.min.js" />
-    <None Remove="Assets\js\pace.min.js" />
-    <None Remove="Assets\js\perfect-scrollbar.min.js" />
-    <None Remove="Assets\js\popper-utils.min.js" />
-    <None Remove="Assets\js\popper.min.js" />
-    <None Remove="Assets\js\signin-redirect.js" />
-    <None Remove="Assets\js\signout-redirect.js" />
-    <None Remove="Assets\js\site.js" />
-    <None Remove="Assets\js\site.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Assets\js\bootstrap.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\buttons.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\coreui.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\jquery.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\pace.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\perfect-scrollbar.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\popper-utils.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\popper.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\signin-redirect.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\signout-redirect.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\site.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Assets\js\site.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
@@ -80,8 +27,8 @@
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.Data\Jp.Infra.Data.csproj" />
-    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.MySql.Identity\Jp.Infra.Migrations.MySql.csproj" />
-    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.Sql.Identity\Jp.Infra.Migrations.Sql.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.MySql\Jp.Infra.Migrations.MySql.csproj" />
+    <ProjectReference Include="..\..\Backend\Jp.Infra.Migrations.Sql\Jp.Infra.Migrations.Sql.csproj" />
   </ItemGroup>
 
   <ItemGroup>
