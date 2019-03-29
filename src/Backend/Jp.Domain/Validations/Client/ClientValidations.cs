@@ -20,7 +20,7 @@ namespace Jp.Domain.Validations.Client
 
         private bool ValidateGrantCombination(ICollection<string> grantTypes, string message)
         {
-            
+
 
             // would allow response_type downgrade attack from code to token
             if (DisallowGrantTypeCombination(GrantType.Implicit, GrantType.AuthorizationCode, grantTypes))
@@ -64,5 +64,31 @@ namespace Jp.Domain.Validations.Client
             RuleFor(c => c.Client.ClientName).NotEmpty().WithMessage("Client Name must be set");
         }
 
+        protected void ValidateIdentityTokenLifetime()
+        {
+            RuleFor(c => c.Client.IdentityTokenLifetime).GreaterThan(0).WithMessage("Identity Token Lifetime must be greatter than 0");
+        }
+
+
+        protected void ValidateAccessTokenLifetime()
+        {
+            RuleFor(c => c.Client.AccessTokenLifetime).GreaterThan(0).WithMessage("Access Token Lifetime must be greatter than 0");
+        }
+        protected void ValidateAuthorizationCodeLifetime()
+        {
+            RuleFor(c => c.Client.AuthorizationCodeLifetime).GreaterThan(0).WithMessage("Authorization Code Lifetime must be greatter than 0");
+        }
+        protected void ValidateAbsoluteRefreshTokenLifetime()
+        {
+            RuleFor(c => c.Client.AbsoluteRefreshTokenLifetime).GreaterThan(0).WithMessage("Absolute Refresh Token Lifetime must be greatter than 0");
+        }
+        protected void ValidateSlidingRefreshTokenLifetime()
+        {
+            RuleFor(c => c.Client.SlidingRefreshTokenLifetime).GreaterThan(0).WithMessage("Sliding Refresh Token Lifetime must be greatter than 0");
+        }
+        protected void ValidateDeviceCodeLifetime()
+        {
+            RuleFor(c => c.Client.DeviceCodeLifetime).GreaterThan(0).WithMessage("Device Code Lifetime must be greatter than 0");
+        }
     }
 }

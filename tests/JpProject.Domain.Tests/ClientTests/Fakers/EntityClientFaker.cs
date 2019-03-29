@@ -82,13 +82,13 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
         {
             return new Faker<ClientSecret>()
                 .RuleFor(c => c.ClientId, f => f.Random.Int())
-                .RuleFor(c => c.Id, f => f.Random.Int())
+                .RuleFor(c => c.Id, f => f.Random.Int(0))
                 .RuleFor(c => c.Description, f => f.Lorem.Word())
                 .RuleFor(c => c.Value, f => f.Lorem.Word())
                 .RuleFor(c => c.Type, f => f.Lorem.Word())
                 .RuleFor(c => c.Created, f => f.Date.Past());
         }
-        public static Faker<Client> GenerateClient(string clientId = null)
+        public static Faker<Client> GenerateClient(string clientId = null, int? clientSecrets = null, int? clientProperties = null)
         {
             return new Faker<Client>()
                 .RuleFor(c => c.Id, f =>  f.Random.Int())
@@ -130,14 +130,14 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.DeviceCodeLifetime, f => f.Random.Int())
                 .RuleFor(c => c.NonEditable, f => f.Random.Bool())
                 .RuleFor(c => c.AllowedScopes, f => GenerateClientScope().Generate(f.Random.Int(1, 4)))
-                .RuleFor(c => c.ClientSecrets, f => GenerateClientSecret().Generate(f.Random.Int(0, 2)))
+                .RuleFor(c => c.ClientSecrets, f => GenerateClientSecret().Generate(clientSecrets ?? f.Random.Int(0, 3)))
                 .RuleFor(c => c.AllowedGrantTypes, f => GenerateClientGrantType().Generate(1))
                 .RuleFor(c => c.RedirectUris, f => GenerateClientRedirectUri().Generate(f.Random.Int(1, 3)))
                 .RuleFor(c => c.PostLogoutRedirectUris, f => GenerateClientPostLogoutRedirectUri().Generate(f.Random.Int(0, 2)))
                 .RuleFor(c => c.Claims, f => GenerateClientClaim().Generate(f.Random.Int(1, 5)))
                 .RuleFor(c => c.IdentityProviderRestrictions, f => GenerateClientIdPRestriction().Generate(f.Random.Int(0, 1)))
                 .RuleFor(c => c.AllowedCorsOrigins, f => GenerateClientCorsOrigin().Generate(f.Random.Int(0, 2)))
-                .RuleFor(c => c.Properties, f => GenerateClientProperty().Generate(f.Random.Int(0, 2)));
+                .RuleFor(c => c.Properties, f => GenerateClientProperty().Generate(clientProperties ?? f.Random.Int(0, 2)));
         }
     }
 }

@@ -8,6 +8,12 @@ namespace Jp.Domain.Validations.Client
         {
             ValidateGrantType();
             ValidateOldClientId();
+            ValidateIdentityTokenLifetime();
+            ValidateAccessTokenLifetime();
+            ValidateAuthorizationCodeLifetime();
+            ValidateSlidingRefreshTokenLifetime();
+            ValidateDeviceCodeLifetime();
+            ValidateAbsoluteRefreshTokenLifetime();
         }
     }
 }
