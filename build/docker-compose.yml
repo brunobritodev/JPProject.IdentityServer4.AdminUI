@@ -31,6 +31,9 @@ services:
             CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
             ASPNETCORE_ENVIRONMENT: "Development"
             ASPNETCORE_URLS: http://+:5000
+            DEFAULT_USER: bruno
+            DEFAULT_PASS: Pa$$word123
+            DEFAULT_EMAIL: bhdebrito@gmail.com
 
     # #############################
     # # Management API

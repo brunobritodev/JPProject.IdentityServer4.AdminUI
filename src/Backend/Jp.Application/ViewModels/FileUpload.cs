@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace Jp.Application.ViewModels
 {
@@ -13,5 +14,7 @@ namespace Jp.Application.ViewModels
         public string Value { get; set; }
 
         public Guid? Id { get; set; }
+        [JsonIgnore]
+        public string Picture { get; set; }
     }
 }

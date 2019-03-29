@@ -107,5 +107,7 @@ namespace JpProject.Domain.Tests.ClientTests
 
             Assert.Throws<InvalidOperationException>(() => command.Client.AllowedGrantTypes = new List<string>() { a, b });
         }
+
+
     }
 }

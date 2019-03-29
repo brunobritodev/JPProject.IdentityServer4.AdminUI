@@ -30,7 +30,7 @@ namespace Jp.UI.SSO
 
             var host = CreateWebHostBuilder(args).Build();
 
-            //Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
+            Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
 
             host.Run(); 
         }
