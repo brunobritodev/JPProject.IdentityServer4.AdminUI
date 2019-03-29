@@ -7,6 +7,6 @@ namespace Jp.Domain.Commands.PersistedGrant
 {
     public abstract class PersistedGrantCommand : Command
     {
-        public string Key { get; set; }
+        public string Key { get; protected set; }
     }
 }

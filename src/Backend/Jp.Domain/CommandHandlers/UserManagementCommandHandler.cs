@@ -140,15 +140,7 @@ namespace Jp.Domain.CommandHandlers
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
                 return false;
             }
-            user.Email = request.Email;
-            user.EmailConfirmed = request.EmailConfirmed;
-            user.AccessFailedCount = request.AccessFailedCount;
-            user.LockoutEnabled = request.LockoutEnabled;
-            user.LockoutEnd = request.LockoutEnd;
-            user.Name = request.Name;
-            user.TwoFactorEnabled = request.TwoFactorEnabled;
-            user.PhoneNumber = request.PhoneNumber;
-            user.PhoneNumberConfirmed = request.PhoneNumberConfirmed;
+            user.UpdateInfo(request);
             await _userService.UpdateUserAsync(user);
 
             return true;
