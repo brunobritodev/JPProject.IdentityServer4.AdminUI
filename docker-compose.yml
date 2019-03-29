@@ -30,8 +30,8 @@ services:
         depends_on:
             - jpdatabase
         environment: 
-            DATABASE_TYPE: "MySql"
-            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            DATABASE_TYPE: "SqlServer"
+            CUSTOMCONNSTR_DATABASE_CONNECTION: "Data Source=tcp:capturadb.database.windows.net,1433;Initial Catalog=homolog_jpproject;User Id=bruno@capturadb.database.windows.net;Password=8BIaspVxw1vOgSIDKdIn;"
             ASPNETCORE_ENVIRONMENT: "Development"
             ASPNETCORE_URLS: http://+:5000
 
@@ -48,8 +48,8 @@ services:
         depends_on:
             - jpdatabase
         environment: 
-            DATABASE_TYPE: "MySql"
-            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            DATABASE_TYPE: "SqlServer"
+            CUSTOMCONNSTR_DATABASE_CONNECTION: "Data Source=tcp:capturadb.database.windows.net,1433;Initial Catalog=homolog_jpproject;User Id=bruno@capturadb.database.windows.net;Password=8BIaspVxw1vOgSIDKdIn;"
             ASPNETCORE_ENVIRONMENT: "Development"
             AUTHORITY: "http://jpproject:5000"
             ASPNETCORE_URLS: http://+

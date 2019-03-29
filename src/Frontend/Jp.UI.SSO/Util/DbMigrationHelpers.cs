@@ -44,6 +44,7 @@ namespace Jp.UI.SSO.Util
                 var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
 
                 await WaitForDb(id4Context);
+                var tst = id4Context.Database.GetPendingMigrations();
                 await id4Context.Database.MigrateAsync();
                 await userContext.Database.MigrateAsync();
                 await storeDb.Database.MigrateAsync();

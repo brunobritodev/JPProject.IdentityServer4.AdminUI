@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace Jp.Domain.CommandHandlers
 {
     public class IdentityResourceCommandHandler : CommandHandler,
-        IRequestHandler<RegisterIdentityResourceCommand>,
-        IRequestHandler<UpdateIdentityResourceCommand>,
-        IRequestHandler<RemoveIdentityResourceCommand>
+        IRequestHandler<RegisterIdentityResourceCommand, bool>,
+        IRequestHandler<UpdateIdentityResourceCommand, bool>,
+        IRequestHandler<RemoveIdentityResourceCommand, bool>
     {
         private readonly IIdentityResourceRepository _identityResourceRepository;
 
@@ -27,19 +27,19 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RegisterIdentityResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RegisterIdentityResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _identityResourceRepository.GetByName(request.Resource.Name);
             if (savedClient != null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource already exists"));
-                return;
+                return false;
             }
 
             var irs = request.Resource.ToEntity();
@@ -49,23 +49,25 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new IdentityResourceRegisteredEvent(irs.Name));
+                return true;
             }
+            return false;
 
         }
 
-        public async Task Handle(UpdateIdentityResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateIdentityResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _identityResourceRepository.GetByName(request.Resource.Name);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource not found"));
-                return;
+                return false;
             }
 
             var irs = request.Resource.ToEntity();
@@ -75,23 +77,25 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new IdentityResourceUpdatedEvent(request.Resource));
+                return true;
             }
+            return false;
         }
 
 
-        public async Task Handle(RemoveIdentityResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveIdentityResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _identityResourceRepository.GetByName(request.Resource.Name);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource not found"));
-                return;
+                return false;
             }
 
             _identityResourceRepository.Remove(savedClient.Id);
@@ -99,7 +103,9 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new IdentityResourceRemovedEvent(request.Resource.Name));
+                return true;
             }
+            return false;
         }
     }
 }

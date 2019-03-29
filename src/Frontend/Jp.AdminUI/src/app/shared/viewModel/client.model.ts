@@ -95,7 +95,9 @@ export class Client {
     allowedCorsOrigins: string[];
     properties: ClientProperty[];
     oldClientId: string;
-
+    userCodeType: string;
+    deviceCodeLifetime: number;
+    
     public static isValid(client: Client, errors: string[]): boolean {
         errors.length = 0;
         if (client.allowedGrantTypes == null || client.allowedGrantTypes.length <= 0) {
