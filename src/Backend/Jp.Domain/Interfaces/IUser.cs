@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
 
 namespace Jp.Domain.Interfaces
 {
@@ -13,24 +11,24 @@ namespace Jp.Domain.Interfaces
     }
     public interface IUser<TUserId>
     {
-        TUserId Id { get; set; }
-        string Email { get; set; }
-        bool EmailConfirmed { get; set; }
-        string PasswordHash { get; set; }
-        string SecurityStamp { get; set; }
-        string PhoneNumber { get; set; }
-        bool PhoneNumberConfirmed { get; set; }
-        bool TwoFactorEnabled { get; set; }
-        DateTimeOffset? LockoutEnd { get; set; }
-        bool LockoutEnabled { get; set; }
-        int AccessFailedCount { get; set; }
-        string UserName { get; set; }
-        string Picture { get; set; }
-        string Url { get; set; }
-        string Name { get; set; }
-        string Company { get; set; }
-        string Bio { get; set; }
-        string JobTitle { get; set; }
-        
+        TUserId Id { get; }
+        string Email { get; }
+        bool EmailConfirmed { get; }
+        string PasswordHash { get; }
+        string SecurityStamp { get; }
+        string PhoneNumber { get; }
+        bool PhoneNumberConfirmed { get; }
+        bool TwoFactorEnabled { get; }
+        DateTimeOffset? LockoutEnd { get; }
+        bool LockoutEnabled { get; }
+        int AccessFailedCount { get; }
+        string UserName { get; }
+        string Picture { get; }
+        string Url { get; }
+        string Name { get; }
+        string Company { get; }
+        string Bio { get; }
+        string JobTitle { get; }
+
     }
 }

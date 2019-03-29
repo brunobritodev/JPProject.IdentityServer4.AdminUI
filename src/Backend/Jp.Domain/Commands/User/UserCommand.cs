@@ -15,11 +15,11 @@ namespace Jp.Domain.Commands.User
         public string Picture { get; protected set; }   
         public string Provider { get; protected set; }
         public string ProviderId { get; protected set; }
-        public bool EmailConfirmed { get; set; }
-        public bool PhoneNumberConfirmed { get; set; }
-        public bool TwoFactorEnabled { get; set; }
-        public DateTimeOffset? LockoutEnd { get; set; }
-        public bool LockoutEnabled { get; set; }
-        public int AccessFailedCount { get; set; }
+        public bool EmailConfirmed { get; protected set; }
+        public bool PhoneNumberConfirmed { get; protected set; }
+        public bool TwoFactorEnabled { get; protected set; }
+        public DateTimeOffset? LockoutEnd { get; protected set; }
+        public bool LockoutEnabled { get; protected set; }
+        public int AccessFailedCount { get; protected set; }
     }
 }
