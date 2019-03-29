@@ -1,18 +1,16 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Jp.Domain.Commands.PersistedGrant;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Events.PersistedGrant;
 using Jp.Domain.Interfaces;
-using Jp.Domain.Models;
 using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jp.Domain.CommandHandlers
 {
     public class PersistedGrantCommandHandler : CommandHandler,
-        IRequestHandler<RemovePersistedGrantCommand>
+        IRequestHandler<RemovePersistedGrantCommand, bool>
     {
         private readonly IPersistedGrantRepository _persistedGrantRepository;
 
@@ -26,21 +24,23 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RemovePersistedGrantCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemovePersistedGrantCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false; ;
             }
 
-			// Businness logic here
-			_persistedGrantRepository.Remove(request.Key);
+            // Businness logic here
+            _persistedGrantRepository.Remove(request.Key);
 
             if (Commit())
             {
-               await Bus.RaiseEvent(new PersistedGrantRemovedEvent(request.Key));
+                await Bus.RaiseEvent(new PersistedGrantRemovedEvent(request.Key));
+                return true;
             }
+            return false;
         }
 
     }

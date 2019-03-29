@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 namespace Jp.Domain.CommandHandlers
 {
     public class ApiResourceCommandHandler : CommandHandler,
-        IRequestHandler<RegisterApiResourceCommand>,
-        IRequestHandler<UpdateApiResourceCommand>,
-        IRequestHandler<RemoveApiResourceCommand>,
-        IRequestHandler<RemoveApiSecretCommand>,
-        IRequestHandler<SaveApiSecretCommand>,
-        IRequestHandler<RemoveApiScopeCommand>,
-        IRequestHandler<SaveApiScopeCommand>
+        IRequestHandler<RegisterApiResourceCommand, bool>,
+        IRequestHandler<UpdateApiResourceCommand, bool>,
+        IRequestHandler<RemoveApiResourceCommand, bool>,
+        IRequestHandler<RemoveApiSecretCommand, bool>,
+        IRequestHandler<SaveApiSecretCommand, bool>,
+        IRequestHandler<RemoveApiScopeCommand, bool>,
+        IRequestHandler<SaveApiScopeCommand, bool>
     {
         private readonly IApiResourceRepository _apiResourceRepository;
         private readonly IApiSecretRepository _apiSecretRepository;
@@ -39,19 +39,19 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RegisterApiResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RegisterApiResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetResource(request.Resource.Name);
             if (savedClient != null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource already exists"));
-                return;
+                return false;
             }
 
             var api = request.Resource.ToEntity();
@@ -60,25 +60,25 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiResourceRegisteredEvent(request.Resource.Name));
+                return true;
             }
-
-
+            return false;
         }
 
 
-        public async Task Handle(UpdateApiResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateApiResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetResource(request.Resource.Name);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource not found"));
-                return;
+                return false;
             }
 
             var irs = request.Resource.ToEntity();
@@ -88,22 +88,24 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiResourceUpdatedEvent(request.Resource));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveApiResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveApiResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetResource(request.Resource.Name);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource not found"));
-                return;
+                return false;
             }
 
             _apiResourceRepository.Remove(savedClient.Id);
@@ -111,28 +113,30 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiResourceRemovedEvent(request.Resource.Name));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveApiSecretCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveApiSecretCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetResource(request.ResourceName);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             if (savedClient.Secrets.All(f => f.Id != request.Id))
             {
                 await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
-                return;
+                return false;
             }
 
             _apiSecretRepository.Remove(request.Id);
@@ -140,22 +144,24 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiSecretRemovedEvent(request.Id, request.ResourceName));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveApiSecretCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveApiSecretCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetByName(request.ResourceName);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var secret = new ApiSecret
@@ -171,28 +177,30 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiSecretSavedEvent(request.Id, request.ResourceName));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveApiScopeCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveApiScopeCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetResource(request.ResourceName);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             if (savedClient.Scopes.All(f => f.Id != request.Id))
             {
                 await Bus.RaiseEvent(new DomainNotification("3", "Invalid scope"));
-                return;
+                return false;
             }
 
             var scopeToremove = savedClient.Scopes.First(f => f.Id == request.Id);
@@ -201,22 +209,24 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiScopeRemovedEvent(request.Id, request.ResourceName, scopeToremove.Name));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveApiScopeCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveApiScopeCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _apiResourceRepository.GetByName(request.ResourceName);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var secret = new ApiScope()
@@ -236,7 +246,9 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ApiSecretSavedEvent(request.Id, request.ResourceName));
+                return true;
             }
+            return false;
         }
     }
 }

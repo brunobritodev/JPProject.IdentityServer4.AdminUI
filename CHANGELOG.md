@@ -1,4 +1,8 @@
-# v.1.2.1
+# v1.2.2
+
+Added ENV for Default User and Pass, to autofill Login Page. Specially made for Dev and Docker environments
+
+# v1.2.1
 
 Now the components is available through Docker Hub.
 * Generated docker install file to easy test

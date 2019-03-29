@@ -24,7 +24,7 @@
                                             <i class="icon-user"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" placeholder="Username" value="bruno" asp-for=Username autofocus>
+                                    <input class="form-control" placeholder="Username" value="@Environment.GetEnvironmentVariable("DEFAULT_USER")" asp-for=Username autofocus>
                                 </div>
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
@@ -32,7 +32,7 @@
                                             <i class="icon-lock"></i>
                                         </span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" value="Pa$$word123" asp-for=Password autocomplete="off">
+                                    <input type="password" class="form-control" placeholder="Password" value="@Environment.GetEnvironmentVariable("DEFAULT_PASS")" asp-for=Password autocomplete="off">
                                 </div>
                                 @if (Model.AllowRememberLogin)
                                 {
