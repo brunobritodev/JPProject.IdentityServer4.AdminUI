@@ -1,23 +1,23 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Jp.Domain.Commands.User;
+﻿using Jp.Domain.Commands.User;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Events.User;
 using Jp.Domain.Interfaces;
 using Jp.Domain.Models;
 using MediatR;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jp.Domain.CommandHandlers
 {
     public class UserCommandHandler : CommandHandler,
-        IRequestHandler<RegisterNewUserCommand>,
-        IRequestHandler<RegisterNewUserWithoutPassCommand>,
-        IRequestHandler<RegisterNewUserWithProviderCommand>,
-        IRequestHandler<SendResetLinkCommand>,
-        IRequestHandler<ResetPasswordCommand>,
-        IRequestHandler<ConfirmEmailCommand>
+        IRequestHandler<RegisterNewUserCommand, bool>,
+        IRequestHandler<RegisterNewUserWithoutPassCommand, bool>,
+        IRequestHandler<RegisterNewUserWithProviderCommand, bool>,
+        IRequestHandler<SendResetLinkCommand, bool>,
+        IRequestHandler<ResetPasswordCommand, bool>,
+        IRequestHandler<ConfirmEmailCommand, bool>
     {
         private readonly IUserService _userService;
 
@@ -31,12 +31,12 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RegisterNewUserCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RegisterNewUserCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var user = new User()
@@ -50,15 +50,19 @@ namespace Jp.Domain.CommandHandlers
 
             var id = await _userService.CreateUserWithPass(user, request.Password);
             if (id.HasValue)
+            {
                 await Bus.RaiseEvent(new UserRegisteredEvent(id.Value, user.Name, user.Email));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(RegisterNewUserWithoutPassCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RegisterNewUserWithoutPassCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false; ;
             }
 
             var user = new User()
@@ -73,15 +77,19 @@ namespace Jp.Domain.CommandHandlers
 
             var id = await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
             if (id.HasValue)
+            {
                 await Bus.RaiseEvent(new UserRegisteredEvent(id.Value, user.Name, user.Email));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(RegisterNewUserWithProviderCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RegisterNewUserWithProviderCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false; ;
             }
 
             var user = new User()
@@ -94,48 +102,64 @@ namespace Jp.Domain.CommandHandlers
             };
             var id = await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
             if (id.HasValue)
+            {
                 await Bus.RaiseEvent(new UserRegisteredEvent(id.Value, user.Name, user.Email));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(SendResetLinkCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SendResetLinkCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false; ;
             }
 
             var emailSent = await _userService.SendResetLink(request.Email, request.Username);
 
             if (emailSent.HasValue)
+            {
                 await Bus.RaiseEvent(new ResetLinkGeneratedEvent(emailSent.Value, request.Email, request.Username));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false; ;
             }
 
             var emailSent = await _userService.ResetPassword(request);
 
             if (emailSent.HasValue)
+            {
                 await Bus.RaiseEvent(new AccountPasswordResetedEvent(emailSent.Value, request.Email, request.Code));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(ConfirmEmailCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(ConfirmEmailCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false; ;
             }
 
             var result = await _userService.ConfirmEmailAsync(request.Email, request.Code);
             if (result.HasValue)
+            {
                 await Bus.RaiseEvent(new EmailConfirmedEvent(request.Email, request.Code, result.Value));
+                return true;
+            }
+            return false;
         }
 
     }
