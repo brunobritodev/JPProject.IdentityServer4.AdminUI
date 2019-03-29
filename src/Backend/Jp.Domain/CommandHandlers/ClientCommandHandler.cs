@@ -15,14 +15,14 @@ using System.Threading.Tasks;
 namespace Jp.Domain.CommandHandlers
 {
     public class ClientCommandHandler : CommandHandler,
-        IRequestHandler<RemoveClientCommand>,
+        IRequestHandler<RemoveClientCommand, bool>,
         IRequestHandler<UpdateClientCommand, bool>,
-        IRequestHandler<RemoveClientSecretCommand>,
-        IRequestHandler<SaveClientSecretCommand>,
-        IRequestHandler<RemovePropertyCommand>,
-        IRequestHandler<SaveClientPropertyCommand>,
-        IRequestHandler<RemoveClientClaimCommand>,
-        IRequestHandler<SaveClientClaimCommand>,
+        IRequestHandler<RemoveClientSecretCommand, bool>,
+        IRequestHandler<SaveClientSecretCommand, bool>,
+        IRequestHandler<RemovePropertyCommand, bool>,
+        IRequestHandler<SaveClientPropertyCommand, bool>,
+        IRequestHandler<RemoveClientClaimCommand, bool>,
+        IRequestHandler<SaveClientClaimCommand, bool>,
         IRequestHandler<SaveClientCommand, bool>,
         IRequestHandler<CopyClientCommand, bool>
     {
@@ -47,25 +47,27 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-        public async Task Handle(RemoveClientCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveClientCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return; ;
+                return false; ;
             }
 
             var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
             _clientRepository.Remove(savedClient.Id);
             if (Commit())
             {
                 await Bus.RaiseEvent(new ClientRemovedEvent(request.Client.ClientId));
+                return true;
             }
+            return false;
         }
 
         public async Task<bool> Handle(UpdateClientCommand request, CancellationToken cancellationToken)
@@ -96,25 +98,25 @@ namespace Jp.Domain.CommandHandlers
 
         }
 
-        public async Task Handle(RemoveClientSecretCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveClientSecretCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             if (savedClient.ClientSecrets.All(f => f.Id != request.Id))
             {
                 await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
-                return;
+                return false;
             }
 
             _clientSecretRepository.Remove(request.Id);
@@ -122,22 +124,24 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ClientSecretRemovedEvent(request.Id, request.ClientId));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveClientSecretCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveClientSecretCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var secret = new ClientSecret
@@ -154,28 +158,30 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new NewClientSecretEvent(request.Id, request.ClientId, secret.Type, secret.Description));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemovePropertyCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemovePropertyCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             if (savedClient.Properties.All(f => f.Id != request.Id))
             {
                 await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
-                return;
+                return false;
             }
 
             _clientPropertyRepository.Remove(request.Id);
@@ -183,22 +189,24 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ClientPropertyRemovedEvent(request.Id, request.ClientId));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveClientPropertyCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveClientPropertyCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var property = new ClientProperty()
@@ -213,29 +221,31 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new NewClientPropertyEvent(request.Id, request.ClientId, property.Key, property.Value));
+                return true;
             }
+            return false;
         }
 
 
-        public async Task Handle(RemoveClientClaimCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveClientClaimCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             if (savedClient.Claims.All(f => f.Id != request.Id))
             {
                 await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
-                return;
+                return false;
             }
 
             _clientClaimRepository.Remove(request.Id);
@@ -243,22 +253,24 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ClientClaimRemovedEvent(request.Id, request.ClientId));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveClientClaimCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveClientClaimCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var property = new ClientClaim()
@@ -273,7 +285,9 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new NewClientClaimEvent(request.Id, request.ClientId, property.Type, property.Value));
+                return true;
             }
+            return false;
         }
 
         public async Task<bool> Handle(SaveClientCommand request, CancellationToken cancellationToken)
