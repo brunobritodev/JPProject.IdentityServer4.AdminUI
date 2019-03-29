@@ -1,6 +1,5 @@
 using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.Models;
 using Jp.Domain.Commands.Client;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -17,15 +16,15 @@ namespace Jp.Domain.CommandHandlers
 {
     public class ClientCommandHandler : CommandHandler,
         IRequestHandler<RemoveClientCommand>,
-        IRequestHandler<UpdateClientCommand>,
+        IRequestHandler<UpdateClientCommand, bool>,
         IRequestHandler<RemoveClientSecretCommand>,
         IRequestHandler<SaveClientSecretCommand>,
         IRequestHandler<RemovePropertyCommand>,
         IRequestHandler<SaveClientPropertyCommand>,
         IRequestHandler<RemoveClientClaimCommand>,
         IRequestHandler<SaveClientClaimCommand>,
-        IRequestHandler<SaveClientCommand>,
-        IRequestHandler<CopyClientCommand>
+        IRequestHandler<SaveClientCommand, bool>,
+        IRequestHandler<CopyClientCommand, bool>
     {
         private readonly IClientRepository _clientRepository;
         private readonly IClientSecretRepository _clientSecretRepository;
@@ -69,19 +68,19 @@ namespace Jp.Domain.CommandHandlers
             }
         }
 
-        public async Task Handle(UpdateClientCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateClientCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetClient(request.Client.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var client = request.Client.ToEntity();
@@ -91,7 +90,9 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ClientUpdatedEvent(request));
+                return true;
             }
+            return false;
 
         }
 
@@ -275,19 +276,19 @@ namespace Jp.Domain.CommandHandlers
             }
         }
 
-        public async Task Handle(SaveClientCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveClientCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient != null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client already exists"));
-                return;
+                return false;
             }
 
             var client = request.ToEntity();
@@ -297,24 +298,27 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new NewClientEvent(request.Client.ClientId, request.ClientType, request.Client.ClientName));
+                return true;
             }
+
+            return false;
         }
 
-       
 
-        public async Task Handle(CopyClientCommand request, CancellationToken cancellationToken)
+
+        public async Task<bool> Handle(CopyClientCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
-                return;
+                return false;
             }
 
             var copyOf = savedClient.ToModel();
@@ -328,7 +332,10 @@ namespace Jp.Domain.CommandHandlers
             if (Commit())
             {
                 await Bus.RaiseEvent(new ClientClonedEvent(request.Client.ClientId, newClient.ClientId));
+                return true;
             }
+
+            return false;
         }
     }
 

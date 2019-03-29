@@ -1,6 +1,9 @@
-using System;
 using FluentValidation;
+using IdentityServer4.Models;
 using Jp.Domain.Commands.Client;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Jp.Domain.Validations.Client
 {
@@ -8,9 +11,44 @@ namespace Jp.Domain.Validations.Client
     {
         protected void ValidateGrantType()
         {
+            var message = string.Empty;
             RuleFor(c => c.Client.AllowedGrantTypes)
-                .NotEmpty();
+                .NotEmpty().WithMessage("At Least 1 grant type must be selected")
+                .Must(m => ValidateGrantCombination(m, out message)).WithMessage(message);
+
         }
+
+        private bool ValidateGrantCombination(ICollection<string> grantTypes, out string message)
+        {
+            message = "Grant types list cannot contain both {0} and {1}";
+
+            // would allow response_type downgrade attack from code to token
+            if (DisallowGrantTypeCombination(GrantType.Implicit, GrantType.AuthorizationCode, grantTypes))
+            {
+                message = string.Format(message, GrantType.Implicit, GrantType.AuthorizationCode);
+                return false;
+            }
+
+            if (DisallowGrantTypeCombination(GrantType.Implicit, GrantType.Hybrid, grantTypes))
+            {
+                message = string.Format(message, GrantType.Implicit, GrantType.Hybrid);
+                return false;
+            }
+
+            if (DisallowGrantTypeCombination(GrantType.AuthorizationCode, GrantType.Hybrid, grantTypes))
+            {
+                message = string.Format(message, GrantType.AuthorizationCode, GrantType.Hybrid);
+                return false;
+            }
+
+            return true;
+        }
+        private bool DisallowGrantTypeCombination(string value1, string value2, IEnumerable<string> grantTypes)
+        {
+            return grantTypes.Contains(value1, StringComparer.Ordinal) &&
+                   grantTypes.Contains(value2, StringComparer.Ordinal);
+        }
+
         protected void ValidateClientId()
         {
             RuleFor(c => c.Client.ClientId).NotEmpty().WithMessage("ClientId must be set");
