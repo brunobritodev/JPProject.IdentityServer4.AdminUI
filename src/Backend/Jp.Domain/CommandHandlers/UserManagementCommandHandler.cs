@@ -13,17 +13,17 @@ using System.Threading.Tasks;
 namespace Jp.Domain.CommandHandlers
 {
     public class UserManagementCommandHandler : CommandHandler,
-        IRequestHandler<UpdateProfileCommand>,
-        IRequestHandler<UpdateProfilePictureCommand>,
-        IRequestHandler<SetPasswordCommand>,
-        IRequestHandler<ChangePasswordCommand>,
-        IRequestHandler<RemoveAccountCommand>,
-        IRequestHandler<UpdateUserCommand>,
-        IRequestHandler<SaveUserClaimCommand>,
-        IRequestHandler<RemoveUserClaimCommand>,
-        IRequestHandler<RemoveUserRoleCommand>,
-        IRequestHandler<SaveUserRoleCommand>,
-        IRequestHandler<AdminChangePasswordCommand>
+        IRequestHandler<UpdateProfileCommand, bool>,
+        IRequestHandler<UpdateProfilePictureCommand, bool>,
+        IRequestHandler<SetPasswordCommand, bool>,
+        IRequestHandler<ChangePasswordCommand, bool>,
+        IRequestHandler<RemoveAccountCommand, bool>,
+        IRequestHandler<UpdateUserCommand, bool>,
+        IRequestHandler<SaveUserClaimCommand, bool>,
+        IRequestHandler<RemoveUserClaimCommand, bool>,
+        IRequestHandler<RemoveUserRoleCommand, bool>,
+        IRequestHandler<SaveUserRoleCommand, bool>,
+        IRequestHandler<AdminChangePasswordCommand, bool>
     {
         private readonly IUserService _userService;
         private readonly ISystemUser _user;
@@ -40,85 +40,105 @@ namespace Jp.Domain.CommandHandlers
             _user = user;
         }
 
-        public async Task Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var result = await _userService.UpdateProfileAsync(request);
             if (result)
+            {
                 await Bus.RaiseEvent(new ProfileUpdatedEvent(request.Id.Value, request));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(UpdateProfilePictureCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateProfilePictureCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var result = await _userService.UpdateProfilePictureAsync(request);
             if (result)
+            {
                 await Bus.RaiseEvent(new ProfilePictureUpdatedEvent(request.Id.Value, request.Picture));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(SetPasswordCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SetPasswordCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var result = await _userService.CreatePasswordAsync(request);
             if (result)
+            {
                 await Bus.RaiseEvent(new PasswordCreatedEvent(request.Id.Value));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(ChangePasswordCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(ChangePasswordCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var result = await _userService.ChangePasswordAsync(request);
             if (result)
+            {
                 await Bus.RaiseEvent(new PasswordChangedEvent(request.Id.Value));
+                return true;
+            }
+            return false;
         }
 
-        public async Task Handle(RemoveAccountCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveAccountCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var result = await _userService.RemoveAccountAsync(request);
             if (result)
+            {
                 await Bus.RaiseEvent(new AccountRemovedEvent(request.Id.Value));
+                return true;
+            }
+            return false;
         }
 
 
-        public async Task Handle(UpdateUserCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var user = await _userService.FindByNameAsync(request.Username);
             if (user == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
             user.Email = request.Email;
             user.EmailConfirmed = request.EmailConfirmed;
@@ -130,21 +150,23 @@ namespace Jp.Domain.CommandHandlers
             user.PhoneNumber = request.PhoneNumber;
             user.PhoneNumberConfirmed = request.PhoneNumberConfirmed;
             await _userService.UpdateUserAsync(user);
+
+            return true;
         }
 
-        public async Task Handle(SaveUserClaimCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveUserClaimCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var userDb = await _userService.FindByNameAsync(request.Username);
             if (userDb == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
 
             var claim = new Claim(request.Type, request.Value);
@@ -154,22 +176,24 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new NewUserClaimEvent(request.Username, request.Type, request.Value));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveUserClaimCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveUserClaimCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var userDb = await _userService.FindByNameAsync(request.Username);
             if (userDb == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
 
             var success = await _userService.RemoveClaim(userDb.Id, request.Type);
@@ -177,22 +201,24 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserClaimRemovedEvent(request.Username, request.Type));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveUserRoleCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveUserRoleCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var userDb = await _userService.FindByNameAsync(request.Username);
             if (userDb == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
 
             var success = await _userService.RemoveRole(userDb.Id, request.Role);
@@ -200,22 +226,24 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserRoleRemovedEvent(_user.UserId, request.Username, request.Role));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveUserRoleCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveUserRoleCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var user = await _userService.FindByNameAsync(request.Username);
             if (user == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
 
             var success = await _userService.SaveRole(user.Id, request.Role);
@@ -223,22 +251,24 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserRoleSavedEvent(_user.UserId, request.Username, request.Role));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveUserLoginCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveUserLoginCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var user = await _userService.FindByNameAsync(request.Username);
             if (user == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
 
             var success = await _userService.RemoveLogin(user.Id, request.LoginProvider, request.ProviderKey);
@@ -246,22 +276,24 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new UserLoginRemovedEvent(_user.UserId, request.Username, request.LoginProvider, request.ProviderKey));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(AdminChangePasswordCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(AdminChangePasswordCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             var user = await _userService.FindByNameAsync(request.Username);
             if (user == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "User not found"));
-                return;
+                return false;
             }
 
             var success = await _userService.ResetPasswordAsync(request.Username, request.Password);
@@ -269,7 +301,9 @@ namespace Jp.Domain.CommandHandlers
             if (success)
             {
                 await Bus.RaiseEvent(new AdminChangedPasswordEvent(user.Id, request.Username));
+                return true;
             }
+            return false;
         }
     }
 }

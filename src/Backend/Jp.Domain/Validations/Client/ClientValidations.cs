@@ -11,16 +11,16 @@ namespace Jp.Domain.Validations.Client
     {
         protected void ValidateGrantType()
         {
-            var message = string.Empty;
+            var message = "Invalid grant types";
             RuleFor(c => c.Client.AllowedGrantTypes)
                 .NotEmpty().WithMessage("At Least 1 grant type must be selected")
-                .Must(m => ValidateGrantCombination(m, out message)).WithMessage(message);
+                .Must(m => ValidateGrantCombination(m, message)).WithMessage(message);
 
         }
 
-        private bool ValidateGrantCombination(ICollection<string> grantTypes, out string message)
+        private bool ValidateGrantCombination(ICollection<string> grantTypes, string message)
         {
-            message = "Grant types list cannot contain both {0} and {1}";
+            
 
             // would allow response_type downgrade attack from code to token
             if (DisallowGrantTypeCombination(GrantType.Implicit, GrantType.AuthorizationCode, grantTypes))

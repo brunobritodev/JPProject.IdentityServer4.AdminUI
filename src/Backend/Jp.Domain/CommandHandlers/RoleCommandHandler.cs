@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 namespace Jp.Domain.CommandHandlers
 {
     public class RoleCommandHandler : CommandHandler,
-        IRequestHandler<RemoveRoleCommand>,
-        IRequestHandler<SaveRoleCommand>,
-        IRequestHandler<UpdateRoleCommand>,
-        IRequestHandler<RemoveUserFromRoleCommand>
+        IRequestHandler<RemoveRoleCommand, bool>,
+        IRequestHandler<SaveRoleCommand, bool>,
+        IRequestHandler<UpdateRoleCommand, bool>,
+        IRequestHandler<RemoveUserFromRoleCommand, bool>
     {
         private readonly IRoleService _roleService;
         private readonly IUserService _userService;
@@ -29,12 +29,12 @@ namespace Jp.Domain.CommandHandlers
             _userService = userService;
         }
 
-        public async Task Handle(RemoveRoleCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveRoleCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             // Businness logic here
@@ -43,15 +43,17 @@ namespace Jp.Domain.CommandHandlers
             if (result)
             {
                 await Bus.RaiseEvent(new RoleRemovedEvent(request.Name));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(SaveRoleCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SaveRoleCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             // Businness logic here
@@ -60,15 +62,17 @@ namespace Jp.Domain.CommandHandlers
             if (result)
             {
                 await Bus.RaiseEvent(new RoleSavedEvent(request.Name));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             // Businness logic here
@@ -77,15 +81,17 @@ namespace Jp.Domain.CommandHandlers
             if (result)
             {
                 await Bus.RaiseEvent(new RoleUpdatedEvent(request.Name, request.OldName));
+                return true;
             }
+            return false;
         }
 
-        public async Task Handle(RemoveUserFromRoleCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(RemoveUserFromRoleCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return;
+                return false;
             }
 
             // Businness logic here
@@ -94,7 +100,9 @@ namespace Jp.Domain.CommandHandlers
             if (result)
             {
                 await Bus.RaiseEvent(new UserRemovedFromRoleEvent(request.Name, request.Username));
+                return true;
             }
+            return false;
         }
     }
 }

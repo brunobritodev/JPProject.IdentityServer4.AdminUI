@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="mediatr" Version="4.1.0" />
-    <PackageReference Include="FluentValidation" Version="8.1.3" />
+    <PackageReference Include="mediatr" Version="6.0.0" />
+    <PackageReference Include="FluentValidation" Version="8.2.0" />
   </ItemGroup>
 
 </Project>

@@ -23,8 +23,10 @@ namespace Jp.UI.SSO.Configuration
             app.UseCsp(options =>
             {
                 options.DefaultSources(o => o.Self());
-
-                options.FrameAncestors(o => o.None());
+                options.FrameSources(o => o.Self()
+                    // this custom source can be removed in your build
+                    .CustomSources("https://ghbtns.com"));
+                options.FrameAncestors(o => o.Self());
                 options.StyleSources(o => o.Self());
                 options.ObjectSources(o => o.None());
                 options.ImageSources(a =>
@@ -32,16 +34,10 @@ namespace Jp.UI.SSO.Configuration
                     a.Self();
                     a.CustomSources = new[] { "data: https:" };
                 });
-                options.FontSources(configuration =>
-                {
-                    configuration.SelfSrc = true;
-                    configuration.CustomSources("https://fonts.googleapis.com/", "https://fonts.gstatic.com/");
-                });
+                options.FontSources(configuration => configuration.Self().CustomSources("https://fonts.googleapis.com/", "https://fonts.gstatic.com/"));
                 options.ConnectSources(s => s.CustomSources("https://dc.services.visualstudio.com"));
                 options.ScriptSources(s => s.Self().CustomSources("https://az416426.vo.msecnd.net"));
 
-                // Can be removed in your own build
-                options.ChildSources(s => s.CustomSources("https://ghbtns.com"));
             });
         }
 
