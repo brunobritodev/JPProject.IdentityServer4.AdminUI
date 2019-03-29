@@ -2,6 +2,7 @@ using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Domain.Validations.Client;
 using System;
+using MediatR;
 
 namespace Jp.Domain.Commands.Client
 {

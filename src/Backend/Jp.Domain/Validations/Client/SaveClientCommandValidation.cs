@@ -8,6 +8,7 @@ namespace Jp.Domain.Validations.Client
         {
             ValidateClientId();
             ValidateClientName();
+
         }
     }
 }

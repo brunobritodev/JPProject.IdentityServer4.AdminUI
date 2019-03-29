@@ -17,9 +17,9 @@ namespace Jp.Infra.CrossCutting.Bus
             _mediator = mediator;
         }
 
-        public Task SendCommand<T>(T command) where T : Command
+        public Task<bool> SendCommand<T>(T command) where T : Command
         {
-            return _mediator.Send(command);
+            return _mediator.Send<bool>(command);
         }
 
         public Task RaiseEvent<T>(T @event) where T : Event
