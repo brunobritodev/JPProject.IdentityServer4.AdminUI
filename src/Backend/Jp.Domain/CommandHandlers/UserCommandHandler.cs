@@ -39,15 +39,14 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var user = new User()
-            {
-                Email = request.Email,
-                Name = request.Name,
-                UserName = request.Username,
-                PhoneNumber = request.PhoneNumber,
-                Picture = request.Picture
-            };
-
+            var user = new User(
+                id: Guid.NewGuid(),
+                email: request.Email,
+                name: request.Name,
+                userName: request.Username,
+                phoneNumber: request.PhoneNumber,
+                picture: request.Picture
+            );
             var id = await _userService.CreateUserWithPass(user, request.Password);
             if (id.HasValue)
             {
@@ -65,16 +64,14 @@ namespace Jp.Domain.CommandHandlers
                 return false; ;
             }
 
-            var user = new User()
-            {
-                Id = Guid.NewGuid(),
-                Email = request.Email,
-                Name = request.Name,
-                UserName = request.Username,
-                PhoneNumber = request.PhoneNumber,
-                Picture = request.Picture
-            };
-
+            var user = new User(
+                id: Guid.NewGuid(),
+                email: request.Email,
+                name: request.Name,
+                userName: request.Username,
+                phoneNumber: request.PhoneNumber,
+                picture: request.Picture
+            );
             var id = await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
             if (id.HasValue)
             {
@@ -92,14 +89,14 @@ namespace Jp.Domain.CommandHandlers
                 return false; ;
             }
 
-            var user = new User()
-            {
-                Email = request.Email,
-                Name = request.Name,
-                UserName = request.Username,
-                PhoneNumber = request.PhoneNumber,
-                Picture = request.Picture
-            };
+            var user = new User(
+                id: Guid.NewGuid(),
+                email: request.Email,
+                name: request.Name,
+                userName: request.Username,
+                phoneNumber: request.PhoneNumber,
+                picture: request.Picture);
+
             var id = await _userService.CreateUserWithProviderAndPass(user, request.Password, request.Provider, request.ProviderId);
             if (id.HasValue)
             {

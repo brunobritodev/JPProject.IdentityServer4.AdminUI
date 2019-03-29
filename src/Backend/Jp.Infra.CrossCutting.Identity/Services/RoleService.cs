@@ -32,7 +32,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         public async Task<IEnumerable<Role>> GetAllRoles()
         {
             var roles = await _roleManager.Roles.ToListAsync();
-            return roles.Select(s => new Role() { Id = s.Id, Name = s.Name }).ToList();
+            return roles.Select(s => new Role(s.Id, s.Name)).ToList();
         }
 
         public async Task<bool> Remove(string name)
@@ -50,7 +50,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         public async Task<Role> Details(string name)
         {
             var s = await _roleManager.Roles.FirstAsync(f => f.Name == name);
-            return new Role() { Id = s.Id, Name = s.Name };
+            return new Role(s.Id, s.Name);
         }
 
         public async Task<bool> Save(string name)

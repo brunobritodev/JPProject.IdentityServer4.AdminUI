@@ -15,7 +15,6 @@ using Microsoft.Extensions.Logging;
 using ServiceStack;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
@@ -159,7 +158,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             if (user == null)
                 return null;
 
-            
+
             // For more information on how to enable account confirmation and password reset please
             // visit https://go.microsoft.com/fwlink/?LinkID=532713
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -353,26 +352,25 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         {
             if (s == null)
                 return null;
-            return new User
-            {
-                Id = s.Id,
-                Name = s.Name,
-                SecurityStamp = s.SecurityStamp,
-                AccessFailedCount = s.AccessFailedCount,
-                Bio = s.Bio,
-                Company = s.Company,
-                Email = s.Email,
-                EmailConfirmed = s.EmailConfirmed,
-                JobTitle = s.JobTitle,
-                LockoutEnabled = s.LockoutEnabled,
-                LockoutEnd = s.LockoutEnd,
-                PhoneNumber = s.PhoneNumber,
-                PhoneNumberConfirmed = s.PhoneNumberConfirmed,
-                Picture = s.Picture,
-                TwoFactorEnabled = s.TwoFactorEnabled,
-                Url = s.Url,
-                UserName = s.UserName,
-            };
+            return new User(
+                s.Id,
+                s.Email,
+                s.EmailConfirmed,
+                s.Name,
+                s.SecurityStamp,
+                s.AccessFailedCount,
+                s.Bio,
+                s.Company,
+                s.JobTitle,
+                s.LockoutEnabled,
+                s.LockoutEnd,
+                s.PhoneNumber,
+                s.PhoneNumberConfirmed,
+                s.Picture,
+                s.TwoFactorEnabled,
+                s.Url,
+                s.UserName
+            );
         }
 
         public async Task<IEnumerable<User>> GetUsers(PagingViewModel paging)
@@ -516,7 +514,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         {
             var user = await _userManager.FindByNameAsync(userName);
             var logins = await _userManager.GetLoginsAsync(user);
-            return logins.Select(a => new UserLogin { LoginProvider = a.LoginProvider, ProviderDisplayName = a.ProviderDisplayName, ProviderKey = a.ProviderKey });
+            return logins.Select(a => new UserLogin(a.LoginProvider, a.ProviderDisplayName, a.ProviderKey));
         }
 
         public async Task<bool> RemoveLogin(Guid userId, string loginProvider, string providerKey)

@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Jp.Domain.Models
 {
-  public  class Role
-  {
-      public Guid Id { get; set; }
-      public string Name { get; set; }
-  }
+    public class Role
+    {
+        public Role(Guid id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public Guid Id { get; private set; }
+        public string Name { get; private set; }
+    }
 }

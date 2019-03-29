@@ -7,7 +7,7 @@ namespace Jp.Domain.Commands.ApiResource
 {
     public abstract class ApiResourceCommand : Command
     {
-        public IdentityServer4.Models.ApiResource Resource { get; set; }
+        public IdentityServer4.Models.ApiResource Resource { get; protected set; }
 
 
     }

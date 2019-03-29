@@ -52,8 +52,8 @@ namespace Jp.Application.Services
 
         public async Task UpdateProfilePicture(ProfilePictureViewModel model)
         {
+            model.Picture = await _imageStorage.SaveAsync(model);
             var updateCommand = _mapper.Map<UpdateProfilePictureCommand>(model);
-            updateCommand.Picture = await _imageStorage.SaveAsync(model);
             await Bus.SendCommand(updateCommand);
         }
 

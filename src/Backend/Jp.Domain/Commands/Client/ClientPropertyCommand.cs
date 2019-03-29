@@ -5,10 +5,10 @@ namespace Jp.Domain.Commands.Client
 {
     public abstract class ClientPropertyCommand : Command
     {
-        public int Id { get; set; }
-        public string ClientId { get; set; }
-        public string Key { get; set; }
+        public int Id { get; protected set; }
+        public string ClientId { get; protected set; }
+        public string Key { get; protected set; }
 
-        public string Value { get; set; }
+        public string Value { get; protected set; }
     }
 }
