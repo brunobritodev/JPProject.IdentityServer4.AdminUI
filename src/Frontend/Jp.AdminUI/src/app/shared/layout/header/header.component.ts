@@ -7,7 +7,7 @@ import { UserblockService } from "../sidebar/userblock/userblock.service";
 import { SettingsService } from "@core/settings/settings.service";
 import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
-import { environment } from "@env/environment.prod";
+import { environment } from "@env/environment";
 
 
 @Component({

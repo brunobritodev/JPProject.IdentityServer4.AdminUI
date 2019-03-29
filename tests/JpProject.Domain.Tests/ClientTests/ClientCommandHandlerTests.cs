@@ -1,4 +1,6 @@
-﻿using IdentityServer4.Models;
+﻿using Bogus;
+using IdentityServer4.EntityFramework.Entities;
+using IdentityServer4.Models;
 using Jp.Domain.CommandHandlers;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -26,9 +28,11 @@ namespace JpProject.Domain.Tests.ClientTests
         private Mock<IClientPropertyRepository> _clientPropertyRepository;
         private Mock<IClientSecretRepository> _clientSecretRepository;
         private CancellationTokenSource _tokenSource;
+        private Faker _faker;
 
         public ClientCommandHandlerTests()
         {
+            _faker = new Faker();
             _tokenSource = new CancellationTokenSource();
             _uow = new Mock<IUnitOfWork>();
             _mediator = new Mock<IMediatorHandler>();
@@ -108,6 +112,243 @@ namespace JpProject.Domain.Tests.ClientTests
             Assert.Throws<InvalidOperationException>(() => command.Client.AllowedGrantTypes = new List<string>() { a, b });
         }
 
+        [Fact]
+        public async Task ShouldNotAcceptNegativeAbsoluteRefreshTokenLifetime()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(absoluteRefreshTokenLifetime: _faker.Random.Int(max: 0)).Generate();
 
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotAcceptNegativeIdentityTokenLifetime()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(identityTokenLifetime: _faker.Random.Int(max: 0)).Generate();
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotAcceptNegativeAccessTokenLifetime()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(accessTokenLifetime: _faker.Random.Int(max: 0)).Generate();
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotAcceptNegativeAuthorizationCodeLifetime()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(authorizationCodeLifetime: _faker.Random.Int(max: 0)).Generate();
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotAcceptNegativeSlidingRefreshTokenLifetime()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(slidingRefreshTokenLifetime: _faker.Random.Int(max: 0)).Generate();
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotAcceptNegativeDeviceCodeLifetime()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(deviceCodeLifetime: _faker.Random.Int(max: 0)).Generate();
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldUpdateClient()
+        {
+            var command = ClientCommandFaker.GenerateUpdateClientCommand().Generate();
+            _clientRepository.Setup(s => s.UpdateWithChildrens(It.Is<Client>(a => a.ClientId == command.Client.ClientId))).Returns(Task.CompletedTask);
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.Client.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+            _uow.Setup(s => s.Commit()).Returns(true);
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public async Task ShouldRemoveClient()
+        {
+            var command = ClientCommandFaker.GenerateRemoveClientCommand().Generate();
+            _clientRepository.Setup(s => s.Remove(It.Is<Client>(a => a.ClientId == command.Client.ClientId)));
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(a => a == command.Client.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+            _uow.Setup(s => s.Commit()).Returns(true);
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotRemoveSecretWhenClientDoesntExist()
+        {
+            var command = ClientCommandFaker.GenerateRemoveClientSecretCommand().Generate();
+            //_clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(null);
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotRemoveSecretWhenSecretIdIsDifferent()
+        {
+            var command = ClientCommandFaker.GenerateRemoveClientSecretCommand().Generate();
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldRemoveClientSecret()
+        {
+            var clientSecret = EntityClientFaker.GenerateClient(clientSecrets: _faker.Random.Int(1, 3)).Generate();
+            var command = ClientCommandFaker.GenerateRemoveClientSecretCommand(_faker.PickRandom(clientSecret.ClientSecrets).Id).Generate();
+
+            _uow.Setup(s => s.Commit()).Returns(true);
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(clientSecret);
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public async Task ShouldNotSaveClientSecretWhenClientDoesntExist()
+        {
+            var command = ClientCommandFaker.GenerateSaveClientSecretCommand().Generate();
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task ShouldEncryptedValueBeCorrect()
+        {
+            var command = ClientCommandFaker.GenerateSaveClientSecretCommand().Generate();
+            var valueEncryptedMustBe = command.GetValue();
+
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+            _clientSecretRepository.Setup(s => s.Add(It.Is<ClientSecret>(cs => cs.Value == valueEncryptedMustBe)));
+            _uow.Setup(s => s.Commit()).Returns(true);
+
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(a => a == command.ClientId)), Times.Once);
+            _clientSecretRepository.Verify(s => s.Add(It.Is<ClientSecret>(cs => cs.Value == valueEncryptedMustBe)), Times.Once);
+            _uow.Verify(s => s.Commit(), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldNotEncryptedValueBeCorrect()
+        {
+            var command = ClientCommandFaker.GenerateSaveClientSecretCommand().Generate();
+            var valueEncryptedMustBe = command.GetValue();
+
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+            _clientSecretRepository.Setup(s => s.Add(It.Is<ClientSecret>(cs => cs.Value == valueEncryptedMustBe)));
+            _uow.Setup(s => s.Commit()).Returns(true);
+
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(a => a == command.ClientId)), Times.Once);
+            _clientSecretRepository.Verify(s => s.Add(It.Is<ClientSecret>(cs => cs.Value == valueEncryptedMustBe)), Times.Once);
+            _uow.Verify(s => s.Commit(), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldNotRemovePropertyWhenClientDoesntExist()
+        {
+            var command = ClientCommandFaker.GenerateRemovePropertyCommand().Generate();
+
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(a => a == command.ClientId)), Times.Once);
+        }
+
+
+        [Fact]
+        public async Task ShouldNotRemovePropertyWhenIdIsDifferent()
+        {
+            var command = ClientCommandFaker.GenerateRemovePropertyCommand().Generate();
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(a => a == command.ClientId)), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldRemoveProperty()
+        {
+            var properties = EntityClientFaker.GenerateClient(clientProperties: _faker.Random.Int(1, 3)).Generate();
+            var command = ClientCommandFaker.GenerateRemovePropertyCommand(_faker.PickRandom(properties.Properties).Id).Generate();
+
+            _uow.Setup(s => s.Commit()).Returns(true);
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(properties);
+            _clientPropertyRepository.Setup(s => s.Remove(It.Is<int>(a => a == command.Id)));
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(a => a == command.ClientId)), Times.Once);
+            _clientPropertyRepository.Verify(s => s.Remove(It.Is<int>(a => a == command.Id)), Times.Once);
+        }
+
+
+        [Fact]
+        public async Task ShouldNotSavePropertyWhenClientDoesntExist()
+        {
+            var command = ClientCommandFaker.GenerateSavePropertyCommand().Generate();
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId))).ReturnsAsync((Client)null);
+
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+
+            Assert.False(result);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId)), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldSaveProperty()
+        {
+            var command = ClientCommandFaker.GenerateSavePropertyCommand().Generate();
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate()).Verifiable();
+            _clientPropertyRepository.Setup(s => s.Add(It.IsAny<ClientProperty>()));
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            _clientPropertyRepository.Verify(s => s.Add(It.IsAny<ClientProperty>()), Times.Once);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId)), Times.Once);
+            Assert.False(result);
+        }
     }
 }
