@@ -11,11 +11,11 @@ namespace Jp.UI.SSO.Configuration
             
             try
             {
-                var testDb = context.Database.GetPendingMigrations();   // Check the database connection
+                context.Database.GetPendingMigrations();   // Check the database connection
 
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
