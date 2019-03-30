@@ -7,7 +7,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
 {
     public static class ClientFaker
     {
-<<<<<<< HEAD
         public static Faker<Client> GenerateClient(
             int? absoluteRefreshTokenLifetime = null,
             int? identityTokenLifetime = null,
@@ -15,9 +14,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
             int? authorizationCodeLifetime = null,
             int? slidingRefreshTokenLifetime = null,
             int? deviceCodeLifetime = null)
-=======
-        public static Faker<Client> GenerateClient()
->>>>>>> remotes/origin/master
         {
             return new Faker<Client>()
                 .RuleFor(c => c.Enabled, f => f.Random.Bool())
@@ -44,14 +40,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.AllowOfflineAccess, f => f.Random.Bool())
                 .RuleFor(c => c.AllowedScopes, f => f.PickRandom(IdentityHelpers.Scopes, f.Random.Int(1, 5)).ToList())
                 .RuleFor(c => c.AlwaysIncludeUserClaimsInIdToken, f => f.Random.Bool())
-<<<<<<< HEAD
-=======
-                .RuleFor(c => c.IdentityTokenLifetime, f => f.Random.Int())
-                .RuleFor(c => c.AccessTokenLifetime, f => f.Random.Int())
-                .RuleFor(c => c.AuthorizationCodeLifetime, f => f.Random.Int())
-                .RuleFor(c => c.AbsoluteRefreshTokenLifetime, f => f.Random.Int())
-                .RuleFor(c => c.SlidingRefreshTokenLifetime, f => f.Random.Int())
->>>>>>> remotes/origin/master
                 .RuleFor(c => c.UpdateAccessTokenClaimsOnRefresh, f => f.Random.Bool())
                 .RuleFor(c => c.AccessTokenType, f => f.PickRandom<AccessTokenType>())
                 .RuleFor(c => c.EnableLocalLogin, f => f.Random.Bool())
@@ -62,19 +50,13 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.ClientClaimsPrefix, f => f.Lorem.Word())
                 .RuleFor(c => c.PairWiseSubjectSalt, f => f.Lorem.Word())
                 .RuleFor(c => c.UserCodeType, f => f.Lorem.Word())
-<<<<<<< HEAD
                 .RuleFor(c => c.AllowedCorsOrigins, f => Enumerable.Range(1, f.Random.Int(1, 3)).Select(x => f.PickRandom(f.Internet.Url())).ToList())
-
                 .RuleFor(c => c.IdentityTokenLifetime, f => identityTokenLifetime ?? f.Random.Int(0))
                 .RuleFor(c => c.AccessTokenLifetime, f => accessTokenLifetime ?? f.Random.Int(0))
                 .RuleFor(c => c.AuthorizationCodeLifetime, f => authorizationCodeLifetime ?? f.Random.Int(0))
                 .RuleFor(c => c.AbsoluteRefreshTokenLifetime, f => absoluteRefreshTokenLifetime ?? f.Random.Int(0))
                 .RuleFor(c => c.SlidingRefreshTokenLifetime, f => slidingRefreshTokenLifetime?? f.Random.Int(0))
                 .RuleFor(c => c.DeviceCodeLifetime, f => deviceCodeLifetime ?? f.Random.Int(0));
-=======
-                .RuleFor(c => c.DeviceCodeLifetime, f => f.Random.Int())
-                .RuleFor(c => c.AllowedCorsOrigins, f => Enumerable.Range(1, f.Random.Int(1, 3)).Select(x => f.PickRandom(f.Internet.Url())).ToList());
->>>>>>> remotes/origin/master
         }
 
         public static Faker<Secret> GenerateClientSecret()
@@ -86,21 +68,12 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
         }
 
         public static Faker<Claim> GenerateClientClaim()
-<<<<<<< HEAD
-=======
-
->>>>>>> remotes/origin/master
         {
             return new Faker<Claim>().CustomInstantiator(f =>
                     new Claim(
                         f.PickRandom(IdentityHelpers.Claims),
                         f.Lorem.Word()
                     ));
-<<<<<<< HEAD
-=======
-
-
->>>>>>> remotes/origin/master
         }
     }
 }

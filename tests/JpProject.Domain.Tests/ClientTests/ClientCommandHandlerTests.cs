@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 ﻿using Bogus;
 using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.Models;
-=======
-﻿using IdentityServer4.Models;
->>>>>>> remotes/origin/master
 using Jp.Domain.CommandHandlers;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -23,7 +19,6 @@ namespace JpProject.Domain.Tests.ClientTests
 {
     public class ClientCommandHandlerTests
     {
-<<<<<<< HEAD
         private readonly ClientCommandHandler _commandHandler;
         private readonly Mock<DomainNotificationHandler> _notifications;
         private readonly Mock<IMediatorHandler> _mediator;
@@ -38,20 +33,6 @@ namespace JpProject.Domain.Tests.ClientTests
         public ClientCommandHandlerTests()
         {
             _faker = new Faker();
-=======
-        private ClientCommandHandler _commandHandler;
-        private Mock<DomainNotificationHandler> _notifications;
-        private Mock<IMediatorHandler> _mediator;
-        private Mock<IUnitOfWork> _uow;
-        private Mock<IClientRepository> _clientRepository;
-        private Mock<IClientClaimRepository> _clientClaimRepository;
-        private Mock<IClientPropertyRepository> _clientPropertyRepository;
-        private Mock<IClientSecretRepository> _clientSecretRepository;
-        private CancellationTokenSource _tokenSource;
-
-        public ClientCommandHandlerTests()
-        {
->>>>>>> remotes/origin/master
             _tokenSource = new CancellationTokenSource();
             _uow = new Mock<IUnitOfWork>();
             _mediator = new Mock<IMediatorHandler>();
@@ -75,10 +56,7 @@ namespace JpProject.Domain.Tests.ClientTests
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 
             Assert.False(result);
-<<<<<<< HEAD
             _uow.Verify(v => v.Commit(), Times.Never);
-=======
->>>>>>> remotes/origin/master
         }
 
         [Fact]
@@ -135,7 +113,6 @@ namespace JpProject.Domain.Tests.ClientTests
             Assert.Throws<InvalidOperationException>(() => command.Client.AllowedGrantTypes = new List<string>() { a, b });
         }
 
-<<<<<<< HEAD
         [Fact]
         public async Task ShouldNotAcceptNegativeAbsoluteRefreshTokenLifetime()
         {
@@ -450,9 +427,6 @@ namespace JpProject.Domain.Tests.ClientTests
             _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId)), Times.Once);
             Assert.False(result);
         }
-
-=======
->>>>>>> remotes/origin/master
 
     }
 }

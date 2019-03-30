@@ -26,7 +26,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
 
         }
 
-<<<<<<< HEAD
         public static Faker<UpdateClientCommand> GenerateUpdateClientCommand(
             int? absoluteRefreshTokenLifetime = null,
             int? identityTokenLifetime = null,
@@ -43,18 +42,10 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                                                 authorizationCodeLifetime,
                         slidingRefreshTokenLifetime,
                         deviceCodeLifetime).Generate(),
-=======
-        public static Faker<UpdateClientCommand> GenerateUpdateClientCommand()
-        {
-            return new Faker<UpdateClientCommand>().CustomInstantiator(f =>
-                new UpdateClientCommand(
-                    ClientFaker.GenerateClient().Generate(),
->>>>>>> remotes/origin/master
                     f.Company.CompanyName()
                 ));
 
         }
-<<<<<<< HEAD
 
         public static Faker<RemoveClientCommand> GenerateRemoveClientCommand()
         {
@@ -111,7 +102,5 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
             ));
         }
 
-=======
->>>>>>> remotes/origin/master
     }
 }
