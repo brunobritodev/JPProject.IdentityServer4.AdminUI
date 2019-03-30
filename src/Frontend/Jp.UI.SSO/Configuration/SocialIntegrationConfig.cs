@@ -27,9 +27,8 @@ namespace Jp.UI.SSO.Configuration
                     {
                         OnCreatingTicket = context =>
                         {
-                            var identity = (ClaimsIdentity)context.Principal.Identity;
-                            var profileImg = context.User["image"].Value<string>("url");
-                            identity.AddClaim(new Claim(JwtClaimTypes.Picture, profileImg));
+                            if (context.User.ContainsKey("image"))
+                                context.Identity.AddClaim(new Claim(JwtClaimTypes.Picture, context.User.GetValue("image").SelectToken("url").ToString()));
                             return Task.CompletedTask;
                         }
                     };
@@ -48,9 +47,8 @@ namespace Jp.UI.SSO.Configuration
                         {
                             OnCreatingTicket = context =>
                             {
-                                var identity = (ClaimsIdentity)context.Principal.Identity;
-                                var profileImg = context.User["picture"]["data"].Value<string>("url");
-                                identity.AddClaim(new Claim(JwtClaimTypes.Picture, profileImg));
+                                if (context.User.ContainsKey("picture"))
+                                    context.Identity.AddClaim(new Claim(JwtClaimTypes.Picture, context.User.GetValue("picture").SelectToken("data").SelectToken("url").ToString()));
                                 return Task.CompletedTask;
                             }
                         };

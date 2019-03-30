@@ -21,7 +21,7 @@ namespace Jp.Management
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.FromLogContext()
                 .WriteTo.ApplicationInsights(TelemetryConfiguration.Active, TelemetryConverter.Traces)
-                .WriteTo.File(@"jpProject_sso_log.txt")
+                .WriteTo.File(@"jpProject_sso_log-.txt", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 5)
                 .WriteTo.Console()
                 .CreateLogger();
 

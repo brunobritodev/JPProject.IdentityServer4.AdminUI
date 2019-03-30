@@ -248,3 +248,6 @@ ModelManifest.xml
 *.opt
 docs/_build
 docs/.vscode
+
+# Log files
+**/*log*.txt

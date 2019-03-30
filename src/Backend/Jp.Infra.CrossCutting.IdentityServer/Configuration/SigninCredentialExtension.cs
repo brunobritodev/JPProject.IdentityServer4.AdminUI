@@ -25,7 +25,7 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
 
         private const string FileName = nameof(FileName);
         private const string FilePassword = nameof(FilePassword);
-        private const string KeyStoreIssuer = nameof(KeyStoreIssuer);
+        private const string CertificateThumbprint = nameof(CertificateThumbprint);
 
         public static IIdentityServerBuilder AddSigninCredentialFromConfig(
             this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger, IHostingEnvironment env)
@@ -74,14 +74,18 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
         private static void AddCertificateFromStore(IIdentityServerBuilder builder,
             IConfigurationSection options, ILogger logger)
         {
-            var keyIssuer = options.GetValue<string>(KeyStoreIssuer);
+            var keyIssuer = options.GetValue<string>(CertificateThumbprint);
             logger.LogInformation($"SigninCredentialExtension adding key from store by {keyIssuer}");
 
-            X509Store store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
+            X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);
 
-            var certificates = store.Certificates.Find(X509FindType.FindByIssuerName, keyIssuer, true);
-
+            var certificates = store.Certificates.Find(X509FindType.FindByThumbprint, keyIssuer, false);
+            logger.LogInformation($"Certificates on store: {store.Certificates.Count}");
+            foreach (var storeCertificate in store.Certificates)
+            {
+                logger.LogInformation($"{storeCertificate.Thumbprint} - {storeCertificate.IssuerName.Name}");
+            }
             if (certificates.Count > 0)
                 builder.AddSigningCredential(certificates[0]);
             else
