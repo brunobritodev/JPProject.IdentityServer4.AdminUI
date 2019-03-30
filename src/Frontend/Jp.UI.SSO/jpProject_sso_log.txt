@@ -17240,3 +17240,190 @@ Error Number:2714,State:6,Class:16
 2019-03-30 00:30:58.872 -03:00 [INF] Removing 0 grants
 =======
 >>>>>>> remotes/origin/master
+2019-03-30 02:56:51.578 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 02:56:51.747 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 02:57:32.388 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 02:57:32.533 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 02:57:36.330 -03:00 [ERR] An error occurred using the connection to database '' on server 'jpdatabase,port=3306'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 518
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 218
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+2019-03-30 02:57:43.682 -03:00 [ERR] An error occurred using the connection to database '' on server 'jpdatabase,port=3306'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 518
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 218
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+2019-03-30 02:57:53.451 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 02:57:53.583 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 02:57:55.200 -03:00 [ERR] An error occurred using the connection to database '' on server 'localhost,port=3306'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'jp'@'172.18.0.1' (using password: YES)
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 360
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 518
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 218
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+2019-03-30 02:58:00.323 -03:00 [ERR] An error occurred using the connection to database '' on server 'localhost,port=3306'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'jp'@'172.18.0.1' (using password: YES)
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 360
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 518
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 218
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+2019-03-30 02:58:09.179 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 02:58:09.325 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 02:58:15.747 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-30 02:58:15.779 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-30 02:58:15.782 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-30 02:58:15.784 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-30 02:58:15.786 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-30 02:58:15.788 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-30 02:58:15.791 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-30 02:58:19.589 -03:00 [DBG] Login Url: /Account/Login
+2019-03-30 02:58:19.599 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-30 02:58:19.602 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-30 02:58:19.604 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-30 02:58:19.606 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-30 02:58:19.609 -03:00 [DBG] Error Url: /home/error
+2019-03-30 02:58:19.611 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-30 02:58:23.002 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-30 02:58:26.767 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-30 02:58:33.356 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2019-03-30 02:58:33.449 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: External authentication error
+   at Jp.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP-Project\src\Frontend\Jp.UI.SSO\Controllers\Account\AccountController.cs:line 238
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-30 02:59:21.015 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-30 02:59:25.508 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2019-03-30 02:59:25.550 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: External authentication error
+   at Jp.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP-Project\src\Frontend\Jp.UI.SSO\Controllers\Account\AccountController.cs:line 238
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-30 02:59:50.251 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-30 03:00:13.465 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-30 03:00:17.960 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2019-03-30 03:03:56.476 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 03:03:56.632 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 03:04:00.395 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-30 03:04:00.435 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-30 03:04:00.453 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-30 03:04:00.459 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-30 03:04:00.461 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-30 03:04:00.463 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-30 03:04:00.465 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-30 03:04:02.149 -03:00 [DBG] Login Url: /Account/Login
+2019-03-30 03:04:02.159 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-30 03:04:02.162 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-30 03:04:02.164 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-30 03:04:02.167 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-30 03:04:02.169 -03:00 [DBG] Error Url: /home/error
+2019-03-30 03:04:02.171 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-30 03:04:07.858 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: External authentication error
+   at Jp.UI.SSO.Controllers.Account.AccountController.ExternalLoginCallback() in D:\workspace\JP-Project\src\Frontend\Jp.UI.SSO\Controllers\Account\AccountController.cs:line 238
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.CspMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-30 03:04:11.592 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-30 03:04:26.923 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2019-03-30 03:05:22.059 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 03:05:22.209 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 03:05:26.036 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-30 03:05:26.074 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-30 03:05:26.076 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-30 03:05:26.078 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-30 03:05:26.080 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-30 03:05:26.082 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-30 03:05:26.085 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-30 03:05:27.937 -03:00 [DBG] Login Url: /Account/Login
+2019-03-30 03:05:27.947 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-30 03:05:27.950 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-30 03:05:27.952 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-30 03:05:27.955 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-30 03:05:27.957 -03:00 [DBG] Error Url: /home/error
+2019-03-30 03:05:27.959 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-30 03:05:31.142 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-30 03:05:45.091 -03:00 [INF] AuthenticationScheme: idsrv.external signed in.
+2019-03-30 03:05:46.780 -03:00 [INF] Provider Google associated.
+2019-03-30 03:05:46.981 -03:00 [INF] {"Username":null,"Provider":"Google","ProviderUserId":"102696868227620762147","SubjectId":"c73d1c56-826e-40ae-9495-1aa6cfcb8855","DisplayName":"bhdebrito@gmail.com","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLLKQMQGU6I8:00000006","TimeStamp":"2019-03-30T06:05:46.0000000Z","ProcessId":11768,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-03-30 03:05:47.011 -03:00 [DBG] Augmenting SignInContext
+2019-03-30 03:05:47.016 -03:00 [DBG] Adding amr claim with value: external
+2019-03-30 03:05:47.034 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-30 03:05:47.044 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
