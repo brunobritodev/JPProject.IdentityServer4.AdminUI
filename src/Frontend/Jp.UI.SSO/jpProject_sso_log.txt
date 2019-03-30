@@ -17219,6 +17219,7 @@ Error Number:2714,State:6,Class:16
 2019-03-29 03:33:41.664 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2019-03-29 03:33:41.670 -03:00 [DBG] Start key discovery request
 2019-03-29 03:33:54.575 -03:00 [INF] Removing 0 grants
+<<<<<<< HEAD
 2019-03-30 00:30:38.774 -03:00 [INF] SigninCredentialExtension keyType is Temporary
 2019-03-30 00:30:39.000 -03:00 [INF] SigninCredentialExtension added
 2019-03-30 00:30:43.548 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
@@ -17237,3 +17238,5 @@ Error Number:2714,State:6,Class:16
 2019-03-30 00:30:54.006 -03:00 [DBG] Error Url: /home/error
 2019-03-30 00:30:54.008 -03:00 [DBG] Error Id Parameter: errorId
 2019-03-30 00:30:58.872 -03:00 [INF] Removing 0 grants
+=======
+>>>>>>> remotes/origin/master

@@ -20,7 +20,11 @@ namespace Jp.Domain.Validations.Client
 
         private bool ValidateGrantCombination(ICollection<string> grantTypes, string message)
         {
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> remotes/origin/master
 
             // would allow response_type downgrade attack from code to token
             if (DisallowGrantTypeCombination(GrantType.Implicit, GrantType.AuthorizationCode, grantTypes))
@@ -64,6 +68,7 @@ namespace Jp.Domain.Validations.Client
             RuleFor(c => c.Client.ClientName).NotEmpty().WithMessage("Client Name must be set");
         }
 
+<<<<<<< HEAD
         protected void ValidateIdentityTokenLifetime()
         {
             RuleFor(c => c.Client.IdentityTokenLifetime).GreaterThan(0).WithMessage("Identity Token Lifetime must be greatter than 0");
@@ -90,5 +95,7 @@ namespace Jp.Domain.Validations.Client
         {
             RuleFor(c => c.Client.DeviceCodeLifetime).GreaterThan(0).WithMessage("Device Code Lifetime must be greatter than 0");
         }
+=======
+>>>>>>> remotes/origin/master
     }
 }

@@ -7,7 +7,11 @@ import { UserblockService } from "../sidebar/userblock/userblock.service";
 import { SettingsService } from "@core/settings/settings.service";
 import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
+<<<<<<< HEAD
 import { environment } from "@env/environment";
+=======
+import { environment } from "@env/environment.prod";
+>>>>>>> remotes/origin/master
 
 
 @Component({
