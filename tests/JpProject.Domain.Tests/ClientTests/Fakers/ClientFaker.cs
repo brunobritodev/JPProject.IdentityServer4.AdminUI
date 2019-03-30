@@ -51,7 +51,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.PairWiseSubjectSalt, f => f.Lorem.Word())
                 .RuleFor(c => c.UserCodeType, f => f.Lorem.Word())
                 .RuleFor(c => c.AllowedCorsOrigins, f => Enumerable.Range(1, f.Random.Int(1, 3)).Select(x => f.PickRandom(f.Internet.Url())).ToList())
-
                 .RuleFor(c => c.IdentityTokenLifetime, f => identityTokenLifetime ?? f.Random.Int(0))
                 .RuleFor(c => c.AccessTokenLifetime, f => accessTokenLifetime ?? f.Random.Int(0))
                 .RuleFor(c => c.AuthorizationCodeLifetime, f => authorizationCodeLifetime ?? f.Random.Int(0))

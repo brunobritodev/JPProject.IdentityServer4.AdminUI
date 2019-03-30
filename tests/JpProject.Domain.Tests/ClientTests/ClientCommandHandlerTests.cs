@@ -428,6 +428,5 @@ namespace JpProject.Domain.Tests.ClientTests
             Assert.False(result);
         }
 
-
     }
 }

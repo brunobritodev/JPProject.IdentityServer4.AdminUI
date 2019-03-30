@@ -41,8 +41,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.Provider, f => f.PickRandom(IdentityHelpers.Providers))
                 .RuleFor(c => c.ClientId, f => f.Random.Int(0));
 
-
-
         }
         public static Faker<ClientScope> GenerateClientScope()
         {
@@ -50,8 +48,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.Id, f => f.Random.Int(0))
                 .RuleFor(c => c.Scope, f => f.PickRandom(IdentityHelpers.Scopes))
                 .RuleFor(c => c.ClientId, f => f.Random.Int(0));
-
-
         }
         public static Faker<ClientPostLogoutRedirectUri> GenerateClientPostLogoutRedirectUri()
         {
@@ -59,7 +55,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.Id, f => f.Random.Int(0))
                 .RuleFor(c => c.PostLogoutRedirectUri, f => f.Internet.Url())
                 .RuleFor(c => c.ClientId, f => f.Random.Int(0));
-
         }
 
         public static Faker<ClientRedirectUri> GenerateClientRedirectUri()
@@ -142,6 +137,7 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 .RuleFor(c => c.IdentityProviderRestrictions, f => GenerateClientIdPRestriction().Generate(f.Random.Int(0, 1)))
                 .RuleFor(c => c.AllowedCorsOrigins, f => GenerateClientCorsOrigin().Generate(f.Random.Int(0, 2)))
                 .RuleFor(c => c.Properties, f => GenerateClientProperty().Generate(clientProperties ?? f.Random.Int(0, 2)));
+
         }
     }
 }

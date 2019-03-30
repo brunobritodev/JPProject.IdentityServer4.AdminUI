@@ -9,7 +9,6 @@ import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
 import { environment } from "@env/environment";
 
-
 @Component({
     selector: "app-header",
     templateUrl: "./header.component.html",

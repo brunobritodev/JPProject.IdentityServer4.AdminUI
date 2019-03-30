@@ -21,7 +21,6 @@ namespace Jp.Domain.Validations.Client
         private bool ValidateGrantCombination(ICollection<string> grantTypes, string message)
         {
 
-
             // would allow response_type downgrade attack from code to token
             if (DisallowGrantTypeCombination(GrantType.Implicit, GrantType.AuthorizationCode, grantTypes))
             {
