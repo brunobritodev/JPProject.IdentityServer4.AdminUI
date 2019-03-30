@@ -19,16 +19,16 @@ namespace JpProject.Domain.Tests.ClientTests
 {
     public class ClientCommandHandlerTests
     {
-        private ClientCommandHandler _commandHandler;
-        private Mock<DomainNotificationHandler> _notifications;
-        private Mock<IMediatorHandler> _mediator;
-        private Mock<IUnitOfWork> _uow;
-        private Mock<IClientRepository> _clientRepository;
-        private Mock<IClientClaimRepository> _clientClaimRepository;
-        private Mock<IClientPropertyRepository> _clientPropertyRepository;
-        private Mock<IClientSecretRepository> _clientSecretRepository;
-        private CancellationTokenSource _tokenSource;
-        private Faker _faker;
+        private readonly ClientCommandHandler _commandHandler;
+        private readonly Mock<DomainNotificationHandler> _notifications;
+        private readonly Mock<IMediatorHandler> _mediator;
+        private readonly Mock<IUnitOfWork> _uow;
+        private readonly Mock<IClientRepository> _clientRepository;
+        private readonly Mock<IClientClaimRepository> _clientClaimRepository;
+        private readonly Mock<IClientPropertyRepository> _clientPropertyRepository;
+        private readonly Mock<IClientSecretRepository> _clientSecretRepository;
+        private readonly CancellationTokenSource _tokenSource;
+        private readonly Faker _faker;
 
         public ClientCommandHandlerTests()
         {
@@ -56,6 +56,7 @@ namespace JpProject.Domain.Tests.ClientTests
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 
             Assert.False(result);
+            _uow.Verify(v => v.Commit(), Times.Never);
         }
 
         [Fact]
@@ -206,6 +207,7 @@ namespace JpProject.Domain.Tests.ClientTests
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 
             Assert.False(result);
+            _uow.Verify(v => v.Commit(), Times.Never);
         }
 
         [Fact]
@@ -217,6 +219,7 @@ namespace JpProject.Domain.Tests.ClientTests
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 
             Assert.False(result);
+            _uow.Verify(v => v.Commit(), Times.Never);
         }
 
         [Fact]
@@ -237,9 +240,13 @@ namespace JpProject.Domain.Tests.ClientTests
         public async Task ShouldNotSaveClientSecretWhenClientDoesntExist()
         {
             var command = ClientCommandFaker.GenerateSaveClientSecretCommand().Generate();
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 
             Assert.False(result);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(a => a == command.ClientId)), Times.Once);
+            _uow.Verify(v => v.Commit(), Times.Never);
         }
 
         [Fact]
@@ -350,5 +357,77 @@ namespace JpProject.Domain.Tests.ClientTests
             _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId)), Times.Once);
             Assert.False(result);
         }
+
+        [Fact]
+        public async Task ShouldNotRemoveClaimWhenClientDoesntExist()
+        {
+            var command = ClientCommandFaker.GenerateRemoveClaimCommand().Generate();
+
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(a => a == command.ClientId)), Times.Once);
+        }
+
+
+        [Fact]
+        public async Task ShouldNotRemoveClaimWhenIdIsDifferent()
+        {
+            var command = ClientCommandFaker.GenerateRemoveClaimCommand().Generate();
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.False(result);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(a => a == command.ClientId)), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldRemoveClaim()
+        {
+            var properties = EntityClientFaker.GenerateClient(clientClaim: _faker.Random.Int(1, 3)).Generate();
+            var command = ClientCommandFaker.GenerateRemoveClaimCommand(_faker.PickRandom(properties.Claims).Id).Generate();
+
+            _uow.Setup(s => s.Commit()).Returns(true);
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(properties);
+            _clientClaimRepository.Setup(s => s.Remove(It.Is<int>(a => a == command.Id)));
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            Assert.True(result);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(a => a == command.ClientId)), Times.Once);
+            _clientClaimRepository.Verify(s => s.Remove(It.Is<int>(a => a == command.Id)), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldNotSaveClaimWhenClientDoesntExist()
+        {
+            var command = ClientCommandFaker.GenerateSaveClaimCommand().Generate();
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId))).ReturnsAsync((Client)null);
+
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+
+            Assert.False(result);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId)), Times.Once);
+        }
+
+        [Fact]
+        public async Task ShouldSaveClaim()
+        {
+            var command = ClientCommandFaker.GenerateSaveClaimCommand().Generate();
+            _clientRepository.Setup(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate()).Verifiable();
+            _clientClaimRepository.Setup(s => s.Add(It.IsAny<ClientClaim>()));
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+            _clientClaimRepository.Verify(s => s.Add(It.IsAny<ClientClaim>()), Times.Once);
+            _clientRepository.Verify(s => s.GetByClientId(It.Is<string>(q => q == command.ClientId)), Times.Once);
+            Assert.False(result);
+        }
+
+
     }
 }

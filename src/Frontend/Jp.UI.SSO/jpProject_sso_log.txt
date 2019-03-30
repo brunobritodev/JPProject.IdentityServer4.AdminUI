@@ -17219,3 +17219,21 @@ Error Number:2714,State:6,Class:16
 2019-03-29 03:33:41.664 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2019-03-29 03:33:41.670 -03:00 [DBG] Start key discovery request
 2019-03-29 03:33:54.575 -03:00 [INF] Removing 0 grants
+2019-03-30 00:30:38.774 -03:00 [INF] SigninCredentialExtension keyType is Temporary
+2019-03-30 00:30:39.000 -03:00 [INF] SigninCredentialExtension added
+2019-03-30 00:30:43.548 -03:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-03-30 00:30:43.587 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-30 00:30:43.589 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-30 00:30:43.592 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-30 00:30:43.594 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-30 00:30:43.597 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-30 00:30:43.600 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-30 00:30:43.780 -03:00 [DBG] Starting grant removal
+2019-03-30 00:30:53.984 -03:00 [DBG] Login Url: /Account/Login
+2019-03-30 00:30:53.995 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-30 00:30:53.997 -03:00 [DBG] Logout Url: /Account/Logout
+2019-03-30 00:30:54.000 -03:00 [DBG] ConsentUrl Url: /consent
+2019-03-30 00:30:54.003 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-30 00:30:54.006 -03:00 [DBG] Error Url: /home/error
+2019-03-30 00:30:54.008 -03:00 [DBG] Error Id Parameter: errorId
+2019-03-30 00:30:58.872 -03:00 [INF] Removing 0 grants

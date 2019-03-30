@@ -69,7 +69,6 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 ));
         }
 
-
         public static Faker<RemovePropertyCommand> GenerateRemovePropertyCommand(int? id = null)
         {
             return new Faker<RemovePropertyCommand>().CustomInstantiator(f => new RemovePropertyCommand(
@@ -86,5 +85,22 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                 f.Random.Word()
             ));
         }
+
+        public static Faker<RemoveClientClaimCommand> GenerateRemoveClaimCommand(int? id = null)
+        {
+            return new Faker<RemoveClientClaimCommand>().CustomInstantiator(f => new RemoveClientClaimCommand(
+                id ?? f.Random.Int(0),
+                f.Random.Word()
+            ));
+        }
+        public static Faker<SaveClientClaimCommand> GenerateSaveClaimCommand()
+        {
+            return new Faker<SaveClientClaimCommand>().CustomInstantiator(f => new SaveClientClaimCommand(
+                f.Random.Word(),
+                f.Random.Word(),
+                f.Random.Word()
+            ));
+        }
+
     }
 }

@@ -65,7 +65,6 @@ namespace Jp.Domain.CommandHandlers
             return false;
         }
 
-
         public async Task<bool> Handle(UpdateApiResourceCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
