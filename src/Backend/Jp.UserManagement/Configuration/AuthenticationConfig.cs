@@ -1,6 +1,6 @@
 ﻿using IdentityServer4.AccessTokenValidation;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -8,9 +8,9 @@ namespace Jp.Management.Configuration
 {
     public static class AuthenticationConfig
     {
-        public static void AddIdentityServerAuthentication(this IServiceCollection services, ILogger logger)
+        public static void AddIdentityServerAuthentication(this IServiceCollection services, ILogger logger, IConfiguration configuration)
         {
-            logger.LogInformation($"Authority URI: {JpProjectConfiguration.IdentityServerUrl}");
+            logger.LogInformation($"Authority URI: {configuration.GetValue<string>("ApplicationSettings:Authority")}");
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
             services
 
@@ -21,11 +21,11 @@ namespace Jp.Management.Configuration
                 })
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = JpProjectConfiguration.IdentityServerUrl;
+                    options.Authority = configuration.GetValue<string>("ApplicationSettings:Authority");
                     options.RequireHttpsMetadata = false;
                     options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
                     options.ApiName = "jp_api";
-                    
+
                 });
         }
 

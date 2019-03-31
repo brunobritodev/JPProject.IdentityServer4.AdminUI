@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using IdentityServer4.EntityFramework.Options;
+﻿using IdentityServer4.EntityFramework.Options;
 using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
@@ -8,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Jp.Infra.Migrations.Sql.Configuration
 {
@@ -15,7 +14,7 @@ namespace Jp.Infra.Migrations.Sql.Configuration
     {
         public static IServiceCollection AddIdentitySqlServer(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+            var connectionString = configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityConfig).GetTypeInfo().Assembly.GetName().Name;
 
             var operationalStoreOptions = new OperationalStoreOptions();

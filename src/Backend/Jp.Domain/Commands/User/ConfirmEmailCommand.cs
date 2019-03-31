@@ -4,7 +4,6 @@ namespace Jp.Domain.Commands.User
 {
     public class ConfirmEmailCommand : UserCommand
     {
-        public string Code { get; }
 
         public ConfirmEmailCommand(string code, string email)
         {

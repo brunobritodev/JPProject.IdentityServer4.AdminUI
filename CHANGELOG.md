@@ -1,6 +1,8 @@
 # v1.2.2
 
 Added ENV for Default User and Pass, to autofill Login Page. Specially made for Dev and Docker environments
+Changed all Configurations to respect inheritance from IConfiguration
+When a registered user login through another external provider, eg google or facebook, then add new login instead try to register it again.
 
 # v1.2.1
 

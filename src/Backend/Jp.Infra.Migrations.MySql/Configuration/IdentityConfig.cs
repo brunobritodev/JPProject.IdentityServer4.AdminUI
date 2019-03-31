@@ -1,13 +1,12 @@
 ﻿using IdentityServer4.EntityFramework.Options;
 using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using System.Reflection;
-using Jp.Infra.Data.Context;
 
 namespace Jp.Infra.Migrations.MySql.Configuration
 {
@@ -15,7 +14,7 @@ namespace Jp.Infra.Migrations.MySql.Configuration
     {
         public static IServiceCollection AddIdentityMySql(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
+            var connectionString = configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityConfig).GetTypeInfo().Assembly.GetName().Name;
 
             var operationalStoreOptions = new OperationalStoreOptions();

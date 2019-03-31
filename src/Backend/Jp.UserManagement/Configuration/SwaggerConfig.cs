@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
 
 namespace Jp.Management.Configuration
 {
     public static class SwaggerConfig
     {
-        public static IServiceCollection AddSwagger(this IServiceCollection services)
+        public static IServiceCollection AddSwagger(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSwaggerGen(options =>
             {
@@ -24,7 +24,7 @@ namespace Jp.Management.Configuration
                 options.AddSecurityDefinition("oauth2", new OAuth2Scheme
                 {
                     Flow = "implicit",
-                    AuthorizationUrl = $"{JpProjectConfiguration.IdentityServerUrl}/connect/authorize",
+                    AuthorizationUrl = $"{configuration.GetValue<string>("ApplicationSettings:Authority")}/connect/authorize",
                     Scopes = new Dictionary<string, string> {
                         { "jp_api.user", "User Management API - full access" },
                         { "jp_api.is4", "IS4 Management API - full access" },

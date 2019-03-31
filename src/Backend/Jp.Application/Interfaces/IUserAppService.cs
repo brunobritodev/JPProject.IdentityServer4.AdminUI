@@ -19,5 +19,6 @@ namespace Jp.Application.Interfaces
         Task<UserViewModel> FindByNameAsync(string username);
         Task<UserViewModel> FindByEmailAsync(string username);
         Task<UserViewModel> FindByProviderAsync(string provider, string providerUserId);
+        Task AddLogin(SocialViewModel user);
     }
 }

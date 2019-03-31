@@ -82,6 +82,12 @@ namespace Jp.Application.Services
             return _mapper.Map<UserViewModel>(user);
         }
 
+        public Task AddLogin(SocialViewModel model)
+        {
+            var registerCommand = _mapper.Map<AddLoginCommand>(model);
+            return Bus.SendCommand(registerCommand);
+        }
+
         public Task<bool> CheckUsername(string userName)
         {
             return _userService.UsernameExist(userName);
@@ -97,8 +103,6 @@ namespace Jp.Application.Services
             var model = await _userService.FindByLoginAsync(provider, providerUserId);
             return _mapper.Map<RegisterUserViewModel>(model);
         }
-
-     
 
         public void Dispose()
         {

@@ -30,6 +30,7 @@ namespace Jp.UI.SSO
             {
                 builder.AddUserSecrets<Startup>();
             }
+            
 
             Configuration = builder.Build();
             _environment = environment;

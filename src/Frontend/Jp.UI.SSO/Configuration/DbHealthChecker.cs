@@ -1,6 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using System.Data.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace Jp.UI.SSO.Configuration
 {
@@ -8,9 +7,10 @@ namespace Jp.UI.SSO.Configuration
     {
         public bool TestConnection(DbContext context)
         {
-            
+
             try
             {
+                Log.Information(context.Database.GetDbConnection().ConnectionString);
                 context.Database.GetPendingMigrations();   // Check the database connection
 
                 return true;

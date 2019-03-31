@@ -90,7 +90,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                 //await _userManager.AddClaimAsync(newUser, new Claim("User", "Write"));
 
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-                var callbackUrl = Environment.GetEnvironmentVariable("USER_MANAGEMENT_URI") ?? $"{_config.GetSection("ApplicationSettings").GetSection("UserManagementURL").Value}/confirm-email?user={user.Email.UrlEncode()}&code={code.UrlEncode()}";
+                var callbackUrl = $"{_config.GetValue<string>("ApplicationSettings:UserManagementURL")}/confirm-email?user={user.Email.UrlEncode()}&code={code.UrlEncode()}";
                 await _emailSender.SendEmailConfirmationAsync(user.Email, callbackUrl);
 
 
@@ -162,7 +162,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             // For more information on how to enable account confirmation and password reset please
             // visit https://go.microsoft.com/fwlink/?LinkID=532713
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var callbackUrl = $"{_config.GetSection("WebAppUrl").Value}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
+            var callbackUrl = $"{_config.GetValue<string>("ApplicationSettings:UserManagementURL")}/reset-password?email={user.Email.UrlEncode()}&code={code.UrlEncode()}";
 
             await _emailSender.SendEmailAsync(user.Email, "Reset Password", $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
 
@@ -217,6 +217,8 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
             return null;
         }
+
+
 
         public async Task<bool> UpdateProfileAsync(UpdateProfileCommand command)
         {
@@ -567,6 +569,17 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         public Task<int> Count(string search)
         {
             return !string.IsNullOrEmpty(search) ? _userManager.Users.Where(UserFind(search)).CountAsync() : _userManager.Users.CountAsync();
+        }
+
+        public async Task<Guid?> AddLoginAsync(string email, string provider, string providerId)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                return null;
+
+            await AddLoginAsync(user, provider, providerId);
+
+            return user.Id;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Jp.Infra.CrossCutting.Tools.CloudServices.Storage
 
         private async Task<CloudBlobContainer> GetBlobContainer()
         {
-            var storageCredentials = new StorageCredentials(_configuration.GetSection("Storage").GetSection("AccountName").Value, _configuration.GetSection("Storage").GetSection("AccountKey").Value);
+            var storageCredentials = new StorageCredentials(_configuration.GetValue<string>("Storage:AccountName"), _configuration.GetValue<string>("Storage:AccountKey"));
             var cloudStorageAccount = new CloudStorageAccount(storageCredentials, true);
             var cloudBlobClient = cloudStorageAccount.CreateCloudBlobClient();
             var container = cloudBlobClient.GetContainerReference("images");
