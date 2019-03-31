@@ -37,6 +37,7 @@ services:
             ApplicationSettings:DefaultEmail: bhdebrito@gmail.com
             ApplicationSettings:UserManagementURL: http://localhost:4200
             ApplicationSettings:IS4AdminUi: http://localhost:4300
+            ApplicationSettings:ResourceServerURL: http://localhost:5003
 
     # #############################
     # # Management API
