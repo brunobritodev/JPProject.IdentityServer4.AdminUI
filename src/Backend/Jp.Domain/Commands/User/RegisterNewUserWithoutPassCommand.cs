@@ -5,7 +5,6 @@ namespace Jp.Domain.Commands.User
     public class RegisterNewUserWithoutPassCommand : UserCommand
     {
       
-
         public RegisterNewUserWithoutPassCommand(string username, string email, string name, string picture, string provider, string providerId)
         {
             Provider = provider;

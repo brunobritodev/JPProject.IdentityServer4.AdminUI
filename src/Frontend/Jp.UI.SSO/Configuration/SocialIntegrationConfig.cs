@@ -16,13 +16,13 @@ namespace Jp.UI.SSO.Configuration
             var authBuilder = services.AddAuthentication();
 
 
-            if (configuration.GetSection("ExternalLogin").GetSection("Google").Exists())
+            if (configuration.GetSection("ExternalLogin:Google").Exists())
             {
                 authBuilder.AddGoogle("Google", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    options.ClientId = configuration.GetSection("ExternalLogin").GetSection("Google").GetSection("ClientId").Value;
-                    options.ClientSecret = configuration.GetSection("ExternalLogin").GetSection("Google").GetSection("ClientSecret").Value;
+                    options.ClientId = configuration.GetValue<string>("ExternalLogin:Google:ClientId");
+                    options.ClientSecret = configuration.GetValue<string>("ExternalLogin:Google:ClientSecret");
                     options.Events = new OAuthEvents
                     {
                         OnCreatingTicket = context =>
@@ -35,13 +35,13 @@ namespace Jp.UI.SSO.Configuration
                 });
             }
 
-            if (configuration.GetSection("ExternalLogin").GetSection("Facebook").Exists())
+            if (configuration.GetSection("ExternalLogin:Facebook").Exists())
             {
                 authBuilder.AddFacebook("Facebook", options =>
                     {
                         options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                        options.ClientId = configuration.GetSection("ExternalLogin").GetSection("Facebook").GetSection("ClientId").Value;
-                        options.ClientSecret = configuration.GetSection("ExternalLogin").GetSection("Facebook").GetSection("ClientSecret").Value;
+                        options.ClientId = configuration.GetValue<string>("ExternalLogin:Facebook:ClientId");
+                        options.ClientSecret = configuration.GetValue<string>("ExternalLogin:Facebook:ClientSecret");
                         options.Fields.Add("picture");
                         options.Events = new OAuthEvents
                         {

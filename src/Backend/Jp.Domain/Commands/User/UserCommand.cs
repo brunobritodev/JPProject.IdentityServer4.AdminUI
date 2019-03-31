@@ -21,5 +21,7 @@ namespace Jp.Domain.Commands.User
         public DateTimeOffset? LockoutEnd { get; protected set; }
         public bool LockoutEnabled { get; protected set; }
         public int AccessFailedCount { get; protected set; }
+        public string Code { get; protected set; }
+
     }
 }

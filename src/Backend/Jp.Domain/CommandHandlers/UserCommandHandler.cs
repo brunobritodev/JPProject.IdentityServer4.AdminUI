@@ -17,7 +17,8 @@ namespace Jp.Domain.CommandHandlers
         IRequestHandler<RegisterNewUserWithProviderCommand, bool>,
         IRequestHandler<SendResetLinkCommand, bool>,
         IRequestHandler<ResetPasswordCommand, bool>,
-        IRequestHandler<ConfirmEmailCommand, bool>
+        IRequestHandler<ConfirmEmailCommand, bool>,
+        IRequestHandler<AddLoginCommand, bool>
     {
         private readonly IUserService _userService;
 
@@ -47,6 +48,21 @@ namespace Jp.Domain.CommandHandlers
                 phoneNumber: request.PhoneNumber,
                 picture: request.Picture
             );
+
+            var emailAlreadyExist = await _userService.FindByEmailAsync(user.Email);
+            if (emailAlreadyExist != null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1001", "E-mail already exist. If you don't remember your passwork, reset it."));
+                return false;
+            }
+            var usernameAlreadyExist = await _userService.FindByNameAsync(user.UserName);
+
+            if (usernameAlreadyExist != null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1002", "Username already exist. If you don't remember your passwork, reset it."));
+                return false;
+            }
+
             var id = await _userService.CreateUserWithPass(user, request.Password);
             if (id.HasValue)
             {
@@ -72,6 +88,21 @@ namespace Jp.Domain.CommandHandlers
                 phoneNumber: request.PhoneNumber,
                 picture: request.Picture
             );
+
+            var emailAlreadyExist = await _userService.FindByEmailAsync(user.Email);
+            if (emailAlreadyExist != null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1001", "E-mail already exist. If you don't remember your passwork, reset it."));
+                return false;
+            }
+            var usernameAlreadyExist = await _userService.FindByNameAsync(user.UserName);
+
+            if (usernameAlreadyExist != null)
+            {
+                await Bus.RaiseEvent(new DomainNotification("1002", "Username already exist. If you don't remember your passwork, reset it."));
+                return false;
+            }
+
             var id = await _userService.CreateUserWithProvider(user, request.Provider, request.ProviderId);
             if (id.HasValue)
             {
@@ -159,6 +190,22 @@ namespace Jp.Domain.CommandHandlers
             return false;
         }
 
+        public async Task<bool> Handle(AddLoginCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.IsValid())
+            {
+                NotifyValidationErrors(request);
+                return false; ;
+            }
+
+            var result = await _userService.AddLoginAsync(request.Email, request.Provider, request.ProviderId);
+            if (result.HasValue)
+            {
+                await Bus.RaiseEvent(new NewLoginAddedEvent(result.Value, request.Email, request.Provider, request.ProviderId));
+                return true;
+            }
+            return false;
+        }
     }
 
 

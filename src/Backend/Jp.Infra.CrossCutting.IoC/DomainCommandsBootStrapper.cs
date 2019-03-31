@@ -70,6 +70,7 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<SendResetLinkCommand, bool>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<ResetPasswordCommand, bool>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<ConfirmEmailCommand, bool>, UserCommandHandler>();
+            services.AddScoped<IRequestHandler<AddLoginCommand, bool>, UserCommandHandler>();
             
 
             /*

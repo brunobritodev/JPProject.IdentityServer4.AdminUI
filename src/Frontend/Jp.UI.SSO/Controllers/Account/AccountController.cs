@@ -10,9 +10,9 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Notifications;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
+using Jp.UI.SSO.Util;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +25,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
-using Jp.UI.SSO.Util;
 
 namespace Jp.UI.SSO.Controllers.Account
 {
@@ -37,6 +36,7 @@ namespace Jp.UI.SSO.Controllers.Account
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
+        private readonly IConfiguration _configuration;
         private readonly DomainNotificationHandler _notifications;
 
         public AccountController(
@@ -55,6 +55,7 @@ namespace Jp.UI.SSO.Controllers.Account
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
+            _configuration = configuration;
             _notifications = (DomainNotificationHandler)notifications;
         }
 
@@ -79,13 +80,13 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public IActionResult Register()
         {
-            var url = $"{JpProjectConfiguration.UserManagementUrl}/register";
+            var url = $"{_configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}/register";
             return Redirect(url);
         }
 
         public IActionResult ForgotPassword()
         {
-            var url = $"{JpProjectConfiguration.UserManagementUrl}/recover";
+            var url = $"{_configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}/recover";
             return Redirect(url);
         }
         /// <summary>
@@ -415,6 +416,7 @@ namespace Jp.UI.SSO.Controllers.Account
 
             return new LoginViewModel
             {
+                EnableExternalProviders = _configuration.GetValue<bool>("ApplicationSettings:EnableExternalProviders"),
                 AllowRememberLogin = AccountOptions.AllowRememberLogin,
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,
@@ -616,7 +618,14 @@ namespace Jp.UI.SSO.Controllers.Account
                 Provider = provider,
                 ProviderId = providerUserId
             };
-            await _userAppService.RegisterWithoutPassword(user);
+
+            var userExist = await _userAppService.CheckUsername(user.Username) ||
+                            await _userAppService.CheckEmail(user.Email);
+
+            if (userExist)
+                await _userAppService.AddLogin(user);
+            else
+                await _userAppService.RegisterWithoutPassword(user);
 
             return await _userAppService.FindByProviderAsync(provider, providerUserId);
         }

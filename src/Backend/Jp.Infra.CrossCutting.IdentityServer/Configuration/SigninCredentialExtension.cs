@@ -30,7 +30,7 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
         public static IIdentityServerBuilder AddSigninCredentialFromConfig(
             this IIdentityServerBuilder builder, IConfigurationSection options, ILogger logger, IHostingEnvironment env)
         {
-            string keyType = System.Environment.GetEnvironmentVariable("CERTIFICATE_TYPE") ?? options.GetSection("Type").Value;
+            string keyType = options.GetValue<string>("Type");
             logger.LogInformation($"SigninCredentialExtension keyType is {keyType}");
 
             switch (keyType)

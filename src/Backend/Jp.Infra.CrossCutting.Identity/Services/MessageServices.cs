@@ -31,20 +31,18 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             };
 
             //Be careful that the SmtpClient class is the one from Mailkit not the framework!
-            using (var emailClient = new SmtpClient())
+            using (var client = new SmtpClient())
             {
-                //The last parameter here is to use SSL (Which you should!)
-                await emailClient.ConnectAsync(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, false);
+                client.ServerCertificateValidationCallback = (s, c, h, e) => true;
 
-                //Remove any OAuth functionality as we won't be using it. 
-                //emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
+                client.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, _emailConfiguration.UseSsl);
+                client.AuthenticationMechanisms.Remove("XOAUTH2");
+                client.Authenticate(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
 
-                await emailClient.AuthenticateAsync(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
-
-                await emailClient.SendAsync(mimeMessage);
-
-                await emailClient.DisconnectAsync(true);
+                await client.SendAsync(mimeMessage);
+                client.Disconnect(true);
             }
+
         }
     }
 

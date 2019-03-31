@@ -10,12 +10,5 @@ namespace Jp.Domain.Validations.User
             ValidateEmail();
             ValidateCode();
         }
-
-        protected void ValidateCode()
-        {
-            RuleFor(c => c.Code)
-                .NotEmpty();
-        }
-
     }
 }
