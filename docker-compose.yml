@@ -30,13 +30,17 @@ services:
         depends_on:
             - jpdatabase
         environment: 
-            DATABASE_TYPE: "MySql"
-            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
-            ASPNETCORE_ENVIRONMENT: "Development"
+            ASPNETCORE_ENVIRONMENT: Development
             ASPNETCORE_URLS: http://+:5000
-            DEFAULT_USER: bruno
-            DEFAULT_PASS: Pa$$word123
-            DEFAULT_EMAIL: bhdebrito@gmail.com
+            CUSTOMCONNSTR_SSOConnection: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            ApplicationSettings:EnableExternalProviders: "false" # Because Auth url is http://jpproject (modified by host to point to 127.0.0.1), then Google and Facebook reject it.
+            ApplicationSettings:DatabaseType: MySql
+            ApplicationSettings:DefaultUser: bruno
+            ApplicationSettings:DefaultPass: Pa$$word123
+            ApplicationSettings:DefaultEmail: bhdebrito@gmail.com
+            ApplicationSettings:UserManagementURL: http://localhost:4200
+            ApplicationSettings:IS4AdminUi: http://localhost:4300
+            CertificateOptions:Type: Temporary
 
     # #############################
     # # Management API
@@ -51,11 +55,11 @@ services:
         depends_on:
             - jpdatabase
         environment: 
-            DATABASE_TYPE: "MySql"
-            CUSTOMCONNSTR_DATABASE_CONNECTION: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
             ASPNETCORE_ENVIRONMENT: "Development"
-            AUTHORITY: "http://jpproject:5000"
             ASPNETCORE_URLS: http://+
+            CUSTOMCONNSTR_SSOConnection: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
+            ApplicationSettings:Authority: "http://jpproject:5000"
+            ApplicationSettings:DatabaseType: MySql
 
     #############################
     # User management UI

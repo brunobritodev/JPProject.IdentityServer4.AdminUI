@@ -1,6 +1,6 @@
 ﻿using IdentityServer4;
 using IdentityServer4.Models;
-using Jp.Infra.CrossCutting.Tools.DefaultConfig;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 
 namespace Jp.UI.SSO.Util
@@ -9,7 +9,7 @@ namespace Jp.UI.SSO.Util
     public class Clients
     {
 
-        public static IEnumerable<Client> GetAdminClient()
+        public static IEnumerable<Client> GetAdminClient(IConfiguration configuration)
         {
 
             return new List<Client>
@@ -22,11 +22,11 @@ namespace Jp.UI.SSO.Util
 
                     ClientId = "IS4-Admin",
                     ClientName = "IS4-Admin",
-                    ClientUri = JpProjectConfiguration.IdentityServerAdminUrl,
+                    ClientUri = configuration.GetValue<string>("ApplicationSettings:IS4AdminUi"),
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    RedirectUris = { $"{JpProjectConfiguration.IdentityServerAdminUrl}/login-callback"},
-                    AllowedCorsOrigins = { JpProjectConfiguration.IdentityServerAdminUrl},
+                    RedirectUris = { $"{configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")}/login-callback"},
+                    AllowedCorsOrigins = { configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")},
 
                     AllowedScopes =
                     {
@@ -47,9 +47,9 @@ namespace Jp.UI.SSO.Util
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = true,
-                    RedirectUris = { $"{JpProjectConfiguration.UserManagementUrl}/login-callback" },
-                    PostLogoutRedirectUris =  { $"{JpProjectConfiguration.UserManagementUrl}" },
-                    AllowedCorsOrigins = { $"{JpProjectConfiguration.UserManagementUrl}" },
+                    RedirectUris = { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}/login-callback" },
+                    PostLogoutRedirectUris =  { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
+                    AllowedCorsOrigins = { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
                     LogoUri = "~/images/clientLogo/1.jpg",
                     AllowedScopes =
                     {
@@ -70,7 +70,7 @@ namespace Jp.UI.SSO.Util
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris =
                     {
-                        $"{JpProjectConfiguration.ResourceServer}/swagger/oauth2-redirect.html"
+                        $"{configuration.GetValue<string>("ApplicationSettings:ResourceServerURL")}/swagger/oauth2-redirect.html"
                     },
                     AllowedScopes =
                     {

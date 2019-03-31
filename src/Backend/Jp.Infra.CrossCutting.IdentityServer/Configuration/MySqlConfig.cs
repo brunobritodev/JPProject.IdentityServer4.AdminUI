@@ -11,8 +11,8 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
         public static IIdentityServerBuilder UseIdentityServerMySqlDatabase(this IIdentityServerBuilder builder,
             IServiceCollection services, IConfiguration configuration, ILogger logger)
         {
-            var connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_DATABASE_CONNECTION") ?? configuration.GetConnectionString("SSOConnection");
-            var migrationsAssembly = "Jp.Infra.Migrations.MySql.Identity"; //typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
+            var connectionString = configuration.GetConnectionString("SSOConnection");
+            var migrationsAssembly = "Jp.Infra.Migrations.MySql.Identity";
 
             // this adds the config data from DB (clients, resources)
             builder.AddConfigurationStore(options =>

@@ -1,4 +1,6 @@
 
+using MailKit.Security;
+
 namespace Jp.Infra.CrossCutting.Identity.Services
 {
     public interface IEmailConfiguration
@@ -10,5 +12,6 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         string FromName { get; set; }
         string FromAddress { get; set; }
         bool SendEmail { get; set; }
+        bool UseSsl { get; set; }
     }
 }

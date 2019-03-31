@@ -8,7 +8,7 @@ namespace Jp.Domain.Events.User
         public string Email { get; }
         public string Code { get; }
 
-        public EmailConfirmedEvent(string email, string code, Guid aggregateId)
+        public EmailConfirmedEvent( string email, string code, Guid aggregateId)
         {
             Email = email;
             Code = code;

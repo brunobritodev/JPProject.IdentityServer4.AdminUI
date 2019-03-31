@@ -11,6 +11,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Jp.UI.SSO.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace Jp.UI.SSO.Util
 {
@@ -36,6 +37,7 @@ namespace Jp.UI.SSO.Util
         {
             using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
+                var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
                 var userContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityContext>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
@@ -50,16 +52,18 @@ namespace Jp.UI.SSO.Util
                 await storeDb.Database.MigrateAsync();
 
 
-                await EnsureSeedIdentityServerData(id4Context);
-                await EnsureSeedIdentityData(userManager, roleManager);
+                await EnsureSeedIdentityServerData(id4Context, configuration);
+                await EnsureSeedIdentityData(userManager, roleManager, configuration);
             }
         }
 
         /// <summary>
         /// Generate default admin user / role
         /// </summary>
-        private static async Task EnsureSeedIdentityData(UserManager<UserIdentity> userManager,
-            RoleManager<UserIdentityRole> roleManager)
+        private static async Task EnsureSeedIdentityData(
+            UserManager<UserIdentity> userManager,
+            RoleManager<UserIdentityRole> roleManager, 
+            IConfiguration configuration)
         {
             // Create admin role
             if (!await roleManager.RoleExistsAsync("Administrador"))
@@ -70,23 +74,23 @@ namespace Jp.UI.SSO.Util
             }
 
             // Create admin user
-            if (await userManager.FindByNameAsync(Users.AdminUserName) != null) return;
+            if (await userManager.FindByNameAsync(Users.GetUser(configuration)) != null) return;
 
             var user = new UserIdentity
             {
-                UserName = Users.AdminUserName,
-                Email = Users.AdminEmail,
+                UserName = Users.GetUser(configuration),
+                Email = Users.GetEmail(configuration),
                 EmailConfirmed = true,
 
             };
 
-            var result = await userManager.CreateAsync(user, Users.AdminPassword);
+            var result = await userManager.CreateAsync(user, Users.GetPassword(configuration));
 
             if (result.Succeeded)
             {
                 await userManager.AddClaimAsync(user, new Claim("is4-rights", "manager"));
-                await userManager.AddClaimAsync(user, new Claim("username", Users.AdminUserName));
-                await userManager.AddClaimAsync(user, new Claim("email", Users.AdminEmail));
+                await userManager.AddClaimAsync(user, new Claim("username", Users.GetUser(configuration)));
+                await userManager.AddClaimAsync(user, new Claim("email", Users.GetEmail(configuration)));
                 await userManager.AddToRoleAsync(user, "Administrador");
             }
         }
@@ -94,11 +98,11 @@ namespace Jp.UI.SSO.Util
         /// <summary>
         /// Generate default clients, identity and api resources
         /// </summary>
-        private static async Task EnsureSeedIdentityServerData(JpContext context)
+        private static async Task EnsureSeedIdentityServerData(JpContext context, IConfiguration configuration)
         {
             if (!context.Clients.Any())
             {
-                foreach (var client in Clients.GetAdminClient().ToList())
+                foreach (var client in Clients.GetAdminClient(configuration).ToList())
                 {
                     await context.Clients.AddAsync(client.ToEntity());
                 }

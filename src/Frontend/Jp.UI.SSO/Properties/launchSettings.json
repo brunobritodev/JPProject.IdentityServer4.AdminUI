@@ -20,8 +20,7 @@
                 "ASPNETCORE_URLS": "http://localhost:5000;https://localhost:5001",
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "APPINSIGHTS_INSTRUMENTATIONKEY": "205fabcd-09ee-46f5-bb74-95780fc873da",
-                "DEFAULT_USER": "bruno",
-                "DEFAULT_PASS": "Pa$$word123"
+                
             },
             "applicationUrl": "http://localhost:5000;https://localhost:5001"
         }

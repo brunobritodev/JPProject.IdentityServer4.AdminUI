@@ -9,5 +9,6 @@
         public string FromName { get; set; }
         public string FromAddress { get; set; }
         public bool SendEmail { get; set; }
+        public bool UseSsl { get; set; }
     }
 }

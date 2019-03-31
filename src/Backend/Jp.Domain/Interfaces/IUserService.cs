@@ -45,5 +45,6 @@ namespace Jp.Domain.Interfaces
         Task<bool> RemoveUserFromRole(string name, string username);
         Task<bool> ResetPasswordAsync(string username, string password);
         Task<int> Count(string search);
+        Task<Guid?> AddLoginAsync(string email, string provider, string providerId);
     }
 }

@@ -47,9 +47,9 @@ namespace Jp.Management
             services.AddPolicies();
 
             // configure auth Server
-            services.AddIdentityServerAuthentication(_logger);
+            services.AddIdentityServerAuthentication(_logger, Configuration);
 
-            services.AddSwagger();
+            services.AddSwagger(Configuration);
 
             // Config automapper
             services.AddAutoMapperSetup();
