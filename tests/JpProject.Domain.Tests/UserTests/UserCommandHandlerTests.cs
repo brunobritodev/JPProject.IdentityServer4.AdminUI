@@ -122,5 +122,26 @@ namespace JpProject.Domain.Tests.UserTests
 
             Assert.False(result);
         }
+
+        [Fact]
+        public async Task ShouldNotGenerateResetLinkIfNotProvideUsername()
+        {
+            var command = UserCommandFaker.GenerateSendResetLinkCommand(email: string.Empty).Generate();
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+
+            Assert.False(result);
+        }
+        [Fact]
+        public async Task ShouldNotGenerateResetLinkIfNotProvideEmail()
+        {
+            var command = UserCommandFaker.GenerateSendResetLinkCommand(email: string.Empty).Generate();
+
+            var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+
+            Assert.False(result);
+        }
     }
 }
