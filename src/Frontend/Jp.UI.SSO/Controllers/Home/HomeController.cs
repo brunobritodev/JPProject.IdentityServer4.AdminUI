@@ -66,7 +66,7 @@ namespace Jp.UI.SSO.Controllers.Home
             if (string.IsNullOrEmpty(returnUrl))
                 return RedirectToAction("Index");
 
-            return LocalRedirect(returnUrl);
+            return LocalRedirect(Request.Headers["Referer"].ToString());
         }
     }
 }

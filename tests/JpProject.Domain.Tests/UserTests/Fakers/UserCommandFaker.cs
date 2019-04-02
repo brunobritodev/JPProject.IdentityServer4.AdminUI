@@ -45,6 +45,15 @@ namespace JpProject.Domain.Tests.UserTests.Fakers
             );
         }
 
+        public static Faker<SendResetLinkCommand> GenerateSendResetLinkCommand(string username = null, string email = null)
+        {
+            return new Faker<SendResetLinkCommand>().CustomInstantiator(
+                f => new SendResetLinkCommand(
+                    email ?? f.Person.Email,
+                    f.Person.UserName
+                )
+            );
+        }
 
     }
 }
