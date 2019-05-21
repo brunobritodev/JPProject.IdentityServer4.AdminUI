@@ -27,7 +27,8 @@ namespace Jp.UI.SSO.Util
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris = { $"{configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")}/login-callback"},
                     AllowedCorsOrigins = { configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")},
-
+                    IdentityTokenLifetime = 3600,
+                    AuthorizationCodeLifetime = 3600,
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -51,6 +52,8 @@ namespace Jp.UI.SSO.Util
                     PostLogoutRedirectUris =  { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
                     AllowedCorsOrigins = { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
                     LogoUri = "~/images/clientLogo/1.jpg",
+                    IdentityTokenLifetime = 3600,
+                    AuthorizationCodeLifetime = 3600,
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
