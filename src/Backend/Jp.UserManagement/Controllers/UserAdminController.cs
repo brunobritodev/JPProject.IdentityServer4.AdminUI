@@ -44,7 +44,7 @@ namespace Jp.Management.Controllers
         [HttpGet, Route("list")]
         public async Task<ActionResult<DefaultResponse<ListOfUsersViewModel>>> List([Range(1, 50)] int? q = 10, [Range(1, int.MaxValue)] int? p = 1, string s = null)
         {
-            var irs = await _userManageAppService.GetUsers(new PagingViewModel(q?? 10, p ?? 1, s));
+            var irs = await _userManageAppService.GetUsers(new PagingViewModel(q ?? 10, p ?? 1, s));
             return Response(irs);
         }
 
@@ -168,7 +168,7 @@ namespace Jp.Management.Controllers
             return Response(clients);
         }
 
-        [Route("reset-password"), HttpPost, Authorize(Policy = "Admin")]
+        [Route("reset-password"), HttpPut, Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> ResetPassword([FromBody] AdminChangePasswordViewodel model)
         {
             if (!ModelState.IsValid)

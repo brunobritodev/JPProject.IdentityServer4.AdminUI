@@ -11,6 +11,9 @@
     <div class="card-header">
         <a class="btn btn-outline-primary mb-3" [routerLink]="[ '/users/add' ]"><i class="fa fa-plus-circle"></i>
             {{ 'users.new-user' | translate }}</a>
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search" (keyup)="findUser($event)" (blur)="findUser($event)"  />
+            </div>
     </div>
 
     <div class="card-body">

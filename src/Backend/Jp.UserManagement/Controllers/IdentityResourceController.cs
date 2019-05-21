@@ -16,12 +16,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace Jp.Management.Controllers
 {
     [Route("[controller]"), Authorize(Policy = "ReadOnly")]
-    public class IdentityResourceController: ApiController
+    public class IdentityResourceController : ApiController
     {
         private readonly IIdentityResourceAppService _identityResourceAppService;
 
         public IdentityResourceController(
-            INotificationHandler<DomainNotification> notifications, 
+            INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IIdentityResourceAppService identityResourceAppService) : base(notifications, mediator)
         {
