@@ -16,8 +16,7 @@ namespace Jp.UI.SSO.Configuration
 
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
             app.UseXContentTypeOptions();
-
-            app.UseXfo(options => options.Deny());
+            app.UseXfo(options => options.SameOrigin());
             app.UseReferrerPolicy(options => options.NoReferrer());
 
             app.UseCsp(options =>
@@ -26,7 +25,7 @@ namespace Jp.UI.SSO.Configuration
                 options.FrameSources(o => o.Self()
                     // this custom source can be removed in your build
                     .CustomSources("https://ghbtns.com"));
-                options.FrameAncestors(o => o.Self());
+                options.FrameAncestors(o => o.CustomSources("http:"));
                 options.StyleSources(o => o.Self());
                 options.ObjectSources(o => o.None());
                 options.ImageSources(a =>
@@ -36,7 +35,7 @@ namespace Jp.UI.SSO.Configuration
                 });
                 options.FontSources(configuration => configuration.Self().CustomSources("https://fonts.googleapis.com/", "https://fonts.gstatic.com/"));
                 options.ConnectSources(s => s.CustomSources("https://dc.services.visualstudio.com"));
-                options.ScriptSources(s => s.Self().CustomSources("https://az416426.vo.msecnd.net"));
+                options.ScriptSources(s => s.Self().CustomSources("https://az416426.vo.msecnd.net", @"sha256-ZT3q7lL9GXNGhPTB1Vvrvds2xw/kOV0zoeok2tiV23I="));
 
             });
         }

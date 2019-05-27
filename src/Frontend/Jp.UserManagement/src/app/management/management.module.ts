@@ -2,11 +2,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../core/auth/auth.guard';
+import { AuthGuardWithForcedLogin } from '../core/auth/auth-guard-with-forced-login.service';
 
 const routes: Routes = [
     {
-        path: "", canActivate: [AuthGuard], data: { title: 'Management' },
+        path: "", canActivate: [AuthGuardWithForcedLogin], data: { title: 'Management' },
         children: [
             { path: "", redirectTo: "home", pathMatch: "full" },
             { path: "home", loadChildren: "app/management/home/home.module#HomeModule" },

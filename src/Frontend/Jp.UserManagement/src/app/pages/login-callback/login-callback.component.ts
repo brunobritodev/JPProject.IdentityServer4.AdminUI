@@ -4,33 +4,25 @@ import { Router } from "@angular/router";
 import { environment } from "@env/environment";
 import { SettingsService } from "../../core/settings/settings.service";
 import { TranslatorService } from '@core/translator/translator.service';
+import { OAuthenticationService } from "@core/auth/auth.service";
 
 @Component({
     selector: "app-dashboard",
     templateUrl: "login-callback.component.html",
-    providers: [SettingsService,TranslatorService]
+    providers: [SettingsService, TranslatorService]
 })
 export class LoginCallbackComponent implements OnInit {
 
     constructor(
-        private oauthService: OAuthService,
+        private authService: OAuthenticationService,
         private router: Router,
         private settingsService: SettingsService,
         public translator: TranslatorService) { }
 
     ngOnInit() {
-        this.settingsService.loadDiscoveryDocumentAndTryLogin().subscribe(doc => {
-            if (!environment.production)
-                console.log(doc);
-
-            if (!this.oauthService.hasValidIdToken()) {
-                this.oauthService.initImplicitFlow();
-            } else {
-                // for race conditions, sometimes home don't load
-                setTimeout(() => {
-                    this.router.navigate(["/home"]);
-                }, 1000);
-            }
+        this.authService.canActivateProtectedRoutes$.subscribe(yes => {
+            if (yes)
+                return this.router.navigate(['/home']);
         });
     }
 }

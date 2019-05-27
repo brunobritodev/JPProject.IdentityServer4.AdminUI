@@ -5,7 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { DefaultLayoutComponent } from "./core";
 
 import { PagesModule } from "./pages/pages.module";
-import { AuthGuard } from "./core/auth/auth.guard";
+
 
 
 export const routes: Routes = [
@@ -27,7 +27,6 @@ export const routes: Routes = [
         RouterModule.forRoot(routes),
 
     ],
-    exports: [RouterModule],
-    providers: [AuthGuard]
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

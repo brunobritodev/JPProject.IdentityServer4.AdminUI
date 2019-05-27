@@ -111,6 +111,13 @@ We'll love it! Please [Read the docs](https://jp-project.readthedocs.io/en/lates
 If you need help building or running your Jp Project platform
 There are several ways we can help you out.
 
+## v1.3
+
+- Bug fixes
+  - angular-oauth2-oidc Session Improvements for Angular Apps. Incluind Admin UI
+  - Some Action attributes was HttpPost instead HttpPut (fixed)
+- New unity tests
+
 ## v1.2
 
 - Docker support

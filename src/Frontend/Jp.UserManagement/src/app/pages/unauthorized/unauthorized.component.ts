@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { SettingsService } from "../../core/settings/settings.service";
 import { TranslatorService } from '@core/translator/translator.service';
+import { OAuthenticationService } from "@core/auth/auth.service";
 
 @Component({
   selector: "app-dashboard",
@@ -8,11 +9,13 @@ import { TranslatorService } from '@core/translator/translator.service';
   providers: [TranslatorService]
 })
 export class UnauthorizedComponent {
-    constructor(private settingsService: SettingsService,public translator: TranslatorService){
+    constructor(
+        public authService: OAuthenticationService,
+        public translator: TranslatorService){
         
     }
 
     public login() {
-        this.settingsService.login();
+        this.authService.login();
     }
  }

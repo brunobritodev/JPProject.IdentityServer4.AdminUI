@@ -2,13 +2,13 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
 import { ToasterService } from "angular2-toaster";
-import { AuthGuard } from "../core/auth/auth.guard";
+import { AuthGuardWithForcedLogin } from "@core/auth/auth-guard-with-forced-login.service";
 
 const routes: Routes = [
     {
         path: "",
         canActivate: [
-            AuthGuard
+            AuthGuardWithForcedLogin
         ],
         children: [
             { path: "", redirectTo: "home", pathMatch: "full" },
@@ -31,7 +31,7 @@ const routes: Routes = [
     declarations: [
     ],
     providers: [
-        AuthGuard,
+        AuthGuardWithForcedLogin,
         ToasterService
     ],
     exports: [
