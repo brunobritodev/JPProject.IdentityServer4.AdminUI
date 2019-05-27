@@ -61,14 +61,11 @@ import { AppRoutingModule } from "./app.routing";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts/ng2-charts";
-import { OAuthModule, OAuthStorage } from "angular-oauth2-oidc";
-import { CoreModule } from "./core/core.module";
-import { AuthInterceptor } from "./core/interceptors/AuthInterceptor";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { TranslatorService } from "./core/translator/translator.service";
+import { CoreModule } from "./core/core.module";
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -78,17 +75,12 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         BrowserModule,
         HttpClientModule,
+        CoreModule.forRoot(),
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
-            }
-        }),
-        OAuthModule.forRoot({
-            resourceServer: {
-                allowedUrls: ["https://localhost:5003"],
-                sendAccessToken: true
             }
         }),
         BrowserAnimationsModule, 
@@ -110,9 +102,7 @@ export function createTranslateLoader(http: HttpClient) {
         ...APP_CONTAINERS
     ],
     providers: [
-        { provide: AuthServiceConfig, useFactory: getAuthServiceConfigs },
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-
+        { provide: AuthServiceConfig, useFactory: getAuthServiceConfigs }
     ],
     bootstrap: [AppComponent]
 })

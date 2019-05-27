@@ -11,7 +11,6 @@ import { CoreModule } from "./core/core.module";
 import { LayoutModule } from "./shared/layout/layout.module";
 import { SharedModule } from "./shared/shared.module";
 import { RoutesModule } from "./app.routing.module";
-import { AuthInterceptor } from "./core/interceptors/auth.interceptor";
 import { OAuthModule } from "angular-oauth2-oidc";
 import { environment } from "../environments/environment";
 
@@ -20,25 +19,7 @@ export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
-// import dev only modules
-let dev = [
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptor,
-        multi: true
-    }
-];
-let INTERCEPTORS = [
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptor,
-        multi: true
-    }
-];
-// if production clear dev imports and set to prod mode
-if (process.env.NODE_ENV === "production") {
-    dev = [];
-}
+
 
 @NgModule({
     declarations: [
@@ -47,13 +28,7 @@ if (process.env.NODE_ENV === "production") {
     imports: [
         HttpClientModule,
         BrowserAnimationsModule, // required for ng2-tag-input
-        OAuthModule.forRoot({
-            resourceServer: {
-                allowedUrls: [ environment.ResourceServer],
-                sendAccessToken: true
-            }
-        }),
-        CoreModule,
+        CoreModule.forRoot(),
         LayoutModule,
         SharedModule.forRoot(),
         RoutesModule,
@@ -66,8 +41,6 @@ if (process.env.NODE_ENV === "production") {
         })
     ],
     providers: [
-        ...dev,
-        ...INTERCEPTORS
     ],
     bootstrap: [AppComponent]
 })

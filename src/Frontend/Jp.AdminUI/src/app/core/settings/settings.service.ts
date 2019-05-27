@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { UserProfile } from "@shared/viewModel/userProfile.model";
-import { environment } from "@env/environment";
 import { HttpClient } from "@angular/common/http";
 import { OAuthService } from "angular-oauth2-oidc";
 import { of, from, Observable, defer } from "rxjs";
@@ -73,15 +72,6 @@ export class SettingsService {
         this.oauthService.logOut();
     }
 
-    public loadDiscoveryDocumentAndTryLogin(): Observable<any> {
-        if (this.doc == null)
-            return this.loadDiscoveryDocumentAndTryLoginObservable;
-
-        return of(this.doc);
-    }
-
-    public setDoc(doc: any) { this.doc = doc; }
-
     public getUserProfile(): Observable<object> {
         if (this.user == null) {
             return this.userProfileObservable;
@@ -91,17 +81,6 @@ export class SettingsService {
 
     set userpicture(image: string) {
         this.user.picture = image;
-    }
-
-    public login() {
-        if (!this.oauthService.hasValidIdToken() || !this.oauthService.hasValidAccessToken()) {
-            this.oauthService.initImplicitFlow();
-        } else {
-            // for race conditions, sometimes dashboard don't load
-            setTimeout(() => {
-                this.router.navigate(["/home"]);
-            }, 1000);
-        }
     }
 
     public saveLayout() {

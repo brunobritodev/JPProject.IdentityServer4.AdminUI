@@ -74,8 +74,6 @@ export class UserListComponent implements OnInit {
                             swal("Error!", errors[0], 'error');
                         }
                     );
-
-
                 } else {
                     swal("Cancelled", m["cancelled"], 'error');
                 }

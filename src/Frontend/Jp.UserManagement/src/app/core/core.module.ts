@@ -2,16 +2,31 @@ import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core
 import { CommonModule } from '@angular/common';
 import { SettingsService } from './settings/settings.service';
 import { TranslatorService } from './translator/translator.service';
+import { AuthConfig, OAuthModuleConfig, ValidationHandler, OAuthStorage, JwksValidationHandler, OAuthModule } from 'angular-oauth2-oidc';
+import { authConfig } from './auth/auth.config';
+import { authModuleConfig } from './auth/auth-module-config';
+import { OAuthenticationService } from "./auth/auth.service";
+import { AuthGuardWithForcedLogin } from './auth/auth-guard-with-forced-login.service';
+import { AuthGuard } from './auth/auth-guard.service';
 
+export function storageFactory(): OAuthStorage {
+    return localStorage;
+}
 
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        OAuthModule.forRoot(),
+    ],
     // declarations: [TitleComponent],
     // exports: [TitleComponent],
     providers: [
         TranslatorService,
-        SettingsService
+        SettingsService,
+        OAuthenticationService,
+        AuthGuard,
+        AuthGuardWithForcedLogin,
     ]
 })
 export class CoreModule {
@@ -27,7 +42,11 @@ export class CoreModule {
             ngModule: CoreModule,
             providers: [
                 TranslatorService,
-                SettingsService
+                SettingsService,
+                { provide: AuthConfig, useValue: authConfig },
+                { provide: OAuthModuleConfig, useValue: authModuleConfig },
+                { provide: ValidationHandler, useClass: JwksValidationHandler },
+                { provide: OAuthStorage, useFactory: storageFactory }
             ]
         };
     }

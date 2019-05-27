@@ -6,6 +6,8 @@ import { DefaultResponse } from '../../../shared/view-model/default-response.mod
 import { AccountManagementService } from '../account-management.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslatorService } from '@core/translator/translator.service';
+import { OAuthenticationService } from '@core/auth/auth.service';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
     templateUrl: 'profile.component.html',
@@ -29,13 +31,14 @@ export class ProfileComponent implements OnInit {
         private settings: SettingsService, 
         private profileService: AccountManagementService,
         private toastr: ToastrService,
-        public translator: TranslatorService
+        public translator: TranslatorService,
+        private authService: OAuthService
     ) {
 
     }
 
     ngOnInit() {
-        this.settings.getUserProfile().subscribe(a => this.userProfile = a);
+        this.authService.loadUserProfile().then(a => this.userProfile = a);
         this.errors = [];
         this.profileService.getUserData().subscribe((a: DefaultResponse<User>) => {
             this.user = a.data;

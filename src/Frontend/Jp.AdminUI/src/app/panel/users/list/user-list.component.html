@@ -57,48 +57,6 @@
                     </tr>
                 </tbody>
             </table>
-            <!-- <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <td> {{ 'users.list.name' | translate }}</td>
-                        <td>{{ 'users.list.username' | translate }}</td>
-                        <td>{{ 'users.list.email' | translate }}</td>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of users">
-                        <td>
-                            <div class="btn-group">
-                                <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs"
-                                    placement="top" [tooltip]="'general.edit' | translate"><i
-                                        class="fa fa-edit"></i></a>
-                                <button (click)="showLogs(user)" class="btn btn-outline-primary btn-xs" placement="top"
-                                    [tooltip]="'users.list.log-tooltip' | translate"><i
-                                        class="fas fa-history"></i></button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="media">
-                                <a class="float-left" href="#">
-                                    <img *ngIf="user.picture" class="img-fluid circle" [src]="user.picture" />
-                                </a>
-                                <div class="media-body">
-                                    <span>{{user.name}}</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td> {{user.userName}}</td>
-                        <td>{{user.email}}</td>
-                        <td>
-                            <button class="btn btn-danger btn-xs" placement="top"
-                                [tooltip]="'general.remove' | translate" (click)="remove(user.id)"><i
-                                    class="fa fa-times"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table> -->
         </div>
 
     </div>

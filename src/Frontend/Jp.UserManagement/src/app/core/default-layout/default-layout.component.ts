@@ -5,6 +5,7 @@ import { tap } from "rxjs/operators";
 import { environment } from "@env/environment";
 import { Router } from "@angular/router";
 import { TranslatorService } from "../translator/translator.service";
+import { OAuthenticationService } from "../auth/auth.service";
 
 @Component({
     selector: "app-dashboard",
@@ -19,6 +20,7 @@ export class DefaultLayoutComponent implements OnInit {
     public element: HTMLElement = document.body;
     public userProfile: any;
     constructor(public settingsService: SettingsService,
+        public authService: OAuthenticationService,
         private router: Router,
         public translator: TranslatorService) {
         this.changes = new MutationObserver((mutations) => {
@@ -35,7 +37,7 @@ export class DefaultLayoutComponent implements OnInit {
     }
 
     public logout() {
-        this.settingsService.logout();
+        this.authService.logout();
     }
 
     public setLang(value) {

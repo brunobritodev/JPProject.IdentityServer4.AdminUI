@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { OAuthService, AuthConfig } from "angular-oauth2-oidc";
 import { Router } from "@angular/router";
-import { environment } from "@env/environment";
 import { SettingsService } from "../../core/settings/settings.service";
+import { AuthService } from "@core/auth/auth.service";
+import { tap } from "rxjs/operators";
 
 @Component({
     selector: "app-login-callback",
@@ -12,23 +12,15 @@ import { SettingsService } from "../../core/settings/settings.service";
 export class LoginCallbackComponent implements OnInit {
 
     constructor(
-        private oauthService: OAuthService,
+        private authService: AuthService,
         private router: Router,
         public settingsService: SettingsService) { }
 
     ngOnInit() {
-        this.settingsService.loadDiscoveryDocumentAndTryLogin().subscribe(doc => {
-            if (!environment.production)
-                console.log(doc);
-
-            if (!this.oauthService.hasValidIdToken()) {
-                this.oauthService.initImplicitFlow();
-            } else {
-                // for race conditions, sometimes home don't load
-                setTimeout(() => {
-                    this.router.navigate(["/home"]);
-                }, 1000);
-            }
-        });
+        this.authService.canActivateProtectedRoutes$
+            .subscribe(yes => {
+                if (yes)
+                    return this.router.navigate(['/home']);
+            });
     }
 }
