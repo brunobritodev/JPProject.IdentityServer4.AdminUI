@@ -1,4 +1,5 @@
-﻿using IdentityServer4;
+﻿using System;
+using IdentityServer4;
 using IdentityServer4.Models;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
@@ -25,7 +26,10 @@ namespace Jp.UI.SSO.Util
                     ClientUri = configuration.GetValue<string>("ApplicationSettings:IS4AdminUi"),
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    RedirectUris = { $"{configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")}/login-callback"},
+                    RedirectUris = new[] {
+                        $"{configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")}/login-callback",
+                        $"{configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")}/silent-refresh.html"
+                    },
                     AllowedCorsOrigins = { configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")},
                     IdentityTokenLifetime = 3600,
                     AuthorizationCodeLifetime = 3600,
@@ -48,7 +52,10 @@ namespace Jp.UI.SSO.Util
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = true,
-                    RedirectUris = { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}/login-callback" },
+                    RedirectUris =new[] {
+                        $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}/login-callback",
+                        $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}/silent-refresh.html"
+                    },
                     PostLogoutRedirectUris =  { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
                     AllowedCorsOrigins = { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
                     LogoUri = "~/images/clientLogo/1.jpg",

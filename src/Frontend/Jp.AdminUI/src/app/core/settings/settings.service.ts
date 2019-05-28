@@ -68,10 +68,6 @@ export class SettingsService {
 
     }
 
-    public logout() {
-        this.oauthService.logOut();
-    }
-
     public getUserProfile(): Observable<object> {
         if (this.user == null) {
             return this.userProfileObservable;

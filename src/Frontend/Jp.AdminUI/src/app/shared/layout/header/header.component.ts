@@ -8,6 +8,7 @@ import { SettingsService } from "@core/settings/settings.service";
 import { MenuService } from "@core/menu/menu.service";
 import { Router } from "@angular/router";
 import { environment } from "@env/environment";
+import { AuthService } from "@core/auth/auth.service";
 
 @Component({
     selector: "app-header",
@@ -28,6 +29,7 @@ export class HeaderComponent implements OnInit {
         public menu: MenuService,
         public userblockService: UserblockService,
         public settings: SettingsService,
+        public authService: AuthService,
         private router: Router) {
         // show only a few items on demo
         this.menuItems = menu.getMenu().slice(0, 4); // for horizontal layout
@@ -43,7 +45,7 @@ export class HeaderComponent implements OnInit {
     }
 
     public async logout() {
-        await this.settings.logout();
+        await this.authService.logout();
     }
 
     toggleUserBlock(event) {

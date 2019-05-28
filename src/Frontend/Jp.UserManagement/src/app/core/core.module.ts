@@ -3,16 +3,15 @@ import { CommonModule } from '@angular/common';
 import { SettingsService } from './settings/settings.service';
 import { TranslatorService } from './translator/translator.service';
 import { AuthConfig, OAuthModuleConfig, ValidationHandler, OAuthStorage, JwksValidationHandler, OAuthModule } from 'angular-oauth2-oidc';
-import { authConfig } from './auth/auth.config';
 import { authModuleConfig } from './auth/auth-module-config';
 import { OAuthenticationService } from "./auth/auth.service";
 import { AuthGuardWithForcedLogin } from './auth/auth-guard-with-forced-login.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { authProdConfig } from './auth/auth-config.prod';
 
 export function storageFactory(): OAuthStorage {
     return localStorage;
 }
-
 
 @NgModule({
     imports: [
@@ -43,7 +42,7 @@ export class CoreModule {
             providers: [
                 TranslatorService,
                 SettingsService,
-                { provide: AuthConfig, useValue: authConfig },
+                { provide: AuthConfig, useValue: authProdConfig },
                 { provide: OAuthModuleConfig, useValue: authModuleConfig },
                 { provide: ValidationHandler, useClass: JwksValidationHandler },
                 { provide: OAuthStorage, useFactory: storageFactory }
