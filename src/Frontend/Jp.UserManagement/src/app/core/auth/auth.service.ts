@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { OAuthErrorEvent, OAuthService } from 'angular-oauth2-oidc';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { environment } from '@env/environment';
 
 @Injectable({ providedIn: 'root' })
 export class OAuthenticationService {
@@ -38,13 +39,14 @@ export class OAuthenticationService {
         private router: Router,
     ) {
         // Useful for debugging:
-        this.oauthService.events.subscribe(event => {
-            if (event instanceof OAuthErrorEvent) {
-                console.error(event);
-            } else {
-                console.warn(event);
-            }
-        });
+        if (!environment.production)
+            this.oauthService.events.subscribe(event => {
+                if (event instanceof OAuthErrorEvent) {
+                    console.error(event);
+                } else {
+                    console.warn(event);
+                }
+            });
 
         // This is tricky, as it might cause race conditions (where access_token is set in another
         // tab before everything is said and done there.
@@ -80,7 +82,7 @@ export class OAuthenticationService {
     }
 
     public runInitialLoginSequence(): Promise<void> {
-        if (location.hash) {
+        if (location.hash && !environment.production) {
             console.log('Encountered hash fragment, plotting as table...');
             console.table(location.hash.substr(1).split('&').map(kvp => kvp.split('=')));
         }

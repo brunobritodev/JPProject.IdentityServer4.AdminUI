@@ -1,17 +1,17 @@
-import { Component, OnInit } from "@angular/core";
-import { OAuthService, AuthConfig } from "angular-oauth2-oidc";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
-import { environment } from "@env/environment";
 import { SettingsService } from "../../core/settings/settings.service";
 import { TranslatorService } from '@core/translator/translator.service';
 import { OAuthenticationService } from "@core/auth/auth.service";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: "app-dashboard",
     templateUrl: "login-callback.component.html",
     providers: [SettingsService, TranslatorService]
 })
-export class LoginCallbackComponent implements OnInit {
+export class LoginCallbackComponent implements OnInit, OnDestroy {
+    stream: Subscription;
 
     constructor(
         private authService: OAuthenticationService,
@@ -19,10 +19,16 @@ export class LoginCallbackComponent implements OnInit {
         private settingsService: SettingsService,
         public translator: TranslatorService) { }
 
-    ngOnInit() {
-        this.authService.canActivateProtectedRoutes$.subscribe(yes => {
+    public ngOnInit() {
+        this.stream = this.authService.canActivateProtectedRoutes$.subscribe(yes => {
             if (yes)
                 return this.router.navigate(['/home']);
+            else
+                return this.router.navigate(['/login']);
         });
+    }
+
+    public ngOnDestroy() {
+        this.stream.unsubscribe();
     }
 }

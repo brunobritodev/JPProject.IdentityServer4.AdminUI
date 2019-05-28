@@ -6,6 +6,7 @@ import { environment } from "@env/environment";
 import { Router } from "@angular/router";
 import { TranslatorService } from "../translator/translator.service";
 import { OAuthenticationService } from "../auth/auth.service";
+import { Observable } from "rxjs";
 
 @Component({
     selector: "app-dashboard",
@@ -18,7 +19,7 @@ export class DefaultLayoutComponent implements OnInit {
     public sidebarMinimized = true;
     private changes: MutationObserver;
     public element: HTMLElement = document.body;
-    public userProfile: any;
+    public userProfile$: Observable<object>;
     constructor(public settingsService: SettingsService,
         public authService: OAuthenticationService,
         private router: Router,
@@ -45,12 +46,11 @@ export class DefaultLayoutComponent implements OnInit {
     }
 
     public async getUserImage() {
-        this.settingsService.getUserProfile()
-             .pipe(
-                 tap(u => {
-                     if (!environment.production)
-                         console.table(u);
-                 }))
-            .subscribe(a => this.userProfile = a);
+        this.userProfile$ = this.settingsService.getUserProfile()
+            .pipe(
+                tap(u => {
+                    if (!environment.production)
+                        console.table(u);
+                }));
     }
 }

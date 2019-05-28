@@ -28,7 +28,7 @@ export class SettingsService {
             docLoaded: false,
         };
 
-        this.userProfileObservable = of(this.oauthService.loadUserProfile()).pipe(share());
+        this.userProfileObservable = defer(() => from(this.oauthService.loadUserProfile())).pipe(share());
         this.loadDiscoveryDocumentAndTryLoginObservable = defer(() => from(this.oauthService.loadDiscoveryDocument())).pipe(share()).pipe(tap(a => this.doc = a)).pipe(switchMap(a => this.oauthService.tryLogin())).pipe(map(() => this.doc));
     }
 

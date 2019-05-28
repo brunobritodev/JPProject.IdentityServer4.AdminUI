@@ -12,10 +12,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { authModuleConfig } from "./auth/auth-module-config";
 import { AuthGuard } from "./auth/auth-guard.service";
 import { authConfig } from "./auth/auth-config";
+import { authProdConfig } from "./auth/auth-config.prod";
+import { environment } from "@env/environment";
 
 export function storageFactory(): OAuthStorage {
     return localStorage;
 }
+
 
 @NgModule({
     imports: [
@@ -41,7 +44,7 @@ export class CoreModule {
         return {
             ngModule: CoreModule,
             providers: [
-                { provide: AuthConfig, useValue: authConfig },
+                { provide: AuthConfig, useValue: authProdConfig },
                 { provide: OAuthModuleConfig, useValue: authModuleConfig },
                 { provide: ValidationHandler, useClass: JwksValidationHandler },
                 { provide: OAuthStorage, useFactory: storageFactory },
