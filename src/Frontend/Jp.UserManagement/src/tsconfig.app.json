@@ -8,15 +8,15 @@
             "node"
         ],
         "paths": {
-            "@angular/*": [
-                "../node_modules/@angular/*"
-            ],
             "@env/*": [
                 "environments/*"
             ],
             "@core/*": [
                 "app/core/*"
             ],
+            "@angular/*": [
+                "../node_modules/@angular/*"
+            ]
         }
     },
     "exclude": [

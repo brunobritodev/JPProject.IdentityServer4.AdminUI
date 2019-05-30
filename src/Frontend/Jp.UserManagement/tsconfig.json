@@ -21,8 +21,11 @@
                 "src/environments/*"
             ],
             "@core/*": [
-                "app/core/*"
+                "src/app/core/*"
             ],
+            "@angular/*": [
+                "node_modules/@angular/*"
+            ]            
         }
     }
 }

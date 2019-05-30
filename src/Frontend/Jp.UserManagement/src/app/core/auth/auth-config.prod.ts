@@ -4,6 +4,7 @@ import { environment } from '@env/environment';
 export const authProdConfig: AuthConfig = {
     issuer: environment.AuthorityUri,
     clientId: "UserManagementUI",
+    requireHttps: environment.RequireHttps,
     redirectUri: environment.Uri + "/login-callback",
     silentRefreshRedirectUri: environment.Uri + '/silent-refresh.html',
     scope: "openid profile email jp_api.user",
