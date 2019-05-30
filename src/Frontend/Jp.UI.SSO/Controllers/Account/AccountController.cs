@@ -305,7 +305,7 @@ namespace Jp.UI.SSO.Controllers.Account
                 }
             }
 
-            return RedirectToAction("Index", "Home");
+            return Redirect(returnUrl);
         }
 
         /// <summary>
