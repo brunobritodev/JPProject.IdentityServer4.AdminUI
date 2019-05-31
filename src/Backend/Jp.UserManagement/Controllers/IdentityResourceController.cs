@@ -54,8 +54,8 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] IdentityResource model)
+        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] IdentityResourceViewModel model)
         {
             if (!ModelState.IsValid)
             {

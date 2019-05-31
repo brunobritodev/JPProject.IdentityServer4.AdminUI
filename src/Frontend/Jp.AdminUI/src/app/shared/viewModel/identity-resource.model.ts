@@ -13,4 +13,5 @@ export class IdentityResource {
     displayName: string;
     description: string;
     userClaims: string[];
+    oldName:string;
 }
