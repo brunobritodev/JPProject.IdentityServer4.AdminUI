@@ -70,7 +70,7 @@ namespace Jp.Application.AutoMapper
              * Identity Resource commands
              */
             CreateMap<IdentityResource, RegisterIdentityResourceCommand>().ConstructUsing(c => new RegisterIdentityResourceCommand(c));
-            CreateMap<IdentityResource, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c));
+            CreateMap<IdentityResourceViewModel, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c,c.OldName));
             CreateMap<RemoveIdentityResourceViewModel, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
 
             /*
