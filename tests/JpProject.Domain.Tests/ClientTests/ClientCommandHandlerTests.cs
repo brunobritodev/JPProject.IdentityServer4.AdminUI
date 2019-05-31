@@ -176,8 +176,13 @@ namespace JpProject.Domain.Tests.ClientTests
         public async Task ShouldUpdateClient()
         {
             var command = ClientCommandFaker.GenerateUpdateClientCommand().Generate();
-            _clientRepository.Setup(s => s.UpdateWithChildrens(It.Is<Client>(a => a.ClientId == command.Client.ClientId))).Returns(Task.CompletedTask);
-            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.Client.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+
+            var clientId = command.Client.ClientId == command.OldClientId
+                ? command.Client.ClientId
+                : command.OldClientId;
+            
+            _clientRepository.Setup(s => s.UpdateWithChildrens(It.Is<Client>(a => a.ClientId == clientId))).Returns(Task.CompletedTask);
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == clientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
             _uow.Setup(s => s.Commit()).Returns(true);
 
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
