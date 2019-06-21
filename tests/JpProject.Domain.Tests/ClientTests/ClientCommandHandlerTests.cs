@@ -177,7 +177,7 @@ namespace JpProject.Domain.Tests.ClientTests
         {
             var command = ClientCommandFaker.GenerateUpdateClientCommand().Generate();
             _clientRepository.Setup(s => s.UpdateWithChildrens(It.Is<Client>(a => a.ClientId == command.Client.ClientId))).Returns(Task.CompletedTask);
-            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.Client.ClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.OldClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
             _uow.Setup(s => s.Commit()).Returns(true);
 
             var result = await _commandHandler.Handle(command, _tokenSource.Token);

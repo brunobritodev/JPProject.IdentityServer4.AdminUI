@@ -47,7 +47,7 @@ namespace Jp.UI.SSO.Controllers.Home
 
             if (error != null)
             {
-                vm.Error = new ErrorMessage(){ErrorDescription = error, Error = "1000"};
+                vm.Error = new ErrorMessage() { ErrorDescription = error, Error = "1000" };
             }
 
             return View("Error", vm);
@@ -63,10 +63,8 @@ namespace Jp.UI.SSO.Controllers.Home
                 new CookieOptions { Expires = System.DateTimeOffset.UtcNow.AddYears(1) }
             );
 
-            if (string.IsNullOrEmpty(returnUrl))
-                return RedirectToAction("Index");
+            return RedirectToAction("Index");
 
-            return LocalRedirect(Request.Headers["Referer"].ToString());
         }
     }
 }

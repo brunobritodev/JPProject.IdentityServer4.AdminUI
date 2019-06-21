@@ -86,7 +86,7 @@ namespace Jp.UI.SSO
                 app.UseHttpsRedirection();
             }
 
-            app.UseSecurityHeaders(env);
+            //app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseLocalization();

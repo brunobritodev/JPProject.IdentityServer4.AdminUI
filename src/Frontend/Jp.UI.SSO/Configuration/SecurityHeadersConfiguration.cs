@@ -35,7 +35,7 @@ namespace Jp.UI.SSO.Configuration
                 });
                 options.FontSources(configuration => configuration.Self().CustomSources("https://fonts.googleapis.com/", "https://fonts.gstatic.com/"));
                 options.ConnectSources(s => s.CustomSources("https://dc.services.visualstudio.com"));
-                options.ScriptSources(s => s.Self().CustomSources("https://az416426.vo.msecnd.net", @"sha256-ZT3q7lL9GXNGhPTB1Vvrvds2xw/kOV0zoeok2tiV23I="));
+                options.ScriptSources(s => s.UnsafeInline().CustomSources("https://az416426.vo.msecnd.net", @"sha256-ZT3q7lL9GXNGhPTB1Vvrvds2xw/kOV0zoeok2tiV23I="));
 
             });
         }
