@@ -30,7 +30,7 @@ namespace Jp.UI.SSO
             {
                 builder.AddUserSecrets<Startup>();
             }
-            
+
 
             Configuration = builder.Build();
             _environment = environment;
@@ -86,7 +86,7 @@ namespace Jp.UI.SSO
                 app.UseHttpsRedirection();
             }
 
-            //app.UseSecurityHeaders(env);
+            app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseLocalization();

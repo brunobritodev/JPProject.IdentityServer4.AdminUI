@@ -4,9 +4,10 @@ namespace Jp.Domain.Commands.IdentityResource
 {
     public class UpdateIdentityResourceCommand : IdentityResourceCommand
     {
-        public UpdateIdentityResourceCommand(IdentityServer4.Models.IdentityResource resource)
+        public UpdateIdentityResourceCommand(IdentityServer4.Models.IdentityResource resource,string oldIdentityResourceName)
         {
             Resource = resource;
+            this.OldIdentityResourceName = oldIdentityResourceName;
         }
 
         public override bool IsValid()
