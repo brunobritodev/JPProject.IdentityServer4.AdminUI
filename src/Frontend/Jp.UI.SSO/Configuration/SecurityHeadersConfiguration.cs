@@ -16,14 +16,13 @@ namespace Jp.UI.SSO.Configuration
 
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
             app.UseXContentTypeOptions();
-            app.UseXfo(options => options.SameOrigin());
+            //app.UseXfo(options => options.Deny());
             app.UseReferrerPolicy(options => options.NoReferrer());
 
             app.UseCsp(options =>
             {
                 options.DefaultSources(o => o.Self());
                 options.ObjectSources(o => o.None());
-                options.FrameAncestors(o => o.None());
                 options.Sandbox(directive => directive.AllowForms().AllowSameOrigin().AllowScripts());
                 options.BaseUris(configuration => configuration.Self());
                 options.FrameSources(o => o.Self()
@@ -31,7 +30,11 @@ namespace Jp.UI.SSO.Configuration
                     .CustomSources("https://ghbtns.com"));
 
                 if (env.IsProduction())
+                {
                     options.UpgradeInsecureRequests();
+                    // You can set your custom domains here
+                    // options.FrameAncestors(o => o.CustomSources());
+                }
                 options.ImageSources(a =>
                 {
                     a.Self();

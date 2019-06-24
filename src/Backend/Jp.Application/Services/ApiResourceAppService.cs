@@ -4,7 +4,6 @@ using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ApiResouceViewModels;
-using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Commands.ApiResource;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
@@ -57,7 +56,7 @@ namespace Jp.Application.Services
             return Bus.SendCommand(command);
         }
 
-        public Task Update(ApiResource model)
+        public Task Update(UpdateApiResourceViewModel model)
         {
             var command = _mapper.Map<UpdateApiResourceCommand>(model);
             return Bus.SendCommand(command);

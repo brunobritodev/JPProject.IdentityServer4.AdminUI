@@ -51,7 +51,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<SaveUserRoleViewModel, SaveUserRoleCommand>().ConstructUsing(c => new SaveUserRoleCommand(c.Username, c.Role));
             CreateMap<RemoveUserLoginViewModel, RemoveUserLoginCommand>().ConstructUsing(c => new RemoveUserLoginCommand(c.Username, c.LoginProvider, c.ProviderKey));
             CreateMap<AdminChangePasswordViewodel, AdminChangePasswordCommand>().ConstructUsing(c => new AdminChangePasswordCommand(c.Password, c.ConfirmPassword, c.Username));
-            
+
             /*
              * Client commands
              */
@@ -65,19 +65,19 @@ namespace Jp.Application.AutoMapper
             CreateMap<RemoveClientViewModel, RemoveClientCommand>().ConstructUsing(c => new RemoveClientCommand(c.ClientId));
             CreateMap<CopyClientViewModel, CopyClientCommand>().ConstructUsing(c => new CopyClientCommand(c.ClientId));
             CreateMap<SaveClientViewModel, SaveClientCommand>().ConstructUsing(c => new SaveClientCommand(c.ClientId, c.ClientName, c.ClientUri, c.LogoUri, c.Description, c.ClientType));
-            
+
             /*
              * Identity Resource commands
              */
             CreateMap<IdentityResource, RegisterIdentityResourceCommand>().ConstructUsing(c => new RegisterIdentityResourceCommand(c));
-            CreateMap<IdentityResourceViewModel, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c,c.OldName));
+            CreateMap<IdentityResourceViewModel, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c, c.OldName));
             CreateMap<RemoveIdentityResourceViewModel, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
 
             /*
              * Api Resource commands
              */
             CreateMap<ApiResource, RegisterApiResourceCommand>().ConstructUsing(c => new RegisterApiResourceCommand(c));
-            CreateMap<ApiResource, UpdateApiResourceCommand>().ConstructUsing(c => new UpdateApiResourceCommand(c));
+            CreateMap<UpdateApiResourceViewModel, UpdateApiResourceCommand>().ConstructUsing(c => new UpdateApiResourceCommand(c, c.OldApiResourceId));
             CreateMap<RemoveApiResourceViewModel, RemoveApiResourceCommand>().ConstructUsing(c => new RemoveApiResourceCommand(c.Name));
 
             CreateMap<SaveApiSecretViewModel, SaveApiSecretCommand>().ConstructUsing(c => new SaveApiSecretCommand(c.ResourceName, c.Description, c.Value, c.Type, c.Expiration, (int)c.Hash.GetValueOrDefault(HashType.Sha256)));

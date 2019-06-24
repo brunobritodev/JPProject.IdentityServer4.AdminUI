@@ -73,7 +73,7 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var savedClient = await _apiResourceRepository.GetResource(request.Resource.Name);
+            var savedClient = await _apiResourceRepository.GetResource(request.OldResourceName);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource not found"));
@@ -237,7 +237,7 @@ namespace Jp.Domain.CommandHandlers
                 Emphasize = request.Emphasize,
                 Name = request.Name,
                 ShowInDiscoveryDocument = request.ShowInDiscoveryDocument,
-                UserClaims =  request.UserClaims.Select(s => new ApiScopeClaim(){ Type = s}).ToList(),
+                UserClaims = request.UserClaims.Select(s => new ApiScopeClaim() { Type = s }).ToList(),
             };
 
             _apiScopeRepository.Add(secret);

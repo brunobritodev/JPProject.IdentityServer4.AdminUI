@@ -12,6 +12,7 @@ export class ApiResource {
     displayName: string;
     description: string;
     userClaims: string[];
+    oldApiResourceId: string;
 }
 
 

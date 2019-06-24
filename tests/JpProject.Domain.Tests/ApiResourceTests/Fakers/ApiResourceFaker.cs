@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using Bogus;
+﻿using Bogus;
 using IdentityServer4.Models;
+using System.Linq;
 
 namespace JpProject.Domain.Tests.ApiResourceTests.Fakers
 {

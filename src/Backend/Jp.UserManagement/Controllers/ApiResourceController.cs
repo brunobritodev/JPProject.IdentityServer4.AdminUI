@@ -54,7 +54,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] ApiResource model)
+        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UpdateApiResourceViewModel model)
         {
             if (!ModelState.IsValid)
             {

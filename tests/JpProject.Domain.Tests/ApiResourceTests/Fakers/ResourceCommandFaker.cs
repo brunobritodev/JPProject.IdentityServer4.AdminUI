@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Bogus;
-using IdentityServer4.Models;
+﻿using Bogus;
 using Jp.Domain.Commands.ApiResource;
 
 namespace JpProject.Domain.Tests.ApiResourceTests.Fakers
@@ -16,10 +12,10 @@ namespace JpProject.Domain.Tests.ApiResourceTests.Fakers
             );
 
         }
-        public static Faker<UpdateApiResourceCommand> GenerateUpdateApiResourceCommand()
+        public static Faker<UpdateApiResourceCommand> GenerateUpdateApiResourceCommand(string oldResourceName = null)
         {
             return new Faker<UpdateApiResourceCommand>().CustomInstantiator(faker =>
-                new UpdateApiResourceCommand(ApiResourceFaker.GenerateApiResource().Generate())
+                new UpdateApiResourceCommand(ApiResourceFaker.GenerateApiResource().Generate(), oldResourceName ?? faker.Internet.DomainName())
             );
 
         }
