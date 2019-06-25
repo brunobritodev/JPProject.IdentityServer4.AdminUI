@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.Database\Jp.Infra.CrossCutting.Database.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IdentityServer\Jp.Infra.CrossCutting.IdentityServer.csproj" />
     <ProjectReference Include="..\..\Backend\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
-    <ProjectReference Include="..\..\Jp.Infra.CrossCutting.Database\Jp.Infra.CrossCutting.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>

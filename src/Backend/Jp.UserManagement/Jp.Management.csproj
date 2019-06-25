@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Jp.Infra.CrossCutting.Database\Jp.Infra.CrossCutting.Database.csproj" />
+    <ProjectReference Include="..\Jp.Infra.CrossCutting.Database\Jp.Infra.CrossCutting.Database.csproj" />
     <ProjectReference Include="..\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 

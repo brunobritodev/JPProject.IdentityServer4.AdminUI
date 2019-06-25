@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Backend\Jp.Infra.Migrations.MySql\Jp.Infra.Data.MySql.csproj" />
-    <ProjectReference Include="..\Backend\Jp.Infra.Migrations.PostgreSQL\Jp.Infra.Data.PostgreSQL.csproj" />
-    <ProjectReference Include="..\Backend\Jp.Infra.Migrations.Sql\Jp.Infra.Data.Sql.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Migrations.MySql\Jp.Infra.Data.MySql.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Migrations.PostgreSQL\Jp.Infra.Data.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Migrations.Sql\Jp.Infra.Data.Sql.csproj" />
   </ItemGroup>
 </Project>
