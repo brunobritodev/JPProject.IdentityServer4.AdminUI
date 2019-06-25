@@ -5,7 +5,6 @@ using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
-using Jp.Domain.Models;
 using System;
 using System.Threading.Tasks;
 

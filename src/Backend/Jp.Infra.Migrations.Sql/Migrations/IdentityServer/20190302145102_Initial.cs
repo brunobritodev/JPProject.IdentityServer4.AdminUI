@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Jp.Infra.Migrations.Sql.Migrations.IdentityServer
+namespace Jp.Infra.Data.Sql.Migrations.IdentityServer
 {
     public partial class Initial : Migration
     {

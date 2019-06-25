@@ -4,17 +4,15 @@ using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Jp.Infra.Migrations.Sql.Configuration
+namespace Jp.Infra.Data.Sql.Configuration
 {
     public static class IdentityConfig
     {
-        public static IServiceCollection AddIdentitySqlServer(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddIdentitySqlServer(this IServiceCollection services, string connectionString)
         {
-            var connectionString = configuration.GetConnectionString("SSOConnection");
             var migrationsAssembly = typeof(IdentityConfig).GetTypeInfo().Assembly.GetName().Name;
 
             var operationalStoreOptions = new OperationalStoreOptions();

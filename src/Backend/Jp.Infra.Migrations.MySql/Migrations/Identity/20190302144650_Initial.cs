@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Jp.Infra.Migrations.MySql.Migrations.Identity
+namespace Jp.Infra.Data.MySql.Migrations.Identity
 {
     public partial class Initial : Migration
     {

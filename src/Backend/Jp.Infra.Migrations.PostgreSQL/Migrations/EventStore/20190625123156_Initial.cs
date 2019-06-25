@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Jp.Infra.Data.Sql.Migrations.EventStore
+namespace Jp.Infra.Data.PostgreSQL.Migrations.EventStore
 {
     public partial class Initial : Migration
     {

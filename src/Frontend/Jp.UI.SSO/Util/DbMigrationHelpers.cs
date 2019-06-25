@@ -2,16 +2,16 @@
 using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
+using Jp.UI.SSO.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Jp.UI.SSO.Configuration;
-using Microsoft.Extensions.Configuration;
 
 namespace Jp.UI.SSO.Util
 {
@@ -51,7 +51,6 @@ namespace Jp.UI.SSO.Util
                 await userContext.Database.MigrateAsync();
                 await storeDb.Database.MigrateAsync();
 
-
                 await EnsureSeedIdentityServerData(id4Context, configuration);
                 await EnsureSeedIdentityData(userManager, roleManager, configuration);
             }
@@ -62,7 +61,7 @@ namespace Jp.UI.SSO.Util
         /// </summary>
         private static async Task EnsureSeedIdentityData(
             UserManager<UserIdentity> userManager,
-            RoleManager<UserIdentityRole> roleManager, 
+            RoleManager<UserIdentityRole> roleManager,
             IConfiguration configuration)
         {
             // Create admin role

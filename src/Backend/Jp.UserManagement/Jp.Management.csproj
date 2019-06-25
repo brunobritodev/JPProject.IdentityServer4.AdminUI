@@ -23,13 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jp.Application\Jp.Application.csproj" />
-    <ProjectReference Include="..\Jp.Domain.Core\Jp.Domain.Core.csproj" />
-    <ProjectReference Include="..\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\..\Jp.Infra.CrossCutting.Database\Jp.Infra.CrossCutting.Database.csproj" />
     <ProjectReference Include="..\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
-    <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />
-    <ProjectReference Include="..\Jp.Infra.Migrations.MySql\Jp.Infra.Migrations.MySql.csproj" />
-    <ProjectReference Include="..\Jp.Infra.Migrations.Sql\Jp.Infra.Migrations.Sql.csproj" />
   </ItemGroup>
 
     <ItemGroup>

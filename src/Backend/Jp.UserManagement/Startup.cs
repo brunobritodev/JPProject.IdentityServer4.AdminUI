@@ -1,4 +1,5 @@
-﻿using Jp.Infra.CrossCutting.IoC;
+﻿using Jp.Infra.CrossCutting.Database;
+using Jp.Infra.CrossCutting.IoC;
 using Jp.Management.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -39,7 +40,7 @@ namespace Jp.Management
             services.AddMvc();
             
             // Identity Database
-            services.ConfigureIdentityDatabase(Configuration);
+            services.ConfigureDatabase(Configuration);
 
             services.ConfigureCors();
 

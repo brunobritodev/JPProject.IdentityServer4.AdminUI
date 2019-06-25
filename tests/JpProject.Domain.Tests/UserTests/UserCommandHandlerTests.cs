@@ -36,7 +36,7 @@ namespace JpProject.Domain.Tests.UserTests
         }
 
         [Fact]
-        public async Task ShouldNotAddNewUser_AfterSuccessfulLoginThrough_ExternalProvider_IfItEmailAlreadyExist()
+        public async Task ShouldNotAddNewUser_AfterSuccessfulLoginThrough_ExternalProvider_IfHisEmailAlreadyExist()
         {
             var command = UserCommandFaker.GenerateRegisterNewUserWithoutPassCommand().Generate();
 
@@ -51,7 +51,7 @@ namespace JpProject.Domain.Tests.UserTests
 
 
         [Fact]
-        public async Task ShouldNotAddNewUser_AfterSuccessfulLoginThrough_ExternalProvider_IfItNameAlreadyExist()
+        public async Task ShouldNotAddNewUser_AfterSuccessfulLoginThrough_ExternalProvider_IfHisNameAlreadyExist()
         {
             var command = UserCommandFaker.GenerateRegisterNewUserWithoutPassCommand().Generate();
 

@@ -1,20 +1,15 @@
-﻿using Jp.Infra.Data.Context;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using System.Reflection;
 
-namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
+namespace Jp.Infra.Data.Sql.Configuration
 {
-    public static class MssqlSqlServerConfig
+    public static class IdentityServerConfig
     {
-        public static IIdentityServerBuilder UseIdentityServerSqlDatabase(this IIdentityServerBuilder builder,
-            IServiceCollection services, IConfiguration configuration, ILogger logger)
+        public static IIdentityServerBuilder UseIdentityServerSqlDatabase(this IIdentityServerBuilder builder, string connectionString)
         {
-            var connectionString = configuration.GetConnectionString("SSOConnection");
-            var migrationsAssembly = "Jp.Infra.Migrations.Sql.Identity";//typeof(IdentityServerSqlConfig).GetTypeInfo().Assembly.GetName().Name;
+            var migrationsAssembly = typeof(IdentityServerConfig).GetTypeInfo().Assembly.GetName().Name;
 
-            services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             // this adds the config data from DB (clients, resources)
             builder.AddConfigurationStore(options =>
                 {
@@ -31,8 +26,6 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
                     options.EnableTokenCleanup = true;
                     options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
                 });
-
-
 
             return builder;
         }

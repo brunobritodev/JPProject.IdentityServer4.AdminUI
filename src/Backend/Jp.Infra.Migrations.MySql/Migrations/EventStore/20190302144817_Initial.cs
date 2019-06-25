@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Jp.Infra.Migrations.MySql.Migrations.EventStore
+namespace Jp.Infra.Data.MySql.Migrations.EventStore
 {
     public partial class Initial : Migration
     {
