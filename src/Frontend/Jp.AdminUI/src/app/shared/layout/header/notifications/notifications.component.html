@@ -3,53 +3,17 @@
         <!-- START list group-->
         <div class="list-group">
             <!-- list item-->
-            <div class="list-group-item list-group-item-action">
+            <div class="list-group-item list-group-item-action" *ngFor="let notification of notifications | async">
                 <div class="media">
-                    <div class="align-self-start mr-2">
-                        <em class="fas fa-kiwi-bird text-info"></em>
-                    </div>
-                    <div class="media-body">
-                        <p class="m-0">Session</p>
-                        <p class="m-0 text-muted text-sm">2019-05 UI Session improvements</p>
-                    </div>
+                   <div class="align-self-start mr-2">
+                      <em class="fa-2x" [ngClass]="notification.icon"></em>
+                   </div>
+                   <div class="media-body">
+                    <p class="m-0">{{notification.title}}</p>
+                    <p class="m-0 text-muted text-sm">{{notification.description}}</p>
+                   </div>
                 </div>
-                <div class="media">
-                    <div class="align-self-start mr-2">
-                        <em class="fas fa-docker text-info"></em>
-                    </div>
-                    <div class="media-body">
-                        <p class="m-0">Docker</p>
-                        <p class="m-0 text-muted text-sm">2019-04 Docker Ready</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="align-self-start mr-2">
-                        <em class="fas fa-code-branch text-info"></em>
-                    </div>
-                    <div class="media-body">
-                        <p class="m-0">NET Core 2.2</p>
-                        <p class="m-0 text-muted text-sm">2019-03 Updated to ASP.NET Core 2.2</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="align-self-start mr-2">
-                        <em class="fas fa-id-card text-info"></em>
-                    </div>
-                    <div class="media-body">
-                        <p class="m-0">Id4</p>
-                        <p class="m-0 text-muted text-sm">2019-03 IdentityServer4 2.4 Components</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="align-self-start mr-2">
-                        <em class="fas fa-rocket text-info"></em>
-                    </div>
-                    <div class="media-body">
-                        <p class="m-0">Launch</p>
-                        <p class="m-0 text-muted text-sm">2018-10 first release</p>
-                    </div>
-                </div>
-            </div>
+             </div>
             <!-- last list item-->
             <div class="list-group-item list-group-item-action">
                 <span class="d-flex align-items-center">

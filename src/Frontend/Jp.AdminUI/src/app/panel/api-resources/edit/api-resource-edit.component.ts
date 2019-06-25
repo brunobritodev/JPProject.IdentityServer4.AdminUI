@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap } from "rxjs/operators";
+import { flatMap, tap } from "rxjs/operators";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
@@ -25,6 +25,7 @@ export class ApiResourceEditComponent implements OnInit {
         showCloseButton: true
     });
     public showButtonLoading: boolean;
+    public resourceId: string;
     standardClaims: string[];
 
     constructor(
@@ -35,7 +36,7 @@ export class ApiResourceEditComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(flatMap(p => this.apiResourceService.getApiResourceDetails(p["name"]))).subscribe(result => this.model = result.data);
+        this.route.params.pipe(tap(p => this.resourceId = p["name"])).pipe(flatMap(p => this.apiResourceService.getApiResourceDetails(p["name"]))).subscribe(result => this.model = result.data);
         this.errors = [];
         this.showButtonLoading = false;
         this.standardClaims = StandardClaims.claims;
@@ -45,7 +46,7 @@ export class ApiResourceEditComponent implements OnInit {
         this.showButtonLoading = true;
         this.errors = [];
         try {
-
+            this.model.oldApiResourceId = this.resourceId;
             this.apiResourceService.update(this.model).subscribe(
                 registerResult => {
                     if (registerResult.data) {

@@ -62,8 +62,8 @@ namespace Jp.Domain.CommandHandlers
                 NotifyValidationErrors(request);
                 return false;
             }
-            
-            var savedClient = await _identityResourceRepository.GetByName(request.OldIdentityResourceName != request.Resource.Name ? request.OldIdentityResourceName : request.Resource.Name);
+
+            var savedClient = await _identityResourceRepository.GetByName(request.OldIdentityResourceName);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Resource not found"));

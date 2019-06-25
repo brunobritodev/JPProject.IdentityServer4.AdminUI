@@ -32,7 +32,8 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
             int? accessTokenLifetime = null,
             int? authorizationCodeLifetime = null,
             int? slidingRefreshTokenLifetime = null,
-            int? deviceCodeLifetime = null)
+            int? deviceCodeLifetime = null,
+            string oldClientId = null)
         {
             return new Faker<UpdateClientCommand>().CustomInstantiator(f =>
                 new UpdateClientCommand(
@@ -42,8 +43,7 @@ namespace JpProject.Domain.Tests.ClientTests.Fakers
                                                 authorizationCodeLifetime,
                         slidingRefreshTokenLifetime,
                         deviceCodeLifetime).Generate(),
-                    f.Company.CompanyName()
-                ));
+                    oldClientId ?? f.Internet.DomainName()));
 
         }
 

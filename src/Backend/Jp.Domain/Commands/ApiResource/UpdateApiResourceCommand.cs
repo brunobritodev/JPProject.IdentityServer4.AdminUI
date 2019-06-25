@@ -5,8 +5,9 @@ namespace Jp.Domain.Commands.ApiResource
     public class UpdateApiResourceCommand : ApiResourceCommand
     {
 
-        public UpdateApiResourceCommand(IdentityServer4.Models.ApiResource resource)
+        public UpdateApiResourceCommand(IdentityServer4.Models.ApiResource resource, string oldResourceName)
         {
+            OldResourceName = oldResourceName;
             Resource = resource;
         }
 

@@ -175,17 +175,17 @@ namespace JpProject.Domain.Tests.ClientTests
         [Fact]
         public async Task ShouldUpdateClient()
         {
-            var command = ClientCommandFaker.GenerateUpdateClientCommand().Generate();
-
-            var clientId = command.Client.ClientId == command.OldClientId
-                ? command.Client.ClientId
-                : command.OldClientId;
-            
-            _clientRepository.Setup(s => s.UpdateWithChildrens(It.Is<Client>(a => a.ClientId == clientId))).Returns(Task.CompletedTask);
-            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == clientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
+            var oldClientId = "my-old-client-name";
+            var command = ClientCommandFaker.GenerateUpdateClientCommand(oldClientId: oldClientId).Generate();
+            _clientRepository.Setup(s => s.UpdateWithChildrens(It.Is<Client>(a => a.ClientId == command.Client.ClientId))).Returns(Task.CompletedTask);
+            _clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == oldClientId))).ReturnsAsync(EntityClientFaker.GenerateClient().Generate());
             _uow.Setup(s => s.Commit()).Returns(true);
 
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
+
+
+            _clientRepository.Verify(s => s.UpdateWithChildrens(It.IsAny<Client>()), Times.Once);
+            _clientRepository.Verify(s => s.GetClient(It.Is<string>(q => q == oldClientId)), Times.Once);
 
             Assert.True(result);
         }
@@ -207,7 +207,6 @@ namespace JpProject.Domain.Tests.ClientTests
         public async Task ShouldNotRemoveSecretWhenClientDoesntExist()
         {
             var command = ClientCommandFaker.GenerateRemoveClientSecretCommand().Generate();
-            //_clientRepository.Setup(s => s.GetClient(It.Is<string>(a => a == command.ClientId))).ReturnsAsync(null);
 
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 

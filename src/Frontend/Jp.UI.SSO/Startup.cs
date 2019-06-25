@@ -1,4 +1,6 @@
-﻿using Jp.Infra.CrossCutting.IoC;
+﻿using Jp.Infra.CrossCutting.Database;
+using Jp.Infra.CrossCutting.IdentityServer.Configuration;
+using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -30,7 +32,7 @@ namespace Jp.UI.SSO
             {
                 builder.AddUserSecrets<Startup>();
             }
-            
+
 
             Configuration = builder.Build();
             _environment = environment;
@@ -51,13 +53,13 @@ namespace Jp.UI.SSO
                 .AddDataAnnotationsLocalization();
 
             // Config identity
-            services.ConfigureIdentityDatabase(Configuration);
+            services.ConfigureDatabase(Configuration);
 
             // Add localization
             services.AddMvcLocalization();
 
             // Configure identity server
-            services.ConfigureIdentityServerDatabase(Configuration, _environment, _logger);
+            services.AddIdentityServer(Configuration, _environment, _logger).ConfigureIdentityServerDatabase(Configuration);
 
             // Configure authentication and external logins
             services.AddAuth(Configuration);
