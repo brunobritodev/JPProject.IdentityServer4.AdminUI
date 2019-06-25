@@ -3,17 +3,34 @@
         <!-- START list group-->
         <div class="list-group">
             <!-- list item-->
-            <div class="list-group-item list-group-item-action" *ngFor="let notification of notifications | async">
-                <div class="media">
-                   <div class="align-self-start mr-2">
-                      <em class="fa-2x" [ngClass]="notification.icon"></em>
-                   </div>
-                   <div class="media-body">
-                    <p class="m-0">{{notification.title}}</p>
-                    <p class="m-0 text-muted text-sm">{{notification.description}}</p>
-                   </div>
+            <div *ngIf="notifications$ | async as notifications; else loading">
+                <div class="list-group-item list-group-item-action" *ngFor="let notification of notifications">
+                    <div class="media">
+                        <div class="align-self-start mr-2">
+                            <em class="fa-2x" [ngClass]="notification.icon"></em>
+                        </div>
+                        <div class="media-body">
+                            <p class="m-0">{{notification.title}}</p>
+                            <p class="m-0 text-muted text-sm">{{notification.description}}</p>
+                        </div>
+                    </div>
                 </div>
-             </div>
+            </div>
+            <ng-template #loading>
+                <div class="list-group-item list-group-item-action">
+                    <div class="media">
+                        <div class="media-body text-center">
+                            <div class="ball-pulse">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+
+
             <!-- last list item-->
             <div class="list-group-item list-group-item-action">
                 <span class="d-flex align-items-center">
