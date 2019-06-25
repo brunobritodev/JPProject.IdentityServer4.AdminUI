@@ -1,5 +1,4 @@
-﻿using System;
-using IdentityServer4;
+﻿using IdentityServer4;
 using IdentityServer4.Models;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
@@ -32,6 +31,7 @@ namespace Jp.UI.SSO.Util
                     },
                     AllowedCorsOrigins = { configuration.GetValue<string>("ApplicationSettings:IS4AdminUi")},
                     IdentityTokenLifetime = 3600,
+                    LogoUri = "https://jpproject.azurewebsites.net/sso/images/brand/logo.png",
                     AuthorizationCodeLifetime = 3600,
                     AllowedScopes =
                     {
@@ -58,7 +58,7 @@ namespace Jp.UI.SSO.Util
                     },
                     PostLogoutRedirectUris =  { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
                     AllowedCorsOrigins = { $"{configuration.GetValue<string>("ApplicationSettings:UserManagementURL")}" },
-                    LogoUri = "~/images/clientLogo/1.jpg",
+                    LogoUri = "https://jpproject.azurewebsites.net/sso/images/clientLogo/1.jpg",
                     IdentityTokenLifetime = 3600,
                     AuthorizationCodeLifetime = 3600,
                     AllowedScopes =
@@ -77,6 +77,7 @@ namespace Jp.UI.SSO.Util
                     ClientId = "Swagger",
                     ClientName = "Swagger UI",
                     AllowedGrantTypes = GrantTypes.Implicit,
+                    LogoUri = "https://avatars3.githubusercontent.com/u/16343502?s=400&v=4",
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris =
                     {
