@@ -17,7 +17,7 @@ namespace Jp.Infra.CrossCutting.Database
                 case "MYSQL":
                     services.AddIdentityMySql(connString);
                     break;
-                case "SQL":
+                case "SQLSERVER":
                     services.AddIdentitySqlServer(connString);
                     break;
                 case "POSTGRESQL":
@@ -35,7 +35,7 @@ namespace Jp.Infra.CrossCutting.Database
                 case "MYSQL":
                     builder.UseIdentityServerMySqlDatabase(connString);
                     break;
-                case "SQL":
+                case "SQLSERVER":
                     builder.UseIdentityServerSqlDatabase(connString);
                     break;
                 case "POSTGRESQL":
