@@ -1,3 +1,8 @@
+# v1.2.3
+
+Bug fixes
+Added scrips for CI/CD. One pipeline for prs and another after pr was accepted
+
 # v1.2.2
 
 Added ENV for Default User and Pass, to autofill Login Page. Specially made for Dev and Docker environments

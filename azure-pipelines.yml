@@ -3,16 +3,168 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-pool:
-  vmImage: 'Ubuntu 16.04'
+trigger:
+- master
 
 variables:
-  buildConfiguration: 'Release'
+  BuildConfiguration: 'Release'
 
-steps:
-- script: dotnet build ./src --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+jobs:
+
+  - job: 'net_core'
+    displayName: '.NET Core Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Restore'
+        inputs:
+          command: 'restore'
+          projects: './src'
+          feedsToUse: 'select'
+
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Build'
+        inputs:
+          command: 'build'
+          arguments: '-c $(BuildConfiguration) --no-restore'
+          projects: './src'
+
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Run Tests'
+        inputs:
+          command: 'test'
+          projects: './src'
   
-- script: dotnet test ./src
-  displayName: 'Running tests'
+      - task: DotNetCoreCLI@2
+        displayName: 'Publish - SSO'
+        inputs:
+          command: 'publish'
+          publishWebProjects: false
+          projects: '**/Jp.UI.SSO.csproj'
+          arguments: '-c $(BuildConfiguration) -o $(Build.StagingDirectory)/sso --no-build'
+          zipAfterPublish: false
+          modifyOutputPath: false
+          workingDirectory: './src/Frontend/Jp.UI.SSO'
+        
+      - task: DotNetCoreCLI@2
+        displayName: 'Publish - API'
+        inputs:
+          command: 'publish'
+          publishWebProjects: false
+          projects: '**/Jp.Management.csproj'
+          arguments: '-c $(BuildConfiguration) -o $(Build.StagingDirectory)/api --no-build'
+          zipAfterPublish: false
+          modifyOutputPath: false
+          workingDirectory: './src/Backend/Jp.UserManagement'
+        
+      - task: ArchiveFiles@2
+        displayName: 'Zip - SSO'
+        inputs:
+          rootFolderOrFile: '$(Build.StagingDirectory)/sso/'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.sso.$(Build.BuildNumber).zip'
+          replaceExistingArchive: true
 
+      - task: ArchiveFiles@2
+        displayName: 'Zip - API'
+        inputs:
+          rootFolderOrFile: '$(Build.StagingDirectory)/api/'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.api.$(Build.BuildNumber).zip'
+          replaceExistingArchive: true
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Artifact - Generate SSO'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.sso.$(Build.BuildNumber).zip'
+          ArtifactName: 'jpproject.sso.$(Build.BuildNumber)'
+          publishLocation: 'Container'
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Artifact - Generate API'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.api.$(Build.BuildNumber).zip'
+          ArtifactName: 'jpproject.api.$(Build.BuildNumber)'
+          publishLocation: 'Container'
+
+  # Angular APP's
+  - job: 'angular'
+    displayName: 'Angular Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      # Admin UI
+      - task: Npm@1
+        displayName: 'NPM - Install - AdminUI'
+        inputs:
+          command: install
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - Install - UserManagement'
+        inputs:
+          command: install
+          workingDir: src/Frontend/Jp.UserManagement
+
+      - task: Npm@1
+        displayName: 'NPM - Build Prod - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run build --prod --base-href=/admin-ui/'
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - Build Prod - UserManagement'
+        inputs:
+          command: custom
+          customCommand: 'run build --prod --base-href=/user-management/'
+          workingDir: src/Frontend/Jp.UserManagement
+
+      - task: CopyFiles@2
+        displayName: 'COPY - web.config - AdminUI'
+        inputs:
+          SourceFolder: '$(Build.Repository.LocalPath)/build'
+          Contents: 'web.config'
+          TargetFolder: '$(Build.Repository.LocalPath)/src/Frontend/Jp.AdminUI/dist/'
+
+      - task: CopyFiles@2
+        displayName: 'COPY - web.config - UserManagement'
+        inputs:
+          SourceFolder: '$(Build.Repository.LocalPath)/build'
+          Contents: 'web.config'
+          TargetFolder: '$(Build.Repository.LocalPath)/src/Frontend/Jp.UserManagement/dist/'
+
+      - task: ArchiveFiles@2
+        displayName: 'ZIP - AdminUI'
+        inputs:
+          rootFolderOrFile: 'src/Frontend/Jp.AdminUI/dist/'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
+          replaceExistingArchive: true
+
+      - task: ArchiveFiles@2
+        displayName: 'ZIP - UserManagement'
+        inputs:
+          rootFolderOrFile: 'src/Frontend/Jp.UserManagement/dist/'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.user-management.$(Build.BuildNumber).zip'
+          replaceExistingArchive: true
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Artifact - Generate - AdminUI'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
+          ArtifactName: 'jpproject.admin-ui.$(Build.BuildNumber)'
+          publishLocation: 'Container'
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Artifact - Generate - UserManagement'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.user-management.$(Build.BuildNumber).zip'
+          ArtifactName: 'jpproject.user-management.$(Build.BuildNumber)'
+          publishLocation: 'Container'

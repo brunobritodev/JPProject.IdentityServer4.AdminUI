@@ -1,0 +1,70 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+variables:
+  BuildConfiguration: 'Release'
+
+jobs:
+
+  - job: 'net_core'
+    displayName: '.NET Core Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Restore'
+        inputs:
+          command: 'restore'
+          projects: './src'
+          feedsToUse: 'select'
+
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Build'
+        inputs:
+          command: 'build'
+          arguments: '-c $(BuildConfiguration) --no-restore'
+          projects: './src'
+
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Run Tests'
+        inputs:
+          command: 'test'
+          projects: './src'
+
+  # Angular APP's
+  - job: 'angular'
+    displayName: 'Angular Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      # Admin UI
+      - task: Npm@1
+        displayName: 'NPM - Install - AdminUI'
+        inputs:
+          command: install
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - Install - UserManagement'
+        inputs:
+          command: install
+          workingDir: src/Frontend/Jp.UserManagement
+
+      - task: Npm@1
+        displayName: 'NPM - Build Prod - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run build --prod --base-href=/admin-ui/'
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - Build Prod - UserManagement'
+        inputs:
+          command: custom
+          customCommand: 'run build --prod --base-href=/user-management/'
+          workingDir: src/Frontend/Jp.UserManagement
