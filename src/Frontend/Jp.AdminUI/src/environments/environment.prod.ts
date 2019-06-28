@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  ResourceServer: "https://accounts.allto.com.br/api/",
-  IssuerUri:  "https://accounts.allto.com.br/sso",
+  ResourceServer: "https://jpproject.azurewebsites.net/api/",
+  IssuerUri:  "https://jpproject.azurewebsites.net/sso",
   RequireHttps: true,
-  Uri: "https://accounts.allto.com.br/admin-ui"
+  Uri: "https://jpproject.azurewebsites.net/admin-ui"
 };
