@@ -1,5 +1,6 @@
 {
 	"notifications": [
+		{ "icon": "text-info fab fa-microsoft", "title": "DevOps", "description": "2019-06 Azure CI/CD ready" },
 		{ "icon": "text-info fas fa-kiwi-bird", "title": "Session", "description": "2019-05 UI Session improvements" },
 		{ "icon": "text-warning fab fa-docker", "title": "Docker", "description": "2019-04 Docker Ready" },
 		{ "icon": "text-info fas fa-code-branch", "title": "NET Core 2.2", "description": "2019-03 Updated to ASP.NET Core 2.2" },
