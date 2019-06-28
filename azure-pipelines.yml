@@ -113,14 +113,14 @@ jobs:
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
-          customCommand: 'ng build --prod --base-href=/admin-ui/'
+          customCommand: 'run build -- --base-href=/admin-ui/'
           workingDir: src/Frontend/Jp.AdminUI
 
       - task: Npm@1
         displayName: 'NPM - Build Prod - UserManagement'
         inputs:
           command: custom
-          customCommand: 'ng build --prod --base-href=/user-management/'
+          customCommand: 'run build -- --base-href=/user-management/'
           workingDir: src/Frontend/Jp.UserManagement
 
       - task: CopyFiles@2
