@@ -10,20 +10,15 @@
     <None Remove="Migrations\**" />
   </ItemGroup>
 
- 
+
+
   <ItemGroup>
     <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.4.0" />
-    <PackageReference Include="IdentityServer4.EntityFramework" Version="2.4.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
   </ItemGroup>
 
- 
+
+
   <ItemGroup>
     <ProjectReference Include="..\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />

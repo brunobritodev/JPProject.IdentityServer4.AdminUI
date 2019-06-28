@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,11 +14,4 @@
     <ProjectReference Include="..\Jp.Application\Jp.Application.csproj" />
     <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.Extensions.Configuration">
-      <HintPath>C:\Users\Bruno\.nuget\packages\microsoft.extensions.configuration\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
