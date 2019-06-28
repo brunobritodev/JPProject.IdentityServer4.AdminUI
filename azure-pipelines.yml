@@ -123,20 +123,6 @@ jobs:
           customCommand: 'run build -- --base-href=/user-management/'
           workingDir: src/Frontend/Jp.UserManagement
 
-      - task: CopyFiles@2
-        displayName: 'COPY - web.config - AdminUI'
-        inputs:
-          SourceFolder: '$(Build.Repository.LocalPath)/build/admin-ui'
-          Contents: 'web.config'
-          TargetFolder: '$(Build.Repository.LocalPath)/src/Frontend/Jp.AdminUI/dist/'
-
-      - task: CopyFiles@2
-        displayName: 'COPY - web.config - UserManagement'
-        inputs:
-          SourceFolder: '$(Build.Repository.LocalPath)/build/user-management'
-          Contents: 'web.config'
-          TargetFolder: '$(Build.Repository.LocalPath)/src/Frontend/Jp.UserManagement/dist/'
-
       - task: ArchiveFiles@2
         displayName: 'ZIP - AdminUI'
         inputs:
