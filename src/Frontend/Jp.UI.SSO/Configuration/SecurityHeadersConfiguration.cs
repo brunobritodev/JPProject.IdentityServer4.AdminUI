@@ -23,7 +23,7 @@ namespace Jp.UI.SSO.Configuration
             {
                 options.DefaultSources(o => o.Self());
                 options.ObjectSources(o => o.None());
-                options.Sandbox(directive => directive.AllowForms().AllowSameOrigin().AllowScripts());
+                options.Sandbox(directive => directive.AllowForms().AllowSameOrigin().AllowScripts().AllowPopups());
                 options.BaseUris(configuration => configuration.Self());
                 options.FrameSources(o => o.Self()
                     // this custom source can be removed in your build
