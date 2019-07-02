@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Configured-login" xml:space="preserve">
+    <value>此客户端没有配置登录。</value>
+  </data>
+  <data name="Body-Facebook" xml:space="preserve">
+    <value>Facebook的</value>
+  </data>
+  <data name="Body-Forgot" xml:space="preserve">
+    <value>忘记密码？</value>
+  </data>
+  <data name="Body-Google+" xml:space="preserve">
+    <value>Google+的</value>
+  </data>
+  <data name="Body-Jp Project" xml:space="preserve">
+    <value>Jp Project是一个开源Identity Server4计划</value>
+  </data>
+  <data name="Body-Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Body-Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="Body-Register-now" xml:space="preserve">
+    <value>现在注册！</value>
+  </data>
+  <data name="Body-RememberLogin" xml:space="preserve">
+    <value>记住登录</value>
+  </data>
+  <data name="Body-Sign" xml:space="preserve">
+    <value>登录到您的帐户</value>
+  </data>
+  <data name="Body-Sign-up" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="Body-Twitter" xml:space="preserve">
+    <value>推特</value>
+  </data>
+  <data name="Title-Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Title-Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+</root>

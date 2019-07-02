@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CodeInfo" xml:space="preserve">
+    <value>Пожалуйста, введите код, отображаемый на вашем устройстве</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="Title-Device" xml:space="preserve">
+    <value>устройство</value>
+  </data>
+  <data name="Title-Home" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Title-User" xml:space="preserve">
+    <value>пользователь</value>
+  </data>
+  <data name="UserCode" xml:space="preserve">
+    <value>Код пользователя</value>
+  </data>
+</root>

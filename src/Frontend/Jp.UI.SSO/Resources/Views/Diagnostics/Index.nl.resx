@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Claims" xml:space="preserve">
+    <value>Claims</value>
+  </data>
+  <data name="Body-Clients" xml:space="preserve">
+    <value>cliënten</value>
+  </data>
+  <data name="Body-Properties" xml:space="preserve">
+    <value>eigenschappen</value>
+  </data>
+  <data name="Menu-Diagnostics" xml:space="preserve">
+    <value>Diagnostics</value>
+  </data>
+  <data name="Menu-Home" xml:space="preserve">
+    <value>Huis</value>
+  </data>
+  <data name="Menu-User" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="Title-Cookie" xml:space="preserve">
+    <value>Authenticatiecookie</value>
+  </data>
+</root>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Application-access" xml:space="preserve">
+    <value>Toegang tot applicaties</value>
+  </data>
+  <data name="Body-Consent" xml:space="preserve">
+    <value>Toestemming</value>
+  </data>
+  <data name="Body-grant!" xml:space="preserve">
+    <value>Schakel de machtigingen uit die u niet wilt verlenen!</value>
+  </data>
+  <data name="Body-is requesting your permission" xml:space="preserve">
+    <value>vraagt ​​om uw toestemming</value>
+  </data>
+  <data name="Body-No-Do-Not-Allow" xml:space="preserve">
+    <value>Nee Niet toestaan</value>
+  </data>
+  <data name="Body-Personal-information" xml:space="preserve">
+    <value>Persoonlijke informatie</value>
+  </data>
+  <data name="Body-Remember-My-Decision" xml:space="preserve">
+    <value>Onthoud mijn beslissing</value>
+  </data>
+  <data name="Body-Yes-Allow" xml:space="preserve">
+    <value>Ja Sta toe</value>
+  </data>
+  <data name="Menu-Authorize-Application" xml:space="preserve">
+    <value>Aanvraag autoriseren</value>
+  </data>
+  <data name="Title-Home" xml:space="preserve">
+    <value>Huis</value>
+  </data>
+  <data name="Title-User" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="Body-ConfirmAuthCode" xml:space="preserve">
+    <value>Bevestig dat de autorisatieverzoek de code citeert</value>
+  </data>
+</root>
