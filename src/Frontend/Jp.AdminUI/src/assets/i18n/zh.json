@@ -1,0 +1,410 @@
+{
+	"apiResource": {
+		"add": {
+			"description": "描述",
+			"description-tooltip": "该值可以用于例如在同意屏幕上。",
+			"displayName": "显示名称",
+			"displayName-tooltip": "该值可以用于例如在同意屏幕上。",
+			"enabled": "启用",
+			"enabled-tooltip": "指示此资源是否已启用且可以请求。默认为true。",
+			"name": "名称",
+			"name-tooltip": "API的唯一名称。此值用于内省身份验证，并将添加到传出访问令牌的受众。",
+			"userClaims": "用户声明",
+			"userClaims-tooltip": "应包含在访问令牌中的关联用户声明类型的列表。"
+		},
+		"description": "资源是您希望使用IdentityServer保护的 - 要么是API（通过这样做，您的数据也将受到保护）。因此，要访问您的数据库内容必须通过API。",
+		"edit": {
+			"description": "描述",
+			"description-tooltip": "该值可以用于例如在同意屏幕上。",
+			"displayName": "显示名称",
+			"displayName-tooltip": "该值可以用于例如在同意屏幕上。",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"scope": "",
+			"scope-tooltip": "",
+			"secrets": "",
+			"secrets-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"new-api": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"scope": {
+			"Emphasize": "",
+			"Emphasize-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"secret-description": ""
+	},
+	"client": {
+		"ClaimDescription": "允许客户端的设置声明（将包含在访问令牌中）",
+		"ClientDescription": "Client类代表OpenID Connect或OAuth 2.0客户端 - 例如本机应用程序，Web应用程序或基于JS的应用程序",
+		"Image": "",
+		"PropertiesDescription": "",
+		"SecretDescription": "",
+		"TableClientName": "",
+		"claims": {
+			"type": "类型",
+			"type-tooltip": "类型",
+			"value": "值",
+			"value-tooltip": "值"
+		},
+		"clone": {
+			"cancelButtonText": "不，取消plx！",
+			"cancelled": ":)",
+			"cloned": "客户已被克隆。",
+			"confirmButtonText": "是的，克隆它！",
+			"text": "你确定吗？",
+			"title": "克隆"
+		},
+		"details": {
+			"absoluteRefreshTokenLifetime": "绝对刷新令牌生命周期",
+			"absoluteRefreshTokenLifetime-tooltip": "刷新令牌的最长生命周期（秒）。默认为2592000秒/ 30天",
+			"accessTokenLifetime": "",
+			"accessTokenLifetime-tooltip": "",
+			"accessTokenTypes": "",
+			"accessTokenTypes-tooltip": "",
+			"allowAccessTokensViaBrowser": "",
+			"allowAccessTokensViaBrowser-tooltip": "",
+			"allowOfflineAccess": "",
+			"allowOfflineAccess-tooltip": "",
+			"allowPlainTextPkce": "",
+			"allowPlainTextPkce-tooltip": "",
+			"allowRememberConsent": "",
+			"allowRememberConsent-tooltip": "",
+			"allowedCorsOrigins": "",
+			"allowedCorsOrigins-tooltip": "",
+			"allowedGrantTypes": "",
+			"allowedGrantTypes-tooltip": "",
+			"allowedScopes": "",
+			"allowedScopes-tooltip": "",
+			"alwaysIncludeUserClaimsInIdToken": "",
+			"alwaysIncludeUserClaimsInIdToken-tooltip": "",
+			"alwaysSendClientClaims": "",
+			"alwaysSendClientClaims-tooltip": "",
+			"auth": "",
+			"authorizationCodeLifetime": "",
+			"authorizationCodeLifetime-tooltip": "",
+			"backChannelLogoutSessionRequired": "",
+			"backChannelLogoutSessionRequired-tooltip": "",
+			"backChannelLogoutUri": "",
+			"backChannelLogoutUri-tooltip": "",
+			"basic": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"clientClaimsPrefix": "",
+			"clientClaimsPrefix-tooltip": "",
+			"clientId": "",
+			"clientId-tooltip": "",
+			"clientSecrets": "",
+			"clientSecrets-tooltip": "",
+			"clientUri": "",
+			"clientUri-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"deviceCodeLifetime": "",
+			"deviceCodeLifetime-tooltip": "",
+			"deviceFlow": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"frontChannelLogoutSessionRequired": "",
+			"frontChannelLogoutSessionRequired-tooltip": "",
+			"frontChannelLogoutUri": "",
+			"frontChannelLogoutUri-tooltip": "",
+			"identityProviderRestrictions": "",
+			"identityProviderRestrictions-tooltip": "",
+			"identityTokenLifetime": "",
+			"identityTokenLifetime-tooltip": "",
+			"includeJwtId": "",
+			"includeJwtId-tooltip": "",
+			"logoUri": "",
+			"logoUri-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"pairWiseSubjectSalt": "",
+			"pairWiseSubjectSalt-tooltip": "",
+			"properties": "",
+			"properties-tooltip": "",
+			"protocolType": "",
+			"protocolType-tooltip": "",
+			"redirectUris": "",
+			"redirectUris-tooltip": "",
+			"refreshTokenExpiration": "",
+			"refreshTokenExpiration-tooltip": "",
+			"refreshTokenUsage": "",
+			"refreshTokenUsage-tooltip": "",
+			"requireClientSecret": "",
+			"requireClientSecret-tooltip": "",
+			"requireConsent": "",
+			"requireConsent-tooltip": "",
+			"requirePkce": "",
+			"requirePkce-tooltip": "",
+			"settings": "",
+			"slidingRefreshTokenLifetime": "",
+			"slidingRefreshTokenLifetime-tooltip": "",
+			"token": "",
+			"updateAccessTokenClaimsOnRefresh": "",
+			"updateAccessTokenClaimsOnRefresh-tooltip": "",
+			"userCodeType": "",
+			"userCodeType-tooltip": ""
+		},
+		"property": {
+			"key": "",
+			"key-tooltip": "",
+			"value": "",
+			"value-tooltip": ""
+		},
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"general": {
+		"add": "加",
+		"api-resource": "受保护的资源",
+		"clients": "CLIENTS",
+		"copy": "复制",
+		"details": "细节",
+		"edit": "编辑",
+		"empty": "空",
+		"goback": "回去",
+		"identity-resource": "身份资源",
+		"loading": "加载请稍候！",
+		"persisted-grants": "持久的补助金",
+		"remove": "去掉",
+		"revoke": "撤消",
+		"roles": "角色",
+		"users": "用户"
+	},
+	"header": {
+		"search": {
+			"PLACEHOLDER": "输入并按下输入.."
+		}
+	},
+	"home": {
+		"CLIENTDESCRIPTION": "管理您的客户。",
+		"DESCRIPTION": "这是IdentityServer4管理面板。在这里，您可以管理IS4设置。",
+		"WELCOME": "欢迎"
+	},
+	"identityResource": {
+		"add": {
+			"description": "描述",
+			"description-tooltip": "该值将用于例如在同意屏幕上。",
+			"displayName": "显示名称",
+			"displayName-tooltip": "该值将用于例如在同意屏幕上。",
+			"emphasize": "注重",
+			"emphasize-tooltip": "指定同意屏幕是否会强调此范围（如果同意屏幕要实现此功能）。将此设置用于敏感或重要范围。默认为false。",
+			"enabled": "启用",
+			"enabled-tooltip": "指示此资源是否已启用且可以请求。默认为true。",
+			"name": "名称",
+			"name-tooltip": "标识资源的唯一名称。这是客户端将用于授权请求中的scope参数的值。",
+			"required": "需要",
+			"required-tooltip": "指定用户是否可以在同意屏幕上取消选择范围（如果同意屏幕要实现此类功能）。默认为false。",
+			"showInDiscoveryDocument": "在发现文档中显示",
+			"showInDiscoveryDocument-tooltip": "指定此范围是否显示在发现文档中。默认为true。",
+			"userClaims": "用户声明",
+			"userClaims-tooltip": ""
+		},
+		"description": "",
+		"edit": {
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"emphasize": "",
+			"emphasize-tooltip": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"newIr": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"offsidebar": {
+		"setting": {
+			"SETTINGS": "设置"
+		}
+	},
+	"persistedGrant": {
+		"description": "描述",
+		"list": {
+			"clientId": "客户",
+			"creationTime": "CREATIONTIME",
+			"email": "电子邮件",
+			"expiration": "呼气",
+			"key": "键",
+			"picture": "图片",
+			"scopes": "领域",
+			"type": "类型"
+		},
+		"remove": {
+			"cancelButtonText": "不，取消plx！",
+			"cancelled": "格兰特很安全:)",
+			"confirmButtonText": "是的，删除它！",
+			"deleted": "Grant已被删除。",
+			"text": "你将无法恢复！",
+			"title": "你确定吗"
+		}
+	},
+	"roles": {
+		"add": {
+			"roleName": "名称",
+			"roleName-tooltip": "获取或设置角色名称。"
+		},
+		"description": "表示身份系统中的角色",
+		"edit": {
+			"roleName": "名称",
+			"roleName-tooltip": "获取或设置角色名称。"
+		},
+		"list": {
+			"email": "电子邮件",
+			"name": "名称",
+			"picture": "图片"
+		},
+		"name": "名称",
+		"new-role": "新角色",
+		"selectedRole": "选定的角色"
+	},
+	"secrets": {
+		"description": "描述",
+		"description-tooltip": "设置说明",
+		"expiration": "呼气",
+		"expiration-tooltip": "设置到期日",
+		"hashType": "哈希类型",
+		"hashType-tooltip": "设置秘密值的哈希值",
+		"secretType": "秘密类型",
+		"secretType-tooltip": "客户端密钥的类型",
+		"secretValue": "秘密价值",
+		"secretValue-tooltip": "指定客户端的秘密"
+	},
+	"sidebar": {
+		"WELCOME": "欢迎",
+		"heading": {
+			"HEADER": "菜单标题"
+		},
+		"nav": {
+			"SINGLEVIEW": "单一视图"
+		}
+	},
+	"toasterMessages": {
+		"message-success": "做得好！",
+		"title-success": "成功"
+	},
+	"users": {
+		"claims": {
+			"type": "类型",
+			"type-tooltip": "类型",
+			"value": "值",
+			"value-tooltip": "值"
+		},
+		"description": "",
+		"edit": {
+			"accessFailedCount": "",
+			"accessFailedCount-tooltip": "",
+			"change-password": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"confirmPassword": "",
+			"confirmPassword-tooltip": "",
+			"email": "",
+			"email-tooltip": "",
+			"emailConfirmed": "",
+			"emailConfirmed-tooltip": "",
+			"externalLogins": "",
+			"externalLogins-tooltip": "",
+			"lockoutEnabled": "",
+			"lockoutEnabled-tooltip": "",
+			"lockoutEnd": "",
+			"lockoutEnd-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"password": "",
+			"password-tooltip": "",
+			"phoneNumber": "",
+			"phoneNumber-tooltip": "",
+			"phoneNumberConfirmed": "",
+			"phoneNumberConfirmed-tooltip": "",
+			"roles": "",
+			"roles-tooltip": "",
+			"twoFactorEnabled": "",
+			"twoFactorEnabled-tooltip": "",
+			"user-data": "",
+			"userName": "",
+			"userName-tooltip": ""
+		},
+		"list": {
+			"email": "",
+			"info": "",
+			"log-tooltip": "",
+			"name": "",
+			"picture": "",
+			"username": ""
+		},
+		"logins": {
+			"loginProvider": "",
+			"nologins": "",
+			"providerDisplayName": "",
+			"providerKey": ""
+		},
+		"new-user": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"roles": {
+			"name": "",
+			"role": "",
+			"role-tooltip": ""
+		}
+	}
+}

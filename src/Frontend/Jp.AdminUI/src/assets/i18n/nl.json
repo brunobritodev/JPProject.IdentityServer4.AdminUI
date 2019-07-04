@@ -1,0 +1,410 @@
+{
+	"apiResource": {
+		"add": {
+			"description": "Omschrijving",
+			"description-tooltip": "Deze waarde kan b.v. op het toestemmingsscherm.",
+			"displayName": "Weergavenaam",
+			"displayName-tooltip": "Deze waarde kan b.v. op het toestemmingsscherm.",
+			"enabled": "Ingeschakeld",
+			"enabled-tooltip": "Geeft aan of deze bron is ingeschakeld en kan worden opgevraagd. Standaard ingesteld op waar.",
+			"name": "Naam",
+			"name-tooltip": "De unieke naam van de API. Deze waarde wordt gebruikt voor verificatie met introspectie en wordt toegevoegd aan het publiek van het uitgaande toegangstoken.",
+			"userClaims": "Gebruikersclaims",
+			"userClaims-tooltip": "Lijst met bijbehorende gebruikersclaimtypen die moeten worden opgenomen in het toegangstoken."
+		},
+		"description": "Bronnen zijn iets dat u wilt beschermen met IdentityServer - ofwel API's (hierdoor worden uw gegevens ook beschermd). Dus voor toegang tot uw database moet de inhoud via een API zijn.",
+		"edit": {
+			"description": "Omschrijving",
+			"description-tooltip": "Deze waarde kan b.v. op het toestemmingsscherm.",
+			"displayName": "Weergavenaam",
+			"displayName-tooltip": "Deze waarde kan b.v. op het toestemmingsscherm.",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"scope": "",
+			"scope-tooltip": "",
+			"secrets": "",
+			"secrets-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"new-api": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"scope": {
+			"Emphasize": "",
+			"Emphasize-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"secret-description": ""
+	},
+	"client": {
+		"ClaimDescription": "Staat instellingenclaims voor de client toe (wordt opgenomen in het toegangstoken)",
+		"ClientDescription": "De klasse Client vertegenwoordigt een OpenID Connect- of OAuth 2.0-client - bijv. een native applicatie, een webapplicatie of een JS-gebaseerde applicatie",
+		"Image": "",
+		"PropertiesDescription": "",
+		"SecretDescription": "",
+		"TableClientName": "",
+		"claims": {
+			"type": "Type",
+			"type-tooltip": "Type",
+			"value": "waarde",
+			"value-tooltip": "waarde"
+		},
+		"clone": {
+			"cancelButtonText": "Nee, annuleer plx!",
+			"cancelled": ":)",
+			"cloned": "Cliënt is gekloond.",
+			"confirmButtonText": "Ja, klop het!",
+			"text": "Weet je het zeker?",
+			"title": "Clone"
+		},
+		"details": {
+			"absoluteRefreshTokenLifetime": "Absolute vernieuwing van de levensduur van token",
+			"absoluteRefreshTokenLifetime-tooltip": "Maximale levensduur van een vernieuwingstoken in seconden. Standaard ingesteld op 2592000 seconden / 30 dagen",
+			"accessTokenLifetime": "",
+			"accessTokenLifetime-tooltip": "",
+			"accessTokenTypes": "",
+			"accessTokenTypes-tooltip": "",
+			"allowAccessTokensViaBrowser": "",
+			"allowAccessTokensViaBrowser-tooltip": "",
+			"allowOfflineAccess": "",
+			"allowOfflineAccess-tooltip": "",
+			"allowPlainTextPkce": "",
+			"allowPlainTextPkce-tooltip": "",
+			"allowRememberConsent": "",
+			"allowRememberConsent-tooltip": "",
+			"allowedCorsOrigins": "",
+			"allowedCorsOrigins-tooltip": "",
+			"allowedGrantTypes": "",
+			"allowedGrantTypes-tooltip": "",
+			"allowedScopes": "",
+			"allowedScopes-tooltip": "",
+			"alwaysIncludeUserClaimsInIdToken": "",
+			"alwaysIncludeUserClaimsInIdToken-tooltip": "",
+			"alwaysSendClientClaims": "",
+			"alwaysSendClientClaims-tooltip": "",
+			"auth": "",
+			"authorizationCodeLifetime": "",
+			"authorizationCodeLifetime-tooltip": "",
+			"backChannelLogoutSessionRequired": "",
+			"backChannelLogoutSessionRequired-tooltip": "",
+			"backChannelLogoutUri": "",
+			"backChannelLogoutUri-tooltip": "",
+			"basic": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"clientClaimsPrefix": "",
+			"clientClaimsPrefix-tooltip": "",
+			"clientId": "",
+			"clientId-tooltip": "",
+			"clientSecrets": "",
+			"clientSecrets-tooltip": "",
+			"clientUri": "",
+			"clientUri-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"deviceCodeLifetime": "",
+			"deviceCodeLifetime-tooltip": "",
+			"deviceFlow": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"frontChannelLogoutSessionRequired": "",
+			"frontChannelLogoutSessionRequired-tooltip": "",
+			"frontChannelLogoutUri": "",
+			"frontChannelLogoutUri-tooltip": "",
+			"identityProviderRestrictions": "",
+			"identityProviderRestrictions-tooltip": "",
+			"identityTokenLifetime": "",
+			"identityTokenLifetime-tooltip": "",
+			"includeJwtId": "",
+			"includeJwtId-tooltip": "",
+			"logoUri": "",
+			"logoUri-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"pairWiseSubjectSalt": "",
+			"pairWiseSubjectSalt-tooltip": "",
+			"properties": "",
+			"properties-tooltip": "",
+			"protocolType": "",
+			"protocolType-tooltip": "",
+			"redirectUris": "",
+			"redirectUris-tooltip": "",
+			"refreshTokenExpiration": "",
+			"refreshTokenExpiration-tooltip": "",
+			"refreshTokenUsage": "",
+			"refreshTokenUsage-tooltip": "",
+			"requireClientSecret": "",
+			"requireClientSecret-tooltip": "",
+			"requireConsent": "",
+			"requireConsent-tooltip": "",
+			"requirePkce": "",
+			"requirePkce-tooltip": "",
+			"settings": "",
+			"slidingRefreshTokenLifetime": "",
+			"slidingRefreshTokenLifetime-tooltip": "",
+			"token": "",
+			"updateAccessTokenClaimsOnRefresh": "",
+			"updateAccessTokenClaimsOnRefresh-tooltip": "",
+			"userCodeType": "",
+			"userCodeType-tooltip": ""
+		},
+		"property": {
+			"key": "",
+			"key-tooltip": "",
+			"value": "",
+			"value-tooltip": ""
+		},
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"general": {
+		"add": "Toevoegen",
+		"api-resource": "Beschermde bronnen",
+		"clients": "cliënten",
+		"copy": "Kopiëren",
+		"details": "Details",
+		"edit": "BEWERK",
+		"empty": "Leeg",
+		"goback": "Ga terug",
+		"identity-resource": "Identiteitsbronnen",
+		"loading": "Laden even geduld aub!",
+		"persisted-grants": "Aanhoudende subsidies",
+		"remove": "Verwijderen",
+		"revoke": "Intrekken",
+		"roles": "rollen",
+		"users": "gebruikers"
+	},
+	"header": {
+		"search": {
+			"PLACEHOLDER": "Typ en druk op enter.."
+		}
+	},
+	"home": {
+		"CLIENTDESCRIPTION": "Beheer uw klanten.",
+		"DESCRIPTION": "Dit is IdentityServer4 Admin Panel. Hier kunt u uw IS4-instellingen beheren.",
+		"WELCOME": "Welkom"
+	},
+	"identityResource": {
+		"add": {
+			"description": "Omschrijving",
+			"description-tooltip": "Deze waarde zal b.v. op het toestemmingsscherm.",
+			"displayName": "Weergavenaam",
+			"displayName-tooltip": "Deze waarde zal b.v. op het toestemmingsscherm.",
+			"emphasize": "Benadrukken",
+			"emphasize-tooltip": "Geeft aan of het toestemmingsscherm dit bereik zal benadrukken (als het toestemmingsscherm een dergelijke functie wil implementeren). Gebruik deze instelling voor gevoelige of belangrijke scopes. Standaard ingesteld op false.",
+			"enabled": "Ingeschakeld",
+			"enabled-tooltip": "Geeft aan of deze bron is ingeschakeld en kan worden opgevraagd. Standaard ingesteld op waar.",
+			"name": "Naam",
+			"name-tooltip": "De unieke naam van de identiteitsbron. Dit is de waarde die een client zal gebruiken voor de scope-parameter in het machtigingsverzoek.",
+			"required": "Verplicht",
+			"required-tooltip": "Geeft aan of de gebruiker het bereik kan verwijderen op het toestemmingsscherm (als het toestemmingsscherm een dergelijke functie wil implementeren). Standaard ingesteld op false.",
+			"showInDiscoveryDocument": "Show In Discovery Document",
+			"showInDiscoveryDocument-tooltip": "Geeft aan of dit bereik wordt weergegeven in het detectiedocument. Standaard ingesteld op waar.",
+			"userClaims": "Gebruikersclaims",
+			"userClaims-tooltip": ""
+		},
+		"description": "",
+		"edit": {
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"emphasize": "",
+			"emphasize-tooltip": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"newIr": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"offsidebar": {
+		"setting": {
+			"SETTINGS": "instellingen"
+		}
+	},
+	"persistedGrant": {
+		"description": "Omschrijving",
+		"list": {
+			"clientId": "Cliënt",
+			"creationTime": "CreationTime",
+			"email": "E-mail",
+			"expiration": "vervaltijd",
+			"key": "Sleutel",
+			"picture": "afbeelding",
+			"scopes": "scopes",
+			"type": "Type"
+		},
+		"remove": {
+			"cancelButtonText": "Nee, annuleer plx!",
+			"cancelled": "Grant is veilig :)",
+			"confirmButtonText": "Ja, verwijder het!",
+			"deleted": "Grant is verwijderd.",
+			"text": "Je zult niet kunnen herstellen!",
+			"title": "Weet je het zeker"
+		}
+	},
+	"roles": {
+		"add": {
+			"roleName": "Naam",
+			"roleName-tooltip": "Hiermee wordt de naam van de rol opgehaald of ingesteld."
+		},
+		"description": "Vertegenwoordigt een rol in het identiteitssysteem",
+		"edit": {
+			"roleName": "Naam",
+			"roleName-tooltip": "Hiermee wordt de naam van de rol opgehaald of ingesteld."
+		},
+		"list": {
+			"email": "E-mail",
+			"name": "Naam",
+			"picture": "afbeelding"
+		},
+		"name": "Naam",
+		"new-role": "Nieuwe rol",
+		"selectedRole": "Geselecteerde functie"
+	},
+	"secrets": {
+		"description": "Omschrijving",
+		"description-tooltip": "Beschrijving instellen",
+		"expiration": "vervaltijd",
+		"expiration-tooltip": "Stel vervaldatum in",
+		"hashType": "Hash Type",
+		"hashType-tooltip": "Stel de hash van Geheime Waarde in",
+		"secretType": "Geheim Type",
+		"secretType-tooltip": "Het type van het klantgeheim",
+		"secretValue": "Geheime waarde",
+		"secretValue-tooltip": "Geeft het geheim van de client aan"
+	},
+	"sidebar": {
+		"WELCOME": "Welkom",
+		"heading": {
+			"HEADER": "Menuboom"
+		},
+		"nav": {
+			"SINGLEVIEW": "Enkele weergave"
+		}
+	},
+	"toasterMessages": {
+		"message-success": "Goed gedaan!",
+		"title-success": "succes"
+	},
+	"users": {
+		"claims": {
+			"type": "Type",
+			"type-tooltip": "Type",
+			"value": "waarde",
+			"value-tooltip": "waarde"
+		},
+		"description": "",
+		"edit": {
+			"accessFailedCount": "",
+			"accessFailedCount-tooltip": "",
+			"change-password": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"confirmPassword": "",
+			"confirmPassword-tooltip": "",
+			"email": "",
+			"email-tooltip": "",
+			"emailConfirmed": "",
+			"emailConfirmed-tooltip": "",
+			"externalLogins": "",
+			"externalLogins-tooltip": "",
+			"lockoutEnabled": "",
+			"lockoutEnabled-tooltip": "",
+			"lockoutEnd": "",
+			"lockoutEnd-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"password": "",
+			"password-tooltip": "",
+			"phoneNumber": "",
+			"phoneNumber-tooltip": "",
+			"phoneNumberConfirmed": "",
+			"phoneNumberConfirmed-tooltip": "",
+			"roles": "",
+			"roles-tooltip": "",
+			"twoFactorEnabled": "",
+			"twoFactorEnabled-tooltip": "",
+			"user-data": "",
+			"userName": "",
+			"userName-tooltip": ""
+		},
+		"list": {
+			"email": "",
+			"info": "",
+			"log-tooltip": "",
+			"name": "",
+			"picture": "",
+			"username": ""
+		},
+		"logins": {
+			"loginProvider": "",
+			"nologins": "",
+			"providerDisplayName": "",
+			"providerKey": ""
+		},
+		"new-user": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"roles": {
+			"name": "",
+			"role": "",
+			"role-tooltip": ""
+		}
+	}
+}

@@ -1,0 +1,410 @@
+{
+	"apiResource": {
+		"add": {
+			"description": "Описание",
+			"description-tooltip": "Это значение может быть использовано, например, на экране согласия.",
+			"displayName": "Отображаемое имя",
+			"displayName-tooltip": "Это значение может быть использовано, например, на экране согласия.",
+			"enabled": "Включено",
+			"enabled-tooltip": "Указывает, включен ли этот ресурс и может ли быть запрошен. По умолчанию true.",
+			"name": "название",
+			"name-tooltip": "Уникальное имя API. Это значение используется для аутентификации с самоанализом и будет добавлено к аудитории токена исходящего доступа.",
+			"userClaims": "Заявки пользователей",
+			"userClaims-tooltip": "Список связанных типов заявок пользователей, которые должны быть включены в токен доступа."
+		},
+		"description": "Ресурсы - это то, что вы хотите защитить с помощью IdentityServer - API-интерфейсы (при этом ваши данные также будут защищены). Поэтому доступ к содержимому вашей базы данных должен осуществляться через API.",
+		"edit": {
+			"description": "Описание",
+			"description-tooltip": "Это значение может быть использовано, например, на экране согласия.",
+			"displayName": "Отображаемое имя",
+			"displayName-tooltip": "Это значение может быть использовано, например, на экране согласия.",
+			"enabled": "Включено",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"scope": "",
+			"scope-tooltip": "",
+			"secrets": "",
+			"secrets-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"new-api": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"scope": {
+			"Emphasize": "",
+			"Emphasize-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"secret-description": ""
+	},
+	"client": {
+		"ClaimDescription": "Разрешает настройки претензий для клиента (будет включен в токен доступа)",
+		"ClientDescription": "Класс Client представляет клиент OpenID Connect или OAuth 2.0, например нативное приложение, веб-приложение или приложение на основе JS",
+		"Image": "",
+		"PropertiesDescription": "",
+		"SecretDescription": "",
+		"TableClientName": "",
+		"claims": {
+			"type": "Тип",
+			"type-tooltip": "Тип",
+			"value": "Значение",
+			"value-tooltip": "Значение"
+		},
+		"clone": {
+			"cancelButtonText": "Нет, отмените PLX!",
+			"cancelled": ":)",
+			"cloned": "Клиент был клонирован.",
+			"confirmButtonText": "Да, клонируй это!",
+			"text": "Уверены ли вы?",
+			"title": "клон"
+		},
+		"details": {
+			"absoluteRefreshTokenLifetime": "Абсолютный токен Refresh Lifetime",
+			"absoluteRefreshTokenLifetime-tooltip": "Максимальное время жизни токена обновления в секундах. По умолчанию 2592000 секунд / 30 дней",
+			"accessTokenLifetime": "Срок действия токена доступа",
+			"accessTokenLifetime-tooltip": "",
+			"accessTokenTypes": "",
+			"accessTokenTypes-tooltip": "",
+			"allowAccessTokensViaBrowser": "",
+			"allowAccessTokensViaBrowser-tooltip": "",
+			"allowOfflineAccess": "",
+			"allowOfflineAccess-tooltip": "",
+			"allowPlainTextPkce": "",
+			"allowPlainTextPkce-tooltip": "",
+			"allowRememberConsent": "",
+			"allowRememberConsent-tooltip": "",
+			"allowedCorsOrigins": "",
+			"allowedCorsOrigins-tooltip": "",
+			"allowedGrantTypes": "",
+			"allowedGrantTypes-tooltip": "",
+			"allowedScopes": "",
+			"allowedScopes-tooltip": "",
+			"alwaysIncludeUserClaimsInIdToken": "",
+			"alwaysIncludeUserClaimsInIdToken-tooltip": "",
+			"alwaysSendClientClaims": "",
+			"alwaysSendClientClaims-tooltip": "",
+			"auth": "",
+			"authorizationCodeLifetime": "",
+			"authorizationCodeLifetime-tooltip": "",
+			"backChannelLogoutSessionRequired": "",
+			"backChannelLogoutSessionRequired-tooltip": "",
+			"backChannelLogoutUri": "",
+			"backChannelLogoutUri-tooltip": "",
+			"basic": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"clientClaimsPrefix": "",
+			"clientClaimsPrefix-tooltip": "",
+			"clientId": "",
+			"clientId-tooltip": "",
+			"clientSecrets": "",
+			"clientSecrets-tooltip": "",
+			"clientUri": "",
+			"clientUri-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"deviceCodeLifetime": "",
+			"deviceCodeLifetime-tooltip": "",
+			"deviceFlow": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"frontChannelLogoutSessionRequired": "",
+			"frontChannelLogoutSessionRequired-tooltip": "",
+			"frontChannelLogoutUri": "",
+			"frontChannelLogoutUri-tooltip": "",
+			"identityProviderRestrictions": "",
+			"identityProviderRestrictions-tooltip": "",
+			"identityTokenLifetime": "",
+			"identityTokenLifetime-tooltip": "",
+			"includeJwtId": "",
+			"includeJwtId-tooltip": "",
+			"logoUri": "",
+			"logoUri-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"pairWiseSubjectSalt": "",
+			"pairWiseSubjectSalt-tooltip": "",
+			"properties": "",
+			"properties-tooltip": "",
+			"protocolType": "",
+			"protocolType-tooltip": "",
+			"redirectUris": "",
+			"redirectUris-tooltip": "",
+			"refreshTokenExpiration": "",
+			"refreshTokenExpiration-tooltip": "",
+			"refreshTokenUsage": "",
+			"refreshTokenUsage-tooltip": "",
+			"requireClientSecret": "",
+			"requireClientSecret-tooltip": "",
+			"requireConsent": "",
+			"requireConsent-tooltip": "",
+			"requirePkce": "",
+			"requirePkce-tooltip": "",
+			"settings": "",
+			"slidingRefreshTokenLifetime": "",
+			"slidingRefreshTokenLifetime-tooltip": "",
+			"token": "",
+			"updateAccessTokenClaimsOnRefresh": "",
+			"updateAccessTokenClaimsOnRefresh-tooltip": "",
+			"userCodeType": "",
+			"userCodeType-tooltip": ""
+		},
+		"property": {
+			"key": "",
+			"key-tooltip": "",
+			"value": "",
+			"value-tooltip": ""
+		},
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"general": {
+		"add": "добавлять",
+		"api-resource": "Защищенные ресурсы",
+		"clients": "Клиенты",
+		"copy": "копия",
+		"details": "подробности",
+		"edit": "редактировать",
+		"empty": "пустой",
+		"goback": "Вернитесь",
+		"identity-resource": "Персональные ресурсы",
+		"loading": "Загрузка, пожалуйста подождите!",
+		"persisted-grants": "Постоянные Гранты",
+		"remove": "Удалить",
+		"revoke": "отзывать",
+		"roles": "роли",
+		"users": "пользователей"
+	},
+	"header": {
+		"search": {
+			"PLACEHOLDER": "Введите и нажмите Enter."
+		}
+	},
+	"home": {
+		"CLIENTDESCRIPTION": "Управляйте своими клиентами.",
+		"DESCRIPTION": "Это IdentityServer4 Admin Panel. Здесь вы можете управлять настройками IS4.",
+		"WELCOME": "желанный"
+	},
+	"identityResource": {
+		"add": {
+			"description": "Описание",
+			"description-tooltip": "Это значение будет использоваться, например, на экране согласия.",
+			"displayName": "Отображаемое имя",
+			"displayName-tooltip": "Это значение будет использоваться, например, на экране согласия.",
+			"emphasize": "Подчеркивать",
+			"emphasize-tooltip": "Указывает, будет ли экран согласия выделять эту область (если экран согласия хочет реализовать такую функцию). Используйте этот параметр для чувствительных или важных областей. По умолчанию false.",
+			"enabled": "Включено",
+			"enabled-tooltip": "Указывает, включен ли этот ресурс и может ли быть запрошен. По умолчанию true.",
+			"name": "название",
+			"name-tooltip": "Уникальное имя ресурса идентификации. Это значение, которое клиент будет использовать для параметра области действия в запросе на авторизацию.",
+			"required": "необходимые",
+			"required-tooltip": "Указывает, может ли пользователь отменить выбор области на экране согласия (если экран согласия хочет реализовать такую функцию). По умолчанию false.",
+			"showInDiscoveryDocument": "Показать в документе обнаружения",
+			"showInDiscoveryDocument-tooltip": "Указывает, отображается ли эта область в документе обнаружения. По умолчанию true.",
+			"userClaims": "Заявки пользователей",
+			"userClaims-tooltip": ""
+		},
+		"description": "",
+		"edit": {
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"emphasize": "",
+			"emphasize-tooltip": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"newIr": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"offsidebar": {
+		"setting": {
+			"SETTINGS": "настройки"
+		}
+	},
+	"persistedGrant": {
+		"description": "Описание",
+		"list": {
+			"clientId": "клиент",
+			"creationTime": "CreationTime",
+			"email": "Эл. адрес",
+			"expiration": "истечение",
+			"key": "ключ",
+			"picture": "картина",
+			"scopes": "прицелы",
+			"type": "Тип"
+		},
+		"remove": {
+			"cancelButtonText": "Нет, отмените PLX!",
+			"cancelled": "Грант в безопасности :)",
+			"confirmButtonText": "Да, удали это!",
+			"deleted": "Грант был удален.",
+			"text": "Вы не сможете восстановить!",
+			"title": "Уверены ли вы"
+		}
+	},
+	"roles": {
+		"add": {
+			"roleName": "название",
+			"roleName-tooltip": "Получает или задает имя роли."
+		},
+		"description": "Представляет роль в системе идентификации",
+		"edit": {
+			"roleName": "название",
+			"roleName-tooltip": "Получает или задает имя роли."
+		},
+		"list": {
+			"email": "Эл. адрес",
+			"name": "название",
+			"picture": "картина"
+		},
+		"name": "название",
+		"new-role": "Новая роль",
+		"selectedRole": "Избранная роль"
+	},
+	"secrets": {
+		"description": "Описание",
+		"description-tooltip": "Описание набора",
+		"expiration": "истечение",
+		"expiration-tooltip": "установить срок действия",
+		"hashType": "Тип хэша",
+		"hashType-tooltip": "Установите хэш секретного значения",
+		"secretType": "Секретный тип",
+		"secretType-tooltip": "Тип секрета клиента",
+		"secretValue": "Секретная ценность",
+		"secretValue-tooltip": "Определяет секрет клиента"
+	},
+	"sidebar": {
+		"WELCOME": "желанный",
+		"heading": {
+			"HEADER": "Заголовок меню"
+		},
+		"nav": {
+			"SINGLEVIEW": "Одиночный вид"
+		}
+	},
+	"toasterMessages": {
+		"message-success": "Отлично сработано!",
+		"title-success": "успех"
+	},
+	"users": {
+		"claims": {
+			"type": "Тип",
+			"type-tooltip": "Тип",
+			"value": "Значение",
+			"value-tooltip": "Значение"
+		},
+		"description": "",
+		"edit": {
+			"accessFailedCount": "Access Failed Count",
+			"accessFailedCount-tooltip": "",
+			"change-password": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"confirmPassword": "",
+			"confirmPassword-tooltip": "",
+			"email": "",
+			"email-tooltip": "",
+			"emailConfirmed": "",
+			"emailConfirmed-tooltip": "",
+			"externalLogins": "",
+			"externalLogins-tooltip": "",
+			"lockoutEnabled": "",
+			"lockoutEnabled-tooltip": "",
+			"lockoutEnd": "",
+			"lockoutEnd-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"password": "",
+			"password-tooltip": "",
+			"phoneNumber": "",
+			"phoneNumber-tooltip": "",
+			"phoneNumberConfirmed": "",
+			"phoneNumberConfirmed-tooltip": "",
+			"roles": "",
+			"roles-tooltip": "",
+			"twoFactorEnabled": "",
+			"twoFactorEnabled-tooltip": "",
+			"user-data": "",
+			"userName": "",
+			"userName-tooltip": ""
+		},
+		"list": {
+			"email": "",
+			"info": "",
+			"log-tooltip": "",
+			"name": "",
+			"picture": "",
+			"username": ""
+		},
+		"logins": {
+			"loginProvider": "",
+			"nologins": "",
+			"providerDisplayName": "",
+			"providerKey": ""
+		},
+		"new-user": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"roles": {
+			"name": "",
+			"role": "",
+			"role-tooltip": ""
+		}
+	}
+}

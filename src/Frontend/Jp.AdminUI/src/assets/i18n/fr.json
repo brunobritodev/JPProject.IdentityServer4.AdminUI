@@ -1,0 +1,410 @@
+{
+	"apiResource": {
+		"add": {
+			"description": "La description",
+			"description-tooltip": "Cette valeur peut être utilisée par exemple. sur l'écran de consentement.",
+			"displayName": "Afficher un nom",
+			"displayName-tooltip": "Cette valeur peut être utilisée par exemple. sur l'écran de consentement.",
+			"enabled": "Activée",
+			"enabled-tooltip": "Indique si cette ressource est activée et peut être demandée. La valeur par défaut est true.",
+			"name": "Prénom",
+			"name-tooltip": "Le nom unique de l'API. Cette valeur est utilisée pour l'authentification avec introspection et sera ajoutée à l'audience du jeton d'accès sortant.",
+			"userClaims": "Revendications de l'utilisateur",
+			"userClaims-tooltip": "Liste des types de revendications d'utilisateurs associés à inclure dans le jeton d'accès."
+		},
+		"description": "Les ressources sont quelque chose que vous souhaitez protéger avec IdentityServer - des API (en faisant cela, vos données seront également protégées). Donc, pour accéder à votre base de données, vous devez utiliser une API.",
+		"edit": {
+			"description": "La description",
+			"description-tooltip": "Cette valeur peut être utilisée par exemple. sur l'écran de consentement.",
+			"displayName": "Afficher un nom",
+			"displayName-tooltip": "Cette valeur peut être utilisée par exemple. sur l'écran de consentement.",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"scope": "",
+			"scope-tooltip": "",
+			"secrets": "",
+			"secrets-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"new-api": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"scope": {
+			"Emphasize": "",
+			"Emphasize-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"secret-description": ""
+	},
+	"client": {
+		"ClaimDescription": "Autorise les revendications de paramètres pour le client (sera inclus dans le jeton d'accès)",
+		"ClientDescription": "La classe Client représente un client OpenID Connect ou OAuth 2.0 - par exemple. une application native, une application Web ou une application basée sur JS",
+		"Image": "",
+		"PropertiesDescription": "",
+		"SecretDescription": "",
+		"TableClientName": "",
+		"claims": {
+			"type": "Type",
+			"type-tooltip": "Type",
+			"value": "Valeur",
+			"value-tooltip": "Valeur"
+		},
+		"clone": {
+			"cancelButtonText": "Non, annulez plx!",
+			"cancelled": ":)",
+			"cloned": "Le client a été cloné.",
+			"confirmButtonText": "Oui, clone-le!",
+			"text": "Êtes-vous sûr?",
+			"title": "Cloner"
+		},
+		"details": {
+			"absoluteRefreshTokenLifetime": "Durée de vie absolue du jeton d'actualisation",
+			"absoluteRefreshTokenLifetime-tooltip": "Durée de vie maximale d'un jeton d'actualisation en secondes. La valeur par défaut est 2592000 secondes / 30 jours",
+			"accessTokenLifetime": "",
+			"accessTokenLifetime-tooltip": "",
+			"accessTokenTypes": "",
+			"accessTokenTypes-tooltip": "",
+			"allowAccessTokensViaBrowser": "",
+			"allowAccessTokensViaBrowser-tooltip": "",
+			"allowOfflineAccess": "",
+			"allowOfflineAccess-tooltip": "",
+			"allowPlainTextPkce": "",
+			"allowPlainTextPkce-tooltip": "",
+			"allowRememberConsent": "",
+			"allowRememberConsent-tooltip": "",
+			"allowedCorsOrigins": "",
+			"allowedCorsOrigins-tooltip": "",
+			"allowedGrantTypes": "",
+			"allowedGrantTypes-tooltip": "",
+			"allowedScopes": "",
+			"allowedScopes-tooltip": "",
+			"alwaysIncludeUserClaimsInIdToken": "",
+			"alwaysIncludeUserClaimsInIdToken-tooltip": "",
+			"alwaysSendClientClaims": "",
+			"alwaysSendClientClaims-tooltip": "",
+			"auth": "",
+			"authorizationCodeLifetime": "",
+			"authorizationCodeLifetime-tooltip": "",
+			"backChannelLogoutSessionRequired": "",
+			"backChannelLogoutSessionRequired-tooltip": "",
+			"backChannelLogoutUri": "",
+			"backChannelLogoutUri-tooltip": "",
+			"basic": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"clientClaimsPrefix": "",
+			"clientClaimsPrefix-tooltip": "",
+			"clientId": "",
+			"clientId-tooltip": "",
+			"clientSecrets": "",
+			"clientSecrets-tooltip": "",
+			"clientUri": "",
+			"clientUri-tooltip": "",
+			"description": "",
+			"description-tooltip": "",
+			"deviceCodeLifetime": "",
+			"deviceCodeLifetime-tooltip": "",
+			"deviceFlow": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"frontChannelLogoutSessionRequired": "",
+			"frontChannelLogoutSessionRequired-tooltip": "",
+			"frontChannelLogoutUri": "",
+			"frontChannelLogoutUri-tooltip": "",
+			"identityProviderRestrictions": "",
+			"identityProviderRestrictions-tooltip": "",
+			"identityTokenLifetime": "",
+			"identityTokenLifetime-tooltip": "",
+			"includeJwtId": "",
+			"includeJwtId-tooltip": "",
+			"logoUri": "",
+			"logoUri-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"pairWiseSubjectSalt": "",
+			"pairWiseSubjectSalt-tooltip": "",
+			"properties": "",
+			"properties-tooltip": "",
+			"protocolType": "",
+			"protocolType-tooltip": "",
+			"redirectUris": "",
+			"redirectUris-tooltip": "",
+			"refreshTokenExpiration": "",
+			"refreshTokenExpiration-tooltip": "",
+			"refreshTokenUsage": "",
+			"refreshTokenUsage-tooltip": "",
+			"requireClientSecret": "",
+			"requireClientSecret-tooltip": "",
+			"requireConsent": "",
+			"requireConsent-tooltip": "",
+			"requirePkce": "",
+			"requirePkce-tooltip": "",
+			"settings": "",
+			"slidingRefreshTokenLifetime": "",
+			"slidingRefreshTokenLifetime-tooltip": "",
+			"token": "",
+			"updateAccessTokenClaimsOnRefresh": "",
+			"updateAccessTokenClaimsOnRefresh-tooltip": "",
+			"userCodeType": "",
+			"userCodeType-tooltip": ""
+		},
+		"property": {
+			"key": "",
+			"key-tooltip": "",
+			"value": "",
+			"value-tooltip": ""
+		},
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"general": {
+		"add": "Ajouter",
+		"api-resource": "Ressources protégées",
+		"clients": "Les clients",
+		"copy": "copie",
+		"details": "Détails",
+		"edit": "modifier",
+		"empty": "vide",
+		"goback": "Retourner",
+		"identity-resource": "Ressources d'identité",
+		"loading": "Chargement, veuillez patienter!",
+		"persisted-grants": "Subventions persistantes",
+		"remove": "Retirer",
+		"revoke": "Révoquer",
+		"roles": "Rôles",
+		"users": "utilisateurs"
+	},
+	"header": {
+		"search": {
+			"PLACEHOLDER": "Tapez et appuyez sur Entrée .."
+		}
+	},
+	"home": {
+		"CLIENTDESCRIPTION": "Gérez vos clients.",
+		"DESCRIPTION": "C'est le panneau d'administration IdentityServer4. Ici, vous pouvez gérer vos paramètres IS4.",
+		"WELCOME": "Bienvenue"
+	},
+	"identityResource": {
+		"add": {
+			"description": "La description",
+			"description-tooltip": "Cette valeur sera utilisée par exemple. sur l'écran de consentement.",
+			"displayName": "Afficher un nom",
+			"displayName-tooltip": "Cette valeur sera utilisée par exemple. sur l'écran de consentement.",
+			"emphasize": "Souligner ",
+			"emphasize-tooltip": "Spécifie si l'écran de consentement mettra l'accent sur cette portée (si l'écran de consentement souhaite implémenter une telle fonctionnalité). Utilisez ce paramètre pour les étendues sensibles ou importantes. La valeur par défaut est false.",
+			"enabled": "Activée",
+			"enabled-tooltip": "Indique si cette ressource est activée et peut être demandée. La valeur par défaut est true.",
+			"name": "Prénom",
+			"name-tooltip": "Le nom unique de la ressource d'identité. C'est la valeur qu'un client utilisera pour le paramètre scope dans la demande d'autorisation.",
+			"required": "Champs obligatoires",
+			"required-tooltip": "Spécifie si l'utilisateur peut désélectionner l'étendue sur l'écran de consentement (si l'écran de consentement souhaite implémenter une telle fonctionnalité). La valeur par défaut est false.",
+			"showInDiscoveryDocument": "Afficher dans le document de découverte",
+			"showInDiscoveryDocument-tooltip": "Spécifie si cette étendue est affichée dans le document de découverte. La valeur par défaut est true.",
+			"userClaims": "Revendications de l'utilisateur",
+			"userClaims-tooltip": ""
+		},
+		"description": "",
+		"edit": {
+			"description": "",
+			"description-tooltip": "",
+			"displayName": "",
+			"displayName-tooltip": "",
+			"emphasize": "",
+			"emphasize-tooltip": "",
+			"enabled": "",
+			"enabled-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"required": "",
+			"required-tooltip": "",
+			"showInDiscoveryDocument": "",
+			"showInDiscoveryDocument-tooltip": "",
+			"userClaims": "",
+			"userClaims-tooltip": ""
+		},
+		"list": {
+			"description": "",
+			"name": ""
+		},
+		"newIr": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		}
+	},
+	"offsidebar": {
+		"setting": {
+			"SETTINGS": "Réglages"
+		}
+	},
+	"persistedGrant": {
+		"description": "La description",
+		"list": {
+			"clientId": "Client",
+			"creationTime": "Temps de creation",
+			"email": "Email",
+			"expiration": "expiration",
+			"key": "Clé",
+			"picture": "Image",
+			"scopes": "Portées",
+			"type": "Type"
+		},
+		"remove": {
+			"cancelButtonText": "Non, annulez plx!",
+			"cancelled": "Grant est en sécurité :)",
+			"confirmButtonText": "Oui, supprimez-le!",
+			"deleted": "La subvention a été supprimée.",
+			"text": "Votre ne sera pas capable de récupérer!",
+			"title": "Êtes-vous sûr"
+		}
+	},
+	"roles": {
+		"add": {
+			"roleName": "Prénom",
+			"roleName-tooltip": "Obtient ou définit le nom du rôle."
+		},
+		"description": "Représente un rôle dans le système d'identité",
+		"edit": {
+			"roleName": "Prénom",
+			"roleName-tooltip": "Obtient ou définit le nom du rôle."
+		},
+		"list": {
+			"email": "Email",
+			"name": "Prénom",
+			"picture": "Image"
+		},
+		"name": "Prénom",
+		"new-role": "Nouveau rôle",
+		"selectedRole": "Rôle sélectionné"
+	},
+	"secrets": {
+		"description": "La description",
+		"description-tooltip": "Set description",
+		"expiration": "expiration",
+		"expiration-tooltip": "Définir l'expiration",
+		"hashType": "Type de hachage",
+		"hashType-tooltip": "Définir le hash de la valeur secrète",
+		"secretType": "Type secret",
+		"secretType-tooltip": "Le type du secret client",
+		"secretValue": "Valeur secrète",
+		"secretValue-tooltip": "Spécifie le secret du client"
+	},
+	"sidebar": {
+		"WELCOME": "Bienvenue",
+		"heading": {
+			"HEADER": "Titre du menu"
+		},
+		"nav": {
+			"SINGLEVIEW": "Vue unique"
+		}
+	},
+	"toasterMessages": {
+		"message-success": "Bien joué!",
+		"title-success": "Succès"
+	},
+	"users": {
+		"claims": {
+			"type": "Type",
+			"type-tooltip": "Type",
+			"value": "Valeur",
+			"value-tooltip": "Valeur"
+		},
+		"description": "",
+		"edit": {
+			"accessFailedCount": "Nombre d'échecs d'accès",
+			"accessFailedCount-tooltip": "",
+			"change-password": "",
+			"claims": "",
+			"claims-tooltip": "",
+			"confirmPassword": "",
+			"confirmPassword-tooltip": "",
+			"email": "",
+			"email-tooltip": "",
+			"emailConfirmed": "",
+			"emailConfirmed-tooltip": "",
+			"externalLogins": "",
+			"externalLogins-tooltip": "",
+			"lockoutEnabled": "",
+			"lockoutEnabled-tooltip": "",
+			"lockoutEnd": "",
+			"lockoutEnd-tooltip": "",
+			"name": "",
+			"name-tooltip": "",
+			"password": "",
+			"password-tooltip": "",
+			"phoneNumber": "",
+			"phoneNumber-tooltip": "",
+			"phoneNumberConfirmed": "",
+			"phoneNumberConfirmed-tooltip": "",
+			"roles": "",
+			"roles-tooltip": "",
+			"twoFactorEnabled": "",
+			"twoFactorEnabled-tooltip": "",
+			"user-data": "",
+			"userName": "",
+			"userName-tooltip": ""
+		},
+		"list": {
+			"email": "",
+			"info": "",
+			"log-tooltip": "",
+			"name": "",
+			"picture": "",
+			"username": ""
+		},
+		"logins": {
+			"loginProvider": "",
+			"nologins": "",
+			"providerDisplayName": "",
+			"providerKey": ""
+		},
+		"new-user": "",
+		"remove": {
+			"cancelButtonText": "",
+			"cancelled": "",
+			"confirmButtonText": "",
+			"deleted": "",
+			"text": "",
+			"title": ""
+		},
+		"roles": {
+			"name": "",
+			"role": "",
+			"role-tooltip": ""
+		}
+	}
+}
