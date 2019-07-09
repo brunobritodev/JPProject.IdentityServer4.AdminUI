@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Welcome" xml:space="preserve">
+    <value>&lt;h1 class="display-4"&gt; Добро пожаловать! &lt;/h1&gt;
+                &lt;p class="lead"&gt; Проект Jp состоит из 3 WebApp: сервер единого входа, управление пользователями и администратор для ID4. &lt;/p&gt;
+                &lt;hr class="my-4"&gt;
+                &lt;p&gt; Доступ под каждым из них. &lt;/p&gt;
+                &lt;p&gt;
+                    Вот ссылки на
+                    &lt;a class="text-white-50" href="https://github.com/brunohbrito/JP-Project"&gt; хранилище исходного кода &lt;/a&gt;,
+                    и &lt;a class="text-white-50" href="https://jp-project.readthedocs.io/en/latest/index.html"&gt; документы для получения дополнительной информации &lt;/a&gt;.
+                &lt;p&gt;</value>
+  </data>
+  <data name="Menu-Home" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Menu-User" xml:space="preserve">
+    <value>пользователь</value>
+  </data>
+  <data name="Body-Click" xml:space="preserve">
+    <value>Нажмите</value>
+  </data>
+  <data name="Body-Demo" xml:space="preserve">
+    <value>Выберите демо</value>
+  </data>
+  <data name="Body-Document" xml:space="preserve">
+    <value>IdentityServer публикует
+                            &lt;a href="~/.well-known/openid-configuration"&gt; документ обнаружения &lt;/a&gt;
+                            где вы можете найти метаданные и ссылки на все конечные точки, ключевые материалы и т. д.</value>
+  </data>
+  <data name="Body-Here" xml:space="preserve">
+    <value>Вот</value>
+  </data>
+  <data name="Body-HimselfData" xml:space="preserve">
+    <value>пользовательский интерфейс для управления данными. Вы можете изменить свой профиль, обновить пароль и так далее.</value>
+  </data>
+  <data name="Body-IS4-Main-Goal" xml:space="preserve">
+    <value>Основной целью Jp Project является обеспечение</value>
+  </data>
+  <data name="Body-Jp-Description" xml:space="preserve">
+    <value>&lt;h1 class="mb-3 text-sm-nowrap"&gt; Проект Jp &lt;/h1&gt;
+                    &lt;h2 class="mb-3 text-sm-nowrap"&gt; Бесплатная панель администратора для администрирования IdentityServer4 &lt;/h2&gt;
+                    &lt;p class="lead"&gt;
+                        Единственный интерфейс администратора Bootstrap, который вам нужен &lt;strong&gt; для создания решения единого входа &lt;/strong&gt;.
+                    &lt;p&gt;
+                    &lt;p class="lead mb-4"&gt;
+                        Jp Project - это инициатива с открытым исходным кодом. Встроенный в Bootstrap 4, Angular 7 и .Net Core 2.2.
+                    &lt;p&gt;
+                    &lt;div class="d-flex гибкий столбец flex-md-row lead mb-3"&gt;
+                        &lt;a href="#live-preview" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Предварительный просмотр в режиме реального времени &lt;/a&gt;
+                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Загрузить проект Jp &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class="version text-small mt-3"&gt;
+                        Версия библиотеки: &lt;strong&gt; 1.1 &lt;/strong&gt;. Версия шаблона администратора: &lt;strong&gt; 1.1 &lt;/strong&gt;.
+                    &lt;/div&gt;</value>
+  </data>
+  <data name="Body-Manage" xml:space="preserve">
+    <value>управлять сохраненными грантами.</value>
+  </data>
+  <data name="Body-ManageServer" xml:space="preserve">
+    <value>управлять сервером.</value>
+  </data>
+  <data name="Body-RichUI" xml:space="preserve">
+    <value>управлять Identity Server 4. Богатый пользовательский интерфейс, разработанный в Angular 6.</value>
+  </data>
+  <data name="Body-SSO" xml:space="preserve">
+    <value>Единая точка входа</value>
+  </data>
+  <data name="Body-UIAngular7" xml:space="preserve">
+    <value>Богатый пользовательский интерфейс, разработанный в шаблоне Core UI Angular 7.</value>
+  </data>
+  <data name="Body-User-Interface" xml:space="preserve">
+    <value>Пользовательский интерфейс администратора</value>
+  </data>
+  <data name="Body-UserManagement" xml:space="preserve">
+    <value>Пользовательский интерфейс управления</value>
+  </data>
+</root>

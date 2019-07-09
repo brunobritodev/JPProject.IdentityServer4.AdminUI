@@ -111,6 +111,22 @@ We'll love it! Please [Read the docs](https://jp-project.readthedocs.io/en/lates
 If you need help building or running your Jp Project platform
 There are several ways we can help you out.
 
+## v1.4.0
+
+1. Added :boom: **New Translations** (auto-generate) :green_heart: :blue_heart:
+   * Spanish
+   * French
+   * Dutch
+   * Russian
+   * Chinese Simplified
+   * Chinese Traditional
+
+    <small>If you find some mistakes feel free to PR</small>
+
+2. Added integration with Azure DevOps for full CI/CD. ASAP SonarQube
+
+3. Bug fixesz
+
 ## v1.3
 
 - Bug fixes
@@ -130,18 +146,10 @@ There are several ways we can help you out.
 
 Check [Changelog.md](https://github.com/brunohbrito/JP-Project/blob/master/CHANGELOG.md) for a complete list of changes.
 
-## v1.1
-- Minor bugs correction
-- Added localization feature to SSO
-- Added translation feature to User Management
-- Silent refresh for angular-oauth2-oidc both for User Management and Admin
-- Changed Security Headers to accept Azure Application Insights
- 
-
-## v1.0
-* First release
-
 # What comes next?
 
 Code coverage
 
+UI for Device codes 
+
+CI with SonarCloud

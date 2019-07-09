@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Welcome" xml:space="preserve">
+    <value>&lt;h1 class="display-4"&gt; Welkom! &lt;/h1&gt;
+                &lt;p class="lead"&gt; Jp Project is samengesteld door 3 WebApp: A Single Sign On Server, User Management en Admin for ID4. &lt;/p&gt;
+                &lt;hr class="my-4"&gt;
+                &lt;p&gt; Toegang onder elk van hen. &lt;/p&gt;
+                &lt;p&gt;
+                    Hier zijn links naar de
+                    &lt;a class="text-white-50" href="https://github.com/brunohbrito/JP-Project"&gt; broncode repository &lt;/a&gt;,
+                    en &lt;a class="text-white-50" href="https://jp-project.readthedocs.io/en/latest/index.html"&gt; documenten voor meer informatie &lt;/a&gt;.
+                &lt;/p&gt;</value>
+  </data>
+  <data name="Menu-Home" xml:space="preserve">
+    <value>Huis</value>
+  </data>
+  <data name="Menu-User" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="Body-Click" xml:space="preserve">
+    <value>Klik</value>
+  </data>
+  <data name="Body-Demo" xml:space="preserve">
+    <value>Kies demo</value>
+  </data>
+  <data name="Body-Document" xml:space="preserve">
+    <value>IdentityServer publiceert een
+                            &lt;a href="~/.well- known/openid-configuration"&gt; discovery-document &lt;/a&gt;
+                            waar je metadata en links naar alle eindpunten, sleutelmateriaal, etc. kunt vinden</value>
+  </data>
+  <data name="Body-Here" xml:space="preserve">
+    <value>hier</value>
+  </data>
+  <data name="Body-HimselfData" xml:space="preserve">
+    <value>is een gebruikersinterface voor gebruikers om zichzelf gegevens te beheren. U kunt uw profiel wijzigen, uw wachtwoord updaten, enzovoort.</value>
+  </data>
+  <data name="Body-IS4-Main-Goal" xml:space="preserve">
+    <value>Het belangrijkste doel van Jp Project is om een</value>
+  </data>
+  <data name="Body-Jp-Description" xml:space="preserve">
+    <value>&lt;h1 class="mb-3 text-sm-nowrap"&gt; Jp Project &lt;/h1&gt;
+                    &lt;h2 class="mb-3 text-sm-nowrap"&gt;Gratis Admin Panel voor beheer van IdentityServer4 &lt;/h2&gt;
+                    &lt;p class="lead"&gt;
+                        De enige gebruikersinterface voor Bootstrap-beheer die u nodig heeft om &lt;strong&gt; uw Single Sign On-oplossing te maken &lt;/strong&gt;.
+                    &lt;/p&gt;
+                    &lt;p class="lead mb-4"&gt;
+                        Jp Project is een open source-initiatief. Gebouwd in Bootstrap 4, Angular 7 en .Net Core 2.2.
+                    &lt;/p&gt;
+                    &lt;div class="d-flex flex-column flex-md-rij lood mb-3"&gt;
+                        &lt;a href="#live-preview" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Live voorbeeld &lt;/a&gt;
+                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Download Jp-project &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class="version text-small mt-3"&gt;
+                        Bibliotheekversie: &lt;strong&gt; 1.1 &lt;/strong&gt; · Admin-sjabloonversie: &lt;strong&gt; 1.1 &lt;/strong&gt;
+                    &lt;/div&gt;</value>
+  </data>
+  <data name="Body-Manage" xml:space="preserve">
+    <value>om uw opgeslagen beurzen te beheren.</value>
+  </data>
+  <data name="Body-ManageServer" xml:space="preserve">
+    <value>om Server te beheren.</value>
+  </data>
+  <data name="Body-RichUI" xml:space="preserve">
+    <value>om Identity Server 4 te beheren. Een rijke gebruikersinterface, ontwikkeld in Angular 6.</value>
+  </data>
+  <data name="Body-SSO" xml:space="preserve">
+    <value>Eenmalig inloggen</value>
+  </data>
+  <data name="Body-UIAngular7" xml:space="preserve">
+    <value>Een rijke gebruikersinterface, ontwikkeld in Core UI Angular 7-sjabloon.</value>
+  </data>
+  <data name="Body-User-Interface" xml:space="preserve">
+    <value>Admin Gebruikersinterface</value>
+  </data>
+  <data name="Body-UserManagement" xml:space="preserve">
+    <value>User Management UI</value>
+  </data>
+</root>

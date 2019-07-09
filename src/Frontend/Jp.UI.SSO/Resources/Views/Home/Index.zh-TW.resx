@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Welcome" xml:space="preserve">
+    <value>&lt;h1 class =“display-4”&gt;歡迎！&lt;/h1&gt;
+                &lt;p class =“lead”&gt; Jp Project由3個WebApp組成：ID4的單點登錄服務器，用戶管理和管理員。&lt;/p&gt;
+                &lt;hr class =“my-4”&gt;
+                &lt;p&gt;在每個人的下方訪問。&lt;/p&gt;
+                &lt;p&gt;
+                    這裡有鏈接
+                    &lt;a class="text-white-50" href="https://github.com/brunohbrito/JP-Project"&gt;源代碼庫&lt;/a&gt;，
+                    並&lt;a class="text-white-50" href="https://jp-project.readthedocs.io/en/latest/index.html"&gt;提供更多信息的文檔&lt;/a&gt;。
+                &lt;/p&gt;</value>
+  </data>
+  <data name="Menu-Home" xml:space="preserve">
+    <value>家</value>
+  </data>
+  <data name="Menu-User" xml:space="preserve">
+    <value>用戶</value>
+  </data>
+  <data name="Body-Click" xml:space="preserve">
+    <value>點擊</value>
+  </data>
+  <data name="Body-Demo" xml:space="preserve">
+    <value>選擇演示</value>
+  </data>
+  <data name="Body-Document" xml:space="preserve">
+    <value>IdentityServer發布了一個
+                            &lt;a href="~/.well-known/openid-configuration"&gt;發現文檔&lt;/a&gt;
+                            您可以在其中找到元數據和指向所有端點，密鑰材料等的鏈接。</value>
+  </data>
+  <data name="Body-Here" xml:space="preserve">
+    <value>這裡</value>
+  </data>
+  <data name="Body-HimselfData" xml:space="preserve">
+    <value>是用戶管理自己數據的UI。您可以更改個人資料，更新密碼等。</value>
+  </data>
+  <data name="Body-IS4-Main-Goal" xml:space="preserve">
+    <value>Jp Project的主要目標是提供一個</value>
+  </data>
+  <data name="Body-Jp-Description" xml:space="preserve">
+    <value>&lt;h1 class =“mb-3 text-sm-nowrap”&gt; Jp Project &lt;/h1&gt;
+                    &lt;h2 class =“mb-3 text-sm-nowrap”&gt; IdentityServer4管理的免費管理面板&lt;/h2&gt;
+                    &lt;p class =“lead”&gt;
+                        您需要&lt;strong&gt;創建單點登錄解決方案&lt;/strong&gt;所需的唯一Bootstrap管理界面。
+                    &lt;/p&gt;
+                    &lt;p class =“lead mb-4”&gt;
+                        Jp Project是一個開源計劃。內置於Bootstrap 4，Angular 7和.Net Core 2.2中。
+                    &lt;/p&gt;
+                    &lt;div class =“d-flex flex-column flex-md-row lead mb-3”&gt;
+                        &lt;a href="#live-preview" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;實時預覽&lt;/a&gt;
+                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;下載Jp項目&lt;/A&gt;
+                    &lt;/div&gt;
+                    &lt;div class =“version text-small mt-3”&gt;
+                        庫版本：&lt;strong&gt; 1.1 &lt;/strong&gt;·管理員模板版本：&lt;strong&gt; 1.1 &lt;/strong&gt;
+                    &lt;/div&gt;</value>
+  </data>
+  <data name="Body-Manage" xml:space="preserve">
+    <value>管理您存儲的撥款。</value>
+  </data>
+  <data name="Body-ManageServer" xml:space="preserve">
+    <value>管理服務器。</value>
+  </data>
+  <data name="Body-RichUI" xml:space="preserve">
+    <value>管理Identity Server 4.在Angular 6中開發的豐富UI。</value>
+  </data>
+  <data name="Body-SSO" xml:space="preserve">
+    <value>單點登錄</value>
+  </data>
+  <data name="Body-UIAngular7" xml:space="preserve">
+    <value>豐富的UI，在Core UI Angular 7模板中開發。</value>
+  </data>
+  <data name="Body-User-Interface" xml:space="preserve">
+    <value>管理員用戶界面</value>
+  </data>
+  <data name="Body-UserManagement" xml:space="preserve">
+    <value>用戶管理UI</value>
+  </data>
+</root>

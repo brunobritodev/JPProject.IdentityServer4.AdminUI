@@ -1,0 +1,410 @@
+{
+    "header": {
+        "search": {
+            "PLACEHOLDER": "Typ en druk op enter.."
+        }
+    },
+    "offsidebar": {
+        "setting": {
+            "SETTINGS": "instellingen"
+        }
+    },
+    "sidebar": {
+        "WELCOME": "Welkom",
+        "heading": {
+            "HEADER": "Menuboom"
+        },
+        "nav": {
+            "SINGLEVIEW": "Enkele weergave"
+        }
+    },
+    "home": {
+        "WELCOME": "Welkom",
+        "DESCRIPTION": "Dit is IdentityServer4 Admin Panel. Hier kunt u uw IS4-instellingen beheren.",
+        "CLIENTDESCRIPTION": "Beheer uw klanten."
+    },
+    "client": {
+        "ClientDescription": "De klasse Client vertegenwoordigt een OpenID Connect- of OAuth 2.0-client - bijvoorbeeld een native toepassing, een webtoepassing of een JS-gebaseerde toepassing",
+        "SecretDescription": "In bepaalde situaties moeten clients worden geverifieerd met behulp van een identiteitsserver, bijvoorbeeld: <br> 1- vertrouwelijke applicaties (ook bekend als clients) die tokens aanvragen bij het token-eindpunt. <br> 2- API&#39;s die referentietokens valideren bij het introspectie-eindpunt",
+        "PropertiesDescription": "Woordenboek om aangepaste klantspecifieke waarden op te slaan waar nodig",
+        "ClaimDescription": "Staat instellingenclaims voor de client toe (wordt opgenomen in het toegangstoken)",
+        "TableClientName": "klantnaam",
+        "Image": "Beeld",
+        "details": {
+            "name": "Naam",
+            "name-tooltip": "Weergavenaam client (gebruikt voor logboekregistratie en toestemmingsscherm)",
+            "settings": "instellingen",
+            "clientId": "Klant identificatie",
+            "clientId-tooltip": "Unieke ID van de klant",
+            "basic": "basis-",
+            "auth": "authenticatie",
+            "token": "blijk",
+            "enabled": "Ingeschakeld",
+            "enabled-tooltip": "Geeft aan of client is ingeschakeld. Standaard ingesteld op waar.",
+            "description": "Omschrijving",
+            "description-tooltip": "Beschrijving van de klant.",
+            "protocolType": "Protocoltype",
+            "protocolType-tooltip": "Standaard is het OpenID Connect-protocol",
+            "requireClientSecret": "Cliëntgeheim vereisen",
+            "requireClientSecret-tooltip": "Geeft aan of deze client een geheim nodig heeft om tokens aan te vragen van het token-eindpunt (standaard is dit true)",
+            "requirePkce": "Vereist Pkce",
+            "requirePkce-tooltip": "Geeft aan of clients met een op machtigingscode gebaseerd toekenningstype een proefcode moeten verzenden",
+            "allowPlainTextPkce": "Sta platte tekst toe",
+            "allowPlainTextPkce-tooltip": "Geeft aan of clients die PKCE gebruiken een uitdaging voor gewone tekstcode kunnen gebruiken (niet aanbevolen - en standaard ingesteld op false)",
+            "allowOfflineAccess": "Sta offline toegang toe",
+            "allowOfflineAccess-tooltip": "Geeft aan of deze client verversingstokens kan aanvragen (vraag om de scope offline_access)",
+            "allowAccessTokensViaBrowser": "Toegangstoken toestaan via browser",
+            "allowAccessTokensViaBrowser-tooltip": "Geeft aan of deze client toegangstickets mag ontvangen via de browser. Dit is handig om stromen te verharden die meerdere antwoordtypen mogelijk maken (bijvoorbeeld door een hybride flowclient die verondersteld wordt code id_token te gebruiken om het tokenantwoordtype toe te voegen en zo het token naar de browser lekt, niet toe te staan.",
+            "allowedScopes": "Toegestane scopes",
+            "allowedScopes-tooltip": "Standaard heeft een client geen toegang tot bronnen - geef de toegestane resources op door de bijbehorende scopes-namen toe te voegen",
+            "redirectUris": "Uri&#39;s omleiden",
+            "redirectUris-tooltip": "Hiermee geeft u de toegestane URI&#39;s op waarnaar tokens of machtigingscodes moeten worden geretourneerd",
+            "allowedGrantTypes": "Toegestane soorten Grant",
+            "allowedGrantTypes-tooltip": "Specificeert de subsidietypen die de client mag gebruiken. Gebruik de klasse GrantTypes voor veelgebruikte combinaties. Lijst met standaardbeurzen: Impliciete verlening - (impliciet), toewijzing door clientreferenties - (client_credentials), autorisatiecodetoekenning - (autorisatiecode), hybride verlening - (hybride), eigenaar van broncode wachtwoordreferenties Grant - (wachtwoord)",
+            "clientSecrets": "Client Secrets",
+            "clientSecrets-tooltip": "Lijst met klantgeheimen - referenties voor toegang tot het token-eindpunt.",
+            "properties": "eigenschappen",
+            "properties-tooltip": "Woordenboek om aangepaste klantspecifieke waarden op te slaan waar nodig.",
+            "frontChannelLogoutUri": "Voorkanaal Afmelden Uri",
+            "frontChannelLogoutUri-tooltip": "Hiermee wordt de uitlog-URI bij de client opgegeven voor op HTTP gebaseerde front-channel uitlog. Zie de OIDC Front-Channel-specificaties voor meer informatie",
+            "frontChannelLogoutSessionRequired": "Front Channel Logout Session Required",
+            "frontChannelLogoutSessionRequired-tooltip": "Geeft aan of de sessie-id van de gebruiker naar de FrontChannelLogoutUri moet worden verzonden. Standaard ingesteld op waar",
+            "backChannelLogoutUri": "Terug Kanaal Afmelden Uri",
+            "backChannelLogoutUri-tooltip": "Hiermee wordt de uitlog-URI bij de client opgegeven voor log-out via Back-Channel via HTTP. Zie de OIDC Back-Channel-specificaties voor meer informatie",
+            "backChannelLogoutSessionRequired": "Terug Kanaal Afmelden Sessie Vereist",
+            "backChannelLogoutSessionRequired-tooltip": "Geeft aan of de sessie-id van de gebruiker moet worden verzonden in de aanvraag naar de BackChannelLogoutUri. Standaard ingesteld op waar",
+            "identityProviderRestrictions": "Identity Provider Beperkingen",
+            "identityProviderRestrictions-tooltip": "Geeft aan welke externe IdP&#39;s kunnen worden gebruikt met deze client (als de lijst leeg is, zijn alle IdP&#39;s toegestaan). Standaard is leeg.",
+            "identityTokenLifetime": "Identity Token Lifetime",
+            "identityTokenLifetime-tooltip": "Levensduur tot identiteitstoken in seconden (standaard ingesteld op 300 seconden / 5 minuten)",
+            "accessTokenLifetime": "Toegang tot Token Lifetime",
+            "accessTokenLifetime-tooltip": "Levensduur van toegangstoken in seconden (standaard ingesteld op 3600 seconden / 1 uur)",
+            "accessTokenTypes": "Toegang tot tokentype",
+            "accessTokenTypes-tooltip": "Geeft aan of het toegangstoken een referentietoken of een op zichzelf staand JWT-token is (standaard op Jwt)",
+            "authorizationCodeLifetime": "Autorisatiecode Levensduur",
+            "authorizationCodeLifetime-tooltip": "Levensduur van autorisatiecode in seconden (standaard ingesteld op 300 seconden / 5 minuten)",
+            "absoluteRefreshTokenLifetime": "Absolute vernieuwing van de levensduur van token",
+            "absoluteRefreshTokenLifetime-tooltip": "Maximale levensduur van een vernieuwingstoken in seconden. Standaard ingesteld op 2592000 seconden / 30 dagen",
+            "slidingRefreshTokenLifetime": "Glijden Vernieuwen Token levensduur",
+            "slidingRefreshTokenLifetime-tooltip": "Glijdende levensduur van een vernieuwingstoken in seconden. Standaard ingesteld op 1296000 seconden / 15 dagen",
+            "refreshTokenUsage": "Ververs tokengebruik",
+            "refreshTokenUsage-tooltip": "ReUse de verversingstokenhandling blijft hetzelfde bij het vernieuwen van tokens OneTime de verversingstokenhandle zal worden bijgewerkt bij het vernieuwen van tokens",
+            "refreshTokenExpiration": "Ververs Token-vervaldatum",
+            "refreshTokenExpiration-tooltip": "Absoluut de verversingstoken verloopt op een vast tijdstip (gespecificeerd door de AbsoluteRefreshTokenLifetime) Schuiven bij het vernieuwen van het token, de levensduur van het verversingstoken zal worden verlengd (met het bedrag dat is opgegeven in SlidingRefreshTokenLifetime). De levensduur zal niet langer zijn dan AbsoluteRefreshTokenLifetime.",
+            "allowedCorsOrigins": "Toegestane Cors Origins",
+            "allowedCorsOrigins-tooltip": "Als dit wordt opgegeven, worden deze door de standaard CORS-implementaties van de beleidsservice (In-Memory en EF) gebruikt om een CORS-beleid voor JavaScript-clients te maken.",
+            "updateAccessTokenClaimsOnRefresh": "Update Access Token-claims bij vernieuwen",
+            "updateAccessTokenClaimsOnRefresh-tooltip": "Hiermee wordt een waarde opgehaald of ingesteld die aangeeft of het toegangstoken (en de bijbehorende claims) moet worden bijgewerkt in een vernieuwingstokenverzoek",
+            "includeJwtId": "Jwt-ID opnemen",
+            "includeJwtId-tooltip": "Geeft aan of JWT-toegangstokens een ingesloten unieke ID moeten hebben (via de jti-claim).",
+            "alwaysSendClientClaims": "Verzend altijd clientclaims",
+            "alwaysSendClientClaims-tooltip": "Indien ingesteld, worden de clientclaims voor elke flow verzonden. Zo niet, dan stroomt alleen de clientreferenties (standaard is false)",
+            "alwaysIncludeUserClaimsInIdToken": "Altijd gebruikersclaims opnemen in IdToken",
+            "alwaysIncludeUserClaimsInIdToken-tooltip": "Bij het aanvragen van zowel een id-token als toegangstoken, moet de gebruiker altijd worden toegevoegd aan het ID-token in plaats van de client te vragen het gebruikersinfo-eindpunt te gebruiken. Standaard is false",
+            "clientClaimsPrefix": "Voorvoegsel clientclaims",
+            "clientClaimsPrefix-tooltip": "Als dit is ingesteld, worden de claimtypen van de prefixclients voorafgegaan door. Standaard ingesteld op client_. Het is de bedoeling ervoor te zorgen dat ze niet per ongeluk botsen met claims van gebruikers.",
+            "pairWiseSubjectSalt": "Paar wijs zout",
+            "pairWiseSubjectSalt-tooltip": "Zoutwaarde die wordt gebruikt in de generatie van subjectId generation voor gebruikers van deze client.",
+            "requireConsent": "Consent scherm vereist",
+            "requireConsent-tooltip": "Geeft aan of een toestemmingsscherm vereist is. Standaard ingesteld op waar.",
+            "allowRememberConsent": "Onthoud toestemming",
+            "allowRememberConsent-tooltip": "Geeft aan of de gebruiker ervoor kan kiezen om toestemmingsbeslissingen op te slaan. Standaard ingesteld op waar.",
+            "clientUri": "Klant Uri",
+            "clientUri-tooltip": "URI voor meer informatie over client (gebruikt op toestemmingsscherm)",
+            "logoUri": "Logo Uri (Https)",
+            "logoUri-tooltip": "URI naar clientlogo (gebruikt op toestemmingsscherm). Moet Https zijn",
+            "claims": "Claims",
+            "claims-tooltip": "Staat instellingenclaims voor de client toe (wordt opgenomen in het toegangstoken)",
+            "userCodeType": "Gebruikercodetype",
+            "userCodeType-tooltip": "Geeft het type gebruikerscode aan dat voor de client moet worden gebruikt. Anders valt terug naar de standaard",
+            "deviceCodeLifetime": "Levensduur apparaatcode",
+            "deviceCodeLifetime-tooltip": "Levensduur tot apparaatcode in seconden (standaard ingesteld op 300 seconden / 5 minuten)",
+            "deviceFlow": "Apparaatstroom"
+        },
+        "property": {
+            "key": "Sleutel",
+            "key-tooltip": "Sleutel",
+            "value": "Waarde",
+            "value-tooltip": "Waarde"
+        },
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Waarde",
+            "value-tooltip": "Waarde"
+        },
+        "remove": {
+            "title": "Weet je het zeker",
+            "text": "Je zult niet kunnen herstellen!",
+            "confirmButtonText": "Ja, verwijder het!",
+            "cancelButtonText": "Nee, annuleer plx!",
+            "deleted": "Client is verwijderd.",
+            "cancelled": "Uw klant is veilig :)"
+        },
+        "clone": {
+            "title": "Clone",
+            "text": "Weet je het zeker?",
+            "confirmButtonText": "Ja, klop het!",
+            "cancelButtonText": "Nee, annuleer plx!",
+            "cloned": "Cliënt is gekloond.",
+            "cancelled": ":)"
+        }
+    },
+    "identityResource": {
+        "description": "Identiteitsbronnen zijn gegevens zoals gebruikers-ID, naam of e-mailadres van een gebruiker. Een identiteitsbron heeft een unieke naam en u kunt er willekeurige claimtypen aan toewijzen. Deze claims worden vervolgens opgenomen in het identiteitstoken voor de gebruiker.",
+        "newIr": "Nieuwe Identity Resource",
+        "list": {
+            "name": "Naam",
+            "description": "Omschrijving"
+        },
+        "edit": {
+            "name": "Naam",
+            "name-tooltip": "De unieke naam van de identiteitsbron. Dit is de waarde die een client zal gebruiken voor de scope-parameter in het machtigingsverzoek.",
+            "displayName": "Weergavenaam",
+            "displayName-tooltip": "Deze waarde wordt bijvoorbeeld gebruikt op het toestemmingsscherm.",
+            "description": "Omschrijving",
+            "description-tooltip": "Deze waarde wordt bijvoorbeeld gebruikt op het toestemmingsscherm.",
+            "enabled": "Ingeschakeld",
+            "enabled-tooltip": "Geeft aan of deze bron is ingeschakeld en kan worden opgevraagd. Standaard ingesteld op waar.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Geeft aan of dit bereik wordt weergegeven in het detectiedocument. Standaard ingesteld op waar.",
+            "required": "Verplicht",
+            "required-tooltip": "Geeft aan of de gebruiker het bereik kan verwijderen op het toestemmingsscherm (als het toestemmingsscherm een dergelijke functie wil implementeren). Standaard ingesteld op false.",
+            "emphasize": "Benadrukken",
+            "emphasize-tooltip": "Geeft aan of het toestemmingsscherm dit bereik zal benadrukken (als het toestemmingsscherm een dergelijke functie wil implementeren). Gebruik deze instelling voor gevoelige of belangrijke scopes. Standaard ingesteld op false.",
+            "userClaims": "Gebruikersclaims",
+            "userClaims-tooltip": "Lijst met bijbehorende gebruikersclaimtypen die moeten worden opgenomen in de identiteitstoken."
+        },
+        "remove": {
+            "title": "Weet je het zeker",
+            "text": "Je zult niet kunnen herstellen!",
+            "confirmButtonText": "Ja, verwijder het!",
+            "cancelButtonText": "Nee, annuleer plx!",
+            "deleted": "Resource is verwijderd.",
+            "cancelled": "Uw bron is veilig :)"
+        },
+        "add": {
+            "name": "Naam",
+            "name-tooltip": "De unieke naam van de identiteitsbron. Dit is de waarde die een client zal gebruiken voor de scope-parameter in het machtigingsverzoek.",
+            "displayName": "Weergavenaam",
+            "displayName-tooltip": "Deze waarde wordt bijvoorbeeld gebruikt op het toestemmingsscherm.",
+            "description": "Omschrijving",
+            "description-tooltip": "Deze waarde wordt bijvoorbeeld gebruikt op het toestemmingsscherm.",
+            "enabled": "Ingeschakeld",
+            "enabled-tooltip": "Geeft aan of deze bron is ingeschakeld en kan worden opgevraagd. Standaard ingesteld op waar.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Geeft aan of dit bereik wordt weergegeven in het detectiedocument. Standaard ingesteld op waar.",
+            "required": "Verplicht",
+            "required-tooltip": "Geeft aan of de gebruiker het bereik kan verwijderen op het toestemmingsscherm (als het toestemmingsscherm een dergelijke functie wil implementeren). Standaard ingesteld op false.",
+            "emphasize": "Benadrukken",
+            "emphasize-tooltip": "Geeft aan of het toestemmingsscherm dit bereik zal benadrukken (als het toestemmingsscherm een dergelijke functie wil implementeren). Gebruik deze instelling voor gevoelige of belangrijke scopes. Standaard ingesteld op false.",
+            "userClaims": "Gebruikersclaims",
+            "userClaims-tooltip": "Lijst met bijbehorende gebruikersclaimtypen die moeten worden opgenomen in de identiteitstoken."
+        }
+    },
+    "apiResource": {
+        "description": "Bronnen zijn iets dat u wilt beschermen met IdentityServer - ofwel API&#39;s (hierdoor worden uw gegevens ook beschermd). Dus voor toegang tot uw database moet de inhoud via een API zijn.",
+        "secret-description": "Het API-geheim wordt gebruikt voor het introspectie-eindpunt. De API kan worden geverifieerd met introspectie met behulp van de API-naam en het geheim.",
+        "new-api": "Nieuwe Api-resource",
+        "list": {
+            "name": "Naam",
+            "description": "Omschrijving"
+        },
+        "remove": {
+            "title": "Weet je het zeker",
+            "text": "Je zult niet kunnen herstellen!",
+            "confirmButtonText": "Ja, verwijder het!",
+            "cancelButtonText": "Nee, annuleer plx!",
+            "deleted": "Resource is verwijderd.",
+            "cancelled": "Uw bron is veilig :)"
+        },
+        "edit": {
+            "name": "Naam",
+            "name-tooltip": "De unieke naam van de API. Deze waarde wordt gebruikt voor verificatie met introspectie en wordt toegevoegd aan het publiek van het uitgaande toegangstoken.",
+            "displayName": "Weergavenaam",
+            "displayName-tooltip": "Deze waarde kan bijvoorbeeld worden gebruikt op het toestemmingsscherm.",
+            "description": "Omschrijving",
+            "description-tooltip": "Deze waarde kan bijvoorbeeld worden gebruikt op het toestemmingsscherm.",
+            "enabled": "Ingeschakeld",
+            "enabled-tooltip": "Geeft aan of deze bron is ingeschakeld en kan worden opgevraagd. Standaard ingesteld op waar.",
+            "userClaims": "Gebruikersclaims",
+            "userClaims-tooltip": "Lijst met bijbehorende gebruikersclaimtypen die moeten worden opgenomen in het toegangstoken.",
+            "secrets": "Api Secrets",
+            "secrets-tooltip": "Het API-geheim wordt gebruikt voor het introspectie-eindpunt. De API kan worden geverifieerd met introspectie met behulp van de API-naam en het geheim.",
+            "scope": "Api Scopes",
+            "scope-tooltip": "Een API moet ten minste één scope hebben. Elke scope kan verschillende instellingen hebben."
+        },
+        "add": {
+            "name": "Naam",
+            "name-tooltip": "De unieke naam van de API. Deze waarde wordt gebruikt voor verificatie met introspectie en wordt toegevoegd aan het publiek van het uitgaande toegangstoken.",
+            "displayName": "Weergavenaam",
+            "displayName-tooltip": "Deze waarde kan bijvoorbeeld worden gebruikt op het toestemmingsscherm.",
+            "description": "Omschrijving",
+            "description-tooltip": "Deze waarde kan bijvoorbeeld worden gebruikt op het toestemmingsscherm.",
+            "enabled": "Ingeschakeld",
+            "enabled-tooltip": "Geeft aan of deze bron is ingeschakeld en kan worden opgevraagd. Standaard ingesteld op waar.",
+            "userClaims": "Gebruikersclaims",
+            "userClaims-tooltip": "Lijst met bijbehorende gebruikersclaimtypen die moeten worden opgenomen in het toegangstoken."
+        },
+        "scope": {
+            "name": "Naam",
+            "name-tooltip": "De unieke naam van de API. Deze waarde wordt gebruikt voor verificatie met introspectie en wordt toegevoegd aan het publiek van het uitgaande toegangstoken.",
+            "displayName": "Weergavenaam",
+            "displayName-tooltip": "Deze waarde kan bijvoorbeeld worden gebruikt op het toestemmingsscherm.",
+            "description": "Omschrijving",
+            "description-tooltip": "Deze waarde kan bijvoorbeeld worden gebruikt op het toestemmingsscherm.",
+            "required": "Verplicht",
+            "required-tooltip": "Geeft aan of de gebruiker het bereik kan verwijderen op het toestemmingsscherm. Standaard ingesteld op false.",
+            "Emphasize": "Benadrukken",
+            "Emphasize-tooltip": "Geeft aan of het toestemmingsscherm dit bereik zal benadrukken (als het toestemmingsscherm een dergelijke functie wil implementeren). Gebruik deze instelling voor gevoelige of belangrijke scopes. Standaard ingesteld op false.",
+            "userClaims": "Gebruikersclaims",
+            "userClaims-tooltip": "Lijst met bijbehorende gebruikersclaimtypen die moeten worden opgenomen in het toegangstoken.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Geeft aan of dit bereik wordt weergegeven in het detectiedocument. Standaard ingesteld op waar"
+        }
+    },
+    "secrets": {
+        "secretType": "Geheim Type",
+        "secretType-tooltip": "Het type van het klantgeheim",
+        "secretValue": "Geheime waarde",
+        "secretValue-tooltip": "Geeft het geheim van de client aan",
+        "hashType": "Hash Type",
+        "hashType-tooltip": "Stel de hash van Geheime Waarde in",
+        "description": "Omschrijving",
+        "description-tooltip": "Beschrijving instellen",
+        "expiration": "vervaltijd",
+        "expiration-tooltip": "Stel vervaldatum in"
+    },
+    "persistedGrant": {
+        "description": "",
+        "list": {
+            "clientId": "Cliënt",
+            "type": "Type",
+            "email": "E-mail",
+            "picture": "afbeelding",
+            "key": "Sleutel",
+            "creationTime": "CreationTime",
+            "expiration": "vervaltijd",
+            "scopes": "scopes"
+        },
+        "remove": {
+            "title": "Weet je het zeker",
+            "text": "Je zult niet kunnen herstellen!",
+            "confirmButtonText": "Ja, verwijder het!",
+            "cancelButtonText": "Nee, annuleer plx!",
+            "deleted": "Grant is verwijderd.",
+            "cancelled": "Grant is veilig :)"
+        }
+    },
+    "users": {
+        "description": "Een gebruiker is een persoon of robot die toegang heeft tot bronnen en clients.",
+        "new-user": "Nieuwe gebruiker",
+        "list": {
+            "info": "Gebruikers informatie",
+            "email": "E-mail",
+            "picture": "afbeelding",
+            "name": "Naam",
+            "log-tooltip": "Logs weergeven",
+            "username": "Gebruikersnaam"
+        },
+        "remove": {
+            "title": "Weet je het zeker",
+            "text": "Je zult niet kunnen herstellen!",
+            "confirmButtonText": "Ja, verwijder het!",
+            "cancelButtonText": "Nee, annuleer plx!",
+            "deleted": "Gebruiker is verwijderd.",
+            "cancelled": "Gebruiker is veilig :)"
+        },
+        "edit": {
+            "userName": "UserName",
+            "userName-tooltip": "Hiermee wordt de gebruikersnaam voor deze gebruiker opgehaald of ingesteld.",
+            "name": "Weergavenaam",
+            "name-tooltip": "Hiermee wordt de gebruikersnaam opgehaald of ingesteld",
+            "email": "E-mail",
+            "email-tooltip": "Hiermee wordt het e-mailadres voor deze gebruiker opgehaald of ingesteld",
+            "emailConfirmed": "Bevestigd e-mail",
+            "emailConfirmed-tooltip": "Hiermee wordt een vlag opgehaald of ingesteld die aangeeft of een gebruiker zijn e-mailadres heeft bevestigd",
+            "phoneNumber": "Telefoonnummer",
+            "phoneNumber-tooltip": "Hiermee wordt een telefoonnummer voor de gebruiker opgehaald of ingesteld",
+            "phoneNumberConfirmed": "Telefoonnummer bevestigd",
+            "phoneNumberConfirmed-tooltip": "Hiermee wordt een vlag weergegeven of ingesteld die aangeeft of een gebruiker zijn telefoonadres heeft bevestigd",
+            "twoFactorEnabled": "TwoFactor ingeschakeld",
+            "twoFactorEnabled-tooltip": "Hiermee wordt een vlag opgehaald of ingesteld die aangeeft of verificatie met twee factoren is ingeschakeld voor deze gebruiker",
+            "lockoutEnd": "Lockout End",
+            "lockoutEnd-tooltip": "Hiermee wordt de datum en tijd opgehaald of ingesteld in UTC, wanneer een gebruikersblokkering eindigt",
+            "lockoutEnabled": "uitsluiting ingeschakeld",
+            "lockoutEnabled-tooltip": "Hiermee wordt een vlag weergegeven of ingesteld die aangeeft of de gebruiker kan worden buitengesloten",
+            "accessFailedCount": "Toegang mislukt tellen",
+            "accessFailedCount-tooltip": "Hiermee wordt het aantal mislukte inlogpogingen voor de huidige gebruiker opgehaald of ingesteld",
+            "password": "Wachtwoord",
+            "password-tooltip": "Wachtwoord",
+            "confirmPassword": "Bevestig wachtwoord",
+            "confirmPassword-tooltip": "Bevestig wachtwoord",
+            "claims": "Claims",
+            "claims-tooltip": "Hiermee worden instellingenclaims voor de gebruiker toegestaan (wordt opgenomen in het toegangstoken)",
+            "roles": "Rollen",
+            "roles-tooltip": "Hiermee kunnen instellingsrollen voor de gebruiker worden opgegeven (wordt opgenomen in het toegangstoken)",
+            "externalLogins": "Externe aanmeldingen",
+            "externalLogins-tooltip": "Beheer externe gebruikersaanmelding. bijv. Google, Facebook",
+            "change-password": "Wachtwoord wijzigen",
+            "user-data": "Gebruikersgegevens"
+        },
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Waarde",
+            "value-tooltip": "Waarde"
+        },
+        "roles": {
+            "role": "Rol",
+            "role-tooltip": "Selecteer gebruikersrol",
+            "name": "Naam"
+        },
+        "logins": {
+            "loginProvider": "leverancier",
+            "providerDisplayName": "Naam",
+            "providerKey": "Sleutel",
+            "nologins": "Er zijn geen beschikbare aanmeldingen"
+        }
+    },
+    "roles": {
+        "description": "Vertegenwoordigt een rol in het identiteitssysteem",
+        "name": "Naam",
+        "selectedRole": "Geselecteerde functie",
+        "new-role": "Nieuwe rol",
+        "edit": {
+            "roleName": "Naam",
+            "roleName-tooltip": "Hiermee wordt de naam van de rol opgehaald of ingesteld."
+        },
+        "add": {
+            "roleName": "Naam",
+            "roleName-tooltip": "Hiermee wordt de naam van de rol opgehaald of ingesteld."
+        },
+        "list": {
+            "email": "E-mail",
+            "picture": "afbeelding",
+            "name": "Naam"
+        }
+    },
+    "toasterMessages": {
+        "title-success": "Succes",
+        "message-success": "Goed gedaan!"
+    },
+    "general": {
+        "add": "Toevoegen",
+        "loading": "Laden even geduld aub!",
+        "goback": "Ga terug",
+        "empty": "Leeg",
+        "remove": "Verwijderen",
+        "copy": "Kopiëren",
+        "edit": "Bewerk",
+        "identity-resource": "Identiteitsbronnen",
+        "clients": "cliënten",
+        "api-resource": "Beschermde bronnen",
+        "persisted-grants": "Aanhoudende subsidies",
+        "users": "gebruikers",
+        "roles": "Rollen",
+        "details": "Details",
+        "revoke": "Intrekken"
+    }
+}

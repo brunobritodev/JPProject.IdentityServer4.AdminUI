@@ -1,0 +1,410 @@
+{
+    "header": {
+        "search": {
+            "PLACEHOLDER": "Tapez et appuyez sur Entrée .."
+        }
+    },
+    "offsidebar": {
+        "setting": {
+            "SETTINGS": "Réglages"
+        }
+    },
+    "sidebar": {
+        "WELCOME": "Bienvenue",
+        "heading": {
+            "HEADER": "Titre du menu"
+        },
+        "nav": {
+            "SINGLEVIEW": "Vue unique"
+        }
+    },
+    "home": {
+        "WELCOME": "Bienvenue",
+        "DESCRIPTION": "C&#39;est le panneau d&#39;administration IdentityServer4. Ici, vous pouvez gérer vos paramètres IS4.",
+        "CLIENTDESCRIPTION": "Gérez vos clients."
+    },
+    "client": {
+        "ClientDescription": "La classe Client représente un client OpenID Connect ou OAuth 2.0 - par exemple, une application native, une application Web ou une application basée sur JS.",
+        "SecretDescription": "Dans certaines situations, les clients doivent s’authentifier avec identityserver, par exemple: <br> 1- Applications confidentielles (clients) demandant des jetons sur le noeud final du jeton. <br> 2- API validant les jetons de référence au point de terminaison d&#39;introspection",
+        "PropertiesDescription": "Dictionnaire pour contenir toutes les valeurs personnalisées spécifiques au client selon les besoins",
+        "ClaimDescription": "Autorise les revendications de paramètres pour le client (sera inclus dans le jeton d&#39;accès)",
+        "TableClientName": "Nom du client",
+        "Image": "Image",
+        "details": {
+            "name": "prénom",
+            "name-tooltip": "Nom d&#39;affichage du client (utilisé pour la journalisation et l&#39;écran de consentement)",
+            "settings": "Réglages",
+            "clientId": "Identité du client",
+            "clientId-tooltip": "Identifiant unique du client",
+            "basic": "De base",
+            "auth": "Authentification",
+            "token": "Jeton",
+            "enabled": "Activée",
+            "enabled-tooltip": "Spécifie si le client est activé. La valeur par défaut est true.",
+            "description": "La description",
+            "description-tooltip": "Description du client.",
+            "protocolType": "Type de protocole",
+            "protocolType-tooltip": "Le protocole par défaut est OpenID Connect",
+            "requireClientSecret": "Exiger le secret du client",
+            "requireClientSecret-tooltip": "Indique si ce client a besoin d&#39;un secret pour demander des jetons au noeud final de jeton (la valeur par défaut est true)",
+            "requirePkce": "Requiert Pkce",
+            "requirePkce-tooltip": "Spécifie si les clients utilisant un type d&#39;octroi basé sur un code d&#39;autorisation doivent envoyer une clé de preuve",
+            "allowPlainTextPkce": "Autoriser les textes en clair",
+            "allowPlainTextPkce-tooltip": "Spécifie si les clients utilisant PKCE peuvent utiliser un défi de code en texte brut (non recommandé - et par défaut à false)",
+            "allowOfflineAccess": "Autoriser l&#39;accès hors connexion",
+            "allowOfflineAccess-tooltip": "Indique si ce client peut demander des jetons d&#39;actualisation (demande la portée offline_access).",
+            "allowAccessTokensViaBrowser": "Autoriser le jeton d&#39;accès via le navigateur",
+            "allowAccessTokensViaBrowser-tooltip": "Spécifie si ce client est autorisé à recevoir des jetons d&#39;accès via le navigateur. Cela est utile pour renforcer les flux autorisant plusieurs types de réponse (par exemple, en interdisant à un client de flux hybride supposé utiliser le code id_token pour ajouter le type de réponse de jeton, ce qui entraîne la fuite du jeton dans le navigateur.",
+            "allowedScopes": "Portées autorisées",
+            "allowedScopes-tooltip": "Par défaut, un client n&#39;a accès à aucune ressource - spécifiez les ressources autorisées en ajoutant les noms d&#39;étendues correspondants",
+            "redirectUris": "Rediriger Uri",
+            "redirectUris-tooltip": "Spécifie les URI autorisés à renvoyer des jetons ou des codes d&#39;autorisation à",
+            "allowedGrantTypes": "Types de subvention autorisés",
+            "allowedGrantTypes-tooltip": "Spécifie les types d&#39;octroi que le client est autorisé à utiliser. Utilisez la classe GrantTypes pour les combinaisons courantes. Liste des attributions par défaut: Octroi implicite - (implicite), Octroi des informations d&#39;identification du client - (client_credentials), Octroi du code d&#39;autorisation - (autorisation_code), Octroi hybride - (hybride), Propriétaire de la ressource",
+            "clientSecrets": "Secrets du client",
+            "clientSecrets-tooltip": "Liste des secrets du client - informations d&#39;identification permettant d&#39;accéder au point de terminaison du jeton.",
+            "properties": "Propriétés",
+            "properties-tooltip": "Dictionnaire pour contenir toutes les valeurs personnalisées spécifiques au client selon les besoins.",
+            "frontChannelLogoutUri": "Déconnexion du canal avant Uri",
+            "frontChannelLogoutUri-tooltip": "Spécifie l&#39;URI de déconnexion du client pour la déconnexion du canal frontal basée sur HTTP. Voir la spécification OIDC Front-Channel pour plus de détails",
+            "frontChannelLogoutSessionRequired": "Session de déconnexion de canal avant requise",
+            "frontChannelLogoutSessionRequired-tooltip": "Spécifie si l&#39;ID de session de l&#39;utilisateur doit être envoyé à FrontChannelLogoutUri. La valeur par défaut est true",
+            "backChannelLogoutUri": "Déconnexion du canal arrière Uri",
+            "backChannelLogoutUri-tooltip": "Spécifie l&#39;URI de déconnexion sur le client pour la déconnexion de canal arrière basée sur HTTP. Voir la spécification OIDC Back-Channel pour plus de détails",
+            "backChannelLogoutSessionRequired": "Session de déconnexion de canal précédent requise",
+            "backChannelLogoutSessionRequired-tooltip": "Spécifie si l&#39;ID de session de l&#39;utilisateur doit être envoyé dans la demande à BackChannelLogoutUri. La valeur par défaut est true",
+            "identityProviderRestrictions": "Restrictions du fournisseur d&#39;identité",
+            "identityProviderRestrictions-tooltip": "Spécifie les fournisseurs d&#39;identité externes pouvant être utilisés avec ce client (si la liste est vide, tous les fournisseurs d&#39;identité sont autorisés). Les valeurs par défaut sont vides.",
+            "identityTokenLifetime": "Durée de vie du jeton d&#39;identité",
+            "identityTokenLifetime-tooltip": "Durée de vie du jeton d&#39;identité en secondes (valeur par défaut: 300 secondes / 5 minutes)",
+            "accessTokenLifetime": "Jeton d&#39;accès à vie",
+            "accessTokenLifetime-tooltip": "Durée de vie du jeton d&#39;accès en secondes (valeur par défaut: 3600 secondes / 1 heure)",
+            "accessTokenTypes": "Type de jeton d&#39;accès",
+            "accessTokenTypes-tooltip": "Spécifie si le jeton d&#39;accès est un jeton de référence ou un jeton JWT autonome (par défaut, Jwt)",
+            "authorizationCodeLifetime": "Durée de vie du code d&#39;autorisation",
+            "authorizationCodeLifetime-tooltip": "Durée de vie du code d&#39;autorisation en secondes (valeur par défaut de 300 secondes / 5 minutes)",
+            "absoluteRefreshTokenLifetime": "Durée de vie absolue du jeton d&#39;actualisation",
+            "absoluteRefreshTokenLifetime-tooltip": "Durée de vie maximale d&#39;un jeton d&#39;actualisation en secondes. La valeur par défaut est 2592000 secondes / 30 jours",
+            "slidingRefreshTokenLifetime": "Durée de vie du jeton d&#39;actualisation",
+            "slidingRefreshTokenLifetime-tooltip": "Durée de vie glissante d&#39;un jeton d&#39;actualisation en secondes. La valeur par défaut est 1296000 secondes / 15 jours",
+            "refreshTokenUsage": "Actualiser l&#39;utilisation des jetons",
+            "refreshTokenUsage-tooltip": "Réutiliser le handle de jeton d&#39;actualisation restera le même lors de l&#39;actualisation des jetons OneTime.",
+            "refreshTokenExpiration": "Actualiser l&#39;expiration du jeton",
+            "refreshTokenExpiration-tooltip": "Absolue, le jeton d&#39;actualisation expirera à un moment précis (spécifié par AbsoluteRefreshTokenLifetime). Glissant lors de l&#39;actualisation du jeton, sa durée de vie sera renouvelée (par le montant spécifié dans SlidingRefreshTokenLifetime). La durée de vie ne dépassera pas AbsoluteRefreshTokenLifetime.",
+            "allowedCorsOrigins": "Autorisé Cors Origins",
+            "allowedCorsOrigins-tooltip": "Si spécifié, sera utilisé par les implémentations de service de stratégie CORS par défaut (en mémoire et EF) pour créer une stratégie CORS pour les clients JavaScript.",
+            "updateAccessTokenClaimsOnRefresh": "Mettre à jour les revendications de jetons d&#39;accès lors de l&#39;actualisation",
+            "updateAccessTokenClaimsOnRefresh-tooltip": "Obtient ou définit une valeur indiquant si le jeton d&#39;accès (et ses revendications) doit être mis à jour lors d&#39;une demande d&#39;actualisation de jeton.",
+            "includeJwtId": "Inclure l&#39;ID Jwt",
+            "includeJwtId-tooltip": "Spécifie si les jetons d&#39;accès JWT doivent avoir un ID unique incorporé (via la revendication jti).",
+            "alwaysSendClientClaims": "Toujours envoyer des réclamations clients",
+            "alwaysSendClientClaims-tooltip": "Si défini, les revendications client seront envoyées pour chaque flux. Sinon, uniquement pour le flux d&#39;informations d&#39;identification du client (la valeur par défaut est false)",
+            "alwaysIncludeUserClaimsInIdToken": "Toujours inclure les revendications des utilisateurs dans IdToken",
+            "alwaysIncludeUserClaimsInIdToken-tooltip": "Lors de la demande d&#39;un jeton d&#39;identification et d&#39;un jeton d&#39;accès, les revendications de l&#39;utilisateur doivent toujours être ajoutées au jeton d&#39;identification au lieu de demander au client d&#39;utiliser le point de terminaison userinfo. La valeur par défaut est false",
+            "clientClaimsPrefix": "Préfixe des réclamations client",
+            "clientClaimsPrefix-tooltip": "Si cette option est définie, les types de revendication du client préfixé seront préfixés avec. La valeur par défaut est client_. Le but est de s’assurer qu’ils ne se heurtent pas accidentellement aux revendications des utilisateurs.",
+            "pairWiseSubjectSalt": "Paire Sujet Sage Sel",
+            "pairWiseSubjectSalt-tooltip": "Valeur Salt utilisée dans la génération sujet par paire pour les utilisateurs de ce client.",
+            "requireConsent": "Écran de consentement obligatoire",
+            "requireConsent-tooltip": "Spécifie si un écran de consentement est requis. La valeur par défaut est true.",
+            "allowRememberConsent": "Rappelez-vous le consentement",
+            "allowRememberConsent-tooltip": "Spécifie si l&#39;utilisateur peut choisir de stocker les décisions de consentement. La valeur par défaut est true.",
+            "clientUri": "Uri du client",
+            "clientUri-tooltip": "Adresse URI permettant d&#39;obtenir des informations supplémentaires sur le client (utilisées dans l&#39;écran de consentement)",
+            "logoUri": "Logo Uri (Https)",
+            "logoUri-tooltip": "Logo URI au client (utilisé sur l&#39;écran de consentement). Doit être Https",
+            "claims": "Réclamations",
+            "claims-tooltip": "Autorise les revendications de paramètres pour le client (sera inclus dans le jeton d&#39;accès)",
+            "userCodeType": "Type de code d&#39;utilisateur",
+            "userCodeType-tooltip": "Spécifie le type de code utilisateur à utiliser pour le client. Sinon retombe à la valeur par défaut",
+            "deviceCodeLifetime": "Durée de vie du code de périphérique",
+            "deviceCodeLifetime-tooltip": "Durée de vie du code de l&#39;appareil en secondes (valeur par défaut de 300 secondes / 5 minutes)",
+            "deviceFlow": "Débit de l&#39;appareil"
+        },
+        "property": {
+            "key": "Clé",
+            "key-tooltip": "Clé",
+            "value": "Valeur",
+            "value-tooltip": "Valeur"
+        },
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Valeur",
+            "value-tooltip": "Valeur"
+        },
+        "remove": {
+            "title": "Êtes-vous sûr",
+            "text": "Votre ne sera pas capable de récupérer!",
+            "confirmButtonText": "Oui, supprimez-le!",
+            "cancelButtonText": "Non, annulez plx!",
+            "deleted": "Le client a été supprimé.",
+            "cancelled": "Votre client est en sécurité :)"
+        },
+        "clone": {
+            "title": "Cloner",
+            "text": "Êtes-vous sûr?",
+            "confirmButtonText": "Oui, clone-le!",
+            "cancelButtonText": "Non, annulez plx!",
+            "cloned": "Le client a été cloné.",
+            "cancelled": ":)"
+        }
+    },
+    "identityResource": {
+        "description": "Les ressources d&#39;identité sont des données telles que l&#39;ID utilisateur, le nom ou l&#39;adresse électronique d&#39;un utilisateur. Une ressource d&#39;identité a un nom unique et vous pouvez lui affecter des types de revendication arbitraires. Ces revendications seront ensuite incluses dans le jeton d&#39;identité de l&#39;utilisateur.",
+        "newIr": "Nouvelle ressource d&#39;identité",
+        "list": {
+            "name": "prénom",
+            "description": "La description"
+        },
+        "edit": {
+            "name": "prénom",
+            "name-tooltip": "Le nom unique de la ressource d&#39;identité. C&#39;est la valeur qu&#39;un client utilisera pour le paramètre scope dans la demande d&#39;autorisation.",
+            "displayName": "Afficher un nom",
+            "displayName-tooltip": "Cette valeur sera utilisée par exemple sur l&#39;écran de consentement.",
+            "description": "La description",
+            "description-tooltip": "Cette valeur sera utilisée par exemple sur l&#39;écran de consentement.",
+            "enabled": "Activée",
+            "enabled-tooltip": "Indique si cette ressource est activée et peut être demandée. La valeur par défaut est true.",
+            "showInDiscoveryDocument": "Afficher dans le document de découverte",
+            "showInDiscoveryDocument-tooltip": "Spécifie si cette étendue est affichée dans le document de découverte. La valeur par défaut est true.",
+            "required": "Champs obligatoires",
+            "required-tooltip": "Spécifie si l&#39;utilisateur peut désélectionner l&#39;étendue sur l&#39;écran de consentement (si l&#39;écran de consentement souhaite implémenter une telle fonctionnalité). La valeur par défaut est false.",
+            "emphasize": "Souligner",
+            "emphasize-tooltip": "Spécifie si l&#39;écran de consentement mettra l&#39;accent sur cette portée (si l&#39;écran de consentement souhaite implémenter une telle fonctionnalité) Utilisez ce paramètre pour les étendues sensibles ou importantes. La valeur par défaut est false.",
+            "userClaims": "Revendications de l&#39;utilisateur",
+            "userClaims-tooltip": "Liste des types de revendications d&#39;utilisateurs associés à inclure dans le jeton d&#39;identité."
+        },
+        "remove": {
+            "title": "Êtes-vous sûr",
+            "text": "Votre ne sera pas capable de récupérer!",
+            "confirmButtonText": "Oui, supprimez-le!",
+            "cancelButtonText": "Non, annulez plx!",
+            "deleted": "La ressource a été supprimée.",
+            "cancelled": "Votre ressource est en sécurité :)"
+        },
+        "add": {
+            "name": "prénom",
+            "name-tooltip": "Le nom unique de la ressource d&#39;identité. C&#39;est la valeur qu&#39;un client utilisera pour le paramètre scope dans la demande d&#39;autorisation.",
+            "displayName": "Afficher un nom",
+            "displayName-tooltip": "Cette valeur sera utilisée par exemple sur l&#39;écran de consentement.",
+            "description": "La description",
+            "description-tooltip": "Cette valeur sera utilisée par exemple sur l&#39;écran de consentement.",
+            "enabled": "Activée",
+            "enabled-tooltip": "Indique si cette ressource est activée et peut être demandée. La valeur par défaut est true.",
+            "showInDiscoveryDocument": "Afficher dans le document de découverte",
+            "showInDiscoveryDocument-tooltip": "Spécifie si cette étendue est affichée dans le document de découverte. La valeur par défaut est true.",
+            "required": "Champs obligatoires",
+            "required-tooltip": "Spécifie si l&#39;utilisateur peut désélectionner l&#39;étendue sur l&#39;écran de consentement (si l&#39;écran de consentement souhaite implémenter une telle fonctionnalité). La valeur par défaut est false.",
+            "emphasize": "Souligner",
+            "emphasize-tooltip": "Spécifie si l&#39;écran de consentement mettra l&#39;accent sur cette portée (si l&#39;écran de consentement souhaite implémenter une telle fonctionnalité) Utilisez ce paramètre pour les étendues sensibles ou importantes. La valeur par défaut est false.",
+            "userClaims": "Revendications de l&#39;utilisateur",
+            "userClaims-tooltip": "Liste des types de revendications d&#39;utilisateurs associés à inclure dans le jeton d&#39;identité."
+        }
+    },
+    "apiResource": {
+        "description": "Les ressources sont quelque chose que vous souhaitez protéger avec IdentityServer - des API (en faisant cela, vos données seront également protégées). Donc, pour accéder à votre base de données, vous devez utiliser une API.",
+        "secret-description": "Le secret de l&#39;API est utilisé pour le point final d&#39;introspection. L&#39;API peut s&#39;authentifier avec une introspection à l&#39;aide du nom et du secret de l&#39;API.",
+        "new-api": "Nouvelle ressource Api",
+        "list": {
+            "name": "prénom",
+            "description": "La description"
+        },
+        "remove": {
+            "title": "Êtes-vous sûr",
+            "text": "Votre ne sera pas capable de récupérer!",
+            "confirmButtonText": "Oui, supprimez-le!",
+            "cancelButtonText": "Non, annulez plx!",
+            "deleted": "La ressource a été supprimée.",
+            "cancelled": "Votre ressource est en sécurité :)"
+        },
+        "edit": {
+            "name": "prénom",
+            "name-tooltip": "Le nom unique de l&#39;API. Cette valeur est utilisée pour l&#39;authentification avec introspection et sera ajoutée à l&#39;audience du jeton d&#39;accès sortant.",
+            "displayName": "Afficher un nom",
+            "displayName-tooltip": "Cette valeur peut être utilisée par exemple sur l&#39;écran de consentement.",
+            "description": "La description",
+            "description-tooltip": "Cette valeur peut être utilisée par exemple sur l&#39;écran de consentement.",
+            "enabled": "Activée",
+            "enabled-tooltip": "Indique si cette ressource est activée et peut être demandée. La valeur par défaut est true.",
+            "userClaims": "Revendications de l&#39;utilisateur",
+            "userClaims-tooltip": "Liste des types de revendications d&#39;utilisateurs associés à inclure dans le jeton d&#39;accès.",
+            "secrets": "Secrets api",
+            "secrets-tooltip": "Le secret de l&#39;API est utilisé pour le point final d&#39;introspection. L&#39;API peut s&#39;authentifier avec une introspection à l&#39;aide du nom et du secret de l&#39;API.",
+            "scope": "Api Scopes",
+            "scope-tooltip": "Une API doit avoir au moins une portée. Chaque portée peut avoir différents paramètres."
+        },
+        "add": {
+            "name": "prénom",
+            "name-tooltip": "Le nom unique de l&#39;API. Cette valeur est utilisée pour l&#39;authentification avec introspection et sera ajoutée à l&#39;audience du jeton d&#39;accès sortant.",
+            "displayName": "Afficher un nom",
+            "displayName-tooltip": "Cette valeur peut être utilisée par exemple sur l&#39;écran de consentement.",
+            "description": "La description",
+            "description-tooltip": "Cette valeur peut être utilisée par exemple sur l&#39;écran de consentement.",
+            "enabled": "Activée",
+            "enabled-tooltip": "Indique si cette ressource est activée et peut être demandée. La valeur par défaut est true.",
+            "userClaims": "Revendications de l&#39;utilisateur",
+            "userClaims-tooltip": "Liste des types de revendications d&#39;utilisateurs associés à inclure dans le jeton d&#39;accès."
+        },
+        "scope": {
+            "name": "prénom",
+            "name-tooltip": "Le nom unique de l&#39;API. Cette valeur est utilisée pour l&#39;authentification avec introspection et sera ajoutée à l&#39;audience du jeton d&#39;accès sortant.",
+            "displayName": "Afficher un nom",
+            "displayName-tooltip": "Cette valeur peut être utilisée par exemple sur l&#39;écran de consentement.",
+            "description": "La description",
+            "description-tooltip": "Cette valeur peut être utilisée par exemple sur l&#39;écran de consentement.",
+            "required": "Champs obligatoires",
+            "required-tooltip": "Spécifie si l&#39;utilisateur peut désélectionner la portée sur l&#39;écran de consentement. La valeur par défaut est false.",
+            "Emphasize": "Souligner",
+            "Emphasize-tooltip": "Spécifie si l&#39;écran de consentement mettra l&#39;accent sur cette portée (si l&#39;écran de consentement souhaite implémenter une telle fonctionnalité) Utilisez ce paramètre pour les étendues sensibles ou importantes. La valeur par défaut est false.",
+            "userClaims": "Revendications de l&#39;utilisateur",
+            "userClaims-tooltip": "Liste des types de revendications d&#39;utilisateurs associés à inclure dans le jeton d&#39;accès.",
+            "showInDiscoveryDocument": "Afficher dans le document de découverte",
+            "showInDiscoveryDocument-tooltip": "Spécifie si cette étendue est affichée dans le document de découverte. La valeur par défaut est true"
+        }
+    },
+    "secrets": {
+        "secretType": "Type secret",
+        "secretType-tooltip": "Le type du secret client",
+        "secretValue": "Valeur secrète",
+        "secretValue-tooltip": "Spécifie le secret du client",
+        "hashType": "Type de hachage",
+        "hashType-tooltip": "Définir le hash de la valeur secrète",
+        "description": "La description",
+        "description-tooltip": "Set description",
+        "expiration": "Expiration",
+        "expiration-tooltip": "Définir l&#39;expiration"
+    },
+    "persistedGrant": {
+        "description": "",
+        "list": {
+            "clientId": "Client",
+            "type": "Type",
+            "email": "Email",
+            "picture": "Image",
+            "key": "Clé",
+            "creationTime": "Temps de creation",
+            "expiration": "Expiration",
+            "scopes": "Portées"
+        },
+        "remove": {
+            "title": "Êtes-vous sûr",
+            "text": "Votre ne sera pas capable de récupérer!",
+            "confirmButtonText": "Oui, supprimez-le!",
+            "cancelButtonText": "Non, annulez plx!",
+            "deleted": "La subvention a été supprimée.",
+            "cancelled": "Grant est en sécurité :)"
+        }
+    },
+    "users": {
+        "description": "Un utilisateur est une personne ou un robot pouvant accéder aux ressources et aux clients.",
+        "new-user": "Nouvel utilisateur",
+        "list": {
+            "info": "Informations de l&#39;utilisateur",
+            "email": "Email",
+            "picture": "Image",
+            "name": "prénom",
+            "log-tooltip": "Afficher les journaux",
+            "username": "Nom d&#39;utilisateur"
+        },
+        "remove": {
+            "title": "Êtes-vous sûr",
+            "text": "Votre ne sera pas capable de récupérer!",
+            "confirmButtonText": "Oui, supprimez-le!",
+            "cancelButtonText": "Non, annulez plx!",
+            "deleted": "L&#39;utilisateur a été supprimé.",
+            "cancelled": "L&#39;utilisateur est en sécurité :)"
+        },
+        "edit": {
+            "userName": "Nom d&#39;utilisateur",
+            "userName-tooltip": "Obtient ou définit le nom d&#39;utilisateur pour cet utilisateur.",
+            "name": "Afficher un nom",
+            "name-tooltip": "Obtient ou définit le nom d&#39;utilisateur",
+            "email": "Email",
+            "email-tooltip": "Obtient ou définit l&#39;adresse email de cet utilisateur",
+            "emailConfirmed": "Email confirmé",
+            "emailConfirmed-tooltip": "Obtient ou définit un indicateur indiquant si un utilisateur a confirmé son adresse électronique.",
+            "phoneNumber": "Numéro de téléphone",
+            "phoneNumber-tooltip": "Obtient ou définit un numéro de téléphone pour l&#39;utilisateur",
+            "phoneNumberConfirmed": "Numéro de téléphone confirmé",
+            "phoneNumberConfirmed-tooltip": "Obtient ou définit un indicateur indiquant si un utilisateur a confirmé son adresse téléphonique",
+            "twoFactorEnabled": "TwoFactor activé",
+            "twoFactorEnabled-tooltip": "Obtient ou définit un indicateur indiquant si l&#39;authentification à deux facteurs est activée pour cet utilisateur.",
+            "lockoutEnd": "Fin du verrouillage",
+            "lockoutEnd-tooltip": "Obtient ou définit la date et l&#39;heure, au format UTC, à la fin du verrouillage d&#39;un utilisateur",
+            "lockoutEnabled": "verrouillage activé",
+            "lockoutEnabled-tooltip": "Obtient ou définit un indicateur indiquant si l&#39;utilisateur peut être verrouillé",
+            "accessFailedCount": "Nombre d&#39;échecs d&#39;accès",
+            "accessFailedCount-tooltip": "Obtient ou définit le nombre de tentatives de connexion infructueuses pour l&#39;utilisateur actuel",
+            "password": "Mot de passe",
+            "password-tooltip": "Mot de passe",
+            "confirmPassword": "Confirmez le mot de passe",
+            "confirmPassword-tooltip": "Confirmez le mot de passe",
+            "claims": "Réclamations",
+            "claims-tooltip": "Autorise les revendications de paramètres pour l&#39;utilisateur (sera inclus dans le jeton d&#39;accès)",
+            "roles": "Rôles",
+            "roles-tooltip": "Autorise les paramètres de rôles pour l&#39;utilisateur (sera inclus dans le jeton d&#39;accès)",
+            "externalLogins": "Connexions externes",
+            "externalLogins-tooltip": "Gérer la connexion externe de l&#39;utilisateur. par exemple Google, Facebook",
+            "change-password": "Changer le mot de passe",
+            "user-data": "Données d&#39;utilisateur"
+        },
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Valeur",
+            "value-tooltip": "Valeur"
+        },
+        "roles": {
+            "role": "Rôle",
+            "role-tooltip": "Sélectionnez le rôle de l&#39;utilisateur",
+            "name": "prénom"
+        },
+        "logins": {
+            "loginProvider": "Fournisseur",
+            "providerDisplayName": "prénom",
+            "providerKey": "Clé",
+            "nologins": "Il n&#39;y a pas de connexions disponibles"
+        }
+    },
+    "roles": {
+        "description": "Représente un rôle dans le système d&#39;identité",
+        "name": "prénom",
+        "selectedRole": "Rôle sélectionné",
+        "new-role": "Nouveau rôle",
+        "edit": {
+            "roleName": "prénom",
+            "roleName-tooltip": "Obtient ou définit le nom du rôle."
+        },
+        "add": {
+            "roleName": "prénom",
+            "roleName-tooltip": "Obtient ou définit le nom du rôle."
+        },
+        "list": {
+            "email": "Email",
+            "picture": "Image",
+            "name": "prénom"
+        }
+    },
+    "toasterMessages": {
+        "title-success": "Succès",
+        "message-success": "Bien joué!"
+    },
+    "general": {
+        "add": "Ajouter",
+        "loading": "Chargement, veuillez patienter!",
+        "goback": "Retourner",
+        "empty": "Vide",
+        "remove": "Retirer",
+        "copy": "Copie",
+        "edit": "modifier",
+        "identity-resource": "Ressources d&#39;identité",
+        "clients": "Les clients",
+        "api-resource": "Ressources protégées",
+        "persisted-grants": "Subventions persistantes",
+        "users": "Utilisateurs",
+        "roles": "Rôles",
+        "details": "Détails",
+        "revoke": "Révoquer"
+    }
+}

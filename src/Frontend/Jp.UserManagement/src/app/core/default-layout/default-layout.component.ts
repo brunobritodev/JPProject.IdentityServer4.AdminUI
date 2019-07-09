@@ -41,7 +41,7 @@ export class DefaultLayoutComponent implements OnInit {
         this.authService.logout();
     }
 
-    public setLang(value) {
+    public setLanguage(value) {
         this.translator.useLanguage(value);
     }
 

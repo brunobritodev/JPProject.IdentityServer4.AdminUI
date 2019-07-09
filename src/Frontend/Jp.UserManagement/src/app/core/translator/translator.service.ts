@@ -11,6 +11,11 @@ export class TranslatorService {
     private availablelangs = [
         { code: "en", text: "English" },
         { code: "pt", text: "Portuguese" },
+        { code: "fr", text: "French" },
+        { code: "nl", text: "Dutch" },
+        { code: "ru", text: "Russian" },
+        { code: "zh-cn", text: "Chinese Simplified" },
+        { code: "zh-tw", text: "Chinese Traditional" },
     ];
 
     constructor(public translate: TranslateService) {

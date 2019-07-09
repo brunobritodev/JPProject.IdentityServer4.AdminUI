@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
-using IdentityServer4.Models;
+﻿using IdentityServer4.Models;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Jp.UI.SSO.Controllers.Home
 {
@@ -55,7 +55,7 @@ namespace Jp.UI.SSO.Controllers.Home
 
 
         [HttpGet]
-        public IActionResult SetLanguage(string culture, string returnUrl = "")
+        public IActionResult SetLanguage(string culture)
         {
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Body-Application-access" xml:space="preserve">
+    <value>Acceso a la aplicación</value>
+  </data>
+  <data name="Body-Consent" xml:space="preserve">
+    <value>Consentimiento</value>
+  </data>
+  <data name="Body-grant!" xml:space="preserve">
+    <value>¡Desmarque los permisos que no desea otorgar!</value>
+  </data>
+  <data name="Body-is requesting your permission" xml:space="preserve">
+    <value>está solicitando su permiso</value>
+  </data>
+  <data name="Body-No-Do-Not-Allow" xml:space="preserve">
+    <value>No No Permitir</value>
+  </data>
+  <data name="Body-Personal-information" xml:space="preserve">
+    <value>Informacion personal</value>
+  </data>
+  <data name="Body-Remember-My-Decision" xml:space="preserve">
+    <value>Recuerda mi decision</value>
+  </data>
+  <data name="Body-Yes-Allow" xml:space="preserve">
+    <value>Sí Permitir</value>
+  </data>
+  <data name="Menu-Authorize-Application" xml:space="preserve">
+    <value>Autorizar Solicitud</value>
+  </data>
+  <data name="Title-Home" xml:space="preserve">
+    <value>Casa</value>
+  </data>
+  <data name="Title-User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Body-ConfirmAuthCode" xml:space="preserve">
+    <value>Por favor confirme que la solicitud de autorización cita el código.</value>
+  </data>
+</root>
