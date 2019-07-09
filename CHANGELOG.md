@@ -1,3 +1,24 @@
+# v1.4.0
+1. Added Translations (auto-generate)
+   * Spanish
+   * French
+   * Dutch
+   * Russian
+   * Chinese Simplified
+   * Chinese Traditional
+
+2. Added integration with Azure DevOps for full CI/CD.
+
+3. Bug fixes
+
+
+
+# v1.3
+
+- Bug fixes
+  - angular-oauth2-oidc Session Improvements for Angular Apps. Incluind Admin UI
+  - Some Action attributes was HttpPost instead HttpPut (fixed)
+- New unity tests
 # v1.2.3
 
 Bug fixes

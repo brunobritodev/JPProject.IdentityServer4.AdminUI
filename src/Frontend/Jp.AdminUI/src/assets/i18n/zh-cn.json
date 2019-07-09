@@ -1,0 +1,410 @@
+{
+    "header": {
+        "search": {
+            "PLACEHOLDER": "输入并按下输入.."
+        }
+    },
+    "offsidebar": {
+        "setting": {
+            "SETTINGS": "设置"
+        }
+    },
+    "sidebar": {
+        "WELCOME": "欢迎",
+        "heading": {
+            "HEADER": "菜单标题"
+        },
+        "nav": {
+            "SINGLEVIEW": "单一视图"
+        }
+    },
+    "home": {
+        "WELCOME": "欢迎",
+        "DESCRIPTION": "这是IdentityServer4管理面板。在这里，您可以管理IS4设置。",
+        "CLIENTDESCRIPTION": "管理您的客户。"
+    },
+    "client": {
+        "ClientDescription": "Client类表示OpenID Connect或OAuth 2.0客户端 - 例如本机应用程序，Web应用程序或基于JS的应用程序",
+        "SecretDescription": "在某些情况下，客户端需要使用identityserver进行身份验证，例如： <br> 1-机密应用程序（也称为客户端）在令牌端点请求令牌。 <br> 2- API验证内省端点处的引用令牌",
+        "PropertiesDescription": "字典根据需要保存任何自定义客户端特定值",
+        "ClaimDescription": "允许客户端的设置声明（将包含在访问令牌中）",
+        "TableClientName": "客户名称",
+        "Image": "图片",
+        "details": {
+            "name": "名称",
+            "name-tooltip": "客户端显示名称（用于记录和同意屏幕）",
+            "settings": "设置",
+            "clientId": "客户端Id",
+            "clientId-tooltip": "客户端的唯一ID",
+            "basic": "基本",
+            "auth": "认证",
+            "token": "代币",
+            "enabled": "启用",
+            "enabled-tooltip": "指定是否启用客户端。默认为true。",
+            "description": "描述",
+            "description-tooltip": "客户描述。",
+            "protocolType": "协议类型",
+            "protocolType-tooltip": "默认为OpenID Connect协议",
+            "requireClientSecret": "需要客户秘密",
+            "requireClientSecret-tooltip": "指定此客户端是否需要密钥才能从令牌端点请求令牌（默认为true）",
+            "requirePkce": "需要Pkce",
+            "requirePkce-tooltip": "指定使用基于授权代码的授权类型的客户端是否必须发送校验密钥",
+            "allowPlainTextPkce": "允许纯文本Pkce",
+            "allowPlainTextPkce-tooltip": "指定使用PKCE的客户端是否可以使用纯文本代码质询（不推荐 - 默认为false）",
+            "allowOfflineAccess": "允许离线访问",
+            "allowOfflineAccess-tooltip": "指定此客户端是否可以请求刷新令牌（请求offline_access范围）",
+            "allowAccessTokensViaBrowser": "允许通过浏览器访问令牌",
+            "allowAccessTokensViaBrowser-tooltip": "指定是否允许此客户端通过浏览器接收访问令牌。这对于强化允许多种响应类型的流是有用的（例如，通过禁止应该使用代码id_token来添加令牌响应类型并因此将令牌泄露到浏览器的混合流客户端。",
+            "allowedScopes": "允许的范围",
+            "allowedScopes-tooltip": "默认情况下，客户端无权访问任何资源 - 通过添加相应的范围名称来指定允许的资源",
+            "redirectUris": "重定向Uri的",
+            "redirectUris-tooltip": "指定允许的URI以返回令牌或授权码",
+            "allowedGrantTypes": "允许的资助类型",
+            "allowedGrantTypes-tooltip": "指定允许客户端使用的授权类型。使用GrantTypes类进行常见组合。默认授权列表：隐式授权 - （隐式），客户端凭证授权 - （client_credentials），授权代码授予 - （authorization_code），混合授权 - （混合），资源所有者密码凭证授予 - （密码）",
+            "clientSecrets": "客户秘密",
+            "clientSecrets-tooltip": "客户端机密列表 - 访问令牌端点的凭据。",
+            "properties": "属性",
+            "properties-tooltip": "字典根据需要保存任何自定义客户端特定值。",
+            "frontChannelLogoutUri": "前台频道退出Uri",
+            "frontChannelLogoutUri-tooltip": "指定客户端的注销URI，以用于基于HTTP的前端通道注销。有关详细信息，请参阅OIDC Front-Channel规范",
+            "frontChannelLogoutSessionRequired": "需要前台频道注销会话",
+            "frontChannelLogoutSessionRequired-tooltip": "指定是否应将用户的会话ID发送到FrontChannelLogoutUri。默认为true",
+            "backChannelLogoutUri": "Back Channel Logout Uri",
+            "backChannelLogoutUri-tooltip": "指定客户端的注销URI，以用于基于HTTP的反向通道注销。有关更多详细信息，请参阅OIDC Back-Channel规范",
+            "backChannelLogoutSessionRequired": "需要返回频道注销会话",
+            "backChannelLogoutSessionRequired-tooltip": "指定是否应在请求中将用户的会话ID发送到BackChannelLogoutUri。默认为true",
+            "identityProviderRestrictions": "身份提供商限制",
+            "identityProviderRestrictions-tooltip": "指定可以与此客户端一起使用的外部IdP（如果列表为空，则允许所有IdP）。默认为空。",
+            "identityTokenLifetime": "身份令牌生命周期",
+            "identityTokenLifetime-tooltip": "以秒为单位识别令牌的生命周期（默认为300秒/ 5分钟）",
+            "accessTokenLifetime": "访问令牌生命周期",
+            "accessTokenLifetime-tooltip": "访问令牌的生命周期（以秒为单位）（默认为3600秒/ 1小时）",
+            "accessTokenTypes": "访问令牌类型",
+            "accessTokenTypes-tooltip": "指定访问令牌是引用令牌还是自包含JWT令牌（默认为Jwt）",
+            "authorizationCodeLifetime": "授权码终身",
+            "authorizationCodeLifetime-tooltip": "授权代码的生命周期（以秒为单位）（默认为300秒/ 5分钟）",
+            "absoluteRefreshTokenLifetime": "绝对刷新令牌生命周期",
+            "absoluteRefreshTokenLifetime-tooltip": "刷新令牌的最长生命周期（秒）。默认为2592000秒/ 30天",
+            "slidingRefreshTokenLifetime": "滑动刷新令牌生命周期",
+            "slidingRefreshTokenLifetime-tooltip": "以秒为单位滑动刷新令牌的生命周期。默认为1296000秒/ 15天",
+            "refreshTokenUsage": "刷新令牌使用情况",
+            "refreshTokenUsage-tooltip": "在刷新令牌时，重新使用刷新令牌句柄将保持不变OneTime刷新令牌时刷新令牌句柄将更新",
+            "refreshTokenExpiration": "刷新令牌过期",
+            "refreshTokenExpiration-tooltip": "绝对刷新令牌将在固定时间点到期（由AbsoluteRefreshTokenLifetime指定）在刷新令牌时滑动，刷新令牌的生命周期将被更新（按SlidingRefreshTokenLifetime中指定的量）。生命周期不会超过AbsoluteRefreshTokenLifetime。",
+            "allowedCorsOrigins": "允许的科尔斯起源",
+            "allowedCorsOrigins-tooltip": "如果指定，将由默认CORS策略服务实现（内存和EF）用于为JavaScript客户端构建CORS策略。",
+            "updateAccessTokenClaimsOnRefresh": "刷新时更新访问令牌声明",
+            "updateAccessTokenClaimsOnRefresh-tooltip": "获取或设置一个值，该值指示是否应在刷新令牌请求上更新访问令牌（及其声明）",
+            "includeJwtId": "包括Jwt Id",
+            "includeJwtId-tooltip": "指定JWT访问令牌是否应具有嵌入的唯一ID（通过jti声明）。",
+            "alwaysSendClientClaims": "始终发送客户声明",
+            "alwaysSendClientClaims-tooltip": "如果设置，将为每个流发送客户端声明。如果不是，仅用于客户端凭证流（默认为false）",
+            "alwaysIncludeUserClaimsInIdToken": "始终在IdToken中包含用户声明",
+            "alwaysIncludeUserClaimsInIdToken-tooltip": "在请求id令牌和访问令牌时，如果用户声明始终将其添加到id令牌而不是请求客户端使用userinfo端点。默认值为false",
+            "clientClaimsPrefix": "客户索赔前缀",
+            "clientClaimsPrefix-tooltip": "如果设置，前缀客户端声明类型将以前缀为。默认为client_。目的是确保它们不会意外地与用户声明冲突。",
+            "pairWiseSubjectSalt": "配对明智的主题盐",
+            "pairWiseSubjectSalt-tooltip": "对于此客户端的用户，在成对的subjectId生成中使用的salt值。",
+            "requireConsent": "需要同意屏幕",
+            "requireConsent-tooltip": "指定是否需要同意屏幕。默认为true。",
+            "allowRememberConsent": "记住同意",
+            "allowRememberConsent-tooltip": "指定用户是否可以选择存储同意决策。默认为true。",
+            "clientUri": "客户Uri",
+            "clientUri-tooltip": "有关客户端的更多信息的URI（在同意屏幕上使用）",
+            "logoUri": "徽标Uri（Https）",
+            "logoUri-tooltip": "URI到客户端徽标（在同意屏幕上使用）。必须是Https",
+            "claims": "声明",
+            "claims-tooltip": "允许客户端的设置声明（将包含在访问令牌中）",
+            "userCodeType": "用户代码类型",
+            "userCodeType-tooltip": "指定用于客户端的用户代码的类型。否则回落到默认值",
+            "deviceCodeLifetime": "设备代码生命周期",
+            "deviceCodeLifetime-tooltip": "设备代码的生命周期（以秒为单位）（默认为300秒/ 5分钟）",
+            "deviceFlow": "设备流程"
+        },
+        "property": {
+            "key": "键",
+            "key-tooltip": "键",
+            "value": "值",
+            "value-tooltip": "值"
+        },
+        "claims": {
+            "type": "类型",
+            "type-tooltip": "类型",
+            "value": "值",
+            "value-tooltip": "值"
+        },
+        "remove": {
+            "title": "你确定吗",
+            "text": "你将无法恢复！",
+            "confirmButtonText": "是的，删除它！",
+            "cancelButtonText": "不，取消plx！",
+            "deleted": "客户端已被删除。",
+            "cancelled": "你的客户是安全的:)"
+        },
+        "clone": {
+            "title": "克隆",
+            "text": "你确定吗？",
+            "confirmButtonText": "是的，克隆它！",
+            "cancelButtonText": "不，取消plx！",
+            "cloned": "客户已被克隆。",
+            "cancelled": ":)"
+        }
+    },
+    "identityResource": {
+        "description": "身份资源是用户的用户ID，名称或电子邮件地址等数据。标识资源具有唯一名称，您可以为其分配任意声明类型。然后，这些声明将包含在用户的身份令牌中。",
+        "newIr": "新的身份资源",
+        "list": {
+            "name": "名称",
+            "description": "描述"
+        },
+        "edit": {
+            "name": "名称",
+            "name-tooltip": "标识资源的唯一名称。这是客户端将用于授权请求中的scope参数的值。",
+            "displayName": "显示名称",
+            "displayName-tooltip": "该值将用于例如同意屏幕上。",
+            "description": "描述",
+            "description-tooltip": "该值将用于例如同意屏幕上。",
+            "enabled": "启用",
+            "enabled-tooltip": "指示此资源是否已启用且可以请求。默认为true。",
+            "showInDiscoveryDocument": "在发现文档中显示",
+            "showInDiscoveryDocument-tooltip": "指定此范围是否显示在发现文档中。默认为true。",
+            "required": "需要",
+            "required-tooltip": "指定用户是否可以在同意屏幕上取消选择范围（如果同意屏幕要实现此类功能）。默认为false。",
+            "emphasize": "注重",
+            "emphasize-tooltip": "指定同意屏幕是否会强调此范围（如果同意屏幕要实现此功能）。将此设置用于敏感或重要范围。默认为false。",
+            "userClaims": "用户声明",
+            "userClaims-tooltip": "应包含在身份令牌中的关联用户声明类型的列表。"
+        },
+        "remove": {
+            "title": "你确定吗",
+            "text": "你将无法恢复！",
+            "confirmButtonText": "是的，删除它！",
+            "cancelButtonText": "不，取消plx！",
+            "deleted": "资源已被删除。",
+            "cancelled": "你的资源是安全的:)"
+        },
+        "add": {
+            "name": "名称",
+            "name-tooltip": "标识资源的唯一名称。这是客户端将用于授权请求中的scope参数的值。",
+            "displayName": "显示名称",
+            "displayName-tooltip": "该值将用于例如同意屏幕上。",
+            "description": "描述",
+            "description-tooltip": "该值将用于例如同意屏幕上。",
+            "enabled": "启用",
+            "enabled-tooltip": "指示此资源是否已启用且可以请求。默认为true。",
+            "showInDiscoveryDocument": "在发现文档中显示",
+            "showInDiscoveryDocument-tooltip": "指定此范围是否显示在发现文档中。默认为true。",
+            "required": "需要",
+            "required-tooltip": "指定用户是否可以在同意屏幕上取消选择范围（如果同意屏幕要实现此类功能）。默认为false。",
+            "emphasize": "注重",
+            "emphasize-tooltip": "指定同意屏幕是否会强调此范围（如果同意屏幕要实现此功能）。将此设置用于敏感或重要范围。默认为false。",
+            "userClaims": "用户声明",
+            "userClaims-tooltip": "应包含在身份令牌中的关联用户声明类型的列表。"
+        }
+    },
+    "apiResource": {
+        "description": "资源是您希望使用IdentityServer保护的 - 要么是API（通过这样做，您的数据也将受到保护）。因此，要访问您的数据库内容必须通过API。",
+        "secret-description": "API密钥用于内省端点。 API可以使用API名称和密钥进行内省验证。",
+        "new-api": "新的Api资源",
+        "list": {
+            "name": "名称",
+            "description": "描述"
+        },
+        "remove": {
+            "title": "你确定吗",
+            "text": "你将无法恢复！",
+            "confirmButtonText": "是的，删除它！",
+            "cancelButtonText": "不，取消plx！",
+            "deleted": "资源已被删除。",
+            "cancelled": "你的资源是安全的:)"
+        },
+        "edit": {
+            "name": "名称",
+            "name-tooltip": "API的唯一名称。此值用于内省身份验证，并将添加到传出访问令牌的受众。",
+            "displayName": "显示名称",
+            "displayName-tooltip": "该值可以在例如同意屏幕上使用。",
+            "description": "描述",
+            "description-tooltip": "该值可以在例如同意屏幕上使用。",
+            "enabled": "启用",
+            "enabled-tooltip": "指示此资源是否已启用且可以请求。默认为true。",
+            "userClaims": "用户声明",
+            "userClaims-tooltip": "应包含在访问令牌中的关联用户声明类型的列表。",
+            "secrets": "Api的秘密",
+            "secrets-tooltip": "API密钥用于内省端点。 API可以使用API名称和密钥进行内省验证。",
+            "scope": "Api范围",
+            "scope-tooltip": "API必须至少有一个范围。每个范围可以有不同的设置。"
+        },
+        "add": {
+            "name": "名称",
+            "name-tooltip": "API的唯一名称。此值用于内省身份验证，并将添加到传出访问令牌的受众。",
+            "displayName": "显示名称",
+            "displayName-tooltip": "该值可以在例如同意屏幕上使用。",
+            "description": "描述",
+            "description-tooltip": "该值可以在例如同意屏幕上使用。",
+            "enabled": "启用",
+            "enabled-tooltip": "指示此资源是否已启用且可以请求。默认为true。",
+            "userClaims": "用户声明",
+            "userClaims-tooltip": "应包含在访问令牌中的关联用户声明类型的列表。"
+        },
+        "scope": {
+            "name": "名称",
+            "name-tooltip": "API的唯一名称。此值用于内省身份验证，并将添加到传出访问令牌的受众。",
+            "displayName": "显示名称",
+            "displayName-tooltip": "该值可以在例如同意屏幕上使用。",
+            "description": "描述",
+            "description-tooltip": "该值可以在例如同意屏幕上使用。",
+            "required": "需要",
+            "required-tooltip": "指定用户是否可以在同意屏幕上取消选择范围。默认为false。",
+            "Emphasize": "注重",
+            "Emphasize-tooltip": "指定同意屏幕是否会强调此范围（如果同意屏幕要实现此功能）。将此设置用于敏感或重要范围。默认为false。",
+            "userClaims": "用户声明",
+            "userClaims-tooltip": "应包含在访问令牌中的关联用户声明类型的列表。",
+            "showInDiscoveryDocument": "在发现文档中显示",
+            "showInDiscoveryDocument-tooltip": "指定此范围是否显示在发现文档中。默认为true"
+        }
+    },
+    "secrets": {
+        "secretType": "秘密类型",
+        "secretType-tooltip": "客户端密钥的类型",
+        "secretValue": "秘密价值",
+        "secretValue-tooltip": "指定客户端的秘密",
+        "hashType": "哈希类型",
+        "hashType-tooltip": "设置秘密值的哈希值",
+        "description": "描述",
+        "description-tooltip": "设置说明",
+        "expiration": "呼气",
+        "expiration-tooltip": "设置到期日"
+    },
+    "persistedGrant": {
+        "description": "",
+        "list": {
+            "clientId": "客户",
+            "type": "类型",
+            "email": "电子邮件",
+            "picture": "图片",
+            "key": "键",
+            "creationTime": "CREATIONTIME",
+            "expiration": "呼气",
+            "scopes": "领域"
+        },
+        "remove": {
+            "title": "你确定吗",
+            "text": "你将无法恢复！",
+            "confirmButtonText": "是的，删除它！",
+            "cancelButtonText": "不，取消plx！",
+            "deleted": "Grant已被删除。",
+            "cancelled": "格兰特很安全:)"
+        }
+    },
+    "users": {
+        "description": "用户是可以访问资源和客户端的人或机器人。",
+        "new-user": "新用户",
+        "list": {
+            "info": "用户信息",
+            "email": "电子邮件",
+            "picture": "图片",
+            "name": "名称",
+            "log-tooltip": "显示日志",
+            "username": "用户名"
+        },
+        "remove": {
+            "title": "你确定吗",
+            "text": "你将无法恢复！",
+            "confirmButtonText": "是的，删除它！",
+            "cancelButtonText": "不，取消plx！",
+            "deleted": "用户已被删除。",
+            "cancelled": "用户安全:)"
+        },
+        "edit": {
+            "userName": "用户名",
+            "userName-tooltip": "获取或设置此用户的用户名。",
+            "name": "显示名称",
+            "name-tooltip": "获取或设置用户名",
+            "email": "电子邮件",
+            "email-tooltip": "获取或设置此用户的电子邮件地址",
+            "emailConfirmed": "确认电子邮件",
+            "emailConfirmed-tooltip": "获取或设置一个标志，指示用户是否已确认其电子邮件地址",
+            "phoneNumber": "电话号码",
+            "phoneNumber-tooltip": "获取或设置用户的电话号码",
+            "phoneNumberConfirmed": "电话号码确认",
+            "phoneNumberConfirmed-tooltip": "获取或设置一个标志，指示用户是否已确认其电话地址",
+            "twoFactorEnabled": "启用TwoFactor",
+            "twoFactorEnabled-tooltip": "获取或设置一个标志，指示是否为此用户启用了两个因子身份验证",
+            "lockoutEnd": "锁定结束",
+            "lockoutEnd-tooltip": "获取或设置任何用户锁定结束时的日期和时间（UTC）",
+            "lockoutEnabled": "锁定已启用",
+            "lockoutEnabled-tooltip": "获取或设置一个标志，指示用户是否可以被锁定",
+            "accessFailedCount": "访问失败计数",
+            "accessFailedCount-tooltip": "获取或设置当前用户的失败登录尝试次数",
+            "password": "密码",
+            "password-tooltip": "密码",
+            "confirmPassword": "确认密码",
+            "confirmPassword-tooltip": "确认密码",
+            "claims": "声明",
+            "claims-tooltip": "允许用户设置声明（将包含在访问令牌中）",
+            "roles": "角色",
+            "roles-tooltip": "允许用户设置角色（将包含在访问令牌中）",
+            "externalLogins": "外部登录",
+            "externalLogins-tooltip": "管理用户外部登录。例如Google，Facebook",
+            "change-password": "更改密码",
+            "user-data": "用户数据"
+        },
+        "claims": {
+            "type": "类型",
+            "type-tooltip": "类型",
+            "value": "值",
+            "value-tooltip": "值"
+        },
+        "roles": {
+            "role": "角色",
+            "role-tooltip": "选择用户角色",
+            "name": "名称"
+        },
+        "logins": {
+            "loginProvider": "提供商",
+            "providerDisplayName": "名称",
+            "providerKey": "键",
+            "nologins": "没有可用的登录信息"
+        }
+    },
+    "roles": {
+        "description": "表示身份系统中的角色",
+        "name": "名称",
+        "selectedRole": "选定的角色",
+        "new-role": "新角色",
+        "edit": {
+            "roleName": "名称",
+            "roleName-tooltip": "获取或设置角色名称。"
+        },
+        "add": {
+            "roleName": "名称",
+            "roleName-tooltip": "获取或设置角色名称。"
+        },
+        "list": {
+            "email": "电子邮件",
+            "picture": "图片",
+            "name": "名称"
+        }
+    },
+    "toasterMessages": {
+        "title-success": "成功",
+        "message-success": "做得好！"
+    },
+    "general": {
+        "add": "加",
+        "loading": "加载请稍候！",
+        "goback": "回去",
+        "empty": "空",
+        "remove": "去掉",
+        "copy": "复制",
+        "edit": "编辑",
+        "identity-resource": "身份资源",
+        "clients": "客户端",
+        "api-resource": "受保护的资源",
+        "persisted-grants": "持久的补助金",
+        "users": "用户",
+        "roles": "角色",
+        "details": "细节",
+        "revoke": "撤消"
+    }
+}

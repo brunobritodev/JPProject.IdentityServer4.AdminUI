@@ -120,10 +120,4 @@
   <data name="Title-Available-Languages" xml:space="preserve">
     <value>Available Languages</value>
   </data>
-  <data name="Title-English" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Title-Português" xml:space="preserve">
-    <value>Português</value>
-  </data>
 </root>

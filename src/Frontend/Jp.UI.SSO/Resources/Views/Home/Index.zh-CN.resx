@@ -13,15 +13,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Body-Welcome" xml:space="preserve">
-    <value>&lt;h1 class =“display-4”&gt;欢迎！&lt;/ h1&gt;
-                &lt;p class =“lead”&gt; Jp Project由3个WebApp组成：ID4的单点登录服务器，用户管理和管理员。&lt;/ p&gt;
+    <value>&lt;h1 class =“display-4”&gt;欢迎！&lt;/h1&gt;
+                &lt;p class =“lead”&gt; Jp Project由3个WebApp组成：ID4的单点登录服务器，用户管理和管理员。&lt;/p&gt;
                 &lt;hr class =“my-4”&gt;
-                &lt;p&gt;在每个人的下方访问。&lt;/ p&gt;
-                &lt;P&gt;
+                &lt;p&gt;在每个人的下方访问。&lt;/p&gt;
+                &lt;p&gt;
                     这里有链接
                     &lt;a class="text-white-50" href="https://github.com/brunohbrito/JP-Project"&gt;源代码库&lt;/a&gt;，
                     并&lt;a class="text-white-50" href="https://jp-project.readthedocs.io/en/latest/index.html"&gt;提供更多信息的文档&lt;/a&gt;。
-                &lt;/ p&gt;</value>
+                &lt;/p&gt;</value>
   </data>
   <data name="Menu-Home" xml:space="preserve">
     <value>家</value>
@@ -50,21 +50,21 @@
     <value>Jp Project的主要目标是提供一个</value>
   </data>
   <data name="Body-Jp-Description" xml:space="preserve">
-    <value>&lt;h1 class =“mb-3 text-sm-nowrap”&gt; Jp Project &lt;/ h1&gt;
-                    &lt;h2 class =“mb-3 text-sm-nowrap”&gt; IdentityServer4管理的免费管理面板&lt;/ h2&gt;
+    <value>&lt;h1 class =“mb-3 text-sm-nowrap”&gt; Jp Project &lt;/h1&gt;
+                    &lt;h2 class =“mb-3 text-sm-nowrap”&gt; IdentityServer4管理的免费管理面板&lt;/h2&gt;
                     &lt;p class =“lead”&gt;
-                        您需要&lt;strong&gt;创建单点登录解决方案&lt;/ strong&gt;所需的唯一Bootstrap管理界面。
-                    &lt;/ p&gt;
+                        您需要&lt;strong&gt;创建单点登录解决方案&lt;/strong&gt;所需的唯一Bootstrap管理界面。
+                    &lt;/p&gt;
                     &lt;p class =“lead mb-4”&gt;
                         Jp Project是一个开源计划。内置于Bootstrap 4，Angular 7和.Net Core 2.2中。
-                    &lt;/ p&gt;
+                    &lt;/p&gt;
                     &lt;div class =“d-flex flex-column flex-md-row lead mb-3”&gt;
                         &lt;a href="#live-preview" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;实时预览&lt;/a&gt;
-                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;下载Jp项目&lt; / A&gt;
-                    &lt;/ DIV&gt;
+                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt;下载Jp项目&lt;/A&gt;
+                    &lt;/div&gt;
                     &lt;div class =“version text-small mt-3”&gt;
-                        库版本：&lt;strong&gt; 1.1 &lt;/ strong&gt;·管理员模板版本：&lt;strong&gt; 1.1 &lt;/ strong&gt;
-                    &lt;/ DIV&gt;</value>
+                        库版本：&lt;strong&gt; 1.1 &lt;/strong&gt;·管理员模板版本：&lt;strong&gt; 1.1 &lt;/strong&gt;
+                    &lt;/div&gt;</value>
   </data>
   <data name="Body-Manage" xml:space="preserve">
     <value>管理您存储的拨款。</value>

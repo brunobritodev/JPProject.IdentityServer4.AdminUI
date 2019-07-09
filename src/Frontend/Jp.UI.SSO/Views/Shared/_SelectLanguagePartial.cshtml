@@ -21,17 +21,29 @@
             <strong>@Localizer["Title-Available-Languages"]</strong>
         </div>
         <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="pt-BR" class="dropdown-item">
-            <i class="flag-icon flag-icon-br"></i> @Localizer["Title-Português"]
+            <i class="flag-icon flag-icon-br"></i> Portuguese (Brazil)
         </a>
         <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="en" class="dropdown-item">
-            <i class="flag-icon flag-icon-us"></i> @Localizer["Title-English"]
+            <i class="flag-icon flag-icon-us"></i> English
         </a>
-        @foreach (var item in cultureItems)
-        {
 
-            <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="@requestCulture.RequestCulture.UICulture.Name" class="dropdown-item">
-                <i class="flag-icon flag-icon-us"></i> @requestCulture.RequestCulture.UICulture.DisplayName
-            </a>
-        }
+        <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="es" class="dropdown-item">
+            <i class="flag-icon flag-icon-es"></i> Spanish
+        </a>
+        <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="fr" class="dropdown-item">
+            <i class="flag-icon flag-icon-fr"></i> French
+        </a>
+        <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="nl" class="dropdown-item">
+            <i class="flag-icon flag-icon-nl"></i> Dutch
+        </a>
+        <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="ru" class="dropdown-item">
+            <i class="flag-icon flag-icon-ru"></i> Russian
+        </a>
+        <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="zh-cn" class="dropdown-item">
+            <i class="flag-icon flag-icon-cn"></i> Chinese Simplified
+        </a>
+        <a asp-controller="Home" asp-action="SetLanguage" asp-route-culture="zh-tw" class="dropdown-item">
+            <i class="flag-icon flag-icon-cn"></i> Chinese Traditional
+        </a>
     </div>
 </li>

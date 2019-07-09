@@ -13,9 +13,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Body-Welcome" xml:space="preserve">
-    <value>&lt;h1 class = "display-4"&gt; ¡Bienvenido! &lt;/h1&gt;
-                &lt;p class = "lead"&gt; Jp Project está compuesto por 3 aplicaciones web: un servidor de inicio de sesión único, administración de usuarios y administrador para ID4. &lt;/p&gt;
-                &lt;hr class = "my-4"&gt;
+    <value>&lt;h1 class="display-4"&gt; ¡Bienvenido! &lt;/h1&gt;
+                &lt;p class="lead"&gt; Jp Project está compuesto por 3 aplicaciones web: un servidor de inicio de sesión único, administración de usuarios y administrador para ID4. &lt;/p&gt;
+                &lt;hr class="my-4"&gt;
                 &lt;p&gt; Acceda debajo de cada uno de ellos. &lt;/p&gt;
                 &lt;p&gt;
                     Aquí hay enlaces a la
@@ -50,19 +50,19 @@
     <value>El objetivo principal de Jp Project es proporcionar una</value>
   </data>
   <data name="Body-Jp-Description" xml:space="preserve">
-    <value>&lt;h1 class = "mb-3 text-sm-nowrap"&gt; Proyecto Jp &lt;/h1&gt;
-                    &lt;h2 class = "mb-3 text-sm-nowrap"&gt; Panel de administración gratuito para la administración de IdentityServer4 &lt;/h2&gt;
-                    &lt;p class = "lead"&gt;
+    <value>&lt;h1 class="mb-3 text-sm-nowrap"&gt; Proyecto Jp &lt;/h1&gt;
+                    &lt;h2 class="mb-3 text-sm-nowrap"&gt; Panel de administración gratuito para la administración de IdentityServer4 &lt;/h2&gt;
+                    &lt;p class="lead"&gt;
                         La única interfaz de usuario de administración de Bootstrap que necesita para &lt;strong&gt; crear su solución de inicio de sesión único &lt;/strong&gt;.
                     &lt;/p&gt;
-                    &lt;p class = "lead mb-4"&gt;
+                    &lt;p class="lead mb-4"&gt;
                         Jp Project es una iniciativa de código abierto. Construido dentro de Bootstrap 4, Angular 7 y .Net Core 2.2.
                     &lt;/p&gt;
-                    &lt;div class = "d-flex flex-column flex-md-row lead mb-3"&gt;
+                    &lt;div class="d-flex flex-column flex-md-row lead mb-3"&gt;
                         &lt;a href="#live-preview" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Vista previa en vivo &lt;/a&gt;
-                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Descargar Jp Project &lt; / a&gt;
+                        &lt;a href="https://github.com/brunohbrito/JP-Project" class="btn btn-lg btn-outline-light mb-3 mb-md-0 mr-md-3"&gt; Descargar Jp Project &lt;/a&gt;
                     &lt;/div&gt;
-                    &lt;div class = "version text-small mt-3"&gt;
+                    &lt;div class="version text-small mt-3"&gt;
                         Versión de la biblioteca: &lt;strong&gt; 1.1 &lt;/strong&gt; · Versión de la plantilla de administración: &lt;strong&gt; 1.1 &lt;/strong&gt;
                     &lt;/div&gt;</value>
   </data>

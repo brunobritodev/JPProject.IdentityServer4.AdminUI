@@ -19,12 +19,12 @@ namespace Jp.UI.SSO.Configuration
                                 {
                                     new CultureInfo("pt-BR"),
                                     new CultureInfo("en"),
-                                    new CultureInfo("zh-CHS"),
-                                    new CultureInfo("zh-CHT"),
+                                    new CultureInfo("zh-tw"),
+                                    new CultureInfo("zh-cn"),
                                     new CultureInfo("es"),
                                     new CultureInfo("nl"),
                                     new CultureInfo("fr"),
-                                    new CultureInfo("ru-RU"),
+                                    new CultureInfo("ru"),
                                 };
 
                                 opts.DefaultRequestCulture = new RequestCulture("en");
