@@ -19,8 +19,8 @@ namespace Jp.UI.SSO.Configuration
                                 {
                                     new CultureInfo("pt-BR"),
                                     new CultureInfo("en"),
-                                    new CultureInfo("zh-tw"),
-                                    new CultureInfo("zh-cn"),
+                                    new CultureInfo("zh-TW"),
+                                    new CultureInfo("zh-CN"),
                                     new CultureInfo("es"),
                                     new CultureInfo("nl"),
                                     new CultureInfo("fr"),
