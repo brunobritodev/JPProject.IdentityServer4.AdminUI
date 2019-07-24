@@ -16,6 +16,7 @@ namespace Jp.UI.SSO.Controllers.Home
             _interaction = interaction;
         }
 
+        [ResponseCache(Location = ResponseCacheLocation.Client, NoStore = true)]
         public IActionResult Index()
         {
             return View();

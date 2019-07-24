@@ -62,7 +62,7 @@ namespace Jp.UI.SSO.Controllers.Account
         /// <summary>
         /// Show login page
         /// </summary>
-        [HttpGet]
+        [HttpGet, ResponseCache(Location = ResponseCacheLocation.Any, Duration = 120)]
         public async Task<IActionResult> Login(string returnUrl)
         {
             // build a model so we know what to show on the login page
@@ -93,7 +93,6 @@ namespace Jp.UI.SSO.Controllers.Account
         /// Handle postback from username/password login
         /// </summary>
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginInputModel model, string button)
         {
             // the user clicked the "cancel" button

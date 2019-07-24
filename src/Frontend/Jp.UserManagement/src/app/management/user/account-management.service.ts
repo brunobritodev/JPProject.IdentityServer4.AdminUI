@@ -17,11 +17,11 @@ export class AccountManagementService {
     }
 
     public update(user: User): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "management/update-profile", user);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "management/update-profile", user);
     }
 
     public updatePicture(image: ProfilePictureViewModel): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "management/update-profile-picture", image);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "management/update-profile-picture", image);
     }
 
     public addPassword(password: SetPassword): Observable<DefaultResponse<boolean>> {
@@ -29,7 +29,7 @@ export class AccountManagementService {
     }
 
     public updatePassword(password: ChangePassword): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "management/change-password", password);
+        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "management/change-password", password);
     }
 
     public deleteAccount(): Observable<DefaultResponse<boolean>> {
@@ -47,5 +47,4 @@ export class AccountManagementService {
     public getLogs(): Observable<DefaultResponse<EventHistoryData>> {
         return this.http.get<DefaultResponse<EventHistoryData>>(environment.ResourceServer + "management/logs");
     }
-
 }
