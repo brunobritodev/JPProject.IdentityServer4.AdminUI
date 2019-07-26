@@ -8,7 +8,7 @@ import { flatMap, tap } from "rxjs/operators";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable } from "rxjs";
 
-const swal = require('sweetalert');
+import Swal from 'sweetalert2'
 
 @Component({
     selector: "app-role-add",

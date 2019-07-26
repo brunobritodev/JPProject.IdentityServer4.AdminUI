@@ -1,3 +1,7 @@
+# v1.4.5
+
+1. Updated for IdentityServer4 dependencies for 2.5.
+
 # v1.4.0
 1. Added Translations (auto-generate)
    * Spanish
