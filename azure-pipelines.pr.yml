@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- greenkeeper/*
 
 variables:
   BuildConfiguration: 'Release'
