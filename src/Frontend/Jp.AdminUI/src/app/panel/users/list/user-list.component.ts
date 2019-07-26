@@ -6,7 +6,7 @@ import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import { Observable, Subject } from "rxjs";
 import { EventHistoryData } from "@shared/viewModel/event-history-data.model";
 import { debounceTime, switchMap } from "rxjs/operators";
-const swal = require('sweetalert');
+import Swal from 'sweetalert2'
 
 @Component({
     selector: "app-user-list",
@@ -49,7 +49,7 @@ export class UserListComponent implements OnInit {
 
     public remove(id: string) {
         this.translator.translate.get('identityResource.remove').subscribe(m => {
-            swal({
+            Swal.fire({
                 title: m['title'],
                 text: m["text"],
                 type: 'warning',
@@ -57,25 +57,24 @@ export class UserListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, (isConfirm) => {
+                
+            }).then(isConfirm => {
                 if (isConfirm) {
 
                     this.userService.remove(id).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadResources();
-                                swal("Deleted!", m["deleted"], 'success');
+                                Swal.fire("Deleted!", m["deleted"], 'success');
                             }
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                            swal("Error!", errors[0], 'error');
+                            Swal.fire("Error!", errors[0], 'error');
                         }
                     );
                 } else {
-                    swal("Cancelled", m["cancelled"], 'error');
+                    Swal.fire("Cancelled", m["cancelled"], 'error');
                 }
             });
         });

@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- greenkeeper/*
 
 variables:
   BuildConfiguration: 'Release'
@@ -68,3 +69,32 @@ jobs:
           command: custom
           customCommand: 'run build -- --base-href=/user-management/'
           workingDir: src/Frontend/Jp.UserManagement
+
+  - job: 'docker'
+    displayName: 'Docker files'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: Docker@2
+        displayName: 'Docker - Build - AdminUI'
+        inputs:
+          command: 'build'
+          Dockerfile: '**/admin-ui.dockerfile'
+
+      - task: Docker@2
+        displayName: 'Docker - Build - API'
+        inputs:
+          command: 'build'
+          Dockerfile: '**/api.dockerfile'
+
+      - task: Docker@2
+        displayName: 'Docker - Build - UserManagement'
+        inputs:
+          command: 'build'
+          Dockerfile: '**/ui-user-management.dockerfile'
+
+      - task: Docker@2
+        displayName: 'Docker - Build - SSO'
+        inputs:
+          command: 'build'
+          Dockerfile: '**/sso.dockerfile'

@@ -1,8 +1,8 @@
 ![image](https://github.com/brunohbrito/JP-Project/blob/master/docs/images/logo.png?raw=true)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/08v6mg6q439x16xt?svg=true)](https://ci.appveyor.com/project/brunohbrito/jp-project)
-[![Build Status](https://dev.azure.com/brunohbrito/JpProject/_apis/build/status/JPProject%20CD%20Build?branchName=master)](https://dev.azure.com/brunohbrito/JpProject/_build/latest?definitionId=2&branchName=master)
-[![License](https://img.shields.io/github/license/brunohbrito/jp-project.svg)](LICENSE)
+[![Build Status](https://dev.azure.com/brunohbrito/JpProject/_apis/build/status/brunohbrito.JPProject.IdentityServer4.AdminUI?branchName=master)](https://dev.azure.com/brunohbrito/JpProject/_build/latest?definitionId=2&branchName=master)
+[![License](https://img.shields.io/github/license/brunohbrito/jp-project.svg)](LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/brunohbrito/JPProject.IdentityServer4.AdminUI.svg)](https://greenkeeper.io/)
 ![DOCS](https://readthedocs.org/projects/jp-project/badge/?version=latest&style=flat)
 
 Jp Project is a Open Source UI Administration Tools for IdentityServer4 v2 - release 2.4.0. 
