@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "src/Frontend/Jp.AdminUI/package.json",
+        "src/Frontend/Jp.AdminUI/src/assets/fonts/source-sans-pro/package.json",
+        "src/Frontend/Jp.UI.SSO/package.json",
+        "src/Frontend/Jp.UserManagement/package.json"
+      ]
+    }
+  }
+}
