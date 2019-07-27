@@ -3,7 +3,7 @@ import { TranslatorService } from "@core/translator/translator.service";
 import { ApiResourceService } from "../api-resource.service";
 import { ApiResource } from "@shared/viewModel/api-resource.model";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
-const swal = require('sweetalert');
+import Swal from 'sweetalert2'
 
 @Component({
     selector: "app-api-resources-list",
@@ -29,35 +29,33 @@ export class ApiResourceListComponent implements OnInit {
 
     public remove(name: string) {
         this.translator.translate.get('apiResource.remove').subscribe(m => {
-            swal({
+            Swal.fire({
                 title: m['title'],
                 text: m["text"],
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
-                cancelButtonText: m["cancelButtonText"],
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, (isConfirm) => {
-                if (isConfirm) {
+                cancelButtonText: m["cancelButtonText"]
+            }).then(isConfirm => {
+                if (isConfirm.value) {
 
                     this.apiResourceservice.remove(name).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadResources();
-                                swal("Deleted!", m["deleted"], 'success');
+                                Swal.fire("Deleted!", m["deleted"], 'success');
                             }
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                            swal("Error!", errors[0], 'error');
+                            Swal.fire("Error!", errors[0], 'error');
                         }
                     );
 
 
                 } else {
-                    swal("Cancelled", m["cancelled"], 'error');
+                    Swal.fire("Cancelled", m["cancelled"], 'error');
                 }
             });
         });
