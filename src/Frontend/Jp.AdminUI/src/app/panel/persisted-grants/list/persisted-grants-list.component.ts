@@ -4,7 +4,7 @@ import { PersistedGrantsService } from "../persisted-grants.service";
 import { PersistedGrant } from "@shared/viewModel/persisted-grants.model";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
 
-const swal = require('sweetalert');
+import Swal from 'sweetalert2'
 
 @Component({
     selector: "app-persisted-grants-list",
@@ -38,7 +38,7 @@ export class PersistedGrantListComponent implements OnInit {
 
     public remove(name: string) {
         this.translator.translate.get('persistedGrant.remove').subscribe(m => {
-            swal({
+            Swal.fire({
                 title: m['title'],
                 text: m["text"],
                 type: 'warning',
@@ -46,27 +46,26 @@ export class PersistedGrantListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, (isConfirm) => {
+                
+            }).then(isConfirm => {
                 if (isConfirm) {
 
                     this.persistedGrantService.remove(name).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadGrants();
-                                swal("Deleted!", m["deleted"], 'success');
+                                Swal.fire("Deleted!", m["deleted"], 'success');
                             }
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                            swal("Error!", errors[0], 'error');
+                            Swal.fire("Error!", errors[0], 'error');
                         }
                     );
 
 
                 } else {
-                    swal("Cancelled", m["cancelled"], 'error');
+                    Swal.fire("Cancelled", m["cancelled"], 'error');
                 }
             });
         });

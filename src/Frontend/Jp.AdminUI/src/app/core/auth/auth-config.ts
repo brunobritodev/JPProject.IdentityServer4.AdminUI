@@ -13,4 +13,5 @@ export const authConfig: AuthConfig = {
     sessionChecksEnabled: true,
     showDebugInformation: true, // Also requires enabling "Verbose" level in devtools
     clearHashAfterLogin: false, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040
+    waitForTokenInMsec: 5000
 };
