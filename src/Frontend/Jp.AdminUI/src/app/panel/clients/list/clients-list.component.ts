@@ -3,7 +3,7 @@ import { TranslatorService } from "@core/translator/translator.service";
 import { ClientService } from "@app/clients/clients.service";
 import { ClientList } from "@shared/viewModel/client-list.model";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
-const swal = require('sweetalert');
+import Swal from 'sweetalert2'
 
 @Component({
     selector: "app-clients-list",
@@ -28,7 +28,7 @@ export class ClientListComponent implements OnInit {
 
     public copy(clientId: string) {
         this.translator.translate.get('client.clone').subscribe(m => {
-            swal({
+            Swal.fire({
                 title: m['title'],
                 text: m["text"],
                 type: 'warning',
@@ -36,25 +36,23 @@ export class ClientListComponent implements OnInit {
                 confirmButtonColor: '#b82d8',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, (isConfirm) => {
-                if (isConfirm) {
+            }).then(isConfirm => {
+                if (isConfirm.value) {
 
                     this.clientService.copy(clientId).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadClients();
-                                swal("Cloned!", m["cloned"], 'success');
+                                Swal.fire("Cloned!", m["cloned"], 'success');
                             }
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                            swal("Error!", errors[0], 'error');
+                            Swal.fire("Error!", errors[0], 'error');
                         }
                     );
                 } else {
-                    swal("Cancelled", m["cancelled"], 'info');
+                    Swal.fire("Cancelled", m["cancelled"], 'info');
                 }
             });
         });
@@ -62,35 +60,33 @@ export class ClientListComponent implements OnInit {
 
     public remove(clientId: string) {
         this.translator.translate.get('client.remove').subscribe(m => {
-            swal({
+            Swal.fire({
                 title: m['title'],
                 text: m["text"],
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
-                cancelButtonText: m["cancelButtonText"],
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, (isConfirm) => {
-                if (isConfirm) {
+                cancelButtonText: m["cancelButtonText"]
+            }).then(isConfirm => {
+                if (isConfirm.value) {
 
                     this.clientService.remove(clientId).subscribe(
                         registerResult => {
                             if (registerResult.data) {
                                 this.loadClients();
-                                swal("Deleted!", m["deleted"], 'success');
+                                Swal.fire("Deleted!", m["deleted"], 'success');
                             }
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                            swal("Error!", errors[0], 'error');
+                            Swal.fire("Error!", errors[0], 'error');
                         }
                     );
 
 
                 } else {
-                    swal("Cancelled", m["cancelled"], 'error');
+                    Swal.fire("Cancelled", m["cancelled"], 'error');
                 }
             });
         });
