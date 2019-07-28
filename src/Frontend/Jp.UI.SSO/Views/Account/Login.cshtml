@@ -34,7 +34,7 @@
                                             <i class="icon-lock"></i>
                                         </span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" value="@Configuration.GetSection("ApplicationSettings:DefaultPass").Value"  asp-for=Password autocomplete="off">
+                                    <input type="password" class="form-control" placeholder="Password" value="@Configuration.GetSection("ApplicationSettings:DefaultPass").Value" asp-for=Password autocomplete="off">
                                 </div>
                                 @if (Model.AllowRememberLogin)
                                 {
