@@ -62,7 +62,7 @@ namespace Jp.UI.SSO.Controllers.Account
         /// <summary>
         /// Show login page
         /// </summary>
-        [HttpGet, ResponseCache(Location = ResponseCacheLocation.Any, Duration = 120)]
+        [HttpGet]
         public async Task<IActionResult> Login(string returnUrl)
         {
             // build a model so we know what to show on the login page

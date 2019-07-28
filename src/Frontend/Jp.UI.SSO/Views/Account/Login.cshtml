@@ -19,7 +19,7 @@
                         <div class="card-body">
                             <h1>@Localizer["Title-Login"]</h1>
                             <p class="text-muted">@Localizer["Body-Sign"]</p>
-                            <form asp-route="Login" asp-antiforgery="false" >
+                            <form asp-route="Login">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
@@ -34,7 +34,7 @@
                                             <i class="icon-lock"></i>
                                         </span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" value="@Configuration.GetSection("ApplicationSettings:DefaultPass").Value"  asp-for=Password autocomplete="off">
+                                    <input type="password" class="form-control" placeholder="Password" value="@Configuration.GetSection("ApplicationSettings:DefaultPass").Value" asp-for=Password autocomplete="off">
                                 </div>
                                 @if (Model.AllowRememberLogin)
                                 {
