@@ -41,7 +41,7 @@ namespace Jp.Management.Controllers
             return Response(user);
         }
 
-        [Route("update-profile"), HttpPost]
+        [Route("update-profile"), HttpPut]
         public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfile([FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
@@ -56,7 +56,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [Route("update-profile-picture"), HttpPost]
+        [Route("update-profile-picture"), HttpPut]
         public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfilePicture([FromBody] ProfilePictureViewModel model)
         {
             if (!ModelState.IsValid)
@@ -70,7 +70,7 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [Route("change-password"), HttpPost]
+        [Route("change-password"), HttpPut]
         public async Task<ActionResult<DefaultResponse<bool>>> ChangePassword([FromBody] ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid)

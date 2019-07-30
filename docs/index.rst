@@ -60,6 +60,7 @@ There are several ways we can help you out.
    intro/contributing
    intro/code_of_conduct
    intro/contributors.md
+   intro/stress_test_results
 
 .. toctree::
    :maxdepth: 2
