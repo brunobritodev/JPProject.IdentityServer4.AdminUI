@@ -24,7 +24,7 @@ RUN npm run ng build -- --configuration=docker
 ##################
 
 # base image
-FROM nginx:1.13.3-alpine
+FROM nginx:1.17.2-alpine
 
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
