@@ -71,7 +71,7 @@
     "ngx-bootstrap": "^5.1.0",
     "ngx-chips": "^2.0.0-beta.0",
     "ngx-color-picker": "^8.1.0",
-    "ngx-infinite-scroll": "^7.1.0",
+    "ngx-infinite-scroll": "^8.0.0",
     "ngx-select-ex": "^3.6.8",
     "npm": "^6.9.0",
     "popper.js": "^1.14.7",
