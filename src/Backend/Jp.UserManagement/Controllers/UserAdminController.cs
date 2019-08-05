@@ -56,7 +56,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
+        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
