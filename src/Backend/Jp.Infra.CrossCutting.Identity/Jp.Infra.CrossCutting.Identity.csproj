@@ -18,7 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MailKit" Version="2.2.0" />
-    <PackageReference Include="ServiceStack.Text.Core" Version="5.5.0" />
+    <PackageReference Include="ServiceStack.Text.Core" Version="5.6.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
