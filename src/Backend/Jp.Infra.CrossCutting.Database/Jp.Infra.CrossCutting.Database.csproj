@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Jp.Infra.Data.MySql\Jp.Infra.Data.MySql.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data.PostgreSQL\Jp.Infra.Data.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Data.Sqlite\Jp.Infra.Data.Sqlite.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data.Sql\Jp.Infra.Data.Sql.csproj" />
   </ItemGroup>
 </Project>

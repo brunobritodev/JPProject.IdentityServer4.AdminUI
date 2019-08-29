@@ -53,6 +53,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Data.PostgreSQL", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Data.Sql", "Backend\Jp.Infra.Data.Sql\Jp.Infra.Data.Sql.csproj", "{FE02E3F1-E70A-46BB-966A-4F64FF5E81B8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jp.Infra.Data.Sqlite", "Backend\Jp.Infra.Data.Sqlite\Jp.Infra.Data.Sqlite.csproj", "{8C9F9D80-B26D-4B1B-B237-E7DF35EF624C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{FE02E3F1-E70A-46BB-966A-4F64FF5E81B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE02E3F1-E70A-46BB-966A-4F64FF5E81B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE02E3F1-E70A-46BB-966A-4F64FF5E81B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9F9D80-B26D-4B1B-B237-E7DF35EF624C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9F9D80-B26D-4B1B-B237-E7DF35EF624C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9F9D80-B26D-4B1B-B237-E7DF35EF624C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9F9D80-B26D-4B1B-B237-E7DF35EF624C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +157,7 @@ Global
 		{8EE8888F-BAEE-49C7-BC19-29D7A1A00ACE} = {DCCD4FD6-B437-4586-B932-7AC40EF86A71}
 		{AFAA0359-7ABF-484C-8109-F110A3E05206} = {DCCD4FD6-B437-4586-B932-7AC40EF86A71}
 		{FE02E3F1-E70A-46BB-966A-4F64FF5E81B8} = {DCCD4FD6-B437-4586-B932-7AC40EF86A71}
+		{8C9F9D80-B26D-4B1B-B237-E7DF35EF624C} = {DCCD4FD6-B437-4586-B932-7AC40EF86A71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F62CA078-A991-4001-A117-1F2726248D4F}
