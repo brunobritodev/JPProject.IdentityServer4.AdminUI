@@ -1,4 +1,4 @@
-using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.Clients;
 
 namespace Jp.Domain.Validations.Client
 {

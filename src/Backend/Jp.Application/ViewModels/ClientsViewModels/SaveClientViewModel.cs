@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.Clients;
 
 namespace Jp.Application.ViewModels.ClientsViewModels
 {

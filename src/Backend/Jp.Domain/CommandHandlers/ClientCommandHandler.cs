@@ -1,6 +1,5 @@
 using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.EntityFramework.Mappers;
-using Jp.Domain.Commands.Client;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Events.Client;
@@ -11,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Jp.Domain.Commands.Clients;
 
 namespace Jp.Domain.CommandHandlers
 {
@@ -144,14 +144,7 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var secret = new ClientSecret
-            {
-                Client = savedClient,
-                Description = request.Description,
-                Expiration = request.Expiration,
-                Type = request.Type,
-                Value = request.GetValue()
-            };
+            var secret = request.ToEntity(savedClient);
 
             _clientSecretRepository.Add(secret);
 
@@ -208,13 +201,8 @@ namespace Jp.Domain.CommandHandlers
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
                 return false;
             }
-
-            var property = new ClientProperty()
-            {
-                Client = savedClient,
-                Value = request.Value,
-                Key = request.Key
-            };
+            var property = request.ToEntiyTy(savedClient);
+            
 
             _clientPropertyRepository.Add(property);
 
@@ -273,12 +261,7 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var property = new ClientClaim()
-            {
-                Client = savedClient,
-                Value = request.Value,
-                Type = request.Type
-            };
+            var property = request.ToEntity(savedClient);
 
             _clientClaimRepository.Add(property);
 
@@ -336,6 +319,7 @@ namespace Jp.Domain.CommandHandlers
             }
 
             var copyOf = savedClient.ToModel();
+            
             copyOf.ClientId = $"copy-of-{copyOf.ClientId}-{Guid.NewGuid().ToString().Replace("-", string.Empty)}";
             copyOf.ClientSecrets = new List<IdentityServer4.Models.Secret>();
             copyOf.ClientName = "Copy of " + copyOf.ClientName;

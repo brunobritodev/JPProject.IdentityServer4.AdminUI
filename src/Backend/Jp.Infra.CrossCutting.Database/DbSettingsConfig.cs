@@ -1,6 +1,9 @@
-﻿using Jp.Infra.Data.MySql.Configuration;
+﻿using Jp.Infra.CrossCutting.Identity.Context;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
+using Jp.Infra.Data.MySql.Configuration;
 using Jp.Infra.Data.PostgreSQL.Configuration;
 using Jp.Infra.Data.Sql.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,6 +27,9 @@ namespace Jp.Infra.CrossCutting.Database
                     services.AddIdentityPostgreSql(connString);
                     break;
             }
+            services.AddIdentity<UserIdentity, UserIdentityRole>()
+                .AddEntityFrameworkStores<ApplicationIdentityContext>()
+                .AddDefaultTokenProviders();
         }
 
         public static void ConfigureIdentityServerDatabase(this IIdentityServerBuilder builder, IConfiguration configuration)

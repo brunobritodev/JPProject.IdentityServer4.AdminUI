@@ -8,7 +8,7 @@ using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
-using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.Clients;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
 

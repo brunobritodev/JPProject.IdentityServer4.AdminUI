@@ -1,11 +1,9 @@
-﻿using System.Reflection;
-using IdentityServer4.EntityFramework.Options;
+﻿using IdentityServer4.EntityFramework.Options;
 using Jp.Infra.CrossCutting.Identity.Context;
-using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Jp.Infra.Data.MySql.Configuration
 {
@@ -25,9 +23,6 @@ namespace Jp.Infra.Data.MySql.Configuration
             services.AddDbContext<JpContext>(options => options.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             services.AddDbContext<EventStoreContext>(options => options.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
 
-            services.AddIdentity<UserIdentity, UserIdentityRole>()
-                .AddEntityFrameworkStores<ApplicationIdentityContext>()
-                .AddDefaultTokenProviders();
             return services;
         }
     }

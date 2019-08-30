@@ -1,4 +1,5 @@
 ﻿using Jp.Infra.CrossCutting.Database;
+using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.CrossCutting.IdentityServer.Configuration;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.UI.SSO.Configuration;
@@ -60,6 +61,9 @@ namespace Jp.UI.SSO
 
             // Configure identity server
             services.AddIdentityServer(Configuration, _environment, _logger).ConfigureIdentityServerDatabase(Configuration);
+
+            // Improve password security
+            services.UpgradePasswordSecurity().UseArgon2<UserIdentity>();
 
             // Configure authentication and external logins
             services.AddAuth(Configuration);

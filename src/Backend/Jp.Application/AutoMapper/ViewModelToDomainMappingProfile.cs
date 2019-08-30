@@ -7,7 +7,7 @@ using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Commands.ApiResource;
-using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.Clients;
 using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Commands.PersistedGrant;
 using Jp.Domain.Commands.Role;
