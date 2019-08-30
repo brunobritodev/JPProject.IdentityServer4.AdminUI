@@ -254,3 +254,4 @@ docs/.vscode
 
 # Log files
 **/*log*.txt
+*.db

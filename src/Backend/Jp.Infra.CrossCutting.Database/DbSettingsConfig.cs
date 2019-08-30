@@ -4,6 +4,7 @@ using Jp.Infra.Data.MySql.Configuration;
 using Jp.Infra.Data.PostgreSQL.Configuration;
 using Jp.Infra.Data.Sql.Configuration;
 using Microsoft.AspNetCore.Identity;
+using Jp.Infra.Data.Sqlite.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,10 +27,10 @@ namespace Jp.Infra.CrossCutting.Database
                 case "POSTGRESQL":
                     services.AddIdentityPostgreSql(connString);
                     break;
+                case "SQLITE":
+                    services.AddIdentitySqlite(connString);
+                    break;
             }
-            services.AddIdentity<UserIdentity, UserIdentityRole>()
-                .AddEntityFrameworkStores<ApplicationIdentityContext>()
-                .AddDefaultTokenProviders();
         }
 
         public static void ConfigureIdentityServerDatabase(this IIdentityServerBuilder builder, IConfiguration configuration)
@@ -46,6 +47,9 @@ namespace Jp.Infra.CrossCutting.Database
                     break;
                 case "POSTGRESQL":
                     builder.UseIdentityServerPostgreSqlDatabase(connString);
+                    break;
+                case "SQLITE":
+                    builder.UseIdentityServerSqlite(connString);
                     break;
             }
         }
