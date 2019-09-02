@@ -42,7 +42,7 @@
     },
     "recover": {
         "CHECK": "Controleer uw e-mail.",
-        "LOADING": "Bezig met laden",
+        "RECOVER": "Recover password",
         "RESET": "Stuur reset link",
         "SENDING-EMAIL": "Email verzenden",
         "SUCCESS": "Succes",

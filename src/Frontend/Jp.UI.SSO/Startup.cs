@@ -53,16 +53,16 @@ namespace Jp.UI.SSO
                 .AddDataAnnotationsLocalization();
 
             // Config identity
-            services.ConfigureDatabase(Configuration);
+            services.AddAuthentication(Configuration);
 
             // Add localization
             services.AddMvcLocalization();
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, _environment, _logger).ConfigureIdentityServerDatabase(Configuration);
+            services.AddOAuth2(Configuration, _environment, _logger).ConfigureIdentityServerDatabase(Configuration);
 
-            // Configure authentication and external logins
-            services.AddAuth(Configuration);
+            // Configure Federation gateway (external logins), such as Facebook, Google etc
+            services.AddFederationGateway(Configuration);
 
             // Configure automapper
             services.AddAutoMapperSetup();

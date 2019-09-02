@@ -40,7 +40,7 @@ namespace Jp.Management
             services.AddMvc();
             
             // Identity Database
-            services.ConfigureDatabase(Configuration);
+            services.AddAuthentication(Configuration);
 
             services.ConfigureCors();
 

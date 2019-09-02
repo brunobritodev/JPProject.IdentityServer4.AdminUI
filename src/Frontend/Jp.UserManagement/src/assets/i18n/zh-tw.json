@@ -42,7 +42,7 @@
     },
     "recover": {
         "CHECK": "查看你的電子郵件。",
-        "LOADING": "載入中",
+        "RECOVER": "Recover password",
         "RESET": "發送重置鏈接",
         "SENDING-EMAIL": "發送電子郵件",
         "SUCCESS": "成功",
