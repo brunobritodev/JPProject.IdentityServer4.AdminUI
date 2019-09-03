@@ -17,11 +17,11 @@ import { ProgressbarModule } from "ngx-bootstrap/progressbar";
 import { RatingModule } from "ngx-bootstrap/rating";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { TimepickerModule } from "ngx-bootstrap/timepicker";
-import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { PopoverModule } from "ngx-bootstrap/popover";
 import { TypeaheadModule } from "ngx-bootstrap/typeahead";
 import { DatepickerModule } from "ngx-bootstrap/datepicker";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {TooltipModule} from 'ng2-tooltip-directive';
 
 import { FlotDirective } from "./directives/flot/flot.directive";
 import { SparklineDirective } from "./directives/sparkline/sparkline.directive";
@@ -58,7 +58,7 @@ import { NumberDirective } from "./directives/numberCheck/numbers-only.directive
         RatingModule.forRoot(),
         TabsModule.forRoot(),
         TimepickerModule.forRoot(),
-        TooltipModule.forRoot(),
+        TooltipModule,
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
         ToasterModule,

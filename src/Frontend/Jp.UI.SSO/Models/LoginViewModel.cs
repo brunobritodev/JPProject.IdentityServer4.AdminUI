@@ -19,5 +19,6 @@ namespace Jp.UI.SSO.Models
         public bool IsExternalLoginOnly => EnableLocalLogin == false && ExternalProviders?.Count() == 1;
         public string ExternalLoginScheme => IsExternalLoginOnly ? ExternalProviders?.SingleOrDefault()?.AuthenticationScheme : null;
         public bool EnableExternalProviders { get; set; }
+        public bool ShowDefaultUserPass { get; set; }
     }
 }

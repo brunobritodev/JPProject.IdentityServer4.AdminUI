@@ -42,7 +42,7 @@
 	},
 	"recover": {
 		"CHECK": "Verifique seu e-mail.",
-		"LOADING": "Carregando dados do usuário",
+		"RECOVER": "Recuperar password",
 		"RESET": "Enviar link de redefinição",
 		"SENDING-EMAIL": "Enviando e-mail.",
 		"SUCCESS": "Sucesso",

@@ -376,6 +376,7 @@ namespace Jp.UI.SSO.Controllers.Account
                     EnableLocalLogin = local,
                     ReturnUrl = returnUrl,
                     Username = context?.LoginHint,
+                    ShowDefaultUserPass = _configuration["ApplicationSettings:ShowDefaultUserPass"] == "true"
                 };
 
                 if (!local)
@@ -420,7 +421,8 @@ namespace Jp.UI.SSO.Controllers.Account
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
-                ExternalProviders = providers.ToArray()
+                ExternalProviders = providers.ToArray(),
+                ShowDefaultUserPass = _configuration["ApplicationSettings:ShowDefaultUserPass"] == "true"
             };
         }
 

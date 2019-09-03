@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using MailKit.Net.Smtp;
+﻿using MailKit.Net.Smtp;
 using MimeKit;
 using MimeKit.Text;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Identity.Services
 {
@@ -16,9 +16,9 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         }
         public async Task SendEmailAsync(string email, string subject, string message)
         {
-            if(!_emailConfiguration.SendEmail)
+            if (!_emailConfiguration.SendEmail)
                 return;
-            
+
             var mimeMessage = new MimeMessage();
             mimeMessage.To.Add(new MailboxAddress(email));
             mimeMessage.From.Add(new MailboxAddress(_emailConfiguration.FromName, _emailConfiguration.FromAddress));

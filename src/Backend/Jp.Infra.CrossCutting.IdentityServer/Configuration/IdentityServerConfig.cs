@@ -8,7 +8,7 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
 {
     public static class IdentityServerConfig
     {
-        public static IIdentityServerBuilder AddIdentityServer(this IServiceCollection services,
+        public static IIdentityServerBuilder AddOAuth2(this IServiceCollection services,
             IConfiguration configuration, IHostingEnvironment environment, ILogger logger)
         {
 

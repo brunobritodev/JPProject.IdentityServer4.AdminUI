@@ -21,7 +21,7 @@ The steps of testing was:
  6. Load login page
 
 Machine config:
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Azure B1, it's the most basic Machine of Azure.
  * 100 ACU
@@ -41,13 +41,16 @@ During tests, average CPU utilization was 13,58% and Memory consumption was abou
 
 .. image:: ../images/stress/during-blazemeter.png
 
+
 Timeline report
 ^^^^^^^^^^^^^^^
+
 .. image:: ../images/stress/timelinegraph.jpg
 
 
 Aggregate report
 ^^^^^^^^^^^^^^^^
+
 .. image:: ../images/stress/agreggatereport.JPG
 
 

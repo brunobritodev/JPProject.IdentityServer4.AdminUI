@@ -1,5 +1,4 @@
-﻿@using Jp.UI.SSO.Models
-@model Jp.UI.SSO.Models.LoginViewModel
+﻿@model Jp.UI.SSO.Models.LoginViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
@@ -26,7 +25,14 @@
                                             <i class="icon-user"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" placeholder="Username" value="@Configuration.GetSection("ApplicationSettings:DefaultUser").Value" asp-for=Username autofocus>
+                                    @if (Model.ShowDefaultUserPass)
+                                    {
+                                        <input class="form-control" placeholder="Username" value="@Configuration.GetSection("ApplicationSettings:DefaultUser").Value" asp-for=Username autofocus>
+                                    }
+                                    else
+                                    {
+                                        <input class="form-control" placeholder="Username" asp-for=Username autofocus>
+                                    }
                                 </div>
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
@@ -34,7 +40,15 @@
                                             <i class="icon-lock"></i>
                                         </span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" value="@Configuration.GetSection("ApplicationSettings:DefaultPass").Value" asp-for=Password autocomplete="off">
+                                    @if (Model.ShowDefaultUserPass)
+                                    {
+                                        <input type="password" class="form-control" placeholder="Password" value="@Configuration.GetSection("ApplicationSettings:DefaultPass").Value" asp-for=Password autocomplete="off">
+                                    }
+                                    else
+                                    {
+                                        <input type="password" class="form-control" placeholder="Password" asp-for=Password autocomplete="off">
+                                    }
+
                                 </div>
                                 @if (Model.AllowRememberLogin)
                                 {
