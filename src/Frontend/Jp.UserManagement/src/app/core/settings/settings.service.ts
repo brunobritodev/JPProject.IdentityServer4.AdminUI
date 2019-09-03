@@ -26,6 +26,7 @@ export class SettingsService {
             description: "User Management UI",
             year: ((new Date()).getFullYear()),
             docLoaded: false,
+            version: "1.4.5"
         };
 
         this.userProfileObservable = defer(() => from(this.oauthService.loadUserProfile())).pipe(share());
