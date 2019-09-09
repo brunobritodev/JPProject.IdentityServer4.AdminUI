@@ -77,7 +77,7 @@
     "npm": "^6.11.2",
     "popper.js": "^1.14.7",
     "rxjs": "6.5.2",
-    "screenfull": "^4.1.0",
+    "screenfull": "^5.0.0",
     "simple-line-icons": "2.4.1",
     "source-sans-pro": "^2.20.2",
     "spinkit": "1.2.5",
