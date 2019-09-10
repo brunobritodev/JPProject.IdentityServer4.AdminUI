@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="28.0.3" />
+    <PackageReference Include="Bogus" Version="28.1.1" />
     <PackageReference Include="Bogus.Tools.Analyzer" Version="28.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
