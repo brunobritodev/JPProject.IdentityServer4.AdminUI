@@ -13,6 +13,7 @@ COPY ["src/Backend/Jp.Infra.Data/Jp.Infra.Data.csproj", "Backend/Jp.Infra.Data/"
 COPY ["src/Backend/Jp.Infra.Data.MySql/Jp.Infra.Data.MySql.csproj", "Backend/Jp.Infra.Data.MySql/"]
 COPY ["src/Backend/Jp.Infra.Data.Sql/Jp.Infra.Data.Sql.csproj", "Backend/Jp.Infra.Data.Sql/"]
 COPY ["src/Backend/Jp.Infra.Data.PostgreSQL/Jp.Infra.Data.PostgreSQL.csproj", "Backend/Jp.Infra.Data.PostgreSQL/"]
+COPY ["src/Backend/Jp.Infra.Data.Sqlite/Jp.Infra.Data.Sqlite.csproj", "Backend/Jp.Infra.Data.Sqlite/"]
 COPY ["src/Backend/Jp.Infra.CrossCutting.Bus/Jp.Infra.CrossCutting.Bus.csproj", "Backend/Jp.Infra.CrossCutting.Bus/"]
 COPY ["src/Backend/Jp.Infra.CrossCutting.Database/Jp.Infra.CrossCutting.Database.csproj", "Backend/Jp.Infra.CrossCutting.Database/"]
 COPY ["src/Backend/Jp.Infra.CrossCutting.Identity/Jp.Infra.CrossCutting.Identity.csproj", "Backend/Jp.Infra.CrossCutting.Identity/"]
