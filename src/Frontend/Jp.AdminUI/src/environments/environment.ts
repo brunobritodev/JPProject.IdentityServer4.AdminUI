@@ -8,5 +8,6 @@ export const environment = {
   ResourceServer: "http://localhost:5003/",
   IssuerUri:  "http://localhost:5000",
   RequireHttps: false,
-  Uri: "http://localhost:4300"
+  Uri: "http://localhost:4300",
+  defaultTheme: "E"
 };
