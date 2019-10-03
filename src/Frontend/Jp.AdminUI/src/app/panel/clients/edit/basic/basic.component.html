@@ -1,19 +1,23 @@
 <div class="form-horizontal">
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.clientId-tooltip' | translate" class="col-xl-3 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.clientId-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
                 'client.details.clientId' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-9">
-                <input class="form-control" autocomplete="client-id" placeholder="ClientId" [(ngModel)]="model.clientId" />
+                <input class="form-control" autocomplete="client-id" placeholder="ClientId"
+                    [(ngModel)]="model.clientId" />
             </div>
         </div>
     </fieldset>
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.name-tooltip' | translate" class="col-xl-3 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.name-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
                 'client.details.name' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-9">
-                <input class="form-control" autocomplete="client-name" placeholder="Name" [(ngModel)]="model.clientName" />
+                <input class="form-control" autocomplete="client-name" placeholder="Name"
+                    [(ngModel)]="model.clientName" />
             </div>
         </div>
     </fieldset>
@@ -21,11 +25,12 @@
     <!--Input - text -->
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.description-tooltip' | translate" class="col-xl-3 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.description-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
                 'client.details.description' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-9">
-                <input class="form-control" autocomplete="client-description" [placeholder]="'client.details.description-tooltip' | translate"
-                    [(ngModel)]="model.description" />
+                <input class="form-control" autocomplete="client-description"
+                    [placeholder]="'client.details.description-tooltip' | translate" [(ngModel)]="model.description" />
             </div>
         </div>
     </fieldset>
@@ -33,11 +38,12 @@
     <!--Input - text -->
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.clientUri-tooltip' | translate" class="col-xl-3 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.clientUri-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
                 'client.details.clientUri' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-9">
-                <input class="form-control" autocomplete="client-clientUri" [placeholder]="'client.details.clientUri-tooltip' | translate"
-                    [(ngModel)]="model.clientUri" />
+                <input class="form-control" autocomplete="client-clientUri"
+                    [placeholder]="'client.details.clientUri-tooltip' | translate" [(ngModel)]="model.clientUri" />
             </div>
         </div>
     </fieldset>
@@ -45,11 +51,26 @@
     <!--Input - text -->
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.logoUri-tooltip' | translate" class="col-xl-3 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.logoUri-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
                 'client.details.logoUri' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-9">
-                <input class="form-control" autocomplete="client-logoUri" [placeholder]="'client.details.logoUri-tooltip' | translate"
-                    [(ngModel)]="model.logoUri" />
+                <input class="form-control" autocomplete="client-logoUri"
+                    [placeholder]="'client.details.logoUri-tooltip' | translate" [(ngModel)]="model.logoUri" />
+            </div>
+        </div>
+    </fieldset>
+
+    <!--Select with tags-->
+    <fieldset>
+        <div class="form-group row">
+            <label placement="top" [tooltip]="'client.details.allowedCorsOrigins-tooltip' | translate"
+                class="col-xl-3 col-form-label">{{
+                    'client.details.allowedCorsOrigins' | translate }} <i class="fa fa-comment-dots"></i></label>
+            <div class="col-xl-9">
+                <tag-input theme='bootstrap' name="allowedCorsOrigins" [modelAsStrings]="true"
+                    [placeholder]="'+' + ('client.details.allowedCorsOrigins' | translate)"
+                    [(ngModel)]="model.allowedCorsOrigins"></tag-input>
             </div>
         </div>
     </fieldset>

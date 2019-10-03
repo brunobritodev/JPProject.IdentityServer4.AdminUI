@@ -359,6 +359,7 @@ namespace Jp.UI.SSO.Controllers.Account
             }
 
             return View("LoggedOut", vm);
+
         }
 
         /*****************************************/
@@ -416,7 +417,7 @@ namespace Jp.UI.SSO.Controllers.Account
 
             return new LoginViewModel
             {
-                EnableExternalProviders = _configuration.GetValue<bool>("ApplicationSettings:EnableExternalProviders"),
+                EnableExternalProviders = providers.Any() && _configuration.GetValue<bool>("ApplicationSettings:EnableExternalProviders"),
                 AllowRememberLogin = AccountOptions.AllowRememberLogin,
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,

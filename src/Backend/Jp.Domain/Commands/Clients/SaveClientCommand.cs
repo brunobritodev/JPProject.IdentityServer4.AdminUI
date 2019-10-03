@@ -2,6 +2,8 @@ using System;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Domain.Validations.Client;
+using System;
+using System.Collections.Generic;
 
 namespace Jp.Domain.Commands.Clients
 {
@@ -9,7 +11,8 @@ namespace Jp.Domain.Commands.Clients
     {
         public ClientType ClientType { get; }
 
-        public SaveClientCommand(string clientId, string name, string clientUri, string logoUri, string description, ClientType clientType)
+        public SaveClientCommand(string clientId, string name, string clientUri, string logoUri, string description,
+            ClientType clientType, string postLogoutUri)
         {
             this.Client = new IdentityServer4.Models.Client()
             {
@@ -18,6 +21,7 @@ namespace Jp.Domain.Commands.Clients
                 ClientUri = clientUri,
                 LogoUri = logoUri,
                 Description = description,
+                PostLogoutRedirectUris = new List<string>() { postLogoutUri }
             };
             ClientType = clientType;
         }

@@ -17,11 +17,11 @@ import { ProgressbarModule } from "ngx-bootstrap/progressbar";
 import { RatingModule } from "ngx-bootstrap/rating";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { TimepickerModule } from "ngx-bootstrap/timepicker";
-import { TooltipModule } from "ngx-bootstrap/tooltip";
-import { PopoverModule } from "ngx-bootstrap/popover";
+import { PopoverModule, PopoverConfig } from "ngx-bootstrap/popover";
 import { TypeaheadModule } from "ngx-bootstrap/typeahead";
 import { DatepickerModule } from "ngx-bootstrap/datepicker";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 import { FlotDirective } from "./directives/flot/flot.directive";
 import { SparklineDirective } from "./directives/sparkline/sparkline.directive";
@@ -32,10 +32,16 @@ import { NowDirective } from "./directives/now/now.directive";
 import { ScrollableDirective } from "./directives/scrollable/scrollable.directive";
 import { JqcloudDirective } from "./directives/jqcloud/jqcloud.directive";
 import { ColorsService } from "./services/colors.service";
-import {TextMaskModule} from "angular2-text-mask";
+import { TextMaskModule } from "angular2-text-mask";
 import { SpinnersComponent } from "./components/spinners/spinners.component";
 import { NumberDirective } from "./directives/numberCheck/numbers-only.directive";
 
+export function getPopoverConfig(): PopoverConfig {
+    return Object.assign(new PopoverConfig(), {
+        adaptivePosition: false,
+        container: 'body'
+    });
+}
 
 // https://angular.io/styleguide#!#04-10
 @NgModule({
@@ -65,7 +71,8 @@ import { NumberDirective } from "./directives/numberCheck/numbers-only.directive
         BsDatepickerModule.forRoot(),
     ],
     providers: [
-        ColorsService
+        ColorsService,
+        [{ provide: PopoverConfig, useFactory: getPopoverConfig }]
     ],
     declarations: [
         FlotDirective,

@@ -109,7 +109,7 @@
 			"auth": "Authentication",
 			"authorizationCodeLifetime": "Authorization Code Lifetime",
 			"authorizationCodeLifetime-tooltip": "Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)",
-			"backChannelLogoutSessionRequired": "Back Channel Logout Session Required",
+			"backChannelLogoutSessionRequired": "Back Channel Logout Session",
 			"backChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent in the request to the BackChannelLogoutUri. Defaults to true",
 			"backChannelLogoutUri": "Back Channel Logout Uri",
 			"backChannelLogoutUri-tooltip": "Specifies logout URI at client for HTTP based back-channel logout. See the OIDC Back-Channel spec for more details",
@@ -131,7 +131,7 @@
 			"deviceFlow": "Device Flow",
 			"enabled": "Enabled",
 			"enabled-tooltip": "Specifies if client is enabled. Defaults to true.",
-			"frontChannelLogoutSessionRequired": "Front Channel Logout Session Required",
+			"frontChannelLogoutSessionRequired": "Front Channel Logout Session",
 			"frontChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent to the FrontChannelLogoutUri. Defaults to true",
 			"frontChannelLogoutUri": "Front Channel Logout Uri",
 			"frontChannelLogoutUri-tooltip": "Specifies logout URI at client for HTTP based front-channel logout. See the OIDC Front-Channel spec for more details",
@@ -170,7 +170,13 @@
 			"updateAccessTokenClaimsOnRefresh": "Update Access Token Claims On Refresh",
 			"updateAccessTokenClaimsOnRefresh-tooltip": "Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token request",
 			"userCodeType": "User Code Type",
-			"userCodeType-tooltip": "Specifies the type of user code to use for the client. Otherwise falls back to default"
+			"userCodeType-tooltip": "Specifies the type of user code to use for the client. Otherwise falls back to default",
+			"postLogoutRedirectUris": "Logout Url",
+			"postLogoutRedirectUris-tooltip": "Specifies allowed URIs to redirect to after logout",
+			"enableLocalLogin": "Enable Local Login",
+			"enableLocalLogin-tooltip": "Specifies if this client can use local accounts, or external Providers only. E.g: Facebook, Google. Defaults to true",
+			"userSsoLifetime": "User Sso Lifetime",
+			"userSsoLifetime-tooltip": "The maximum duration (in seconds) since the last time the user authenticated. Defaults to null. You can adjust the lifetime of a session token to control when and how often a user is required to reenter credentials instead of being silently authenticated, when using a web application"
 		},
 		"property": {
 			"key": "Key",

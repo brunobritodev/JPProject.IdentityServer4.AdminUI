@@ -20,7 +20,8 @@ export class ClientEditComponent implements OnInit {
     public model: Client;
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
-        showCloseButton: true
+        showCloseButton: true,
+        timeout: 60000
     });
     public showButtonLoading: boolean;
     public clientId: string;
@@ -50,7 +51,7 @@ export class ClientEditComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.router.navigate(["/clients"]);
+                        this.showButtonLoading = false;
                     }
                 },
                 err => {

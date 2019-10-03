@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Jp.Domain.Commands.Clients;
+﻿using Jp.Domain.Commands.Client;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.ClientsViewModels
 {
@@ -26,6 +26,8 @@ namespace Jp.Application.ViewModels.ClientsViewModels
         /// URI to client logo (used on consent screen)
         /// </summary>
         public string LogoUri { get; set; }
+
+        public string LogoutUri { get; set; }
 
         public string Description { get; set; }
 

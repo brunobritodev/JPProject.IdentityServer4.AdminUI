@@ -51,7 +51,6 @@ export class ApiResourceEditComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.router.navigate(["/api-resource"]);
                     }
                 },
                 err => {

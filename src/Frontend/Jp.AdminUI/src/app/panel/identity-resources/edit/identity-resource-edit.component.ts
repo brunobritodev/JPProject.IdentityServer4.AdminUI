@@ -58,7 +58,6 @@ export class IdentityResourceEditComponent implements OnInit {
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
-                        this.router.navigate(["/identity-resource"]);
                     }
                 },
                 err => {
