@@ -1,4 +1,4 @@
-﻿using Jp.Domain.Commands.Client;
+﻿using Jp.Domain.Commands.Clients;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.ClientsViewModels

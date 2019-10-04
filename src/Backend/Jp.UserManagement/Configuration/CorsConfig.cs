@@ -9,18 +9,20 @@ namespace Jp.Management.Configuration
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("Devlopment",
+                options.AddPolicy("Development",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());
             });
+
             return services;
         }
 
         public static void UseDefaultCors(this IApplicationBuilder app)
         {
-            app.UseCors("Devlopment");
+            app.UseCors("Development");
         }
+
     }
 }

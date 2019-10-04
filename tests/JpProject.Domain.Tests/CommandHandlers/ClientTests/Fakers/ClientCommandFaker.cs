@@ -15,7 +15,8 @@ namespace JpProject.Domain.Tests.CommandHandlers.ClientTests.Fakers
                     f.Internet.Url(),
                     f.Image.LoremFlickrUrl(),
                     f.Lorem.Sentence(),
-                    f.PickRandom<ClientType>()
+                    f.PickRandom<ClientType>(),
+                    f.Internet.Url()
                 ));
 
         }

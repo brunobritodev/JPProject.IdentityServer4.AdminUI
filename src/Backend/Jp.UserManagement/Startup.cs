@@ -38,7 +38,7 @@ namespace Jp.Management
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            
+
             // Identity Database
             services.ConfigureDatabase(Configuration);
 
