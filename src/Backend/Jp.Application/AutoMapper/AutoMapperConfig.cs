@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
+using System.Linq;
 
 namespace Jp.Application.AutoMapper
 {

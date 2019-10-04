@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Jp.Management
@@ -14,30 +15,17 @@ namespace Jp.Management
     {
         private readonly ILogger<Startup> _logger;
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment HostEnvironment { get; }
 
-        public Startup(IHostingEnvironment hostEnvironment, ILogger<Startup> logger)
+        public Startup(ILogger<Startup> logger, IConfiguration configuration)
         {
+            Configuration = configuration;
             _logger = logger;
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(hostEnvironment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                .AddEnvironmentVariables();
-
-            if (hostEnvironment.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
-
-            Configuration = builder.Build();
-            HostEnvironment = hostEnvironment;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvcCore().AddApiExplorer();
 
             // Identity Database
             services.ConfigureDatabase(Configuration);
@@ -62,7 +50,7 @@ namespace Jp.Management
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
