@@ -42,7 +42,7 @@
     },
     "recover": {
         "CHECK": "Проверьте свою электронную почту.",
-        "LOADING": "загрузка",
+        "RECOVER": "Recover password",
         "RESET": "Отправить ссылку сброса",
         "SENDING-EMAIL": "Отправка электронной почты",
         "SUCCESS": "успех",

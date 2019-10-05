@@ -42,7 +42,7 @@
     },
     "recover": {
         "CHECK": "查看你的电子邮件。",
-        "LOADING": "载入中",
+        "RECOVER": "Recover password",
         "RESET": "发送重置链接",
         "SENDING-EMAIL": "发送电子邮件",
         "SUCCESS": "成功",

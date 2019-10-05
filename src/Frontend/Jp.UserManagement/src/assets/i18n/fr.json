@@ -42,7 +42,7 @@
     },
     "recover": {
         "CHECK": "Vérifiez votre courrier électronique.",
-        "LOADING": "Chargement",
+        "RECOVER": "Recover password",
         "RESET": "Envoyer le lien de réinitialisation",
         "SENDING-EMAIL": "Envoi d&#39;e-mail",
         "SUCCESS": "Succès",
