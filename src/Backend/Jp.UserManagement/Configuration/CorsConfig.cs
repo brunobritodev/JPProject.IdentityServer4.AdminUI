@@ -12,8 +12,7 @@ namespace Jp.Management.Configuration
                 options.AddPolicy("Development",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials());
+                        .AllowAnyHeader());
             });
 
             return services;

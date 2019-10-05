@@ -9,9 +9,8 @@ namespace Jp.Management.Configuration
 {
     public static class AuthenticationConfig
     {
-        public static void AddIdentityServerAuthentication(this IServiceCollection services, ILogger logger, IConfiguration configuration)
+        public static void AddIdentityServerAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            logger.LogInformation($"Authority URI: {configuration.GetValue<string>("ApplicationSettings:Authority")}");
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services

@@ -20,8 +20,10 @@ namespace Jp.Domain.Commands.Clients
                 ClientUri = clientUri,
                 LogoUri = logoUri,
                 Description = description,
-                PostLogoutRedirectUris = new List<string>() { postLogoutUri }
             };
+
+            if (!string.IsNullOrEmpty(postLogoutUri))
+                Client.PostLogoutRedirectUris = new List<string>() { postLogoutUri };
             ClientType = clientType;
         }
 

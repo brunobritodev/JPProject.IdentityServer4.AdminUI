@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
@@ -11,6 +7,10 @@ using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Commands.Clients;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Services
 {
@@ -43,7 +43,7 @@ namespace Jp.Application.Services
 
         public Task<IEnumerable<ClientListViewModel>> GetClients()
         {
-            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(_clientRepository.GetAll().Select(a => a.ToModel()).OrderBy(a => a.ClientName).ToList());
+            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(_clientRepository.GetAll().AsEnumerable().Select(a => a.ToModel()).OrderBy(a => a.ClientName).ToList());
             return Task.FromResult(resultado);
         }
 
@@ -85,7 +85,7 @@ namespace Jp.Application.Services
         {
             var registerCommand = _mapper.Map<RemovePropertyCommand>(model);
             return Bus.SendCommand(registerCommand);
-    }
+        }
         public Task SaveProperty(SaveClientPropertyViewModel model)
         {
             var registerCommand = _mapper.Map<SaveClientPropertyCommand>(model);

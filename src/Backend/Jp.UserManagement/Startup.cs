@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Jp.Management
 {
@@ -17,15 +17,20 @@ namespace Jp.Management
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(ILogger<Startup> logger, IConfiguration configuration)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services, ILoggerFactory logger)
+        public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore().AddApiExplorer();
+            services
+                .AddMvcCore()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                }).AddApiExplorer();
 
             // Identity Database
             services.AddAuthentication(Configuration);
@@ -36,7 +41,7 @@ namespace Jp.Management
             services.AddPolicies();
 
             // configure auth Server
-            services.AddIdentityServerAuthentication(logger.CreateLogger<Startup>(), Configuration);
+            services.AddIdentityServerAuthentication(Configuration);
 
             // configure openapi
             services.AddSwagger(Configuration);
@@ -64,6 +69,7 @@ namespace Jp.Management
                 app.UseHttpsRedirection();
             }
 
+            app.UseAuthorization();
             app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -72,7 +78,7 @@ namespace Jp.Management
                 c.OAuthClientId("Swagger");
                 c.OAuthAppName("User Management UI - full access");
             });
-
+            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
