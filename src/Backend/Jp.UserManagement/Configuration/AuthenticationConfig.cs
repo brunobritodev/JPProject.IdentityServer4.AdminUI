@@ -1,4 +1,5 @@
-﻿using IdentityServer4.AccessTokenValidation;
+﻿using System.IdentityModel.Tokens.Jwt;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ namespace Jp.Management.Configuration
         {
             logger.LogInformation($"Authority URI: {configuration.GetValue<string>("ApplicationSettings:Authority")}");
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services
 
                 .AddAuthentication(options =>

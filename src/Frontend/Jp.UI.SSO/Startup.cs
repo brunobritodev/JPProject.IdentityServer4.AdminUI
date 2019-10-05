@@ -6,37 +6,24 @@ using Jp.UI.SSO.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace Jp.UI.SSO
 {
     public class Startup
     {
-        private readonly ILogger _logger;
         public IConfiguration Configuration { get; }
-        private readonly IHostingEnvironment _environment;
 
-        public Startup(IHostingEnvironment environment, ILogger<Startup> logger)
+        public Startup(IConfiguration configuration)
         {
-            _logger = logger;
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                .AddEnvironmentVariables();
+            Configuration = configuration;
 
-            if (environment.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
-
-
-            Configuration = builder.Build();
-            _environment = environment;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -48,25 +35,28 @@ namespace Jp.UI.SSO
                 iis.AuthenticationDisplayName = "Windows";
                 iis.AutomaticAuthentication = false;
             });
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            services.AddControllersWithViews()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; })
                 .AddDataAnnotationsLocalization();
+            services.AddRazorPages();
+
+            // The following line enables Application Insights telemetry collection.
+            services.AddApplicationInsightsTelemetry();
 
             // Config identity
-            services.ConfigureDatabase(Configuration);
+            services.AddAuthentication(Configuration);
 
             // Add localization
             services.AddMvcLocalization();
 
             // Configure identity server
-            services.AddIdentityServer(Configuration, _environment, _logger).ConfigureIdentityServerDatabase(Configuration);
+            services.AddOAuth2(Configuration).ConfigureIdentityServerDatabase(Configuration);
 
             // Improve password security
             services.UpgradePasswordSecurity().UseArgon2<UserIdentity>();
 
-            // Configure authentication and external logins
-            services.AddAuth(Configuration);
+            // Configure Federation gateway (external logins), such as Facebook, Google etc
+            services.AddFederationGateway(Configuration);
 
             // Configure automapper
             services.AddAutoMapperSetup();
@@ -79,7 +69,7 @@ namespace Jp.UI.SSO
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // Only use HTTPS redirect in Production Ambients
             if (env.IsDevelopment())
@@ -92,17 +82,29 @@ namespace Jp.UI.SSO
                 app.UseHttpsRedirection();
             }
 
+            app.UseSerilogRequestLogging();
             app.UseSecurityHeaders(env);
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseLocalization();
-            app.UseMvcWithDefaultRoute();
+
+            app.UseRouting();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
         }
 
 
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }

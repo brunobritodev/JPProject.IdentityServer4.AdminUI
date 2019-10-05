@@ -1,5 +1,4 @@
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Mappers;
+using Jp.Domain.Commands.Clients;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Events.Client;
@@ -10,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Jp.Domain.Commands.Clients;
+using IdentityServer4.EntityFramework.Mappers;
 
 namespace Jp.Domain.CommandHandlers
 {
@@ -202,7 +201,7 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
             var property = request.ToEntiyTy(savedClient);
-            
+
 
             _clientPropertyRepository.Add(property);
 
@@ -319,7 +318,7 @@ namespace Jp.Domain.CommandHandlers
             }
 
             var copyOf = savedClient.ToModel();
-            
+
             copyOf.ClientId = $"copy-of-{copyOf.ClientId}-{Guid.NewGuid().ToString().Replace("-", string.Empty)}";
             copyOf.ClientSecrets = new List<IdentityServer4.Models.Secret>();
             copyOf.ClientName = "Copy of " + copyOf.ClientName;

@@ -1,16 +1,14 @@
-﻿using IdentityModel;
-using IdentityServer4;
+﻿using IdentityServer4;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Jp.UI.SSO.Configuration
 {
     public static class SocialIntegrationConfig
     {
-        public static IServiceCollection AddAuth(this IServiceCollection services,
+        public static IServiceCollection AddFederationGateway(this IServiceCollection services,
             IConfiguration configuration)
         {
             var authBuilder = services.AddAuthentication();
@@ -27,8 +25,8 @@ namespace Jp.UI.SSO.Configuration
                     {
                         OnCreatingTicket = context =>
                         {
-                            if (context.User.ContainsKey("image"))
-                                context.Identity.AddClaim(new Claim(JwtClaimTypes.Picture, context.User.GetValue("image").SelectToken("url").ToString()));
+                            //if (context.User.ContainsKey("image"))
+                            //    context.Identity.AddClaim(new Claim(JwtClaimTypes.Picture, context.User.GetValue("image").SelectToken("url").ToString()));
                             return Task.CompletedTask;
                         }
                     };
@@ -47,8 +45,8 @@ namespace Jp.UI.SSO.Configuration
                         {
                             OnCreatingTicket = context =>
                             {
-                                if (context.User.ContainsKey("picture"))
-                                    context.Identity.AddClaim(new Claim(JwtClaimTypes.Picture, context.User.GetValue("picture").SelectToken("data").SelectToken("url").ToString()));
+                                //if (context.User.ContainsKey("picture"))
+                                //    context.Identity.AddClaim(new Claim(JwtClaimTypes.Picture, context.User.GetValue("picture").SelectToken("data").SelectToken("url").ToString()));
                                 return Task.CompletedTask;
                             }
                         };

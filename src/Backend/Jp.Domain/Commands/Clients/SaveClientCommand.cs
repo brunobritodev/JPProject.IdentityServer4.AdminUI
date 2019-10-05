@@ -1,4 +1,3 @@
-using System;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Domain.Validations.Client;
@@ -14,7 +13,7 @@ namespace Jp.Domain.Commands.Clients
         public SaveClientCommand(string clientId, string name, string clientUri, string logoUri, string description,
             ClientType clientType, string postLogoutUri)
         {
-            this.Client = new IdentityServer4.Models.Client()
+            this.Client = new Client()
             {
                 ClientId = clientId,
                 ClientName = name,
@@ -43,13 +42,12 @@ namespace Jp.Domain.Commands.Clients
                     break;
                 case ClientType.WebImplicit:
                     ConfigureWebImplicit();
-
                     break;
                 case ClientType.WebHybrid:
                     ConfigureWebHybrid();
                     break;
                 case ClientType.Spa:
-                    ConfigureSpa();
+                    ConfigureWebHybrid();
                     break;
                 case ClientType.Native:
                     ConfigureNative();
@@ -60,7 +58,7 @@ namespace Jp.Domain.Commands.Clients
 
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(ClientType));
             }
         }
 
@@ -72,36 +70,31 @@ namespace Jp.Domain.Commands.Clients
 
         private void ConfigureDevice()
         {
-            Client.AllowedGrantTypes = GrantTypes.DeviceFlow;
+            Client.AllowedGrantTypes.Add(GrantType.DeviceFlow);
             Client.RequireClientSecret = false;
             Client.AllowOfflineAccess = true;
         }
 
         private void ConfigureWebImplicit()
         {
-            Client.AllowedGrantTypes = GrantTypes.Implicit;
+            Client.AllowedGrantTypes.Add(GrantType.Implicit);
             Client.AllowAccessTokensViaBrowser = true;
         }
 
         private void ConfigureWebHybrid()
         {
-            Client.AllowedGrantTypes = GrantTypes.Hybrid;
-        }
-
-        private void ConfigureSpa()
-        {
-            Client.AllowedGrantTypes = GrantTypes.Implicit;
-            Client.AllowAccessTokensViaBrowser = true;
+            Client.AllowedGrantTypes.Add(GrantType.Hybrid);
         }
 
         private void ConfigureNative()
         {
-            Client.AllowedGrantTypes = GrantTypes.Hybrid;
+            Client.AllowedGrantTypes.Add(GrantType.Hybrid);
         }
 
         private void ConfigureMachine()
         {
-            Client.AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials;
+            Client.AllowedGrantTypes.Add(GrantType.ResourceOwnerPassword);
+            Client.AllowedGrantTypes.Add(GrantType.ClientCredentials);
         }
     }
 }

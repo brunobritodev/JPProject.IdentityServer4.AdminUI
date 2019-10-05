@@ -4,8 +4,10 @@ using Jp.Management.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -13,22 +15,20 @@ namespace Jp.Management
 {
     public class Startup
     {
-        private readonly ILogger<Startup> _logger;
         public IConfiguration Configuration { get; }
 
         public Startup(ILogger<Startup> logger, IConfiguration configuration)
         {
             Configuration = configuration;
-            _logger = logger;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, ILoggerFactory logger)
         {
             services.AddMvcCore().AddApiExplorer();
 
             // Identity Database
-            services.ConfigureDatabase(Configuration);
+            services.AddAuthentication(Configuration);
 
             services.ConfigureCors();
 
@@ -36,8 +36,9 @@ namespace Jp.Management
             services.AddPolicies();
 
             // configure auth Server
-            services.AddIdentityServerAuthentication(_logger, Configuration);
+            services.AddIdentityServerAuthentication(logger.CreateLogger<Startup>(), Configuration);
 
+            // configure openapi
             services.AddSwagger(Configuration);
 
             // Config automapper
@@ -71,13 +72,18 @@ namespace Jp.Management
                 c.OAuthClientId("Swagger");
                 c.OAuthAppName("User Management UI - full access");
             });
-            app.UseMvc();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
 
 
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }

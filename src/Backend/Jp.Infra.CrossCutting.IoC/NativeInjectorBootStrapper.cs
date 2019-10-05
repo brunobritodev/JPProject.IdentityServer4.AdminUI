@@ -14,8 +14,6 @@ namespace Jp.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
-            // ASP.NET HttpContext dependency
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             // Domain Bus (Mediator)
             services.AddScoped<IMediatorHandler, InMemoryBus>();

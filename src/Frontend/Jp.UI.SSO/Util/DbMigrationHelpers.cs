@@ -3,11 +3,11 @@ using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.Context;
 using Jp.UI.SSO.Configuration;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Security.Claims;
@@ -22,38 +22,32 @@ namespace Jp.UI.SSO.Util
         /// Nuget package manager: Add-Migration DbInit -context ApplicationIdentityContext -output Data/Migrations
         /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationIdentityContext -o Data/Migrations
         /// </summary>
-        /// <param name="host"></param>
-        public static async Task EnsureSeedData(IWebHost host)
+        public static async Task EnsureSeedData(IServiceScope serviceScope)
         {
-            using (var serviceScope = host.Services.CreateScope())
-            {
-                var services = serviceScope.ServiceProvider;
-
-                await EnsureSeedData(services);
-            }
+            var services = serviceScope.ServiceProvider;
+            await EnsureSeedData(services);
         }
 
         public static async Task EnsureSeedData(IServiceProvider serviceProvider)
         {
-            using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            {
-                var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
-                var userContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityContext>();
-                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
-                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
+            using var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope();
 
-                var id4Context = scope.ServiceProvider.GetRequiredService<JpContext>();
-                var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
+            var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+            var userContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityContext>();
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserIdentity>>();
+            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<UserIdentityRole>>();
 
-                await WaitForDb(id4Context);
-                var tst = id4Context.Database.GetPendingMigrations();
-                await id4Context.Database.MigrateAsync();
-                await userContext.Database.MigrateAsync();
-                await storeDb.Database.MigrateAsync();
+            var id4Context = scope.ServiceProvider.GetRequiredService<JpContext>();
+            var storeDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
 
-                await EnsureSeedIdentityServerData(id4Context, configuration);
-                await EnsureSeedIdentityData(userManager, roleManager, configuration);
-            }
+            await WaitForDb(id4Context);
+            await id4Context.Database.GetPendingMigrationsAsync();
+            await id4Context.Database.MigrateAsync();
+            await userContext.Database.MigrateAsync();
+            await storeDb.Database.MigrateAsync();
+
+            await EnsureSeedIdentityServerData(id4Context, configuration);
+            await EnsureSeedIdentityData(userManager, roleManager, configuration);
         }
 
         /// <summary>
@@ -64,6 +58,7 @@ namespace Jp.UI.SSO.Util
             RoleManager<UserIdentityRole> roleManager,
             IConfiguration configuration)
         {
+            
             // Create admin role
             if (!await roleManager.RoleExistsAsync("Administrador"))
             {
@@ -80,12 +75,12 @@ namespace Jp.UI.SSO.Util
                 UserName = Users.GetUser(configuration),
                 Email = Users.GetEmail(configuration),
                 EmailConfirmed = true,
-
+                LockoutEnd = null
             };
 
             var result = await userManager.CreateAsync(user, Users.GetPassword(configuration));
 
-            if (result.Succeeded)
+            if (result.Succeeded)   
             {
                 await userManager.AddClaimAsync(user, new Claim("is4-rights", "manager"));
                 await userManager.AddClaimAsync(user, new Claim("username", Users.GetUser(configuration)));

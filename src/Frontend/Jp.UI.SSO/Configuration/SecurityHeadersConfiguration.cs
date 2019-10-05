@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.Extensions.Hosting;
 
 namespace Jp.UI.SSO.Configuration
 {
     public static class SecurityHeadersConfiguration
     {
-        public static void UseSecurityHeaders(this IApplicationBuilder app, IHostingEnvironment env)
+        public static void UseSecurityHeaders(this IApplicationBuilder app, IWebHostEnvironment env)
         {
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions()

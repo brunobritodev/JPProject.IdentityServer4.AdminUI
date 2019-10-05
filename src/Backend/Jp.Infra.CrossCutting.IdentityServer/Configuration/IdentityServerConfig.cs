@@ -1,15 +1,13 @@
 ﻿using Jp.Infra.CrossCutting.Identity.Entities.Identity;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
 {
     public static class IdentityServerConfig
     {
-        public static IIdentityServerBuilder AddIdentityServer(this IServiceCollection services,
-            IConfiguration configuration, IHostingEnvironment environment, ILogger logger)
+        public static IIdentityServerBuilder AddOAuth2(this IServiceCollection services,
+            IConfiguration configuration)
         {
 
             var builder = services.AddIdentityServer(
@@ -22,7 +20,7 @@ namespace Jp.Infra.CrossCutting.IdentityServer.Configuration
                     })
                 .AddAspNetIdentity<UserIdentity>();
 
-            builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"), logger, environment);
+            builder.AddSigninCredentialFromConfig(configuration.GetSection("CertificateOptions"));
 
             return builder;
         }

@@ -3,7 +3,7 @@ using System;
 
 namespace Jp.UI.SSO.Util
 {
-    public class Users
+    public static class Users
     {
         public static string GetUser(IConfiguration configuration)
         {
