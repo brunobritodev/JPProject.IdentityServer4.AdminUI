@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="IdentityServer4.EntityFramework" Version="3.0.1" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0-rc1.19503.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0-rc1.19504.14" />
   </ItemGroup>
 
   <ItemGroup>
