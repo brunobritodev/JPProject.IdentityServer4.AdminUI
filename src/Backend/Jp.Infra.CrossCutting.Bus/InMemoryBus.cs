@@ -1,8 +1,9 @@
-﻿using System.Threading.Tasks;
-using Jp.Domain.Core.Bus;
+﻿using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Commands;
 using Jp.Domain.Core.Events;
+using Jp.Domain.Core.Notifications;
 using MediatR;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Bus
 {
@@ -24,7 +25,7 @@ namespace Jp.Infra.CrossCutting.Bus
 
         public Task RaiseEvent<T>(T @event) where T : Event
         {
-            if (!@event.MessageType.Equals("DomainNotification"))
+            if (!@event.MessageType.Equals(nameof(DomainNotification)))
                 _eventStore?.Save(@event);
 
             return _mediator.Publish(@event);

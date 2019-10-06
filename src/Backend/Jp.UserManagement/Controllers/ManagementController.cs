@@ -47,7 +47,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             model.Id = _systemUser.UserId;
@@ -62,7 +62,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             model.Id = _systemUser.UserId;
@@ -76,7 +76,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             model.Id = _systemUser.UserId;
@@ -90,7 +90,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             model.Id = _systemUser.UserId;

@@ -1,4 +1,5 @@
-﻿using Jp.Infra.CrossCutting.Database;
+﻿using Hellang.Middleware.ProblemDetails;
+using Jp.Infra.CrossCutting.Database;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.Management.Configuration;
 using MediatR;
@@ -32,9 +33,15 @@ namespace Jp.Management
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 }).AddApiExplorer();
 
+            services.AddProblemDetails();
+
+            // Response compression
+            services.AddBrotliCompression();
+
             // Identity Database
             services.AddAuthentication(Configuration);
 
+            // Cors request
             services.ConfigureCors();
 
             // Configure policies
@@ -48,6 +55,7 @@ namespace Jp.Management
 
             // Config automapper
             services.AddAutoMapperSetup();
+
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
 
@@ -69,15 +77,18 @@ namespace Jp.Management
                 app.UseHttpsRedirection();
             }
 
-            app.UseAuthorization();
-            app.UseAuthentication();
+            app.UseProblemDetails();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("./v1/swagger.json", "ID4 User Management");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ID4 User Management");
                 c.OAuthClientId("Swagger");
                 c.OAuthAppName("User Management UI - full access");
+
             });
+
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {

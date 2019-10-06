@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { TranslatorService } from "@core/translator/translator.service";
 import { flatMap, tap, map } from "rxjs/operators";
 import { ClientService } from "@app/clients/clients.service";
-import {  ClientProperty } from "@shared/viewModel/client.model";
+import { ClientProperty } from "@shared/viewModel/client.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
@@ -40,7 +40,12 @@ export class ClientPropertiesComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.client = p["clientId"])).pipe(map(p => p["clientId"])).pipe(flatMap(m => this.clientService.getClientProperties(m.toString()))).subscribe(result => this.clientProperties = result.data);
+        this.route.params
+            .pipe(tap(p => this.client = p["clientId"]))
+            .pipe(map(p => p["clientId"]))
+            .pipe(flatMap(m => this.clientService.getClientProperties(m.toString())))
+            .subscribe(result => this.clientProperties = result);
+
         this.errors = [];
         this.model = new ClientProperty();
         this.showButtonLoading = false;
@@ -55,58 +60,41 @@ export class ClientPropertiesComponent implements OnInit {
     public remove(id: number) {
 
         this.showButtonLoading = true;
-        try {
-
-            this.clientService.removeProperty(this.client, id).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadProperties();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to remove");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to remove");
-        }
+        this.clientService.removeProperty(this.client, id).subscribe(
+            () => {
+                this.showSuccessMessage();
+                this.loadProperties();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
 
     }
 
     private loadProperties(): void {
-        this.clientService.getClientProperties(this.client).subscribe(c => this.clientProperties = c.data);
+        this.clientService.getClientProperties(this.client).subscribe(c => this.clientProperties = c);
     }
 
     public save() {
         this.showButtonLoading = true;
-        try {
-            this.model.clientId = this.client;
-            this.clientService.saveProperty(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadProperties();
-                        this.model = new ClientProperty();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
+
+        this.model.clientId = this.client;
+        this.clientService.saveProperty(this.model).subscribe(
+            properties => {
+                this.showSuccessMessage();
+                this.clientProperties = properties;
+                this.model = new ClientProperty();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
+
     }
 
 }

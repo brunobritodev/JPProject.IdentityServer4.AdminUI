@@ -37,7 +37,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _roleManagerAppService.Remove(model);
             return Response(true);
@@ -57,7 +57,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _roleManagerAppService.Save(model);
             return Response(true);
@@ -69,7 +69,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _roleManagerAppService.Update(model);
             return Response(true);
@@ -81,7 +81,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _roleManagerAppService.RemoveUserFromRole(model);
             return Response(true);

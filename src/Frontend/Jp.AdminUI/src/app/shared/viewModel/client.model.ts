@@ -51,6 +51,12 @@ export class NewClient {
 }
 
 export class Client {
+    idWasChanged(): boolean {
+        return this.oldClientId != this.clientId;
+    }
+    setOldId(clientId: string) {
+        this.oldClientId = clientId;
+    }
     enabled: boolean;
     clientId: string;
     description: string;

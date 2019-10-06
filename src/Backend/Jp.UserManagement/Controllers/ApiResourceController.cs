@@ -47,7 +47,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.Save(model);
             return Response(true);
@@ -59,7 +59,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.Update(model);
             return Response(true);
@@ -71,7 +71,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.Remove(model);
             return Response(true);
@@ -92,7 +92,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.RemoveSecret(model);
             return Response(true);
@@ -105,7 +105,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.SaveSecret(model);
             return Response(true);
@@ -124,7 +124,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.RemoveScope(model);
             return Response(true);
@@ -137,7 +137,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.SaveScope(model);
             return Response(true);

@@ -4,6 +4,8 @@ import { ClientService } from "@app/clients/clients.service";
 import { ClientList } from "@shared/viewModel/client-list.model";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
 import Swal from 'sweetalert2'
+import { Observable, Subject } from "rxjs";
+import { flatMap, startWith } from "rxjs/operators";
 
 @Component({
     selector: "app-clients-list",
@@ -12,18 +14,21 @@ import Swal from 'sweetalert2'
 })
 export class ClientListComponent implements OnInit {
 
-    public clientList: ClientList[];
+    private refresh = new Subject<string>();
+    public clientList$: Observable<ClientList[]>;
 
     constructor(
         public translator: TranslatorService,
         private clientService: ClientService) { }
 
     ngOnInit() {
-        this.loadClients();
+        this.clientList$ = this.refresh.asObservable()
+            .pipe(startWith("init"))
+            .pipe(flatMap(_ => this.clientService.getClients()));
     }
 
     public loadClients() {
-        this.clientService.getClients().subscribe(a => this.clientList = a.data);
+        this.refresh.next('refresh');
     }
 
     public copy(clientId: string) {
@@ -40,11 +45,9 @@ export class ClientListComponent implements OnInit {
                 if (isConfirm.value) {
 
                     this.clientService.copy(clientId).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadClients();
-                                Swal.fire("Cloned!", m["cloned"], 'success');
-                            }
+                        updatedClient => {
+                            this.loadClients();
+                            Swal.fire("Cloned!", m["cloned"], 'success');
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);
@@ -72,11 +75,9 @@ export class ClientListComponent implements OnInit {
                 if (isConfirm.value) {
 
                     this.clientService.remove(clientId).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadClients();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                        () => {
+                            this.loadClients();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);

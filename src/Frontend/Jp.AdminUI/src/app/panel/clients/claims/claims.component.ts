@@ -44,7 +44,7 @@ export class ClientClaimsComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.client = p["clientId"])).pipe(map(p => p["clientId"])).pipe(flatMap(m => this.clientService.getClientClaims(m.toString()))).subscribe(result => this.claims = result.data);
+        this.route.params.pipe(tap(p => this.client = p["clientId"])).pipe(map(p => p["clientId"])).pipe(flatMap(m => this.clientService.getClientClaims(m.toString()))).subscribe(result => this.claims = result);
         this.errors = [];
         this.model = new ClientClaim();
         this.showButtonLoading = false;
@@ -66,59 +66,40 @@ export class ClientClaimsComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-
-            this.clientService.removeClaim(this.client, id).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadClaims();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
+        this.clientService.removeClaim(this.client, id).subscribe(
+            () => {
+                this.showSuccessMessage();
+                this.loadClaims();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
 
     }
 
     private loadClaims(): void {
-        this.clientService.getClientClaims(this.client).subscribe(c => this.claims = c.data);
+        this.clientService.getClientClaims(this.client).subscribe(c => this.claims = c);
     }
 
     public save() {
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-            this.model.clientId = this.client;
-            this.clientService.saveClaim(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadClaims();
-                        this.model = new ClientClaim();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
+        this.model.clientId = this.client;
+        this.clientService.saveClaim(this.model).subscribe(
+            claims => {
+                this.showSuccessMessage();
+                this.claims = claims;
+                this.model = new ClientClaim();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
 }

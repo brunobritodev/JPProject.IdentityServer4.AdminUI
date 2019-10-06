@@ -5,13 +5,9 @@
 
 export const environment = {
   production: false,
-  ResourceServer: "http://api.teste.work/",
   IssuerUri:  "http://sso.teste.work",
   ResourceServer: "http://localhost:5003/",
-  IssuerUri:  "http://jpproject:5000",
   RequireHttps: false,
-  Uri: "http://admin.teste.work"
-  Uri: "http://localhost:4300"
-}
+  Uri: "http://localhost:4300",
   defaultTheme: "E"
 };

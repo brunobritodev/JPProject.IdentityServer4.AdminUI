@@ -62,7 +62,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _userManageAppService.UpdateUser(model);
             return Response(true);
@@ -90,7 +90,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _userManageAppService.RemoveClaim(model);
             return Response(true);
@@ -103,7 +103,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _userManageAppService.SaveClaim(model);
             return Response(true);
@@ -122,7 +122,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             model.UserId = _user.UserId;
@@ -136,7 +136,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _userManageAppService.SaveRole(model);
             return Response(true);
@@ -155,7 +155,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _userManageAppService.RemoveLogin(model);
             return Response(true);
@@ -174,7 +174,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             await _userManageAppService.ResetPassword(model);

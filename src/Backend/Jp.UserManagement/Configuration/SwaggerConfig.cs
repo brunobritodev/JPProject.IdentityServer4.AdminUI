@@ -37,12 +37,12 @@ namespace Jp.Management.Configuration
                     {
                         Implicit = new OpenApiOAuthFlow()
                         {
-                            AuthorizationUrl = new Uri($"{configuration.GetValue<string>("ApplicationSettings:Authority")}/connect/authorize"),
+                            AuthorizationUrl = new Uri($"{configuration["ApplicationSettings:Authority"]}/connect/authorize"),
                             Scopes = new Dictionary<string, string>
                             {
                                 {"jp_api.user", "User Management API - full access"},
                                 {"jp_api.is4", "IS4 Management API - full access"},
-                            }
+                            },
                         }
                     }
                 });

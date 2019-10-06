@@ -43,8 +43,9 @@ namespace JpProject.Domain.Tests.CommandHandlers.ClientTests.Fakers
                                                accessTokenLifetime,
                                                 authorizationCodeLifetime,
                         slidingRefreshTokenLifetime,
-                        deviceCodeLifetime).Generate(),
-                    oldClientId ?? f.Internet.DomainName()));
+                        deviceCodeLifetime).Generate()
+                    ).SetClientId(oldClientId));
+
 
         }
 

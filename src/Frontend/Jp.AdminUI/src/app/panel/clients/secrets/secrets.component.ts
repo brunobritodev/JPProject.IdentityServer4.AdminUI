@@ -42,7 +42,12 @@ export class ClientSecretsComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.client = p["clientId"])).pipe(map(p => p["clientId"])).pipe(flatMap(m => this.clientService.getClientSecrets(m.toString()))).subscribe(result => this.clientSecrets = result.data);
+        this.route.params
+            .pipe(tap(p => this.client = p["clientId"]))
+            .pipe(map(p => p["clientId"]))
+            .pipe(flatMap(m => this.clientService.getClientSecrets(m.toString())))
+            .subscribe(result => this.clientSecrets = result);
+
         this.errors = [];
         this.model = new ClientSecret();
         this.showButtonLoading = false;
@@ -60,60 +65,41 @@ export class ClientSecretsComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-
-            this.clientService.removeSecret(this.client, id).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadSecrets();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to remove");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to remove");
-        }
-
+        this.clientService.removeSecret(this.client, id).subscribe(
+            () => {
+                this.showSuccessMessage();
+                this.loadSecrets();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     private loadSecrets(): void {
-
-        this.clientService.getClientSecrets(this.client).subscribe(c => this.clientSecrets = c.data);
+        this.clientService.getClientSecrets(this.client).subscribe(c => this.clientSecrets = c);
     }
 
     public save() {
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-            this.model.clientId = this.client;
-            this.clientService.saveSecret(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadSecrets();
-                        this.model = new ClientSecret();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
+
+        this.model.clientId = this.client;
+        this.clientService.saveSecret(this.model).subscribe(
+            registerResult => {
+                this.showSuccessMessage();
+                this.clientSecrets = registerResult;
+                this.model = new ClientSecret();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
+
     }
 
 }

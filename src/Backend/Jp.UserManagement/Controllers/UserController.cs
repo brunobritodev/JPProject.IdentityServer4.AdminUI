@@ -29,7 +29,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             await _userAppService.Register(model);
@@ -43,7 +43,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             await _userAppService.RegisterWithProvider(model);
@@ -73,7 +73,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             await _userAppService.SendResetLink(model);
@@ -88,7 +88,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             await _userAppService.ResetPassword(model);
@@ -102,7 +102,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
             await _userAppService.ConfirmEmail(model);

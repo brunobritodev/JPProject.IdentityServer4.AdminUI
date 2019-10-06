@@ -1,3 +1,4 @@
+using IdentityServer4.EntityFramework.Mappers;
 using Jp.Domain.Commands.Clients;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -9,7 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Mappers;
 
 namespace Jp.Domain.CommandHandlers
 {
@@ -57,7 +57,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
             _clientRepository.Remove(savedClient.Id);
@@ -80,7 +80,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetClient(request.OldClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 
@@ -108,13 +108,13 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 
             if (savedClient.ClientSecrets.All(f => f.Id != request.Id))
             {
-                await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
+                await Bus.RaiseEvent(new DomainNotification("Client Secret", "Invalid secret"));
                 return false;
             }
 
@@ -139,7 +139,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 
@@ -166,13 +166,13 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 
             if (savedClient.Properties.All(f => f.Id != request.Id))
             {
-                await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
+                await Bus.RaiseEvent(new DomainNotification("Client Properties", "Invalid Property"));
                 return false;
             }
 
@@ -197,7 +197,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
             var property = request.ToEntiyTy(savedClient);
@@ -225,13 +225,13 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetClient(request.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 
             if (savedClient.Claims.All(f => f.Id != request.Id))
             {
-                await Bus.RaiseEvent(new DomainNotification("2", "Invalid secret"));
+                await Bus.RaiseEvent(new DomainNotification("Client Claims", "Invalid Claim"));
                 return false;
             }
 
@@ -256,7 +256,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetByClientId(request.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 
@@ -283,7 +283,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient != null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client already exists"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client already exists"));
                 return false;
             }
 
@@ -313,7 +313,7 @@ namespace Jp.Domain.CommandHandlers
             var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
             if (savedClient == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));
                 return false;
             }
 

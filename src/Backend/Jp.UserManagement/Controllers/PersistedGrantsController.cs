@@ -40,7 +40,7 @@ namespace Jp.Management.Controllers
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _persistedGrantAppService.Remove(model);
             return Response(true);

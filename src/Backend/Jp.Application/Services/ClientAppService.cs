@@ -53,10 +53,10 @@ namespace Jp.Application.Services
             return _mapper.Map<Client>(resultado);
         }
 
-        public Task Update(ClientViewModel client)
+        public Task Update(string id, ClientViewModel client)
         {
-            var registerCommand = _mapper.Map<UpdateClientCommand>(client);
-            return Bus.SendCommand(registerCommand);
+            var updateClientCommand = _mapper.Map<UpdateClientCommand>(client).SetClientId(id);
+            return Bus.SendCommand(updateClientCommand);
         }
 
         public async Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId)
