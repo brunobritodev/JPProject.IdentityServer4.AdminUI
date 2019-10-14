@@ -24,7 +24,7 @@ export class IdentityResourceListComponent implements OnInit {
     }
 
     public loadResources() {
-        this.identityResourceService.getIdentityResources().subscribe(a => this.identityResources = a.data);
+        this.identityResourceService.getIdentityResources().subscribe(a => this.identityResources = a);
     }
 
     public remove(name: string) {
@@ -37,16 +37,14 @@ export class IdentityResourceListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                
+
             }).then(isConfirm => {
                 if (isConfirm) {
 
                     this.identityResourceService.remove(name).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadResources();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                        () => {
+                            this.loadResources();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);

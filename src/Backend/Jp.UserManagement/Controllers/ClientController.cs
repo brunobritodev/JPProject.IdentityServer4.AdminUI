@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("clients"), Authorize(Policy = "ReadOnly")]
     [ApiConventionType(typeof(DefaultApiConventions))]
     public class ClientsController : ApiController
     {
@@ -63,7 +63,9 @@ namespace Jp.Management.Controllers
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
-            await _clientAppService.Update(id, client);
+
+            client.OldClientId = id;
+            await _clientAppService.Update(client);
             return ResponsePut();
         }
 

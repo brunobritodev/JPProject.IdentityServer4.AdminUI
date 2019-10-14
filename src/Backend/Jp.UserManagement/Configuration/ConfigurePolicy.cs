@@ -1,5 +1,4 @@
 ﻿using IdentityServer4.Extensions;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Jp.Management.Configuration
@@ -10,15 +9,15 @@ namespace Jp.Management.Configuration
         {
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", 
-                    policy => policy.RequireAssertion(c => 
-                        c.User.HasClaim("is4-rights", "manager") || 
+                options.AddPolicy("Admin",
+                    policy => policy.RequireAssertion(c =>
+                        c.User.HasClaim("is4-rights", "manager") ||
                         c.User.IsInRole("Administrador")));
 
                 options.AddPolicy("ReadOnly", policy =>
-                    policy.RequireAssertion(c => 
-                        c.User.IsAuthenticated() || 
-                        c.User.HasClaim("is4-rights", "manager") || 
+                    policy.RequireAssertion(c =>
+                        c.User.IsAuthenticated() ||
+                        c.User.HasClaim("is4-rights", "manager") ||
                         c.User.IsInRole("Administrador")));
 
                 options.AddPolicy("UserManagement", policy =>

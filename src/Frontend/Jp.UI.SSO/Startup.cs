@@ -44,7 +44,7 @@ namespace Jp.UI.SSO
             services.AddApplicationInsightsTelemetry();
 
             // Config identity
-            services.AddAuthentication(Configuration);
+            services.AddIdentityConfiguration(Configuration);
 
             // Add localization
             services.AddMvcLocalization();

@@ -12,7 +12,7 @@ namespace Jp.Infra.CrossCutting.Database
 {
     public static class DbSettingsConfig
     {
-        public static void AddAuthentication(this IServiceCollection services, IConfiguration configuration)
+        public static void AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             var database = configuration["ApplicationSettings:DatabaseType"].ToUpper();
             var connString = configuration.GetConnectionString("SSOConnection");

@@ -1,11 +1,13 @@
+using IdentityServer4.Models;
 using Jp.Domain.Validations.Client;
 
 namespace Jp.Domain.Commands.Clients
 {
     public class UpdateClientCommand : ClientCommand
     {
-        public UpdateClientCommand(IdentityServer4.Models.Client client)
+        public UpdateClientCommand(Client client, string oldClientId)
         {
+            OldClientId = oldClientId;
             this.Client = client;
         }
 
@@ -16,10 +18,5 @@ namespace Jp.Domain.Commands.Clients
             return ValidationResult.IsValid;
         }
 
-        public UpdateClientCommand SetClientId(string id)
-        {
-            OldClientId = id;
-            return this;
-        }
     }
 }

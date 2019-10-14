@@ -44,27 +44,17 @@ export class IdentityResourceAddComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        try {
 
-            this.identityResourceService.save(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.router.navigate(["/identity-resource"]);
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
-
+        this.identityResourceService.save(this.model).subscribe(
+            registerResult => {
+                this.showSuccessMessage();
+                this.router.navigate(["/identity-resource"]);
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     public addClaim(claim: string) {

@@ -11,7 +11,7 @@ namespace Jp.Application.Interfaces
     {
         Task<IEnumerable<ClientListViewModel>> GetClients();
         Task<Client> GetClientDetails(string clientId);
-        Task Update(string id, ClientViewModel client);
+        Task Update(ClientViewModel client);
         Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId);
         Task RemoveSecret(RemoveClientSecretViewModel model);
         Task SaveSecret(SaveClientSecretViewModel model);

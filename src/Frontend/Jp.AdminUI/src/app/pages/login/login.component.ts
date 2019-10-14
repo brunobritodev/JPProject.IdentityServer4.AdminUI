@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { SettingsService } from "../../core/settings/settings.service";
-import { Router } from "@angular/router";
-import { AuthService } from "@core/auth/auth.service";
-import { Subscription } from "rxjs";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@core/auth/auth.service';
+import { Subscription } from 'rxjs';
+
+import { SettingsService } from '../../core/settings/settings.service';
 
 
 @Component({
@@ -30,7 +31,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     public ngOnDestroy() {
         this.stream.unsubscribe();
+        
     }
 
-    public login() { this.authService.login('/login-callback'); }
+    public login() {
+        this.authService.login('/login-callback');
+        
+    }
 }

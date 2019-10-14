@@ -3,7 +3,6 @@ using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("identity-resources"), Authorize(Policy = "ReadOnly")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class IdentityResourceController : ApiController
     {
         private readonly IIdentityResourceAppService _identityResourceAppService;
@@ -25,22 +25,22 @@ namespace Jp.Management.Controllers
             _identityResourceAppService = identityResourceAppService;
         }
 
-        [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<IdentityResourceListView>>>> List()
+        [HttpGet("")]
+        public async Task<ActionResult<IEnumerable<IdentityResourceListView>>> List()
         {
             var irs = await _identityResourceAppService.GetIdentityResources();
-            return Response(irs);
+            return ResponseGet(irs);
         }
 
-        [HttpGet, Route("details")]
-        public async Task<ActionResult<DefaultResponse<IdentityResource>>> Details(string name)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IdentityResource>> Details(string id)
         {
-            var irs = await _identityResourceAppService.GetDetails(name);
-            return Response(irs);
+            var irs = await _identityResourceAppService.GetDetails(id);
+            return ResponseGet(irs);
         }
 
-        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] IdentityResource model)
+        [HttpPost(""), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IdentityResource>> Save([FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
             {
@@ -48,31 +48,30 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
             await _identityResourceAppService.Save(model);
-            return Response(true);
+            var idr = await _identityResourceAppService.GetDetails(model.Name);
+            return ResponsePost(nameof(Details), new { id = model.Name }, idr);
         }
 
-        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] IdentityResourceViewModel model)
+        [HttpPut("{id}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Update(string id, [FromBody] IdentityResourceViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
+
+            model.OldName = id;
             await _identityResourceAppService.Update(model);
-            return Response(true);
+            return ResponsePut();
         }
 
-        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveIdentityResourceViewModel model)
+        [HttpDelete("{id}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Remove(string id)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return ModelStateErrorResponseError();
-            }
+            var model = new RemoveIdentityResourceViewModel(id);
             await _identityResourceAppService.Remove(model);
-            return Response(true);
+            return ResponseDelete();
         }
     }
 }

@@ -18,7 +18,7 @@ export class UserHistoryComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.historyData$ = this.accountService.getLogs().pipe(map(a => a.data));
+        this.historyData$ = this.accountService.getLogs().pipe(map(a => a));
     }
 
     parse(details: string) {

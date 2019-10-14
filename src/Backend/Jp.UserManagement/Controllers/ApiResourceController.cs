@@ -4,7 +4,6 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ApiResouceViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,12 +12,13 @@ using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
-    public class ApiResourceController : ApiController
+    [Route("api-resources"), Authorize(Policy = "ReadOnly")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
+    public class ApiResourcesController : ApiController
     {
         private readonly IApiResourceAppService _apiResourceAppService;
 
-        public ApiResourceController(
+        public ApiResourcesController(
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IApiResourceAppService apiResourceAppService) : base(notifications, mediator)
@@ -26,23 +26,23 @@ namespace Jp.Management.Controllers
             _apiResourceAppService = apiResourceAppService;
         }
 
-        [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ApiResourceListViewModel>>>> List()
+        [HttpGet("")]
+        public async Task<ActionResult<IEnumerable<ApiResourceListViewModel>>> List()
         {
             var irs = await _apiResourceAppService.GetApiResources();
-            return Response(irs);
+            return ResponseGet(irs);
         }
 
 
-        [HttpGet, Route("details")]
-        public async Task<ActionResult<DefaultResponse<ApiResource>>> Details(string name)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ApiResource>> Details(string id)
         {
-            var irs = await _apiResourceAppService.GetDetails(name);
-            return Response(irs);
+            var irs = await _apiResourceAppService.GetDetails(id);
+            return ResponseGet(irs);
         }
 
-        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] ApiResource model)
+        [HttpPost(""), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<ApiResource>> Save([FromBody] ApiResource model)
         {
             if (!ModelState.IsValid)
             {
@@ -50,97 +50,95 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
             await _apiResourceAppService.Save(model);
-            return Response(true);
+            var apires = await _apiResourceAppService.GetDetails(model.Name);
+
+            return ResponsePost(nameof(Details), new { id = model.Name }, apires);
         }
 
-        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UpdateApiResourceViewModel model)
+        [HttpPut("{id}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Update(string id, [FromBody] UpdateApiResourceViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
+
+            model.OldApiResourceId = id;
             await _apiResourceAppService.Update(model);
-            return Response(true);
+            return ResponsePut();
         }
 
-        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveApiResourceViewModel model)
+        [HttpDelete("{id}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Remove(string id)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return ModelStateErrorResponseError();
-            }
+            var model = new RemoveApiResourceViewModel(id);
             await _apiResourceAppService.Remove(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
 
 
-        [HttpGet, Route("secrets")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<SecretViewModel>>>> Secrets(string name)
+        [HttpGet("{id}/secrets")]
+        public async Task<ActionResult<IEnumerable<SecretViewModel>>> Secrets(string id)
         {
-            var clients = await _apiResourceAppService.GetSecrets(name);
-            return Response(clients);
+            var clients = await _apiResourceAppService.GetSecrets(id);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove-secret"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveApiSecretViewModel model)
+        [HttpDelete("{id}/secrets/{secretId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> RemoveSecret(string id, int secretId)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return ModelStateErrorResponseError();
-            }
+            var model = new RemoveApiSecretViewModel(id, secretId);
             await _apiResourceAppService.RemoveSecret(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
 
-        [HttpPost, Route("save-secret"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveSecret([FromBody] SaveApiSecretViewModel model)
+        [HttpPost("{id}/secrets"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<SecretViewModel>>> SaveSecret(string id, [FromBody] SaveApiSecretViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
+
+            model.ResourceName = id;
             await _apiResourceAppService.SaveSecret(model);
-            return Response(true);
+            var secrets = await _apiResourceAppService.GetSecrets(id);
+            return ResponsePost(nameof(Secrets), new { id }, secrets);
         }
 
-        [HttpGet, Route("scopes")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ScopeViewModel>>>> Scopes(string name)
+        [HttpGet("{id}/scopes")]
+        public async Task<ActionResult<IEnumerable<ScopeViewModel>>> Scopes(string id)
         {
-            var clients = await _apiResourceAppService.GetScopes(name);
-            return Response(clients);
+            var clients = await _apiResourceAppService.GetScopes(id);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove-scope"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveScope([FromBody] RemoveApiScopeViewModel model)
+        [HttpDelete("{id}/scopes/{scopeId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveScope(string id, int scopeId)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return ModelStateErrorResponseError();
-            }
+            var model = new RemoveApiScopeViewModel(id, scopeId);
             await _apiResourceAppService.RemoveScope(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
 
-        [HttpPost, Route("save-scope"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveScope([FromBody] SaveApiScopeViewModel model)
+        [HttpPost("{id}/scopes"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<ScopeViewModel>>> SaveScope(string id, [FromBody] SaveApiScopeViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
+
+            model.ResourceName = id;
             await _apiResourceAppService.SaveScope(model);
-            return Response(true);
+            var scopes = await _apiResourceAppService.GetScopes(id);
+            return ResponsePost(nameof(Scopes), new { id }, scopes);
         }
 
 

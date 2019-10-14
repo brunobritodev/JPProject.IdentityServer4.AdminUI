@@ -24,7 +24,7 @@ export class ApiResourceListComponent implements OnInit {
     }
 
     public loadResources() {
-        this.apiResourceservice.getApiResources().subscribe(a => this.apiResources = a.data);
+        this.apiResourceservice.getApiResources().subscribe(a => this.apiResources = a);
     }
 
     public remove(name: string) {
@@ -41,11 +41,9 @@ export class ApiResourceListComponent implements OnInit {
                 if (isConfirm.value) {
 
                     this.apiResourceservice.remove(name).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadResources();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                        () => {
+                            this.loadResources();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
                             let errors = DefaultResponse.GetErrors(err).map(a => a.value);

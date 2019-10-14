@@ -40,8 +40,8 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
         this.authService.loadUserProfile().then(a => this.userProfile = a);
         this.errors = [];
-        this.profileService.getUserData().subscribe((a: DefaultResponse<User>) => {
-            this.user = a.data;
+        this.profileService.getUserData().subscribe((a: User) => {
+            this.user = a;
         });
     }
 

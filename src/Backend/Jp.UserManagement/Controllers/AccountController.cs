@@ -6,7 +6,6 @@ using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Interfaces;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,14 +14,14 @@ using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "UserManagement")]
-    public class ManagementController : ApiController
+    [Route("accounts"), Authorize(Policy = "UserManagement")]
+    public class AccountController : ApiController
     {
         private readonly IUserManageAppService _userAppService;
         private readonly IMapper _mapper;
         private readonly ISystemUser _systemUser;
 
-        public ManagementController(
+        public AccountController(
             IUserManageAppService userAppService,
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
@@ -34,15 +33,15 @@ namespace Jp.Management.Controllers
             _systemUser = systemUser;
         }
 
-        [Route("user-data"), HttpGet]
-        public async Task<ActionResult<DefaultResponse<UserViewModel>>> UserData()
+        [HttpGet("")]
+        public async Task<ActionResult<UserViewModel>> UserData()
         {
             var user = await _userAppService.GetUserAsync(_systemUser.UserId);
-            return Response(user);
+            return ResponseGet(user);
         }
 
-        [Route("update-profile"), HttpPut]
-        public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfile([FromBody] UserViewModel model)
+        [HttpPut("update-profile")]
+        public async Task<ActionResult> UpdateProfile([FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -52,12 +51,12 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.UpdateProfile(model);
-            return Response(true);
+            return ResponsePut();
         }
 
 
-        [Route("update-profile-picture"), HttpPut]
-        public async Task<ActionResult<DefaultResponse<bool>>> UpdateProfilePicture([FromBody] ProfilePictureViewModel model)
+        [HttpPut("update-profile-picture")]
+        public async Task<ActionResult<bool>> UpdateProfilePicture([FromBody] ProfilePictureViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -67,11 +66,11 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.UpdateProfilePicture(model);
-            return Response(true);
+            return ResponsePut();
         }
 
-        [Route("change-password"), HttpPut]
-        public async Task<ActionResult<DefaultResponse<bool>>> ChangePassword([FromBody] ChangePasswordViewModel model)
+        [HttpPut("change-password")]
+        public async Task<ActionResult<bool>> ChangePassword([FromBody] ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -81,11 +80,11 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.ChangePassword(model);
-            return Response(true);
+            return ResponsePut();
         }
 
-        [Route("create-password"), HttpPost]
-        public async Task<ActionResult<DefaultResponse<bool>>> CreatePassword([FromBody] SetPasswordViewModel model)
+        [HttpPut("create-password")]
+        public async Task<ActionResult<bool>> CreatePassword([FromBody] SetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -95,27 +94,27 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.CreatePassword(model);
-            return Response(true);
+            return ResponsePut();
         }
-           
-        [Route("remove-account"), HttpPost]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveAccount()
+
+        [HttpDelete("")]
+        public async Task<ActionResult<bool>> RemoveAccount()
         {
             var model = new RemoveAccountViewModel { Id = _systemUser.UserId };
             await _userAppService.RemoveAccount(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
-        [HttpGet, Route("has-password")]
-        public async Task<ActionResult<DefaultResponse<bool>>> HasPassword()
+        [HttpGet("has-password")]
+        public async Task<ActionResult<bool>> HasPassword()
         {
-            return Response(await _userAppService.HasPassword(_systemUser.UserId));
+            return ResponseGet(await _userAppService.HasPassword(_systemUser.UserId));
         }
 
         [HttpGet, Route("logs")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>>> GetLogs()
+        public async Task<ActionResult<IEnumerable<EventHistoryData>>> GetLogs()
         {
-            return Response(await _userAppService.GetHistoryLogs(_systemUser.Username));
+            return ResponseGet(await _userAppService.GetHistoryLogs(_systemUser.Username));
         }
 
     }

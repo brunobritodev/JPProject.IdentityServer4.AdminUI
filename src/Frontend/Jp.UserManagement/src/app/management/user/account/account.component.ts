@@ -41,8 +41,8 @@ export class AccountComponent implements OnInit {
             this.accountManagementService.hasPassword()
         )
             .subscribe(([userData, hasPassword]) => {
-                this.user = userData.data;
-                this.hasPassword = hasPassword.data;
+                this.user = userData;
+                this.hasPassword = hasPassword;
             });
         this.setPassword = new SetPassword();
         this.changePass = new ChangePassword();

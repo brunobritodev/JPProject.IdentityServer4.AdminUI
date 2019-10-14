@@ -43,27 +43,16 @@ export class ApiResourceAddComponent implements OnInit {
     public save() {
         this.errors = [];
         this.showButtonLoading = true;
-        try {
-
-            this.apiResourceService.save(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.router.navigate(["/api-resource"]);
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
-
+        this.apiResourceService.save(this.model).subscribe(
+            registerResult => {
+                this.showSuccessMessage();
+                this.router.navigate(["/api-resource"]);
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     public addClaim(claim: string) {

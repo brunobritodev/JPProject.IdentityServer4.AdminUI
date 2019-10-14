@@ -28,10 +28,12 @@ namespace Jp.Management
         {
             services
                 .AddMvcCore()
+                .AddAuthorization()
                 .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 }).AddApiExplorer();
+
 
             services.AddProblemDetails();
 
@@ -39,7 +41,7 @@ namespace Jp.Management
             services.AddBrotliCompression();
 
             // Identity Database
-            services.AddAuthentication(Configuration);
+            services.AddIdentityConfiguration(Configuration);
 
             // Cors request
             services.ConfigureCors();
@@ -48,7 +50,7 @@ namespace Jp.Management
             services.AddPolicies();
 
             // configure auth Server
-            services.AddIdentityServerAuthentication(Configuration);
+            services.ConfigureOAuth2Server(Configuration);
 
             // configure openapi
             services.AddSwagger(Configuration);
@@ -77,6 +79,7 @@ namespace Jp.Management
                 app.UseHttpsRedirection();
             }
 
+            app.UseRouting();
             app.UseProblemDetails();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -87,9 +90,7 @@ namespace Jp.Management
 
             });
 
-            app.UseAuthentication();
             app.UseAuthorization();
-            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

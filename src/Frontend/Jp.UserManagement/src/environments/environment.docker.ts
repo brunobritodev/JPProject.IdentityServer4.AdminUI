@@ -5,11 +5,11 @@
 
 export const environment = {
     production: false,
-    GoogleClientId: "27416902506-r7o9rfmcma3m6gnuck7q5vf1939o3003.apps.googleusercontent.com",
-    FacebookClientId: "2205593199670245",
-    ResourceServer: "http://localhost:5003/",
-    AuthorityUri:  "http://jpproject:5000",
+    GoogleClientId: "",
+    FacebookClientId: "",
+    ResourceServer: "http://api.teste.work/",
+    AuthorityUri:  "http://sso.teste.work",
     RequireHttps: false,
-    Uri: "http://localhost:4200"
+    Uri: "http://users.teste.work"
   };
   

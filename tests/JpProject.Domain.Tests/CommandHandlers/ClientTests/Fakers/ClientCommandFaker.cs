@@ -39,12 +39,13 @@ namespace JpProject.Domain.Tests.CommandHandlers.ClientTests.Fakers
             return new Faker<UpdateClientCommand>().CustomInstantiator(f =>
                 new UpdateClientCommand(
                     ClientFaker.GenerateClient(absoluteRefreshTokenLifetime,
-                                               identityTokenLifetime,
-                                               accessTokenLifetime,
-                                                authorizationCodeLifetime,
+                        identityTokenLifetime,
+                        accessTokenLifetime,
+                        authorizationCodeLifetime,
                         slidingRefreshTokenLifetime,
-                        deviceCodeLifetime).Generate()
-                    ).SetClientId(oldClientId));
+                        deviceCodeLifetime).Generate(),
+                    oldClientId ?? f.System.AndroidId()
+                    ));
 
 
         }

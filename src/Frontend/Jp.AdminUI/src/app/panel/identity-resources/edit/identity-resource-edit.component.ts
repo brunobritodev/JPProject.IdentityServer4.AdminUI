@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap,tap } from "rxjs/operators";
+import { flatMap, tap } from "rxjs/operators";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToasterConfig, ToasterService } from "angular2-toaster";
 import { DefaultResponse } from "@shared/viewModel/default-response.model";
@@ -26,7 +26,7 @@ export class IdentityResourceEditComponent implements OnInit {
     });
     public showButtonLoading: boolean;
     standardClaims: string[];
-    public name:string;
+    public name: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -36,13 +36,13 @@ export class IdentityResourceEditComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        
+
         this.route.params
-        .pipe(tap(p => this.name = p["name"]))
-        .pipe(flatMap(p => 
-            this.identityResourceService.getIdentityResourceDetails(p["name"])
-        ))
-        .subscribe(result => this.model = result.data);
+            .pipe(tap(p => this.name = p["name"]))
+            .pipe(flatMap(p =>
+                this.identityResourceService.getIdentityResourceDetails(p["name"])
+            ))
+            .subscribe(result => this.model = result);
         this.errors = [];
         this.showButtonLoading = false;
         this.standardClaims = StandardClaims.claims;
@@ -52,26 +52,16 @@ export class IdentityResourceEditComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-            this.model.oldName = this.name;
-            this.identityResourceService.update(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to update");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to update");
-        }
-
+        this.model.oldName = this.name;
+        this.identityResourceService.update(this.model).subscribe(
+            () => {
+                this.showSuccessMessage();
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     public addClaim(claim: string) {
