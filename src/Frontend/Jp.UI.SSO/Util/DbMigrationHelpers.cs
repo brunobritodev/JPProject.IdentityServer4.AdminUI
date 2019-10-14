@@ -60,9 +60,9 @@ namespace Jp.UI.SSO.Util
         {
             
             // Create admin role
-            if (!await roleManager.RoleExistsAsync("Administrador"))
+            if (!await roleManager.RoleExistsAsync("Administrator"))
             {
-                var role = new UserIdentityRole { Name = "Administrador" };
+                var role = new UserIdentityRole { Name = "Administrator" };
 
                 await roleManager.CreateAsync(role);
             }
@@ -85,7 +85,7 @@ namespace Jp.UI.SSO.Util
                 await userManager.AddClaimAsync(user, new Claim("is4-rights", "manager"));
                 await userManager.AddClaimAsync(user, new Claim("username", Users.GetUser(configuration)));
                 await userManager.AddClaimAsync(user, new Claim("email", Users.GetEmail(configuration)));
-                await userManager.AddToRoleAsync(user, "Administrador");
+                await userManager.AddToRoleAsync(user, "Administrator");
             }
         }
 
