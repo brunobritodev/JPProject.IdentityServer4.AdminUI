@@ -59,8 +59,21 @@ namespace Jp.Management.Controllers
         }
 
 
+        [HttpPut, Route("{username}/update"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update(string username, [FromBody] UserViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
+            }
+
+            await _userManageAppService.UpdateUser(model);
+            return Response(true);
+        }
+
         [HttpPatch, Route("{username}/update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update(string username, [FromBody] JsonPatchDocument<UserViewModel> model)
+        public async Task<ActionResult<DefaultResponse<bool>>> PartialUpdate(string username, [FromBody] JsonPatchDocument<UserViewModel> model)
         {
             if (!ModelState.IsValid)
             {

@@ -10,6 +10,7 @@ import { UserLogin } from "../viewModel/user-login.model";
 import { ResetPassword } from "../viewModel/reset-password.model";
 import { EventHistoryData } from "../viewModel/event-history-data.model";
 import { map } from "rxjs/operators";
+import { Operation } from "fast-json-patch";
 
 @Injectable()
 export class UserService {
@@ -36,12 +37,11 @@ export class UserService {
     }
 
     public update(updateCommand: UserProfile): Observable<DefaultResponse<boolean>> {
-
         return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
     }
-    
-    public patch(updateCommand: UserProfile): Observable<DefaultResponse<boolean>> {
-        return this.http.patch<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
+
+    public patch(username: string, patch: Operation[]): Observable<DefaultResponse<boolean>> {
+        return this.http.patch<DefaultResponse<boolean>>(environment.ResourceServer + `UserAdmin/${username}/update`, patch);
     }
 
     public save(model: UserProfile): Observable<DefaultResponse<boolean>> {

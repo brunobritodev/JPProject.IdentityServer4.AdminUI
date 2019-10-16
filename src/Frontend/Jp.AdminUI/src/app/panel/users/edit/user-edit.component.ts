@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 import { UserProfile } from "@shared/viewModel/userProfile.model";
 import { UserService } from "@shared/services/user.service";
 import { ResetPassword } from "@shared/viewModel/reset-password.model";
+import * as jsonpatch from 'fast-json-patch';
 
 
 @Component({
@@ -35,6 +36,7 @@ export class UserEditComponent implements OnInit {
     public shouldChangePass: boolean = false;
     public shouldChangeUserData: boolean = true;
     private username: string;
+    patchObserver: jsonpatch.Observer<UserProfile>;
 
     constructor(
         private route: ActivatedRoute,
@@ -44,7 +46,11 @@ export class UserEditComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.username = p["username"])).pipe(flatMap(p => this.userService.getDetails(p["username"]))).subscribe(result => {
+        this.route.params
+        .pipe(tap(p => this.username = p["username"]),
+              flatMap(p => this.userService.getDetails(p["username"])),
+              tap(user => this.patchObserver = jsonpatch.observe(user.data))
+        ).subscribe(result => {
             this.model = result.data;
             if (this.model.lockoutEnd != null)
                 this.model.lockoutEnd = new Date(this.model.lockoutEnd);
@@ -60,7 +66,7 @@ export class UserEditComponent implements OnInit {
         this.errors = [];
         try {
 
-            this.userService.update(this.model).subscribe(
+            this.userService.patch(this.username, jsonpatch.generate(this.patchObserver)).subscribe(
                 registerResult => {
                     if (registerResult.data) {
                         this.showSuccessMessage();
@@ -78,7 +84,6 @@ export class UserEditComponent implements OnInit {
             this.showButtonLoading = false;
             return Observable.throw("Unknown error while trying to update");
         }
-
     }
 
     public resetPass() {
