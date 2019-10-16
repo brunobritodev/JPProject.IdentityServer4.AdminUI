@@ -77,7 +77,7 @@ namespace Jp.Domain.CommandHandlers
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return false; ;
+                return false; 
             }
 
             var user = new User(
@@ -142,7 +142,7 @@ namespace Jp.Domain.CommandHandlers
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return false; ;
+                return false; 
             }
 
             var emailSent = await _userService.SendResetLink(request.Email, request.Username);
@@ -160,7 +160,7 @@ namespace Jp.Domain.CommandHandlers
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return false; ;
+                return false; 
             }
 
             var emailSent = await _userService.ResetPassword(request);
@@ -178,7 +178,7 @@ namespace Jp.Domain.CommandHandlers
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return false; ;
+                return false; 
             }
 
             var result = await _userService.ConfirmEmailAsync(request.Email, request.Code);
@@ -195,7 +195,7 @@ namespace Jp.Domain.CommandHandlers
             if (!request.IsValid())
             {
                 NotifyValidationErrors(request);
-                return false; ;
+                return false; 
             }
 
             var result = await _userService.AddLoginAsync(request.Email, request.Provider, request.ProviderId);

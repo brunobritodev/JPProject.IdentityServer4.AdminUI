@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Jp.UI.SSO.Util
 
 {
-    public class Clients
+    public static class Clients
     {
 
         public static IEnumerable<Client> GetAdminClient(IConfiguration configuration)

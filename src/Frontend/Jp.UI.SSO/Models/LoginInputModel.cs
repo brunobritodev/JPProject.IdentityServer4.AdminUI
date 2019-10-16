@@ -2,8 +2,8 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using Jp.Infra.CrossCutting.Tools.StringUtils;
 using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
 
 namespace Jp.UI.SSO.Models
 {
@@ -19,7 +19,7 @@ namespace Jp.UI.SSO.Models
         public bool IsUsernameEmail()
         {
             // Return true if strIn is in valid e-mail format.
-            return Regex.IsMatch(Username, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            return Username.IsEmail();
         }
     }
 }

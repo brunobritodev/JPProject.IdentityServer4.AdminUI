@@ -39,8 +39,12 @@ export class UserService {
 
         return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
     }
-    public save(model: UserProfile): Observable<DefaultResponse<boolean>> {
+    
+    public patch(updateCommand: UserProfile): Observable<DefaultResponse<boolean>> {
+        return this.http.patch<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/update", updateCommand);
+    }
 
+    public save(model: UserProfile): Observable<DefaultResponse<boolean>> {
         return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "User/register", model);
     }
 

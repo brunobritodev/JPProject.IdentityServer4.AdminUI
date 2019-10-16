@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
@@ -27,6 +28,8 @@ namespace Jp.Application.ViewModels.UserViewModels
         public string Company { get; set; }
         public string Bio { get; set; }
         public string JobTitle { get; set; }
+
+        [JsonIgnore]
         public Guid Id { get; set; }
         public bool EmailConfirmed { get; set; }
         public bool PhoneNumberConfirmed { get; set; }

@@ -5,15 +5,16 @@ using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Management.Controllers
 {
@@ -22,17 +23,19 @@ namespace Jp.Management.Controllers
     {
         private readonly IUserManageAppService _userManageAppService;
         private readonly ISystemUser _user;
+        private readonly IUserAppService _userAppService;
 
         public UserAdminController(
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IUserManageAppService userManageAppService,
             ISystemUser user,
-            IRoleManagerAppService roleManagerAppService) : base(notifications, mediator)
+            IUserAppService userAppService) : base(notifications, mediator)
         {
 
             _userManageAppService = userManageAppService;
             _user = user;
+            _userAppService = userAppService;
         }
 
         /// <summary>
@@ -56,15 +59,18 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UserViewModel model)
+        [HttpPatch, Route("{username}/update"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<DefaultResponse<bool>>> Update(string username, [FromBody] JsonPatchDocument<UserViewModel> model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
-            await _userManageAppService.UpdateUser(model);
+
+            var actualUser = await _userAppService.FindByNameAsync(username);
+            model.ApplyTo(actualUser);
+            await _userManageAppService.UpdateUser(actualUser);
             return Response(true);
         }
 

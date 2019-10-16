@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Jp.UI.SSO.Util
 {
-    public class ClientResources
+    public static class ClientResources
     {
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {

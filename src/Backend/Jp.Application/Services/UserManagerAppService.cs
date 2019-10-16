@@ -7,12 +7,12 @@ using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Application.Services
 {

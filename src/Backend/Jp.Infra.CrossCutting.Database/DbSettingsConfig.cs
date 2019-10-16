@@ -38,8 +38,8 @@ namespace Jp.Infra.CrossCutting.Database
                     options.ClaimsIdentity.UserIdClaimType = JwtClaimTypes.Name;
                     options.SignIn.RequireConfirmedAccount = true;
                     options.User.RequireUniqueEmail = true;
-
-                    // NIST Password best practices: https://pages.nist.gov/800-63-3/sp800-63b.html#appA
+					
+					// NIST Password best practices: https://pages.nist.gov/800-63-3/sp800-63b.html#appA
                     options.Lockout.MaxFailedAccessAttempts = 10;
                     options.Password.RequiredLength = 8;
                     options.Password.RequireDigit = false;
@@ -50,6 +50,8 @@ namespace Jp.Infra.CrossCutting.Database
                     options.Password.RequiredUniqueChars = 0;
 
                 })
+
+                    
                 .AddEntityFrameworkStores<ApplicationIdentityContext>();
         }
 
