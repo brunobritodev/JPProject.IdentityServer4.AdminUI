@@ -35,7 +35,7 @@ namespace Jp.Domain.Interfaces
         Task UpdateUserAsync(User user);
         Task<IEnumerable<Claim>> GetClaimByName(string userName);
         Task<bool> SaveClaim(Guid userId, Claim claim);
-        Task<bool> RemoveClaim(Guid userId, string claimType);
+        Task<bool> RemoveClaim(Guid userId, string claimType, string value);
         Task<IEnumerable<string>> GetRoles(string userName);
         Task<bool> RemoveRole(Guid userDbId, string requestRole);
         Task<bool> SaveRole(Guid userId, string role);

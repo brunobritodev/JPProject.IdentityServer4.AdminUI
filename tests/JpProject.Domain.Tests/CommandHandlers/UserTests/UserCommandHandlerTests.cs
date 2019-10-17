@@ -137,7 +137,7 @@ namespace JpProject.Domain.Tests.CommandHandlers.UserTests
         [Fact]
         public async Task ShouldNotGenerateResetLinkIfNotProvideEmail()
         {
-            var command = UserCommandFaker.GenerateSendResetLinkCommand(email: string.Empty).Generate();
+            var command = UserCommandFaker.GenerateSendResetLinkCommand(username: string.Empty).Generate();
 
             var result = await _commandHandler.Handle(command, _tokenSource.Token);
 

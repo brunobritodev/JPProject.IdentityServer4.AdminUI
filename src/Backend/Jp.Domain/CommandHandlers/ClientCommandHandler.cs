@@ -301,7 +301,6 @@ namespace Jp.Domain.CommandHandlers
         }
 
 
-
         public async Task<bool> Handle(CopyClientCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid())
@@ -310,7 +309,7 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var savedClient = await _clientRepository.GetByClientId(request.Client.ClientId);
+            var savedClient = await _clientRepository.GetClient(request.Client.ClientId);
             if (savedClient == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("Client", "Client not found"));

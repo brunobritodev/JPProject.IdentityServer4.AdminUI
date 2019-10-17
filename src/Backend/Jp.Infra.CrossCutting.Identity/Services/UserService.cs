@@ -464,11 +464,15 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-        public async Task<bool> RemoveClaim(Guid userId, string type)
+        public async Task<bool> RemoveClaim(Guid userId, string claimType, string value)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
             var claims = await _userManager.GetClaimsAsync(user);
-            var claimToRemove = claims.First(c => c.Type == type);
+
+            var claimToRemove = string.IsNullOrEmpty(value) ?
+                                    claims.First(c => c.Type.Equals(claimType)) :
+                                    claims.First(c => c.Type.Equals(claimType) && c.Value.Equals(value));
+
             var result = await _userManager.RemoveClaimAsync(user, claimToRemove);
 
             foreach (var error in result.Errors)

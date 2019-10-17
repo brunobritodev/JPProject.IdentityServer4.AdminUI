@@ -193,7 +193,6 @@ ClientBin/
 *.publishsettings
 node_modules/
 orleans.codegen.cs
-package-lock.json
 
 # RIA/Silverlight projects
 Generated_Code/

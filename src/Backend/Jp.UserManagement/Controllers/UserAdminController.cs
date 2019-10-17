@@ -58,7 +58,6 @@ namespace Jp.Management.Controllers
             return Response(irs);
         }
 
-
         [HttpPut, Route("{username}/update"), Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> Update(string username, [FromBody] UserViewModel model)
         {

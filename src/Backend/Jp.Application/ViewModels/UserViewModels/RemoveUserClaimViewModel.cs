@@ -8,5 +8,7 @@ namespace Jp.Application.ViewModels.UserViewModels
         public string Type { get; set; }
         [Required]
         public string Username { get; set; }
+
+        public string Value { get; set; }
     }
 }

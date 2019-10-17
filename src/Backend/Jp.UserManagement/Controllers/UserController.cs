@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Jp.Application.Interfaces;
+﻿using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
@@ -7,6 +6,7 @@ using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
@@ -30,6 +30,20 @@ namespace Jp.Management.Controllers
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
+            }
+
+            await _userAppService.Register(model);
+
+            return Response(true);
+        }
+
+        [HttpPost, Route("add-user")]
+        public async Task<ActionResult<DefaultResponse<bool>>> AddUser([FromBody] RegisterUserViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(false);
             }
 
             await _userAppService.Register(model);
@@ -109,6 +123,6 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        
+
     }
 }

@@ -188,7 +188,7 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var success = await _userService.RemoveClaim(userDb.Id, request.Type);
+            var success = await _userService.RemoveClaim(userDb.Id, request.Type, request.Value);
 
             if (success)
             {
