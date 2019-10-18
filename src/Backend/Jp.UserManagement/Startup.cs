@@ -28,7 +28,6 @@ namespace Jp.Management
         {
             services
                 .AddMvcCore()
-                .AddAuthorization()
                 .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
@@ -49,14 +48,15 @@ namespace Jp.Management
             // Configure policies
             services.AddPolicies();
 
+            // Config automapper
+            services.AddAutoMapperSetup();
+
             // configure auth Server
             services.ConfigureOAuth2Server(Configuration);
 
             // configure openapi
             services.AddSwagger(Configuration);
 
-            // Config automapper
-            services.AddAutoMapperSetup();
 
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
@@ -80,6 +80,8 @@ namespace Jp.Management
             }
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseProblemDetails();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -89,8 +91,6 @@ namespace Jp.Management
                 c.OAuthAppName("User Management UI - full access");
 
             });
-
-            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

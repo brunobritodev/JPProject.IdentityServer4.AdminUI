@@ -70,7 +70,6 @@ namespace Jp.Application.AutoMapper
              * Identity Resource commands
              */
             CreateMap<IdentityResource, RegisterIdentityResourceCommand>().ConstructUsing(c => new RegisterIdentityResourceCommand(c));
-            CreateMap<IdentityResourceViewModel, UpdateIdentityResourceCommand>().ConstructUsing(c => new UpdateIdentityResourceCommand(c, c.OldName));
             CreateMap<RemoveIdentityResourceViewModel, RemoveIdentityResourceCommand>().ConstructUsing(c => new RemoveIdentityResourceCommand(c.Name));
 
             /*
@@ -91,7 +90,6 @@ namespace Jp.Application.AutoMapper
              */
             CreateMap<RemoveRoleViewModel, RemoveRoleCommand>().ConstructUsing(c => new RemoveRoleCommand(c.Name));
             CreateMap<SaveRoleViewModel, SaveRoleCommand>().ConstructUsing(c => new SaveRoleCommand(c.Name));
-            CreateMap<UpdateRoleViewModel, UpdateRoleCommand>().ConstructUsing(c => new UpdateRoleCommand(c.Name, c.OldName));
             CreateMap<RemoveUserFromRoleViewModel, RemoveUserFromRoleCommand>().ConstructUsing(c => new RemoveUserFromRoleCommand(c.Role, c.Username));
 
         }

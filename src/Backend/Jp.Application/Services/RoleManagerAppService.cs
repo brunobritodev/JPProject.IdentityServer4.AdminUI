@@ -57,9 +57,9 @@ namespace Jp.Application.Services
             return Bus.SendCommand(command);
         }
 
-        public Task Update(UpdateRoleViewModel model)
+        public Task Update(string id, UpdateRoleViewModel model)
         {
-            var command = _mapper.Map<UpdateRoleCommand>(model);
+            var command = new UpdateRoleCommand(model.Name , id);
             return Bus.SendCommand(command);
         }
 

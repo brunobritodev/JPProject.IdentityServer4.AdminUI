@@ -5,8 +5,8 @@
 
 export const environment = {
   production: false,
-  ResourceServer: "http://localhost:5003/",
-  IssuerUri:  "http://localhost:5000",
+  ResourceServer: "https://localhost:5002/",
+  IssuerUri:  "https://localhost:5000",
   RequireHttps: false,
   Uri: "http://localhost:4300",
   defaultTheme: "E"

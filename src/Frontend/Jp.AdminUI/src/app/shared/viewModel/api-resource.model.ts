@@ -1,4 +1,4 @@
-import { Scope } from "./scope.model";
+import { Scope } from './scope.model';
 
 export class ApiResource {
     constructor() {
@@ -12,7 +12,6 @@ export class ApiResource {
     displayName: string;
     description: string;
     userClaims: string[];
-    oldApiResourceId: string;
 }
 
 

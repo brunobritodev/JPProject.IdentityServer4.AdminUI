@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { ApiResourceService } from "../api-resource.service";
-import { ApiResource } from "@shared/viewModel/api-resource.model";
-import { StandardClaims } from "@shared/viewModel/standard-claims.model";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ApiResource } from '@shared/viewModel/api-resource.model';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { StandardClaims } from '@shared/viewModel/standard-claims.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import * as jsonpatch from 'fast-json-patch';
+import { flatMap, tap } from 'rxjs/operators';
 
+import { ApiResourceService } from '../api-resource.service';
 
 @Component({
     selector: "app-api-resource-edit",
@@ -26,6 +27,7 @@ export class ApiResourceEditComponent implements OnInit {
     public showButtonLoading: boolean;
     public resourceId: string;
     standardClaims: string[];
+    patchObserver: jsonpatch.Observer<ApiResource>;
 
     constructor(
         private route: ActivatedRoute,
@@ -35,7 +37,11 @@ export class ApiResourceEditComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.resourceId = p["name"])).pipe(flatMap(p => this.apiResourceService.getApiResourceDetails(p["name"]))).subscribe(result => this.model = result);
+        this.route.params.pipe(
+                tap(p => this.resourceId = p["name"]),
+                flatMap(p => this.apiResourceService.getApiResourceDetails(p["name"])),
+                tap(resource => this.patchObserver = jsonpatch.observe(resource)))
+            .subscribe(result => this.model = result);
         this.errors = [];
         this.showButtonLoading = false;
         this.standardClaims = StandardClaims.claims;
@@ -44,8 +50,7 @@ export class ApiResourceEditComponent implements OnInit {
     public update() {
         this.showButtonLoading = true;
         this.errors = [];
-        this.model.oldApiResourceId = this.resourceId;
-        this.apiResourceService.update(this.model).subscribe(
+        this.apiResourceService.partialUpdate(this.resourceId, jsonpatch.generate(this.patchObserver)).subscribe(
             () => {
                 this.showSuccessMessage();
                 this.showButtonLoading = false;

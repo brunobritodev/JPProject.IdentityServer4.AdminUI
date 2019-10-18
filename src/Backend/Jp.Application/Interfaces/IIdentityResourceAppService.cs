@@ -11,7 +11,7 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<IdentityResourceListView>> GetIdentityResources();
         Task<IdentityResource> GetDetails(string name);
         Task Save(IdentityResource model);
-        Task Update(IdentityResource model);
+        Task Update(string resource, IdentityResource model);
         Task Remove(RemoveIdentityResourceViewModel model);
     }
 }

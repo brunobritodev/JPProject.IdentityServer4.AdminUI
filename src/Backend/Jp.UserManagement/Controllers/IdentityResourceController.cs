@@ -5,6 +5,7 @@ using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -53,7 +54,7 @@ namespace Jp.Management.Controllers
         }
 
         [HttpPut("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> Update(string id, [FromBody] IdentityResourceViewModel model)
+        public async Task<ActionResult> Update(string id, [FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
             {
@@ -61,9 +62,29 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            model.OldName = id;
-            await _identityResourceAppService.Update(model);
-            return ResponsePut();
+            await _identityResourceAppService.Update(id, model);
+            return ResponsePutPatch();
+        }
+
+        [HttpPatch("{id}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> PartialUpdate(string id, [FromBody] JsonPatchDocument<IdentityResource> model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return ModelStateErrorResponseError();
+            }
+
+            var ir = await _identityResourceAppService.GetDetails(id);
+            if (ir == null)
+            {
+                ModelState.AddModelError("id", "Invalid Api Resource");
+                return ModelStateErrorResponseError();
+            }
+
+            model.ApplyTo(ir);
+            await _identityResourceAppService.Update(id, ir);
+            return ResponsePutPatch();
         }
 
         [HttpDelete("{id}"), Authorize(Policy = "Admin")]

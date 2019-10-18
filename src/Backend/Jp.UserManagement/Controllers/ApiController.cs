@@ -52,7 +52,7 @@ namespace Jp.Management.Controllers
             }));
         }
 
-        protected ActionResult ResponsePut()
+        protected ActionResult ResponsePutPatch()
         {
             if (IsValidOperation())
             {

@@ -1,23 +1,28 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "@env/environment";
-import { Observable } from "rxjs";
-import { DefaultResponse } from "../viewModel/default-response.model";
-import { UserProfile, ListOfUsers } from "../viewModel/userProfile.model";
-import { UserClaim } from "../viewModel/user-claim.model";
-import { UserRole } from "../viewModel/user-role.model";
-import { UserLogin } from "../viewModel/user-login.model";
-import { ResetPassword } from "../viewModel/reset-password.model";
-import { EventHistoryData } from "../viewModel/event-history-data.model";
-import { map } from "rxjs/operators";
-import { Operation } from "fast-json-patch";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { Operation } from 'fast-json-patch';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { DefaultResponse } from '../viewModel/default-response.model';
+import { EventHistoryData } from '../viewModel/event-history-data.model';
+import { ResetPassword } from '../viewModel/reset-password.model';
+import { UserClaim } from '../viewModel/user-claim.model';
+import { UserLogin } from '../viewModel/user-login.model';
+import { UserRole } from '../viewModel/user-role.model';
+import { ListOfUsers, UserProfile } from '../viewModel/userProfile.model';
 
 @Injectable()
 export class UserService {
     
 
+    endpoint: string;
+
     constructor(private http: HttpClient) {
+        this.endpoint = environment.ResourceServer + "roles";
     }
+
 
     public getUsers(quantity: number, page: number): Observable<DefaultResponse<ListOfUsers>> {
         return this.http.get<DefaultResponse<ListOfUsers>>(environment.ResourceServer + `UserAdmin/list?q=${quantity}&p=${page}`);
@@ -133,14 +138,7 @@ export class UserService {
         return this.http.get<DefaultResponse<boolean>>(environment.ResourceServer + "user/checkEmail", { params: params });
     }
 
-    public getUsersFromRole(role: string): Observable<UserProfile[]> {
-        let options = {
-            params: {
-                role: role
-            }
-        };
-        return this.http.get<DefaultResponse<UserProfile[]>>(environment.ResourceServer + "UserAdmin/users-from-role", options).pipe(map(a => a.data));
-    }
+
 
     public resetPassword(resetPassword: ResetPassword): Observable<DefaultResponse<boolean>> {
         return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "UserAdmin/reset-password", resetPassword);

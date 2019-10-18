@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { ClientService } from "@app/clients/clients.service";
-import { NewClient } from "@shared/viewModel/client.model";
-import { Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClientService } from '@app/clients/clients.service';
+import { TranslatorService } from '@core/translator/translator.service';
+import { NewClient } from '@shared/viewModel/client.model';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -48,33 +48,27 @@ export class ClientAddComponent implements OnInit {
         });
     }
 
-    public selectClient(type: number) { 
-        this.model.clientType = type; 
+    public selectClient(type: number) {
+        this.model.clientType = type;
     }
 
 
     public save() {
         this.showButtonLoading = true;
-        try {
-            this.clientService.save(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.router.navigate(['/clients/edit', this.model.clientId]);
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
+        this.clientService.save(this.model).subscribe(
+            registerResult => {
+                if (registerResult) {
+                    this.showSuccessMessage();
+                    this.router.navigate(['/clients/edit', this.model.clientId]);
                 }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
+
     }
 
 }

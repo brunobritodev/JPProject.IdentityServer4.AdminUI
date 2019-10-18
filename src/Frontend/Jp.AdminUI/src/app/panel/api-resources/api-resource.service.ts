@@ -1,10 +1,11 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "@env/environment";
-import { Observable } from "rxjs";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { ApiResource, ApiResourceSecret } from "@shared/viewModel/api-resource.model";
-import { Scope } from "@shared/viewModel/scope.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { ApiResource, ApiResourceSecret } from '@shared/viewModel/api-resource.model';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { Scope } from '@shared/viewModel/scope.model';
+import { Operation } from 'fast-json-patch';
+import { Observable } from 'rxjs';
 
 
 @Injectable()
@@ -28,8 +29,12 @@ export class ApiResourceService {
         return this.http.post<ApiResource>(`${this.endpoint}`, model);
     }
 
-    public update(model: ApiResource): Observable<void> {
-        return this.http.put<void>(`${this.endpoint}/${model.oldApiResourceId}`, model);
+    public update(resource: string, model: ApiResource): Observable<void> {
+        return this.http.put<void>(`${this.endpoint}/${resource}`, model);
+    }
+
+    public partialUpdate(resource: string, patch: Operation[]): Observable<void> {
+        return this.http.patch<void>(`${this.endpoint}/${resource}`, patch);
     }
 
     public remove(name: string): any {

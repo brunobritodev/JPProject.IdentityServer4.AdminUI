@@ -157,7 +157,7 @@ namespace Jp.Application.Services
             return Bus.SendCommand(registerCommand);
         }
 
-        public async Task<IEnumerable<UserListViewModel>> GetUsersInRole(string[] role)
+        public async Task<IEnumerable<UserListViewModel>> GetUsersInRole(string role)
         {
             return _mapper.Map<IEnumerable<UserListViewModel>>(await _userService.GetUserFromRole(role));
         }

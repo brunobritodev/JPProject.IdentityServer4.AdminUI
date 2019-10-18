@@ -17,7 +17,7 @@ namespace Jp.Infra.Data.Repository
 
         public Task<List<PersistedGrant>> GetGrants(PagingViewModel paging)
         {
-            return DbSet.AsNoTracking().OrderByDescending(s => s.CreationTime).Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+            return DbSet.AsNoTracking().OrderByDescending(s => s.CreationTime).Skip((paging.Offset - 1) * paging.Limit).Take(paging.Limit).ToListAsync();
         }
 
         public Task<int> Count()

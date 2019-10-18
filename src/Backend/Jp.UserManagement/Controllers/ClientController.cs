@@ -66,7 +66,7 @@ namespace Jp.Management.Controllers
 
             client.OldClientId = id;
             await _clientAppService.Update(client);
-            return ResponsePut();
+            return ResponsePutPatch();
         }
 
         [HttpDelete("{id}"), Authorize(Policy = "Admin")]

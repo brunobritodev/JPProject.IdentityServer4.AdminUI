@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap, map, debounceTime } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-import { UserService } from "@shared/services/user.service";
-import { UserRole } from "@shared/viewModel/user-role.model";
-import { RoleService } from "@shared/services/role.service";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { RoleService } from '@shared/services/role.service';
+import { UserService } from '@shared/services/user.service';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { UserRole } from '@shared/viewModel/user-role.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import { debounceTime, flatMap, map, tap } from 'rxjs/operators';
 
 
 @Component({
@@ -46,7 +46,7 @@ export class UserRolesComponent implements OnInit {
         this.errors = [];
         this.model = new UserRole();
         this.showButtonLoading = false;
-        this.roleService.getAvailableRoles().subscribe(roles => this.roles = roles.data.map(r => r.name));
+        this.roleService.getAvailableRoles().subscribe(roles => this.roles = roles.map(r => r.name));
         
     }
 

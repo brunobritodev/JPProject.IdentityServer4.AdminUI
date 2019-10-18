@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { PersistedGrantsService } from "../persisted-grants.service";
-import { PersistedGrant } from "@shared/viewModel/persisted-grants.model";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
+import { Component, OnInit } from '@angular/core';
+import { TranslatorService } from '@core/translator/translator.service';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { PersistedGrant } from '@shared/viewModel/persisted-grants.model';
+import Swal from 'sweetalert2';
 
-import Swal from 'sweetalert2'
+import { PersistedGrantsService } from '../persisted-grants.service';
 
 @Component({
     selector: "app-persisted-grants-list",
@@ -30,8 +30,8 @@ export class PersistedGrantListComponent implements OnInit {
 
     public loadGrants() {
         this.persistedGrantService.getPersistedGrants(this.quantity, this.page).subscribe(a => {
-            this.persistedGrants = a.data.persistedGrants;
-            this.total = a.data.total;
+            this.persistedGrants = a.persistedGrants;
+            this.total = a.total;
             this.persistedGrants.forEach(grant => grant.parsedData = JSON.parse(grant.data));
         });
     }

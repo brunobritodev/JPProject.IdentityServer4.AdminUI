@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentValidation;
-using Jp.Domain.Commands.User;
+﻿using FluentValidation;
 using Jp.Domain.Commands.UserManagement;
 
 namespace Jp.Domain.Validations.UserManagement
@@ -12,8 +8,8 @@ namespace Jp.Domain.Validations.UserManagement
         protected void ValidateName()
         {
             RuleFor(c => c.Name)
-                .NotEmpty().WithMessage("Please ensure you have entered the Username")
-                .Length(2, 150).WithMessage("The Username must have between 2 and 150 characters");
+                .NotEmpty().WithMessage("Please ensure you have entered the name")
+                .Length(2, 150).WithMessage("The name must have between 2 and 150 characters");
         }
 
 

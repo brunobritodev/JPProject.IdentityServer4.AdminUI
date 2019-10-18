@@ -12,7 +12,7 @@ namespace Jp.Application.Interfaces
         Task<IEnumerable<ApiResourceListViewModel>> GetApiResources();
         Task<ApiResource> GetDetails(string name);
         Task Save(ApiResource model);
-        Task Update(UpdateApiResourceViewModel model);
+        Task Update(string id, ApiResource model);
         Task Remove(RemoveApiResourceViewModel model);
         Task<IEnumerable<SecretViewModel>> GetSecrets(string name);
         Task RemoveSecret(RemoveApiSecretViewModel model);

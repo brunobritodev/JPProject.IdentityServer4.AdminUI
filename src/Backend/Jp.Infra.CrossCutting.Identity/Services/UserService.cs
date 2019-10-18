@@ -379,9 +379,9 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         {
             List<UserIdentity> users = null;
             if (!string.IsNullOrEmpty(paging.Search))
-                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip((paging.Offset - 1) * paging.Limit).Take(paging.Limit).ToListAsync();
             else
-                users = await _userManager.Users.Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+                users = await _userManager.Users.Skip((paging.Offset - 1) * paging.Limit).Take(paging.Limit).ToListAsync();
             return users.Select(GetUser);
         }
 
@@ -535,14 +535,9 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-        public async Task<IEnumerable<User>> GetUserFromRole(string[] role)
+        public async Task<IEnumerable<User>> GetUserFromRole(string role)
         {
-            var users = new List<UserIdentity>();
-            foreach (var s in role)
-            {
-                users.AddRange(await _userManager.GetUsersInRoleAsync(s));
-            }
-            return users.Select(GetUser);
+            return (await _userManager.GetUsersInRoleAsync(role)).Select(GetUser);
         }
 
         public async Task<bool> RemoveUserFromRole(string name, string username)

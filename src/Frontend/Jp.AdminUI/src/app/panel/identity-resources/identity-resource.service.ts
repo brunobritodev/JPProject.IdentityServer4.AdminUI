@@ -1,13 +1,14 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "@env/environment";
-import { Observable } from "rxjs";
-import { IdentityResource } from "@shared/viewModel/identity-resource.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { IdentityResource } from '@shared/viewModel/identity-resource.model';
+import { Operation } from 'fast-json-patch';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class IdentityResourceService {
     endpoint: string;
-    
+
 
     constructor(private http: HttpClient) {
         this.endpoint = environment.ResourceServer + "identity-resources";
@@ -26,8 +27,12 @@ export class IdentityResourceService {
         return this.http.post<IdentityResource>(`${this.endpoint}`, model);
     }
 
-    public update(model: IdentityResource): Observable<void> {
-        return this.http.put<void>(`${this.endpoint}/${name}`, model);
+    public update(resource: string, model: IdentityResource): Observable<void> {
+        return this.http.put<void>(`${this.endpoint}/${resource}`, model);
+    }
+
+    public partialUpdate(resource: string, patch: Operation[]): Observable<void> {
+        return this.http.patch<void>(`${this.endpoint}/${resource}`, patch);
     }
 
     public remove(name: string): any {

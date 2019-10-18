@@ -7,6 +7,7 @@ using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Commands.Clients;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,10 +42,11 @@ namespace Jp.Application.Services
             _clientClaimRepository = clientClaimRepository;
         }
 
-        public Task<IEnumerable<ClientListViewModel>> GetClients()
+        public async Task<IEnumerable<ClientListViewModel>> GetClients()
         {
-            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(_clientRepository.GetAll().AsEnumerable().Select(a => a.ToModel()).OrderBy(a => a.ClientName).ToList());
-            return Task.FromResult(resultado);
+            var clients = await _clientRepository.GetAll().OrderBy(a => a.ClientName).ToListAsync();
+            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(clients.Select(a => a.ToModel()));
+            return resultado;
         }
 
         public async Task<Client> GetClientDetails(string clientId)

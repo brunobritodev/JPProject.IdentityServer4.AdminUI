@@ -14,7 +14,7 @@ namespace Jp.Application.ViewModels.UserViewModels
         [Phone] [Display(Name = "Telephone")] public string PhoneNumber { get; set; }
 
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
 

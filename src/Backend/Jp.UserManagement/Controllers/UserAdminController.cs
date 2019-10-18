@@ -41,8 +41,8 @@ namespace Jp.Management.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="q">Quantity - At least 1 and max 50</param>
-        /// <param name="p">Page - For pagination</param>
+        /// <param name="q">Limit - At least 1 and max 50</param>
+        /// <param name="p">Offset - For pagination</param>
         /// <returns></returns>
         [HttpGet, Route("list")]
         public async Task<ActionResult<DefaultResponse<ListOfUsersViewModel>>> List([Range(1, 50)] int? q = 10, [Range(1, int.MaxValue)] int? p = 1, string s = null)
@@ -179,12 +179,6 @@ namespace Jp.Management.Controllers
             return Response(true);
         }
 
-        [HttpGet, Route("users-from-role")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<UserListViewModel>>>> UsersFromRole(string[] role)
-        {
-            var clients = await _userManageAppService.GetUsersInRole(role);
-            return Response(clients);
-        }
 
         [Route("reset-password"), HttpPut, Authorize(Policy = "Admin")]
         public async Task<ActionResult<DefaultResponse<bool>>> ResetPassword([FromBody] AdminChangePasswordViewodel model)

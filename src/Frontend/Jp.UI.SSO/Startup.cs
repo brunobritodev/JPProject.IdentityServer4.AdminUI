@@ -18,12 +18,13 @@ namespace Jp.UI.SSO
 {
     public class Startup
     {
+        private readonly IWebHostEnvironment _env;
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
+            _env = env;
             Configuration = configuration;
-
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -50,7 +51,7 @@ namespace Jp.UI.SSO
             services.AddMvcLocalization();
 
             // Configure identity server
-            services.AddOAuth2(Configuration).ConfigureIdentityServerDatabase(Configuration);
+            services.AddOAuth2(Configuration, _env).ConfigureIdentityServerDatabase(Configuration);
 
             // Improve password security
             services.UpgradePasswordSecurity().UseArgon2<UserIdentity>();
@@ -99,7 +100,6 @@ namespace Jp.UI.SSO
                 endpoints.MapRazorPages();
             });
         }
-
 
         private void RegisterServices(IServiceCollection services)
         {

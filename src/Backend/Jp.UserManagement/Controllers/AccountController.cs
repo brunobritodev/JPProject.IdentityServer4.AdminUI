@@ -8,6 +8,7 @@ using Jp.Domain.Core.Notifications;
 using Jp.Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -51,7 +52,22 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.UpdateProfile(model);
-            return ResponsePut();
+            return ResponsePutPatch();
+        }
+
+        [HttpPatch, Route("update-profile"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> PartialUpdate(string username, [FromBody] JsonPatchDocument<UserViewModel> model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return ModelStateErrorResponseError();
+            }
+
+            var actualUser = await _userAppService.GetUserDetails(_systemUser.Username);
+            model.ApplyTo(actualUser);
+            await _userAppService.UpdateProfile(actualUser);
+            return ResponsePutPatch();
         }
 
 
@@ -66,7 +82,7 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.UpdateProfilePicture(model);
-            return ResponsePut();
+            return ResponsePutPatch();
         }
 
         [HttpPut("change-password")]
@@ -80,7 +96,7 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.ChangePassword(model);
-            return ResponsePut();
+            return ResponsePutPatch();
         }
 
         [HttpPut("create-password")]
@@ -94,7 +110,7 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.CreatePassword(model);
-            return ResponsePut();
+            return ResponsePutPatch();
         }
 
         [HttpDelete("")]

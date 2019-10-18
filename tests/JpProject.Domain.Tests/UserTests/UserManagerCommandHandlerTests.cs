@@ -4,6 +4,7 @@ using Jp.Domain.CommandHandlers;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
 using Jp.Domain.Interfaces;
+using JpProject.Domain.Tests.CommandHandlers.UserTests.Fakers;
 using JpProject.Domain.Tests.UserTests.Fakers;
 using Moq;
 using System;
@@ -45,9 +46,9 @@ namespace JpProject.Domain.Tests.UserTests
 
             _userService.Setup(s => s.FindByNameAsync(It.Is<string>(e => e == command.Username))).ReturnsAsync(user);
             _userService.Setup(s => s.RemoveClaim(
-                It.Is<Guid>(c => c == user.Id),
-                It.Is<string>(c => c.Equals(command.Type)),
-                    It.Is<string>(c => string.IsNullOrEmpty(c))))
+                       It.Is<Guid>(c => c == user.Id),
+                     It.Is<string>(c => c.Equals(command.Type)),
+                        It.Is<string>(c => string.IsNullOrEmpty(c))))
                 .ReturnsAsync(true);
 
             _uow.Setup(s => s.Commit()).Returns(true);

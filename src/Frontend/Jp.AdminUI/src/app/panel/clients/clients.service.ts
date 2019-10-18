@@ -1,11 +1,10 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
-import { Client, ClientSecret, ClientProperty, NewClient, ClientClaim } from "@shared/viewModel/client.model";
-
-import { environment } from "@env/environment";
-import { Observable } from "rxjs";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { ClientList } from "@shared/viewModel/client-list.model";
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { ClientList } from '@shared/viewModel/client-list.model';
+import { Client, ClientClaim, ClientProperty, ClientSecret, NewClient } from '@shared/viewModel/client.model';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ClientService {
@@ -25,8 +24,8 @@ export class ClientService {
         return this.http.get<Client>(`${this.endpoint}/${clientId}`);
     }
 
-    public save(model: NewClient): Observable<DefaultResponse<Client>> {
-        return this.http.post<DefaultResponse<Client>>(this.endpoint, model);
+    public save(model: NewClient): Observable<Client> {
+        return this.http.post<Client>(this.endpoint, model);
     }
 
     public update(model: Client): Observable<void> {

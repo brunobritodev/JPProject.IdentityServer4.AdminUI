@@ -4,7 +4,6 @@ using Jp.Infra.CrossCutting.Bus;
 using Jp.Infra.CrossCutting.Identity.Authorization;
 using Jp.Infra.CrossCutting.Tools.Serializer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -32,7 +31,7 @@ namespace Jp.Infra.CrossCutting.IoC
 
             // Infra - Data
             RepositoryBootStrapper.RegisterServices(services);
-            
+
 
             // Infra - Identity Services
             IdentityBootStrapper.RegisterServices(services, configuration);
@@ -40,7 +39,7 @@ namespace Jp.Infra.CrossCutting.IoC
             // Infra Tools
             // ASP.NET Authorization Polices
             services.AddSingleton<ISerializer, ServiceStackTextSerializer>();
-            
+
 
         }
     }

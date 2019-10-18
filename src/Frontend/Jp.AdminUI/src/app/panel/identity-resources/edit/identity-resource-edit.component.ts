@@ -1,13 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-import { IdentityResourceService } from "../identity-resource.service";
-import { IdentityResource } from "@shared/viewModel/identity-resource.model";
-import { StandardClaims } from "@shared/viewModel/standard-claims.model";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { IdentityResource } from '@shared/viewModel/identity-resource.model';
+import { StandardClaims } from '@shared/viewModel/standard-claims.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import * as jsonpatch from 'fast-json-patch';
+import { Observable } from 'rxjs';
+import { flatMap, tap } from 'rxjs/operators';
+
+import { IdentityResourceService } from '../identity-resource.service';
 
 
 @Component({
@@ -27,6 +29,7 @@ export class IdentityResourceEditComponent implements OnInit {
     public showButtonLoading: boolean;
     standardClaims: string[];
     public name: string;
+    patchObserver: jsonpatch.Observer<IdentityResource>;
 
     constructor(
         private route: ActivatedRoute,
@@ -39,8 +42,9 @@ export class IdentityResourceEditComponent implements OnInit {
 
         this.route.params
             .pipe(tap(p => this.name = p["name"]))
-            .pipe(flatMap(p =>
-                this.identityResourceService.getIdentityResourceDetails(p["name"])
+            .pipe(
+                flatMap(p => this.identityResourceService.getIdentityResourceDetails(p["name"])),
+                tap(resource => this.patchObserver = jsonpatch.observe(resource)
             ))
             .subscribe(result => this.model = result);
         this.errors = [];
@@ -52,16 +56,20 @@ export class IdentityResourceEditComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        this.model.oldName = this.name;
-        this.identityResourceService.update(this.model).subscribe(
+        this.identityResourceService.partialUpdate(this.name, jsonpatch.generate(this.patchObserver)).subscribe(
             () => {
+                this.updateCurrentResourceId();
                 this.showSuccessMessage();
+                this.showButtonLoading = false;
             },
             err => {
                 this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );
+    }
+    updateCurrentResourceId() {
+        this.name = this.model.name;
     }
 
     public addClaim(claim: string) {
