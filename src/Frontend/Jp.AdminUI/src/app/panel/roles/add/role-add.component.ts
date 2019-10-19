@@ -2,12 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
 import { RoleService } from '@shared/services/role.service';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { Role } from '@shared/viewModel/role.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
-import { Observable } from 'rxjs';
-import { flatMap, tap } from 'rxjs/operators';
-import Swal from 'sweetalert2';
 
 @Component({
     selector: "app-role-add",
@@ -49,7 +46,7 @@ export class RoleAddComponent implements OnInit {
                 }
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             });
 

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { IdentityResource } from '@shared/viewModel/identity-resource.model';
 import { StandardClaims } from '@shared/viewModel/standard-claims.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import * as jsonpatch from 'fast-json-patch';
-import { Observable } from 'rxjs';
 import { flatMap, tap } from 'rxjs/operators';
 
 import { IdentityResourceService } from '../identity-resource.service';
@@ -63,7 +62,7 @@ export class IdentityResourceEditComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );

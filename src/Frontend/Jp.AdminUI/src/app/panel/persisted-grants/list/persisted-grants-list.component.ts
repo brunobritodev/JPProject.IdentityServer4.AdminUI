@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslatorService } from '@core/translator/translator.service';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { PersistedGrant } from '@shared/viewModel/persisted-grants.model';
 import Swal from 'sweetalert2';
 
@@ -46,19 +46,17 @@ export class PersistedGrantListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                
+
             }).then(isConfirm => {
                 if (isConfirm) {
 
                     this.persistedGrantService.remove(name).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadGrants();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                        () => {
+                            this.loadGrants();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );

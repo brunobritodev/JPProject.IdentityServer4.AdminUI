@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { ClientList } from '@shared/viewModel/client-list.model';
 import { Client, ClientClaim, ClientProperty, ClientSecret, NewClient } from '@shared/viewModel/client.model';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { Operation } from 'fast-json-patch';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -28,17 +29,21 @@ export class ClientService {
         return this.http.post<Client>(this.endpoint, model);
     }
 
-    public update(model: Client): Observable<void> {
-        return this.http.put<void>(`${this.endpoint}/${model.oldClientId}`, model);
+    public update(client: string, model: Client): Observable<void> {
+        return this.http.put<void>(`${this.endpoint}/${client}`, model);
     }
 
+    public partialUpdate(client: string, patch: Operation[]): Observable<void> {
+        return this.http.patch<void>(`${this.endpoint}/${client}`, patch);
+    }
+    
     public copy(clientId: string): Observable<Client> {
         const command = { };
         return this.http.post<Client>(`${this.endpoint}/${clientId}/copy`, command);
     }
 
-    public remove(clientId: string) {
-        return this.http.delete(`${this.endpoint}/${clientId}`);
+    public remove(clientId: string): Observable<void> {
+        return this.http.delete<void>(`${this.endpoint}/${clientId}`);
     }
 
     public getClientSecrets(clientId: string): Observable<ClientSecret[]> {

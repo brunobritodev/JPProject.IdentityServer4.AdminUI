@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { UserService } from "@shared/services/user.service";
-import { UserProfile, ListOfUsers } from "@shared/viewModel/userProfile.model";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable, Subject } from "rxjs";
-import { EventHistoryData } from "@shared/viewModel/event-history-data.model";
-import { debounceTime, switchMap } from "rxjs/operators";
-import Swal from 'sweetalert2'
+import { Component, OnInit } from '@angular/core';
+import { TranslatorService } from '@core/translator/translator.service';
+import { UserService } from '@shared/services/user.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { EventHistoryData } from '@shared/viewModel/event-history-data.model';
+import { ListOfUsers, UserProfile } from '@shared/viewModel/userProfile.model';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: "app-user-list",
@@ -34,16 +34,16 @@ export class UserListComponent implements OnInit {
         this.userSearch
             .pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.findUsers(a, this.quantity, this.page)))
-            .subscribe((response: DefaultResponse<ListOfUsers>) => {
-                this.users = response.data.users;
-                this.total = response.data.total;
+            .subscribe((response: ListOfUsers) => {
+                this.users = response.users;
+                this.total = response.total;
             });
     }
 
     public loadResources() {
         this.userService.getUsers(this.quantity, this.page).subscribe(a => {
-            this.users = a.data.users;
-            this.total = a.data.total;
+            this.users = a.users;
+            this.total = a.total;
         });
     }
 
@@ -57,19 +57,17 @@ export class UserListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                
+
             }).then(isConfirm => {
                 if (isConfirm) {
 
                     this.userService.remove(id).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadResources();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                        () => {
+                            this.loadResources();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );

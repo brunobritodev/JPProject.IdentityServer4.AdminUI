@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { IdentityResourceService } from "../identity-resource.service";
-import { IdentityResource } from "@shared/viewModel/identity-resource.model";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import Swal from 'sweetalert2'
+import { Component, OnInit } from '@angular/core';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { IdentityResource } from '@shared/viewModel/identity-resource.model';
+import Swal from 'sweetalert2';
+
+import { IdentityResourceService } from '../identity-resource.service';
 
 @Component({
     selector: "app-identity-resources-list",
@@ -47,7 +48,7 @@ export class IdentityResourceListComponent implements OnInit {
                             Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );

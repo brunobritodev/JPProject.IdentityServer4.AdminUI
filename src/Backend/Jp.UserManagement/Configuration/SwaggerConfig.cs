@@ -21,7 +21,7 @@ namespace Jp.Management.Configuration
                     {
                         Name = "Bruno Brito",
                         Email = "bhdebrito@gmail.com",
-                        Url = new Uri("http://www.brunobrito.net.br")
+                        Url = new Uri("https://www.brunobrito.net.br")
                     },
                     License = new OpenApiLicense()
                     {

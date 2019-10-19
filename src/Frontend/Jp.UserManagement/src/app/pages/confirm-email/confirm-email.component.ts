@@ -1,15 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Subscription } from "rxjs";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ConfirmEmail } from "../../shared/view-model/confirm-email.model";
-import { UserService } from "../../shared/services/user.service";
-import { DefaultResponse } from "../../shared/view-model/default-response.model";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
+import { Subscription } from 'rxjs';
+
+import { UserService } from '../../shared/services/user.service';
+import { ConfirmEmail } from '../../shared/view-model/confirm-email.model';
+import { DefaultResponse } from '../../shared/view-model/default-response.model';
 
 @Component({
     selector: "app-dashboard",
     templateUrl: "./confirm-email.component.html",
-    providers: [UserService,TranslatorService]
+    providers: [UserService, TranslatorService]
 })
 export class ConfirmEmailComponent implements OnInit, OnDestroy {
 
@@ -22,7 +23,7 @@ export class ConfirmEmailComponent implements OnInit, OnDestroy {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private authService: UserService,public translator: TranslatorService) {
+        private authService: UserService, public translator: TranslatorService) {
 
     }
 
@@ -45,8 +46,7 @@ export class ConfirmEmailComponent implements OnInit, OnDestroy {
                     return;
                 }
                 this.confirmEmail.code = params.code;
-                this.confirmEmail.email = params.user;
-                this.authService.confirmEmail(this.confirmEmail).subscribe(
+                this.authService.confirmEmail(params.user.toString(), this.confirmEmail).subscribe(
                     registerResult => {
                         if (registerResult.data.succeeded) this.emailConfirmed = true;
                         else registerResult.data.errors.forEach(i => this.errors.push(i.description));

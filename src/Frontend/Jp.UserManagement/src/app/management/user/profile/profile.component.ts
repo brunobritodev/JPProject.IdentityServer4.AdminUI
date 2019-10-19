@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { User } from '../../../shared/models/user.model';
-import { SettingsService } from '../../../core/settings/settings.service';
-import { ProfilePictureViewModel } from '../../../shared/view-model/file-upload.model';
-import { DefaultResponse } from '../../../shared/view-model/default-response.model';
-import { AccountManagementService } from '../account-management.service';
-import { ToastrService } from 'ngx-toastr';
 import { TranslatorService } from '@core/translator/translator.service';
-import { OAuthenticationService } from '@core/auth/auth.service';
 import { OAuthService } from 'angular-oauth2-oidc';
+import * as jsonpatch from 'fast-json-patch';
+import { ToastrService } from 'ngx-toastr';
+import { tap } from 'rxjs/operators';
+
+import { SettingsService } from '../../../core/settings/settings.service';
+import { User } from '../../../shared/models/user.model';
+import { ProfilePictureViewModel } from '../../../shared/view-model/file-upload.model';
+import { AccountManagementService } from '../account-management.service';
 
 @Component({
     templateUrl: 'profile.component.html',
@@ -26,6 +27,7 @@ export class ProfileComponent implements OnInit {
     updatingProfile: boolean;
     updatingImage: boolean;
     userProfile: object;
+    patchObserver: jsonpatch.Observer<User>;
 
     constructor(
         private settings: SettingsService, 
@@ -40,7 +42,11 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
         this.authService.loadUserProfile().then(a => this.userProfile = a);
         this.errors = [];
-        this.profileService.getUserData().subscribe((a: User) => {
+        this.profileService.getUserData()
+        .pipe(
+            tap(user => this.patchObserver = jsonpatch.observe(user))
+        )
+        .subscribe((a: User) => {
             this.user = a;
         });
     }

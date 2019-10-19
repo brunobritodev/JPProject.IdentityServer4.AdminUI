@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { ApiResource, ApiResourceSecret } from '@shared/viewModel/api-resource.model';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
 import { Scope } from '@shared/viewModel/scope.model';
 import { Operation } from 'fast-json-patch';
 import { Observable } from 'rxjs';

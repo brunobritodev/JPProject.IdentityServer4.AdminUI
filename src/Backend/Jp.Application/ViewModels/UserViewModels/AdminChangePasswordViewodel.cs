@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
 {
     public class AdminChangePasswordViewodel
     {
-        [Required]
-        [Display(Name = "Username")]
+        [JsonIgnore]
         public string Username { get; set; }
 
         [Required]

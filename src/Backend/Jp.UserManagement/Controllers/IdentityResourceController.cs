@@ -33,10 +33,10 @@ namespace Jp.Management.Controllers
             return ResponseGet(irs);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IdentityResource>> Details(string id)
+        [HttpGet("{resource}")]
+        public async Task<ActionResult<IdentityResource>> Details(string resource)
         {
-            var irs = await _identityResourceAppService.GetDetails(id);
+            var irs = await _identityResourceAppService.GetDetails(resource);
             return ResponseGet(irs);
         }
 
@@ -50,11 +50,11 @@ namespace Jp.Management.Controllers
             }
             await _identityResourceAppService.Save(model);
             var idr = await _identityResourceAppService.GetDetails(model.Name);
-            return ResponsePost(nameof(Details), new { id = model.Name }, idr);
+            return ResponsePost(nameof(Details), new { resource = model.Name }, idr);
         }
 
-        [HttpPut("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> Update(string id, [FromBody] IdentityResource model)
+        [HttpPut("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Update(string resource, [FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
             {
@@ -62,12 +62,12 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            await _identityResourceAppService.Update(id, model);
+            await _identityResourceAppService.Update(resource, model);
             return ResponsePutPatch();
         }
 
-        [HttpPatch("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> PartialUpdate(string id, [FromBody] JsonPatchDocument<IdentityResource> model)
+        [HttpPatch("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> PartialUpdate(string resource, [FromBody] JsonPatchDocument<IdentityResource> model)
         {
             if (!ModelState.IsValid)
             {
@@ -75,22 +75,22 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            var ir = await _identityResourceAppService.GetDetails(id);
+            var ir = await _identityResourceAppService.GetDetails(resource);
             if (ir == null)
             {
-                ModelState.AddModelError("id", "Invalid Api Resource");
+                ModelState.AddModelError("resource", "Invalid Api Resource");
                 return ModelStateErrorResponseError();
             }
 
             model.ApplyTo(ir);
-            await _identityResourceAppService.Update(id, ir);
+            await _identityResourceAppService.Update(resource, ir);
             return ResponsePutPatch();
         }
 
-        [HttpDelete("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<bool>> Remove(string id)
+        [HttpDelete("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Remove(string resource)
         {
-            var model = new RemoveIdentityResourceViewModel(id);
+            var model = new RemoveIdentityResourceViewModel(resource);
             await _identityResourceAppService.Remove(model);
             return ResponseDelete();
         }

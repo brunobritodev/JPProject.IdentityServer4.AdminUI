@@ -35,10 +35,10 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ApiResource>> Details(string id)
+        [HttpGet("{resource}")]
+        public async Task<ActionResult<ApiResource>> Details(string resource)
         {
-            var irs = await _apiResourceAppService.GetDetails(id);
+            var irs = await _apiResourceAppService.GetDetails(resource);
             return ResponseGet(irs);
         }
 
@@ -53,11 +53,11 @@ namespace Jp.Management.Controllers
             await _apiResourceAppService.Save(model);
             var apires = await _apiResourceAppService.GetDetails(model.Name);
 
-            return ResponsePost(nameof(Details), new { id = model.Name }, apires);
+            return ResponsePost(nameof(Details), new { resource = model.Name }, apires);
         }
 
-        [HttpPut("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<bool>> Update(string id, [FromBody] ApiResource model)
+        [HttpPut("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Update(string resource, [FromBody] ApiResource model)
         {
             if (!ModelState.IsValid)
             {
@@ -65,12 +65,12 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            await _apiResourceAppService.Update(id, model);
+            await _apiResourceAppService.Update(resource, model);
             return ResponsePutPatch();
         }
 
-        [HttpPatch("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<bool>> PartialUpdate(string id, [FromBody] JsonPatchDocument<ApiResource> model)
+        [HttpPatch("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> PartialUpdate(string resource, [FromBody] JsonPatchDocument<ApiResource> model)
         {
             if (!ModelState.IsValid)
             {
@@ -78,45 +78,45 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            var ar = await _apiResourceAppService.GetDetails(id);
+            var ar = await _apiResourceAppService.GetDetails(resource);
             if (ar == null)
             {
-                ModelState.AddModelError("id", "Invalid Api Resource");
+                ModelState.AddModelError("resource", "Invalid Api Resource");
                 return ModelStateErrorResponseError();
             }
             model.ApplyTo(ar);
-            await _apiResourceAppService.Update(id, ar);
+            await _apiResourceAppService.Update(resource, ar);
             return ResponsePutPatch();
         }
 
-        [HttpDelete("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<bool>> Remove(string id)
+        [HttpDelete("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Remove(string resource)
         {
-            var model = new RemoveApiResourceViewModel(id);
+            var model = new RemoveApiResourceViewModel(resource);
             await _apiResourceAppService.Remove(model);
             return ResponseDelete();
         }
 
 
 
-        [HttpGet("{id}/secrets")]
-        public async Task<ActionResult<IEnumerable<SecretViewModel>>> Secrets(string id)
+        [HttpGet("{resource}/secrets")]
+        public async Task<ActionResult<IEnumerable<SecretViewModel>>> Secrets(string resource)
         {
-            var clients = await _apiResourceAppService.GetSecrets(id);
+            var clients = await _apiResourceAppService.GetSecrets(resource);
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{id}/secrets/{secretId:int}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<bool>> RemoveSecret(string id, int secretId)
+        [HttpDelete("{resource}/secrets/{secretId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> RemoveSecret(string resource, int secretId)
         {
-            var model = new RemoveApiSecretViewModel(id, secretId);
+            var model = new RemoveApiSecretViewModel(resource, secretId);
             await _apiResourceAppService.RemoveSecret(model);
             return ResponseDelete();
         }
 
 
-        [HttpPost("{id}/secrets"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<IEnumerable<SecretViewModel>>> SaveSecret(string id, [FromBody] SaveApiSecretViewModel model)
+        [HttpPost("{resource}/secrets"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<SecretViewModel>>> SaveSecret(string resource, [FromBody] SaveApiSecretViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -124,30 +124,30 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            model.ResourceName = id;
+            model.ResourceName = resource;
             await _apiResourceAppService.SaveSecret(model);
-            var secrets = await _apiResourceAppService.GetSecrets(id);
-            return ResponsePost(nameof(Secrets), new { id }, secrets);
+            var secrets = await _apiResourceAppService.GetSecrets(resource);
+            return ResponsePost(nameof(Secrets), new { resource }, secrets);
         }
 
-        [HttpGet("{id}/scopes")]
-        public async Task<ActionResult<IEnumerable<ScopeViewModel>>> Scopes(string id)
+        [HttpGet("{resource}/scopes")]
+        public async Task<ActionResult<IEnumerable<ScopeViewModel>>> Scopes(string resource)
         {
-            var clients = await _apiResourceAppService.GetScopes(id);
+            var clients = await _apiResourceAppService.GetScopes(resource);
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{id}/scopes/{scopeId:int}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> RemoveScope(string id, int scopeId)
+        [HttpDelete("{resource}/scopes/{scopeId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveScope(string resource, int scopeId)
         {
-            var model = new RemoveApiScopeViewModel(id, scopeId);
+            var model = new RemoveApiScopeViewModel(resource, scopeId);
             await _apiResourceAppService.RemoveScope(model);
             return ResponseDelete();
         }
 
 
-        [HttpPost("{id}/scopes"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<IEnumerable<ScopeViewModel>>> SaveScope(string id, [FromBody] SaveApiScopeViewModel model)
+        [HttpPost("{resource}/scopes"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<ScopeViewModel>>> SaveScope(string resource, [FromBody] SaveApiScopeViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -155,10 +155,10 @@ namespace Jp.Management.Controllers
                 return ModelStateErrorResponseError();
             }
 
-            model.ResourceName = id;
+            model.ResourceName = resource;
             await _apiResourceAppService.SaveScope(model);
-            var scopes = await _apiResourceAppService.GetScopes(id);
-            return ResponsePost(nameof(Scopes), new { id }, scopes);
+            var scopes = await _apiResourceAppService.GetScopes(resource);
+            return ResponsePost(nameof(Scopes), new { resource }, scopes);
         }
 
 

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ClientService } from '@app/clients/clients.service';
 import { TranslatorService } from '@core/translator/translator.service';
 import { NewClient } from '@shared/viewModel/client.model';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import { Observable } from 'rxjs';
 
@@ -64,7 +64,7 @@ export class ClientAddComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );

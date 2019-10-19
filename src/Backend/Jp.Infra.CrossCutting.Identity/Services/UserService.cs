@@ -379,9 +379,9 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         {
             List<UserIdentity> users = null;
             if (!string.IsNullOrEmpty(paging.Search))
-                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip((paging.Offset - 1) * paging.Limit).Take(paging.Limit).ToListAsync();
+                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip(paging.Offset).Take(paging.Limit).ToListAsync();
             else
-                users = await _userManager.Users.Skip((paging.Offset - 1) * paging.Limit).Take(paging.Limit).ToListAsync();
+                users = await _userManager.Users.Skip(paging.Offset).Take(paging.Limit).ToListAsync();
             return users.Select(GetUser);
         }
 

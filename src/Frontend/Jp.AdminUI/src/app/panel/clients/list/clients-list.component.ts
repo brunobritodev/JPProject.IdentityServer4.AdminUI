@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { ClientService } from "@app/clients/clients.service";
-import { ClientList } from "@shared/viewModel/client-list.model";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import Swal from 'sweetalert2'
-import { Observable, Subject } from "rxjs";
-import { flatMap, startWith } from "rxjs/operators";
+import { Component, OnInit } from '@angular/core';
+import { ClientService } from '@app/clients/clients.service';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ClientList } from '@shared/viewModel/client-list.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { Observable, Subject } from 'rxjs';
+import { flatMap, startWith } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: "app-clients-list",
@@ -50,7 +50,7 @@ export class ClientListComponent implements OnInit {
                             Swal.fire("Cloned!", m["cloned"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );
@@ -80,7 +80,7 @@ export class ClientListComponent implements OnInit {
                             Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );

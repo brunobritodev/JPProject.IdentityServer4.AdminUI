@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
 import { ApiResource } from '@shared/viewModel/api-resource.model';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { StandardClaims } from '@shared/viewModel/standard-claims.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import * as jsonpatch from 'fast-json-patch';
@@ -56,7 +56,7 @@ export class ApiResourceEditComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );

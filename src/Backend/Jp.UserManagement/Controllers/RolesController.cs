@@ -3,7 +3,6 @@ using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -35,17 +34,17 @@ namespace Jp.Management.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpGet, Route("{id}")]
-        public async Task<ActionResult<RoleViewModel>> Details(string id)
+        [HttpGet, Route("{role}")]
+        public async Task<ActionResult<RoleViewModel>> Details(string role)
         {
-            var clients = await _roleManagerAppService.GetDetails(id);
+            var clients = await _roleManagerAppService.GetDetails(role);
             return ResponseGet(clients);
         }
 
-        [HttpDelete, Route("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> Remove(string id)
+        [HttpDelete, Route("{role}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Remove(string role)
         {
-            var model = new RemoveRoleViewModel(id);
+            var model = new RemoveRoleViewModel(role);
             await _roleManagerAppService.Remove(model);
             return ResponseDelete();
         }
@@ -61,21 +60,20 @@ namespace Jp.Management.Controllers
             await _roleManagerAppService.Save(model);
             var savedModel = await _roleManagerAppService.GetDetails(model.Name);
 
-            return ResponsePost(nameof(Details), new { id = savedModel.Name }, savedModel);
+            return ResponsePost(nameof(Details), new { role = savedModel.Name }, savedModel);
         }
 
-        [HttpPut, Route("{id}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> UpdateRole(string id, [FromBody] UpdateRoleViewModel model)
+        [HttpPut, Route("{role}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> UpdateRole(string role, [FromBody] UpdateRoleViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
-            await _roleManagerAppService.Update(id, model);
+            await _roleManagerAppService.Update(role, model);
             return ResponsePutPatch();
         }
-
 
         [HttpGet, Route("{role}/users")]
         public async Task<ActionResult<IEnumerable<UserListViewModel>>> UsersFromRole(string role)
@@ -84,12 +82,12 @@ namespace Jp.Management.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpDelete, Route("{id}/{username}"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveUser(string id, string username)
+        [HttpDelete, Route("{role}/{username}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveUser(string role, string username)
         {
-            var model = new RemoveUserFromRoleViewModel(id, username);
+            var model = new RemoveUserFromRoleViewModel(role, username);
             await _roleManagerAppService.RemoveUserFromRole(model);
-            return Response(true);
+            return ResponseDelete();
         }
     }
 }

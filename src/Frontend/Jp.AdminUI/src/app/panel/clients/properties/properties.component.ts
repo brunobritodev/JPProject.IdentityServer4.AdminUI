@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap, map } from "rxjs/operators";
-import { ClientService } from "@app/clients/clients.service";
-import { ClientProperty } from "@shared/viewModel/client.model";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ClientService } from '@app/clients/clients.service';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ClientProperty } from '@shared/viewModel/client.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import { flatMap, map, tap } from 'rxjs/operators';
 
 
 @Component({
@@ -67,7 +67,7 @@ export class ClientPropertiesComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );
@@ -90,7 +90,7 @@ export class ClientPropertiesComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );

@@ -43,5 +43,17 @@ namespace Jp.Application.ViewModels.UserViewModels
 
         [Display(Name = "ProviderId")]
         public string ProviderId { get; set; }
+
+        public bool ContainsFederationGateway()
+        {
+            return !string.IsNullOrEmpty(Provider) && !string.IsNullOrEmpty(ProviderId);
+
+        }
+
+        public void ClearSensitiveData()
+        {
+            Password = null;
+            ConfirmPassword = null;
+        }
     }
 }

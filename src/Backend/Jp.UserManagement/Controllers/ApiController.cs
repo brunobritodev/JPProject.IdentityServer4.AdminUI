@@ -1,6 +1,5 @@
 ﻿using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -27,30 +26,6 @@ namespace Jp.Management.Controllers
             return (!_notifications.HasNotifications());
         }
 
-        protected new ActionResult<DefaultResponse<T>> Response<T>(T result)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new ValidationProblemDetails(ModelState));
-            }
-
-            if (IsValidOperation())
-            {
-                if (result == null)
-                    return NotFound();
-
-                return Ok(new DefaultResponse<T>
-                {
-                    Success = true,
-                    Data = result
-                });
-            }
-
-            return BadRequest(new ValidationProblemDetails(new Dictionary<string, string[]>()
-            {
-                { nameof(DomainNotification), _notifications.GetNotifications().Select(n => n.Value).ToArray() }
-            }));
-        }
 
         protected ActionResult ResponsePutPatch()
         {
@@ -94,6 +69,21 @@ namespace Jp.Management.Controllers
             }));
         }
 
+        protected ActionResult<T> ResponsePost<T>(string action, string controller, object route, T result)
+        {
+            if (IsValidOperation())
+            {
+                if (result == null)
+                    return NoContent();
+
+                return CreatedAtAction(action, controller, route, result);
+            }
+
+            return BadRequest(new ValidationProblemDetails(new Dictionary<string, string[]>()
+            {
+                { nameof(DomainNotification), _notifications.GetNotifications().Select(n => n.Value).ToArray() }
+            }));
+        }
         protected ActionResult<IEnumerable<T>> ResponseGet<T>(IEnumerable<T> result)
         {
 

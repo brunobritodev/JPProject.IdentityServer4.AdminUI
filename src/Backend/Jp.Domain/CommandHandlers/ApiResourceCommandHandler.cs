@@ -156,21 +156,14 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var savedClient = await _apiResourceRepository.GetByName(request.ResourceName);
-            if (savedClient == null)
+            var savedApi = await _apiResourceRepository.GetByName(request.ResourceName);
+            if (savedApi == null)
             {
                 await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
                 return false;
             }
 
-            var secret = new ApiSecret
-            {
-                ApiResource = savedClient,
-                Description = request.Description,
-                Expiration = request.Expiration,
-                Type = request.Type,
-                Value = request.GetValue()
-            };
+            var secret = request.ToEntity(savedApi);
             _apiSecretRepository.Add(secret);
 
             if (Commit())
@@ -221,25 +214,15 @@ namespace Jp.Domain.CommandHandlers
                 return false;
             }
 
-            var savedClient = await _apiResourceRepository.GetByName(request.ResourceName);
-            if (savedClient == null)
+            var savedApi = await _apiResourceRepository.GetByName(request.ResourceName);
+            if (savedApi == null)
             {
-                await Bus.RaiseEvent(new DomainNotification("1", "Client not found"));
+                await Bus.RaiseEvent(new DomainNotification("1", "Api not found"));
                 return false;
             }
 
-            var secret = new ApiScope()
-            {
-                ApiResource = savedClient,
-                Description = request.Description,
-                Required = request.Required,
-                DisplayName = request.DisplayName,
-                Emphasize = request.Emphasize,
-                Name = request.Name,
-                ShowInDiscoveryDocument = request.ShowInDiscoveryDocument,
-                UserClaims = request.UserClaims.Select(s => new ApiScopeClaim() { Type = s }).ToList(),
-            };
-
+            var secret = request.ToEntity(savedApi);
+            
             _apiScopeRepository.Add(secret);
 
             if (Commit())

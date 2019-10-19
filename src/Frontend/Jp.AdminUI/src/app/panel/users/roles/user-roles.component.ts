@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
 import { RoleService } from '@shared/services/role.service';
 import { UserService } from '@shared/services/user.service';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { UserRole } from '@shared/viewModel/user-role.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import { Observable } from 'rxjs';
@@ -42,12 +42,12 @@ export class UserRolesComponent implements OnInit {
         public roleService: RoleService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserRoles(m.toString()))).subscribe(result => this.userRoles = result.data);
+        this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserRoles(m.toString()))).subscribe(result => this.userRoles = result);
         this.errors = [];
         this.model = new UserRole();
         this.showButtonLoading = false;
         this.roleService.getAvailableRoles().subscribe(roles => this.roles = roles.map(r => r.name));
-        
+
     }
 
     public showSuccessMessage() {
@@ -60,58 +60,41 @@ export class UserRolesComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-
-            this.userService.removeRole(this.userName, role).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadClaims();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to remove");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to remove");
-        }
+        this.userService.removeRole(this.userName, role).subscribe(
+            () => {
+                this.showSuccessMessage();
+                this.loadClaims();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     private loadClaims(): void {
-        this.userService.getUserRoles(this.userName).subscribe(c => this.userRoles = c.data);
+        this.userService.getUserRoles(this.userName).subscribe(c => this.userRoles = c);
     }
 
     public save() {
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-            this.model.userName = this.userName;
-            this.userService.saveRole(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadClaims();
-                        this.model = new UserRole();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
+        this.userService.saveRole(this.userName, this.model).subscribe(
+            registerResult => {
+                if (registerResult) {
+                    this.showSuccessMessage();
+                    this.loadClaims();
+                    this.model = new UserRole();
                 }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
+
     }
 
 }

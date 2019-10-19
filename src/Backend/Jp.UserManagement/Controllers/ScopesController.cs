@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Jp.Application.Interfaces;
+﻿using Jp.Application.Interfaces;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
@@ -16,7 +15,7 @@ namespace Jp.Management.Controllers
         private readonly IScopesAppService _scopesAppService;
 
         public ScopesController(
-            INotificationHandler<DomainNotification> notifications, 
+            INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IScopesAppService scopesAppService
             ) : base(notifications, mediator)
@@ -24,11 +23,11 @@ namespace Jp.Management.Controllers
             _scopesAppService = scopesAppService;
         }
 
-        [HttpGet, Route("search")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<string>>>> Search(string search)
+        [HttpGet, Route("{scope}")]
+        public async Task<ActionResult<IEnumerable<string>>> Search(string scope)
         {
-            var clients = await _scopesAppService.GetScopes(search);
-            return Response(clients);
+            var clients = await _scopesAppService.GetScopes(scope);
+            return ResponseGet(clients);
         }
     }
 }

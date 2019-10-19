@@ -34,14 +34,14 @@ namespace Jp.Management.Controllers
             _systemUser = systemUser;
         }
 
-        [HttpGet("")]
+        [HttpGet("profile")]
         public async Task<ActionResult<UserViewModel>> UserData()
         {
             var user = await _userAppService.GetUserAsync(_systemUser.UserId);
             return ResponseGet(user);
         }
 
-        [HttpPut("update-profile")]
+        [HttpPut("profile")]
         public async Task<ActionResult> UpdateProfile([FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
@@ -55,8 +55,8 @@ namespace Jp.Management.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpPatch, Route("update-profile"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult> PartialUpdate(string username, [FromBody] JsonPatchDocument<UserViewModel> model)
+        [HttpPatch, Route("profile"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> PartialUpdate([FromBody] JsonPatchDocument<UserViewModel> model)
         {
             if (!ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Jp.Management.Controllers
         }
 
 
-        [HttpPut("update-profile-picture")]
+        [HttpPut("profile/picture")]
         public async Task<ActionResult<bool>> UpdateProfilePicture([FromBody] ProfilePictureViewModel model)
         {
             if (!ModelState.IsValid)
@@ -85,7 +85,16 @@ namespace Jp.Management.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpPut("change-password")]
+
+        [HttpDelete("")]
+        public async Task<ActionResult<bool>> RemoveAccount()
+        {
+            var model = new RemoveAccountViewModel(_systemUser.UserId);
+            await _userAppService.RemoveAccount(model);
+            return ResponseDelete();
+        }
+
+        [HttpPut("password")]
         public async Task<ActionResult<bool>> ChangePassword([FromBody] ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid)
@@ -99,7 +108,7 @@ namespace Jp.Management.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpPut("create-password")]
+        [HttpPost("password")]
         public async Task<ActionResult<bool>> CreatePassword([FromBody] SetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
@@ -110,18 +119,10 @@ namespace Jp.Management.Controllers
 
             model.Id = _systemUser.UserId;
             await _userAppService.CreatePassword(model);
-            return ResponsePutPatch();
+            return Ok();
         }
 
-        [HttpDelete("")]
-        public async Task<ActionResult<bool>> RemoveAccount()
-        {
-            var model = new RemoveAccountViewModel { Id = _systemUser.UserId };
-            await _userAppService.RemoveAccount(model);
-            return ResponseDelete();
-        }
-
-        [HttpGet("has-password")]
+        [HttpGet("password")]
         public async Task<ActionResult<bool>> HasPassword()
         {
             return ResponseGet(await _userAppService.HasPassword(_systemUser.UserId));

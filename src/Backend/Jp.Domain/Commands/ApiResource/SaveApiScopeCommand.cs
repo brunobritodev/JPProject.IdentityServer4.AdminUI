@@ -1,6 +1,8 @@
-using System.Collections.Generic;
+using IdentityServer4.EntityFramework.Entities;
 using Jp.Domain.Commands.Clients;
 using Jp.Domain.Validations.ApiResource;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Jp.Domain.Commands.ApiResource
 {
@@ -24,5 +26,19 @@ namespace Jp.Domain.Commands.ApiResource
             return ValidationResult.IsValid;
         }
 
+        public ApiScope ToEntity(IdentityServer4.EntityFramework.Entities.ApiResource savedApi)
+        {
+            return new ApiScope()
+            {
+                ApiResourceId = savedApi.Id,
+                Description = Description,
+                Required = Required,
+                DisplayName = DisplayName,
+                Emphasize = Emphasize,
+                Name = Name,
+                ShowInDiscoveryDocument = ShowInDiscoveryDocument,
+                UserClaims = UserClaims.Select(s => new ApiScopeClaim() { Type = s }).ToList(),
+            };
+        }
     }
 }

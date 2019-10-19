@@ -88,8 +88,9 @@ namespace Jp.Management
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ID4 User Management");
                 c.OAuthClientId("Swagger");
+                c.OAuthClientSecret("swagger");
                 c.OAuthAppName("User Management UI - full access");
-
+                c.OAuthUseBasicAuthenticationWithAccessCodeGrant();
             });
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,4 @@
-import { Claim } from "./claim.model";
+import { Claim } from './claim.model';
 
 export class ClientSecret {
     constructor() {
@@ -51,12 +51,6 @@ export class NewClient {
 }
 
 export class Client {
-    idWasChanged(): boolean {
-        return this.oldClientId != this.clientId;
-    }
-    setOldId(clientId: string) {
-        this.oldClientId = clientId;
-    }
     enabled: boolean;
     clientId: string;
     description: string;
@@ -100,7 +94,6 @@ export class Client {
     pairWiseSubjectSalt: string;
     allowedCorsOrigins: string[];
     properties: ClientProperty[];
-    oldClientId: string;
     userCodeType: string;
     deviceCodeLifetime: number;
     

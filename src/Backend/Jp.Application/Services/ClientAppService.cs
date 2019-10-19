@@ -55,9 +55,9 @@ namespace Jp.Application.Services
             return _mapper.Map<Client>(resultado);
         }
 
-        public Task Update(ClientViewModel client)
+        public Task Update(string id, Client client)
         {
-            var updateClientCommand = _mapper.Map<UpdateClientCommand>(client);
+            var updateClientCommand = new UpdateClientCommand(client, id);
             return Bus.SendCommand(updateClientCommand);
         }
 

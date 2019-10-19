@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
 {
@@ -6,7 +7,7 @@ namespace Jp.Application.ViewModels.UserViewModels
     {
         [Required]
         public string Role { get; set; }
-        [Required]
+        [JsonIgnore]
         public string Username { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Jp.Domain.Commands.Clients
         {
             return new ClientClaim()
             {
-                Client = savedClient,
+                ClientId = savedClient.Id,
                 Value = Value,
                 Type = Type
             };

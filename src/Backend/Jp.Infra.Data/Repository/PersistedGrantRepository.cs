@@ -1,11 +1,11 @@
-using System.Collections.Generic;
-using System.Linq;
 using IdentityServer4.EntityFramework.Entities;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using Jp.Infra.Data.Context;
-using System.Threading.Tasks;
-using Jp.Domain.Core.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.Data.Repository
 {
@@ -17,7 +17,7 @@ namespace Jp.Infra.Data.Repository
 
         public Task<List<PersistedGrant>> GetGrants(PagingViewModel paging)
         {
-            return DbSet.AsNoTracking().OrderByDescending(s => s.CreationTime).Skip((paging.Offset - 1) * paging.Limit).Take(paging.Limit).ToListAsync();
+            return DbSet.AsNoTracking().OrderByDescending(s => s.CreationTime).Skip(paging.Offset).Take(paging.Limit).ToListAsync();
         }
 
         public Task<int> Count()

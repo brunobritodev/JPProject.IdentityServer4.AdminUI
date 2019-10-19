@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { debounceTime, switchMap } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable, Subject } from "rxjs";
-import { UserProfile } from "@shared/viewModel/userProfile.model";
-import { UserService } from "@shared/services/user.service";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { UserService } from '@shared/services/user.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { UserProfile } from '@shared/viewModel/userProfile.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -47,15 +47,15 @@ export class UserAddComponent implements OnInit {
         this.userExistsSubject
             .pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.checkUserName(a)))
-            .subscribe((response: DefaultResponse<boolean>) => {
-                this.userExist = response.data;
+            .subscribe((response: boolean) => {
+                this.userExist = response;
             });
 
         this.emailExistsSubject
             .pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.checkEmail(a)))
-            .subscribe((response: DefaultResponse<boolean>) => {
-                this.emailExist = response.data;
+            .subscribe((response: boolean) => {
+                this.emailExist = response;
             });
     }
 
@@ -63,27 +63,18 @@ export class UserAddComponent implements OnInit {
 
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-
-            this.userService.save(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.router.navigate(["/users/edit", this.model.userName]);
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
+        this.userService.save(this.model).subscribe(
+            registerResult => {
+                if (registerResult) {
+                    this.showSuccessMessage();
+                    this.router.navigate(["/users/edit", this.model.userName]);
                 }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
-
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     public showSuccessMessage() {

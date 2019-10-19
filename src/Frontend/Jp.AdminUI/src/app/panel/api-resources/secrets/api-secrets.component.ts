@@ -1,12 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap, map } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-import { ApiResourceService } from "../api-resource.service";
-import { ApiResourceSecret } from "@shared/viewModel/api-resource.model";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ApiResourceSecret } from '@shared/viewModel/api-resource.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import { flatMap, map, tap } from 'rxjs/operators';
+
+import { ApiResourceService } from '../api-resource.service';
 
 
 @Component({
@@ -67,7 +68,7 @@ export class ApiResourceSecretsComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );
@@ -90,7 +91,7 @@ export class ApiResourceSecretsComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );

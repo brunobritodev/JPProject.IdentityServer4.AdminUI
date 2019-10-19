@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { ApiResourceService } from "../api-resource.service";
-import { ApiResource } from "@shared/viewModel/api-resource.model";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import Swal from 'sweetalert2'
+import { Component, OnInit } from '@angular/core';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ApiResource } from '@shared/viewModel/api-resource.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import Swal from 'sweetalert2';
+
+import { ApiResourceService } from '../api-resource.service';
 
 @Component({
     selector: "app-api-resources-list",
@@ -46,7 +47,7 @@ export class ApiResourceListComponent implements OnInit {
                             Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );

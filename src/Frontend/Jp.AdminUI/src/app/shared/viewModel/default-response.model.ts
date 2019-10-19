@@ -1,6 +1,6 @@
-export class DefaultResponse<T> {
+export class ProblemDetails {
+    
     public success: boolean;
-    public data: T;
 
     public static GetErrors(err: any): Array<KeyValuePair> {
         try {
@@ -8,8 +8,14 @@ export class DefaultResponse<T> {
                 return [new KeyValuePair("403", "Unauthorized Access")];
             }
 
-            if (err.error.errors != null)
-                return err.error.errors["DomainNotification"].map((element, i) => new KeyValuePair(i, element));
+            if (err.error.errors)
+            {
+                if(err.error.errors["DomainNotification"]){
+                    return err.error.errors["DomainNotification"].map((element, i) => new KeyValuePair(i, element));
+                }
+                return err.error.errors.map((element, i) => new KeyValuePair(i, element.message));
+            }
+                
 
 
             return [new KeyValuePair(err.error.status.toString(), "Unknown error - " + err.error.type)];

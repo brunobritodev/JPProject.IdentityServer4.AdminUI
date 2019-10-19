@@ -1,7 +1,8 @@
-using System;
 using IdentityModel;
+using IdentityServer4.EntityFramework.Entities;
 using Jp.Domain.Commands.Clients;
 using Jp.Domain.Validations.ApiResource;
+using System;
 
 namespace Jp.Domain.Commands.ApiResource
 {
@@ -35,6 +36,18 @@ namespace Jp.Domain.Commands.ApiResource
                 default:
                     throw new ArgumentException(nameof(Hash));
             }
+        }
+
+        public ApiSecret ToEntity(IdentityServer4.EntityFramework.Entities.ApiResource savedApi)
+        {
+            return new ApiSecret
+            {
+                ApiResourceId = savedApi.Id,
+                Description = Description,
+                Expiration = Expiration,
+                Type = Type,
+                Value = GetValue()
+            };
         }
     }
 }

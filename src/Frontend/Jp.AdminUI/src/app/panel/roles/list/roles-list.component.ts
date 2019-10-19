@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
 import { RoleService } from '@shared/services/role.service';
 import { UserService } from '@shared/services/user.service';
-import { DefaultResponse } from '@shared/viewModel/default-response.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { Role } from '@shared/viewModel/role.model';
 import { UserProfile } from '@shared/viewModel/userProfile.model';
 import { ToasterService } from 'angular2-toaster';
@@ -61,7 +61,7 @@ export class RolesListComponent implements OnInit {
                             Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );
@@ -83,7 +83,7 @@ export class RolesListComponent implements OnInit {
                 this.details(this.selectedRole);
             },
             err => {
-                this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                 this.showButtonLoading = false;
             }
         );

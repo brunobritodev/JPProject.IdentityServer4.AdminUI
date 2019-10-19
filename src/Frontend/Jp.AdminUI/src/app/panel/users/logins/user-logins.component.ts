@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap, map, debounceTime } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-import { UserService } from "@shared/services/user.service";
-import { UserLogin } from "@shared/viewModel/user-login.model";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { UserService } from '@shared/services/user.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { UserLogin } from '@shared/viewModel/user-login.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import { debounceTime, flatMap, map, tap } from 'rxjs/operators';
 
 
 @Component({
@@ -39,7 +39,7 @@ export class UserLoginsComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserLogins(m.toString()))).subscribe(result => this.logins = result.data);
+        this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserLogins(m.toString()))).subscribe(result => this.logins = result);
         this.errors = [];
         this.showButtonLoading = false;
     }
@@ -66,7 +66,7 @@ export class UserLoginsComponent implements OnInit {
                     this.showButtonLoading = false;
                 },
                 err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                    this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                     this.showButtonLoading = false;
                 }
             );
@@ -80,6 +80,6 @@ export class UserLoginsComponent implements OnInit {
     }
 
     private loadLogins(): void {
-        this.userService.getUserLogins(this.userName).subscribe(c => this.logins = c.data);
+        this.userService.getUserLogins(this.userName).subscribe(c => this.logins = c);
     }
 }

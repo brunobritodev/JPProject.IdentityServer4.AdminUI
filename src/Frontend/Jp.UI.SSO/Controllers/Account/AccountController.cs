@@ -8,7 +8,9 @@ using IdentityServer4.Stores;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
+using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Events.User;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
@@ -30,6 +32,7 @@ namespace Jp.UI.SSO.Controllers.Account
 {
     public class AccountController : Controller
     {
+        private readonly IMediatorHandler Bus;
         private readonly SignInManager<UserIdentity> _signInManager;
         private readonly IUserAppService _userAppService;
         private readonly IIdentityServerInteractionService _interaction;
@@ -47,8 +50,10 @@ namespace Jp.UI.SSO.Controllers.Account
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             INotificationHandler<DomainNotification> notifications,
+            IMediatorHandler bus,
             IConfiguration configuration)
         {
+            Bus = bus;
             _signInManager = signInManager;
             _userAppService = userAppService;
             _interaction = interaction;
@@ -284,6 +289,7 @@ namespace Jp.UI.SSO.Controllers.Account
             var principal = await _signInManager.CreateUserPrincipalAsync(s);
             additionalLocalClaims.AddRange(principal.Claims);
             var name = principal.FindFirst(JwtClaimTypes.Name)?.Value ?? user.Id.ToString();
+
             await _events.RaiseAsync(new UserLoginSuccessEvent(provider, providerUserId, user.Id.ToString(), name));
             await HttpContext.SignInAsync(user.Id.ToString(), name, provider, localSignInProps, additionalLocalClaims.ToArray());
 
@@ -301,6 +307,7 @@ namespace Jp.UI.SSO.Controllers.Account
                 {
                     // if the client is PKCE then we assume it's native, so this change in how to
                     // return the response is for better UX for the end user.
+                    await Bus.RaiseEvent(new UserLoggedInEvent(user.Id.ToString(), provider));
                     return View("Redirect", new RedirectViewModel { RedirectUrl = returnUrl });
                 }
             }
@@ -344,6 +351,7 @@ namespace Jp.UI.SSO.Controllers.Account
 
                 // raise the logout event
                 await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName()));
+                await Bus.RaiseEvent(new UserLoggedOutEvent(User.GetSubjectId()));
             }
 
             // check if we need to trigger sign-out at an upstream identity provider
