@@ -11,4 +11,4 @@ Open up a PowerShell terminal and run the script. It’ll ask you for a certific
 Change Config file
 ^^^^^^^^^^^^^^^^^^
 
-If a certificate is generated, to use it, change the appsettings.json. See `docs <quickstarts/ambient_variables.html>`_ for more info
+If a certificate is generated, to use it, change the appsettings.json. See `docs <../quickstarts/ambient_variables.html>`_ for more info
