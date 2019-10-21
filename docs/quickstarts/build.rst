@@ -29,15 +29,15 @@ Using build.bat
 
 Open folder *build* and execute build.bat. The file will install Nuget and NPM dependencies. Then compile and run.
 
-Using build.ps1
-^^^^^^^^^^^^^^^
+Using build and start.ps1
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes there are missing parameters at Environment Path, so the build.bat can't build. 
 
 Open powershell as Admin. Navigate to build folder. Execute these commands:
 
 * Set-ExecutionPolicy Unrestricted
-* .\build.ps1 
+* '.\build and start.ps1' 
 * Set-ExecutionPolicy AllSigned
 
 .. raw:: html
