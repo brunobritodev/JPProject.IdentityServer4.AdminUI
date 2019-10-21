@@ -8,6 +8,7 @@ namespace Jp.Domain.Events.Client
         public UpdateClientCommand Request { get; }
 
         public ClientUpdatedEvent(UpdateClientCommand request)
+            : base(EventTypes.Success)
         {
             Request = request;
             AggregateId = request.Client.ClientId;

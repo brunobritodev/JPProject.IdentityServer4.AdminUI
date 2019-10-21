@@ -5,6 +5,7 @@ using Jp.Infra.Data.MySql.Configuration;
 using Jp.Infra.Data.PostgreSQL.Configuration;
 using Jp.Infra.Data.Sql.Configuration;
 using Jp.Infra.Data.Sqlite.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -51,8 +52,8 @@ namespace Jp.Infra.CrossCutting.Database
 
                 })
 
-
-                .AddEntityFrameworkStores<ApplicationIdentityContext>();
+                .AddEntityFrameworkStores<ApplicationIdentityContext>()
+                .AddDefaultTokenProviders();
         }
 
         public static void ConfigureIdentityServerDatabase(this IIdentityServerBuilder builder, IConfiguration configuration)

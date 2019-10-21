@@ -7,6 +7,7 @@ namespace Jp.Domain.Events.IdentityResource
         public IdentityServer4.Models.IdentityResource Resource { get; }
 
         public IdentityResourceUpdatedEvent(IdentityServer4.Models.IdentityResource resource)
+            : base(EventTypes.Success)
         {
             Resource = resource;
             AggregateId = resource.Name;

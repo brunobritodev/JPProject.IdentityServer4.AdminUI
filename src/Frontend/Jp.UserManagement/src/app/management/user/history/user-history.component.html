@@ -7,6 +7,7 @@
                 <table class="table table-responsive-sm table-bordered">
                     <thead>
                         <tr>
+                            <th>{{ 'user.history.CATEGORY' | translate }}</th>
                             <th>{{ 'user.history.ACTION' | translate }}</th>
                             <th>{{ 'user.history.WHEN' | translate }}</th>
                             <th>{{ 'user.history.WHO' | translate }}</th>
@@ -15,6 +16,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let history of history">
+                            <td>{{history.category}}</td>
                             <td>{{history.action}}</td>
                             <td>{{history.when}}</td>
                             <td>{{history.who}}</td>

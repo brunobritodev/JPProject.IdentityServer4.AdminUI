@@ -4,5 +4,6 @@ export const environment = {
   IssuerUri:  "https://jpproject.azurewebsites.net/sso",
   RequireHttps: true,
   Uri: "https://jpproject.azurewebsites.net/admin-ui",
-  defaultTheme: "E"
+  defaultTheme: "E",
+  version: "3.0.0"
 };

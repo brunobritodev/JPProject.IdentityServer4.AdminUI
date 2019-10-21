@@ -7,38 +7,43 @@ var concat = require('gulp-concat');
 var clean = require('gulp-clean');
 
 //var watch = require('gulp-watch');
-var gutil = require('gulp-util');
+//var gutil = require('gulp-util');
 
-var cssmin = require('gulp-cssmin');
+let cleanCSS = require('gulp-clean-css');
 
 gulp.task('clean-css', function () {
     return gulp
-        .src(["./wwwroot/css/jp.min.css"])
+        .src(["./wwwroot/css/jp.min.css"], {
+            allowEmpty: true
+        })
         .pipe(clean())
 });
 
 gulp.task('clean-js', function () {
     return gulp
-        .src(["./wwwroot/js/jp.min.css"])
+        .src(["./wwwroot/js/jp.min.css"], {
+            allowEmpty: true
+        })
         .pipe(clean())
 });
 
-gulp.task('css', ['clean-css'],function () {
-    gulp.src([
-        "./assets/css/coreui-icons.min.css",
-        "./assets/css/flag-icon.min.css",
+gulp.task('css', () => {
+    return gulp.src([
+        "./assets/css/coreui-icons.css",
+        "./assets/css/flag-icon.css",
         "./assets/css/font-awesome.min.css",
-        "./assets/css/simple-line-icons.min.css",
+        "./assets/css/simple-line-icons.css",
         "./assets/css/style.css",
-        "./assets/css/pace.min.css",
+        "./assets/css/custom-style.css",
+        "./assets/css/pace.css",
     ])
-        .pipe(cssmin())
+        .pipe(cleanCSS())
         .pipe(concat('jp.min.css'))
-        .pipe(gulp.dest('./wwwroot/css/'));
+        .pipe(gulp.dest('./wwwroot/css'));
 });
 
-gulp.task('scripts-commom', ['clean-js'], function () {
-    gulp.src([
+gulp.task('scripts-commom', () => {
+    return gulp.src([
         "./Assets/js/jquery.min.js",
         "./Assets/js/bootstrap.min.js",
         "./Assets/js/popper.min.js",
@@ -47,14 +52,14 @@ gulp.task('scripts-commom', ['clean-js'], function () {
         "./Assets/js/coreui.min.js",
         "./Assets/js/popper-utils.min.js",
         "./Assets/js/buttons.js",
-        ])
+    ])
         .pipe(concat('jp.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest("./wwwroot/js"));
 });
 
 gulp.task('build-app-insights-js',
-    function() {
+    function () {
         return gulp
             .src('./node_modules/applicationinsights-js/JavaScript/JavaScriptSDK/snippet.js')
             .pipe(
@@ -67,8 +72,8 @@ gulp.task('build-app-insights-js',
                             replacement: 'https://az416426.vo.msecnd.net/scripts/a/ai.0.js'
                         },
                         {
-                           match: 'INSTRUMENTATION_KEY',
-                           replacement: '205fabcd-09ee-46f5-bb74-95780fc873da'
+                            match: 'INSTRUMENTATION_KEY',
+                            replacement: '205fabcd-09ee-46f5-bb74-95780fc873da'
                         }
                     ],
                     usePrefix: false
@@ -76,4 +81,4 @@ gulp.task('build-app-insights-js',
             .pipe(uglify())                        // Minifies the JavaScript.
             .pipe(concat('app.insights.js'))
             .pipe(gulp.dest('./wwwroot/js'));     // Saves the JavaScript file to the specified destination path.
-});
+    });

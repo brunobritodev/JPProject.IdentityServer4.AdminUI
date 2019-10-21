@@ -10,5 +10,7 @@ namespace Jp.Domain.Interfaces
         bool IsAuthenticated();
         Guid UserId { get; }
         IEnumerable<Claim> GetClaimsIdentity();
+        string GetRemoteIpAddress();
+        string GetLocalIpAddress();
     }
 }

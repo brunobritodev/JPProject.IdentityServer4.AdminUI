@@ -7,6 +7,7 @@ namespace Jp.Domain.Events.Client
         public int PropertyId { get; }
 
         public ClientPropertyRemovedEvent(int id, string clientId)
+            : base(EventTypes.Success)
         {
             PropertyId = id;
             AggregateId = clientId;

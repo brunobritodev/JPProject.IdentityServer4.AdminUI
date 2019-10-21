@@ -1,5 +1,5 @@
-using System;
 using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Events.User
 {
@@ -9,6 +9,7 @@ namespace Jp.Domain.Events.User
         public string Role { get; }
 
         public UserRoleRemovedEvent(Guid aggregateId, string username, string role)
+            : base(EventTypes.Success)
         {
             AggregateId = aggregateId.ToString();
             Username = username;

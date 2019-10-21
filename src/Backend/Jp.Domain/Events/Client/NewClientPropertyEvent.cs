@@ -9,6 +9,7 @@ namespace Jp.Domain.Events.Client
         public string Value { get; }
 
         public NewClientPropertyEvent(int id, string clientId, string key, string value)
+            : base(EventTypes.Success)
         {
             Id = id;
             AggregateId = clientId;

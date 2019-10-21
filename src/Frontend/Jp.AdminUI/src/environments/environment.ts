@@ -9,5 +9,6 @@ export const environment = {
   IssuerUri:  "https://localhost:5000",
   RequireHttps: false,
   Uri: "http://localhost:4300",
-  defaultTheme: "E"
+  defaultTheme: "E",
+  version: "3.0.0"
 };

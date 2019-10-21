@@ -1,4 +1,5 @@
 ﻿using Jp.Domain.Core.Events;
+using Jp.Domain.Core.StringUtils;
 using Jp.Domain.Interfaces;
 using Newtonsoft.Json;
 
@@ -19,10 +20,18 @@ namespace Jp.Infra.Data.EventSourcing
         {
             var serializedData = JsonConvert.SerializeObject(theEvent);
 
-             var storedEvent = new StoredEvent(
-                theEvent,
-                serializedData,
-                _systemUser.Username);
+            if (theEvent.Message.IsMissing())
+                theEvent.Message = theEvent.MessageType.AddSpacesToSentence().Replace("Event", string.Empty);
+
+            var storedEvent = new StoredEvent(
+               theEvent.AggregateId,
+               theEvent.MessageType,
+               theEvent.EventType,
+               theEvent.Message,
+               _systemUser.GetLocalIpAddress(),
+               _systemUser.GetRemoteIpAddress(),
+               serializedData)
+                .SetUser(_systemUser.Username);
 
             _eventStoreRepository.Store(storedEvent);
         }

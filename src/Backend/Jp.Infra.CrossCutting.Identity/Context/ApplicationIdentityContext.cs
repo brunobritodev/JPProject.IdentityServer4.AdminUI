@@ -36,7 +36,8 @@ namespace Jp.Infra.CrossCutting.Identity.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseLoggerFactory(this.loggerFactory).EnableSensitiveDataLogging();
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT").Equals("Development"))
+                optionsBuilder.UseLoggerFactory(this.loggerFactory).EnableSensitiveDataLogging();
         }
 
         private void ConfigureIdentityContext(ModelBuilder builder)

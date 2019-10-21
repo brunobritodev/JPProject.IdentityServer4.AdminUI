@@ -3,6 +3,7 @@ using IdentityServer4.Models;
 using Jp.Domain.Validations.Client;
 using System;
 using System.Collections.Generic;
+using Jp.Domain.Core.StringUtils;
 
 namespace Jp.Domain.Commands.Clients
 {
@@ -22,7 +23,7 @@ namespace Jp.Domain.Commands.Clients
                 Description = description,
             };
 
-            if (!string.IsNullOrEmpty(postLogoutUri))
+            if (postLogoutUri.IsMissing())
                 Client.PostLogoutRedirectUris = new List<string>() { postLogoutUri };
             ClientType = clientType;
         }

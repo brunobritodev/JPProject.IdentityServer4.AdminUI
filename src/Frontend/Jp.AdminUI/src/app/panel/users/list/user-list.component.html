@@ -124,6 +124,7 @@
         <table class="table table-responsive-sm table-bordered">
             <thead>
                 <tr>
+                    <td>Category</td>
                     <th>Action</th>
                     <th>When</th>
                     <th>Who</th>
@@ -132,6 +133,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let history of history">
+                    <td>{{history.category}}</td>
                     <td>{{history.action}}</td>
                     <td>{{history.when}}</td>
                     <td>{{history.who}}</td>

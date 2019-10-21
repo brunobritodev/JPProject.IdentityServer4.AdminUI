@@ -1,4 +1,5 @@
-﻿using Jp.Infra.CrossCutting.Database;
+﻿using IdentityServer4.Services;
+using Jp.Infra.CrossCutting.Database;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.CrossCutting.IdentityServer.Configuration;
 using Jp.Infra.CrossCutting.IoC;
@@ -104,6 +105,7 @@ namespace Jp.UI.SSO
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
+            services.AddScoped<IEventSink, IdentityServerEventStore>();
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }

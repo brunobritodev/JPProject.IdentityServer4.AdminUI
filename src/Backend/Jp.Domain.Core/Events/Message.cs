@@ -1,5 +1,4 @@
-﻿using System;
-using MediatR;
+﻿using MediatR;
 
 namespace Jp.Domain.Core.Events
 {
@@ -10,6 +9,7 @@ namespace Jp.Domain.Core.Events
 
         protected Message()
         {
+
             MessageType = GetType().Name;
         }
     }

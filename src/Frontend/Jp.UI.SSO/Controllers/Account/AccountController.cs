@@ -10,7 +10,7 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Domain.Events.User;
+using Jp.Domain.Core.StringUtils;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
@@ -167,7 +167,7 @@ namespace Jp.UI.SSO.Controllers.Account
                         {
                             return Redirect(model.ReturnUrl);
                         }
-                        else if (string.IsNullOrEmpty(model.ReturnUrl))
+                        else if (model.ReturnUrl.IsMissing())
                         {
                             return Redirect("~/");
                         }
@@ -197,7 +197,7 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
         {
-            if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
+            if (returnUrl.IsMissing()) returnUrl = "~/";
 
             // validate returnUrl - either it is a valid OIDC URL or back to a local page
             if (Url.IsLocalUrl(returnUrl) == false && _interaction.IsValidReturnUrl(returnUrl) == false)
@@ -307,7 +307,6 @@ namespace Jp.UI.SSO.Controllers.Account
                 {
                     // if the client is PKCE then we assume it's native, so this change in how to
                     // return the response is for better UX for the end user.
-                    await Bus.RaiseEvent(new UserLoggedInEvent(user.Id.ToString(), provider));
                     return View("Redirect", new RedirectViewModel { RedirectUrl = returnUrl });
                 }
             }
@@ -351,7 +350,6 @@ namespace Jp.UI.SSO.Controllers.Account
 
                 // raise the logout event
                 await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName()));
-                await Bus.RaiseEvent(new UserLoggedOutEvent(User.GetSubjectId()));
             }
 
             // check if we need to trigger sign-out at an upstream identity provider

@@ -8,6 +8,7 @@ namespace Jp.Domain.Events.Role
         public string Username { get; }
 
         public UserRemovedFromRoleEvent(string name, string username)
+            : base(EventTypes.Success)
         {
             AggregateId = name;
             Name = name;

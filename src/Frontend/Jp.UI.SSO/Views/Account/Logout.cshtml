@@ -1,4 +1,5 @@
-﻿@using Jp.UI.SSO.Models
+﻿@using Jp.Domain.Core.StringUtils
+@using Jp.UI.SSO.Models
 @model Jp.UI.SSO.Models.LogoutViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
@@ -28,7 +29,7 @@
                             <div class="form-group">
                                 <button class="btn btn-primary">@Localizer["Body-Yes"]</button>
 
-                                @if (string.IsNullOrEmpty(Model.PostLogoutRedirectUri))
+                                @if (Model.PostLogoutRedirectUri.IsMissing())
                                 {
                                     <a class="btn btn-primary" asp-action="Index" asp-controller="Home">@Localizer["Body-No"]</a>
                                 }

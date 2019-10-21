@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jp.Domain.Core.StringUtils;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
@@ -46,7 +47,7 @@ namespace Jp.Application.ViewModels.UserViewModels
 
         public bool ContainsFederationGateway()
         {
-            return !string.IsNullOrEmpty(Provider) && !string.IsNullOrEmpty(ProviderId);
+            return Provider.IsMissing() && ProviderId.IsMissing();
 
         }
 

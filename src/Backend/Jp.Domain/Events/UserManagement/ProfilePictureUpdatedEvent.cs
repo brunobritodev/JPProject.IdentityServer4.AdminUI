@@ -1,5 +1,5 @@
-﻿using System;
-using Jp.Domain.Core.Events;
+﻿using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Events.UserManagement
 {
@@ -7,7 +7,8 @@ namespace Jp.Domain.Events.UserManagement
     {
         public string Picture { get; }
 
-        public ProfilePictureUpdatedEvent(Guid aggregateId,string picture)
+        public ProfilePictureUpdatedEvent(Guid aggregateId, string picture)
+            : base(EventTypes.Success)
         {
             AggregateId = aggregateId.ToString();
             Picture = picture;

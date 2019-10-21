@@ -4,13 +4,29 @@ namespace Jp.Domain.Core.Events
 {
     public class StoredEvent : Event
     {
-        public StoredEvent(Event theEvent, string data, string userId)
+        public StoredEvent(
+            string aggregateId,
+            string messageType,
+            EventTypes eventType,
+            string customMessage,
+            string localIpAddress,
+            string remoteIpAddress,
+            string data) : base(eventType)
         {
             Id = Guid.NewGuid();
-            AggregateId = theEvent.AggregateId;
-            MessageType = theEvent.MessageType;
+            AggregateId = aggregateId;
+            MessageType = messageType;
+            EventType = eventType;
+            Message = customMessage;
+            LocalIpAddress = localIpAddress;
+            RemoteIpAddress = remoteIpAddress;
             Data = data;
-            User = userId;
+        }
+
+        public StoredEvent SetUser(string user)
+        {
+            this.User = user;
+            return this;
         }
 
         // EF Constructor
@@ -21,5 +37,10 @@ namespace Jp.Domain.Core.Events
         public string Data { get; private set; }
 
         public string User { get; private set; }
+        public StoredEvent ReplaceTimeStamp(in DateTime timeStamp)
+        {
+            Timestamp = timeStamp;
+            return this;
+        }
     }
 }

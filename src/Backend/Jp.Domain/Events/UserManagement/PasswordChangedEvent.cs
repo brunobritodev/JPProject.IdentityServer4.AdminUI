@@ -1,5 +1,5 @@
-﻿using System;
-using Jp.Domain.Core.Events;
+﻿using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Events.UserManagement
 {
@@ -7,6 +7,7 @@ namespace Jp.Domain.Events.UserManagement
     {
 
         public PasswordChangedEvent(Guid aggregateId)
+            : base(EventTypes.Success)
         {
             AggregateId = aggregateId.ToString();
         }
