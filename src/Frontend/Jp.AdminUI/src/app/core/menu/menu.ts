@@ -66,7 +66,7 @@ const Users = {
     submenu: [
         {
             text: "List",
-            link: "/users/list"
+            link: "/users"
         },
         {
             text: "Add",

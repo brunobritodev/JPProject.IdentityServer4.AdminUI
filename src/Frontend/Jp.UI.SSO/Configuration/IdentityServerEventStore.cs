@@ -1,32 +1,26 @@
-﻿using IdentityServer4.Services;
+﻿using IdentityServer4.Events;
+using IdentityServer4.Services;
 using Jp.Domain.Core.Events;
 using Jp.Domain.Interfaces;
-using System;
 using System.Threading.Tasks;
+using EventTypes = Jp.Domain.Core.Events.EventTypes;
 using Is4Event = IdentityServer4.Events.Event;
 
 namespace Jp.UI.SSO.Configuration
 {
     public class IdentityServerEventStore : IEventSink
     {
-        private readonly IEventStore _eventStore;
+        private readonly IEventStoreRepository _eventStoreRepository;
         private readonly ISystemUser _user;
 
-        public IdentityServerEventStore(IEventStore eventStore, ISystemUser user)
+        public IdentityServerEventStore(IEventStoreRepository eventStoreRepository, ISystemUser user)
         {
-            _eventStore = eventStore;
+            _eventStoreRepository = eventStoreRepository;
             _user = user;
         }
         public Task PersistAsync(Is4Event evt)
         {
-            Console.WriteLine("{0} ({1}), Details: {2}",
-                evt.Name,
-                evt.Id,
-                evt.ToString());
-
-
             var es = new StoredEvent(
-                evt.Id.ToString(),
                 evt.Category,
                 (EventTypes)(int)evt.EventType,
                 evt.Name,
@@ -38,9 +32,68 @@ namespace Jp.UI.SSO.Configuration
             if (_user.IsAuthenticated())
                 es.SetUser(_user.Username);
 
-            _eventStore.Save(es);
+            switch (evt)
+            {
+                case ApiAuthenticationFailureEvent apiAuthenticationFailureEvent:
+                    es.SetAggregate(apiAuthenticationFailureEvent.ApiName);
+                    break;
+                case ApiAuthenticationSuccessEvent apiAuthenticationSuccessEvent:
+                    es.SetAggregate(apiAuthenticationSuccessEvent.ApiName);
+                    break;
+                case ClientAuthenticationFailureEvent clientAuthenticationFailureEvent:
+                    es.SetAggregate(clientAuthenticationFailureEvent.ClientId);
+                    break;
+                case ClientAuthenticationSuccessEvent clientAuthenticationSuccessEvent:
+                    es.SetAggregate(clientAuthenticationSuccessEvent.ClientId);
+                    break;
+                case ConsentDeniedEvent consentDeniedEvent:
+                    es.SetAggregate(consentDeniedEvent.ClientId);
+                    break;
+                case ConsentGrantedEvent consentGrantedEvent:
+                    es.SetAggregate(consentGrantedEvent.ClientId);
+                    break;
+                case DeviceAuthorizationFailureEvent deviceAuthorizationFailureEvent:
+                    es.SetAggregate(deviceAuthorizationFailureEvent.ClientId);
+                    break;
+                case DeviceAuthorizationSuccessEvent deviceAuthorizationSuccessEvent:
+                    es.SetAggregate(deviceAuthorizationSuccessEvent.ClientId);
+                    break;
+                case GrantsRevokedEvent grantsRevokedEvent:
+                    es.SetAggregate(grantsRevokedEvent.ClientId);
+                    break;
+                case InvalidClientConfigurationEvent invalidClientConfigurationEvent:
+                    es.SetAggregate(invalidClientConfigurationEvent.ClientId);
+                    break;
+                case TokenIntrospectionFailureEvent tokenIntrospectionFailureEvent:
+                    es.SetAggregate(tokenIntrospectionFailureEvent.ApiName);
+                    break;
+                case TokenIntrospectionSuccessEvent tokenIntrospectionSuccessEvent:
+                    es.SetAggregate(tokenIntrospectionSuccessEvent.ApiName);
+                    break;
+                case TokenIssuedFailureEvent tokenIssuedFailureEvent:
+                    es.SetAggregate(tokenIssuedFailureEvent.ClientId);
+                    break;
+                case TokenIssuedSuccessEvent tokenIssuedSuccessEvent:
+                    es.SetAggregate(tokenIssuedSuccessEvent.ClientId);
+                    break;
+                case TokenRevokedSuccessEvent tokenRevokedSuccessEvent:
+                    es.SetAggregate(tokenRevokedSuccessEvent.ClientId);
+                    break;
+                case UnhandledExceptionEvent unhandledExceptionEvent:
+                    break;
+                case UserLoginFailureEvent userLoginFailureEvent:
+                    es.SetUser(userLoginFailureEvent.Username).SetAggregate(userLoginFailureEvent.ClientId);
+                    break;
+                case UserLoginSuccessEvent userLoginSuccessEvent:
+                    es.SetUser(userLoginSuccessEvent.Username).SetAggregate(userLoginSuccessEvent.ClientId);
+                    break;
+                case UserLogoutSuccessEvent userLogoutSuccessEvent:
+                    es.SetAggregate(userLogoutSuccessEvent.SubjectId);
+                    break;
+            }
 
-            return Task.CompletedTask;
+            return _eventStoreRepository.Store(es);
         }
+
     }
 }

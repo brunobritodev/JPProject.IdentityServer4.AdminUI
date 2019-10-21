@@ -5,12 +5,13 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
@@ -129,9 +130,9 @@ namespace Jp.Management.Controllers
         }
 
         [HttpGet, Route("logs")]
-        public async Task<ActionResult<IEnumerable<EventHistoryData>>> GetLogs()
+        public async Task<ActionResult<ListOf<EventHistoryData>>> GetLogs([Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1, string search = null)
         {
-            return ResponseGet(await _userAppService.GetHistoryLogs(_systemUser.Username));
+            return ResponseGet(await _userAppService.GetEvents(_systemUser.Username, new PagingViewModel(limit ?? 10, offset ?? 0, search)));
         }
 
     }

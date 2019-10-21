@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Claim } from '@shared/viewModel/claim.model';
+import { ListOf } from '@shared/viewModel/list-of.model';
 import { Operation } from 'fast-json-patch';
 import { Observable } from 'rxjs';
 
@@ -29,7 +30,7 @@ export class UserService {
     }
 
     public findUsers(text: string, quantity: number, page: number): Observable<ListOfUsers> {
-        return this.http.get<ListOfUsers>(`${this.endpoint}?limit=${quantity}&offset=${(page - 1) * quantity}&s=${text}`);
+        return this.http.get<ListOfUsers>(`${this.endpoint}?limit=${quantity}&offset=${(page - 1) * quantity}&search=${encodeURI(text)}`);
     }
 
     public getDetails(username: string): Observable<UserProfile> {
@@ -96,7 +97,11 @@ export class UserService {
         return this.http.put<boolean>(`${this.endpoint}/${username}/password`, resetPassword);
     }
 
-    public showLogs(username: string): Observable<EventHistoryData[]> {
-        return this.http.get<EventHistoryData[]>(`${this.endpoint}/${username}/logs`);
+    public showEvents(username: string, quantity: number, page: number): Observable<ListOf<EventHistoryData>> {
+        return this.http.get<ListOf<EventHistoryData>>(`${this.endpoint}/${username}/logs?limit=${quantity}&offset=${(page - 1) * quantity}`);
+    }
+    
+    public searchEvents(username: string, text: string, quantity: number, page: number): Observable<ListOf<EventHistoryData>> {
+        return this.http.get<ListOf<EventHistoryData>>(`${this.endpoint}/${username}/logs?limit=${quantity}&offset=${(page - 1) * quantity}&search=${encodeURI(text)}`);
     }
 }

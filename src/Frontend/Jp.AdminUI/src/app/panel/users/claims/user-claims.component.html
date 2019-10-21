@@ -7,7 +7,7 @@
 
 <div class="card card-default">
     <div class="card-body">
-        <a [routerLink]="[ '/users/edit', userName]" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+        <a [routerLink]="[ '/users', userName, 'edit']" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
     </div>
 </div>
 
@@ -82,7 +82,7 @@
     </div>
     <div class="card-footer">
         <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
-        <a class="mb-1 btn btn-secondary" [routerLink]="['/users/edit', userName]">Cancel</a>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/users', userName, 'edit']">Cancel</a>
     </div>
 </div>
 

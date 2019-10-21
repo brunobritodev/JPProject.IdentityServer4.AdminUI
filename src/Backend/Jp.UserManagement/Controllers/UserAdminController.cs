@@ -39,15 +39,16 @@ namespace Jp.Management.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get a list of users, optionally can filter them
         /// </summary>
         /// <param name="limit">Limit - At least 1 and max 50</param>
         /// <param name="offset">Offset - For pagination</param>
+        /// <param name="search">username, e-mail or name</param>
         /// <returns></returns>
         [HttpGet, Route("")]
-        public async Task<ActionResult<ListOfUsersViewModel>> List([Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1, string s = null)
+        public async Task<ActionResult<ListOf<UserListViewModel>>> List([Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1, string search = null)
         {
-            var irs = await _userManageAppService.GetUsers(new PagingViewModel(limit ?? 10, offset ?? 0, s));
+            var irs = await _userManageAppService.GetUsers(new PagingViewModel(limit ?? 10, offset ?? 0, search));
             return ResponseGet(irs);
         }
 
@@ -191,10 +192,19 @@ namespace Jp.Management.Controllers
             return ResponsePutPatch();
         }
 
+        /// <summary>
+        /// Get a list of users, optionally can filter them
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <param name="limit">Limit - At least 1 and max 50</param>
+        /// <param name="offset">Offset - For pagination</param>
+        /// <param name="search">Action, Aggregate or Message</param>
+        /// <returns></returns>
         [HttpGet, Route("{username}/logs")]
-        public async Task<ActionResult<IEnumerable<EventHistoryData>>> ShowLogs(string username)
+        public async Task<ActionResult<ListOf<EventHistoryData>>> ShowLogs(string username, [Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1, string search = null)
         {
-            var clients = await _userManageAppService.GetHistoryLogs(username);
+            var data = new PagingViewModel(limit ?? 10, offset ?? 0, search);
+            var clients = await _userManageAppService.GetEvents(username, data);
             return ResponseGet(clients);
         }
 

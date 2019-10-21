@@ -23,12 +23,12 @@ namespace Jp.Infra.CrossCutting.Bus
             return _mediator.Send<bool>(command);
         }
 
-        public Task RaiseEvent<T>(T @event) where T : Event
+        public async Task RaiseEvent<T>(T @event) where T : Event
         {
             if (!@event.MessageType.Equals(nameof(DomainNotification)))
-                _eventStore?.Save(@event);
+                await _eventStore.Save(@event);
 
-            return _mediator.Publish(@event);
+            await _mediator.Publish(@event);
         }
     }
 }

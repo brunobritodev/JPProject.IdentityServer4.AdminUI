@@ -25,7 +25,7 @@ namespace Jp.Domain.Core.StringUtils
         public static string AddSpacesToSentence(this string state)
         {
             var text = state.ToCharArray();
-            var chars = new char[text.Length + HowManyCapitalizedChars(text)];
+            var chars = new char[text.Length + HowManyCapitalizedChars(text)-1];
 
             chars[0] = text[0];
             int j = 1;

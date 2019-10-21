@@ -80,17 +80,18 @@ namespace Jp.Application.Services
             return _userService.HasPassword(userId);
         }
 
-        public async Task<IEnumerable<EventHistoryData>> GetHistoryLogs(string username)
+        public async Task<ListOf<EventHistoryData>> GetEvents(string username, PagingViewModel paging)
         {
-            var history = await _eventStoreRepository.All(username);
-            return _mapper.Map<IEnumerable<EventHistoryData>>(history);
+            var history = await _eventStoreRepository.GetEvents(username, paging);
+            var total = await _eventStoreRepository.Count(username, paging.Search);
+            return new ListOf<EventHistoryData>(_mapper.Map<IEnumerable<EventHistoryData>>(history), total);
         }
 
-        public async Task<ListOfUsersViewModel> GetUsers(PagingViewModel paging)
+        public async Task<ListOf<UserListViewModel>> GetUsers(PagingViewModel paging)
         {
             var users = await _userService.GetUsers(paging);
             var total = await _userService.Count(paging.Search);
-            return new ListOfUsersViewModel(_mapper.Map<IEnumerable<UserListViewModel>>(users), total);
+            return new ListOf<UserListViewModel>(_mapper.Map<IEnumerable<UserListViewModel>>(users), total);
         }
 
         public async Task<UserViewModel> GetUserDetails(string username)

@@ -2,6 +2,7 @@
 using Jp.Domain.Core.StringUtils;
 using Jp.Domain.Interfaces;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.Data.EventSourcing
 {
@@ -16,24 +17,23 @@ namespace Jp.Infra.Data.EventSourcing
             _systemUser = systemUser;
         }
 
-        public void Save<T>(T theEvent) where T : Event
+        public Task Save<T>(T theEvent) where T : Event
         {
-            var serializedData = JsonConvert.SerializeObject(theEvent);
+            var serializedData = JsonConvert.SerializeObject(theEvent, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
 
             if (theEvent.Message.IsMissing())
-                theEvent.Message = theEvent.MessageType.AddSpacesToSentence().Replace("Event", string.Empty);
+                theEvent.Message = theEvent.MessageType.AddSpacesToSentence().Replace("Event", string.Empty).Trim();
 
             var storedEvent = new StoredEvent(
-               theEvent.AggregateId,
                theEvent.MessageType,
                theEvent.EventType,
                theEvent.Message,
                _systemUser.GetLocalIpAddress(),
                _systemUser.GetRemoteIpAddress(),
                serializedData)
-                .SetUser(_systemUser.Username);
+                .SetUser(_systemUser.Username).SetAggregate(theEvent.AggregateId);
 
-            _eventStoreRepository.Store(storedEvent);
+            return _eventStoreRepository.Store(storedEvent);
         }
     }
 }

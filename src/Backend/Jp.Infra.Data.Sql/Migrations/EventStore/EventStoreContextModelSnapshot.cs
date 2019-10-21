@@ -19,6 +19,19 @@ namespace Jp.Infra.Data.Sql.Migrations.EventStore
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Jp.Domain.Core.Events.EventDetails", b =>
+                {
+                    b.Property<Guid>("EventId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Metadata")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EventId");
+
+                    b.ToTable("StoredEventDetails");
+                });
+
             modelBuilder.Entity("Jp.Domain.Core.Events.StoredEvent", b =>
                 {
                     b.Property<Guid>("Id")
@@ -26,9 +39,6 @@ namespace Jp.Infra.Data.Sql.Migrations.EventStore
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AggregateId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Data")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EventType")
@@ -57,6 +67,15 @@ namespace Jp.Infra.Data.Sql.Migrations.EventStore
                     b.HasKey("Id");
 
                     b.ToTable("StoredEvent");
+                });
+
+            modelBuilder.Entity("Jp.Domain.Core.Events.EventDetails", b =>
+                {
+                    b.HasOne("Jp.Domain.Core.Events.StoredEvent", "Event")
+                        .WithOne("Details")
+                        .HasForeignKey("Jp.Domain.Core.Events.EventDetails", "EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

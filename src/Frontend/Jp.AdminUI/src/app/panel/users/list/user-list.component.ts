@@ -17,7 +17,6 @@ import Swal from 'sweetalert2';
 export class UserListComponent implements OnInit {
 
     public users: UserProfile[];
-    public historyData$: Observable<EventHistoryData[]>;
     public selectedUser: UserProfile;
 
     public total: number;
@@ -35,14 +34,14 @@ export class UserListComponent implements OnInit {
             .pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.findUsers(a, this.quantity, this.page)))
             .subscribe((response: ListOfUsers) => {
-                this.users = response.users;
+                this.users = response.collection;
                 this.total = response.total;
             });
     }
 
     public loadResources() {
         this.userService.getUsers(this.quantity, this.page).subscribe(a => {
-            this.users = a.users;
+            this.users = a.collection;
             this.total = a.total;
         });
     }
@@ -77,16 +76,6 @@ export class UserListComponent implements OnInit {
             });
         });
     }
-
-    public showLogs(user: UserProfile) {
-        this.selectedUser = user;
-        this.historyData$ = this.userService.showLogs(user.userName);
-    }
-
-    parse(details: string) {
-        return JSON.parse(details);
-    }
-
 
     public findUser(event: any) {
         if (event.target.value == null || event.target.value === "") {

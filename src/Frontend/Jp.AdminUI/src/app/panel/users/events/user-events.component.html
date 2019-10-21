@@ -1,0 +1,107 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.users' | translate }} - <b>Claims</b>
+        <small><b [innerHTML]="'client.ClaimDescription' | translate"></b></small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-body">
+        <a [routerLink]="[ '/users', user.userName, 'edit']" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
+    </div>
+</div>
+
+<app-loading *ngIf="model == null"></app-loading>
+
+
+<div class="card card-default" *ngIf="model">
+    <div class="card-header">
+        <div class="card-header" *ngIf="user">
+            <!-- START card-->
+            <div class="card">
+                <div class="half-float">
+                    <img class="img-fluid" src="assets/img/bg3.jpg" alt="">
+                    <div class="half-float-bottom" *ngIf="user.picture">
+                        <img class="img-thumbnail circle thumb128" [src]="user.picture" />
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="m-0">{{user.name}}</h3>
+                    <p class="text-muted"><i class="fas fa-user"></i> {{user.userName}}</p>
+                    <p class="text-muted"><i class="fas fa-mail-bulk"></i> {{user.email}}</p>
+                </div>
+                <div class="card-body">
+                    <div class="card bg-danger-dark border-0">
+                        <div class="row align-items-center mx-0">
+                            <div class="col-4 text-center">
+                                <em class="icon-star fa-3x"></em>
+                            </div>
+                            <div class="col-8 py-4 bg-danger rounded-right">
+                                <div class="h1 m-0 text-bold">{{total}}</div>
+                                <div class="text-uppercase">Events</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END card-->
+        </div>
+    </div>
+    <div class="card-body">
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <td>Category</td>
+                    <th>Action</th>
+                    <th>When</th>
+                    <th>Who</th>
+                    <th>Where</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let history of model">
+                    <td>{{history.category}}</td>
+                    <td>{{history.action}}</td>
+                    <td>{{history.when}}</td>
+                    <td>{{history.who}}</td>
+                    <td>{{history.ip}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="history.show = !history.show"><i
+                                class="far fa-clock"></i></button>
+                        <div *ngIf="history.show"><br>
+                            <pre>{{ parse(history.details) | json}}</pre>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex">
+            <div>
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search" (keyup)="findEvent($event)"
+                        (blur)="findEvent($event)" />
+                </div>
+            </div>
+            <div class="ml-auto">
+                <div class="input-group">
+                    <label class="col-form-label">Items per page:&nbsp;</label>
+                    <select class="custom-select" [(ngModel)]="quantity" (change)="loadResources()">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                    <ngb-pagination [collectionSize]="total" [(page)]="page" [maxSize]="5" [rotate]="true"
+                        [ellipses]="false" [boundaryLinks]="true" [pageSize]="quantity" (pageChange)="loadResources()">
+                    </ngb-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

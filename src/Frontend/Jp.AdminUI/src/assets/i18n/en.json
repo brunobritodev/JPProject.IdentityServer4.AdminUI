@@ -387,7 +387,7 @@
 		"list": {
 			"email": "Email",
 			"info": "User information",
-			"log-tooltip": "Show logs",
+			"log-tooltip": "Show events",
 			"name": "Name",
 			"picture": "Picture",
 			"username": "Username"
@@ -411,6 +411,9 @@
 			"name": "Name",
 			"role": "Role",
 			"role-tooltip": "Select user role"
+		},
+		"events": {
+
 		}
 	}
 }
