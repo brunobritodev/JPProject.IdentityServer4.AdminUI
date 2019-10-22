@@ -41,6 +41,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.7.2",
     "core-js": "^3.1.4",
+    "fast-json-patch": "^3.0.0-1",
     "flag-icon-css": "^3.0.0",
     "font-awesome": "^4.7.0",
     "hoek": "^6.1.3",

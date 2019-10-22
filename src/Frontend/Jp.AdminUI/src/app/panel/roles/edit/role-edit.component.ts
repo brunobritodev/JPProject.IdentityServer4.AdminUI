@@ -1,14 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { RoleService } from "@shared/services/role.service";
-import { Role } from "@shared/viewModel/role.model";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { ActivatedRoute, Router } from "@angular/router";
-import { flatMap, tap } from "rxjs/operators";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-
-import Swal from 'sweetalert2'
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { RoleService } from '@shared/services/role.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { Role } from '@shared/viewModel/role.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import { flatMap, tap } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: "app-role-edit",
@@ -36,7 +35,7 @@ export class RoleEditComponent implements OnInit {
 
 
     ngOnInit() {
-        this.route.params.pipe(tap(p => this.role = p["role"])).pipe(flatMap(p => this.roleService.getRoleDetails(p["role"]))).subscribe(result => this.model = result.data);
+        this.route.params.pipe(tap(p => this.role = p["role"])).pipe(flatMap(p => this.roleService.getRoleDetails(p["role"]))).subscribe(result => this.model = result);
         this.errors = [];
         this.showButtonLoading = false;
     }
@@ -44,26 +43,17 @@ export class RoleEditComponent implements OnInit {
     public update() {
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-            this.model.oldName = this.role;
-            this.roleService.update(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.router.navigate(["/roles"]);
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to update");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to update");
-        }
+
+        this.roleService.update(this.role, this.model).subscribe(
+            registerResult => {
+                this.showSuccessMessage();
+                this.router.navigate(["/roles"]);
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
 
     }
 

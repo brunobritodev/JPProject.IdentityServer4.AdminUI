@@ -20,6 +20,7 @@ namespace Jp.Infra.Data.Repository
         {
             return DbSet
                 .Include(s => s.UserClaims)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(s => s.Name == name);
         }
 

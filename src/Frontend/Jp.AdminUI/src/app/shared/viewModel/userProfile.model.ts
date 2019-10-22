@@ -1,4 +1,5 @@
 export class UserProfile {
+    public id: string;
     public email: string;
     public name: string;
     public picture: string;
@@ -26,5 +27,5 @@ export class UserProfile {
 
 export class ListOfUsers {
     public total: number;
-    public users: Array<UserProfile>;
+    public collection: Array<UserProfile>;
 }

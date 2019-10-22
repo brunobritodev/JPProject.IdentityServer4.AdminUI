@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { UserService } from "../../shared/services/user.service";
-import { ResetPassword } from "../../shared/view-model/reset-password.model";
-import { DefaultResponse } from "../../shared/view-model/default-response.model";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
+import { Subscription } from 'rxjs';
+
+import { UserService } from '../../shared/services/user.service';
+import { DefaultResponse } from '../../shared/view-model/default-response.model';
+import { ResetPassword } from '../../shared/view-model/reset-password.model';
 
 @Component({
     selector: "app-dashboard",
@@ -19,6 +20,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     public showButtonLoading: boolean;
     public passChanged: boolean;
     private resetPassSub: Subscription;
+    email: string;
 
 
     constructor(
@@ -45,7 +47,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
                     return;
                 }
                 this.model.code = params.code;
-                this.model.email = params.email;
+                this.email = params.email;
             });
         this.showButtonLoading = false;
 
@@ -56,7 +58,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     public async reset() {
         this.showButtonLoading = true;
         try {
-            this.authService.resetPassword(this.model).subscribe(
+            this.authService.resetPassword(this.email, this.model).subscribe(
                 registerResult => {
                     this.router.navigate(["/login"]);
                     this.showButtonLoading = false;

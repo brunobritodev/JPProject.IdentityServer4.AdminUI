@@ -35,7 +35,7 @@
                             <button class="btn btn-primary btn-xs" (click)="details(role.name)" placement="top"
                                 [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
                             &nbsp;
-                            <a [routerLink]="['/roles/edit', role.name]" class="btn btn-primary btn-xs" placement="top"
+                            <a [routerLink]="['/roles', role.name, 'edit']" class="btn btn-primary btn-xs" placement="top"
                                 [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                             &nbsp;
                         </td>
@@ -70,7 +70,7 @@
                 <tbody>
                     <tr *ngFor="let user of users$ | async">
                         <td>
-                            <a [routerLink]="['/users/edit', user.userName]" class="btn btn-primary btn-xs" placement="top"
+                            <a [routerLink]="['/users', user.userName, 'edit']" class="btn btn-primary btn-xs" placement="top"
                                 [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                             &nbsp;
                         </td>

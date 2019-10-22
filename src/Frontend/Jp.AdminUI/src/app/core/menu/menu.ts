@@ -5,14 +5,14 @@ const Home = {
     icon: "icon-home"
 };
 
-const Settings = {
+const Clients = {
     text: "Clients",
     link: "/clients",
     icon: "fa fa-desktop",
     submenu: [
         {
             text: "List",
-            link: "/clients/list"
+            link: "/clients"
         },
         {
             text: "Add",
@@ -28,7 +28,7 @@ const IdentityResource = {
     submenu: [
         {
             text: "List",
-            link: "/identity-resource/list"
+            link: "/identity-resource"
         },
         {
             text: "Add",
@@ -44,7 +44,7 @@ const ApiResource = {
     submenu: [
         {
             text: "List",
-            link: "/api-resource/list"
+            link: "/api-resource"
         },
         {
             text: "Add",
@@ -66,7 +66,7 @@ const Users = {
     submenu: [
         {
             text: "List",
-            link: "/users/list"
+            link: "/users"
         },
         {
             text: "Add",
@@ -82,7 +82,7 @@ const Roles = {
     submenu: [
         {
             text: "List",
-            link: "/roles/list"
+            link: "/roles"
         },
         {
             text: "Add",
@@ -95,14 +95,19 @@ const headingMain = {
     text: "Main Navigation",
     heading: true
 };
+const Settings = {
+    text: "Settings",
+    heading: true
+};
 
 export const menu = [
     headingMain,
     Home,
-    Settings,
+    Clients,
     IdentityResource,
     ApiResource,
     PersistedGrants,
     Users,
-    Roles
+    Roles,
+    Settings
 ];

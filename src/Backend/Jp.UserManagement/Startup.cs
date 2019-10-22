@@ -1,59 +1,63 @@
-﻿using Jp.Infra.CrossCutting.Database;
+﻿using Hellang.Middleware.ProblemDetails;
+using Jp.Infra.CrossCutting.Database;
 using Jp.Infra.CrossCutting.IoC;
 using Jp.Management.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 
 namespace Jp.Management
 {
     public class Startup
     {
-        private readonly ILogger<Startup> _logger;
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment HostEnvironment { get; }
 
-        public Startup(IHostingEnvironment hostEnvironment, ILogger<Startup> logger)
+        public Startup(IConfiguration configuration)
         {
-            _logger = logger;
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(hostEnvironment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                .AddEnvironmentVariables();
-
-            if (hostEnvironment.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
-
-            Configuration = builder.Build();
-            HostEnvironment = hostEnvironment;
+            Configuration = configuration;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-            
-            // Identity Database
-            services.AddAuthentication(Configuration);
+            services
+                .AddMvcCore()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                }).AddApiExplorer();
 
+
+            services.AddProblemDetails();
+
+            // Response compression
+            services.AddBrotliCompression();
+
+            // Identity Database
+            services.AddIdentityConfiguration(Configuration);
+
+            // Cors request
             services.ConfigureCors();
 
             // Configure policies
             services.AddPolicies();
 
-            // configure auth Server
-            services.AddIdentityServerAuthentication(_logger, Configuration);
-
-            services.AddSwagger(Configuration);
-
             // Config automapper
             services.AddAutoMapperSetup();
+
+            // configure auth Server
+            services.ConfigureOAuth2Server(Configuration);
+
+            // configure openapi
+            services.AddSwagger(Configuration);
+
+
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
 
@@ -62,7 +66,7 @@ namespace Jp.Management
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -75,21 +79,30 @@ namespace Jp.Management
                 app.UseHttpsRedirection();
             }
 
+            app.UseRouting();
             app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseProblemDetails();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("./v1/swagger.json", "ID4 User Management");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ID4 User Management");
                 c.OAuthClientId("Swagger");
+                c.OAuthClientSecret("swagger");
                 c.OAuthAppName("User Management UI - full access");
+                c.OAuthUseBasicAuthenticationWithAccessCodeGrant();
             });
-            app.UseMvc();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
 
 
         private void RegisterServices(IServiceCollection services)
         {
             // Adding dependencies from another layers (isolated from Presentation)
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }

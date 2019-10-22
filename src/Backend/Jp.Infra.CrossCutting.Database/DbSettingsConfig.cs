@@ -1,4 +1,5 @@
-﻿using Jp.Infra.CrossCutting.Identity.Context;
+﻿using IdentityModel;
+using Jp.Infra.CrossCutting.Identity.Context;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.Infra.Data.MySql.Configuration;
 using Jp.Infra.Data.PostgreSQL.Configuration;
@@ -12,7 +13,7 @@ namespace Jp.Infra.CrossCutting.Database
 {
     public static class DbSettingsConfig
     {
-        public static void AddAuthentication(this IServiceCollection services, IConfiguration configuration)
+        public static void AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             var database = configuration["ApplicationSettings:DatabaseType"].ToUpper();
             var connString = configuration.GetConnectionString("SSOConnection");
@@ -32,11 +33,27 @@ namespace Jp.Infra.CrossCutting.Database
                     break;
             }
 
-            services.AddIdentity<UserIdentity, UserIdentityRole>()
+            services.AddIdentity<UserIdentity, UserIdentityRole>(options =>
+                {
+                    options.ClaimsIdentity.RoleClaimType = JwtClaimTypes.Role;
+                    options.ClaimsIdentity.UserIdClaimType = JwtClaimTypes.Name;
+                    options.SignIn.RequireConfirmedAccount = true;
+                    options.User.RequireUniqueEmail = true;
+
+                    // NIST Password best practices: https://pages.nist.gov/800-63-3/sp800-63b.html#appA
+                    options.Lockout.MaxFailedAccessAttempts = 10;
+                    options.Password.RequiredLength = 8;
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequiredUniqueChars = 0;
+
+                })
+
                 .AddEntityFrameworkStores<ApplicationIdentityContext>()
                 .AddDefaultTokenProviders();
-
-            services.UpgradePasswordSecurity().UseArgon2<IdentityUser>();
         }
 
         public static void ConfigureIdentityServerDatabase(this IIdentityServerBuilder builder, IConfiguration configuration)

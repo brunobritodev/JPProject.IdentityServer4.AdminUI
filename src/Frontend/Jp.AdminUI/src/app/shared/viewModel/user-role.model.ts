@@ -1,4 +1,5 @@
+import { Role } from './role.model';
+
 export class UserRole {
-    public role: string;
-    public userName: string;
+    public role: Role;
 }

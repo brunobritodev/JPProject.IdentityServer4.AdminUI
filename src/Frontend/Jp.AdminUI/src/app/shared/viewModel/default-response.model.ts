@@ -1,20 +1,26 @@
-export class DefaultResponse<T> {
+export class ProblemDetails {
+    
     public success: boolean;
-    public data: T;
 
     public static GetErrors(err: any): Array<KeyValuePair> {
+        try {
+            if (err.status === 403) {
+                return [new KeyValuePair("403", "Unauthorized Access")];
+            }
 
-        if (err.status === 403) {
-            return [new KeyValuePair("403", "Unauthorized Access")];
-        }
+            if (err.error.errors)
+            {
+                if(err.error.errors["DomainNotification"]){
+                    return err.error.errors["DomainNotification"].map((element, i) => new KeyValuePair(i, element));
+                }
+                return err.error.errors.map((element, i) => new KeyValuePair(i, element.message));
+            }
+                
 
-        if (err.error.errors != null)
-            return err.error.errors.map((element, i) => new KeyValuePair(i, element));
 
-        let errors = Object.keys(err.error).map(element => new KeyValuePair(element, err.error[element][0]));
-        if (errors[0] == undefined) {
-            errors = [];
-            return [new KeyValuePair("500", "Unknown error while trying to update")];
+            return [new KeyValuePair(err.error.status.toString(), "Unknown error - " + err.error.type)];
+        } catch (error) {
+            return [new KeyValuePair("500", "Unknown error")];
         }
     }
 }

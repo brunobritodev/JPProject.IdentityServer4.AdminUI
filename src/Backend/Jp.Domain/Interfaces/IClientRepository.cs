@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using IdentityServer4.EntityFramework.Entities;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Entities;
 
 namespace Jp.Domain.Interfaces
 {

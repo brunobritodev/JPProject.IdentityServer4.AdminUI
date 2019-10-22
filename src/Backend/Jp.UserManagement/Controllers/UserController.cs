@@ -1,16 +1,16 @@
-﻿using System.Threading.Tasks;
-using Jp.Application.Interfaces;
+﻿using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), AllowAnonymous]
+
+    [Route("user"), AllowAnonymous]
     public class UserController : ApiController
     {
         private readonly IUserAppService _userAppService;
@@ -23,92 +23,48 @@ namespace Jp.Management.Controllers
             _userAppService = userAppService;
         }
 
-        [HttpPost, Route("register")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Register([FromBody] RegisterUserViewModel model)
+        [HttpPost, Route("{username}/password/forget")]
+        public async Task<ActionResult> ForgotPassword(string username)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
-
-            await _userAppService.Register(model);
-
-            return Response(true);
-        }
-
-        [HttpPost, Route("register-provider")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RegisterWithProvider([FromBody] RegisterUserViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
-
-            await _userAppService.RegisterWithProvider(model);
-
-            return Response(true);
-        }
-
-        [HttpGet, Route("checkUsername")]
-        public async Task<ActionResult<DefaultResponse<bool>>> CheckUsername(string username)
-        {
-            var exist = await _userAppService.CheckUsername(username);
-
-            return Response(exist);
-        }
-
-        [HttpGet, Route("checkEmail")]
-        public async Task<ActionResult<DefaultResponse<bool>>> CheckEmail(string email)
-        {
-            var exist = await _userAppService.CheckUsername(email);
-
-            return Response(exist);
-        }
-
-        [HttpPost, Route("forgot-password")]
-        public async Task<ActionResult<DefaultResponse<bool>>> ForgotPassword([FromBody] ForgotPasswordViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
-
+            var model = new ForgotPasswordViewModel(username);
             await _userAppService.SendResetLink(model);
 
-            return Response(true);
+            return Ok();
         }
 
-        [HttpPost]
-        [Route("reset-password")]
-        public async Task<ActionResult<DefaultResponse<bool>>> ResetPassword([FromBody]ResetPasswordViewModel model)
+        [HttpPost, Route("{username}/password/reset")]
+        public async Task<ActionResult> ResetPassword(string username, [FromBody]ResetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
+            model.Email = username;
             await _userAppService.ResetPassword(model);
 
-            return Response(true);
+            return Ok();
         }
 
-        [HttpPost, Route("confirm-email")]
-        public async Task<ActionResult<DefaultResponse<bool>>> ConfirmEmail([FromBody] ConfirmEmailViewModel model)
+        [HttpPost, Route("{username}/confirm-email")]
+        public async Task<ActionResult> ConfirmEmail(string username, [FromBody] ConfirmEmailViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
+            model.Email = username;
             await _userAppService.ConfirmEmail(model);
-            return Response(true);
+            return Ok();
         }
 
-        
     }
 }

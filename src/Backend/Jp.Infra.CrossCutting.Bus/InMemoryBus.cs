@@ -1,8 +1,9 @@
-﻿using System.Threading.Tasks;
-using Jp.Domain.Core.Bus;
+﻿using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Commands;
 using Jp.Domain.Core.Events;
+using Jp.Domain.Core.Notifications;
 using MediatR;
+using System.Threading.Tasks;
 
 namespace Jp.Infra.CrossCutting.Bus
 {
@@ -22,12 +23,12 @@ namespace Jp.Infra.CrossCutting.Bus
             return _mediator.Send<bool>(command);
         }
 
-        public Task RaiseEvent<T>(T @event) where T : Event
+        public async Task RaiseEvent<T>(T @event) where T : Event
         {
-            if (!@event.MessageType.Equals("DomainNotification"))
-                _eventStore?.Save(@event);
+            if (!@event.MessageType.Equals(nameof(DomainNotification)))
+                await _eventStore.Save(@event);
 
-            return _mediator.Publish(@event);
+            await _mediator.Publish(@event);
         }
     }
 }

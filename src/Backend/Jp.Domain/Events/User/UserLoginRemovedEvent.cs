@@ -1,5 +1,5 @@
-using System;
 using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Events.User
 {
@@ -10,6 +10,7 @@ namespace Jp.Domain.Events.User
         public string ProviderKey { get; }
 
         public UserLoginRemovedEvent(Guid aggregateId, string username, string loginProvider, string providerKey)
+            : base(EventTypes.Success)
         {
             AggregateId = aggregateId.ToString();
             Username = username;

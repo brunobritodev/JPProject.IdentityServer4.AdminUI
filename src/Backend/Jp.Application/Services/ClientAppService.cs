@@ -1,16 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
-using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.Clients;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Services
 {
@@ -41,10 +42,11 @@ namespace Jp.Application.Services
             _clientClaimRepository = clientClaimRepository;
         }
 
-        public Task<IEnumerable<ClientListViewModel>> GetClients()
+        public async Task<IEnumerable<ClientListViewModel>> GetClients()
         {
-            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(_clientRepository.GetAll().Select(a => a.ToModel()).OrderBy(a => a.ClientName).ToList());
-            return Task.FromResult(resultado);
+            var clients = await _clientRepository.GetAll().OrderBy(a => a.ClientName).ToListAsync();
+            var resultado = _mapper.Map<IEnumerable<ClientListViewModel>>(clients.Select(a => a.ToModel()));
+            return resultado;
         }
 
         public async Task<Client> GetClientDetails(string clientId)
@@ -53,10 +55,10 @@ namespace Jp.Application.Services
             return _mapper.Map<Client>(resultado);
         }
 
-        public Task Update(ClientViewModel client)
+        public Task Update(string id, Client client)
         {
-            var registerCommand = _mapper.Map<UpdateClientCommand>(client);
-            return Bus.SendCommand(registerCommand);
+            var updateClientCommand = new UpdateClientCommand(client, id);
+            return Bus.SendCommand(updateClientCommand);
         }
 
         public async Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId)
@@ -85,7 +87,7 @@ namespace Jp.Application.Services
         {
             var registerCommand = _mapper.Map<RemovePropertyCommand>(model);
             return Bus.SendCommand(registerCommand);
-    }
+        }
         public Task SaveProperty(SaveClientPropertyViewModel model)
         {
             var registerCommand = _mapper.Map<SaveClientPropertyCommand>(model);

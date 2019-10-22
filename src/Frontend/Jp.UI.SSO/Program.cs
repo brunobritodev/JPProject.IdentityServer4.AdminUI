@@ -1,19 +1,20 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Jp.UI.SSO.Util;
+﻿using Jp.UI.SSO.Util;
 using Microsoft.ApplicationInsights.Extensibility;
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
+using Serilog.Extensions.Logging;
 using Serilog.Sinks.SystemConsole.Themes;
+using System;
+using System.Threading.Tasks;
 
 namespace Jp.UI.SSO
 {
     public class Program
     {
+        static readonly LoggerProviderCollection Providers = new LoggerProviderCollection();
         public static void Main(string[] args)
         {
             Console.Title = "JP Project - Server SSO";
@@ -27,23 +28,18 @@ namespace Jp.UI.SSO
                 .WriteTo.ApplicationInsights(TelemetryConfiguration.Active, TelemetryConverter.Traces)
                 .WriteTo.File(@"jpProject_sso_log-.txt", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 5)
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Literate)
+                .WriteTo.Providers(Providers)
                 .CreateLogger();
 
-            var host = CreateWebHostBuilder(args).Build();
+            var host = CreateHostBuilder(args).Build();
 
-            Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host));
+            Task.WaitAll(DbMigrationHelpers.EnsureSeedData(host.Services.CreateScope()));
 
-            host.Run(); 
+            host.Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseApplicationInsights(Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY"))
-                .ConfigureLogging(builder =>
-                {
-                    builder.ClearProviders();
-                    builder.AddSerilog();
-                })
-                .UseStartup<Startup>();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>().UseSerilog(providers: Providers));
     }
 }

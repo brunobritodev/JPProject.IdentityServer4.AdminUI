@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountManagementService } from '../account-management.service';
-import { Observable } from 'rxjs';
-import { EventHistoryData } from '../../../shared/models/event-history-data.model';
-import { map } from 'rxjs/operators';
 import { TranslatorService } from '@core/translator/translator.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { EventHistoryData } from '../../../shared/models/event-history-data.model';
+import { AccountManagementService } from '../account-management.service';
+
 @Component({
     templateUrl: 'user-history.component.html',
     providers: [AccountManagementService, TranslatorService],
@@ -18,7 +20,7 @@ export class UserHistoryComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.historyData$ = this.accountService.getLogs().pipe(map(a => a.data));
+        this.historyData$ = this.accountService.getLogs();
     }
 
     parse(details: string) {

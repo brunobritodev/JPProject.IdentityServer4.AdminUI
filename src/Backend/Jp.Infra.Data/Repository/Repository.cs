@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-using Jp.Domain.Interfaces;
+﻿using Jp.Domain.Interfaces;
 using Jp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 
 namespace Jp.Infra.Data.Repository
 {
@@ -31,7 +31,7 @@ namespace Jp.Infra.Data.Repository
         {
             return DbSet;
         }
-        
+
         public virtual void Update(TEntity obj)
         {
             DbSet.Update(obj);

@@ -16,7 +16,7 @@ namespace Jp.Infra.Data.PostgreSQL.Migrations.Identity
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("Jp.Infra.CrossCutting.Identity.Entities.Identity.UserIdentity", b =>
@@ -28,10 +28,14 @@ namespace Jp.Infra.Data.PostgreSQL.Migrations.Identity
 
                     b.Property<string>("Bio");
 
+                    b.Property<DateTime?>("Birthdate");
+
                     b.Property<string>("Company");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
+
+                    b.Property<string>("Documento");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);

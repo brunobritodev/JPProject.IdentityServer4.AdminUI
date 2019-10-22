@@ -2,6 +2,7 @@
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -9,9 +10,14 @@ namespace Jp.Infra.CrossCutting.Identity.Context
 {
     public class ApplicationIdentityContext : IdentityDbContext<UserIdentity, UserIdentityRole, Guid, UserIdentityUserClaim, UserIdentityUserRole, UserIdentityUserLogin, UserIdentityRoleClaim, UserIdentityUserToken>
     {
-        public ApplicationIdentityContext(DbContextOptions<ApplicationIdentityContext> options)
+        private readonly ILoggerFactory loggerFactory;
+
+        public ApplicationIdentityContext(
+            DbContextOptions<ApplicationIdentityContext> options,
+            ILoggerFactory loggerFactory)
             : base(options)
         {
+            this.loggerFactory = loggerFactory;
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -27,6 +33,12 @@ namespace Jp.Infra.CrossCutting.Identity.Context
             return base.SaveChangesAsync();
         }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT").Equals("Development"))
+                optionsBuilder.UseLoggerFactory(this.loggerFactory).EnableSensitiveDataLogging();
+        }
 
         private void ConfigureIdentityContext(ModelBuilder builder)
         {

@@ -1,15 +1,15 @@
-﻿using System;
-using Microsoft.ApplicationInsights.Extensibility;
-using Microsoft.AspNetCore;
+﻿using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
+using System;
 
 namespace Jp.Management
 {
     public class Program
     {
-
         public static void Main(string[] args)
         {
             Console.Title = "JP Project - User Management";
@@ -25,15 +25,19 @@ namespace Jp.Management
                 .WriteTo.Console()
                 .CreateLogger();
 
-            CreateWebHostBuilder(args).Build().Run();
-
-
+            CreateHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseApplicationInsights(Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY"))
-                .UseStartup<Startup>()
-                .UseSerilog();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.ConfigureLogging(builder =>
+                    {
+                        builder.ClearProviders();
+                        builder.AddSerilog();
+                    });
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }

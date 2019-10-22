@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Jp.Domain.Core.Events;
+using Jp.Domain.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Jp.Domain.Core.Events;
 
 namespace Jp.Domain.Interfaces
 {
     public interface IEventStoreRepository : IDisposable
     {
-        void Store(StoredEvent theEvent);
+        Task Store(StoredEvent theEvent);
         Task<List<StoredEvent>> All(string username);
+        Task<List<StoredEvent>> GetEvents(string username, PagingViewModel paging);
+        Task<int> Count(string username, string search);
     }
 }

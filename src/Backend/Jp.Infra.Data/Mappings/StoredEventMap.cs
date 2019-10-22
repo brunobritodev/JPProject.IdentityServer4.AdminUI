@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Jp.Infra.Data.Mappings
-{    
+{
     public class StoredEventMap : IEntityTypeConfiguration<StoredEvent>
     {
         public void Configure(EntityTypeBuilder<StoredEvent> builder)

@@ -3,6 +3,7 @@ using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.StringUtils;
 using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
 using Jp.Domain.Models;
@@ -72,14 +73,14 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             };
             IdentityResult result;
 
-            if (!string.IsNullOrEmpty(provider))
+            if (provider.IsPresent())
             {
                 var userByProvider = await _userManager.FindByLoginAsync(provider, providerId);
                 if (userByProvider != null)
                     await _bus.RaiseEvent(new DomainNotification("1001", $"User already taken with {provider}"));
             }
 
-            if (string.IsNullOrWhiteSpace(password))
+            if (password.IsMissing())
                 result = await _userManager.CreateAsync(newUser);
             else
                 result = await _userManager.CreateAsync(newUser, password);
@@ -100,10 +101,10 @@ namespace Jp.Infra.CrossCutting.Identity.Services
                     await AddLoginAsync(newUser, provider, providerId);
 
 
-                if (!string.IsNullOrEmpty(password))
+                if (password.IsPresent())
                     _logger.LogInformation("User created a new account with password.");
 
-                if (!string.IsNullOrEmpty(provider))
+                if (provider.IsPresent())
                     _logger.LogInformation($"Provider {provider} associated.");
                 return newUser.Id;
             }
@@ -122,7 +123,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             claims.Add(new Claim("username", user.UserName));
             claims.Add(new Claim(JwtClaimTypes.Email, user.Email));
 
-            if (!string.IsNullOrEmpty(user.Picture))
+            if (user.Picture.IsPresent())
                 claims.Add(new Claim(JwtClaimTypes.Picture, user.Picture));
 
             var identityResult = await _userManager.AddClaimsAsync(user, claims);
@@ -378,10 +379,10 @@ namespace Jp.Infra.CrossCutting.Identity.Services
         public async Task<IEnumerable<User>> GetUsers(PagingViewModel paging)
         {
             List<UserIdentity> users = null;
-            if (!string.IsNullOrEmpty(paging.Search))
-                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+            if (paging.Search.IsPresent())
+                users = await _userManager.Users.Where(UserFind(paging.Search)).Skip(paging.Offset).Take(paging.Limit).ToListAsync();
             else
-                users = await _userManager.Users.Skip((paging.Page - 1) * paging.Quantity).Take(paging.Quantity).ToListAsync();
+                users = await _userManager.Users.Skip(paging.Offset).Take(paging.Limit).ToListAsync();
             return users.Select(GetUser);
         }
 
@@ -464,11 +465,15 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-        public async Task<bool> RemoveClaim(Guid userId, string type)
+        public async Task<bool> RemoveClaim(Guid userId, string claimType, string value)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
             var claims = await _userManager.GetClaimsAsync(user);
-            var claimToRemove = claims.First(c => c.Type == type);
+
+            var claimToRemove = value.IsMissing() ?
+                                    claims.First(c => c.Type.Equals(claimType)) :
+                                    claims.First(c => c.Type.Equals(claimType) && c.Value.Equals(value));
+
             var result = await _userManager.RemoveClaimAsync(user, claimToRemove);
 
             foreach (var error in result.Errors)
@@ -531,14 +536,9 @@ namespace Jp.Infra.CrossCutting.Identity.Services
             return result.Succeeded;
         }
 
-        public async Task<IEnumerable<User>> GetUserFromRole(string[] role)
+        public async Task<IEnumerable<User>> GetUserFromRole(string role)
         {
-            var users = new List<UserIdentity>();
-            foreach (var s in role)
-            {
-                users.AddRange(await _userManager.GetUsersInRoleAsync(s));
-            }
-            return users.Select(GetUser);
+            return (await _userManager.GetUsersInRoleAsync(role)).Select(GetUser);
         }
 
         public async Task<bool> RemoveUserFromRole(string name, string username)
@@ -568,7 +568,7 @@ namespace Jp.Infra.CrossCutting.Identity.Services
 
         public Task<int> Count(string search)
         {
-            return !string.IsNullOrEmpty(search) ? _userManager.Users.Where(UserFind(search)).CountAsync() : _userManager.Users.CountAsync();
+            return search.IsPresent() ? _userManager.Users.Where(UserFind(search)).CountAsync() : _userManager.Users.CountAsync();
         }
 
         public async Task<Guid?> AddLoginAsync(string email, string provider, string providerId)

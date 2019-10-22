@@ -22,4 +22,10 @@ export class ClientAuthComponent implements OnInit {
 
     }
 
+    public addIdentityProvidersRestrictions(type: string) {
+        if (this.model.identityProviderRestrictions.find(a => a == type) == null)
+            this.model.identityProviderRestrictions.push(type);
+    }
+
+
 }

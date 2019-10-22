@@ -8,7 +8,9 @@ using IdentityServer4.Stores;
 using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.UserViewModels;
+using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.StringUtils;
 using Jp.Infra.CrossCutting.Identity.Entities.Identity;
 using Jp.UI.SSO.Controllers.Home;
 using Jp.UI.SSO.Models;
@@ -30,6 +32,7 @@ namespace Jp.UI.SSO.Controllers.Account
 {
     public class AccountController : Controller
     {
+        private readonly IMediatorHandler Bus;
         private readonly SignInManager<UserIdentity> _signInManager;
         private readonly IUserAppService _userAppService;
         private readonly IIdentityServerInteractionService _interaction;
@@ -47,8 +50,10 @@ namespace Jp.UI.SSO.Controllers.Account
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             INotificationHandler<DomainNotification> notifications,
+            IMediatorHandler bus,
             IConfiguration configuration)
         {
+            Bus = bus;
             _signInManager = signInManager;
             _userAppService = userAppService;
             _interaction = interaction;
@@ -93,6 +98,7 @@ namespace Jp.UI.SSO.Controllers.Account
         /// Handle postback from username/password login
         /// </summary>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginInputModel model, string button)
         {
             // the user clicked the "cancel" button
@@ -161,7 +167,7 @@ namespace Jp.UI.SSO.Controllers.Account
                         {
                             return Redirect(model.ReturnUrl);
                         }
-                        else if (string.IsNullOrEmpty(model.ReturnUrl))
+                        else if (model.ReturnUrl.IsMissing())
                         {
                             return Redirect("~/");
                         }
@@ -191,7 +197,7 @@ namespace Jp.UI.SSO.Controllers.Account
         [HttpGet]
         public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
         {
-            if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
+            if (returnUrl.IsMissing()) returnUrl = "~/";
 
             // validate returnUrl - either it is a valid OIDC URL or back to a local page
             if (Url.IsLocalUrl(returnUrl) == false && _interaction.IsValidReturnUrl(returnUrl) == false)
@@ -283,6 +289,7 @@ namespace Jp.UI.SSO.Controllers.Account
             var principal = await _signInManager.CreateUserPrincipalAsync(s);
             additionalLocalClaims.AddRange(principal.Claims);
             var name = principal.FindFirst(JwtClaimTypes.Name)?.Value ?? user.Id.ToString();
+
             await _events.RaiseAsync(new UserLoginSuccessEvent(provider, providerUserId, user.Id.ToString(), name));
             await HttpContext.SignInAsync(user.Id.ToString(), name, provider, localSignInProps, additionalLocalClaims.ToArray());
 
@@ -358,6 +365,7 @@ namespace Jp.UI.SSO.Controllers.Account
             }
 
             return View("LoggedOut", vm);
+
         }
 
         /*****************************************/
@@ -416,7 +424,7 @@ namespace Jp.UI.SSO.Controllers.Account
 
             return new LoginViewModel
             {
-                EnableExternalProviders = _configuration.GetValue<bool>("ApplicationSettings:EnableExternalProviders"),
+                EnableExternalProviders = providers.Any() && _configuration.GetValue<bool>("ApplicationSettings:EnableExternalProviders"),
                 AllowRememberLogin = AccountOptions.AllowRememberLogin,
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,

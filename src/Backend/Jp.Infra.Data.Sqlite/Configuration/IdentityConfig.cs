@@ -25,7 +25,6 @@ namespace Jp.Infra.Data.Sqlite.Configuration
             services.AddDbContext<JpContext>(options => options.UseSqlite(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             services.AddDbContext<EventStoreContext>(options => options.UseSqlite(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
 
-          
             return services;
         }
     }

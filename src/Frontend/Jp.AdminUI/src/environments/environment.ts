@@ -6,7 +6,9 @@
 export const environment = {
   production: false,
   ResourceServer: "https://localhost:5002/",
-  IssuerUri:  "https://localhost:5001",
+  IssuerUri:  "https://localhost:5000",
   RequireHttps: false,
-  Uri: "http://localhost:4300"
+  Uri: "http://localhost:4300",
+  defaultTheme: "E",
+  version: "3.0.0"
 };

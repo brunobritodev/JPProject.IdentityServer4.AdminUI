@@ -1,5 +1,6 @@
 ﻿using Jp.Application.Interfaces;
 using Jp.Application.ViewModels;
+using Jp.Domain.Core.StringUtils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
@@ -55,7 +56,7 @@ namespace Jp.Infra.CrossCutting.Tools.CloudServices.Storage
         private static async Task RemovePreviousImage(string picture, CloudBlobContainer container)
         {
             // Remove previous image
-            if (!string.IsNullOrEmpty(picture))
+            if (picture.IsPresent())
             {
                 var pictureName = Path.GetFileName(picture);
                 var oldImage = container.GetBlockBlobReference(pictureName);

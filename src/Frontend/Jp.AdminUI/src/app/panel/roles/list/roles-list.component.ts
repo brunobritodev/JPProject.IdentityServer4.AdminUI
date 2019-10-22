@@ -1,15 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { RoleService } from "@shared/services/role.service";
-import { Role } from "@shared/viewModel/role.model";
-import { Observable } from "rxjs";
-import { UserService } from "@shared/services/user.service";
-import { UserProfile } from "@shared/viewModel/userProfile.model";
-import { ToasterService } from "angular2-toaster";
-import { Router } from "@angular/router";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-
-import Swal from 'sweetalert2'
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { RoleService } from '@shared/services/role.service';
+import { UserService } from '@shared/services/user.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { Role } from '@shared/viewModel/role.model';
+import { UserProfile } from '@shared/viewModel/userProfile.model';
+import { ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: "app-roles-list",
@@ -29,7 +28,6 @@ export class RolesListComponent implements OnInit {
         private router: Router,
         public translator: TranslatorService,
         private roleService: RoleService,
-        private userService: UserService,
         public toasterService: ToasterService) { }
 
     ngOnInit() {
@@ -39,7 +37,7 @@ export class RolesListComponent implements OnInit {
 
     public loadRoles() {
         this.roleService.getAvailableRoles().subscribe(a => {
-            this.roles = a.data;
+            this.roles = a;
         });
     }
 
@@ -53,19 +51,17 @@ export class RolesListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                
+
             }).then(isConfirm => {
                 if (isConfirm) {
                     this.selectedRole = null;
                     this.roleService.remove(name).subscribe(
                         registerResult => {
-                            if (registerResult.data) {
-                                this.loadRoles();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                            this.loadRoles();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );
@@ -81,25 +77,17 @@ export class RolesListComponent implements OnInit {
     public removeFromRole(user: string, role: string) {
         this.showButtonLoading = true;
         this.errors = [];
-        try {
 
-            this.roleService.removeUserFromRole(user, role).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.details(this.selectedRole);
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to remove");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to remove");
-        }
+        this.roleService.removeUserFromRole(user, role).subscribe(
+            registerResult => {
+                this.details(this.selectedRole);
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
+
     }
 
     public showSuccessMessage() {
@@ -110,6 +98,6 @@ export class RolesListComponent implements OnInit {
 
     public details(role: string) {
         this.selectedRole = role;
-        this.users$ = this.userService.getUsersFromRole(role);
+        this.users$ = this.roleService.getUsersFromRole(role);
     }
 }

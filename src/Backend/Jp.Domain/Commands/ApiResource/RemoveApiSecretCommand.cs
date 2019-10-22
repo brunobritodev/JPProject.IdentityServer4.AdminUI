@@ -1,4 +1,4 @@
-using Jp.Domain.Commands.Client;
+using Jp.Domain.Commands.Clients;
 using Jp.Domain.Validations.ApiResource;
 
 namespace Jp.Domain.Commands.ApiResource

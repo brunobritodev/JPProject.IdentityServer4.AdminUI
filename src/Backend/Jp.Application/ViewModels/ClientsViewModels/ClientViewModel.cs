@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using IdentityServer4.Models;
+﻿using IdentityServer4.Models;
+using Newtonsoft.Json;
 
 namespace Jp.Application.ViewModels.ClientsViewModels
 {
     public class ClientViewModel : Client
     {
-        [Required]
+        [JsonIgnore]
         public string OldClientId { get; set; }
     }
 }

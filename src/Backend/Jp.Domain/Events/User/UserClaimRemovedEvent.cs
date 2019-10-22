@@ -8,6 +8,7 @@ namespace Jp.Domain.Events.User
         public string Type { get; }
 
         public UserClaimRemovedEvent(string username, string type)
+            : base(EventTypes.Success)
         {
             AggregateId = username;
             Username = username;

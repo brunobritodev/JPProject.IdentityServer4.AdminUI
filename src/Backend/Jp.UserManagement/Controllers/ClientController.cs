@@ -4,16 +4,16 @@ using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("clients"), Authorize(Policy = "ReadOnly")]
     public class ClientsController : ApiController
     {
         private readonly IClientAppService _clientAppService;
@@ -21,168 +21,177 @@ namespace Jp.Management.Controllers
         public ClientsController(
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
-                IClientAppService clientAppService) : base(notifications, mediator)
+            IClientAppService clientAppService) : base(notifications, mediator)
         {
             _clientAppService = clientAppService;
         }
 
-        [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ClientListViewModel>>>> List()
+        [HttpGet("")]
+        public async Task<ActionResult<IEnumerable<ClientListViewModel>>> ListClients()
         {
             var clients = await _clientAppService.GetClients();
-            return Response(clients);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("save"), Authorize(Policy = "Admin")
-        ]
-        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] SaveClientViewModel client)
+        [HttpGet("{client}")]
+        public async Task<ActionResult<Client>> GetClient(string client)
+        {
+            var clients = await _clientAppService.GetClientDefaultDetails(client);
+            return ResponseGet(clients);
+        }
+
+        [HttpPost(""), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<Client>> Post([FromBody] SaveClientViewModel client)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _clientAppService.Save(client);
-            return Response(true);
+            var newClient = await _clientAppService.GetClientDetails(client.ClientId);
+
+            return ResponsePost(nameof(GetClient), new { client = client.ClientId }, newClient);
         }
 
-        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] ClientViewModel client)
+        [HttpPut("{client}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<ClientViewModel>> Update(string client, [FromBody] Client model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
-            await _clientAppService.Update(client);
-            return Response(true);
+
+
+            await _clientAppService.Update(client, model);
+            return ResponsePutPatch();
         }
 
-        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveClientViewModel client)
+
+        [HttpPatch("{client}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<ClientViewModel>> PartialUpdate(string client, [FromBody] JsonPatchDocument<Client> model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
-            await _clientAppService.Remove(client);
-            return Response(true);
-        }
 
-        [HttpPost, Route("copy"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Copy([FromBody] CopyClientViewModel client)
-        {
-            if (!ModelState.IsValid)
+            var clientDb = await _clientAppService.GetClientDetails(client);
+            if (clientDb == null)
             {
-                NotifyModelStateErrors();
-                return Response(false);
+                ModelState.AddModelError("client", "Invalid Api Resource");
+                return ModelStateErrorResponseError();
             }
-            await _clientAppService.Copy(client);
-            return Response(true);
+
+            model.ApplyTo(clientDb);
+            await _clientAppService.Update(client, clientDb);
+            return ResponsePutPatch();
         }
 
-        [HttpGet, Route("details")]
-        public async Task<ActionResult<DefaultResponse<Client>>> Details(string clientId)
+        [HttpDelete("{client}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Delete(string client)
         {
-            var clients = await _clientAppService.GetClientDefaultDetails(clientId);
-            return Response(clients);
+            var command = new RemoveClientViewModel(client);
+            await _clientAppService.Remove(command);
+            return ResponseDelete();
         }
 
-        [HttpGet, Route("secrets")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<SecretViewModel>>>> Secrets(string clientId)
+
+        [HttpPost("{client}/copy"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<Client>> Copy(string client)
         {
-            var clients = await _clientAppService.GetSecrets(clientId);
-            return Response(clients);
+            var clientDb = new CopyClientViewModel(client);
+            await _clientAppService.Copy(clientDb);
+            var newClient = await _clientAppService.GetClientDetails(client);
+            return ResponsePost(nameof(GetClient), new { client }, newClient);
         }
 
-        [HttpPost, Route("remove-secret"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveSecret([FromBody] RemoveClientSecretViewModel model)
+        [HttpGet("{client}/secrets")]
+        public async Task<ActionResult<IEnumerable<SecretViewModel>>> Secrets(string client)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var clients = await _clientAppService.GetSecrets(client);
+            return ResponseGet(clients);
+        }
+
+        [HttpDelete("{client}/secrets/{secretId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveSecret(string client, int secretId)
+        {
+            var model = new RemoveClientSecretViewModel(client, secretId);
             await _clientAppService.RemoveSecret(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
-
-        [HttpPost, Route("save-secret"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveSecret([FromBody] SaveClientSecretViewModel model)
+        [HttpPost("{client}/secrets"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<SecretViewModel>>> SaveSecret(string client, [FromBody] SaveClientSecretViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _clientAppService.SaveSecret(model);
-            return Response(true);
+            var secret = await _clientAppService.GetSecrets(client);
+            return ResponsePost(nameof(Secrets), new { client }, secret);
         }
 
-        [HttpGet, Route("properties")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ClientPropertyViewModel>>>> Properties(string clientId)
+        [HttpGet("{client}/properties")]
+        public async Task<ActionResult<IEnumerable<ClientPropertyViewModel>>> Properties(string client)
         {
-            var clients = await _clientAppService.GetProperties(clientId);
-            return Response(clients);
+            var clients = await _clientAppService.GetProperties(client);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove-property"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveProperty([FromBody] RemovePropertyViewModel model)
+        [HttpDelete("{client}/properties/{propertyId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveProperty(string client, int propertyId)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var model = new RemovePropertyViewModel(propertyId, client);
             await _clientAppService.RemoveProperty(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
 
-        [HttpPost, Route("save-property"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveProperty([FromBody] SaveClientPropertyViewModel model)
+        [HttpPost("{client}/properties"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<ClientPropertyViewModel>>> SaveProperty(string client, [FromBody] SaveClientPropertyViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _clientAppService.SaveProperty(model);
-            return Response(true);
+            var properties = await _clientAppService.GetProperties(client);
+            return ResponsePost(nameof(Properties), new { client }, properties);
         }
 
-        [HttpGet, Route("claims")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ClaimViewModel>>>> Claims(string clientId)
+        [HttpGet("{client}/claims")]
+        public async Task<ActionResult<IEnumerable<ClaimViewModel>>> Claims(string client)
         {
-            var clients = await _clientAppService.GetClaims(clientId);
-            return Response(clients);
+            var clients = await _clientAppService.GetClaims(client);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove-claim"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveClaim([FromBody] RemoveClientClaimViewModel model)
+        [HttpDelete("{client}/claims/{claimId:int}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveClaim(string client, int claimId)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var model = new RemoveClientClaimViewModel(client, claimId);
             await _clientAppService.RemoveClaim(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
 
-        [HttpPost, Route("save-claim"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveClaim([FromBody] SaveClientClaimViewModel model)
+        [HttpPost("{client}/claims"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IEnumerable<ClaimViewModel>>> SaveClaim(string client, [FromBody] SaveClientClaimViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _clientAppService.SaveClaim(model);
-            return Response(true);
+            var claims = await _clientAppService.GetClaims(client);
+            return ResponsePost(nameof(Claims), new { client }, claims);
         }
 
     }

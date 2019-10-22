@@ -7,6 +7,7 @@ namespace Jp.Domain.Events.Client
         public int Id { get; }
 
         public ClientClaimRemovedEvent(int id, string clientId)
+            : base(EventTypes.Success)
         {
             Id = id;
             AggregateId = clientId;

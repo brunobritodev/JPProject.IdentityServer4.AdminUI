@@ -22,7 +22,7 @@ namespace Jp.Application.AutoMapper
             CreateMap<User, UserViewModel>(MemberList.Destination);//.ForMember(x => x.LockoutEnd, opt => opt.MapFrom(src => src.LockoutEnd != null ? src.LockoutEnd.Value.DateTime.ToShortDateString() : string.Empty));
             CreateMap<User, UserListViewModel>(MemberList.Destination);
 
-            CreateMap<StoredEvent, EventHistoryData>().ConstructUsing(a => new EventHistoryData() { Action = a.MessageType, Id = a.Id.ToString(), Details = a.Data, When = a.Timestamp.ToString(CultureInfo.InvariantCulture), Who = a.User });
+            CreateMap<StoredEvent, EventHistoryData>().ConstructUsing(a => new EventHistoryData(a.Message, a.Id.ToString(), a.Details, a.Timestamp.ToString(CultureInfo.InvariantCulture), a.User, a.MessageType, a.RemoteIpAddress));
             CreateMap<Client, ClientListViewModel>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.Secret, SecretViewModel>(MemberList.Destination);
             CreateMap<IdentityServer4.EntityFramework.Entities.ClientProperty, ClientPropertyViewModel>();

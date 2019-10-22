@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IdentityServer4.Models;
+﻿using IdentityServer4.Models;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels.ClientsViewModels;
 using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("identity-resources"), Authorize(Policy = "ReadOnly")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class IdentityResourceController : ApiController
     {
         private readonly IIdentityResourceAppService _identityResourceAppService;
@@ -28,54 +26,73 @@ namespace Jp.Management.Controllers
             _identityResourceAppService = identityResourceAppService;
         }
 
-        [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<IdentityResourceListView>>>> List()
+        [HttpGet("")]
+        public async Task<ActionResult<IEnumerable<IdentityResourceListView>>> List()
         {
             var irs = await _identityResourceAppService.GetIdentityResources();
-            return Response(irs);
+            return ResponseGet(irs);
         }
 
-        [HttpGet, Route("details")]
-        public async Task<ActionResult<DefaultResponse<IdentityResource>>> Details(string name)
+        [HttpGet("{resource}")]
+        public async Task<ActionResult<IdentityResource>> Details(string resource)
         {
-            var irs = await _identityResourceAppService.GetDetails(name);
-            return Response(irs);
+            var irs = await _identityResourceAppService.GetDetails(resource);
+            return ResponseGet(irs);
         }
 
-        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Save([FromBody] IdentityResource model)
+        [HttpPost(""), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<IdentityResource>> Save([FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _identityResourceAppService.Save(model);
-            return Response(true);
+            var idr = await _identityResourceAppService.GetDetails(model.Name);
+            return ResponsePost(nameof(Details), new { resource = model.Name }, idr);
         }
 
-        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] IdentityResourceViewModel model)
+        [HttpPut("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Update(string resource, [FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
-            await _identityResourceAppService.Update(model);
-            return Response(true);
+
+            await _identityResourceAppService.Update(resource, model);
+            return ResponsePutPatch();
         }
 
-        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveIdentityResourceViewModel model)
+        [HttpPatch("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> PartialUpdate(string resource, [FromBody] JsonPatchDocument<IdentityResource> model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
+
+            var ir = await _identityResourceAppService.GetDetails(resource);
+            if (ir == null)
+            {
+                ModelState.AddModelError("resource", "Invalid Api Resource");
+                return ModelStateErrorResponseError();
+            }
+
+            model.ApplyTo(ir);
+            await _identityResourceAppService.Update(resource, ir);
+            return ResponsePutPatch();
+        }
+
+        [HttpDelete("{resource}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<bool>> Remove(string resource)
+        {
+            var model = new RemoveIdentityResourceViewModel(resource);
             await _identityResourceAppService.Remove(model);
-            return Response(true);
+            return ResponseDelete();
         }
     }
 }

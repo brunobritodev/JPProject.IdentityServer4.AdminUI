@@ -1,0 +1,21 @@
+{
+    "name": "Admin UI - Jp Project",
+    "short_name": "Admin UI",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#f5cd39",
+    "background_color": "#f5f7fa",
+    "display": "standalone"
+}

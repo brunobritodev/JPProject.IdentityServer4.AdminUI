@@ -1,16 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Jp.Application.Interfaces;
-using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.IdentityResourceViewModels;
 using Jp.Domain.Commands.IdentityResource;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Services
 {
@@ -51,9 +50,9 @@ namespace Jp.Application.Services
             return Bus.SendCommand(command);
         }
 
-        public Task Update(IdentityResource model)
+        public Task Update(string resource, IdentityResource model)
         {
-            var command = _mapper.Map<UpdateIdentityResourceCommand>(model);
+            var command = new UpdateIdentityResourceCommand(model, resource);
             return Bus.SendCommand(command);
         }
 

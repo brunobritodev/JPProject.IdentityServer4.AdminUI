@@ -1,5 +1,5 @@
-﻿using System;
-using Jp.Domain.Core.Events;
+﻿using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Events.User
 {
@@ -10,6 +10,7 @@ namespace Jp.Domain.Events.User
         public string ProviderId { get; }
 
         public NewLoginAddedEvent(Guid aggregateId, string email, string provider, string providerId)
+            : base(EventTypes.Success)
         {
             Email = email;
             Provider = provider;

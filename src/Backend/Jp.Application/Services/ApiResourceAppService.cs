@@ -56,9 +56,9 @@ namespace Jp.Application.Services
             return Bus.SendCommand(command);
         }
 
-        public Task Update(UpdateApiResourceViewModel model)
+        public Task Update(string id, ApiResource model)
         {
-            var command = _mapper.Map<UpdateApiResourceCommand>(model);
+            var command = new UpdateApiResourceCommand(model, id);
             return Bus.SendCommand(command);
 
         }

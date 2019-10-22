@@ -9,5 +9,8 @@ namespace Jp.UI.SSO.Controllers.Home
     public class ErrorViewModel
     {
         public ErrorMessage Error { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ErrorDescription { get; set; }
+        public string RequestId { get; set; }
     }
 }

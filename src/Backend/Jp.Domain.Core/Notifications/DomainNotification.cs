@@ -1,5 +1,5 @@
-﻿using System;
-using Jp.Domain.Core.Events;
+﻿using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Core.Notifications
 {
@@ -11,6 +11,7 @@ namespace Jp.Domain.Core.Notifications
         public int Version { get; private set; }
 
         public DomainNotification(string key, string value)
+        : base(EventTypes.Failure)
         {
             DomainNotificationId = Guid.NewGuid();
             Version = 1;

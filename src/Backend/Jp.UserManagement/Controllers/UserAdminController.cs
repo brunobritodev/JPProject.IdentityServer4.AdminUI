@@ -5,187 +5,207 @@ using Jp.Application.ViewModels.RoleViewModels;
 using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Interfaces;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("admin/users"), Authorize(Policy = "ReadOnly")]
     public class UserAdminController : ApiController
     {
         private readonly IUserManageAppService _userManageAppService;
         private readonly ISystemUser _user;
+        private readonly IUserAppService _userAppService;
 
         public UserAdminController(
             INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
             IUserManageAppService userManageAppService,
             ISystemUser user,
-            IRoleManagerAppService roleManagerAppService) : base(notifications, mediator)
+            IUserAppService userAppService) : base(notifications, mediator)
         {
 
             _userManageAppService = userManageAppService;
             _user = user;
+            _userAppService = userAppService;
         }
 
         /// <summary>
-        /// 
+        /// Get a list of users, optionally can filter them
         /// </summary>
-        /// <param name="q">Quantity - At least 1 and max 50</param>
-        /// <param name="p">Page - For pagination</param>
+        /// <param name="limit">Limit - At least 1 and max 50</param>
+        /// <param name="offset">Offset - For pagination</param>
+        /// <param name="search">username, e-mail or name</param>
         /// <returns></returns>
-        [HttpGet, Route("list")]
-        public async Task<ActionResult<DefaultResponse<ListOfUsersViewModel>>> List([Range(1, 50)] int? q = 10, [Range(1, int.MaxValue)] int? p = 1, string s = null)
+        [HttpGet, Route("")]
+        public async Task<ActionResult<ListOf<UserListViewModel>>> List([Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1, string search = null)
         {
-            var irs = await _userManageAppService.GetUsers(new PagingViewModel(q ?? 10, p ?? 1, s));
-            return Response(irs);
+            var irs = await _userManageAppService.GetUsers(new PagingViewModel(limit ?? 10, offset ?? 0, search));
+            return ResponseGet(irs);
         }
 
-        [HttpGet, Route("details")]
-        public async Task<ActionResult<DefaultResponse<UserViewModel>>> Details(string username)
+        [HttpGet, Route("{username}")]
+        public async Task<ActionResult<UserViewModel>> Details(string username)
         {
             var irs = await _userManageAppService.GetUserDetails(username);
-            return Response(irs);
+            return ResponseGet(irs);
         }
 
-
-        [HttpPut, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Update([FromBody] UserViewModel model)
+        [HttpPut, Route("{username}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Update(string username, [FromBody] UserViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
+
             await _userManageAppService.UpdateUser(model);
-            return Response(true);
+            return ResponsePutPatch();
         }
 
-
-        [Route("remove-account"), HttpPost, Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveAccount([FromBody] RemoveAccountViewModel model)
+        [HttpPatch, Route("{username}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> PartialUpdate(string username, [FromBody] JsonPatchDocument<UserViewModel> model)
         {
-            await _userManageAppService.RemoveAccount(model);
-            return Response(true);
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return ModelStateErrorResponseError();
+            }
+
+            var actualUser = await _userAppService.FindByNameAsync(username);
+            model.ApplyTo(actualUser);
+            await _userManageAppService.UpdateUser(actualUser);
+            return ResponsePutPatch();
         }
 
 
-        [HttpGet, Route("claims")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<ClaimViewModel>>>> Claims(string userName)
+        [HttpDelete, Route("{id:Guid}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveAccount(Guid id)
+        {
+            var model = new RemoveAccountViewModel(id);
+            await _userManageAppService.RemoveAccount(model);
+            return ResponseDelete();
+        }
+
+
+        [HttpGet, Route("{username}/claims")]
+        public async Task<ActionResult<IEnumerable<ClaimViewModel>>> Claims(string userName)
         {
             var clients = await _userManageAppService.GetClaims(userName);
-            return Response(clients);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove-claim"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveClaim([FromBody] RemoveUserClaimViewModel model)
+        [HttpDelete, Route("{username}/claims/{type}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveClaim(string type, string value)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var model = new RemoveUserClaimViewModel(type, value);
             await _userManageAppService.RemoveClaim(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
 
-        [HttpPost, Route("save-claim"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveClaim([FromBody] SaveUserClaimViewModel model)
+        [HttpPost, Route("{username}/claims"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<SaveUserClaimViewModel>> SaveClaim(string username, [FromBody] SaveUserClaimViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
+
+            model.Username = username;
             await _userManageAppService.SaveClaim(model);
-            return Response(true);
+            return ResponsePost(nameof(Claims), new { username }, model);
         }
 
-        [HttpGet, Route("roles")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<RoleViewModel>>>> Roles(string userName)
+        [HttpGet, Route("{username}/roles")]
+        public async Task<ActionResult<IEnumerable<RoleViewModel>>> Roles(string userName)
         {
             var clients = await _userManageAppService.GetRoles(userName);
-            return Response(clients);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove-role"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveRole([FromBody] RemoveUserRoleViewModel model)
+        [HttpPost, Route("{username}/roles"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<SaveUserRoleViewModel>> SaveRole(string username, [FromBody] SaveUserRoleViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
-            model.UserId = _user.UserId;
-            await _userManageAppService.RemoveRole(model);
-            return Response(true);
-        }
-
-        [HttpPost, Route("save-role"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> SaveRole([FromBody] SaveUserRoleViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            model.Username = username;
             await _userManageAppService.SaveRole(model);
-            return Response(true);
+            return ResponsePost(nameof(Roles), new { username }, model);
         }
 
-        [HttpGet, Route("logins")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<UserLoginViewModel>>>> Logins(string userName)
+        [HttpDelete, Route("{username}/roles/{role}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveRole(string username, string role)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return ModelStateErrorResponseError();
+            }
+            var model = new RemoveUserRoleViewModel(username, role);
+            await _userManageAppService.RemoveRole(model);
+            return ResponseDelete();
+        }
+
+
+        [HttpGet, Route("{username}/logins")]
+        public async Task<ActionResult<IEnumerable<UserLoginViewModel>>> Logins(string userName)
         {
             var clients = await _userManageAppService.GetLogins(userName);
-            return Response(clients);
+            return ResponseGet(clients);
         }
 
-        [HttpGet, Route("remove-login")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveLogin([FromBody] RemoveUserLoginViewModel model)
+        [HttpDelete, Route("{username}/logins"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveLogin(string username, string loginProvider, string providerKey)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var model = new RemoveUserLoginViewModel(username, loginProvider, providerKey);
             await _userManageAppService.RemoveLogin(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
-        [HttpGet, Route("users-from-role")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<UserListViewModel>>>> UsersFromRole(string[] role)
-        {
-            var clients = await _userManageAppService.GetUsersInRole(role);
-            return Response(clients);
-        }
 
-        [Route("reset-password"), HttpPut, Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> ResetPassword([FromBody] AdminChangePasswordViewodel model)
+        [HttpPut, Route("{username}/password"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> ResetPassword(string username, [FromBody] AdminChangePasswordViewodel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
 
+            model.Username = username;
             await _userManageAppService.ResetPassword(model);
-            return Response(true);
+            return ResponsePutPatch();
         }
 
-        [HttpGet, Route("show-logs")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<EventHistoryData>>>> ShowLogs(string username)
+        /// <summary>
+        /// Get a list of users, optionally can filter them
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <param name="limit">Limit - At least 1 and max 50</param>
+        /// <param name="offset">Offset - For pagination</param>
+        /// <param name="search">Action, Aggregate or Message</param>
+        /// <returns></returns>
+        [HttpGet, Route("{username}/logs")]
+        public async Task<ActionResult<ListOf<EventHistoryData>>> ShowLogs(string username, [Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1, string search = null)
         {
-            var clients = await _userManageAppService.GetHistoryLogs(username);
-            return Response(clients);
+            var data = new PagingViewModel(limit ?? 10, offset ?? 0, search);
+            var clients = await _userManageAppService.GetEvents(username, data);
+            return ResponseGet(clients);
         }
 
     }

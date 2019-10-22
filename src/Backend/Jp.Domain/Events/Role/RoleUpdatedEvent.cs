@@ -8,6 +8,7 @@ namespace Jp.Domain.Events.Role
         public string OldName { get; }
 
         public RoleUpdatedEvent(string name, string oldName)
+            : base(EventTypes.Success)
         {
             AggregateId = name;
             Name = name;

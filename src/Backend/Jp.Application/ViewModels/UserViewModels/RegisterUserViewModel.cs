@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jp.Domain.Core.StringUtils;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
@@ -43,5 +44,17 @@ namespace Jp.Application.ViewModels.UserViewModels
 
         [Display(Name = "ProviderId")]
         public string ProviderId { get; set; }
+
+        public bool ContainsFederationGateway()
+        {
+            return Provider.IsMissing() && ProviderId.IsMissing();
+
+        }
+
+        public void ClearSensitiveData()
+        {
+            Password = null;
+            ConfirmPassword = null;
+        }
     }
 }

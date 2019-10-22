@@ -1,49 +1,45 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { DefaultResponse } from "../view-model/default-response.model";
-import { User } from "../models/user.model";
-import { Observable } from "rxjs";
-import { environment } from "@env/environment";
-import { ForgotPassword } from "../view-model/forgot-password.model";
-import { ResetPassword } from "../view-model/reset-password.model";
-import { ConfirmEmail } from "../view-model/confirm-email.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { Observable } from 'rxjs';
+
+import { User } from '../models/user.model';
+import { ConfirmEmail } from '../view-model/confirm-email.model';
+import { DefaultResponse } from '../view-model/default-response.model';
+import { ForgotPassword } from '../view-model/forgot-password.model';
+import { ResetPassword } from '../view-model/reset-password.model';
 
 @Injectable()
 export class UserService {
-    
+
+    endpoint: string;
+    endpointUser: string;
+
     constructor(private http: HttpClient) {
-        // set token if saved in local storage
+        this.endpoint = environment.ResourceServer + "sign-up";
+        this.endpointUser = environment.ResourceServer + "user";
     }
-    public register(register: User): Observable<DefaultResponse<User>> {
-        if (register.provider != null)
-            return this.http.post<DefaultResponse<User>>(environment.ResourceServer + "user/register-provider", register);
-        else
-            return this.http.post<DefaultResponse<User>>(environment.ResourceServer + "user/register", register);
+    public register(register: User): Observable<User> {
+        return this.http.post<User>(`${this.endpoint}` , register);
     }
 
-    public checkUserName(userName: string): Observable<DefaultResponse<boolean>> {
-        const params = {
-            username: userName
-        };
-        return this.http.get<DefaultResponse<boolean>>(environment.ResourceServer + "user/checkUsername", { params: params });
+    public checkUserName(userName: string): Observable<boolean> {
+        return this.http.get<boolean>(`${this.endpoint}/check-username/${userName}`);
     }
 
-    public checkEmail(email: string): Observable<DefaultResponse<boolean>> {
-        const params = {
-            email: email
-        };
-        return this.http.get<DefaultResponse<boolean>>(environment.ResourceServer + "user/checkEmail", { params: params });
+    public checkEmail(email: string): Observable<boolean> {
+        return this.http.get<boolean>(`${this.endpoint}/check-email/${email}`);
     }
 
-    public recoverPassword(emailOrPassword: ForgotPassword): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "user/forgot-password", emailOrPassword);
+    public recoverPassword(emailOrPassword: ForgotPassword): Observable<boolean> {
+        return this.http.post<boolean>(`${this.endpointUser}/${emailOrPassword}/password/forget`, emailOrPassword);
     }
 
-    public resetPassword(model: ResetPassword): any {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "user/reset-password", model);
+    public resetPassword(username: string, model: ResetPassword): any {
+        return this.http.post<boolean>(`${this.endpointUser}/${username}/password/reset`, model);
     }
 
-    public confirmEmail(model: ConfirmEmail): any {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "user/confirm-email", model);
+    public confirmEmail(username: string, model: ConfirmEmail): any {
+        return this.http.post<boolean>(`${this.endpointUser}/${username}/confirm-email`, model);
     }
 }

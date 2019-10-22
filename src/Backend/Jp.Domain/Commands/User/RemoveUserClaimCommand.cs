@@ -1,12 +1,13 @@
-using System;
 using Jp.Domain.Validations.User;
 
 namespace Jp.Domain.Commands.User
 {
     public class RemoveUserClaimCommand : UserClaimCommand
     {
-        public RemoveUserClaimCommand(string username, string type)
+
+        public RemoveUserClaimCommand(string username, string type, string value)
         {
+            Value = value;
             Type = type;
             Username = username;
         }

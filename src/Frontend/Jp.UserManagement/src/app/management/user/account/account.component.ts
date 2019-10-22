@@ -1,15 +1,16 @@
-
-import {throwError as observableThrowError,  forkJoin, Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { ChangePassword } from '../../../shared/view-model/change-password.model';
-import { SettingsService } from '../../../core/settings/settings.service';
-import { AccountManagementService } from '../account-management.service';
-import { DefaultResponse } from '../../../shared/view-model/default-response.model';
-import { User } from '../../../shared/models/user.model';
-import { SetPassword } from '../../../shared/view-model/set-password.model';
+import { TranslatorService } from '@core/translator/translator.service';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { ToastrService } from 'ngx-toastr';
-import { TranslatorService } from '@core/translator/translator.service';
+import { forkJoin, Observable, throwError as observableThrowError } from 'rxjs';
+
+import { SettingsService } from '../../../core/settings/settings.service';
+import { User } from '../../../shared/models/user.model';
+import { ChangePassword } from '../../../shared/view-model/change-password.model';
+import { DefaultResponse } from '../../../shared/view-model/default-response.model';
+import { SetPassword } from '../../../shared/view-model/set-password.model';
+import { AccountManagementService } from '../account-management.service';
+
 
 @Component({
     templateUrl: './account.component.html',
@@ -41,8 +42,8 @@ export class AccountComponent implements OnInit {
             this.accountManagementService.hasPassword()
         )
             .subscribe(([userData, hasPassword]) => {
-                this.user = userData.data;
-                this.hasPassword = hasPassword.data;
+                this.user = userData;
+                this.hasPassword = hasPassword;
             });
         this.setPassword = new SetPassword();
         this.changePass = new ChangePassword();
@@ -76,13 +77,12 @@ export class AccountComponent implements OnInit {
 
     public removeAccount() {
         this.accountManagementService.deleteAccount().subscribe(
-            s => {
+            () => {
                 this.changingPassword = false;
                 this.errors = [];
                 this.dangerModal.hide();
                 this.oauthService.logOut();
-                this.toastr.success('Password created!', 'Success!');
-
+                this.toastr.success('Bye!', 'Success!');
             },
             err => {
                 this.errors = DefaultResponse.GetErrors(err).map(a => a.value);

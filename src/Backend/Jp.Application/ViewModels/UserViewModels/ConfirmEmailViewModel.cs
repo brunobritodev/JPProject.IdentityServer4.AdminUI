@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jp.Application.ViewModels.UserViewModels
 {
     public class ConfirmEmailViewModel
     {
-        [Required]
+        [JsonIgnore]
         [EmailAddress]
         public string Email { get; set; }
         [Required]

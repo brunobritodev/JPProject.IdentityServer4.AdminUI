@@ -1,17 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using IdentityServer4.Models;
 using Jp.Application.ViewModels;
 using Jp.Application.ViewModels.ClientsViewModels;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Application.Interfaces
 {
-    public interface IClientAppService: IDisposable
+    public interface IClientAppService : IDisposable
     {
         Task<IEnumerable<ClientListViewModel>> GetClients();
         Task<Client> GetClientDetails(string clientId);
-        Task Update(ClientViewModel client);
+        Task Update(string id, Client client);
         Task<IEnumerable<SecretViewModel>> GetSecrets(string clientId);
         Task RemoveSecret(RemoveClientSecretViewModel model);
         Task SaveSecret(SaveClientSecretViewModel model);

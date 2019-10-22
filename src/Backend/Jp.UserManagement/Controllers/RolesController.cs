@@ -1,90 +1,93 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Jp.Application.Interfaces;
+﻿using Jp.Application.Interfaces;
 using Jp.Application.ViewModels.RoleViewModels;
+using Jp.Application.ViewModels.UserViewModels;
 using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Notifications;
-using Jp.Infra.CrossCutting.Tools.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jp.Management.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("roles"), Authorize(Policy = "ReadOnly")]
     public class RolesController : ApiController
     {
         private readonly IRoleManagerAppService _roleManagerAppService;
+        private readonly IUserManageAppService _userManageAppService;
 
         public RolesController(
-            INotificationHandler<DomainNotification> notifications, 
+            INotificationHandler<DomainNotification> notifications,
             IMediatorHandler mediator,
-            IRoleManagerAppService roleManagerAppService) : base(notifications, mediator)
+            IRoleManagerAppService roleManagerAppService,
+            IUserManageAppService userManageAppService) : base(notifications, mediator)
         {
             _roleManagerAppService = roleManagerAppService;
+            _userManageAppService = userManageAppService;
         }
 
-        [HttpGet, Route("all-roles")]
-        public async Task<ActionResult<DefaultResponse<IEnumerable<RoleViewModel>>>> AllRoles()
+        [HttpGet, Route("")]
+        public async Task<ActionResult<IEnumerable<RoleViewModel>>> List()
         {
             var clients = await _roleManagerAppService.GetAllRoles();
-            return Response(clients);
+            return ResponseGet(clients);
         }
 
-        [HttpPost, Route("remove"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> Remove([FromBody] RemoveRoleViewModel model)
+        [HttpGet, Route("{role}")]
+        public async Task<ActionResult<RoleViewModel>> Details(string role)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var clients = await _roleManagerAppService.GetDetails(role);
+            return ResponseGet(clients);
+        }
+
+        [HttpDelete, Route("{role}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> Remove(string role)
+        {
+            var model = new RemoveRoleViewModel(role);
             await _roleManagerAppService.Remove(model);
-            return Response(true);
+            return ResponseDelete();
         }
 
-        [HttpGet, Route("details")]
-        public async Task<ActionResult<DefaultResponse<RoleViewModel>>> Details(string name)
+        [HttpPost, Route(""), Authorize(Policy = "Admin")]
+        public async Task<ActionResult<RoleViewModel>> NewRole([FromBody] SaveRoleViewModel model)
         {
-            var clients = await _roleManagerAppService.GetDetails(name);
-            return Response(clients);
-        }
-
-        [HttpPost, Route("save"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> NewRole([FromBody] SaveRoleViewModel model)
-        {
-
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
             await _roleManagerAppService.Save(model);
-            return Response(true);
+            var savedModel = await _roleManagerAppService.GetDetails(model.Name);
+
+            return ResponsePost(nameof(Details), new { role = savedModel.Name }, savedModel);
         }
 
-        [HttpPost, Route("update"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> UpdateRole([FromBody] UpdateRoleViewModel model)
+        [HttpPut, Route("{role}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> UpdateRole(string role, [FromBody] UpdateRoleViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 NotifyModelStateErrors();
-                return Response(false);
+                return ModelStateErrorResponseError();
             }
-            await _roleManagerAppService.Update(model);
-            return Response(true);
+            await _roleManagerAppService.Update(role, model);
+            return ResponsePutPatch();
         }
 
-        [HttpPost, Route("remove-user"), Authorize(Policy = "Admin")]
-        public async Task<ActionResult<DefaultResponse<bool>>> RemoveUser([FromBody] RemoveUserFromRoleViewModel model)
+        [HttpGet, Route("{role}/users")]
+        public async Task<ActionResult<IEnumerable<UserListViewModel>>> UsersFromRole(string role)
         {
-            if (!ModelState.IsValid)
-            {
-                NotifyModelStateErrors();
-                return Response(false);
-            }
+            var clients = await _userManageAppService.GetUsersInRole(role);
+            return ResponseGet(clients);
+        }
+
+        [HttpDelete, Route("{role}/{username}"), Authorize(Policy = "Admin")]
+        public async Task<ActionResult> RemoveUser(string role, string username)
+        {
+            var model = new RemoveUserFromRoleViewModel(role, username);
             await _roleManagerAppService.RemoveUserFromRole(model);
-            return Response(true);
+            return ResponseDelete();
         }
     }
 }

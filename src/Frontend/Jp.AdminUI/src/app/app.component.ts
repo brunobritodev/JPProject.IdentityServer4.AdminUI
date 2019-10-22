@@ -27,18 +27,10 @@ export class AppComponent implements OnInit {
     @HostBinding("class.aside-toggled") get asideToggled() { return this.settings.layout.asideToggled; }
     @HostBinding("class.aside-collapsed-text") get isCollapsedText() { return this.settings.layout.isCollapsedText; }
 
-    isAuthenticated: Observable<boolean>;
-    isDoneLoading: Observable<boolean>;
-    canActivateProtectedRoutes: Observable<boolean>;
-
     constructor(
         private authService: AuthService,
         public settings: SettingsService
     ) {
-        this.isAuthenticated = this.authService.isAuthenticated$;
-        this.isDoneLoading = this.authService.isDoneLoading$;
-        this.canActivateProtectedRoutes = this.authService.canActivateProtectedRoutes$;
-
         this.authService.runInitialLoginSequence(); 
     }
 

@@ -1,11 +1,11 @@
 ﻿using Jp.Domain.Commands.User;
 using Jp.Domain.Commands.UserManagement;
+using Jp.Domain.Core.ViewModels;
 using Jp.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Jp.Domain.Core.ViewModels;
 
 namespace Jp.Domain.Interfaces
 {
@@ -35,13 +35,13 @@ namespace Jp.Domain.Interfaces
         Task UpdateUserAsync(User user);
         Task<IEnumerable<Claim>> GetClaimByName(string userName);
         Task<bool> SaveClaim(Guid userId, Claim claim);
-        Task<bool> RemoveClaim(Guid userId, string claimType);
+        Task<bool> RemoveClaim(Guid userId, string claimType, string value);
         Task<IEnumerable<string>> GetRoles(string userName);
         Task<bool> RemoveRole(Guid userDbId, string requestRole);
         Task<bool> SaveRole(Guid userId, string role);
         Task<IEnumerable<UserLogin>> GetUserLogins(string userName);
         Task<bool> RemoveLogin(Guid userId, string requestLoginProvider, string requestProviderKey);
-        Task<IEnumerable<User>> GetUserFromRole(string[] role);
+        Task<IEnumerable<User>> GetUserFromRole(string role);
         Task<bool> RemoveUserFromRole(string name, string username);
         Task<bool> ResetPasswordAsync(string username, string password);
         Task<int> Count(string search);

@@ -1,6 +1,6 @@
-﻿using System;
-using Jp.Domain.Commands.UserManagement;
+﻿using Jp.Domain.Commands.UserManagement;
 using Jp.Domain.Core.Events;
+using System;
 
 namespace Jp.Domain.Events.UserManagement
 {
@@ -8,7 +8,8 @@ namespace Jp.Domain.Events.UserManagement
     {
         public UpdateProfileCommand Request { get; }
 
-        public ProfileUpdatedEvent(Guid aggregateId,UpdateProfileCommand request)
+        public ProfileUpdatedEvent(Guid aggregateId, UpdateProfileCommand request)
+            : base(EventTypes.Success)
         {
             AggregateId = aggregateId.ToString();
             Request = request;

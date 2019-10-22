@@ -1,14 +1,15 @@
-
-import {throwError as observableThrowError,  Observable ,  Subject } from 'rxjs';
-import { Component, OnInit } from "@angular/core";
-import { User } from "../../shared/models/user.model";
-import { UserService } from "../../shared/services/user.service";
-import { Router, ActivatedRoute } from "@angular/router";
-import { debounceTime ,  switchMap } from "rxjs/operators";
-import { DefaultResponse } from "../../shared/view-model/default-response.model";
-import { AlertConfig } from "ngx-bootstrap/alert";
-import { AuthService, FacebookLoginProvider, GoogleLoginProvider, VkontakteLoginProvider } from "angular-6-social-login-v2";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
+import { AuthService, FacebookLoginProvider, GoogleLoginProvider, VkontakteLoginProvider } from 'angular-6-social-login-v2';
+import { AlertConfig } from 'ngx-bootstrap/alert';
+import { Observable, Subject, throwError as observableThrowError } from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
+
+import { User } from '../../shared/models/user.model';
+import { UserService } from '../../shared/services/user.service';
+import { DefaultResponse } from '../../shared/view-model/default-response.model';
+
 
 export function getAlertConfig(): AlertConfig {
     return Object.assign(new AlertConfig(), { type: "success" });
@@ -51,15 +52,15 @@ export class RegisterComponent implements OnInit {
         this.userExistsSubject
             .pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.checkUserName(a)))
-            .subscribe((response: DefaultResponse<boolean>) => {
-                this.userExist = response.data;
+            .subscribe((response: boolean) => {
+                this.userExist = response;
             });
 
         this.emailExistsSubject
             .pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.checkEmail(a)))
-            .subscribe((response: DefaultResponse<boolean>) => {
-                this.emailExist = response.data;
+            .subscribe((response: boolean) => {
+                this.emailExist = response;
             });
     }
 
@@ -102,7 +103,7 @@ export class RegisterComponent implements OnInit {
         try {
 
             this.userService.register(this.model).subscribe(
-                registerResult => { if (registerResult.data) this.router.navigate(["/login"]); },
+                registerResult => { if (registerResult) this.router.navigate(["/login"]); },
                 err => {
                     this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
                     this.showButtonLoading = false;

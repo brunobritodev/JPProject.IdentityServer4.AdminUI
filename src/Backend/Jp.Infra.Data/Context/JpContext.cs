@@ -3,6 +3,7 @@ using IdentityServer4.EntityFramework.Extensions;
 using IdentityServer4.EntityFramework.Interfaces;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Jp.Infra.Data.Context
@@ -68,8 +69,6 @@ namespace Jp.Infra.Data.Context
             modelBuilder.ConfigureResourcesContext(_storeOptions);
             modelBuilder.ConfigurePersistedGrantContext(_operationalOptions);
         }
-
-
 
         public Task<int> SaveChangesAsync()
         {
