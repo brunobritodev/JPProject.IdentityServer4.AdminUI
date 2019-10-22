@@ -88,7 +88,7 @@
                 <label placement="top" [tooltip]="'apiResource.edit.secrets-tooltip' | translate" class="col-xl-4 col-form-label">{{
                     'apiResource.edit.secrets' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <a [routerLink]="['/api-resource/secrets', model.name]" class="btn btn-primary">{{
+                    <a [routerLink]="['/api-resource', model.name, 'secrets']" class="btn btn-primary">{{
                         'apiResource.edit.secrets' | translate }}</a>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 <label placement="top" [tooltip]="'apiResource.edit.scope-tooltip' | translate" class="col-xl-4 col-form-label">{{
                     'apiResource.edit.scope' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <a [routerLink]="['/api-resource/scopes', model.name]" class="btn btn-primary">{{
+                    <a [routerLink]="['/api-resource', model.name, 'scopes']" class="btn btn-primary">{{
                         'apiResource.edit.scope' | translate }}</a>
                 </div>
             </div>

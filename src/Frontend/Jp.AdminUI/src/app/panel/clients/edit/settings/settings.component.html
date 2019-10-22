@@ -50,7 +50,7 @@
                 class="col-xl-4 col-form-label">{{
                     'client.details.clientSecrets' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <a [routerLink]="['/clients/secrets', model.clientId]" class="btn btn-primary">{{
+                <a [routerLink]="['/clients', model.clientId, 'secrets']" class="btn btn-primary">{{
                         'client.details.clientSecrets' | translate }}</a>
             </div>
         </div>
@@ -222,7 +222,7 @@
                 class="col-xl-4 col-form-label">{{
                 'client.details.properties' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <a [routerLink]="['/clients/properties', model.clientId]" class="btn btn-primary">{{
+                <a [routerLink]="['/clients', model.clientId, 'properties']" class="btn btn-primary">{{
                     'client.details.properties' | translate }}</a>
             </div>
         </div>

@@ -5,7 +5,7 @@
     </div>
 </div>
 
-<div class="card card-default">
+<div class="card card-default" *ngIf="user">
     <div class="card-body">
         <a [routerLink]="[ '/users', user.userName, 'edit']" class="btn btn-outline-primary">{{ 'general.goback' | translate }}</a>
     </div>

@@ -59,7 +59,7 @@ export class ClientAddComponent implements OnInit {
             registerResult => {
                 if (registerResult) {
                     this.showSuccessMessage();
-                    this.router.navigate(['/clients/edit', this.model.clientId]);
+                    this.router.navigate(['/clients', this.model.clientId, 'edit']);
                 }
                 this.showButtonLoading = false;
             },

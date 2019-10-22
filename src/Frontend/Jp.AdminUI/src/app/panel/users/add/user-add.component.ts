@@ -67,7 +67,7 @@ export class UserAddComponent implements OnInit {
             registerResult => {
                 if (registerResult) {
                     this.showSuccessMessage();
-                    this.router.navigate(["/users/edit", this.model.userName]);
+                    this.router.navigate(["/users", this.model.userName, 'edit']);
                 }
             },
             err => {

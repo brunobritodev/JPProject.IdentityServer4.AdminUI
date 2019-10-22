@@ -30,7 +30,7 @@
                     <tbody>
                         <tr *ngFor="let client of clientList">
                             <th>
-                                <a [routerLink]="['/clients/edit', client.clientId]" class="btn btn-primary btn-xs"
+                                <a [routerLink]="['/clients',  client.clientId, 'edit']" class="btn btn-primary btn-xs"
                                     placement="top" [tooltip]="'general.edit' | translate"><i
                                         class="fa fa-edit"></i></a>
                                 &nbsp;
