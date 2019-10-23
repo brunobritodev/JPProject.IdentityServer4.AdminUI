@@ -48,6 +48,7 @@ export class NewClient {
     logoUri: string;
     description: string;
     clientType: number;
+    postLogoutRedirectUris: string;
 }
 
 export class Client {
@@ -96,6 +97,7 @@ export class Client {
     properties: ClientProperty[];
     userCodeType: string;
     deviceCodeLifetime: number;
+    userSsoLifetime: number;
     
     public static isValid(client: Client, errors: string[]): boolean {
         errors.length = 0;
