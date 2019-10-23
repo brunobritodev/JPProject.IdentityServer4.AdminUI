@@ -12,10 +12,7 @@ namespace Jp.Infra.CrossCutting.IoC
             services.AddScoped<IApiResourceAppService, ApiResourceAppService>();
             services.AddScoped<IIdentityResourceAppService, IdentityResourceAppService>();
             services.AddScoped<IScopesAppService, ScopesAppService>();
-            services.AddScoped<IUserAppService, UserAppService>();
-            services.AddScoped<IUserManageAppService, UserManagerAppService>();
             services.AddScoped<IClientAppService, ClientAppService>();
-            services.AddScoped<IRoleManagerAppService, RoleManagerAppService>();
         }
     }
 }

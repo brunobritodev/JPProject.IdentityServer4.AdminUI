@@ -66,7 +66,7 @@ namespace Jp.Application.ViewModels
         /// </value>
         public string Data { get; set; }
         public PersistedGrantViewModel() { }
-        public PersistedGrantViewModel(string key, string type, string subjectId, string clientId, DateTime creationTime, DateTime? expiration, string data, string email, string picture)
+        public PersistedGrantViewModel(string key, string type, string subjectId, string clientId, DateTime creationTime, DateTime? expiration, string data)
         {
             Key = key;
             Type = type;
@@ -75,8 +75,6 @@ namespace Jp.Application.ViewModels
             CreationTime = creationTime;
             Expiration = expiration;
             Data = data;
-            Email = email;
-            Picture = picture;
         }
     }
 

@@ -7,8 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Jp.Application\Jp.Application.csproj" />
     <ProjectReference Include="..\Jp.Domain\Jp.Domain.csproj" />
-    <ProjectReference Include="..\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
-    <ProjectReference Include="..\Jp.Infra.CrossCutting.Tools\Jp.Infra.CrossCutting.Tools.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />
   </ItemGroup>
 

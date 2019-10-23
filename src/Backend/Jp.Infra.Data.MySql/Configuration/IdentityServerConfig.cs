@@ -1,37 +1,27 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using IdentityServer4.EntityFramework.Options;
+using Jp.Infra.Data.Context;
 
 namespace Jp.Infra.Data.MySql.Configuration
 {
-    public static class IdentityServerConfig
+    public static class DatabaseConfig
     {
-        public static IIdentityServerBuilder UseIdentityServerMySqlDatabase(
-            this IIdentityServerBuilder builder,
-            string connectionString)
+        public static IServiceCollection AddIdentityMySql(this IServiceCollection services, string connectionString)
         {
-            var migrationsAssembly = typeof(IdentityConfig).GetTypeInfo().Assembly.GetName().Name;
+            var migrationsAssembly = typeof(DatabaseConfig).GetTypeInfo().Assembly.GetName().Name;
 
-            // this adds the config data from DB (clients, resources)
-            builder.AddConfigurationStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
-                })
-                // this adds the operational data from DB (codes, tokens, consents)
-                .AddOperationalStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+            var operationalStoreOptions = new OperationalStoreOptions();
+            services.AddSingleton(operationalStoreOptions);
 
-                    // this enables automatic token cleanup. this is optional.
-                    //options.EnableTokenCleanup = true;
-                    //options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
-                });
+            var storeOptions = new ConfigurationStoreOptions();
+            services.AddSingleton(storeOptions);
 
+            services.AddDbContext<JpContext>(options => options.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<EventStoreContext>(options => options.UseMySql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
 
-            return builder;
+            return services;
         }
-
     }
 }

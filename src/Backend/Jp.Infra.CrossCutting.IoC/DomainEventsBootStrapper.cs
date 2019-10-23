@@ -4,8 +4,6 @@ using Jp.Domain.Events.ApiResource;
 using Jp.Domain.Events.Client;
 using Jp.Domain.Events.IdentityResource;
 using Jp.Domain.Events.PersistedGrant;
-using Jp.Domain.Events.User;
-using Jp.Domain.Events.UserManagement;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,14 +20,6 @@ namespace Jp.Infra.CrossCutting.IoC
 
             services.AddScoped<INotificationHandler<ApiResourceRegisteredEvent>, ApiResourceEventHandler>();
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
-
-            services.AddScoped<INotificationHandler<UserRegisteredEvent>, UserEventHandler>();
-            services.AddScoped<INotificationHandler<EmailConfirmedEvent>, UserEventHandler>();
-            services.AddScoped<INotificationHandler<ProfileUpdatedEvent>, UserManagerEventHandler>();
-            services.AddScoped<INotificationHandler<ProfilePictureUpdatedEvent>, UserManagerEventHandler>();
-            services.AddScoped<INotificationHandler<PasswordCreatedEvent>, UserManagerEventHandler>();
-            services.AddScoped<INotificationHandler<PasswordChangedEvent>, UserManagerEventHandler>();
-            services.AddScoped<INotificationHandler<AccountRemovedEvent>, UserManagerEventHandler>();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Jp.Management.Configuration
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddSingleton(AutoMapperConfig.RegisterMappings(new CustomMappingProfile()).CreateMapper());
+            services.AddSingleton(AutoMapperConfig.RegisterMappings().CreateMapper());
         }
     }
 }

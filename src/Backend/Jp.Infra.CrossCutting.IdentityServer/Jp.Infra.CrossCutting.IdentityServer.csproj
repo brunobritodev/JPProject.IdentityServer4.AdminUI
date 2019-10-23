@@ -20,7 +20,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Jp.Infra.CrossCutting.Identity\Jp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data\Jp.Infra.Data.csproj" />
   </ItemGroup>
 

@@ -1,33 +1,27 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using IdentityServer4.EntityFramework.Options;
+using Jp.Infra.Data.Context;
 
 namespace Jp.Infra.Data.Sql.Configuration
 {
-    public static class IdentityServerConfig
+    public static class DatabaseConfig
     {
-        public static IIdentityServerBuilder UseIdentityServerSqlDatabase(this IIdentityServerBuilder builder, string connectionString)
+        public static IServiceCollection AddIdentitySqlServer(this IServiceCollection services, string connectionString)
         {
-            var migrationsAssembly = typeof(IdentityServerConfig).GetTypeInfo().Assembly.GetName().Name;
+            var migrationsAssembly = typeof(DatabaseConfig).GetTypeInfo().Assembly.GetName().Name;
 
-            // this adds the config data from DB (clients, resources)
-            builder.AddConfigurationStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
-                })
-                // this adds the operational data from DB (codes, tokens, consents)
-                .AddOperationalStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+            var operationalStoreOptions = new OperationalStoreOptions();
+            services.AddSingleton(operationalStoreOptions);
 
-                    // this enables automatic token cleanup. this is optional.
-                    options.EnableTokenCleanup = true;
-                    options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
-                });
+            var storeOptions = new ConfigurationStoreOptions();
+            services.AddSingleton(storeOptions);
 
-            return builder;
+            services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<EventStoreContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+
+            return services;
         }
 
     }
