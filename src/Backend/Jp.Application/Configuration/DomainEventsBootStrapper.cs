@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Jp.Infra.CrossCutting.IoC
+namespace Jp.Application.Configuration
 {
     internal class DomainEventsBootStrapper
     {

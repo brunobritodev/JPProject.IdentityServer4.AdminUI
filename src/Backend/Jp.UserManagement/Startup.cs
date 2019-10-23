@@ -1,6 +1,6 @@
 ﻿using Hellang.Middleware.ProblemDetails;
+using Jp.Application.Configuration;
 using Jp.Domain.Interfaces;
-using Jp.Infra.CrossCutting.IoC;
 using Jp.Management.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -103,7 +103,7 @@ namespace Jp.Management
             // Adding dependencies from another layers (isolated from Presentation)
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<ISystemUser, AspNetUser>();
-            NativeInjectorBootStrapper.RegisterServices(services, Configuration);
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
     }
 }

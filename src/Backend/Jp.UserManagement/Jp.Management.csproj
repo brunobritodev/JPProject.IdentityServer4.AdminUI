@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\Jp.Application\Jp.Application.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data.MySql\Jp.Infra.Data.MySql.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data.PostgreSQL\Jp.Infra.Data.PostgreSQL.csproj" />
     <ProjectReference Include="..\Jp.Infra.Data.Sqlite\Jp.Infra.Data.Sqlite.csproj" />

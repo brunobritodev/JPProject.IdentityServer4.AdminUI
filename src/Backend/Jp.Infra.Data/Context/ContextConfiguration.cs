@@ -16,6 +16,7 @@ namespace Jp.Infra.Data.Context
             services.AddSingleton(storeOptions);
 
             services.AddDbContext<JpContext>(optionsAction);
+            services.AddDbContext<EventStoreContext>(optionsAction);
 
             return services;
         }

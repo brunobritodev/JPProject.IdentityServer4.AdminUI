@@ -3,7 +3,6 @@ using IdentityServer4.EntityFramework.Extensions;
 using IdentityServer4.EntityFramework.Interfaces;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Jp.Infra.Data.Context

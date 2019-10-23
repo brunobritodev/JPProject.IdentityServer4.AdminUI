@@ -1,11 +1,11 @@
-﻿using Jp.Domain.Core.Bus;
+﻿using System.Threading.Tasks;
+using Jp.Domain.Core.Bus;
 using Jp.Domain.Core.Commands;
 using Jp.Domain.Core.Events;
 using Jp.Domain.Core.Notifications;
 using MediatR;
-using System.Threading.Tasks;
 
-namespace Jp.Infra.CrossCutting.Bus
+namespace Jp.Application.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {

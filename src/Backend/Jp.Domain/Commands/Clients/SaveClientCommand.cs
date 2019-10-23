@@ -23,7 +23,7 @@ namespace Jp.Domain.Commands.Clients
                 Description = description,
             };
 
-            if (postLogoutUri.IsMissing())
+            if (postLogoutUri.IsPresent())
                 Client.PostLogoutRedirectUris = new List<string>() { postLogoutUri };
             ClientType = clientType;
         }
