@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 namespace Jp.Management.Controllers
 {
     [Route("api-resources"), Authorize(Policy = "ReadOnly")]
-    [ApiConventionType(typeof(DefaultApiConventions))]
     public class ApiResourcesController : ApiController
     {
         private readonly IApiResourceAppService _apiResourceAppService;

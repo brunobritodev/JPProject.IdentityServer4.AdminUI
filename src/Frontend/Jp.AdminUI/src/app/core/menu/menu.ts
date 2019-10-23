@@ -92,11 +92,16 @@ const Roles = {
 };
 
 const headingMain = {
-    text: "Main Navigation",
+    text: "IdentityServer4",
     heading: true
 };
-const Settings = {
-    text: "Settings",
+
+const headingUsers = {
+    text: "Users",
+    heading: true
+};
+const headingSettings = {
+    text: "SSO Settings",
     heading: true
 };
 
@@ -107,7 +112,8 @@ export const menu = [
     IdentityResource,
     ApiResource,
     PersistedGrants,
+    headingUsers,
     Users,
     Roles,
-    Settings
+    headingSettings
 ];

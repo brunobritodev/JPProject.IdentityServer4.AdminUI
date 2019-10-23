@@ -13,8 +13,6 @@ namespace Jp.Infra.CrossCutting.IoC
             // Domain Bus (Mediator)
             services.AddScoped<IMediatorHandler, InMemoryBus>();
 
-            // ASP.NET Authorization Polices
-
             // Application
             ApplicationBootStrapper.RegisterServices(services);
 

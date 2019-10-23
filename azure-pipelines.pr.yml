@@ -50,24 +50,11 @@ jobs:
           workingDir: src/Frontend/Jp.AdminUI
 
       - task: Npm@1
-        displayName: 'NPM - Install - UserManagement'
-        inputs:
-          command: install
-          workingDir: src/Frontend/Jp.UserManagement
-
-      - task: Npm@1
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
           customCommand: 'run build -- --base-href=/admin-ui/'
           workingDir: src/Frontend/Jp.AdminUI
-
-      - task: Npm@1
-        displayName: 'NPM - Build Prod - UserManagement'
-        inputs:
-          command: custom
-          customCommand: 'run build -- --base-href=/user-management/'
-          workingDir: src/Frontend/Jp.UserManagement
 
   - job: 'docker'
     displayName: 'Docker files'
@@ -85,15 +72,3 @@ jobs:
         inputs:
           command: 'build'
           Dockerfile: '**/api.dockerfile'
-
-      - task: Docker@2
-        displayName: 'Docker - Build - UserManagement'
-        inputs:
-          command: 'build'
-          Dockerfile: '**/ui-user-management.dockerfile'
-
-      - task: Docker@2
-        displayName: 'Docker - Build - SSO'
-        inputs:
-          command: 'build'
-          Dockerfile: '**/sso.dockerfile'

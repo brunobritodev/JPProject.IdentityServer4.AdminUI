@@ -10,12 +10,12 @@ namespace Jp.Infra.CrossCutting.Bus
     public sealed class InMemoryBus : IMediatorHandler
     {
         private readonly IMediator _mediator;
-        private readonly IEventStore _eventStore;
+        private readonly ICustomEventHandler _customEventHandler;
 
-        public InMemoryBus(IEventStore eventStore, IMediator mediator)
+        public InMemoryBus(IMediator mediator, ICustomEventHandler customEventHandler)
         {
-            _eventStore = eventStore;
             _mediator = mediator;
+            _customEventHandler = customEventHandler;
         }
 
         public Task<bool> SendCommand<T>(T command) where T : Command
@@ -26,7 +26,7 @@ namespace Jp.Infra.CrossCutting.Bus
         public async Task RaiseEvent<T>(T @event) where T : Event
         {
             if (!@event.MessageType.Equals(nameof(DomainNotification)))
-                await _eventStore.Save(@event);
+                await _customEventHandler.Handle(@event);
 
             await _mediator.Publish(@event);
         }

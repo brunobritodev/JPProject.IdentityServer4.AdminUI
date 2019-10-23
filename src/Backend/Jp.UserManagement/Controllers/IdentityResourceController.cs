@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 namespace Jp.Management.Controllers
 {
     [Route("identity-resources"), Authorize(Policy = "ReadOnly")]
-    [ApiConventionType(typeof(DefaultApiConventions))]
     public class IdentityResourceController : ApiController
     {
         private readonly IIdentityResourceAppService _identityResourceAppService;

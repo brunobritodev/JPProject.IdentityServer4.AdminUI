@@ -1,25 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Jp.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using IdentityServer4.EntityFramework.Options;
-using Jp.Infra.Data.Context;
 
 namespace Jp.Infra.Data.Sql.Configuration
 {
     public static class DatabaseConfig
     {
-        public static IServiceCollection AddIdentitySqlServer(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddSqlServer(this IServiceCollection services, string connectionString)
         {
             var migrationsAssembly = typeof(DatabaseConfig).GetTypeInfo().Assembly.GetName().Name;
-
-            var operationalStoreOptions = new OperationalStoreOptions();
-            services.AddSingleton(operationalStoreOptions);
-
-            var storeOptions = new ConfigurationStoreOptions();
-            services.AddSingleton(storeOptions);
-
-            services.AddDbContext<JpContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
-            services.AddDbContext<EventStoreContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddContext(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
 
             return services;
         }

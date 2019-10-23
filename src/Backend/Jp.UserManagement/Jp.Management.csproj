@@ -11,7 +11,7 @@
     <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="3.1.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.8.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.8.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -20,17 +20,20 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
-    <PackageReference Include="Serilog.AspNetCore" Version="3.0.1-dev-00116" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.1.0" />
 	<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="3.0.4" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
-    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jp.Infra.CrossCutting.Database\Jp.Infra.CrossCutting.Database.csproj" />
     <ProjectReference Include="..\Jp.Infra.CrossCutting.IoC\Jp.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Data.MySql\Jp.Infra.Data.MySql.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Data.PostgreSQL\Jp.Infra.Data.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Data.Sqlite\Jp.Infra.Data.Sqlite.csproj" />
+    <ProjectReference Include="..\Jp.Infra.Data.Sql\Jp.Infra.Data.Sql.csproj" />
   </ItemGroup>
 
     <ItemGroup>

@@ -35,17 +35,6 @@ jobs:
         inputs:
           command: 'test'
           projects: './src'
-  
-      - task: DotNetCoreCLI@2
-        displayName: 'Publish - SSO'
-        inputs:
-          command: 'publish'
-          publishWebProjects: false
-          projects: '**/Jp.UI.SSO.csproj'
-          arguments: '-c $(BuildConfiguration) -o $(Build.StagingDirectory)/sso --no-build'
-          zipAfterPublish: false
-          modifyOutputPath: false
-          workingDirectory: './src/Frontend/Jp.UI.SSO'
         
       - task: DotNetCoreCLI@2
         displayName: 'Publish - API'
@@ -57,16 +46,7 @@ jobs:
           zipAfterPublish: false
           modifyOutputPath: false
           workingDirectory: './src/Backend/Jp.UserManagement'
-        
-      - task: ArchiveFiles@2
-        displayName: 'Zip - SSO'
-        inputs:
-          rootFolderOrFile: '$(Build.StagingDirectory)/sso/'
-          includeRootFolder: false
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.sso.$(Build.BuildNumber).zip'
-          replaceExistingArchive: true
-
+ 
       - task: ArchiveFiles@2
         displayName: 'Zip - API'
         inputs:
@@ -77,20 +57,13 @@ jobs:
           replaceExistingArchive: true
 
       - task: PublishBuildArtifacts@1
-        displayName: 'Artifact - Generate SSO'
-        inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.sso.$(Build.BuildNumber).zip'
-          ArtifactName: 'jpproject.sso.$(Build.BuildNumber)'
-          publishLocation: 'Container'
-
-      - task: PublishBuildArtifacts@1
         displayName: 'Artifact - Generate API'
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.api.$(Build.BuildNumber).zip'
           ArtifactName: 'jpproject.api.$(Build.BuildNumber)'
           publishLocation: 'Container'
 
-  # Angular APP's
+  # Angular APP
   - job: 'angular'
     displayName: 'Angular Build'
     pool:
@@ -104,24 +77,11 @@ jobs:
           workingDir: src/Frontend/Jp.AdminUI
 
       - task: Npm@1
-        displayName: 'NPM - Install - UserManagement'
-        inputs:
-          command: install
-          workingDir: src/Frontend/Jp.UserManagement
-
-      - task: Npm@1
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
           customCommand: 'run build -- --base-href=/admin-ui/'
           workingDir: src/Frontend/Jp.AdminUI
-
-      - task: Npm@1
-        displayName: 'NPM - Build Prod - UserManagement'
-        inputs:
-          command: custom
-          customCommand: 'run build -- --base-href=/user-management/'
-          workingDir: src/Frontend/Jp.UserManagement
 
       - task: ArchiveFiles@2
         displayName: 'ZIP - AdminUI'
@@ -132,25 +92,9 @@ jobs:
           archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
           replaceExistingArchive: true
 
-      - task: ArchiveFiles@2
-        displayName: 'ZIP - UserManagement'
-        inputs:
-          rootFolderOrFile: 'src/Frontend/Jp.UserManagement/dist/'
-          includeRootFolder: false
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.user-management.$(Build.BuildNumber).zip'
-          replaceExistingArchive: true
-
       - task: PublishBuildArtifacts@1
         displayName: 'Artifact - Generate - AdminUI'
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
           ArtifactName: 'jpproject.admin-ui.$(Build.BuildNumber)'
-          publishLocation: 'Container'
-
-      - task: PublishBuildArtifacts@1
-        displayName: 'Artifact - Generate - UserManagement'
-        inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.user-management.$(Build.BuildNumber).zip'
-          ArtifactName: 'jpproject.user-management.$(Build.BuildNumber)'
           publishLocation: 'Container'
