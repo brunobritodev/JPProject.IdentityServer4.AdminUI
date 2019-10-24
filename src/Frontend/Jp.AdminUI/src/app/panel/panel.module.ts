@@ -1,8 +1,9 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { SharedModule } from "../shared/shared.module";
-import { ToasterService } from "angular2-toaster";
-import { AuthGuardWithForcedLogin } from "@core/auth/auth-guard-with-forced-login.service";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardWithForcedLogin } from '@core/auth/auth-guard-with-forced-login.service';
+import { ToasterService } from 'angular2-toaster';
+
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
     {
@@ -18,8 +19,7 @@ const routes: Routes = [
             { path: "api-resource", loadChildren: "app/panel/api-resources/api-resource.module#ApiResourceModule" },
             { path: "persisted-grants", loadChildren: "app/panel/persisted-grants/persisted-grants.module#PersistedGrantsModule" },
             { path: "users", loadChildren: "app/panel/users/user.module#UserModule" },
-            { path: "roles", loadChildren: "app/panel/roles/roles.module#RoleModule" },
-            { path: "joaquim", loadChildren: "app/panel/joaquim/joaquim.module#JoaquimModule" },
+            { path: "roles", loadChildren: "app/panel/roles/roles.module#RoleModule" }
         ]
     },
 ];

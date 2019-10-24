@@ -26,8 +26,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Backend\Jp.Domain\Jp.Domain.csproj" />
-  </ItemGroup>
-
 </Project>
