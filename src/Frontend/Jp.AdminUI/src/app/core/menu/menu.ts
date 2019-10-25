@@ -1,11 +1,23 @@
+export class MenuItem {
+    constructor() { }
+    text: string;
+    heading?: boolean;
+    link?: string;     // internal route links
+    elink?: string;   // used only for external links
+    target?: string;   // anchor target="_blank|_self|_parent|_top|framename"
+    icon?: string;
+    alert?: string;
+    submenu?: Array<any>;
+    lightVersion?: boolean;
+}
 
-const Home = {
+const Home: MenuItem = {
     text: "Home",
     link: "/home",
     icon: "icon-home"
 };
 
-const Clients = {
+const Clients: MenuItem  = {
     text: "Clients",
     link: "/clients",
     icon: "fa fa-desktop",
@@ -21,7 +33,7 @@ const Clients = {
     ]
 };
 
-const IdentityResource = {
+const IdentityResource: MenuItem  = {
     text: "Identity Resources",
     link: "/identity-resource",
     icon: "far fa-id-card",
@@ -37,7 +49,7 @@ const IdentityResource = {
     ]
 };
 
-const ApiResource = {
+const ApiResource: MenuItem  = {
     text: "Api Resources",
     link: "/api-resource",
     icon: "fas fa-cloud",
@@ -53,13 +65,13 @@ const ApiResource = {
     ]
 };
 
-const PersistedGrants = {
+const PersistedGrants: MenuItem  = {
     text: "Persisted Grants",
     link: "/persisted-grants",
     icon: "fas fa-key"
 };
 
-const Users = {
+const Users: MenuItem  = {
     text: "Users",
     link: "/users",
     icon: "fas fa-users-cog",
@@ -72,10 +84,11 @@ const Users = {
             text: "Add",
             link: "/users/add"
         }
-    ]
+    ],
+    lightVersion: false
 };
 
-const Roles = {
+const Roles: MenuItem  = {
     text: "Roles",
     link: "/roles",
     icon: "fas fa-user-tag",
@@ -88,24 +101,27 @@ const Roles = {
             text: "Add",
             link: "/roles/add"
         }
-    ]
+    ],
+    lightVersion: false
 };
 
-const headingMain = {
+const headingMain: MenuItem  = {
     text: "IdentityServer4",
     heading: true
 };
 
-const headingUsers = {
+const headingUsers: MenuItem  = {
     text: "Users",
-    heading: true
+    heading: true,
+    lightVersion: false
 };
-const headingSettings = {
+const headingSettings: MenuItem  = {
     text: "SSO Settings",
-    heading: true
+    heading: true,
+    lightVersion: false
 };
 
-export const menu = [
+export const menu: MenuItem[]  = [
     headingMain,
     Home,
     Clients,

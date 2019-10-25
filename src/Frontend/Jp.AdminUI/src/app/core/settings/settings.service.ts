@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '@env/environment';
+import { VersionService } from '@shared/services/version.service';
 import { UserProfile } from '@shared/viewModel/userProfile.model';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { defer, from, Observable, of } from 'rxjs';
@@ -18,13 +18,13 @@ export class SettingsService {
     userProfileObservable: Observable<object>;
     loadDiscoveryDocumentAndTryLoginObservable: Observable<any>;
     doc: any;
+    isLightVersion: boolean;
 
     constructor(
-        private http: HttpClient,
         private oauthService: OAuthService,
-        private router: Router) {
+        private versionService: VersionService) {
 
-
+        this.versionService.getVersion().subscribe(s => this.isLightVersion = s == "light");
         // App Settings
         // -----------------------------------
         this.app = {

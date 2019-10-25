@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SettingsService } from '@core/settings/settings.service';
 import { environment } from '@env/environment';
 import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { ListOfPersistedGrant } from '@shared/viewModel/persisted-grants.model';
@@ -10,7 +11,7 @@ export class PersistedGrantsService {
 
     endpoint: string;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private settings: SettingsService) {
         this.endpoint = environment.ResourceServer + "persisted-grants";
     }
 
@@ -21,6 +22,4 @@ export class PersistedGrantsService {
     public remove(key: string): Observable<void> {
         return this.http.delete<void>(`${this.endpoint}/${key}`);
     }
-
-
 }

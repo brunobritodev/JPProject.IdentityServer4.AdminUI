@@ -15,7 +15,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
         },
-        "Jp.UserManagement": {
+        "JPProject.Admin.Api": {
             "commandName": "Project",
             "launchUrl": "swagger/index.html",
             "environmentVariables": {

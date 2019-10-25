@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '@core/settings/settings.service';
 import { TranslatorService } from '@core/translator/translator.service';
 import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { PersistedGrant } from '@shared/viewModel/persisted-grants.model';
@@ -22,7 +23,8 @@ export class PersistedGrantListComponent implements OnInit {
     public quantity: number = 10;
     constructor(
         public translator: TranslatorService,
-        private persistedGrantService: PersistedGrantsService) { }
+        private persistedGrantService: PersistedGrantsService,
+        public settings: SettingsService) { }
 
     ngOnInit() {
         this.loadGrants();

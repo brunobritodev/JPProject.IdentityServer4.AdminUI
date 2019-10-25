@@ -4,16 +4,15 @@ import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class ScopeService {
-   
+export class VersionService {
 
     endpoint: string;
 
     constructor(private http: HttpClient) {
-        this.endpoint = environment.ResourceServer + "scopes";
+        this.endpoint = environment.ResourceServer + "version";
     }
 
-    public getScopes(text: string): Observable<string[]> {
-        return this.http.get<string[]>(`${this.endpoint}/${text}`);
+    public getVersion(): Observable<string> {
+        return this.http.get(`${this.endpoint}`, { responseType: 'text' });
     }
 }

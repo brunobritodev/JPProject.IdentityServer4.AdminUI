@@ -1,19 +1,27 @@
-import { NgModule, Optional, SkipSelf, ModuleWithProviders } from "@angular/core";
+import { HttpClientModule } from '@angular/common/http';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { environment } from '@env/environment';
+import { VersionService } from '@shared/services/version.service';
+import {
+    AuthConfig,
+    JwksValidationHandler,
+    OAuthModule,
+    OAuthModuleConfig,
+    OAuthStorage,
+    ValidationHandler,
+} from 'angular-oauth2-oidc';
 
-import { SettingsService } from "./settings/settings.service";
-import { ThemesService } from "./themes/themes.service";
-import { TranslatorService } from "./translator/translator.service";
-import { MenuService } from "./menu/menu.service";
-import { throwIfAlreadyLoaded } from "./module-import-guard";
-import { AuthGuardWithForcedLogin } from "./auth/auth-guard-with-forced-login.service";
-import { AuthService } from "./auth/auth.service";
-import { OAuthModule, AuthConfig, OAuthModuleConfig, ValidationHandler, JwksValidationHandler, OAuthStorage } from "angular-oauth2-oidc";
-import { HttpClientModule } from "@angular/common/http";
-import { authModuleConfig } from "./auth/auth-module-config";
-import { AuthGuard } from "./auth/auth-guard.service";
-import { authConfig } from "./auth/auth-config";
-import { authProdConfig } from "./auth/auth-config.prod";
-import { environment } from "@env/environment";
+import { authConfig } from './auth/auth-config';
+import { authProdConfig } from './auth/auth-config.prod';
+import { AuthGuardWithForcedLogin } from './auth/auth-guard-with-forced-login.service';
+import { AuthGuard } from './auth/auth-guard.service';
+import { authModuleConfig } from './auth/auth-module-config';
+import { AuthService } from './auth/auth.service';
+import { MenuService } from './menu/menu.service';
+import { throwIfAlreadyLoaded } from './module-import-guard';
+import { SettingsService } from './settings/settings.service';
+import { ThemesService } from './themes/themes.service';
+import { TranslatorService } from './translator/translator.service';
 
 export function storageFactory(): OAuthStorage {
     return localStorage;
@@ -27,6 +35,7 @@ export function storageFactory(): OAuthStorage {
     ],
     providers: [
         SettingsService,
+        VersionService,
         ThemesService,
         TranslatorService,
         MenuService,

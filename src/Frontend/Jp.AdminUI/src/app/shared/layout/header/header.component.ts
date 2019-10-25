@@ -33,8 +33,7 @@ export class HeaderComponent implements OnInit {
         public authService: AuthService,
         private router: Router) {
         // show only a few items on demo
-        this.menuItems = menu.getMenu().slice(0, 4); // for horizontal layout
-
+        this.menuItems = menu.getMenu();
     }
 
     ngOnInit() {
