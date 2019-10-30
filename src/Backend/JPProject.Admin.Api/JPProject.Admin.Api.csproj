@@ -10,12 +10,13 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="3.1.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
-    <PackageReference Include="JPProject.Admin.Application" Version="1.0.0" />
-    <PackageReference Include="JPProject.Admin.Infra.Data.MySql" Version="1.0.0" />
-    <PackageReference Include="JPProject.Admin.Infra.Data.PostgreSQL" Version="1.0.0" />
-    <PackageReference Include="JPProject.Admin.Infra.Data.Sql" Version="1.0.0" />
-    <PackageReference Include="JPProject.Admin.Infra.Data.Sqlite" Version="1.0.0" />
-    <PackageReference Include="JPProject.AspNet.Core" Version="1.0.0" />
+    <PackageReference Include="JPProject.Admin.Application" Version="1.0.1-10-30-130325" />
+    <PackageReference Include="JPProject.Admin.EntityFrameworkCore.MySql" Version="1.0.1-10-30-130325" />
+    <PackageReference Include="JPProject.Admin.EntityFrameworkCore.PostgreSQL" Version="1.0.1-10-30-130325" />
+    <PackageReference Include="JPProject.Admin.EntityFrameworkCore.Sql" Version="1.0.1-10-30-130325" />
+    <PackageReference Include="JPProject.Admin.EntityFrameworkCore.Sqlite" Version="1.0.1-10-30-130325" />
+    <PackageReference Include="JPProject.AspNet.Core" Version="1.0.1-10-30-130325" />
+    <PackageReference Include="JPProject.Sso.Application" Version="1.0.1-10-30-130325" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.8.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using JPProject.Admin.Application.AutoMapper;
-using JPProject.Admin.Infra.Data.Sqlite.Configuration;
 using JPProject.AspNet.Core;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -15,20 +14,20 @@ namespace JPProject.Admin.Api.Configuration
         {
             var database = configuration["ApplicationSettings:DatabaseType"].ToUpper();
             var connString = configuration.GetConnectionString("SSOConnection");
-            services.ConfigureJpAdmin<AspNetUser>();
+            var builder = services.ConfigureJpAdmin<AspNetUser>();
             switch (database)
             {
                 case "MYSQL":
-                    services.WithMySql(connString);
+                    builder.WithMySql(connString);
                     break;
                 case "SQLSERVER":
-                    services.WithSqlServer(connString);
+                    builder.WithSqlServer(connString);
                     break;
                 case "POSTGRESQL":
-                    services.WithPostgreSql(connString);
+                    builder.WithPostgreSql(connString);
                     break;
                 case "SQLITE":
-                    services.WithSqlite(connString);
+                    builder.WithSqlite(connString);
                     break;
             }
 
