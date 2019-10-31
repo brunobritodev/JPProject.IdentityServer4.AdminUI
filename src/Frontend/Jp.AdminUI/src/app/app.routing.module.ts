@@ -36,7 +36,8 @@ export const routes = [
 export class RoutesModule {
     constructor(public menuService: MenuService, tr: TranslatorService, private settings: SettingsService) {
 
-        let isLight = this.settings.isLightVersion;
-        menuService.addMenu(menu.filter(f => f.lightVersion == null || f.lightVersion == isLight));
+        this.settings.isLightVersion$.subscribe(lightVersion => {
+            menuService.addMenu(menu.filter(f => f.lightVersion == null || f.lightVersion == lightVersion));
+        });
     }
 }

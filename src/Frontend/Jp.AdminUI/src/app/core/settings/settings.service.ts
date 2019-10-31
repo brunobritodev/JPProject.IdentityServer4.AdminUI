@@ -18,13 +18,16 @@ export class SettingsService {
     userProfileObservable: Observable<object>;
     loadDiscoveryDocumentAndTryLoginObservable: Observable<any>;
     doc: any;
-    isLightVersion: boolean;
+    isLightVersion$: Observable<boolean>;
+    lightVersion: boolean;
 
     constructor(
         private oauthService: OAuthService,
         private versionService: VersionService) {
 
-        this.versionService.getVersion().subscribe(s => this.isLightVersion = s == "light");
+        this.isLightVersion$ = this.versionService.getVersion().pipe(tap(light =>
+            this.lightVersion = light
+        ));
         // App Settings
         // -----------------------------------
         this.app = {
