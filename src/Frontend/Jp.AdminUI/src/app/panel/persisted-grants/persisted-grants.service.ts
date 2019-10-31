@@ -20,6 +20,6 @@ export class PersistedGrantsService {
     }
 
     public remove(key: string): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${key}`);
+        return this.http.delete<void>(`${this.endpoint}/${btoa(key)}`);
     }
 }
