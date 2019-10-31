@@ -1,5 +1,4 @@
-﻿using IdentityServer4.Extensions;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace JPProject.Admin.Api.Configuration
 {
@@ -15,7 +14,7 @@ namespace JPProject.Admin.Api.Configuration
                         c.User.IsInRole("Administrator")));
 
                 options.AddPolicy("ReadOnly", policy =>
-                    policy.RequireAssertion(context => context.User.IsAuthenticated()));
+                    policy.RequireAssertion(context => context.User.Identity != null && context.User.Identity.IsAuthenticated));
 
                 options.AddPolicy("UserManagement", policy =>
                     policy.RequireAuthenticatedUser());

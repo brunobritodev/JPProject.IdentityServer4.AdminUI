@@ -37,7 +37,7 @@ namespace JPProject.Admin.Api
             services.AddBrotliCompression();
 
             // Configure Admin
-            services.ConfigureAdminUi(Configuration);
+            services.ConfigureAdminUi(Configuration).ConfigureDefaultSettings();
 
             // Cors request
             services.ConfigureCors();

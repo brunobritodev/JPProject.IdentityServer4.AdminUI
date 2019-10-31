@@ -1,43 +1,51 @@
 ﻿using AutoMapper;
+using AutoMapper.Configuration;
 using JPProject.Admin.Application.AutoMapper;
 using JPProject.AspNet.Core;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace JPProject.Admin.Api.Configuration
 {
     public static class AdminUiConfiguration
     {
-        public static void ConfigureAdminUi(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigureAdminUi(this IServiceCollection services, IConfiguration configuration)
         {
             var database = configuration["ApplicationSettings:DatabaseType"].ToUpper();
             var connString = configuration.GetConnectionString("SSOConnection");
-            var builder = services.ConfigureJpAdmin<AspNetUser>();
+            var identityServerApiBuilder = services.ConfigureJpAdmin<AspNetUser>();
+
             switch (database)
             {
                 case "MYSQL":
-                    builder.WithMySql(connString);
+                    identityServerApiBuilder.WithMySql<Startup>(connString);
                     break;
                 case "SQLSERVER":
-                    builder.WithSqlServer(connString);
+                    identityServerApiBuilder.WithSqlServer<Startup>(connString);
+
                     break;
                 case "POSTGRESQL":
-                    builder.WithPostgreSql(connString);
+                    identityServerApiBuilder.WithPostgreSql<Startup>(connString);
                     break;
                 case "SQLITE":
-                    builder.WithSqlite(connString);
+                    identityServerApiBuilder.WithSqlite<Startup>(connString);
                     break;
             }
+            return services;
+        }
 
-            var mappings = AdminUiMapperConfiguration.RegisterMappings();
-            var automapperConfig = new MapperConfiguration(mappings);
+        public static void ConfigureDefaultSettings(this IServiceCollection services)
+        {
+            var configurationExpression = new MapperConfigurationExpression();
+            AdminUiMapperConfiguration.RegisterMappings().ForEach(p => configurationExpression.AddProfile(p));
+            var automapperConfig = new MapperConfiguration(configurationExpression);
+
             services.TryAddSingleton(automapperConfig.CreateMapper());
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
-
-
         }
     }
 }
