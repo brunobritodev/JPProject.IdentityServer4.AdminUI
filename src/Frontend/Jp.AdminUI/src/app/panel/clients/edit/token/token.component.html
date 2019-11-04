@@ -3,89 +3,70 @@
     <!--Input - Number -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.identityTokenLifetime-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.identityTokenLifetime-tooltip' | translate">{{
                 'client.details.identityTokenLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-identityTokenLifetime"
-                    [placeholder]="'client.details.identityTokenLifetime-tooltip' | translate"
-                    [(ngModel)]="model.identityTokenLifetime" numbersOnly />
+                <input class="form-control" autocomplete="client-identityTokenLifetime" [placeholder]="'client.details.identityTokenLifetime-tooltip' | translate" [(ngModel)]="model.identityTokenLifetime" numbersOnly />
             </div>
         </div>
     </fieldset>
     <!--Input - Number -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.accessTokenLifetime-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.accessTokenLifetime-tooltip' | translate">{{
                 'client.details.accessTokenLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-accessTokenLifetime"
-                    [placeholder]="'client.details.accessTokenLifetime-tooltip' | translate"
-                    [(ngModel)]="model.accessTokenLifetime" numbersOnly />
+                <input class="form-control" autocomplete="client-accessTokenLifetime" [placeholder]="'client.details.accessTokenLifetime-tooltip' | translate" [(ngModel)]="model.accessTokenLifetime" numbersOnly />
             </div>
         </div>
     </fieldset>
     <!--Select-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.accessTokenTypes-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.accessTokenTypes-tooltip' | translate">{{
                 'client.details.accessTokenTypes' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <ngx-select [items]="accessTokenTypes" [(ngModel)]="model.accessTokenType"
-                    [placeholder]="'client.details.accessTokenTypes' | translate"></ngx-select>
+                <ngx-select [items]="accessTokenTypes" [(ngModel)]="model.accessTokenType" [placeholder]="'client.details.accessTokenTypes' | translate"></ngx-select>
             </div>
         </div>
     </fieldset>
     <!--Input - Number -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.authorizationCodeLifetime-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.authorizationCodeLifetime-tooltip' | translate">{{
                 'client.details.authorizationCodeLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-authorizationCodeLifetime"
-                    [placeholder]="'client.details.authorizationCodeLifetime-tooltip' | translate"
-                    [(ngModel)]="model.authorizationCodeLifetime" numbersOnly />
+                <input class="form-control" autocomplete="client-authorizationCodeLifetime" [placeholder]="'client.details.authorizationCodeLifetime-tooltip' | translate" [(ngModel)]="model.authorizationCodeLifetime" numbersOnly />
             </div>
         </div>
     </fieldset>
     <!--Input - Number -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.absoluteRefreshTokenLifetime-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.absoluteRefreshTokenLifetime-tooltip' | translate">{{
                 'client.details.absoluteRefreshTokenLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-absoluteRefreshTokenLifetime"
-                    [placeholder]="'client.details.absoluteRefreshTokenLifetime-tooltip' | translate"
-                    [(ngModel)]="model.absoluteRefreshTokenLifetime" numbersOnly />
+                <input class="form-control" autocomplete="client-absoluteRefreshTokenLifetime" [placeholder]="'client.details.absoluteRefreshTokenLifetime-tooltip' | translate" [(ngModel)]="model.absoluteRefreshTokenLifetime" numbersOnly />
             </div>
         </div>
     </fieldset>
     <!--Input - Number -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.slidingRefreshTokenLifetime-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.slidingRefreshTokenLifetime-tooltip' | translate">{{
                 'client.details.slidingRefreshTokenLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-slidingRefreshTokenLifetime"
-                    [placeholder]="'client.details.slidingRefreshTokenLifetime-tooltip' | translate"
-                    [(ngModel)]="model.slidingRefreshTokenLifetime" numbersOnly />
+                <input class="form-control" autocomplete="client-slidingRefreshTokenLifetime" [placeholder]="'client.details.slidingRefreshTokenLifetime-tooltip' | translate" [(ngModel)]="model.slidingRefreshTokenLifetime" numbersOnly />
             </div>
         </div>
     </fieldset>
     <!--Select-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.refreshTokenUsage-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.refreshTokenUsage-tooltip' | translate">{{
                 'client.details.refreshTokenUsage' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <ngx-select [items]="refreshTokenUsages" [(ngModel)]="model.refreshTokenUsage"
-                    [placeholder]="'client.details.refreshTokenUsage-tooltip' | translate"></ngx-select>
+                <ngx-select [items]="refreshTokenUsages" [(ngModel)]="model.refreshTokenUsage" [placeholder]="'client.details.refreshTokenUsage-tooltip' | translate"></ngx-select>
             </div>
         </div>
     </fieldset>
@@ -94,16 +75,12 @@
         <div class="form-group row">
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.refreshTokenExpiration' | translate }} </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.refreshTokenExpiration-tooltip' | translate"
-                    [popoverTitle]="'client.details.refreshTokenExpiration' | translate" placement="top"
-                    container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.refreshTokenExpiration-tooltip' | translate" [popoverTitle]="'client.details.refreshTokenExpiration' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
             </div>
             <div class="col-xl-8">
-                <ngx-select [items]="tokenExpirations" [(ngModel)]="model.refreshTokenExpiration"
-                    [placeholder]="'client.details.refreshTokenExpiration-tooltip' | translate"></ngx-select>
+                <ngx-select [items]="tokenExpirations" [(ngModel)]="model.refreshTokenExpiration" [placeholder]="'client.details.refreshTokenExpiration-tooltip' | translate"></ngx-select>
             </div>
         </div>
     </fieldset>
@@ -111,8 +88,7 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.updateAccessTokenClaimsOnRefresh-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.updateAccessTokenClaimsOnRefresh-tooltip' | translate">{{
                 'client.details.updateAccessTokenClaimsOnRefresh' | translate }}
                 <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
@@ -126,8 +102,7 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.includeJwtId-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.includeJwtId-tooltip' | translate">{{
                 'client.details.includeJwtId' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
@@ -140,8 +115,7 @@
     <!--Checkbox-->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.alwaysSendClientClaims-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.alwaysSendClientClaims-tooltip' | translate">{{
                 'client.details.alwaysSendClientClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <label class="switch m-0">
@@ -157,10 +131,7 @@
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.alwaysIncludeUserClaimsInIdToken' | translate }}
                 </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.alwaysIncludeUserClaimsInIdToken-tooltip' | translate"
-                    [popoverTitle]="'client.details.alwaysIncludeUserClaimsInIdToken' | translate" placement="top"
-                    container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.alwaysIncludeUserClaimsInIdToken-tooltip' | translate" [popoverTitle]="'client.details.alwaysIncludeUserClaimsInIdToken' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
             </div>
@@ -175,34 +146,27 @@
     <!--Input - text -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.pairWiseSubjectSalt-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.pairWiseSubjectSalt-tooltip' | translate">{{
                 'client.details.pairWiseSubjectSalt' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-pairWiseSubjectSalt"
-                    [placeholder]="'client.details.pairWiseSubjectSalt-tooltip' | translate"
-                    [(ngModel)]="model.pairWiseSubjectSalt" />
+                <input class="form-control" autocomplete="client-pairWiseSubjectSalt" [placeholder]="'client.details.pairWiseSubjectSalt-tooltip' | translate" [(ngModel)]="model.pairWiseSubjectSalt" />
             </div>
         </div>
     </fieldset>
     <!--Input - text -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.clientClaimsPrefix-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.clientClaimsPrefix-tooltip' | translate">{{
                 'client.details.clientClaimsPrefix' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-clientClaimsPrefix"
-                    [placeholder]="'client.details.clientClaimsPrefix-tooltip' | translate"
-                    [(ngModel)]="model.clientClaimsPrefix" />
+                <input class="form-control" autocomplete="client-clientClaimsPrefix" [placeholder]="'client.details.clientClaimsPrefix-tooltip' | translate" [(ngModel)]="model.clientClaimsPrefix" />
             </div>
         </div>
     </fieldset>
     <!--Button-->
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.claims-tooltip' | translate"
-                class="col-xl-4 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.claims-tooltip' | translate" class="col-xl-4 col-form-label">{{
                 'client.details.claims' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
                 <a [routerLink]="['/clients', model.clientId, 'claims']" class="btn btn-primary">{{

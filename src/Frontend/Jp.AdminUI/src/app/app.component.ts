@@ -1,11 +1,12 @@
-import { Component, HostBinding, OnInit } from "@angular/core";
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { AuthService } from '@core/auth/auth.service';
+import { Observable } from 'rxjs';
+
+import { SettingsService } from './core/settings/settings.service';
+
 declare var $: any;
 
-import { SettingsService } from "./core/settings/settings.service";
 // import { authConfig } from "./core/auth/auth.config";
-import { AuthService } from "@core/auth/auth.service";
-import { Observable } from "rxjs";
-
 
 
 

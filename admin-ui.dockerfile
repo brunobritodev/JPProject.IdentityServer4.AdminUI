@@ -10,21 +10,20 @@ COPY ["src/Frontend/Jp.AdminUI/package-lock.json", "./"]
 RUN npm ci && mkdir /app && mv ./node_modules ./app/
 
 WORKDIR /app
-
 # add app
 COPY ["src/Frontend/Jp.AdminUI/", "/app"]
-
+COPY ["environment.ts", "src/environments/environment.prod.ts"]
 # rebuild node
 RUN npm rebuild node-sass
 # generate build
-RUN npm run ng build -- --configuration=docker
+RUN npm run ng build -- --configuration=production
 
 ##################
 ### production ###
 ##################
 
 # base image
-FROM nginx:1.17.2-alpine
+FROM nginx:alpine
 
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
@@ -32,7 +31,6 @@ RUN rm -rf /usr/share/nginx/html/*
 # copy artifact build from the 'build environment'
 COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
-
 
 # expose port 80
 EXPOSE 80/tcp

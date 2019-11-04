@@ -11,7 +11,6 @@ import {
     ValidationHandler,
 } from 'angular-oauth2-oidc';
 
-import { authConfig } from './auth/auth-config';
 import { authProdConfig } from './auth/auth-config.prod';
 import { AuthGuardWithForcedLogin } from './auth/auth-guard-with-forced-login.service';
 import { AuthGuard } from './auth/auth-guard.service';

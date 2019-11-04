@@ -3,8 +3,7 @@
     <fieldset>
         <div class="form-group row">
             <div class="col-xl-4">
-                <label class="col-form-label" placement="top"
-                    [tooltip]="'client.details.enableLocalLogin-tooltip' | translate">{{ 'client.details.enableLocalLogin' | translate }}
+                <label class="col-form-label" placement="top" [tooltip]="'client.details.enableLocalLogin-tooltip' | translate">{{ 'client.details.enableLocalLogin' | translate }}
                     <i class="fa fa-comment-dots"></i></label>&nbsp;
             </div>
             <div class="col-xl-8">
@@ -21,28 +20,22 @@
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.identityProviderRestrictions' | translate }}
                 </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.identityProviderRestrictions-tooltip' | translate"
-                    [popoverTitle]="'client.details.identityProviderRestrictions' | translate" placement="auto"
-                    container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.identityProviderRestrictions-tooltip' | translate" [popoverTitle]="'client.details.identityProviderRestrictions' | translate" placement="auto" container="body" [adaptivePosition]="false"
+                    [adaptivePosition]="false">
                     <i class="fa fa-comment-dots" placement="top"></i>
                 </button>
             </div>
             <div class="col-xl-8">
-                <tag-input theme='bootstrap' name="identityProviderRestrictions" [modelAsStrings]="true"
-                    placeholder='+Grant' [(ngModel)]="model.identityProviderRestrictions"></tag-input>
+                <tag-input theme='bootstrap' name="identityProviderRestrictions" [modelAsStrings]="true" placeholder='+Grant' [(ngModel)]="model.identityProviderRestrictions"></tag-input>
             </div>
             <div class="col-xl-8 offset-4">
                 <small>Options:</small>
                 <br>
-                <button class="btn btn-brand btn-facebook" type="button"
-                    (click)="addIdentityProvidersRestrictions('Facebook')" style="margin-bottom: 4px"><i
+                <button class="btn btn-brand btn-facebook" type="button" (click)="addIdentityProvidersRestrictions('Facebook')" style="margin-bottom: 4px"><i
                         class="fab fa-facebook"></i><span>Facebook</span></button>
-                <button class="btn btn-brand btn-linkedin" type="button"
-                    (click)="addIdentityProvidersRestrictions('LinkedIn')" style="margin-bottom: 4px"><i
+                <button class="btn btn-brand btn-linkedin" type="button" (click)="addIdentityProvidersRestrictions('LinkedIn')" style="margin-bottom: 4px"><i
                         class="fab fa-linkedin"></i><span>LinkedIn</span></button>
-                <button class="btn btn-brand btn-google-plus" type="button"
-                    (click)="addIdentityProvidersRestrictions('Google')" style="margin-bottom: 4px"><i
+                <button class="btn btn-brand btn-google-plus" type="button" (click)="addIdentityProvidersRestrictions('Google')" style="margin-bottom: 4px"><i
                         class="fab fa-google-plus"></i><span>Google+</span></button>
 
             </div>
@@ -51,13 +44,10 @@
     <!--Select with tags-->
     <fieldset>
         <div class="form-group row">
-            <label placement="top" [tooltip]="'client.details.postLogoutRedirectUris-tooltip' | translate"
-                class="col-xl-4 col-form-label">{{
+            <label placement="top" [tooltip]="'client.details.postLogoutRedirectUris-tooltip' | translate" class="col-xl-4 col-form-label">{{
                 'client.details.postLogoutRedirectUris' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-5">
-                <tag-input theme='bootstrap' name="postLogoutRedirectUris" [modelAsStrings]="true"
-                    [placeholder]="'+' + ('client.details.postLogoutRedirectUris' | translate)"
-                    [(ngModel)]="model.postLogoutRedirectUris"></tag-input>
+                <tag-input theme='bootstrap' name="postLogoutRedirectUris" [modelAsStrings]="true" [placeholder]="'+' + ('client.details.postLogoutRedirectUris' | translate)" [(ngModel)]="model.postLogoutRedirectUris"></tag-input>
             </div>
         </div>
     </fieldset>
@@ -66,18 +56,13 @@
         <div class="form-group row">
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.frontChannelLogoutUri' | translate }} </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.frontChannelLogoutUri-tooltip' | translate"
-                    [popoverTitle]="'client.details.frontChannelLogoutUri' | translate" placement="top"
-                    container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.frontChannelLogoutUri-tooltip' | translate" [popoverTitle]="'client.details.frontChannelLogoutUri' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
 
             </div>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-frontChannelLogoutUri"
-                    [placeholder]="'client.details.frontChannelLogoutUri-tooltip' | translate"
-                    [(ngModel)]="model.frontChannelLogoutUri" />
+                <input class="form-control" autocomplete="client-frontChannelLogoutUri" [placeholder]="'client.details.frontChannelLogoutUri-tooltip' | translate" [(ngModel)]="model.frontChannelLogoutUri" />
             </div>
         </div>
     </fieldset>
@@ -87,10 +72,7 @@
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.frontChannelLogoutSessionRequired' | translate }}
                 </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.frontChannelLogoutSessionRequired-tooltip' | translate"
-                    [popoverTitle]="'client.details.frontChannelLogoutSessionRequired' | translate" placement="top"
-                    container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.frontChannelLogoutSessionRequired-tooltip' | translate" [popoverTitle]="'client.details.frontChannelLogoutSessionRequired' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
             </div>
@@ -107,16 +89,12 @@
         <div class="form-group row">
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.backChannelLogoutUri' | translate }} </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.backChannelLogoutUri-tooltip' | translate"
-                    [popoverTitle]="'client.details.backChannelLogoutUri' | translate" placement="top" container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.backChannelLogoutUri-tooltip' | translate" [popoverTitle]="'client.details.backChannelLogoutUri' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
             </div>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-backChannelLogoutUri"
-                    [placeholder]="'client.details.backChannelLogoutUri-tooltip' | translate"
-                    [(ngModel)]="model.backChannelLogoutUri" />
+                <input class="form-control" autocomplete="client-backChannelLogoutUri" [placeholder]="'client.details.backChannelLogoutUri-tooltip' | translate" [(ngModel)]="model.backChannelLogoutUri" />
             </div>
         </div>
     </fieldset>
@@ -126,10 +104,7 @@
             <div class="col-xl-4">
                 <label class="col-form-label">{{ 'client.details.backChannelLogoutSessionRequired' | translate }}
                 </label>&nbsp;
-                <button type="button" class="btn btn-xs btn-info"
-                    [popover]="'client.details.backChannelLogoutSessionRequired-tooltip' | translate"
-                    [popoverTitle]="'client.details.backChannelLogoutSessionRequired' | translate" placement="top"
-                    container="body">
+                <button type="button" class="btn btn-xs btn-info" [popover]="'client.details.backChannelLogoutSessionRequired-tooltip' | translate" [popoverTitle]="'client.details.backChannelLogoutSessionRequired' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
             </div>
@@ -144,13 +119,10 @@
     <!--Input - Number -->
     <fieldset>
         <div class="form-group row">
-            <label class="col-xl-4 col-form-label" placement="top"
-                [tooltip]="'client.details.userSsoLifetime-tooltip' | translate">{{
+            <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.userSsoLifetime-tooltip' | translate">{{
                     'client.details.userSsoLifetime' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <input class="form-control" autocomplete="client-userSsoLifetime"
-                    [placeholder]="'client.details.userSsoLifetime-tooltip' | translate"
-                    [(ngModel)]="model.userSsoLifetime" numbersOnly />
+                <input class="form-control" autocomplete="client-userSsoLifetime" [placeholder]="'client.details.userSsoLifetime-tooltip' | translate" [(ngModel)]="model.userSsoLifetime" numbersOnly />
             </div>
         </div>
     </fieldset>

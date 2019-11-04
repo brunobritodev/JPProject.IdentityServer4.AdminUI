@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.Configuration;
 using JPProject.Admin.Application.AutoMapper;
+using JPProject.Admin.Database;
 using JPProject.AspNet.Core;
+using JPProject.Domain.Core.ViewModels;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,27 +16,13 @@ namespace JPProject.Admin.Api.Configuration
     {
         public static IServiceCollection ConfigureAdminUi(this IServiceCollection services, IConfiguration configuration)
         {
-            var database = configuration["ApplicationSettings:DatabaseType"].ToUpper();
+            var database = configuration.GetValue<DatabaseType>("ApplicationSettings:DatabaseType");
             var connString = configuration.GetConnectionString("SSOConnection");
-            var identityServerApiBuilder = services.ConfigureJpAdmin<AspNetUser>();
 
-            switch (database)
-            {
-                case "MYSQL":
-                    identityServerApiBuilder.WithMySql<Startup>(connString);
-                    break;
-                case "SQLSERVER":
-                    identityServerApiBuilder.WithSqlServer<Startup>(connString);
+            services.ConfigureJpAdmin<AspNetUser>().AddDatabase(database, connString);
 
-                    break;
-                case "POSTGRESQL":
-                    identityServerApiBuilder.WithPostgreSql<Startup>(connString);
-                    break;
-                case "SQLITE":
-                    identityServerApiBuilder.WithSqlite<Startup>(connString);
-                    break;
-            }
             return services;
+
         }
 
         public static void ConfigureDefaultSettings(this IServiceCollection services)

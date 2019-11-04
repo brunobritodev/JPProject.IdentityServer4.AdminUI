@@ -15,8 +15,8 @@ const routes: Routes = [
     { path: "", component: ApiResourceListComponent },
     { path: ":name/edit", component: ApiResourceEditComponent },
     { path: "add", component: ApiResourceAddComponent },
-    { path: "secrets/:resource", component: ApiResourceSecretsComponent },
-    { path: "scopes/:resource", component: ApiResourceScopesComponent },
+    { path: ":resource/secrets", component: ApiResourceSecretsComponent },
+    { path: ":resource/scopes", component: ApiResourceScopesComponent },
 ];
 
 @NgModule({
