@@ -71,4 +71,4 @@ jobs:
         displayName: 'Docker - Build - API'
         inputs:
           command: 'build'
-          Dockerfile: '**/api.dockerfile'
+          Dockerfile: '**/api-light.dockerfile'
