@@ -1,8 +1,8 @@
 ![image](https://github.com/brunohbrito/JPProject.Core/blob/master/build/logo.png?raw=true)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/08v6mg6q439x16xt?svg=true)](https://ci.appveyor.com/project/brunohbrito/jp-project)
-[![Build Status](https://dev.azure.com/brunohbrito/JpProject/_apis/build/status/JPProject%20CD%20Build?branchName=master)](https://dev.azure.com/brunohbrito/JpProject/_build/latest?definitionId=2&branchName=master)
-[![License](https://img.shields.io/github/license/brunohbrito/JPProject.IdentityServer4.SSO)](LICENSE)
+
+[![Build Status](https://dev.azure.com/brunohbrito/Jp%20Project/_apis/build/status/JPProject%20AdminUI%20-%20CD?branchName=master)](https://dev.azure.com/brunohbrito/Jp%20Project/_build/latest?definitionId=2&branchName=master)
+[![License](https://img.shields.io/github/license/brunohbrito/JPProject.IdentityServer4.AdminUI)](LICENSE)
 
 This is an Administrator Panel for JP Project. It's available in 2 versions: Light and Full. See below the differences.
 
