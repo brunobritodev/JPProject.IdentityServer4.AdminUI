@@ -1,10 +1,11 @@
-import { Injectable } from "@angular/core";
-import { UserProfile } from "@shared/viewModel/userProfile.model";
-import { HttpClient } from "@angular/common/http";
-import { OAuthService } from "angular-oauth2-oidc";
-import { of, from, Observable, defer } from "rxjs";
-import { Router } from "@angular/router";
-import { map, switchMap, share, tap } from "rxjs/operators";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from '@env/environment';
+import { VersionService } from '@shared/services/version.service';
+import { UserProfile } from '@shared/viewModel/userProfile.model';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { defer, from, Observable, of } from 'rxjs';
+import { map, share, switchMap, tap } from 'rxjs/operators';
 
 declare var $: any;
 
@@ -17,20 +18,23 @@ export class SettingsService {
     userProfileObservable: Observable<object>;
     loadDiscoveryDocumentAndTryLoginObservable: Observable<any>;
     doc: any;
+    isLightVersion$: Observable<boolean>;
+    lightVersion: boolean;
 
     constructor(
-        private http: HttpClient,
         private oauthService: OAuthService,
-        private router: Router) {
+        private versionService: VersionService) {
 
-
+        this.isLightVersion$ = this.versionService.getVersion().pipe(tap(light =>
+            this.lightVersion = light
+        ));
         // App Settings
         // -----------------------------------
         this.app = {
             name: "Jp Project - IS4Admin",
             description: "IdentityServer4 Admin Panel",
             year: ((new Date()).getFullYear()),
-            version: "1.4.5"
+            version: environment.version
         };
 
         // Layout Settings

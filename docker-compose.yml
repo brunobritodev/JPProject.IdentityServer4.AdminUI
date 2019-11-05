@@ -2,92 +2,43 @@ version: "3"
 
 services:
 
-    #############################
-    # Database
-    #############################
-    jpdatabase:
-      image: mysql
-      command: --default-authentication-plugin=mysql_native_password
-      restart: always
-      expose: 
-        - "3306"
-      environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_USER: jp
-          MYSQL_DATABASE: jpproject
-          MYSQL_PASSWORD: 10203040
-    
-    #############################
-    # Server SSO
-    #############################
-    jpproject:
-        image: "jpproject-sso"
+    # #############################
+    # # Management API - Light
+    # #############################
+    jpproject-light-api:
+        image: jpproject-light-api
         build: 
           context: .
-          dockerfile: sso.dockerfile
-        ports:
-            - "5000:5000"
-        links:
-            - jpdatabase
-        depends_on:
-            - jpdatabase
-        environment: 
-            ASPNETCORE_ENVIRONMENT: Development
-            ASPNETCORE_URLS: http://+:5000
-            CUSTOMCONNSTR_SSOConnection: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
-            ApplicationSettings:EnableExternalProviders: "false" # Because Auth url is http://jpproject (modified by host to point to 127.0.0.1), then Google and Facebook reject it.
-            ApplicationSettings:DatabaseType: MySql
-            ApplicationSettings:DefaultUser: bruno
-            ApplicationSettings:DefaultPass: Pa$$word123
-            ApplicationSettings:DefaultEmail: bhdebrito@gmail.com
-            ApplicationSettings:UserManagementURL: http://localhost:4200
-            ApplicationSettings:IS4AdminUi: http://localhost:4300
-            ApplicationSettings:ResourceServerURL: http://localhost:5003
-            CertificateOptions:Type: Temporary
-
-    # #############################
-    # # Management API
-    # #############################
-    jpproject-api:
-        image: jpproject-api
-        build: 
-          context: .
-          dockerfile: api.dockerfile
-        ports:
-            - "5003:80"
-        depends_on:
-            - jpdatabase
+          dockerfile: api-light.dockerfile
         environment: 
             ASPNETCORE_ENVIRONMENT: "Development"
             ASPNETCORE_URLS: http://+
-            CUSTOMCONNSTR_SSOConnection: "server=jpdatabase,port=3306;database=jpproject;user=jp;password=10203040"
-            ApplicationSettings:Authority: "http://jpproject:5000"
-            ApplicationSettings:DatabaseType: MySql
-
-    #############################
-    # User management UI
-    #############################
-    user-ui:
-        image: jpproject-user-management-ui
-        build: 
-          context: .
-          dockerfile: ui-user-management.dockerfile
-        depends_on:
-            - jpproject-api
-            - jpproject
-        ports:
-            - 4200:80
+            CUSTOMCONNSTR_SSOConnection: "<you database connstring>"
+            ApplicationSettings:Authority: "http://sso.teste.work"
+            ApplicationSettings:DatabaseType: SqlServer
+            ApplicationSettings:RequireHttpsMetadata: 'false'
+            ApplicationSettings:ApiName: jp_api
+            ApplicationSettings:ApiSecret: "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++"
 
     #############################
     # Admin Ui
     #############################
-    admin-ui:
-        image: jpproject-admin-ui
+    jpproject-admin:
+        image: jpproject-admin
         build: 
-          context: .
-          dockerfile: admin-ui.dockerfile
-        depends_on:
-            - jpproject-api
-            - jpproject
+            context: .
+            dockerfile: admin-ui.dockerfile
+
+
+    reverse-proxy:
+        container_name: jpproject-light
+        build:
+            context: .
+            dockerfile: nginx.dockerfile
         ports:
-            - 4300:80
+            - '5002:5002'
+            - '4300:4300'
+        depends_on:
+            - 'jpproject-light-api'
+            - 'jpproject-admin'
+        

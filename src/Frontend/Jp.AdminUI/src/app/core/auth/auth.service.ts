@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '@env/environment';
 import { OAuthErrorEvent, OAuthService } from 'angular-oauth2-oidc';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { environment } from '@env/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -78,11 +78,12 @@ export class AuthService {
             .pipe(filter(e => ['session_terminated', 'session_error'].includes(e.type)))
             .subscribe(e => this.navigateToLoginPage());
 
-        this.oauthService.setupAutomaticSilentRefresh();
     }
 
     public runInitialLoginSequence(): Promise<void> {
 
+        this.oauthService.setupAutomaticSilentRefresh();
+        
         if (location.hash) {
             console.log('Encountered hash fragment, plotting as table...');
             console.table(location.hash.substr(1).split('&').map(kvp => kvp.split('=')));

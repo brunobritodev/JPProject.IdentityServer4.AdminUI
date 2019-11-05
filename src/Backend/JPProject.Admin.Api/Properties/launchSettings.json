@@ -1,0 +1,30 @@
+{
+    "iisSettings": {
+        "windowsAuthentication": false,
+        "anonymousAuthentication": true,
+        "iisExpress": {
+            "applicationUrl": "http://localhost:5003",
+            "sslPort": 5002
+        }
+    },
+    "profiles": {
+        "IIS Express": {
+            "commandName": "IISExpress",
+            "launchBrowser": true,
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        "JPProject.Admin.Api": {
+            "commandName": "Project",
+            "launchUrl": "swagger/index.html",
+            "environmentVariables": {
+                "ASPNETCORE_URLS": "http://localhost:5003;https://localhost:5002",
+                "USER_MANAGEMENT_URI": "http://localhost:4200",
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "AUTHORITY": "https://localhost:5001"
+            },
+            "applicationUrl": "http://localhost:5003;https://localhost:5002"
+        }
+    }
+}

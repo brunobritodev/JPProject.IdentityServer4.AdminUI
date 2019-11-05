@@ -1,29 +1,29 @@
-import { NgModule } from "@angular/core";
-import { ClientListComponent } from "./list/clients-list.component";
-import { Routes, RouterModule } from "@angular/router";
-import { SharedModule } from "@shared/shared.module";
-import { DndModule } from "ng2-dnd";
-import { ClientEditComponent } from "./edit/client-edit.component";
-import { NgxSelectModule } from 'ngx-select-ex';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '@shared/shared.module';
+import { DndModule } from 'ng2-dnd';
 import { TagInputModule } from 'ngx-chips';
-import { ClientAuthComponent } from "./edit/auth/auth.component";
-import { ClientSettingsComponent } from "./edit/settings/settings.component";
-import { ClientTokenComponent } from "./edit/token/token.component";
-import { ClientBasicComponent } from "./edit/basic/basic.component";
-import { ClientSecretsComponent } from "./secrets/secrets.component";
-import { ClientPropertiesComponent } from "./properties/properties.component";
-import { ClientClaimsComponent } from "./claims/claims.component";
-import { ClientAddComponent } from "./add/add.component";
-import { ClientDeviceFlowComponent } from "./edit/device-flow/device-flow.component";
-import { ClientService } from "./clients.service";
+import { NgxSelectModule } from 'ngx-select-ex';
+
+import { ClientAddComponent } from './add/add.component';
+import { ClientClaimsComponent } from './claims/claims.component';
+import { ClientService } from './clients.service';
+import { ClientAuthComponent } from './edit/auth/auth.component';
+import { ClientBasicComponent } from './edit/basic/basic.component';
+import { ClientEditComponent } from './edit/client-edit.component';
+import { ClientDeviceFlowComponent } from './edit/device-flow/device-flow.component';
+import { ClientSettingsComponent } from './edit/settings/settings.component';
+import { ClientTokenComponent } from './edit/token/token.component';
+import { ClientListComponent } from './list/clients-list.component';
+import { ClientPropertiesComponent } from './properties/properties.component';
+import { ClientSecretsComponent } from './secrets/secrets.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "list", pathMatch: "full" },
-    { path: "list", component: ClientListComponent },
-    { path: "edit/:clientId", component: ClientEditComponent },
-    { path: "secrets/:clientId", component: ClientSecretsComponent },
-    { path: "properties/:clientId", component: ClientPropertiesComponent },
-    { path: "claims/:clientId", component: ClientClaimsComponent },
+    { path: "", component: ClientListComponent },
+    { path: ":clientId/edit", component: ClientEditComponent },
+    { path: ":clientId/secrets", component: ClientSecretsComponent },
+    { path: ":clientId/properties", component: ClientPropertiesComponent },
+    { path: ":clientId/claims", component: ClientClaimsComponent },
     { path: "add", component: ClientAddComponent },
 ];
 

@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-import { ApiResourceService } from "../api-resource.service";
-import { StandardClaims } from "@shared/viewModel/standard-claims.model";
-import { ApiResource } from "@shared/viewModel/api-resource.model";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ApiResource } from '@shared/viewModel/api-resource.model';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { StandardClaims } from '@shared/viewModel/standard-claims.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+
+import { ApiResourceService } from '../api-resource.service';
 
 
 @Component({
@@ -43,27 +43,16 @@ export class ApiResourceAddComponent implements OnInit {
     public save() {
         this.errors = [];
         this.showButtonLoading = true;
-        try {
-
-            this.apiResourceService.save(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.router.navigate(["/api-resource"]);
-                    }
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to register");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to register");
-        }
-
+        this.apiResourceService.save(this.model).subscribe(
+            registerResult => {
+                this.showSuccessMessage();
+                this.router.navigate(["/api-resource"]);
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     public addClaim(claim: string) {

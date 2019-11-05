@@ -27,7 +27,7 @@
                 <tbody>
                     <tr *ngFor="let resource of apiResources">
                         <td>
-                            <a [routerLink]="['/api-resource/edit', resource.name]" class="btn btn-primary btn-xs"
+                            <a [routerLink]="['/api-resource', resource.name, 'edit']" class="btn btn-primary btn-xs"
                                 placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                             &nbsp;
                         </td>

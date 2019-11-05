@@ -17,8 +17,8 @@
                     <tr>
                         <th></th>
                         <th>{{ 'persistedGrant.list.creationTime' | translate }}</th>
-                        <th> {{ 'persistedGrant.list.picture' | translate }} </th>
-                        <th> {{ 'persistedGrant.list.email' | translate }}</th>
+                        <th *ngIf="!settings.lightVersion"> {{ 'persistedGrant.list.picture' | translate }} </th>
+                        <th *ngIf="!settings.lightVersion"> {{ 'persistedGrant.list.email' | translate }}</th>
                         <th> {{ 'persistedGrant.list.clientId' | translate }}</th>
                         <th> {{ 'persistedGrant.list.type' | translate }} </th>
                         <th></th>
@@ -33,8 +33,8 @@
                             &nbsp;
                         </td>
                         <td>{{grant.creationTime | date: 'short'}}</td>
-                        <td><img *ngIf="grant.picture" width="32" [src]="grant.picture" /></td>
-                        <td>{{grant.email}}</td>
+                        <td *ngIf="!settings.lightVersion"><img *ngIf="grant.picture" width="32" [src]="grant.picture" /></td>
+                        <td *ngIf="!settings.lightVersion">{{grant.email}}</td>
                         <td>{{grant.clientId}}</td>
                         <td>{{grant.type}}</td>
                         <td>

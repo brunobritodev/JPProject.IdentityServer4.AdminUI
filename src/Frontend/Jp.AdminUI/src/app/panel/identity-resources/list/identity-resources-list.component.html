@@ -28,7 +28,7 @@
                 <tbody>
                     <tr *ngFor="let resource of identityResources">
                         <th>
-                            <a [routerLink]="['/identity-resource/edit', resource.name]" class="btn btn-primary btn-xs"
+                            <a [routerLink]="['/identity-resource', resource.name, 'edit']" class="btn btn-primary btn-xs"
                                 placement="top" [tooltip]="'general.edit' | translate"><i class="fa fa-edit"></i></a>
                             &nbsp;
                         </th>

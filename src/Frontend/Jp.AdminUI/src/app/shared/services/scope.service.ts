@@ -1,22 +1,19 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "@env/environment";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ScopeService {
    
 
+    endpoint: string;
+
     constructor(private http: HttpClient) {
+        this.endpoint = environment.ResourceServer + "scopes";
     }
 
-    public getScopes(text: string): Observable<DefaultResponse<string[]>> {
-        let options = {
-            params: {
-                search: text
-            }
-        };
-        return this.http.get<DefaultResponse<string[]>>(environment.ResourceServer + "scopes/search", options);
+    public getScopes(text: string): Observable<string[]> {
+        return this.http.get<string[]>(`${this.endpoint}/${text}`);
     }
 }

@@ -1,8 +1,9 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { SharedModule } from "../shared/shared.module";
-import { ToasterService } from "angular2-toaster";
-import { AuthGuardWithForcedLogin } from "@core/auth/auth-guard-with-forced-login.service";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardWithForcedLogin } from '@core/auth/auth-guard-with-forced-login.service';
+import { ToasterService } from 'angular2-toaster';
+
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
     {

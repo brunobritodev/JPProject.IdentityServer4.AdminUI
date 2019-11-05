@@ -7,7 +7,7 @@
 
 <div class="card card-default">
     <div class="card-body">
-        <a [routerLink]="[ '/api-resource/edit', resourceName]" class="btn btn-outline-primary">{{ 'general.goback' |
+        <a [routerLink]="['/api-resource', resourceName, 'edit']" class="btn btn-outline-primary">{{ 'general.goback' |
             translate }}</a>
     </div>
 </div>
@@ -231,7 +231,7 @@
     </div>
     <div class="card-footer">
         <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
-        <a class="mb-1 btn btn-secondary" [routerLink]="['/api-resource/edit', resourceName]">Cancel</a>
+        <a class="mb-1 btn btn-secondary" [routerLink]="['/api-resource', resourceName, 'edit']">Cancel</a>
     </div>
 </div>
 

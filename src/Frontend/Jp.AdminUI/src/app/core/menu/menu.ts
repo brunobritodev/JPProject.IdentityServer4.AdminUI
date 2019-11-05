@@ -1,18 +1,30 @@
+export class MenuItem {
+    constructor() { }
+    text: string;
+    heading?: boolean;
+    link?: string;     // internal route links
+    elink?: string;   // used only for external links
+    target?: string;   // anchor target="_blank|_self|_parent|_top|framename"
+    icon?: string;
+    alert?: string;
+    submenu?: Array<any>;
+    lightVersion?: boolean;
+}
 
-const Home = {
+const Home: MenuItem = {
     text: "Home",
     link: "/home",
     icon: "icon-home"
 };
 
-const Settings = {
+const Clients: MenuItem  = {
     text: "Clients",
     link: "/clients",
     icon: "fa fa-desktop",
     submenu: [
         {
             text: "List",
-            link: "/clients/list"
+            link: "/clients"
         },
         {
             text: "Add",
@@ -21,14 +33,14 @@ const Settings = {
     ]
 };
 
-const IdentityResource = {
+const IdentityResource: MenuItem  = {
     text: "Identity Resources",
     link: "/identity-resource",
     icon: "far fa-id-card",
     submenu: [
         {
             text: "List",
-            link: "/identity-resource/list"
+            link: "/identity-resource"
         },
         {
             text: "Add",
@@ -37,14 +49,14 @@ const IdentityResource = {
     ]
 };
 
-const ApiResource = {
+const ApiResource: MenuItem  = {
     text: "Api Resources",
     link: "/api-resource",
     icon: "fas fa-cloud",
     submenu: [
         {
             text: "List",
-            link: "/api-resource/list"
+            link: "/api-resource"
         },
         {
             text: "Add",
@@ -53,56 +65,71 @@ const ApiResource = {
     ]
 };
 
-const PersistedGrants = {
+const PersistedGrants: MenuItem  = {
     text: "Persisted Grants",
     link: "/persisted-grants",
     icon: "fas fa-key"
 };
 
-const Users = {
+const Users: MenuItem  = {
     text: "Users",
     link: "/users",
     icon: "fas fa-users-cog",
     submenu: [
         {
             text: "List",
-            link: "/users/list"
+            link: "/users"
         },
         {
             text: "Add",
             link: "/users/add"
         }
-    ]
+    ],
+    lightVersion: false
 };
 
-const Roles = {
+const Roles: MenuItem  = {
     text: "Roles",
     link: "/roles",
     icon: "fas fa-user-tag",
     submenu: [
         {
             text: "List",
-            link: "/roles/list"
+            link: "/roles"
         },
         {
             text: "Add",
             link: "/roles/add"
         }
-    ]
+    ],
+    lightVersion: false
 };
 
-const headingMain = {
-    text: "Main Navigation",
+const headingMain: MenuItem  = {
+    text: "IdentityServer4",
     heading: true
 };
 
-export const menu = [
+const headingUsers: MenuItem  = {
+    text: "Users",
+    heading: true,
+    lightVersion: false
+};
+const headingSettings: MenuItem  = {
+    text: "SSO Settings",
+    heading: true,
+    lightVersion: false
+};
+
+export const menu: MenuItem[]  = [
     headingMain,
     Home,
-    Settings,
+    Clients,
     IdentityResource,
     ApiResource,
     PersistedGrants,
+    headingUsers,
     Users,
-    Roles
+    Roles,
+    headingSettings
 ];

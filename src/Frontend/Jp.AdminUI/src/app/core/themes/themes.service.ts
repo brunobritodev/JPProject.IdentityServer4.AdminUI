@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { environment } from "@env/environment";
 
 const themeA = require("@shared/styles/themes/theme-a.scss");
 const themeB = require("@shared/styles/themes/theme-b.scss");
@@ -13,7 +14,7 @@ const themeH = require("@shared/styles/themes/theme-h.scss");
 export class ThemesService {
 
     styleTag: any;
-    defaultTheme: string = "H";
+    defaultTheme: string = environment.defaultTheme;
 
     constructor() {
         this.createStyle();

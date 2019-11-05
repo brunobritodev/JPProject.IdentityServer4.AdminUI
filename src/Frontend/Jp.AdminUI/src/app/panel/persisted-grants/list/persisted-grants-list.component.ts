@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { PersistedGrantsService } from "../persisted-grants.service";
-import { PersistedGrant } from "@shared/viewModel/persisted-grants.model";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
+import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '@core/settings/settings.service';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { PersistedGrant } from '@shared/viewModel/persisted-grants.model';
+import Swal from 'sweetalert2';
 
-import Swal from 'sweetalert2'
+import { PersistedGrantsService } from '../persisted-grants.service';
 
 @Component({
     selector: "app-persisted-grants-list",
@@ -22,7 +23,8 @@ export class PersistedGrantListComponent implements OnInit {
     public quantity: number = 10;
     constructor(
         public translator: TranslatorService,
-        private persistedGrantService: PersistedGrantsService) { }
+        private persistedGrantService: PersistedGrantsService,
+        public settings: SettingsService) { }
 
     ngOnInit() {
         this.loadGrants();
@@ -30,8 +32,8 @@ export class PersistedGrantListComponent implements OnInit {
 
     public loadGrants() {
         this.persistedGrantService.getPersistedGrants(this.quantity, this.page).subscribe(a => {
-            this.persistedGrants = a.data.persistedGrants;
-            this.total = a.data.total;
+            this.persistedGrants = a.persistedGrants;
+            this.total = a.total;
             this.persistedGrants.forEach(grant => grant.parsedData = JSON.parse(grant.data));
         });
     }
@@ -46,19 +48,17 @@ export class PersistedGrantListComponent implements OnInit {
                 confirmButtonColor: '#DD6B55',
                 confirmButtonText: m["confirmButtonText"],
                 cancelButtonText: m["cancelButtonText"],
-                
+
             }).then(isConfirm => {
                 if (isConfirm) {
 
                     this.persistedGrantService.remove(name).subscribe(
-                        registerResult => {
-                            if (registerResult.data) {
-                                this.loadGrants();
-                                Swal.fire("Deleted!", m["deleted"], 'success');
-                            }
+                        () => {
+                            this.loadGrants();
+                            Swal.fire("Deleted!", m["deleted"], 'success');
                         },
                         err => {
-                            let errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                            let errors = ProblemDetails.GetErrors(err).map(a => a.value);
                             Swal.fire("Error!", errors[0], 'error');
                         }
                     );

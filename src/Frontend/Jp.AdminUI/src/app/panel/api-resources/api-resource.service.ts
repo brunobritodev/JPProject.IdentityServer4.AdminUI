@@ -1,88 +1,66 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "@env/environment";
-import { Observable } from "rxjs";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { ApiResource, ApiResourceSecret } from "@shared/viewModel/api-resource.model";
-import { Scope } from "@shared/viewModel/scope.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
+import { ApiResource, ApiResourceSecret } from '@shared/viewModel/api-resource.model';
+import { Scope } from '@shared/viewModel/scope.model';
+import { Operation } from 'fast-json-patch';
+import { Observable } from 'rxjs';
 
 
 @Injectable()
 export class ApiResourceService {
+    endpoint: string;
 
     constructor(private http: HttpClient) {
+        this.endpoint = environment.ResourceServer + "api-resources";
     }
 
 
-    public getApiResources(): Observable<DefaultResponse<ApiResource[]>> {
-        return this.http.get<DefaultResponse<ApiResource[]>>(environment.ResourceServer + "ApiResource/list");
+    public getApiResources(): Observable<ApiResource[]> {
+        return this.http.get<ApiResource[]>(`${this.endpoint}`);
     }
 
-    public getApiResourceDetails(name: string): Observable<DefaultResponse<ApiResource>> {
-        let options = {
-            params: {
-                name: name
-            }
-        };
-        return this.http.get<DefaultResponse<ApiResource>>(environment.ResourceServer + "ApiResource/details", options);
+    public getApiResourceDetails(name: string): Observable<ApiResource> {
+        return this.http.get<ApiResource>(`${this.endpoint}/${name}`);
     }
 
-    public save(model: ApiResource): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/save", model);
+    public save(model: ApiResource): Observable<ApiResource> {
+        return this.http.post<ApiResource>(`${this.endpoint}`, model);
     }
 
-    public update(model: ApiResource): Observable<DefaultResponse<boolean>> {
-        return this.http.put<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/update", model);
+    public update(resource: string, model: ApiResource): Observable<void> {
+        return this.http.put<void>(`${this.endpoint}/${resource}`, model);
+    }
+
+    public partialUpdate(resource: string, patch: Operation[]): Observable<void> {
+        return this.http.patch<void>(`${this.endpoint}/${resource}`, patch);
     }
 
     public remove(name: string): any {
-        const removeCommand = {
-            name: name
-        };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/remove", { params: removeCommand });
+        return this.http.delete<void>(`${this.endpoint}/${name}`);
     }
 
-
-    public getSecrets(resourceName: string): Observable<DefaultResponse<ApiResourceSecret[]>> {
-        let options = {
-            params: {
-                name: resourceName
-            }
-        };
-        return this.http.get<DefaultResponse<ApiResourceSecret[]>>(environment.ResourceServer + "ApiResource/secrets", options);
+    public getSecrets(resourceName: string): Observable<ApiResourceSecret[]> {
+        return this.http.get<ApiResourceSecret[]>(`${this.endpoint}/${resourceName}/secrets`);
     }
 
-    public removeSecret(resourceName: string, id: number): Observable<DefaultResponse<boolean>> {
-        
-        const removeCommand = {
-            id: id,
-            resourceName: resourceName
-        };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/remove-secret", removeCommand);
+    public removeSecret(resourceName: string, id: number): Observable<void> {
+        return this.http.delete<void>(`${this.endpoint}/${resourceName}/secrets/${id}`);
     }
 
-    public saveSecret(model: ApiResourceSecret): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/save-secret", model);
+    public saveSecret(model: ApiResourceSecret): Observable<ApiResourceSecret[]> {
+        return this.http.post<ApiResourceSecret[]>(`${this.endpoint}/${model.resourceName}/secrets`, model);
     }
 
-    public getScopes(resourceName: string): Observable<DefaultResponse<Scope[]>> {
-        let options = {
-            params: {
-                name: resourceName
-            }
-        };
-        return this.http.get<DefaultResponse<Scope[]>>(environment.ResourceServer + "ApiResource/scopes", options);
+    public getScopes(resourceName: string): Observable<Scope[]> {
+        return this.http.get<Scope[]>(`${this.endpoint}/${resourceName}/scopes`);
     }
-    public removeScope(resourceName: string, id: number): Observable<DefaultResponse<boolean>> {
-        const removeCommand = {
-            id: id,
-            resourceName: resourceName
-        };
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/remove-scope", removeCommand);
+    public removeScope(resourceName: string, id: number): Observable<void> {
+        return this.http.delete<void>(`${this.endpoint}/${resourceName}/scopes/${id}`);
     }
 
-    public saveScope(model: Scope): Observable<DefaultResponse<boolean>> {
-        return this.http.post<DefaultResponse<boolean>>(environment.ResourceServer + "ApiResource/save-scope", model);
+    public saveScope(model: Scope): Observable<Scope[]> {
+        return this.http.post<Scope[]>(`${this.endpoint}/${model.resourceName}/scopes`, model);
     }
 
 

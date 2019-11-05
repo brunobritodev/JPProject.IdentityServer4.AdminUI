@@ -1,13 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { TranslatorService } from "@core/translator/translator.service";
-import { flatMap, tap, map } from "rxjs/operators";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ToasterConfig, ToasterService } from "angular2-toaster";
-import { DefaultResponse } from "@shared/viewModel/default-response.model";
-import { Observable } from "rxjs";
-import { ApiResourceService } from "../api-resource.service";
-import { Scope } from "@shared/viewModel/scope.model";
-import { StandardClaims } from "@shared/viewModel/standard-claims.model";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { ProblemDetails } from '@shared/viewModel/default-response.model';
+import { Scope } from '@shared/viewModel/scope.model';
+import { StandardClaims } from '@shared/viewModel/standard-claims.model';
+import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs';
+import { flatMap, map, tap } from 'rxjs/operators';
+
+import { ApiResourceService } from '../api-resource.service';
 
 
 @Component({
@@ -44,7 +45,12 @@ export class ApiResourceScopesComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.route.params.pipe(tap(p => this.resourceName = p["resource"])).pipe(map(p => p["resource"])).pipe(flatMap(m => this.apiResourceService.getScopes(m.toString()))).subscribe(result => this.apiScopes = result.data);
+        this.route.params
+            .pipe(tap(p => this.resourceName = p["resource"]))
+            .pipe(map(p => p["resource"]))
+            .pipe(flatMap(m => this.apiResourceService.getScopes(m.toString())))
+            .subscribe(result => this.apiScopes = result);
+            
         this.errors = [];
         this.model = new Scope();
         this.showButtonLoading = false;
@@ -60,32 +66,21 @@ export class ApiResourceScopesComponent implements OnInit {
     public remove(id: number) {
         this.showButtonLoading = true;
         this.errors = [];
-        try {
-
-            this.apiResourceService.removeScope(this.resourceName, id).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadScopes();
-                    }
-                    this.showButtonLoading = false;
-                },
-                err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
-                    this.showButtonLoading = false;
-                }
-            );
-        } catch (error) {
-            this.errors = [];
-            this.errors.push("Unknown error while trying to remove");
-            this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to remove");
-        }
-
+        this.apiResourceService.removeScope(this.resourceName, id).subscribe(
+            () => {
+                this.showSuccessMessage();
+                this.loadScopes();
+                this.showButtonLoading = false;
+            },
+            err => {
+                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                this.showButtonLoading = false;
+            }
+        );
     }
 
     private loadScopes(): void {
-        this.apiResourceService.getScopes(this.resourceName).subscribe(c => this.apiScopes = c.data);
+        this.apiResourceService.getScopes(this.resourceName).subscribe(c => this.apiScopes = c);
     }
 
     public save() {
@@ -94,16 +89,14 @@ export class ApiResourceScopesComponent implements OnInit {
         try {
             this.model.resourceName = this.resourceName;
             this.apiResourceService.saveScope(this.model).subscribe(
-                registerResult => {
-                    if (registerResult.data) {
-                        this.showSuccessMessage();
-                        this.loadScopes();
-                        this.model = new Scope();
-                    }
+                scopes => {
+                    this.showSuccessMessage();
+                    this.apiScopes = scopes;
+                    this.model = new Scope();
                     this.showButtonLoading = false;
                 },
                 err => {
-                    this.errors = DefaultResponse.GetErrors(err).map(a => a.value);
+                    this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
                     this.showButtonLoading = false;
                 }
             );

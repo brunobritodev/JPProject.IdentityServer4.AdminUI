@@ -1,4 +1,4 @@
-import { Claim } from "./claim.model";
+import { Claim } from './claim.model';
 
 export class ClientSecret {
     constructor() {
@@ -48,6 +48,7 @@ export class NewClient {
     logoUri: string;
     description: string;
     clientType: number;
+    postLogoutRedirectUris: string;
 }
 
 export class Client {
@@ -94,9 +95,9 @@ export class Client {
     pairWiseSubjectSalt: string;
     allowedCorsOrigins: string[];
     properties: ClientProperty[];
-    oldClientId: string;
     userCodeType: string;
     deviceCodeLifetime: number;
+    userSsoLifetime: number;
     
     public static isValid(client: Client, errors: string[]): boolean {
         errors.length = 0;
