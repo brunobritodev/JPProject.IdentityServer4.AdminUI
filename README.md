@@ -6,9 +6,13 @@
 
 This is an Administrator Panel for JP Project. It's available in 2 versions: Light and Full. See below the differences.
 
+# Several break changes
+
+The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differences between light and full version. At the end it's the same project splited.
+
 # Installation
 
-If you know the differences between Light and Full. Check the installation instructions below. If wanna understand check [Presentation](#presentation) version.
+If you know the differences between Light and Full. Check the installation instructions below. If wanna understand, check more here [Presentation](#presentation) version.
 
 ## Full Installation
 
@@ -130,6 +134,7 @@ Api resource configuration
 
 ## Table of Contents ##
 
+- [Several break changes](#several-break-changes)
 - [Installation](#installation)
   - [Full Installation](#full-installation)
   - [Light version](#light-version)
