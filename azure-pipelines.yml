@@ -41,11 +41,11 @@ jobs:
         inputs:
           command: 'publish'
           publishWebProjects: false
-          projects: '**/Jp.Management.csproj'
+          projects: '**/JPProject.Admin.Api.csproj'
           arguments: '-c $(BuildConfiguration) -o $(Build.StagingDirectory)/api --no-build'
           zipAfterPublish: false
           modifyOutputPath: false
-          workingDirectory: './src/Backend/Jp.UserManagement'
+          workingDirectory: './src/Backend/JPProject.Admin.Api'
  
       - task: ArchiveFiles@2
         displayName: 'Zip - API'
