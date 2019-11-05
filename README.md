@@ -8,7 +8,7 @@ This is an Administrator Panel for JP Project. It's available in 2 versions: Lig
 
 # Several break changes
 
-The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differences between light and full version. At the end it's the same project splited.
+The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differences between light and full version. At the end it's the same project . But splited repo's.
 
 # Installation
 
