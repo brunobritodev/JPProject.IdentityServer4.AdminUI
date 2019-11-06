@@ -8,7 +8,7 @@ This is an Administrator Panel for IdentityServer4. It's available in 2 versions
 
 # Several break changes
 
-The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differences between light and full version. At the end it's the same project splited.
+The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differences between light and full version. At the end it's the same project . But splited repo's.
 
 # Installation
 
