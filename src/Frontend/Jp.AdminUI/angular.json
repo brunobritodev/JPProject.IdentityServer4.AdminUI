@@ -29,7 +29,6 @@
                         "assets": [
                             "src/assets",
                             "src/silent-refresh.html",
-                            "src/web.config"
                         ],
                         "styles": [
                             "src/app/core/preloader/preloader.scss",
