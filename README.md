@@ -17,13 +17,13 @@ If you know the differences between Light and Full. Check the installation instr
 ## Full Install
 
 Windows users:
-* download [jpproject-docker-windows.zip](https://github.com/brunohbrito/JP-Project/raw/master/build/jpproject-docker-windows.zip)
+* download [jpproject-docker.zip](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO/releases/download/3.0.0/jpproject-docker.zip)
 * Unzip and execute `docker-run.bat` (As administrator)
 
 Linux users:
-* Download [docker-compose.yml](https://github.com/brunohbrito/JP-Project/raw/master/build/docker-compose.yml)
+* Download [jpproject-docker.zip](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO/releases/download/3.0.0/jpproject-docker.zip)
 * Add `127.0.0.1 jpproject-sso` entry to hosts file (`/etc/hosts`)
-* `docker-compose up`
+* unzip and execute `docker-compose up`
 
 ## Light Install
 
