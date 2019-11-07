@@ -174,7 +174,7 @@ For those who already have an IdentityServer4. This panel has features to manage
 Here some screenshots
 
 ## Admin UI ##
-<img src="https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/blob/master/docs/images/jp-adminui.gif"  width="480" />
+<img src="https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/blob/master/build/jp-adminui.gif"  width="480" />
 
 # Demo #
 
