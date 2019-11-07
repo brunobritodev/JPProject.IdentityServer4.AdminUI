@@ -27,7 +27,7 @@ Linux users:
 
 ## Light Install
 
-You will need to create a Client and API resources in you IdentityServer4. At the end of this section have some shortcuts.
+You will need to create a Client and API resources in you IdentityServer4. At the end of this section there are some shortcuts.
 
 1. [Download](https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/archive/master.zip)/Clone or [Fork](https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/fork) this repository.
 2. Open `environment.ts` and change settings for you SSO.
@@ -144,7 +144,7 @@ Api resource configuration
   - [Light version](#light-version)
   - [Admin UI](#admin-ui)
 - [Demo](#demo)
-  - [We are online at Azure.](#we-are-online-at-azure)
+  - [We are online](#we-are-online)
 - [Technologies](#technologies)
   - [Architecture](#architecture)
   - [Give a Star! ⭐](#give-a-star-%e2%ad%90)
@@ -171,7 +171,6 @@ The full version is for those who don't have an IdentityServer up and running. S
 
 For those who already have an IdentityServer4. This panel has features to manage an existing **IdentityServer4** database.
 
-
 Here some screenshots
 
 ## Admin UI ##
@@ -181,13 +180,13 @@ Here some screenshots
 
 Check our full demo online.
 
-## We are online at Azure. 
+## We are online
 
 <img align="right" width="100px" src="https://www.developpez.net/forums/attachments/p289604d1/a/a/a" />
 
-Check it now at [Jp Project](https://jpproject.azurewebsites.net/admin-ui/).
+Check it now at [Admin Panel](https://admin.jpproject.net).
 
-You can check also [SSO](https://jpproject.azurewebsites.net/sso/) and [User Management](https://jpproject.azurewebsites.net/user-management/)
+You can check also [SSO](https://sso.jpproject.net) and [Profile Manager](https://user.jpproject.net)
 
 _New users are readonly_
 

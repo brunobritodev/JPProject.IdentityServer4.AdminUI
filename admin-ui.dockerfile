@@ -14,6 +14,7 @@ WORKDIR /app
 COPY ["src/Frontend/Jp.AdminUI/", "/app"]
 COPY ["environment.ts", "src/environments/environment.prod.ts"]
 # rebuild node
+RUN cat src/environments/environment.prod.ts
 RUN npm rebuild node-sass
 # generate build
 RUN npm run ng build -- --configuration=production

@@ -15,7 +15,7 @@ COPY ["src/Frontend/Jp.AdminUI/", "/app"]
 # rebuild node
 RUN npm rebuild node-sass
 # generate build
-RUN npm run ng build -- --configuration=production
+RUN npm run ng build
 
 ##################
 ### production ###
