@@ -16,14 +16,7 @@ If you know the differences between Light and Full. Check the installation instr
 
 ## Full Install
 
-Windows users:
-* download [jpproject-docker.zip](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO/releases/download/3.0.0/jpproject-docker.zip)
-* Unzip and execute `docker-run.bat` (As administrator)
-
-Linux users:
-* Download [jpproject-docker.zip](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO/releases/download/3.0.0/jpproject-docker.zip)
-* Add `127.0.0.1 jpproject-sso` entry to hosts file (`/etc/hosts`)
-* unzip and execute `docker-compose up`
+Go to this [repo](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO) and follow instructions there.
 
 ## Light Install
 
@@ -166,6 +159,8 @@ JP Project Admin Panel is an administrative panel for IdentityServer4. You can m
 ## Full
 
 The full version is for those who don't have an IdentityServer up and running. So you can download the JP Project SSO and with this admin panel you will be able to manage **Users** and **IdentityServer4**.
+
+Go to this [repo](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO) instead
 
 ## Light version
 
