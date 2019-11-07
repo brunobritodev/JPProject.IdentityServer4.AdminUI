@@ -4,7 +4,7 @@ export const environment = {
     ResourceServer: "http://localhost:5002/",
     RequireHttps: false,
     Uri: "http://localhost:4300",
-    defaultTheme: "E",
+    defaultTheme: "A",
     version: "3.0.0"
   };
   

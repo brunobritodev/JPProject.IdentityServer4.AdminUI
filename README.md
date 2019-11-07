@@ -271,7 +271,7 @@ Breaking change: **Argon2 password hashing**. Be careful before update. If you a
 2. Argon2 Password Hasher
 3. Show version at footer
 
-Check [Changelog.md](https://github.com/brunohbrito/JP-Project/blob/master/CHANGELOG.md) for a complete list of changes.
+Check [Changelog.md](https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/blob/master/CHANGELOG.md) for a complete list of changes.
 
 # What comes next?
 
