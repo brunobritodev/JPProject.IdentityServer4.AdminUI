@@ -1,9 +1,9 @@
 export const environment = {
   production: true,
-  ResourceServer: "https://jpproject.azurewebsites.net/api/",
-  IssuerUri:  "https://jpproject.azurewebsites.net/sso",
+  ResourceServer: "https://api.jpproject.net/",
+  IssuerUri:  "https://sso.jpproject.net",
   RequireHttps: true,
-  Uri: "https://jpproject.azurewebsites.net/admin-ui",
+  Uri: "https://admin.jpproject.net",
   defaultTheme: "E",
   version: "3.0.0"
 };

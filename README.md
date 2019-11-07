@@ -4,7 +4,7 @@
 [![Build Status](https://dev.azure.com/brunohbrito/Jp%20Project/_apis/build/status/JPProject%20AdminUI%20-%20CD?branchName=master)](https://dev.azure.com/brunohbrito/Jp%20Project/_build/latest?definitionId=2&branchName=master)
 [![License](https://img.shields.io/github/license/brunohbrito/JPProject.IdentityServer4.AdminUI)](LICENSE)
 
-This is an Administrator Panel for JP Project. It's available in 2 versions: Light and Full. See below the differences.
+This is an Administrator Panel for IdentityServer4. It's available in 2 versions: Light and Full. See below the differences.
 
 # Several break changes
 
@@ -14,18 +14,18 @@ The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differen
 
 If you know the differences between Light and Full. Check the installation instructions below. If wanna understand, check more here [Presentation](#presentation) version.
 
-## Full Installation
+## Full Install
 
 Windows users:
-* download [jpproject-docker-windows.zip](https://github.com/brunohbrito/JP-Project/raw/master/build/jpproject-docker-windows.zip)
+* download [jpproject-docker.zip](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO/releases/download/3.0.0/jpproject-docker.zip)
 * Unzip and execute `docker-run.bat` (As administrator)
 
 Linux users:
-* Download [docker-compose.yml](https://github.com/brunohbrito/JP-Project/raw/master/build/docker-compose.yml)
+* Download [jpproject-docker.zip](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO/releases/download/3.0.0/jpproject-docker.zip)
 * Add `127.0.0.1 jpproject-sso` entry to hosts file (`/etc/hosts`)
-* `docker-compose up`
+* unzip and execute `docker-compose up`
 
-## Light version
+## Light Install
 
 You will need to create a Client and API resources in you IdentityServer4. At the end of this section have some shortcuts.
 
@@ -136,12 +136,12 @@ Api resource configuration
 
 - [Several break changes](#several-break-changes)
 - [Installation](#installation)
-  - [Full Installation](#full-installation)
-  - [Light version](#light-version)
+  - [Full Install](#full-install)
+  - [Light Install](#light-install)
   - [Table of Contents](#table-of-contents)
 - [Presentation](#presentation)
   - [Full](#full)
-  - [Light version](#light-version-1)
+  - [Light version](#light-version)
   - [Admin UI](#admin-ui)
 - [Demo](#demo)
   - [We are online at Azure.](#we-are-online-at-azure)
