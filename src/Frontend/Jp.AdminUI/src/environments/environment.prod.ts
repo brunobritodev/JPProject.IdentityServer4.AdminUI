@@ -4,6 +4,6 @@ export const environment = {
   IssuerUri:  "https://sso.jpproject.net",
   RequireHttps: true,
   Uri: "https://admin.jpproject.net",
-  defaultTheme: "E",
+  defaultTheme: "C",
   version: "3.0.0"
 };
