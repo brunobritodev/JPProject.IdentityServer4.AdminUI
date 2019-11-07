@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     IssuerUri:  "http://jpproject-sso:5001",
     ResourceServer: "http://localhost:5002/",
     RequireHttps: false,

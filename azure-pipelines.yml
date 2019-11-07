@@ -1,0 +1,100 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+variables:
+  BuildConfiguration: 'Release'
+
+jobs:
+
+  - job: 'net_core'
+    displayName: '.NET Core Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Restore'
+        inputs:
+          command: 'restore'
+          projects: './src'
+          feedsToUse: 'select'
+
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Build'
+        inputs:
+          command: 'build'
+          arguments: '-c $(BuildConfiguration) --no-restore'
+          projects: './src'
+
+      - task: DotNetCoreCLI@2
+        displayName: '.NET Core - Run Tests'
+        inputs:
+          command: 'test'
+          projects: './src'
+        
+      - task: DotNetCoreCLI@2
+        displayName: 'Publish - API'
+        inputs:
+          command: 'publish'
+          publishWebProjects: false
+          projects: '**/JPProject.Admin.Api.csproj'
+          arguments: '-c $(BuildConfiguration) -o $(Build.StagingDirectory)/api --no-build'
+          zipAfterPublish: false
+          modifyOutputPath: false
+          workingDirectory: './src/Backend/JPProject.Admin.Api'
+ 
+      - task: ArchiveFiles@2
+        displayName: 'Zip - API'
+        inputs:
+          rootFolderOrFile: '$(Build.StagingDirectory)/api/'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.api.$(Build.BuildNumber).zip'
+          replaceExistingArchive: true
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Artifact - Generate API'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.api.$(Build.BuildNumber).zip'
+          ArtifactName: 'jpproject.api.$(Build.BuildNumber)'
+          publishLocation: 'Container'
+
+  # Angular APP
+  - job: 'angular'
+    displayName: 'Angular Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      # Admin UI
+      - task: Npm@1
+        displayName: 'NPM - Install - AdminUI'
+        inputs:
+          command: install
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - Build Prod - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run build -- --base-href=/admin-ui/'
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: ArchiveFiles@2
+        displayName: 'ZIP - AdminUI'
+        inputs:
+          rootFolderOrFile: 'src/Frontend/Jp.AdminUI/dist/'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
+          replaceExistingArchive: true
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Artifact - Generate - AdminUI'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
+          ArtifactName: 'jpproject.admin-ui.$(Build.BuildNumber)'
+          publishLocation: 'Container'
