@@ -5,13 +5,12 @@
                 <h1 class="display-3"> {{ 'home.WELCOME' | translate }}!</h1>
                 <p class="lead">{{ 'home.DESCRIPTION' | translate }}.</p>
                 <hr class="my-4">
-                <p>
-                    <img src="assets/img/brand/logo-full.png" class="d-none d-xl-block img-fluid">
-                    <img src="assets/img/brand/logo-min.png" class="d-lg-none">
-                </p>
+                <div class="text-center">
+                    <img src="assets/img/brand/logo-full.png" class="d-none d-lg-block mx-auto home-logo-big">
+                    <img src="assets/img/brand/logo-min.png" class="d-lg-none mx-auto img-fluid home-logo">
+                </div>
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="https://github.com/brunohbrito/JP-Project" target="_blank"
-                        role="button">Learn
+                    <a class="btn btn-primary btn-lg" href="https://github.com/brunohbrito/JP-Project" target="_blank" role="button">Learn
                         more
                     </a>
                 </p>
@@ -54,8 +53,7 @@
                 <h1 class="card-title">
                     <span class="font-size-1" title="Api Resources" aria-hidden="true">☁️</span>
                 </h1>
-                <a [routerLink]="'/api-resource'"
-                    class="btn btn-lg btn-block btn-primary">{{ 'Manage' | translate }}</a>
+                <a [routerLink]="'/api-resource'" class="btn btn-lg btn-block btn-primary">{{ 'Manage' | translate }}</a>
             </div>
         </div>
 
