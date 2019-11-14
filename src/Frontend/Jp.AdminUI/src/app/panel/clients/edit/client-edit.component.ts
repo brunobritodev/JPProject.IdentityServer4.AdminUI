@@ -52,7 +52,7 @@ export class ClientEditComponent implements OnInit {
         this.showButtonLoading = true;
         this.errors = [];
         
-        this.clientService.partialUpdate(this.clientId, jsonpatch.generate(this.patchObserver)).subscribe(
+        this.clientService.update(this.clientId, this.model).subscribe(
             () => {
                 this.updateCurrentClientId();
                 this.showSuccessMessage();
