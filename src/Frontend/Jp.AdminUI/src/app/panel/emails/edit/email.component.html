@@ -1,0 +1,126 @@
+<div class="content-heading">
+    <div>
+        💻 {{ 'general.emails' | translate }}
+        <small><b> {{ 'emails.description' | translate }}</b></small>
+    </div>
+</div>
+
+<app-loading *ngIf="model == null || showButtonLoading"></app-loading>
+
+<div class="card card-default">
+    <div class="card-header">
+        <div *ngIf="errors.length > 0">
+            <alert type="danger">
+                <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+            </alert>
+        </div>
+
+        <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
+    </div>
+    <div class="card-body">
+        <div class="form-horizontal">
+            <!--Select-->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-3 col-form-label" placement="top" [tooltip]="'emails.edit.type-tooltip' | translate">{{
+                            'emails.edit.type' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <ngx-select [items]="emailTypes$ | async" optionValueField="key" optionTextField="value" (select)="getEmailTemplate($event)" [(ngModel)]="selectedType" [noAutoComplete] [placeholder]="'emails.edit.type' | translate"></ngx-select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'emails.edit.senderName-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'emails.edit.senderName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <input class="form-control" autocomplete="on" [placeholder]="'emails.edit.senderName-tooltip' | translate" [(ngModel)]="model.sender.name" />
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'emails.edit.senderAddress-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'emails.edit.senderAddress' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <input class="form-control" autocomplete="on" [placeholder]="'emails.edit.senderAddress-tooltip' | translate" [(ngModel)]="model.sender.address" />
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--Select with tags-->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'emails.edit.bcc-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'emails.edit.bcc' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <tag-input theme='bootstrap' name="bcc" [modelAsStrings]="true" [secondaryPlaceholder]="'+' + ('emails.edit.bcc' | translate)" [placeholder]="'+' + ('emails.edit.bcc' | translate)" [(ngModel)]="model.bcc.recipients"></tag-input>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
+                    <label placement="top" [tooltip]="'emails.edit.subject-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'emails.edit.subject' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-9">
+                        <input class="form-control" autocomplete="on" [placeholder]="'emails.edit.subject-tooltip' | translate" [(ngModel)]="model.subject" />
+                    </div>
+                </div>
+            </fieldset>
+
+            <tabset>
+                <tab [heading]="'emails.edit.editor' | translate">
+                    <angular-editor [placeholder]="'Enter text here...'" [config]="editorConfig" [(ngModel)]="model.content"></angular-editor>
+                </tab>
+                <tab [heading]="'emails.edit.code' | translate" (selectTab)="updateEditor()">
+                    <div class="mt-auto w-100 p-2">
+                        <select class="form-control" [(ngModel)]="editorOpts.theme" (ngModelChange)="loadTheme()" name="sel2">
+                                    <option *ngFor="let theme of editorThemes">{{theme}}</option>
+                                </select>
+                    </div>
+                    <div class="d-flex code-editor flex-column flex-md-row">
+                        <div class="w-100 d-flex flex-column code-editor-area">
+                            <div class="h-100 code-editor-area-editor">
+                                <textarea #editor></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab [heading]="'emails.edit.variables' | translate">
+                    <h3>
+                        {{'emails.edit.variables-description' | translate}}
+                    </h3>
+                    <dl class="row">
+                        <dt class="col-sm-3"><code ngNonBindable>{{name}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-name' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{picture}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-picture' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{username}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-username' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{code}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-code' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{url}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-url' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{provider}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-provider' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{phoneNumber}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-phoneNumber' | translate}}</dd>
+                        <dt class="col-sm-3"><code ngNonBindable>{{email}}</code></dt>
+                        <dd class="col-sm-9">{{'emails.edit.variables-email' | translate}}</dd>
+
+                    </dl>
+                </tab>
+            </tabset>
+
+
+
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <button class="mb-1 btn btn-primary" (click)="update()" type="button">Save</button>
+    </div>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

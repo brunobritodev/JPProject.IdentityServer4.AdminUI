@@ -1,419 +1,475 @@
 {
-	"apiResource": {
-		"add": {
-			"description": "Description",
-			"description-tooltip": "This value can be used e.g. on the consent screen.",
-			"displayName": "Display Name",
-			"displayName-tooltip": "This value can be used e.g. on the consent screen.",
-			"enabled": "Enabled",
-			"enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-			"name": "Name",
-			"name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
-			"userClaims": "User Claims",
-			"userClaims-tooltip": "List of associated user claim types that should be included in the access token."
-		},
-		"description": "Resources are something you want to protect with IdentityServer – either APIs (by doing this your data will be protected as well). So to access your database content must be through an API.",
-		"edit": {
-			"description": "Description",
-			"description-tooltip": "This value can be used e.g. on the consent screen.",
-			"displayName": "Display Name",
-			"displayName-tooltip": "This value can be used e.g. on the consent screen.",
-			"enabled": "Enabled",
-			"enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-			"name": "Name",
-			"name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
-			"scope": "Api Scopes",
-			"scope-tooltip": "An API must have at least one scope. Each scope can have different settings.",
-			"secrets": "Api Secrets",
-			"secrets-tooltip": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.",
-			"userClaims": "User Claims",
-			"userClaims-tooltip": "List of associated user claim types that should be included in the access token."
-		},
-		"list": {
-			"description": "Description",
-			"name": "Name"
-		},
-		"new-api": "New Api Resource",
-		"remove": {
-			"cancelButtonText": "No, cancel plx!",
-			"cancelled": "Your Resource is safe :)",
-			"confirmButtonText": "Yes, delete it!",
-			"deleted": "Resource has been deleted.",
-			"text": "Your will not be able to recover!",
-			"title": "Are you sure"
-		},
-		"scope": {
-			"Emphasize": "Emphasize",
-			"Emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
-			"description": "Description",
-			"description-tooltip": "This value can be used e.g. on the consent screen.",
-			"displayName": "Display Name",
-			"displayName-tooltip": "This value can be used e.g. on the consent screen.",
-			"name": "Name",
-			"name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
-			"required": "Required",
-			"required-tooltip": "Specifies whether the user can de-select the scope on the consent screen. Defaults to false.",
-			"showInDiscoveryDocument": "Show In Discovery Document",
-			"showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true",
-			"userClaims": "User Claims",
-			"userClaims-tooltip": "List of associated user claim types that should be included in the access token."
-		},
-		"secret-description": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret."
-	},
-	"client": {
-		"ClaimDescription": "Allows settings claims for the client (will be included in the access token)",
-		"ClientDescription": "The Client class represents an OpenID Connect or OAuth 2.0 client - e.g. a native application, a web application or a JS-based application",
-		"Image": "Image",
-		"PropertiesDescription": "Dictionary to hold any custom client-specific values as needed",
-		"SecretDescription": "In certain situations, clients need to authenticate with identityserver, e.g.: <br>1- confidential applications (aka clients) requesting tokens at the token endpoint. <br>2- APIs validating reference tokens at the introspection endpoint",
-		"TableClientName": "Client Name",
-		"claims": {
-			"type": "Type",
-			"type-tooltip": "Type",
-			"value": "Value",
-			"value-tooltip": "Value"
-		},
-		"clone": {
-			"cancelButtonText": "No, cancel plx!",
-			"cancelled": ":)",
-			"cloned": "Client has been cloned.",
-			"confirmButtonText": "Yes, clone it!",
-			"text": "Are you sure?",
-			"title": "Clone"
-		},
-		"details": {
-			"absoluteRefreshTokenLifetime": "Absolute Refresh Token Lifetime",
-			"absoluteRefreshTokenLifetime-tooltip": "Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days",
-			"accessTokenLifetime": "Access Token Lifetime",
-			"accessTokenLifetime-tooltip": "Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)",
-			"accessTokenTypes": "Access Token Type",
-			"accessTokenTypes-tooltip": "Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt)",
-			"allowAccessTokensViaBrowser": "Allow Access Token Via Browser",
-			"allowAccessTokensViaBrowser-tooltip": "Specifies whether this client is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code id_token to add the token response type and thus leaking the token to the browser.",
-			"allowOfflineAccess": "Allow Offline Access",
-			"allowOfflineAccess-tooltip": "Specifies whether this client can request refresh tokens (be requesting the offline_access scope)",
-			"allowPlainTextPkce": "Allow Plain Text Pkce",
-			"allowPlainTextPkce-tooltip": "Specifies whether clients using PKCE can use a plain text code challenge (not recommended - and default to false)",
-			"allowRememberConsent": "Remember Consent",
-			"allowRememberConsent-tooltip": "Specifies whether user can choose to store consent decisions. Defaults to true.",
-			"allowedCorsOrigins": "Allowed Cors Origins",
-			"allowedCorsOrigins-tooltip": "If specified, will be used by the default CORS policy service implementations (In-Memory and EF) to build a CORS policy for JavaScript clients.",
-			"allowedGrantTypes": "Allowed Grant Types",
-			"allowedGrantTypes-tooltip": "Specifies the grant types the client is allowed to use. Use the GrantTypes class for common combinations. List of default grants: Implicit Grant - (implicit), Client Credentials Grant - (client_credentials), Authorization Code Grant - (authorization_code), Hybrid grant - (hybrid), Resource Owner Password Credentials Grant - (password)",
-			"allowedScopes": "Allowed Scopes",
-			"allowedScopes-tooltip": "By default a client has no access to any resources - specify the allowed resources by adding the corresponding scopes names",
-			"alwaysIncludeUserClaimsInIdToken": "Always Include User Claims In IdToken",
-			"alwaysIncludeUserClaimsInIdToken-tooltip": "When requesting both an id token and access token, should the user claims always be added to the id token instead of requring the client to use the userinfo endpoint. Default is false",
-			"alwaysSendClientClaims": "Always Send Client Claims",
-			"alwaysSendClientClaims-tooltip": "If set, the client claims will be sent for every flow. If not, only for client credentials flow (default is false) ",
-			"auth": "Authentication",
-			"authorizationCodeLifetime": "Authorization Code Lifetime",
-			"authorizationCodeLifetime-tooltip": "Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)",
-			"backChannelLogoutSessionRequired": "Back Channel Logout Session",
-			"backChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent in the request to the BackChannelLogoutUri. Defaults to true",
-			"backChannelLogoutUri": "Back Channel Logout Uri",
-			"backChannelLogoutUri-tooltip": "Specifies logout URI at client for HTTP based back-channel logout. See the OIDC Back-Channel spec for more details",
-			"basic": "Basic",
-			"claims": "Claims",
-			"claims-tooltip": "Allows settings claims for the client (will be included in the access token)",
-			"clientClaimsPrefix": "Client Claims Prefix",
-			"clientClaimsPrefix-tooltip": "If set, the prefix client claim types will be prefixed with. Defaults to client_. The intent is to make sure they don’t accidentally collide with user claims.",
-			"clientId": "ClientId",
-			"clientId-tooltip": "Unique ID of the client",
-			"clientSecrets": "Client Secrets",
-			"clientSecrets-tooltip": "List of client secrets - credentials to access the token endpoint.",
-			"clientUri": "Client Uri",
-			"clientUri-tooltip": "URI to further information about client (used on consent screen)",
-			"description": "Description",
-			"description-tooltip": "Client Description.",
-			"deviceCodeLifetime": "Device Code Lifetime",
-			"deviceCodeLifetime-tooltip": "Lifetime to device code in seconds (defaults to 300 seconds / 5 minutes)",
-			"deviceFlow": "Device Flow",
-			"enabled": "Enabled",
-			"enabled-tooltip": "Specifies if client is enabled. Defaults to true.",
-			"frontChannelLogoutSessionRequired": "Front Channel Logout Session",
-			"frontChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent to the FrontChannelLogoutUri. Defaults to true",
-			"frontChannelLogoutUri": "Front Channel Logout Uri",
-			"frontChannelLogoutUri-tooltip": "Specifies logout URI at client for HTTP based front-channel logout. See the OIDC Front-Channel spec for more details",
-			"identityProviderRestrictions": "Identity Provider Restrictions",
-			"identityProviderRestrictions-tooltip": "Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to empty.",
-			"identityTokenLifetime": "Identity Token Lifetime",
-			"identityTokenLifetime-tooltip": "Lifetime to identity token in seconds (defaults to 300 seconds / 5 minutes)",
-			"includeJwtId": "Include Jwt Id",
-			"includeJwtId-tooltip": "Specifies whether JWT access tokens should have an embedded unique ID (via the jti claim).",
-			"logoUri": "Logo Uri (Https)",
-			"logoUri-tooltip": "URI to client logo (used on consent screen). Must be Https",
-			"name": "Name",
-			"name-tooltip": "Client display name (used for logging and consent screen)",
-			"pairWiseSubjectSalt": "Pair Wise Subject Salt",
-			"pairWiseSubjectSalt-tooltip": "Salt value used in pair-wise subjectId generation for users of this client.",
-			"properties": "Properties",
-			"properties-tooltip": "Dictionary to hold any custom client-specific values as needed.",
-			"protocolType": "Protocol Type",
-			"protocolType-tooltip": "Default is OpenID Connect protocol",
-			"redirectUris": "Redirect Uri's",
-			"redirectUris-tooltip": "Specifies the allowed URIs to return tokens or authorization codes to",
-			"refreshTokenExpiration": "Refresh Token Expiration",
-			"refreshTokenExpiration-tooltip": "Absolute the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime) Sliding when refreshing the token, the lifetime of the refresh token will be renewed (by the amount specified in SlidingRefreshTokenLifetime). The lifetime will not exceed AbsoluteRefreshTokenLifetime.",
-			"refreshTokenUsage": "Refresh Token Usage",
-			"refreshTokenUsage-tooltip": "ReUse the refresh token handle will stay the same when refreshing tokens OneTime the refresh token handle will be updated when refreshing tokens",
-			"requireClientSecret": "Require Client Secret",
-			"requireClientSecret-tooltip": "Specifies whether this client needs a secret to request tokens from the token endpoint (defaults to true)",
-			"requireConsent": "Require Consent Screen",
-			"requireConsent-tooltip": "Specifies whether a consent screen is required. Defaults to true.",
-			"requirePkce": "Require Pkce",
-			"requirePkce-tooltip": "Specifies whether clients using an authorization code based grant type must send a proof key",
-			"settings": "Settings",
-			"slidingRefreshTokenLifetime": "Sliding Refresh Token Lifetime",
-			"slidingRefreshTokenLifetime-tooltip": "Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days",
-			"token": "Token",
-			"updateAccessTokenClaimsOnRefresh": "Update Access Token Claims On Refresh",
-			"updateAccessTokenClaimsOnRefresh-tooltip": "Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token request",
-			"userCodeType": "User Code Type",
-			"userCodeType-tooltip": "Specifies the type of user code to use for the client. Otherwise falls back to default",
-			"postLogoutRedirectUris": "Logout Url",
-			"postLogoutRedirectUris-tooltip": "Specifies allowed URIs to redirect to after logout",
-			"enableLocalLogin": "Enable Local Login",
-			"enableLocalLogin-tooltip": "Specifies if this client can use local accounts, or external Providers only. E.g: Facebook, Google. Defaults to true",
-			"userSsoLifetime": "User Sso Lifetime",
-			"userSsoLifetime-tooltip": "The maximum duration (in seconds) since the last time the user authenticated. Defaults to null. You can adjust the lifetime of a session token to control when and how often a user is required to reenter credentials instead of being silently authenticated, when using a web application"
-		},
-		"property": {
-			"key": "Key",
-			"key-tooltip": "Key",
-			"value": "Value",
-			"value-tooltip": "Value"
-		},
-		"remove": {
-			"cancelButtonText": "No, cancel plx!",
-			"cancelled": "Your Client is safe :)",
-			"confirmButtonText": "Yes, delete it!",
-			"deleted": "Client has been deleted.",
-			"text": "Your will not be able to recover!",
-			"title": "Are you sure"
-		}
-	},
-	"general": {
-		"add": "Add",
-		"api-resource": "Protected Resources",
-		"clients": "Clients",
-		"copy": "Copy",
-		"details": "Details",
-		"edit": "Edit",
-		"empty": "Empty",
-		"goback": "Go Back",
-		"identity-resource": "Identity Resources",
-		"loading": "Loading, please wait!",
-		"persisted-grants": "Persisted Grants",
-		"remove": "Remove",
-		"revoke": "Revoke",
-		"roles": "Roles",
-		"users": "Users"
-	},
-	"header": {
-		"search": {
-			"PLACEHOLDER": "Type and hit enter.."
-		}
-	},
-	"home": {
-		"CLIENTDESCRIPTION": "Manage your clients.",
-		"DESCRIPTION": "This is IdentityServer4 Admin Panel. Here you can manage your IS4 settings.",
-		"WELCOME": "Welcome"
-	},
-	"identityResource": {
-		"add": {
-			"description": "Description",
-			"description-tooltip": "This value will be used e.g. on the consent screen.",
-			"displayName": "Display Name",
-			"displayName-tooltip": "This value will be used e.g. on the consent screen.",
-			"emphasize": "Emphasize",
-			"emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
-			"enabled": "Enabled",
-			"enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-			"name": "Name",
-			"name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
-			"required": "Required",
-			"required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
-			"showInDiscoveryDocument": "Show In Discovery Document",
-			"showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
-			"userClaims": "User Claims",
-			"userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
-		},
-		"description": "Identity resources are data like user ID, name, or email address of a user. An identity resource has a unique name, and you can assign arbitrary claim types to it. These claims will then be included in the identity token for the user.",
-		"edit": {
-			"description": "Description",
-			"description-tooltip": "This value will be used e.g. on the consent screen.",
-			"displayName": "Display Name",
-			"displayName-tooltip": "This value will be used e.g. on the consent screen.",
-			"emphasize": "Emphasize",
-			"emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
-			"enabled": "Enabled",
-			"enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-			"name": "Name",
-			"name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
-			"required": "Required",
-			"required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
-			"showInDiscoveryDocument": "Show In Discovery Document",
-			"showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
-			"userClaims": "User Claims",
-			"userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
-		},
-		"list": {
-			"description": "Description",
-			"name": "Name"
-		},
-		"newIr": "New Identity Resource",
-		"remove": {
-			"cancelButtonText": "No, cancel plx!",
-			"cancelled": "Your Resource is safe :)",
-			"confirmButtonText": "Yes, delete it!",
-			"deleted": "Resource has been deleted.",
-			"text": "Your will not be able to recover!",
-			"title": "Are you sure"
-		}
-	},
-	"offsidebar": {
-		"setting": {
-			"SETTINGS": "Settings"
-		}
-	},
-	"persistedGrant": {
-		"description": "description",
-		"list": {
-			"clientId": "Client",
-			"creationTime": "CreationTime",
-			"email": "Email",
-			"expiration": "Expiration",
-			"key": "Key",
-			"picture": "Picture",
-			"scopes": "Scopes",
-			"type": "Type"
-		},
-		"remove": {
-			"cancelButtonText": "No, cancel plx!",
-			"cancelled": "Grant is safe :)",
-			"confirmButtonText": "Yes, delete it!",
-			"deleted": "Grant has been deleted.",
-			"text": "Your will not be able to recover!",
-			"title": "Are you sure"
-		}
-	},
-	"roles": {
-		"add": {
-			"roleName": "Name",
-			"roleName-tooltip": "Gets or sets the role name."
-		},
-		"description": "Represents a role in the identity system",
-		"edit": {
-			"roleName": "Name",
-			"roleName-tooltip": "Gets or sets the role name."
-		},
-		"list": {
-			"email": "Email",
-			"name": "Name",
-			"picture": "Picture"
-		},
-		"name": "Name",
-		"new-role": "New role",
-		"selectedRole": "Selected Role"
-	},
-	"secrets": {
-		"description": "Description",
-		"description-tooltip": "Set description",
-		"expiration": "Expiration",
-		"expiration-tooltip": "Set expiration",
-		"hashType": "Hash Type",
-		"hashType-tooltip": "Set the hash of Secret Value",
-		"secretType": "Secret Type",
-		"secretType-tooltip": "The type of the client secret",
-		"secretValue": "Secret Value",
-		"secretValue-tooltip": "Specifies the secret of client"
-	},
-	"sidebar": {
-		"WELCOME": "Welcome",
-		"heading": {
-			"HEADER": "Menu Heading"
-		},
-		"nav": {
-			"SINGLEVIEW": "Single View"
-		}
-	},
-	"toasterMessages": {
-		"message-success": "Well done!",
-		"title-success": "Success"
-	},
-	"users": {
-		"claims": {
-			"type": "Type",
-			"type-tooltip": "Type",
-			"value": "Value",
-			"value-tooltip": "Value"
-		},
-		"description": "A user is a person or robot that can access resources and clients.",
-		"edit": {
-			"accessFailedCount": "Access Failed Count",
-			"accessFailedCount-tooltip": "Gets or sets the number of failed login attempts for the current user",
-			"change-password": "Change password",
-			"claims": "Claims",
-			"claims-tooltip": "Allows settings claims for the user (will be included in the access token)",
-			"confirmPassword": "Confirm password",
-			"confirmPassword-tooltip": "Confirm password",
-			"email": "Email",
-			"email-tooltip": "Gets or sets the email address for this user",
-			"emailConfirmed": "Email Confirmed",
-			"emailConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their email address",
-			"externalLogins": "External Logins",
-			"externalLogins-tooltip": "Manage user external login. e.g Google, Facebook",
-			"lockoutEnabled": "lockout Enabled",
-			"lockoutEnabled-tooltip": "Gets or sets a flag indicating if the user could be locked out",
-			"lockoutEnd": "Lockout End",
-			"lockoutEnd-tooltip": "Gets or sets the date and time, in UTC, when any user lockout ends",
-			"name": "Display Name",
-			"name-tooltip": "Gets or sets the user name",
-			"password": "Password",
-			"password-tooltip": "Password",
-			"phoneNumber": "Phone Number",
-			"phoneNumber-tooltip": "Gets or sets a telephone number for the user",
-			"phoneNumberConfirmed": "Phone Number Confirmed",
-			"phoneNumberConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their telephone address",
-			"roles": "Roles",
-			"roles-tooltip": "Allows settings roles for the user (will be included in the access token)",
-			"twoFactorEnabled": "TwoFactor Enabled",
-			"twoFactorEnabled-tooltip": "Gets or sets a flag indicating if two factor authentication is enabled for this user",
-			"user-data": "User Data",
-			"userName": "UserName",
-			"userName-tooltip": "Gets or sets the user name for this user."
-		},
-		"list": {
-			"email": "Email",
-			"info": "User information",
-			"log-tooltip": "Show events",
-			"name": "Name",
-			"picture": "Picture",
-			"username": "Username"
-		},
-		"logins": {
-			"loginProvider": "Provider",
-			"nologins": "There is no available logins",
-			"providerDisplayName": "Name",
-			"providerKey": "Key"
-		},
-		"new-user": "New User",
-		"remove": {
-			"cancelButtonText": "No, cancel plx!",
-			"cancelled": "User is safe :)",
-			"confirmButtonText": "Yes, delete it!",
-			"deleted": "User has been deleted.",
-			"text": "Your will not be able to recover!",
-			"title": "Are you sure"
-		},
-		"roles": {
-			"name": "Name",
-			"role": "Role",
-			"role-tooltip": "Select user role"
-		},
-		"events": {
+    "menu": {
+        "users": "Users",
+        "roles": "Roles",
+        "ssoSettings": "SSO Settings",
+        "configuration": "Configuration",
+        "email-templates": "Templates",
+        "settings": "Settings"
+    },
+    "general": {
+        "add": "Add",
+        "api-resource": "Protected Resources",
+        "clients": "Clients",
+        "copy": "Copy",
+        "details": "Details",
+        "edit": "Edit",
+        "empty": "Empty",
+        "goback": "Go Back",
+        "identity-resource": "Identity Resources",
+        "loading": "Loading, please wait!",
+        "persisted-grants": "Persisted Grants",
+        "remove": "Remove",
+        "revoke": "Revoke",
+        "roles": "Roles",
+        "users": "Users",
+        "emails": "Email",
+        "list": "List",
+        "settings": "SSO Global Settings"
+    },
+    "header": {
+        "search": {
+            "PLACEHOLDER": "Type and hit enter.."
+        }
+    },
+    "apiResource": {
+        "add": {
+            "description": "Description",
+            "description-tooltip": "This value can be used e.g. on the consent screen.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
+            "name": "Name",
+            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+        },
+        "description": "Resources are something you want to protect with IdentityServer – either APIs (by doing this your data will be protected as well). So to access your database content must be through an API.",
+        "edit": {
+            "description": "Description",
+            "description-tooltip": "This value can be used e.g. on the consent screen.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
+            "name": "Name",
+            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
+            "scope": "Api Scopes",
+            "scope-tooltip": "An API must have at least one scope. Each scope can have different settings.",
+            "secrets": "Api Secrets",
+            "secrets-tooltip": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+        },
+        "list": {
+            "description": "Description",
+            "name": "Name"
+        },
+        "new-api": "New Api Resource",
+        "remove": {
+            "cancelButtonText": "No, cancel plx!",
+            "cancelled": "Your Resource is safe :)",
+            "confirmButtonText": "Yes, delete it!",
+            "deleted": "Resource has been deleted.",
+            "text": "Your will not be able to recover!",
+            "title": "Are you sure"
+        },
+        "scope": {
+            "Emphasize": "Emphasize",
+            "Emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "description": "Description",
+            "description-tooltip": "This value can be used e.g. on the consent screen.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
+            "name": "Name",
+            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
+            "required": "Required",
+            "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen. Defaults to false.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+        },
+        "secret-description": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret."
+    },
+    "client": {
+        "ClaimDescription": "Allows settings claims for the client (will be included in the access token)",
+        "ClientDescription": "The Client class represents an OpenID Connect or OAuth 2.0 client - e.g. a native application, a web application or a JS-based application",
+        "Image": "Image",
+        "PropertiesDescription": "Dictionary to hold any custom client-specific values as needed",
+        "SecretDescription": "In certain situations, clients need to authenticate with identityserver, e.g.: <br>1- confidential applications (aka clients) requesting tokens at the token endpoint. <br>2- APIs validating reference tokens at the introspection endpoint",
+        "TableClientName": "Client Name",
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Value",
+            "value-tooltip": "Value"
+        },
+        "clone": {
+            "cancelButtonText": "No, cancel plx!",
+            "cancelled": ":)",
+            "cloned": "Client has been cloned.",
+            "confirmButtonText": "Yes, clone it!",
+            "text": "Are you sure?",
+            "title": "Clone"
+        },
+        "details": {
+            "absoluteRefreshTokenLifetime": "Absolute Refresh Token Lifetime",
+            "absoluteRefreshTokenLifetime-tooltip": "Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days",
+            "accessTokenLifetime": "Access Token Lifetime",
+            "accessTokenLifetime-tooltip": "Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)",
+            "accessTokenTypes": "Access Token Type",
+            "accessTokenTypes-tooltip": "Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt)",
+            "allowAccessTokensViaBrowser": "Allow Access Token Via Browser",
+            "allowAccessTokensViaBrowser-tooltip": "Specifies whether this client is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code id_token to add the token response type and thus leaking the token to the browser.",
+            "allowOfflineAccess": "Allow Offline Access",
+            "allowOfflineAccess-tooltip": "Specifies whether this client can request refresh tokens (be requesting the offline_access scope)",
+            "allowPlainTextPkce": "Allow Plain Text Pkce",
+            "allowPlainTextPkce-tooltip": "Specifies whether clients using PKCE can use a plain text code challenge (not recommended - and default to false)",
+            "allowRememberConsent": "Remember Consent",
+            "allowRememberConsent-tooltip": "Specifies whether user can choose to store consent decisions. Defaults to true.",
+            "allowedCorsOrigins": "Allowed Cors Origins",
+            "allowedCorsOrigins-tooltip": "If specified, will be used by the default CORS policy service implementations (In-Memory and EF) to build a CORS policy for JavaScript clients.",
+            "allowedGrantTypes": "Allowed Grant Types",
+            "allowedGrantTypes-tooltip": "Specifies the grant types the client is allowed to use. Use the GrantTypes class for common combinations. List of default grants: Implicit Grant - (implicit), Client Credentials Grant - (client_credentials), Authorization Code Grant - (authorization_code), Hybrid grant - (hybrid), Resource Owner Password Credentials Grant - (password)",
+            "allowedScopes": "Allowed Scopes",
+            "allowedScopes-tooltip": "By default a client has no access to any resources - specify the allowed resources by adding the corresponding scopes names",
+            "alwaysIncludeUserClaimsInIdToken": "Always Include User Claims In IdToken",
+            "alwaysIncludeUserClaimsInIdToken-tooltip": "When requesting both an id token and access token, should the user claims always be added to the id token instead of requring the client to use the userinfo endpoint. Default is false",
+            "alwaysSendClientClaims": "Always Send Client Claims",
+            "alwaysSendClientClaims-tooltip": "If set, the client claims will be sent for every flow. If not, only for client credentials flow (default is false) ",
+            "auth": "Authentication",
+            "authorizationCodeLifetime": "Authorization Code Lifetime",
+            "authorizationCodeLifetime-tooltip": "Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)",
+            "backChannelLogoutSessionRequired": "Back Channel Logout Session",
+            "backChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent in the request to the BackChannelLogoutUri. Defaults to true",
+            "backChannelLogoutUri": "Back Channel Logout Uri",
+            "backChannelLogoutUri-tooltip": "Specifies logout URI at client for HTTP based back-channel logout. See the OIDC Back-Channel spec for more details",
+            "basic": "Basic",
+            "claims": "Claims",
+            "claims-tooltip": "Allows settings claims for the client (will be included in the access token)",
+            "clientClaimsPrefix": "Client Claims Prefix",
+            "clientClaimsPrefix-tooltip": "If set, the prefix client claim types will be prefixed with. Defaults to client_. The intent is to make sure they don’t accidentally collide with user claims.",
+            "clientId": "ClientId",
+            "clientId-tooltip": "Unique ID of the client",
+            "clientSecrets": "Client Secrets",
+            "clientSecrets-tooltip": "List of client secrets - credentials to access the token endpoint.",
+            "clientUri": "Client Uri",
+            "clientUri-tooltip": "URI to further information about client (used on consent screen)",
+            "description": "Description",
+            "description-tooltip": "Client Description.",
+            "deviceCodeLifetime": "Device Code Lifetime",
+            "deviceCodeLifetime-tooltip": "Lifetime to device code in seconds (defaults to 300 seconds / 5 minutes)",
+            "deviceFlow": "Device Flow",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Specifies if client is enabled. Defaults to true.",
+            "frontChannelLogoutSessionRequired": "Front Channel Logout Session",
+            "frontChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent to the FrontChannelLogoutUri. Defaults to true",
+            "frontChannelLogoutUri": "Front Channel Logout Uri",
+            "frontChannelLogoutUri-tooltip": "Specifies logout URI at client for HTTP based front-channel logout. See the OIDC Front-Channel spec for more details",
+            "identityProviderRestrictions": "Identity Provider Restrictions",
+            "identityProviderRestrictions-tooltip": "Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to empty.",
+            "identityTokenLifetime": "Identity Token Lifetime",
+            "identityTokenLifetime-tooltip": "Lifetime to identity token in seconds (defaults to 300 seconds / 5 minutes)",
+            "includeJwtId": "Include Jwt Id",
+            "includeJwtId-tooltip": "Specifies whether JWT access tokens should have an embedded unique ID (via the jti claim).",
+            "logoUri": "Logo Uri (Https)",
+            "logoUri-tooltip": "URI to client logo (used on consent screen). Must be Https",
+            "name": "Name",
+            "name-tooltip": "Client display name (used for logging and consent screen)",
+            "pairWiseSubjectSalt": "Pair Wise Subject Salt",
+            "pairWiseSubjectSalt-tooltip": "Salt value used in pair-wise subjectId generation for users of this client.",
+            "properties": "Properties",
+            "properties-tooltip": "Dictionary to hold any custom client-specific values as needed.",
+            "protocolType": "Protocol Type",
+            "protocolType-tooltip": "Default is OpenID Connect protocol",
+            "redirectUris": "Redirect Uri's",
+            "redirectUris-tooltip": "Specifies the allowed URIs to return tokens or authorization codes to",
+            "refreshTokenExpiration": "Refresh Token Expiration",
+            "refreshTokenExpiration-tooltip": "Absolute the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime) Sliding when refreshing the token, the lifetime of the refresh token will be renewed (by the amount specified in SlidingRefreshTokenLifetime). The lifetime will not exceed AbsoluteRefreshTokenLifetime.",
+            "refreshTokenUsage": "Refresh Token Usage",
+            "refreshTokenUsage-tooltip": "ReUse the refresh token handle will stay the same when refreshing tokens OneTime the refresh token handle will be updated when refreshing tokens",
+            "requireClientSecret": "Require Client Secret",
+            "requireClientSecret-tooltip": "Specifies whether this client needs a secret to request tokens from the token endpoint (defaults to true)",
+            "requireConsent": "Require Consent Screen",
+            "requireConsent-tooltip": "Specifies whether a consent screen is required. Defaults to true.",
+            "requirePkce": "Require Pkce",
+            "requirePkce-tooltip": "Specifies whether clients using an authorization code based grant type must send a proof key",
+            "settings": "Settings",
+            "slidingRefreshTokenLifetime": "Sliding Refresh Token Lifetime",
+            "slidingRefreshTokenLifetime-tooltip": "Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days",
+            "token": "Token",
+            "updateAccessTokenClaimsOnRefresh": "Update Access Token Claims On Refresh",
+            "updateAccessTokenClaimsOnRefresh-tooltip": "Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token request",
+            "userCodeType": "User Code Type",
+            "userCodeType-tooltip": "Specifies the type of user code to use for the client. Otherwise falls back to default",
+            "postLogoutRedirectUris": "Logout Url",
+            "postLogoutRedirectUris-tooltip": "Specifies allowed URIs to redirect to after logout",
+            "enableLocalLogin": "Enable Local Login",
+            "enableLocalLogin-tooltip": "Specifies if this client can use local accounts, or external Providers only. E.g: Facebook, Google. Defaults to true",
+            "userSsoLifetime": "User Sso Lifetime",
+            "userSsoLifetime-tooltip": "The maximum duration (in seconds) since the last time the user authenticated. Defaults to null. You can adjust the lifetime of a session token to control when and how often a user is required to reenter credentials instead of being silently authenticated, when using a web application"
+        },
+        "property": {
+            "key": "Key",
+            "key-tooltip": "Key",
+            "value": "Value",
+            "value-tooltip": "Value"
+        },
+        "remove": {
+            "cancelButtonText": "No, cancel plx!",
+            "cancelled": "Your Client is safe :)",
+            "confirmButtonText": "Yes, delete it!",
+            "deleted": "Client has been deleted.",
+            "text": "Your will not be able to recover!",
+            "title": "Are you sure"
+        }
+    },
+    "home": {
+        "CLIENTDESCRIPTION": "Manage your clients.",
+        "DESCRIPTION": "This is IdentityServer4 Admin Panel. Here you can manage your IS4 settings.",
+        "WELCOME": "Welcome"
+    },
+    "identityResource": {
+        "add": {
+            "description": "Description",
+            "description-tooltip": "This value will be used e.g. on the consent screen.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value will be used e.g. on the consent screen.",
+            "emphasize": "Emphasize",
+            "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
+            "name": "Name",
+            "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
+            "required": "Required",
+            "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
+        },
+        "description": "Identity resources are data like user ID, name, or email address of a user. An identity resource has a unique name, and you can assign arbitrary claim types to it. These claims will then be included in the identity token for the user.",
+        "edit": {
+            "description": "Description",
+            "description-tooltip": "This value will be used e.g. on the consent screen.",
+            "displayName": "Display Name",
+            "displayName-tooltip": "This value will be used e.g. on the consent screen.",
+            "emphasize": "Emphasize",
+            "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "enabled": "Enabled",
+            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
+            "name": "Name",
+            "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
+            "required": "Required",
+            "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
+            "showInDiscoveryDocument": "Show In Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
+            "userClaims": "User Claims",
+            "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
+        },
+        "list": {
+            "description": "Description",
+            "name": "Name"
+        },
+        "newIr": "New Identity Resource",
+        "remove": {
+            "cancelButtonText": "No, cancel plx!",
+            "cancelled": "Your Resource is safe :)",
+            "confirmButtonText": "Yes, delete it!",
+            "deleted": "Resource has been deleted.",
+            "text": "Your will not be able to recover!",
+            "title": "Are you sure"
+        }
+    },
+    "offsidebar": {
+        "setting": {
+            "SETTINGS": "Settings"
+        }
+    },
+    "persistedGrant": {
+        "description": "description",
+        "list": {
+            "clientId": "Client",
+            "creationTime": "CreationTime",
+            "email": "Email",
+            "expiration": "Expiration",
+            "key": "Key",
+            "picture": "Picture",
+            "scopes": "Scopes",
+            "type": "Type"
+        },
+        "remove": {
+            "cancelButtonText": "No, cancel plx!",
+            "cancelled": "Grant is safe :)",
+            "confirmButtonText": "Yes, delete it!",
+            "deleted": "Grant has been deleted.",
+            "text": "Your will not be able to recover!",
+            "title": "Are you sure"
+        }
+    },
+    "roles": {
+        "add": {
+            "roleName": "Name",
+            "roleName-tooltip": "Gets or sets the role name."
+        },
+        "description": "Represents a role in the identity system",
+        "edit": {
+            "roleName": "Name",
+            "roleName-tooltip": "Gets or sets the role name."
+        },
+        "list": {
+            "email": "Email",
+            "name": "Name",
+            "picture": "Picture"
+        },
+        "name": "Name",
+        "new-role": "New role",
+        "selectedRole": "Selected Role"
+    },
+    "secrets": {
+        "description": "Description",
+        "description-tooltip": "Set description",
+        "expiration": "Expiration",
+        "expiration-tooltip": "Set expiration",
+        "hashType": "Hash Type",
+        "hashType-tooltip": "Set the hash of Secret Value",
+        "secretType": "Secret Type",
+        "secretType-tooltip": "The type of the client secret",
+        "secretValue": "Secret Value",
+        "secretValue-tooltip": "Specifies the secret of client"
+    },
+    "sidebar": {
+        "WELCOME": "Welcome",
+        "heading": {
+            "HEADER": "Menu Heading"
+        },
+        "nav": {
+            "SINGLEVIEW": "Single View"
+        }
+    },
+    "toasterMessages": {
+        "message-success": "Well done!",
+        "title-success": "Success"
+    },
+    "users": {
+        "claims": {
+            "type": "Type",
+            "type-tooltip": "Type",
+            "value": "Value",
+            "value-tooltip": "Value"
+        },
+        "description": "A user is a person or robot that can access resources and clients.",
+        "edit": {
+            "accessFailedCount": "Access Failed Count",
+            "accessFailedCount-tooltip": "Gets or sets the number of failed login attempts for the current user",
+            "change-password": "Change password",
+            "claims": "Claims",
+            "claims-tooltip": "Allows settings claims for the user (will be included in the access token)",
+            "confirmPassword": "Confirm password",
+            "confirmPassword-tooltip": "Confirm password",
+            "email": "Email",
+            "email-tooltip": "Gets or sets the email address for this user",
+            "emailConfirmed": "Email Confirmed",
+            "emailConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their email address",
+            "externalLogins": "External Logins",
+            "externalLogins-tooltip": "Manage user external login. e.g Google, Facebook",
+            "lockoutEnabled": "lockout Enabled",
+            "lockoutEnabled-tooltip": "Gets or sets a flag indicating if the user could be locked out",
+            "lockoutEnd": "Lockout End",
+            "lockoutEnd-tooltip": "Gets or sets the date and time, in UTC, when any user lockout ends",
+            "name": "Display Name",
+            "name-tooltip": "Gets or sets the user name",
+            "password": "Password",
+            "password-tooltip": "Password",
+            "phoneNumber": "Phone Number",
+            "phoneNumber-tooltip": "Gets or sets a telephone number for the user",
+            "phoneNumberConfirmed": "Phone Number Confirmed",
+            "phoneNumberConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their telephone address",
+            "roles": "Roles",
+            "roles-tooltip": "Allows settings roles for the user (will be included in the access token)",
+            "twoFactorEnabled": "TwoFactor Enabled",
+            "twoFactorEnabled-tooltip": "Gets or sets a flag indicating if two factor authentication is enabled for this user",
+            "user-data": "User Data",
+            "userName": "UserName",
+            "userName-tooltip": "Gets or sets the user name for this user."
+        },
+        "list": {
+            "email": "Email",
+            "info": "User information",
+            "log-tooltip": "Show events",
+            "name": "Name",
+            "picture": "Picture",
+            "username": "Username"
+        },
+        "logins": {
+            "loginProvider": "Provider",
+            "nologins": "There is no available logins",
+            "providerDisplayName": "Name",
+            "providerKey": "Key"
+        },
+        "new-user": "New User",
+        "remove": {
+            "cancelButtonText": "No, cancel plx!",
+            "cancelled": "User is safe :)",
+            "confirmButtonText": "Yes, delete it!",
+            "deleted": "User has been deleted.",
+            "text": "Your will not be able to recover!",
+            "title": "Are you sure"
+        },
+        "roles": {
+            "name": "Name",
+            "role": "Role",
+            "role-tooltip": "Select user role"
+        },
+        "events": {
 
-		}
-	}
+        }
+    },
+    "emails": {
+        "description": "Email templates for SSO.",
+        "edit": {
+            "type": "Email type",
+            "type-tooltip": "Type of communication with the user",
+            "subject": "Subject",
+            "subject-tooltip": "Email subject",
+            "bcc": "Bcc",
+            "bcc-tooltip": "Blind Carbon Copy - Blind copy someone",
+            "senderName": "Sender Name",
+            "senderName-tooltip": "The name of who will send the e-mail.",
+            "senderAddress": "Sender Address",
+            "senderAddress-tooltip": "Address from who will send the e-mail",
+            "editor": "Editor",
+            "code": "HTML Code Editor",
+            "variables": "Variables",
+            "variables-description": "A list of variables which will be replaced before send to User.",
+            "variables-name": "The name of user",
+            "variables-picture": "Url of user profile picture",
+            "variables-username": "Username choosen by user",
+            "variables-code": "Generated code for user for him confirm E-mail",
+            "variables-provider": "When user are using Federation login. It'll be the provider name (E.G: Google | Facebook)",
+            "variables-phoneNumber": "Provided phone number",
+            "variables-email": "User e-mail",
+            "variables-url": "Unique url generate for user to confirm e-mail"
+        }
+    },
+    "settings": {
+        "description": "Global settings to manage your SSO configuration",
+        "emails": {
+            "description": "SMTP Settings for e-mail services.",
+            "server": "Server",
+            "server-tooltip": "Server address uri",
+            "password": "Password",
+            "password-tooltip": "SMTP Password",
+            "username": "Username",
+            "username-tooltip": "SMTP Username",
+            "port": "Port",
+            "port-tooltip": "SMTP Port",
+            "useSsl": "SSL",
+            "useSsl-tooltip": "Use ssl",
+            "sendEmail": "Send e-mail",
+            "sendEmail-tooltip": "SSO should send e-mail?"
+        }
+    }
 }

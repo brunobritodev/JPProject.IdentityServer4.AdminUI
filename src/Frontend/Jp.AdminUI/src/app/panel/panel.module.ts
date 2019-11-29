@@ -19,7 +19,9 @@ const routes: Routes = [
             { path: "api-resource", loadChildren: "app/panel/api-resources/api-resource.module#ApiResourceModule" },
             { path: "persisted-grants", loadChildren: "app/panel/persisted-grants/persisted-grants.module#PersistedGrantsModule" },
             { path: "users", loadChildren: "app/panel/users/user.module#UserModule" },
-            { path: "roles", loadChildren: "app/panel/roles/roles.module#RoleModule" }
+            { path: "roles", loadChildren: "app/panel/roles/roles.module#RoleModule" },
+            { path: "emails", loadChildren: "app/panel/emails/emails.module#EmailModule" },
+            { path: "settings", loadChildren: "app/panel/settings/settings.module#SettingsModule" }
         ]
     },
 ];

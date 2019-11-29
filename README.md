@@ -8,11 +8,11 @@ This is an Administrator Panel for IdentityServer4. It's available in 2 versions
 
 # Several break changes
 
-The version ASP.NET Core 3.0 have changed a lot. So before upgrade read differences between light and full version. At the end it's the same project . But splited repo's.
+The new version, written in ASP.NET Core 3.0, changed a lot. So before upgrade read differences between light and full version. If have the past version, don't worry. It's the same project at all. But splited repo's.
 
 # Installation
 
-If you know the differences between Light and Full. Check the installation instructions below. If wanna understand, check more here [Presentation](#presentation) version.
+If you know the differences between Light and Full. Check the installation instructions below. If wanna understand, check more here at[Presentation](#presentation) section.
 
 ## Full Install
 
@@ -20,7 +20,7 @@ Go to this [repo](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO) 
 
 ## Light Install
 
-You will need to create a Client and API resources in you IdentityServer4. At the end of this section there are some shortcuts.
+You will need to create a Client and API resources in your IdentityServer4. At the end of this section there are some shortcuts.
 
 1. [Download](https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/archive/master.zip)/Clone or [Fork](https://github.com/brunohbrito/JPProject.IdentityServer4.AdminUI/fork) this repository.
 2. Open `environment.ts` and change settings for you SSO.
@@ -145,6 +145,7 @@ Api resource configuration
 - [Docs](#docs)
   - [Contributing](#contributing)
   - [Free](#free)
+  - [3.0.2](#302)
   - [3.0.1](#301)
   - [v1.4.5](#v145)
 - [What comes next?](#what-comes-next)
@@ -251,6 +252,12 @@ We'll love it! Please [Read the docs](https://jp-project.readthedocs.io/en/lates
 
 If you need help building or running your Jp Project platform
 There are several ways we can help you out.
+
+## 3.0.2
+
+1. Menu translation
+2. Email support for full version
+3. Email configuration settings (SMTP / Password) for full version
 
 ## 3.0.1
 
