@@ -1,5 +1,5 @@
 export class ProblemDetails {
-    
+
     public success: boolean;
 
     public static GetErrors(err: any): Array<KeyValuePair> {
@@ -8,14 +8,19 @@ export class ProblemDetails {
                 return [new KeyValuePair("403", "Unauthorized Access")];
             }
 
-            if (err.error.errors)
-            {
-                if(err.error.errors["DomainNotification"]){
+            if (err.error.errors) {
+                if (err.error.errors["DomainNotification"]) {
                     return err.error.errors["DomainNotification"].map((element, i) => new KeyValuePair(i, element));
                 }
-                return err.error.errors.map((element, i) => new KeyValuePair(i, element.message));
+                if (Array.isArray(err.error.errors)) { return err.error.errors.map((element, i) => new KeyValuePair(i, element.message)); }
+
+                var mappedErrors = [];
+                Object.keys(err.error.errors).map(function (key, index) {
+                    mappedErrors.push(new KeyValuePair(key, err.error.errors[key]))
+                });
+                return mappedErrors;
             }
-                
+
 
 
             return [new KeyValuePair(err.error.status.toString(), "Unknown error - " + err.error.type)];
