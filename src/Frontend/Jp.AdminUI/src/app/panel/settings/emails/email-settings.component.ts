@@ -79,4 +79,12 @@ export class EmailSettingsComponent implements OnInit {
             this.toasterService.pop("success", a["title-success"], a["message-success"]);
         });
     }
+
+    public changeUseSsl(){
+        this.settings.useSsl.value = this.useSsl.toString();
+    }
+
+    public changeSendEmail(){
+        this.settings.sendMail.value = this.sendMail.toString();
+    }
 }

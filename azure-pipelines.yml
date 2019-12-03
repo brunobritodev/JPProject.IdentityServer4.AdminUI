@@ -80,7 +80,7 @@ jobs:
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
-          customCommand: 'run build -- --base-href=/admin-ui/'
+          customCommand: 'NG build -- --prod'
           workingDir: src/Frontend/Jp.AdminUI
 
       - task: ArchiveFiles@2

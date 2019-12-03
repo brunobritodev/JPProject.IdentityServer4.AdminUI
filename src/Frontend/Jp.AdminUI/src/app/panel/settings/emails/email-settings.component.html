@@ -46,7 +46,7 @@
                 <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
                     <label class="switch m-0">
-                    <input type="checkbox" [(ngModel)]="useSsl" (ngModelChange)="settings.useSsl.value = useSsl" />
+                    <input type="checkbox" [(ngModel)]="useSsl" (ngModelChange)="changeUseSsl()" />
                     <span></span>
                 </label>
                 </div>
@@ -65,7 +65,7 @@
             <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
                     <label class="switch m-0">
-                <input type="checkbox" [(ngModel)]="sendMail" (ngModelChange)="settings.sendMail.value = sendMail" />
+                <input type="checkbox" [(ngModel)]="sendMail" (ngModelChange)="changeSendEmail()" />
                 <span></span>
             </label>
                 </div>
