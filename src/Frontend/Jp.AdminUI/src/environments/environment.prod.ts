@@ -5,5 +5,5 @@ export const environment = {
   RequireHttps: true,
   Uri: "https://admin.jpproject.net",
   defaultTheme: "C",
-  version: "3.0.0"
+  version: "3.0.2"
 };
