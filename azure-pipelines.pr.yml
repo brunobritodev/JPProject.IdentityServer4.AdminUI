@@ -53,7 +53,7 @@ jobs:
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
-          customCommand: 'NG build -- --prod'
+          customCommand: 'run build'
           workingDir: src/Frontend/Jp.AdminUI
 
   - job: 'docker'
