@@ -1,0 +1,82 @@
+<div class="card b">
+    <div class="card-header bg-gray-lighter text-bold">Emails</div>
+    <div class="card-body">
+        <p>{{ 'settings.emails.description' | translate}}</p>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.emails.server-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.emails.server' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9 col-xs-12">
+                    <input class="form-control" autocomplete="on" [placeholder]="'settings.emails.server-tooltip' | translate" [(ngModel)]="settings.server.value" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - Number -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-3 col-form-label" placement="top" [tooltip]="'settings.emails.port-tooltip' | translate">{{
+                'settings.emails.port' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" [placeholder]="'settings.emails.port' | translate" [(ngModel)]="settings.port.value" numbersOnly />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.emails.username-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.emails.username' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" autocomplete="on" [placeholder]="'settings.emails.username-tooltip' | translate" [(ngModel)]="settings.username.value" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.emails.password-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.emails.password' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" autocomplete="on" [placeholder]="'settings.emails.password-tooltip' | translate" [(ngModel)]="settings.password.value" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.emails.useSsl-tooltip' | translate">{{ 'settings.emails.useSsl' | translate }}
+                <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                    <input type="checkbox" [(ngModel)]="useSsl" (ngModelChange)="changeUseSsl()" />
+                    <span></span>
+                </label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="card-body bt">
+        <p>
+            <strong>Other options</strong>
+        </p>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.emails.sendEmail-tooltip' | translate">{{
+            'settings.emails.sendEmail' | translate }}
+            <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                <input type="checkbox" [(ngModel)]="sendMail" (ngModelChange)="changeSendEmail()" />
+                <span></span>
+            </label>
+                </div>
+            </div>
+        </fieldset>
+        <p>
+            <small class="text-muted">* If you are not an Administrator, some fields will not show.</small>
+        </p>
+
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-info" (click)="updateSettings()" type="button">Update settings</button>
+    </div>
+</div>

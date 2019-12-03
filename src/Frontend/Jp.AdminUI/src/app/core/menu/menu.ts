@@ -1,6 +1,6 @@
 export class MenuItem {
     constructor() { }
-    text: string;
+    text?: string;
     heading?: boolean;
     link?: string;     // internal route links
     elink?: string;   // used only for external links
@@ -9,6 +9,7 @@ export class MenuItem {
     alert?: string;
     submenu?: Array<any>;
     lightVersion?: boolean;
+    translate?: string;
 }
 
 const Home: MenuItem = {
@@ -17,71 +18,85 @@ const Home: MenuItem = {
     icon: "icon-home"
 };
 
+const Settings: MenuItem = {
+    translate: "menu.settings",
+    link: "/settings",
+    icon: "icon-cup",
+    lightVersion: false
+};
 const Clients: MenuItem  = {
-    text: "Clients",
+    translate: "general.clients",
     link: "/clients",
     icon: "fa fa-desktop",
     submenu: [
         {
             text: "List",
+            translate: "general.list",
             link: "/clients"
         },
         {
             text: "Add",
+            translate: "general.add",
             link: "/clients/add"
         }
     ]
 };
 
 const IdentityResource: MenuItem  = {
-    text: "Identity Resources",
+    translate: "general.identity-resource",
     link: "/identity-resource",
     icon: "far fa-id-card",
     submenu: [
         {
             text: "List",
+            translate: "general.list",
             link: "/identity-resource"
         },
         {
             text: "Add",
+            translate: "general.add",
             link: "/identity-resource/add"
         }
     ]
 };
 
 const ApiResource: MenuItem  = {
-    text: "Api Resources",
+    translate: "general.api-resource",
     link: "/api-resource",
     icon: "fas fa-cloud",
     submenu: [
         {
             text: "List",
+            translate: "general.list",
             link: "/api-resource"
         },
         {
             text: "Add",
+            translate: "general.add",
             link: "/api-resource/add"
         }
     ]
 };
 
 const PersistedGrants: MenuItem  = {
-    text: "Persisted Grants",
+    translate: "general.persisted-grants",
     link: "/persisted-grants",
     icon: "fas fa-key"
 };
 
 const Users: MenuItem  = {
-    text: "Users",
+    translate: "menu.users",
     link: "/users",
     icon: "fas fa-users-cog",
     submenu: [
         {
             text: "List",
+            translate: "general.list",
             link: "/users"
         },
         {
             text: "Add",
+            translate: "general.add",
             link: "/users/add"
         }
     ],
@@ -89,34 +104,52 @@ const Users: MenuItem  = {
 };
 
 const Roles: MenuItem  = {
-    text: "Roles",
+    translate: "menu.roles",
     link: "/roles",
     icon: "fas fa-user-tag",
     submenu: [
         {
             text: "List",
+            translate: "general.list",
             link: "/roles"
         },
         {
             text: "Add",
+            translate: "general.add",
             link: "/roles/add"
         }
     ],
     lightVersion: false
 };
 
+const Emails: MenuItem  = {
+    translate: "general.emails",
+    link: "/emails",
+    icon: "fas fa-envelope-open-text",
+    submenu: [
+        {
+            translate: "general.edit",
+            link: "/emails"
+        }
+        // ,{
+        //     translate: "menu.email-template",
+        //     link: "/emails/templates"
+        // }
+    ],
+    lightVersion: false
+};
 const headingMain: MenuItem  = {
     text: "IdentityServer4",
     heading: true
 };
 
 const headingUsers: MenuItem  = {
-    text: "Users",
+    translate: "menu.users",
     heading: true,
     lightVersion: false
 };
 const headingSettings: MenuItem  = {
-    text: "SSO Settings",
+    translate: "menu.ssoSettings",
     heading: true,
     lightVersion: false
 };
@@ -131,5 +164,7 @@ export const menu: MenuItem[]  = [
     headingUsers,
     Users,
     Roles,
-    headingSettings
+    headingSettings,
+    Emails,
+    Settings
 ];

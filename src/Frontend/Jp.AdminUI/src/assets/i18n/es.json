@@ -1,410 +1,472 @@
 {
-	"apiResource": {
-		"add": {
-			"description": "Descripción",
-			"description-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
-			"displayName": "Nombre para mostrar",
-			"displayName-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
-			"enabled": "Habilitado",
-			"enabled-tooltip": "Indica si este recurso está habilitado y puede ser solicitado. Por defecto es verdadero.",
-			"name": "Nombre",
-			"name-tooltip": "El nombre único de la API. Este valor se utiliza para la autenticación con introspección y se agregará a la audiencia del token de acceso saliente.",
-			"userClaims": "Reclamaciones del usuario",
-			"userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de acceso."
-		},
-		"description": "Los recursos son algo que desea proteger con IdentityServer, ya sea API (al hacerlo, sus datos también estarán protegidos). Entonces, para acceder a su base de datos, el contenido debe ser a través de una API.",
-		"edit": {
-			"description": "Descripción",
-			"description-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
-			"displayName": "Nombre para mostrar",
-			"displayName-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
-			"enabled": "Habilitado",
-			"enabled-tooltip": "Indica si este recurso está habilitado y puede ser solicitado. Por defecto es verdadero.",
-			"name": "Nombre",
-			"name-tooltip": "El nombre único de la API. Este valor se utiliza para la autenticación con introspección y se agregará a la audiencia del token de acceso saliente.",
-			"scope": "Api Scopes",
-			"scope-tooltip": "Una API debe tener al menos un alcance. Cada ámbito puede tener diferentes configuraciones.",
-			"secrets": "Api Secretos",
-			"secrets-tooltip": "El secreto API se utiliza para el punto final de la introspección. La API puede autenticarse con introspección utilizando el nombre y el secreto de la API.",
-			"userClaims": "Reclamaciones del usuario",
-			"userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de acceso."
-		},
-		"list": {
-			"description": "Descripción",
-			"name": "Nombre"
-		},
-		"new-api": "Nuevo recurso de Api",
-		"remove": {
-			"cancelButtonText": "No, cancela plx!",
-			"cancelled": "Tu recurso es seguro :)",
-			"confirmButtonText": "¡Sí, bórralo!",
-			"deleted": "El recurso ha sido eliminado.",
-			"text": "Tu no podrás recuperarte!",
-			"title": "Estás seguro"
-		},
-		"scope": {
-			"Emphasize": "Enfatizar",
-			"Emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. El valor predeterminado es falso.",
-			"description": "Descripción",
-			"description-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
-			"displayName": "Nombre para mostrar",
-			"displayName-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
-			"name": "Nombre",
-			"name-tooltip": "El nombre único de la API. Este valor se utiliza para la autenticación con introspección y se agregará a la audiencia del token de acceso saliente.",
-			"required": "Necesario",
-			"required-tooltip": "Especifica si el usuario puede anular la selección del alcance en la pantalla de consentimiento. El valor predeterminado es falso.",
-			"showInDiscoveryDocument": "Mostrar en el documento de descubrimiento",
-			"showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. Por defecto es verdadero",
-			"userClaims": "Reclamaciones del usuario",
-			"userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de acceso."
-		},
-		"secret-description": "El secreto API se utiliza para el punto final de la introspección. La API puede autenticarse con introspección utilizando el nombre y el secreto de la API."
-	},
-	"client": {
-		"ClaimDescription": "Permite las reclamaciones de configuración para el cliente (se incluirán en el token de acceso)",
-		"ClientDescription": "La clase Cliente representa un cliente OpenID Connect o OAuth 2.0, por ejemplo, una aplicación nativa, una aplicación web o una aplicación basada en JS",
-		"Image": "Imagen",
-		"PropertiesDescription": "Diccionario para mantener cualquier valor personalizado específico del cliente según sea necesario",
-		"SecretDescription": "En ciertas situaciones, los clientes necesitan autenticarse con el servidor de identidad, por ejemplo: <br> 1- aplicaciones confidenciales (también conocidos como clientes) que solicitan tokens en el punto final del token. <br> 2- API que validan tokens de referencia en el punto final de la introspección",
-		"TableClientName": "nombre del cliente",
-		"claims": {
-			"type": "Tipo",
-			"type-tooltip": "Tipo",
-			"value": "Valor",
-			"value-tooltip": "Valor"
-		},
-		"clone": {
-			"cancelButtonText": "No, cancela plx!",
-			"cancelled": ":)",
-			"cloned": "El cliente ha sido clonado.",
-			"confirmButtonText": "Sí, clónalo!",
-			"text": "¿Estás seguro?",
-			"title": "Clon"
-		},
-		"details": {
-			"absoluteRefreshTokenLifetime": "Vida de token de actualización absoluta",
-			"absoluteRefreshTokenLifetime-tooltip": "Duración máxima de un token de actualización en segundos. El valor predeterminado es 2592000 segundos / 30 días",
-			"accessTokenLifetime": "Token de acceso de por vida",
-			"accessTokenLifetime-tooltip": "Tiempo de vida del token de acceso en segundos (predeterminado a 3600 segundos / 1 hora)",
-			"accessTokenTypes": "Tipo de token de acceso",
-			"accessTokenTypes-tooltip": "Especifica si el token de acceso es un token de referencia o un token JWT autónomo (predeterminado a Jwt)",
-			"allowAccessTokensViaBrowser": "Permitir el token de acceso a través del navegador",
-			"allowAccessTokensViaBrowser-tooltip": "Especifica si este cliente puede recibir tokens de acceso a través del navegador. Esto es útil para endurecer los flujos que permiten múltiples tipos de respuesta (por ejemplo, al deshabilitar un cliente de flujo híbrido que se supone que usa el código id_token para agregar el tipo de respuesta del token y, por lo tanto, filtrar el token al navegador.",
-			"allowOfflineAccess": "Permitir el acceso sin conexión",
-			"allowOfflineAccess-tooltip": "Especifica si este cliente puede solicitar tokens de actualización (solicitar el alcance offline_access)",
-			"allowPlainTextPkce": "Permitir texto plano Pkce",
-			"allowPlainTextPkce-tooltip": "Especifica si los clientes que usan PKCE pueden usar un desafío de código de texto simple (no recomendado, y predeterminado en falso)",
-			"allowRememberConsent": "Recordar consentimiento",
-			"allowRememberConsent-tooltip": "Especifica si el usuario puede optar por almacenar las decisiones de consentimiento. Por defecto es verdadero.",
-			"allowedCorsOrigins": "Orígenes Cors permitidos",
-			"allowedCorsOrigins-tooltip": "Si se especifica, las implementaciones del servicio de políticas de CORS (In-Memory y EF) las utilizarán para crear una política de CORS para clientes de JavaScript.",
-			"allowedGrantTypes": "Tipos de subvención permitidos",
-			"allowedGrantTypes-tooltip": "Especifica los tipos de concesión que el cliente puede usar. Utilice la clase GrantTypes para combinaciones comunes. Lista de concesiones predeterminadas: concesión implícita - (implícita), concesión de credenciales del cliente - (client_credentials), concesión de código de autorización - (autorización_código), concesión híbrida - (híbrida), concesión de credenciales de contraseña del propietario del recurso - (contraseña)",
-			"allowedScopes": "Alcances permitidos",
-			"allowedScopes-tooltip": "De forma predeterminada, un cliente no tiene acceso a ningún recurso: especifique los recursos permitidos agregando los nombres de ámbitos correspondientes",
-			"alwaysIncludeUserClaimsInIdToken": "Incluir siempre las reclamaciones de los usuarios en IdToken",
-			"alwaysIncludeUserClaimsInIdToken-tooltip": "Al solicitar un token de identificación y un token de acceso, las reclamaciones de los usuarios siempre se agregarán al token de identificación en lugar de requerir que el cliente utilice el punto final de información de usuario. El valor predeterminado es falso",
-			"alwaysSendClientClaims": "Enviar siempre las reclamaciones de los clientes",
-			"alwaysSendClientClaims-tooltip": "Si se establece, las reclamaciones del cliente se enviarán para cada flujo. Si no, solo para el flujo de credenciales del cliente (el valor predeterminado es falso)",
-			"auth": "Autenticación",
-			"authorizationCodeLifetime": "Código de autorización de por vida",
-			"authorizationCodeLifetime-tooltip": "Tiempo de vida del código de autorización en segundos (el valor predeterminado es 300 segundos / 5 minutos)",
-			"backChannelLogoutSessionRequired": "Sesión de cierre de sesión de canal trasero requerida",
-			"backChannelLogoutSessionRequired-tooltip": "Especifica si el ID de sesión del usuario debe enviarse en la solicitud al BackChannelLogoutUri. Por defecto es verdadero",
-			"backChannelLogoutUri": "Back Channel Logout Uri",
-			"backChannelLogoutUri-tooltip": "Especifica el URI de cierre de sesión en el cliente para el cierre de sesión basado en HTTP. Consulte la especificación del canal posterior de OIDC para obtener más detalles.",
-			"basic": "BASIC",
-			"claims": "Reclamaciones",
-			"claims-tooltip": "Permite las reclamaciones de configuración para el cliente (se incluirán en el token de acceso)",
-			"clientClaimsPrefix": "Prefijo de reclamaciones de clientes",
-			"clientClaimsPrefix-tooltip": "Si se establece, los tipos de reclamación de cliente de prefijo se prefijarán con. Por defecto a cliente_. La intención es asegurarse de que no colisionen accidentalmente con las reclamaciones de los usuarios.",
-			"clientId": "Identificación del cliente",
-			"clientId-tooltip": "ID única del cliente",
-			"clientSecrets": "Secretos del cliente",
-			"clientSecrets-tooltip": "Lista de secretos del cliente: credenciales para acceder al punto final del token.",
-			"clientUri": "Cliente uri",
-			"clientUri-tooltip": "URI para obtener más información sobre el cliente (utilizado en la pantalla de consentimiento)",
-			"description": "Descripción",
-			"description-tooltip": "Descripción del cliente.",
-			"deviceCodeLifetime": "",
-			"deviceCodeLifetime-tooltip": "",
-			"deviceFlow": "",
-			"enabled": "Habilitado",
-			"enabled-tooltip": "Especifica si el cliente está habilitado. Por defecto es verdadero.",
-			"frontChannelLogoutSessionRequired": "Sesión de cierre de sesión del canal frontal requerida",
-			"frontChannelLogoutSessionRequired-tooltip": "Especifica si el ID de sesión del usuario debe enviarse a FrontChannelLogoutUri. Por defecto es verdadero",
-			"frontChannelLogoutUri": "Front Channel Logout Uri",
-			"frontChannelLogoutUri-tooltip": "Especifica el URI de cierre de sesión en el cliente para el cierre de sesión del canal frontal basado en HTTP. Vea la especificación del canal frontal de OIDC para más detalles",
-			"identityProviderRestrictions": "Restricciones del proveedor de identidad",
-			"identityProviderRestrictions-tooltip": "Especifica qué IdP externos se pueden usar con este cliente (si la lista está vacía, se permiten todos los IdP). Los valores predeterminados para vaciar.",
-			"identityTokenLifetime": "Token de identidad de por vida",
-			"identityTokenLifetime-tooltip": "Vida de token de identidad en segundos (el valor predeterminado es 300 segundos / 5 minutos)",
-			"includeJwtId": "Incluir Jwt Id",
-			"includeJwtId-tooltip": "Especifica si los tokens de acceso JWT deben tener una ID única incrustada (a través de la reclamación jti).",
-			"logoUri": "Logo Uri (Https)",
-			"logoUri-tooltip": "URI al logotipo del cliente (usado en la pantalla de consentimiento). Debe ser Https",
-			"name": "Nombre",
-			"name-tooltip": "Nombre para mostrar del cliente (usado para el registro y la pantalla de consentimiento)",
-			"pairWiseSubjectSalt": "Par sabio sal de tema",
-			"pairWiseSubjectSalt-tooltip": "Valor de sal utilizado en la generación de ID de sujeto por pares para los usuarios de este cliente.",
-			"properties": "Propiedades",
-			"properties-tooltip": "Diccionario para mantener cualquier valor personalizado específico del cliente según sea necesario.",
-			"protocolType": "Tipo de protocolo",
-			"protocolType-tooltip": "El predeterminado es el protocolo OpenID Connect",
-			"redirectUris": "Redirigir uri",
-			"redirectUris-tooltip": "Especifica los URI permitidos para devolver tokens o códigos de autorización a",
-			"refreshTokenExpiration": "Actualizar la caducidad del token",
-			"refreshTokenExpiration-tooltip": "Absoluto el token de actualización caducará en un punto fijo en el tiempo (especificado por AbsoluteRefreshTokenLifetime) Al deslizarse al actualizar el token, la vida útil del token de actualización se renovará (por la cantidad especificada en SlidingRefreshTokenLifetime). La duración no excederá AbsoluteRefreshTokenLifetime.",
-			"refreshTokenUsage": "Actualizar el uso del token",
-			"refreshTokenUsage-tooltip": "ReUse el identificador de token de actualización permanecerá igual cuando se actualicen los tokens de OneTime, el identificador de token de actualización se actualizará al actualizar los tokens",
-			"requireClientSecret": "Requerir el secreto del cliente",
-			"requireClientSecret-tooltip": "Especifica si este cliente necesita un secreto para solicitar tokens desde el punto final del token (el valor predeterminado es verdadero)",
-			"requireConsent": "Requerir pantalla de consentimiento",
-			"requireConsent-tooltip": "Especifica si se requiere una pantalla de consentimiento. Por defecto es verdadero.",
-			"requirePkce": "Requerir Pkce",
-			"requirePkce-tooltip": "Especifica si los clientes que utilizan un tipo de concesión basado en un código de autorización deben enviar una clave de prueba",
-			"settings": "Ajustes",
-			"slidingRefreshTokenLifetime": "Vida útil del token de actualización deslizante",
-			"slidingRefreshTokenLifetime-tooltip": "Duración de deslizamiento de un token de actualización en segundos. El valor predeterminado es 1296000 segundos / 15 días",
-			"token": "Simbólico",
-			"updateAccessTokenClaimsOnRefresh": "Actualizar las notificaciones de tokens de acceso en la actualización",
-			"updateAccessTokenClaimsOnRefresh-tooltip": "Obtiene o establece un valor que indica si el token de acceso (y sus notificaciones) deben actualizarse en una solicitud de token de actualización",
-			"userCodeType": "",
-			"userCodeType-tooltip": ""
-		},
-		"property": {
-			"key": "Llave",
-			"key-tooltip": "Llave",
-			"value": "Valor",
-			"value-tooltip": "Valor"
-		},
-		"remove": {
-			"cancelButtonText": "No, cancela plx!",
-			"cancelled": "Tu cliente esta a salvo :)",
-			"confirmButtonText": "¡Sí, bórralo!",
-			"deleted": "El cliente ha sido eliminado.",
-			"text": "Tu no podrás recuperarte!",
-			"title": "Estás seguro"
-		}
-	},
-	"general": {
-		"add": "Añadir",
-		"api-resource": "Recursos protegidos",
-		"clients": "Clientela",
-		"copy": "Dupdo",
-		"details": "Detalles",
-		"edit": "Editar",
-		"empty": "Vacío",
-		"goback": "Regresa",
-		"identity-resource": "Recursos de identidad",
-		"loading": "¡Cargando por favor espere!",
-		"persisted-grants": "Becas Persistentes",
-		"remove": "retirar",
-		"revoke": "Revocar",
-		"roles": "Roles",
-		"users": "Usuarios"
-	},
-	"header": {
-		"search": {
-			"PLACEHOLDER": "Escriba y pulsa enter.."
-		}
-	},
-	"home": {
-		"CLIENTDESCRIPTION": "Gestiona tus clientes.",
-		"DESCRIPTION": "Este es el panel de administración de IdentityServer4. Aquí puedes gestionar tu configuración de IS4.",
-		"WELCOME": "Bienvenido"
-	},
-	"identityResource": {
-		"add": {
-			"description": "Descripción",
-			"description-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
-			"displayName": "Nombre para mostrar",
-			"displayName-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
-			"emphasize": "Enfatizar",
-			"emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. El valor predeterminado es falso.",
-			"enabled": "Habilitado",
-			"enabled-tooltip": "Indica si este recurso está habilitado y puede ser solicitado. Por defecto es verdadero.",
-			"name": "Nombre",
-			"name-tooltip": "El nombre único del recurso de identidad. Este es el valor que un cliente utilizará para el parámetro de alcance en la solicitud de autorización.",
-			"required": "Necesario",
-			"required-tooltip": "Especifica si el usuario puede anular la selección del alcance en la pantalla de consentimiento (si la pantalla de consentimiento desea implementar dicha función). El valor predeterminado es falso.",
-			"showInDiscoveryDocument": "Mostrar en el documento de descubrimiento",
-			"showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. Por defecto es verdadero.",
-			"userClaims": "Reclamaciones del usuario",
-			"userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de identidad."
-		},
-		"description": "Los recursos de identidad son datos como ID de usuario, nombre o dirección de correo electrónico de un usuario. Un recurso de identidad tiene un nombre único, y puede asignarle tipos de reclamos arbitrarios. Estas reclamaciones se incluirán en el token de identidad para el usuario.",
-		"edit": {
-			"description": "Descripción",
-			"description-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
-			"displayName": "Nombre para mostrar",
-			"displayName-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
-			"emphasize": "Enfatizar",
-			"emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. El valor predeterminado es falso.",
-			"enabled": "Habilitado",
-			"enabled-tooltip": "Indica si este recurso está habilitado y puede ser solicitado. Por defecto es verdadero.",
-			"name": "Nombre",
-			"name-tooltip": "El nombre único del recurso de identidad. Este es el valor que un cliente utilizará para el parámetro de alcance en la solicitud de autorización.",
-			"required": "Necesario",
-			"required-tooltip": "Especifica si el usuario puede anular la selección del alcance en la pantalla de consentimiento (si la pantalla de consentimiento desea implementar dicha función). El valor predeterminado es falso.",
-			"showInDiscoveryDocument": "Mostrar en el documento de descubrimiento",
-			"showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. Por defecto es verdadero.",
-			"userClaims": "Reclamaciones del usuario",
-			"userClaims-tooltip": "Lista de tipos de notificaciones de usuarios asociados que deben incluirse en el token de identidad."
-		},
-		"list": {
-			"description": "Descripción",
-			"name": "Nombre"
-		},
-		"newIr": "Nuevo recurso de identidad",
-		"remove": {
-			"cancelButtonText": "No, cancela plx!",
-			"cancelled": "Tu recurso es seguro :)",
-			"confirmButtonText": "¡Sí, bórralo!",
-			"deleted": "El recurso ha sido eliminado.",
-			"text": "Tu no podrás recuperarte!",
-			"title": "Estás seguro"
-		}
-	},
-	"offsidebar": {
-		"setting": {
-			"SETTINGS": "Ajustes"
-		}
-	},
-	"persistedGrant": {
-		"description": "Descripción",
-		"list": {
-			"clientId": "Cliente",
-			"creationTime": "Tiempo de creación",
-			"email": "Email",
-			"expiration": "Vencimiento",
-			"key": "Llave",
-			"picture": "Imagen",
-			"scopes": "Alcances",
-			"type": "Tipo"
-		},
-		"remove": {
-			"cancelButtonText": "No, cancela plx!",
-			"cancelled": "Grant está a salvo :)",
-			"confirmButtonText": "¡Sí, bórralo!",
-			"deleted": "La subvención ha sido eliminada.",
-			"text": "Tu no podrás recuperarte!",
-			"title": "Estás seguro"
-		}
-	},
-	"roles": {
-		"add": {
-			"roleName": "Nombre",
-			"roleName-tooltip": "Obtiene o establece el nombre del rol."
-		},
-		"description": "Representa un rol en el sistema de identidad.",
-		"edit": {
-			"roleName": "Nombre",
-			"roleName-tooltip": "Obtiene o establece el nombre del rol."
-		},
-		"list": {
-			"email": "Email",
-			"name": "Nombre",
-			"picture": "Imagen"
-		},
-		"name": "Nombre",
-		"new-role": "Nuevo rol",
-		"selectedRole": "Rol seleccionado"
-	},
-	"secrets": {
-		"description": "Descripción",
-		"description-tooltip": "Descripción del set",
-		"expiration": "Vencimiento",
-		"expiration-tooltip": "Establecer vencimiento",
-		"hashType": "Tipo hash",
-		"hashType-tooltip": "Establecer el hash de valor secreto",
-		"secretType": "Tipo secreto",
-		"secretType-tooltip": "El tipo de secreto del cliente.",
-		"secretValue": "Valor secreto",
-		"secretValue-tooltip": "Especifica el secreto del cliente."
-	},
-	"sidebar": {
-		"WELCOME": "Bienvenido",
-		"heading": {
-			"HEADER": "Título del menú"
-		},
-		"nav": {
-			"SINGLEVIEW": "Vista única"
-		}
-	},
-	"toasterMessages": {
-		"message-success": "¡Bien hecho!",
-		"title-success": "Éxito"
-	},
-	"users": {
-		"claims": {
-			"type": "Tipo",
-			"type-tooltip": "Tipo",
-			"value": "Valor",
-			"value-tooltip": "Valor"
-		},
-		"description": "Un usuario es una persona o robot que puede acceder a recursos y clientes.",
-		"edit": {
-			"accessFailedCount": "Cuenta de acceso fallido",
-			"accessFailedCount-tooltip": "Obtiene o establece el número de intentos de inicio de sesión fallidos para el usuario actual",
-			"change-password": "Cambia la contraseña",
-			"claims": "Reclamaciones",
-			"claims-tooltip": "Permite las reclamaciones de configuración para el usuario (se incluirán en el token de acceso)",
-			"confirmPassword": "Confirmar contraseña",
-			"confirmPassword-tooltip": "Confirmar contraseña",
-			"email": "Email",
-			"email-tooltip": "Obtiene o establece la dirección de correo electrónico de este usuario.",
-			"emailConfirmed": "Correo electrónico confirmado",
-			"emailConfirmed-tooltip": "Obtiene o establece una marca que indica si un usuario ha confirmado su dirección de correo electrónico",
-			"externalLogins": "Inicios de sesión externos",
-			"externalLogins-tooltip": "Administrar el inicio de sesión externo del usuario. por ejemplo, google, facebook",
-			"lockoutEnabled": "bloqueo habilitado",
-			"lockoutEnabled-tooltip": "Obtiene o establece una marca que indica si el usuario podría estar bloqueado",
-			"lockoutEnd": "Final de bloqueo",
-			"lockoutEnd-tooltip": "Obtiene o establece la fecha y la hora, en UTC, cuando finaliza el bloqueo de cualquier usuario.",
-			"name": "Nombre para mostrar",
-			"name-tooltip": "Obtiene o establece el nombre de usuario.",
-			"password": "Contraseña",
-			"password-tooltip": "Contraseña",
-			"phoneNumber": "Número de teléfono",
-			"phoneNumber-tooltip": "Obtiene o establece un número de teléfono para el usuario.",
-			"phoneNumberConfirmed": "Número de teléfono confirmado",
-			"phoneNumberConfirmed-tooltip": "Obtiene o establece una marca que indica si un usuario ha confirmado su dirección de teléfono",
-			"roles": "Roles",
-			"roles-tooltip": "Permite la configuración de roles para el usuario (se incluirá en el token de acceso)",
-			"twoFactorEnabled": "Dos factores habilitados",
-			"twoFactorEnabled-tooltip": "Obtiene o establece un indicador que indica si la autenticación de dos factores está habilitada para este usuario",
-			"user-data": "",
-			"userName": "Nombre de usuario",
-			"userName-tooltip": "Obtiene o establece el nombre de usuario para este usuario."
-		},
-		"list": {
-			"email": "Email",
-			"info": "",
-			"log-tooltip": "Mostrar registros",
-			"name": "Nombre",
-			"picture": "Imagen",
-			"username": "Username"
-		},
-		"logins": {
-			"loginProvider": "Proveedor",
-			"nologins": "No hay logins disponibles",
-			"providerDisplayName": "Nombre",
-			"providerKey": "Llave"
-		},
-		"new-user": "Nuevo usuario",
-		"remove": {
-			"cancelButtonText": "No, cancela plx!",
-			"cancelled": "El usuario está a salvo :)",
-			"confirmButtonText": "¡Sí, bórralo!",
-			"deleted": "El usuario ha sido eliminado.",
-			"text": "Tu no podrás recuperarte!",
-			"title": "Estás seguro"
-		},
-		"roles": {
-			"name": "Nombre",
-			"role": "Papel",
-			"role-tooltip": "Seleccionar rol de usuario"
-		}
-	}
+    "menu": {
+        "users": "Los usuarios",
+        "roles": "Roles",
+        "ssoSettings": "Configuraciones de SSO",
+        "configuration": "Configuración",
+        "email-templates": "Plantillas",
+        "settings": "Configuraciones"
+    },
+    "general": {
+        "add": "Añadir",
+        "api-resource": "Recursos protegidos",
+        "clients": "Clientela",
+        "copy": "Dupdo",
+        "details": "Detalles",
+        "edit": "Editar",
+        "empty": "Vacío",
+        "goback": "Regresa",
+        "identity-resource": "Recursos de identidad",
+        "loading": "¡Cargando por favor espere!",
+        "persisted-grants": "Becas persistentes",
+        "remove": "retirar",
+        "revoke": "Revocar",
+        "roles": "Roles",
+        "users": "Los usuarios",
+        "emails": "Email",
+        "list": "Lista",
+        "settings": "Configuración global de SSO"
+    },
+    "header": {
+        "search": {
+            "PLACEHOLDER": "Escriba y pulsa enter.."
+        }
+    },
+    "apiResource": {
+        "add": {
+            "description": "Descripción",
+            "description-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
+            "displayName": "Nombre para mostrar",
+            "displayName-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
+            "enabled": "Habilitado",
+            "enabled-tooltip": "Indica si este recurso está habilitado y se puede solicitar. El valor predeterminado es verdadero.",
+            "name": "Nombre",
+            "name-tooltip": "El nombre único de la API. Este valor se utiliza para la autenticación con introspección y se agregará a la audiencia del token de acceso saliente.",
+            "userClaims": "Reclamaciones de usuario",
+            "userClaims-tooltip": "Lista de tipos de reclamos de usuarios asociados que deben incluirse en el token de acceso."
+        },
+        "description": "Los recursos son algo que desea proteger con IdentityServer, ya sea API (al hacer esto, sus datos también estarán protegidos). Entonces, para acceder al contenido de su base de datos debe ser a través de una API.",
+        "edit": {
+            "description": "Descripción",
+            "description-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
+            "displayName": "Nombre para mostrar",
+            "displayName-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
+            "enabled": "Habilitado",
+            "enabled-tooltip": "Indica si este recurso está habilitado y se puede solicitar. El valor predeterminado es verdadero.",
+            "name": "Nombre",
+            "name-tooltip": "El nombre único de la API. Este valor se utiliza para la autenticación con introspección y se agregará a la audiencia del token de acceso saliente.",
+            "scope": "Ámbitos de API",
+            "scope-tooltip": "Una API debe tener al menos un ámbito. Cada ámbito puede tener diferentes configuraciones.",
+            "secrets": "Secretos de la API",
+            "secrets-tooltip": "El secreto API se utiliza para el punto final de introspección. La API puede autenticarse con introspección utilizando el nombre y el secreto de la API.",
+            "userClaims": "Reclamaciones de usuario",
+            "userClaims-tooltip": "Lista de tipos de reclamos de usuarios asociados que deben incluirse en el token de acceso."
+        },
+        "list": {
+            "description": "Descripción",
+            "name": "Nombre"
+        },
+        "new-api": "Nuevo recurso de API",
+        "remove": {
+            "cancelButtonText": "No, ¡cancela plx!",
+            "cancelled": "Tu recurso está seguro :)",
+            "confirmButtonText": "Sí, bórralo!",
+            "deleted": "El recurso ha sido eliminado.",
+            "text": "¡No podrás recuperarte!",
+            "title": "Estás seguro"
+        },
+        "scope": {
+            "Emphasize": "Enfatizar",
+            "Emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. Por defecto es falso.",
+            "description": "Descripción",
+            "description-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
+            "displayName": "Nombre para mostrar",
+            "displayName-tooltip": "Este valor se puede utilizar, por ejemplo, en la pantalla de consentimiento.",
+            "name": "Nombre",
+            "name-tooltip": "El nombre único de la API. Este valor se utiliza para la autenticación con introspección y se agregará a la audiencia del token de acceso saliente.",
+            "required": "Necesario",
+            "required-tooltip": "Especifica si el usuario puede deseleccionar el alcance en la pantalla de consentimiento. Por defecto es falso.",
+            "showInDiscoveryDocument": "Mostrar en documento de descubrimiento",
+            "showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. Por defecto es verdadero",
+            "userClaims": "Reclamaciones de usuario",
+            "userClaims-tooltip": "Lista de tipos de reclamos de usuarios asociados que deben incluirse en el token de acceso."
+        },
+        "secret-description": "El secreto API se utiliza para el punto final de introspección. La API puede autenticarse con introspección utilizando el nombre y el secreto de la API."
+    },
+    "client": {
+        "ClaimDescription": "Permite reclamos de configuración para el cliente (se incluirá en el token de acceso)",
+        "ClientDescription": "La clase Client representa un cliente OpenID Connect u OAuth 2.0, por ejemplo, una aplicación nativa, una aplicación web o una aplicación basada en JS",
+        "Image": "Imagen",
+        "PropertiesDescription": "Diccionario para guardar los valores personalizados específicos del cliente según sea necesario",
+        "SecretDescription": "En ciertas situaciones, los clientes necesitan autenticarse con el servidor de identidad, por ejemplo: <br> 1- aplicaciones confidenciales (también conocidas como clientes) que solicitan tokens en el punto final del token. <br> 2- API que validan tokens de referencia en el punto final de introspección",
+        "TableClientName": "nombre del cliente",
+        "claims": {
+            "type": "Tipo",
+            "type-tooltip": "Tipo",
+            "value": "Valor",
+            "value-tooltip": "Valor"
+        },
+        "clone": {
+            "cancelButtonText": "No, ¡cancela plx!",
+            "cancelled": ":)",
+            "cloned": "El cliente ha sido clonado.",
+            "confirmButtonText": "¡Sí, clónalo!",
+            "text": "¿Estás seguro?",
+            "title": "Clon"
+        },
+        "details": {
+            "absoluteRefreshTokenLifetime": "Token de actualización absoluta de por vida",
+            "absoluteRefreshTokenLifetime-tooltip": "Duración máxima de un token de actualización en segundos. El valor predeterminado es 2592000 segundos / 30 días.",
+            "accessTokenLifetime": "Token de acceso de por vida",
+            "accessTokenLifetime-tooltip": "Duración del token de acceso en segundos (el valor predeterminado es 3600 segundos / 1 hora)",
+            "accessTokenTypes": "Tipo de token de acceso",
+            "accessTokenTypes-tooltip": "Especifica si el token de acceso es un token de referencia o un token JWT autónomo (el valor predeterminado es Jwt)",
+            "allowAccessTokensViaBrowser": "Permitir token de acceso a través del navegador",
+            "allowAccessTokensViaBrowser-tooltip": "Especifica si este cliente puede recibir tokens de acceso a través del navegador. Esto es útil para fortalecer los flujos que permiten múltiples tipos de respuesta (por ejemplo, al no permitir un cliente de flujo híbrido que se supone que usa el código id_token para agregar el tipo de respuesta del token y, por lo tanto, filtrar el token al navegador.",
+            "allowOfflineAccess": "Permitir acceso sin conexión",
+            "allowOfflineAccess-tooltip": "Especifica si este cliente puede solicitar tokens de actualización (solicitando el alcance offline_access)",
+            "allowPlainTextPkce": "Permitir paquete de texto sin formato",
+            "allowPlainTextPkce-tooltip": "Especifica si los clientes que usan PKCE pueden usar un desafío de código de texto sin formato (no recomendado, y predeterminado a falso)",
+            "allowRememberConsent": "Recuerde consentimiento",
+            "allowRememberConsent-tooltip": "Especifica si el usuario puede elegir almacenar las decisiones de consentimiento. El valor predeterminado es verdadero.",
+            "allowedCorsOrigins": "Orígenes permitidos de Cors",
+            "allowedCorsOrigins-tooltip": "Si se especifica, será utilizado por las implementaciones de servicio de políticas CORS predeterminadas (en memoria y EF) para construir una política CORS para clientes JavaScript.",
+            "allowedGrantTypes": "Tipos de subvención permitidos",
+            "allowedGrantTypes-tooltip": "Especifica los tipos de concesión que el cliente puede usar. Use la clase GrantTypes para combinaciones comunes. Lista de concesiones predeterminadas: concesión implícita - (implícita), concesión de credenciales de cliente - (credenciales de cliente), concesión de código de autorización - (código_autorización), concesión híbrida - (híbrido), concesión de credenciales de contraseña del propietario del recurso - (contraseña)",
+            "allowedScopes": "Alcance permitido",
+            "allowedScopes-tooltip": "De forma predeterminada, un cliente no tiene acceso a ningún recurso: especifique los recursos permitidos agregando los nombres de ámbitos correspondientes",
+            "alwaysIncludeUserClaimsInIdToken": "Incluir siempre reclamos de usuarios en IdToken",
+            "alwaysIncludeUserClaimsInIdToken-tooltip": "Al solicitar tanto un token de identificación como un token de acceso, si el usuario reclama siempre se debe agregar al token de identificación en lugar de pedirle al cliente que use el punto final userinfo. El valor predeterminado es falso",
+            "alwaysSendClientClaims": "Enviar siempre reclamos de clientes",
+            "alwaysSendClientClaims-tooltip": "Si se establece, las reclamaciones del cliente se enviarán para cada flujo. Si no, solo para el flujo de credenciales del cliente (el valor predeterminado es falso)",
+            "auth": "Autenticación",
+            "authorizationCodeLifetime": "Código de autorización de por vida",
+            "authorizationCodeLifetime-tooltip": "Duración del código de autorización en segundos (el valor predeterminado es 300 segundos / 5 minutos)",
+            "backChannelLogoutSessionRequired": "Volver sesión de cierre de canal",
+            "backChannelLogoutSessionRequired-tooltip": "Especifica si el ID de sesión del usuario debe enviarse en la solicitud a BackChannelLogoutUri. Por defecto es verdadero",
+            "backChannelLogoutUri": "Atrás Canal Cerrar sesión Uri",
+            "backChannelLogoutUri-tooltip": "Especifica el URI de cierre de sesión en el cliente para el cierre de sesión de canal posterior basado en HTTP. Consulte las especificaciones de OIDC Back-Channel para obtener más detalles.",
+            "basic": "BASIC",
+            "claims": "Reclamaciones",
+            "claims-tooltip": "Permite reclamos de configuración para el cliente (se incluirá en el token de acceso)",
+            "clientClaimsPrefix": "Prefijo de reclamos del cliente",
+            "clientClaimsPrefix-tooltip": "Si se establece, los tipos de reclamo de cliente de prefijo tendrán el prefijo. El valor predeterminado es client_. La intención es asegurarse de que no choquen accidentalmente con las reclamaciones de los usuarios.",
+            "clientId": "Identificación del cliente",
+            "clientId-tooltip": "Identificación única del cliente",
+            "clientSecrets": "Secretos del cliente",
+            "clientSecrets-tooltip": "Lista de secretos del cliente: credenciales para acceder al punto final del token.",
+            "clientUri": "Cliente Uri",
+            "clientUri-tooltip": "URI para obtener más información sobre el cliente (utilizado en la pantalla de consentimiento)",
+            "description": "Descripción",
+            "description-tooltip": "Descripción del cliente.",
+            "deviceCodeLifetime": "Código de dispositivo de por vida",
+            "deviceCodeLifetime-tooltip": "Vida útil del código del dispositivo en segundos (el valor predeterminado es 300 segundos / 5 minutos)",
+            "deviceFlow": "Flujo del dispositivo",
+            "enabled": "Habilitado",
+            "enabled-tooltip": "Especifica si el cliente está habilitado. El valor predeterminado es verdadero.",
+            "frontChannelLogoutSessionRequired": "Sesión de cierre de sesión del canal frontal",
+            "frontChannelLogoutSessionRequired-tooltip": "Especifica si el ID de sesión del usuario debe enviarse a FrontChannelLogoutUri. Por defecto es verdadero",
+            "frontChannelLogoutUri": "Front Channel Logout Uri",
+            "frontChannelLogoutUri-tooltip": "Especifica el URI de cierre de sesión en el cliente para el cierre de sesión de canal frontal basado en HTTP. Consulte las especificaciones del canal frontal de OIDC para obtener más detalles.",
+            "identityProviderRestrictions": "Restricciones del proveedor de identidad",
+            "identityProviderRestrictions-tooltip": "Especifica qué IdP externos se pueden usar con este cliente (si la lista está vacía, se permiten todos los IdP). Por defecto está vacío.",
+            "identityTokenLifetime": "Token de identidad de por vida",
+            "identityTokenLifetime-tooltip": "Duración del token de identidad en segundos (el valor predeterminado es 300 segundos / 5 minutos)",
+            "includeJwtId": "Incluir ID de Jwt",
+            "includeJwtId-tooltip": "Especifica si los tokens de acceso JWT deben tener una ID única incrustada (a través del reclamo jti).",
+            "logoUri": "Logo Uri (Https)",
+            "logoUri-tooltip": "Logotipo de URI al cliente (utilizado en la pantalla de consentimiento). Debe ser Https",
+            "name": "Nombre",
+            "name-tooltip": "Nombre para mostrar del cliente (utilizado para el registro y la pantalla de consentimiento)",
+            "pairWiseSubjectSalt": "Par de sujeto sabio sal",
+            "pairWiseSubjectSalt-tooltip": "Valor de sal utilizado en la generación de ID de sujeto por pares para los usuarios de este cliente.",
+            "properties": "Propiedades",
+            "properties-tooltip": "Diccionario para mantener los valores personalizados específicos del cliente según sea necesario.",
+            "protocolType": "Tipo de protocolo",
+            "protocolType-tooltip": "El valor predeterminado es el protocolo OpenID Connect",
+            "redirectUris": "Redirigir Uri&#39;s",
+            "redirectUris-tooltip": "Especifica los URI permitidos para devolver tokens o códigos de autorización a",
+            "refreshTokenExpiration": "Refresh Token Expiration",
+            "refreshTokenExpiration-tooltip": "Absoluto, el token de actualización caducará en un punto fijo en el tiempo (especificado por AbsoluteRefreshTokenLifetime) Deslizamiento al actualizar el token, la vida útil del token de actualización se renovará (por la cantidad especificada en SlidingRefreshTokenLifetime). La vida útil no excederá AbsoluteRefreshTokenLifetime.",
+            "refreshTokenUsage": "Actualizar el uso del token",
+            "refreshTokenUsage-tooltip": "Reutilice el identificador de token de actualización permanecerá igual al actualizar tokens OneTime el identificador de token de actualización se actualizará al actualizar tokens",
+            "requireClientSecret": "Requerir secreto del cliente",
+            "requireClientSecret-tooltip": "Especifica si este cliente necesita un secreto para solicitar tokens desde el punto final del token (el valor predeterminado es verdadero)",
+            "requireConsent": "Requerir pantalla de consentimiento",
+            "requireConsent-tooltip": "Especifica si se requiere una pantalla de consentimiento. El valor predeterminado es verdadero.",
+            "requirePkce": "Requerir paquete",
+            "requirePkce-tooltip": "Especifica si los clientes que usan un tipo de concesión basado en un código de autorización deben enviar una clave de prueba",
+            "settings": "Configuraciones",
+            "slidingRefreshTokenLifetime": "Token de actualización deslizante de por vida",
+            "slidingRefreshTokenLifetime-tooltip": "Vida útil deslizante de un token de actualización en segundos. El valor predeterminado es 1296000 segundos / 15 días.",
+            "token": "Simbólico",
+            "updateAccessTokenClaimsOnRefresh": "Actualizar reclamos de tokens de acceso al actualizar",
+            "updateAccessTokenClaimsOnRefresh-tooltip": "Obtiene o establece un valor que indica si el token de acceso (y sus notificaciones) deben actualizarse en una solicitud de token de actualización",
+            "userCodeType": "Tipo de código de usuario",
+            "userCodeType-tooltip": "Especifica el tipo de código de usuario que se usará para el cliente. De lo contrario, vuelve al valor predeterminado",
+            "postLogoutRedirectUris": "URL de cierre de sesión",
+            "postLogoutRedirectUris-tooltip": "Especifica los URI permitidos para redirigir después de cerrar sesión",
+            "enableLocalLogin": "Habilitar inicio de sesión local",
+            "enableLocalLogin-tooltip": "Especifica si este cliente puede usar cuentas locales o solo proveedores externos. Por ejemplo: Facebook, Google. Por defecto es verdadero",
+            "userSsoLifetime": "Usuario Sso Lifetime",
+            "userSsoLifetime-tooltip": "La duración máxima (en segundos) desde la última vez que el usuario se autenticó. El valor predeterminado es nulo. Puede ajustar la vida útil de un token de sesión para controlar cuándo y con qué frecuencia se requiere que un usuario vuelva a ingresar sus credenciales en lugar de autenticarse silenciosamente, cuando usa una aplicación web"
+        },
+        "property": {
+            "key": "Llave",
+            "key-tooltip": "Llave",
+            "value": "Valor",
+            "value-tooltip": "Valor"
+        },
+        "remove": {
+            "cancelButtonText": "No, ¡cancela plx!",
+            "cancelled": "Tu cliente está seguro :)",
+            "confirmButtonText": "Sí, bórralo!",
+            "deleted": "El cliente ha sido eliminado.",
+            "text": "¡No podrás recuperarte!",
+            "title": "Estás seguro"
+        }
+    },
+    "home": {
+        "CLIENTDESCRIPTION": "Administra a tus clientes.",
+        "DESCRIPTION": "Este es el Panel de administración de IdentityServer4. Aquí puede administrar su configuración IS4.",
+        "WELCOME": "Bienvenido"
+    },
+    "identityResource": {
+        "add": {
+            "description": "Descripción",
+            "description-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
+            "displayName": "Nombre para mostrar",
+            "displayName-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
+            "emphasize": "Enfatizar",
+            "emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. Por defecto es falso.",
+            "enabled": "Habilitado",
+            "enabled-tooltip": "Indica si este recurso está habilitado y se puede solicitar. El valor predeterminado es verdadero.",
+            "name": "Nombre",
+            "name-tooltip": "El nombre único del recurso de identidad. Este es el valor que usará un cliente para el parámetro de alcance en la solicitud de autorización.",
+            "required": "Necesario",
+            "required-tooltip": "Especifica si el usuario puede deseleccionar el alcance en la pantalla de consentimiento (si la pantalla de consentimiento desea implementar dicha función). Por defecto es falso.",
+            "showInDiscoveryDocument": "Mostrar en documento de descubrimiento",
+            "showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. El valor predeterminado es verdadero.",
+            "userClaims": "Reclamaciones de usuario",
+            "userClaims-tooltip": "Lista de tipos de reclamos de usuarios asociados que deben incluirse en el token de identidad."
+        },
+        "description": "Los recursos de identidad son datos como ID de usuario, nombre o dirección de correo electrónico de un usuario. Un recurso de identidad tiene un nombre único y puede asignarle tipos de reclamos arbitrarios. Estas reclamaciones se incluirán en el token de identidad para el usuario.",
+        "edit": {
+            "description": "Descripción",
+            "description-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
+            "displayName": "Nombre para mostrar",
+            "displayName-tooltip": "Este valor se utilizará, por ejemplo, en la pantalla de consentimiento.",
+            "emphasize": "Enfatizar",
+            "emphasize-tooltip": "Especifica si la pantalla de consentimiento enfatizará este alcance (si la pantalla de consentimiento desea implementar dicha función). Utilice esta configuración para ámbitos sensibles o importantes. Por defecto es falso.",
+            "enabled": "Habilitado",
+            "enabled-tooltip": "Indica si este recurso está habilitado y se puede solicitar. El valor predeterminado es verdadero.",
+            "name": "Nombre",
+            "name-tooltip": "El nombre único del recurso de identidad. Este es el valor que usará un cliente para el parámetro de alcance en la solicitud de autorización.",
+            "required": "Necesario",
+            "required-tooltip": "Especifica si el usuario puede deseleccionar el alcance en la pantalla de consentimiento (si la pantalla de consentimiento desea implementar dicha función). Por defecto es falso.",
+            "showInDiscoveryDocument": "Mostrar en documento de descubrimiento",
+            "showInDiscoveryDocument-tooltip": "Especifica si este alcance se muestra en el documento de descubrimiento. El valor predeterminado es verdadero.",
+            "userClaims": "Reclamaciones de usuario",
+            "userClaims-tooltip": "Lista de tipos de reclamos de usuarios asociados que deben incluirse en el token de identidad."
+        },
+        "list": {
+            "description": "Descripción",
+            "name": "Nombre"
+        },
+        "newIr": "Nuevo recurso de identidad",
+        "remove": {
+            "cancelButtonText": "No, ¡cancela plx!",
+            "cancelled": "Tu recurso está seguro :)",
+            "confirmButtonText": "Sí, bórralo!",
+            "deleted": "El recurso ha sido eliminado.",
+            "text": "¡No podrás recuperarte!",
+            "title": "Estás seguro"
+        }
+    },
+    "offsidebar": {
+        "setting": {
+            "SETTINGS": "Configuraciones"
+        }
+    },
+    "persistedGrant": {
+        "description": "descripción",
+        "list": {
+            "clientId": "Cliente",
+            "creationTime": "Tiempo de creación",
+            "email": "Email",
+            "expiration": "Vencimiento",
+            "key": "Llave",
+            "picture": "Imagen",
+            "scopes": "Alcances",
+            "type": "Tipo"
+        },
+        "remove": {
+            "cancelButtonText": "No, ¡cancela plx!",
+            "cancelled": "Grant está a salvo :)",
+            "confirmButtonText": "Sí, bórralo!",
+            "deleted": "La subvención ha sido eliminada.",
+            "text": "¡No podrás recuperarte!",
+            "title": "Estás seguro"
+        }
+    },
+    "roles": {
+        "add": {
+            "roleName": "Nombre",
+            "roleName-tooltip": "Obtiene o establece el nombre del rol."
+        },
+        "description": "Representa un rol en el sistema de identidad.",
+        "edit": {
+            "roleName": "Nombre",
+            "roleName-tooltip": "Obtiene o establece el nombre del rol."
+        },
+        "list": {
+            "email": "Email",
+            "name": "Nombre",
+            "picture": "Imagen"
+        },
+        "name": "Nombre",
+        "new-role": "Nuevo rol",
+        "selectedRole": "Rol Seleccionado"
+    },
+    "secrets": {
+        "description": "Descripción",
+        "description-tooltip": "Establecer descripción",
+        "expiration": "Vencimiento",
+        "expiration-tooltip": "Establecer vencimiento",
+        "hashType": "Tipo de hash",
+        "hashType-tooltip": "Establecer el hash de valor secreto",
+        "secretType": "Tipo secreto",
+        "secretType-tooltip": "El tipo de secreto del cliente.",
+        "secretValue": "Valor secreto",
+        "secretValue-tooltip": "Especifica el secreto del cliente."
+    },
+    "sidebar": {
+        "WELCOME": "Bienvenido",
+        "heading": {
+            "HEADER": "Título del menú"
+        },
+        "nav": {
+            "SINGLEVIEW": "Vista única"
+        }
+    },
+    "toasterMessages": {
+        "message-success": "¡Bien hecho!",
+        "title-success": "Éxito"
+    },
+    "users": {
+        "claims": {
+            "type": "Tipo",
+            "type-tooltip": "Tipo",
+            "value": "Valor",
+            "value-tooltip": "Valor"
+        },
+        "description": "Un usuario es una persona o robot que puede acceder a recursos y clientes.",
+        "edit": {
+            "accessFailedCount": "Cuenta fallida de acceso",
+            "accessFailedCount-tooltip": "Obtiene o establece el número de intentos fallidos de inicio de sesión para el usuario actual",
+            "change-password": "Cambia la contraseña",
+            "claims": "Reclamaciones",
+            "claims-tooltip": "Permite reclamos de configuración para el usuario (se incluirá en el token de acceso)",
+            "confirmPassword": "Confirmar contraseña",
+            "confirmPassword-tooltip": "Confirmar contraseña",
+            "email": "Email",
+            "email-tooltip": "Obtiene o establece la dirección de correo electrónico de este usuario",
+            "emailConfirmed": "Correo electrónico confirmado",
+            "emailConfirmed-tooltip": "Obtiene o establece una marca que indica si un usuario ha confirmado su dirección de correo electrónico",
+            "externalLogins": "Inicios de sesión externos",
+            "externalLogins-tooltip": "Administrar el inicio de sesión externo del usuario. por ejemplo, Google, Facebook",
+            "lockoutEnabled": "bloqueo habilitado",
+            "lockoutEnabled-tooltip": "Obtiene o establece un indicador que indica si el usuario podría ser bloqueado",
+            "lockoutEnd": "Fin de bloqueo",
+            "lockoutEnd-tooltip": "Obtiene o establece la fecha y la hora, en UTC, cuando finaliza el bloqueo de cualquier usuario",
+            "name": "Nombre para mostrar",
+            "name-tooltip": "Obtiene o establece el nombre de usuario",
+            "password": "Contraseña",
+            "password-tooltip": "Contraseña",
+            "phoneNumber": "Número de teléfono",
+            "phoneNumber-tooltip": "Obtiene o establece un número de teléfono para el usuario",
+            "phoneNumberConfirmed": "Número de teléfono confirmado",
+            "phoneNumberConfirmed-tooltip": "Obtiene o establece una marca que indica si un usuario ha confirmado su dirección telefónica",
+            "roles": "Roles",
+            "roles-tooltip": "Permite la configuración de roles para el usuario (se incluirá en el token de acceso)",
+            "twoFactorEnabled": "TwoFactor habilitado",
+            "twoFactorEnabled-tooltip": "Obtiene o establece un indicador que indica si la autenticación de dos factores está habilitada para este usuario",
+            "user-data": "Datos del usuario",
+            "userName": "Nombre de usuario",
+            "userName-tooltip": "Obtiene o establece el nombre de usuario para este usuario."
+        },
+        "list": {
+            "email": "Email",
+            "info": "Informacion del usuario",
+            "log-tooltip": "Mostrar eventos",
+            "name": "Nombre",
+            "picture": "Imagen",
+            "username": "Nombre de usuario"
+        },
+        "logins": {
+            "loginProvider": "Proveedor",
+            "nologins": "No hay inicios de sesión disponibles",
+            "providerDisplayName": "Nombre",
+            "providerKey": "Llave"
+        },
+        "new-user": "Nuevo usuario",
+        "remove": {
+            "cancelButtonText": "No, ¡cancela plx!",
+            "cancelled": "El usuario está a salvo :)",
+            "confirmButtonText": "Sí, bórralo!",
+            "deleted": "El usuario ha sido eliminado.",
+            "text": "¡No podrás recuperarte!",
+            "title": "Estás seguro"
+        },
+        "roles": {
+            "name": "Nombre",
+            "role": "Papel",
+            "role-tooltip": "Seleccionar rol de usuario"
+        }
+    },
+    "emails": {
+        "description": "Plantillas de correo electrónico para SSO.",
+        "edit": {
+            "type": "Tipo de correo electrónico",
+            "type-tooltip": "Tipo de comunicación con el usuario.",
+            "subject": "Tema",
+            "subject-tooltip": "Asunto del email",
+            "bcc": "Bcc",
+            "bcc-tooltip": "Blind Carbon Copy - Blind copy alguien",
+            "senderName": "Nombre del remitente",
+            "senderName-tooltip": "El nombre de quién enviará el correo electrónico.",
+            "senderAddress": "Dirección del remitente",
+            "senderAddress-tooltip": "Dirección de quien enviará el correo electrónico",
+            "editor": "Editor",
+            "code": "Editor de código HTML",
+            "variables": "Variables",
+            "variables-description": "Una lista de variables que serán reemplazadas antes de enviarlas al Usuario.",
+            "variables-name": "El nombre del usuario.",
+            "variables-picture": "URL de la foto de perfil del usuario",
+            "variables-username": "Nombre de usuario elegido por el usuario",
+            "variables-code": "Código generado para el usuario para él confirmar correo electrónico",
+            "variables-provider": "Cuando el usuario está utilizando el inicio de sesión de la Federación. Será el nombre del proveedor (EG: Google | Facebook)",
+            "variables-phoneNumber": "Número de teléfono proporcionado",
+            "variables-email": "Correo electrónico del usuario",
+            "variables-url": "URL única que se genera para que el usuario confirme el correo electrónico"
+        }
+    },
+    "settings": {
+        "description": "Configuración global para administrar su configuración de SSO",
+        "emails": {
+            "description": "Configuración de SMTP para servicios de correo electrónico.",
+            "server": "Servidor",
+            "server-tooltip": "Dirección del servidor uri",
+            "password": "Contraseña",
+            "password-tooltip": "Contraseña SMTP",
+            "username": "Nombre de usuario",
+            "username-tooltip": "Nombre de usuario SMTP",
+            "port": "Puerto",
+            "port-tooltip": "Puerto SMTP",
+            "useSsl": "SSL",
+            "useSsl-tooltip": "Use ssl",
+            "sendEmail": "Enviar correo electrónico",
+            "sendEmail-tooltip": "SSO debe enviar un correo electrónico?"
+        }
+    }
 }

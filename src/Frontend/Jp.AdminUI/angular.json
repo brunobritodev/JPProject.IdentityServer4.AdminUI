@@ -28,7 +28,7 @@
                         "polyfills": "src/polyfills.ts",
                         "assets": [
                             "src/assets",
-                            "src/silent-refresh.html",
+                            "src/silent-refresh.html"
                         ],
                         "styles": [
                             "src/app/core/preloader/preloader.scss",
