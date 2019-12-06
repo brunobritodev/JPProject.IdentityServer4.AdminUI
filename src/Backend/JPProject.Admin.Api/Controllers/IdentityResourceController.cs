@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JPProject.Admin.Api.Controllers
 {
-    [Route("identity-resources"), Authorize(Policy = "ReadOnly")]
+    [Route("identity-resources"), Authorize(Policy = "Default")]
     public class IdentityResourceController : ApiController
     {
         private readonly IIdentityResourceAppService _identityResourceAppService;
@@ -39,7 +39,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(irs);
         }
 
-        [HttpPost(""), Authorize(Policy = "Admin")]
+        [HttpPost("")]
         public async Task<ActionResult<IdentityResource>> Save([FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
@@ -52,7 +52,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePost(nameof(Details), new { resource = model.Name }, idr);
         }
 
-        [HttpPut("{resource}"), Authorize(Policy = "Admin")]
+        [HttpPut("{resource}")]
         public async Task<ActionResult> Update(string resource, [FromBody] IdentityResource model)
         {
             if (!ModelState.IsValid)
@@ -65,7 +65,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpPatch("{resource}"), Authorize(Policy = "Admin")]
+        [HttpPatch("{resource}")]
         public async Task<ActionResult> PartialUpdate(string resource, [FromBody] JsonPatchDocument<IdentityResource> model)
         {
             if (!ModelState.IsValid)
@@ -86,7 +86,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpDelete("{resource}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{resource}")]
         public async Task<ActionResult<bool>> Remove(string resource)
         {
             var model = new RemoveIdentityResourceViewModel(resource);

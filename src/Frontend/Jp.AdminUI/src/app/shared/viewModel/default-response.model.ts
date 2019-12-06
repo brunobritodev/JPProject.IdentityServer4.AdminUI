@@ -4,7 +4,7 @@ export class ProblemDetails {
 
     public static GetErrors(err: any): Array<KeyValuePair> {
         try {
-            if (err.status === 403) {
+            if (err.status === 403 || err.status === 404) {
                 return [new KeyValuePair("403", "Unauthorized Access")];
             }
 

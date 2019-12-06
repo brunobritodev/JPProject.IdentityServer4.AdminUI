@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JPProject.Admin.Api.Controllers
 {
-    [Route("api-resources"), Authorize(Policy = "ReadOnly")]
+    [Route("api-resources"), Authorize(Policy = "Default")]
     public class ApiResourcesController : ApiController
     {
         private readonly IApiResourceAppService _apiResourceAppService;
@@ -40,7 +40,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(irs);
         }
 
-        [HttpPost(""), Authorize(Policy = "Admin")]
+        [HttpPost("")]
         public async Task<ActionResult<ApiResource>> Save([FromBody] ApiResource model)
         {
             if (!ModelState.IsValid)
@@ -54,7 +54,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePost(nameof(Details), new { resource = model.Name }, apires);
         }
 
-        [HttpPut("{resource}"), Authorize(Policy = "Admin")]
+        [HttpPut("{resource}")]
         public async Task<ActionResult<bool>> Update(string resource, [FromBody] ApiResource model)
         {
             if (!ModelState.IsValid)
@@ -67,7 +67,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpPatch("{resource}"), Authorize(Policy = "Admin")]
+        [HttpPatch("{resource}")]
         public async Task<ActionResult<bool>> PartialUpdate(string resource, [FromBody] JsonPatchDocument<ApiResource> model)
         {
             if (!ModelState.IsValid)
@@ -87,7 +87,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpDelete("{resource}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{resource}")]
         public async Task<ActionResult<bool>> Remove(string resource)
         {
             var model = new RemoveApiResourceViewModel(resource);
@@ -102,7 +102,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{resource}/secrets/{secretId:int}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{resource}/secrets/{secretId:int}")]
         public async Task<ActionResult<bool>> RemoveSecret(string resource, int secretId)
         {
             var model = new RemoveApiSecretViewModel(resource, secretId);
@@ -111,7 +111,7 @@ namespace JPProject.Admin.Api.Controllers
         }
 
 
-        [HttpPost("{resource}/secrets"), Authorize(Policy = "Admin")]
+        [HttpPost("{resource}/secrets")]
         public async Task<ActionResult<IEnumerable<SecretViewModel>>> SaveSecret(string resource, [FromBody] SaveApiSecretViewModel model)
         {
             if (!ModelState.IsValid)
@@ -133,7 +133,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{resource}/scopes/{scopeId:int}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{resource}/scopes/{scopeId:int}")]
         public async Task<ActionResult> RemoveScope(string resource, int scopeId)
         {
             var model = new RemoveApiScopeViewModel(resource, scopeId);
@@ -142,7 +142,7 @@ namespace JPProject.Admin.Api.Controllers
         }
 
 
-        [HttpPost("{resource}/scopes"), Authorize(Policy = "Admin")]
+        [HttpPost("{resource}/scopes")]
         public async Task<ActionResult<IEnumerable<ScopeViewModel>>> SaveScope(string resource, [FromBody] SaveApiScopeViewModel model)
         {
             if (!ModelState.IsValid)
