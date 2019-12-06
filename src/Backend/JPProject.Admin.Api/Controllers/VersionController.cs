@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JPProject.Admin.Api.Controllers
 {
-    [Route("version"), Authorize(Policy = "ReadOnly"), ApiController]
+    [Route("version"), Authorize(Policy = "Default"), ApiController]
     public class VersionController
     {
         [HttpGet]

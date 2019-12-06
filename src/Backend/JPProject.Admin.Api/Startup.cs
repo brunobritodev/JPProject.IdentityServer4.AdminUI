@@ -1,5 +1,6 @@
 ﻿using Hellang.Middleware.ProblemDetails;
 using JPProject.Admin.Api.Configuration;
+using JPProject.Admin.Api.Configuration.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

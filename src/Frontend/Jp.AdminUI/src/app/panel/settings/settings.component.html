@@ -4,6 +4,13 @@
         <small><b> {{ 'settings.description' | translate }}</b></small>
     </div>
 </div>
+
+<div *ngIf="errors.length > 0">
+    <alert type="danger">
+        <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
+    </alert>
+</div>
+
 <div class="container-lg">
     <div class="row">
         <div class="col-lg-3">
@@ -16,7 +23,7 @@
         </div>
         <div class="col-lg-9">
             <div *ngIf="settingSection == 1">
-                <app-email-settings *ngIf="settings.length" [model]="settings"></app-email-settings>
+                <app-email-settings *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-email-settings>
             </div>
         </div>
     </div>

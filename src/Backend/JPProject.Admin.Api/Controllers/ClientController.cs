@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JPProject.Admin.Api.Controllers
 {
-    [Route("clients"), Authorize(Policy = "ReadOnly")]
+    [Route("clients"), Authorize(Policy = "Default")]
     public class ClientsController : ApiController
     {
         private readonly IClientAppService _clientAppService;
@@ -44,7 +44,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpPost(""), Authorize(Policy = "Admin")]
+        [HttpPost("")]
         public async Task<ActionResult<Client>> Post([FromBody] SaveClientViewModel client)
         {
             if (!ModelState.IsValid)
@@ -60,7 +60,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePost(nameof(GetClient), new { client = client.ClientId }, newClient);
         }
 
-        [HttpPut("{client}"), Authorize(Policy = "Admin")]
+        [HttpPut("{client}")]
         public async Task<ActionResult<ClientViewModel>> Update(string client, [FromBody] Client model)
         {
             if (!ModelState.IsValid)
@@ -75,7 +75,7 @@ namespace JPProject.Admin.Api.Controllers
         }
 
 
-        [HttpPatch("{client}"), Authorize(Policy = "Admin")]
+        [HttpPatch("{client}")]
         public async Task<ActionResult<ClientViewModel>> PartialUpdate(string client, [FromBody] JsonPatchDocument<Client> model)
         {
             if (!ModelState.IsValid)
@@ -96,7 +96,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponsePutPatch();
         }
 
-        [HttpDelete("{client}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{client}")]
         public async Task<ActionResult> Delete(string client)
         {
             var command = new RemoveClientViewModel(client);
@@ -105,7 +105,7 @@ namespace JPProject.Admin.Api.Controllers
         }
 
 
-        [HttpPost("{client}/copy"), Authorize(Policy = "Admin")]
+        [HttpPost("{client}/copy")]
         public async Task<ActionResult<Client>> Copy(string client)
         {
             var clientDb = new CopyClientViewModel(client);
@@ -121,7 +121,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{client}/secrets/{secretId:int}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{client}/secrets/{secretId:int}")]
         public async Task<ActionResult> RemoveSecret(string client, int secretId)
         {
             var model = new RemoveClientSecretViewModel(client, secretId);
@@ -129,7 +129,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseDelete();
         }
 
-        [HttpPost("{client}/secrets"), Authorize(Policy = "Admin")]
+        [HttpPost("{client}/secrets")]
         public async Task<ActionResult<IEnumerable<SecretViewModel>>> SaveSecret(string client, [FromBody] SaveClientSecretViewModel model)
         {
             if (!ModelState.IsValid)
@@ -149,7 +149,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{client}/properties/{propertyId:int}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{client}/properties/{propertyId:int}")]
         public async Task<ActionResult> RemoveProperty(string client, int propertyId)
         {
             var model = new RemovePropertyViewModel(propertyId, client);
@@ -158,7 +158,7 @@ namespace JPProject.Admin.Api.Controllers
         }
 
 
-        [HttpPost("{client}/properties"), Authorize(Policy = "Admin")]
+        [HttpPost("{client}/properties")]
         public async Task<ActionResult<IEnumerable<ClientPropertyViewModel>>> SaveProperty(string client, [FromBody] SaveClientPropertyViewModel model)
         {
             if (!ModelState.IsValid)
@@ -178,7 +178,7 @@ namespace JPProject.Admin.Api.Controllers
             return ResponseGet(clients);
         }
 
-        [HttpDelete("{client}/claims/{claimId:int}"), Authorize(Policy = "Admin")]
+        [HttpDelete("{client}/claims/{claimId:int}")]
         public async Task<ActionResult> RemoveClaim(string client, int claimId)
         {
             var model = new RemoveClientClaimViewModel(client, claimId);
@@ -187,7 +187,7 @@ namespace JPProject.Admin.Api.Controllers
         }
 
 
-        [HttpPost("{client}/claims"), Authorize(Policy = "Admin")]
+        [HttpPost("{client}/claims")]
         public async Task<ActionResult<IEnumerable<ClaimViewModel>>> SaveClaim(string client, [FromBody] SaveClientClaimViewModel model)
         {
             if (!ModelState.IsValid)

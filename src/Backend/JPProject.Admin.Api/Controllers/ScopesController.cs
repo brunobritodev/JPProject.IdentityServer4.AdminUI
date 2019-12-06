@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JPProject.Admin.Api.Controllers
 {
-    [Route("[controller]"), Authorize(Policy = "ReadOnly")]
+    [Route("[controller]"), Authorize(Policy = "Default")]
     public class ScopesController : ApiController
     {
         private readonly IScopesAppService _scopesAppService;

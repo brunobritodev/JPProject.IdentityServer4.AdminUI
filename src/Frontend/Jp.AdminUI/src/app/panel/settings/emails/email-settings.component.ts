@@ -23,8 +23,10 @@ export class EmailSettingsComponent implements OnInit {
 
     showButtonLoading: boolean;
 
-    public errors: Array<string>;
     public settings: SMTP;
+
+    @Input()
+    public errors: Array<string>;
 
     @Input()
     public model: Array<GlobalSettings>;
@@ -37,7 +39,7 @@ export class EmailSettingsComponent implements OnInit {
         private settingsServices: GlobalSettingsService) { }
 
     ngOnInit() {
-        this.errors = [];
+        
         this.settings = new SMTP();
         this.settings.username = this.model.find(f => f.key == "Smtp:Username");
         this.settings.password = this.model.find(f => f.key == "Smtp:Password");
@@ -52,6 +54,7 @@ export class EmailSettingsComponent implements OnInit {
 
     
     public updateSettings() {
+        this.errors.splice(0,this.errors.length);
         var configurations = new Array<GlobalSettings>();
         configurations.push(this.settings.username);
         configurations.push(this.settings.password);
@@ -68,7 +71,7 @@ export class EmailSettingsComponent implements OnInit {
                 this.showButtonLoading = false;
             },
             err => {
-                this.errors = ProblemDetails.GetErrors(err).map(a => a.value);
+                ProblemDetails.GetErrors(err).map(a => a.value).forEach(i => this.errors.push(i));
                 this.showButtonLoading = false;
             }
         );
