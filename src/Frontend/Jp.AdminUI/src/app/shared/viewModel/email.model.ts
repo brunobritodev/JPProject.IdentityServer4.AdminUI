@@ -1,5 +1,15 @@
+
+export class Bcc {
+  recipients: string[];
+}
+
+export class Sender {
+  address: string;
+  name:    string;
+}
+
 export class Email {
-    public constructor(){
+    public constructor() {
         this.bcc = new Bcc();
         this.sender = new Sender();
         this.content = "";
@@ -9,13 +19,4 @@ export class Email {
     subject: string;
     bcc:     Bcc;
     sender:  Sender;
-}
-
-export class Bcc {
-    recipients: string[];
-}
-
-export class Sender {
-    address: string;
-    name:    string;
 }

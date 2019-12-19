@@ -5,7 +5,7 @@ import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { Scope } from '@shared/viewModel/scope.model';
 import { StandardClaims } from '@shared/viewModel/standard-claims.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
-import { Observable } from 'rxjs';
+import { throwError } from 'rxjs';
 import { flatMap, map, tap } from 'rxjs/operators';
 
 import { ApiResourceService } from '../api-resource.service';
@@ -50,7 +50,7 @@ export class ApiResourceScopesComponent implements OnInit {
             .pipe(map(p => p["resource"]))
             .pipe(flatMap(m => this.apiResourceService.getScopes(m.toString())))
             .subscribe(result => this.apiScopes = result);
-            
+
         this.errors = [];
         this.model = new Scope();
         this.showButtonLoading = false;
@@ -104,7 +104,7 @@ export class ApiResourceScopesComponent implements OnInit {
             this.errors = [];
             this.errors.push("Unknown error while trying to save");
             this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to save");
+            return throwError("Unknown error while trying to save");
         }
     }
 
