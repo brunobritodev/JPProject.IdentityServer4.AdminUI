@@ -144,6 +144,7 @@ Api resource configuration
   - [Give a Star! ⭐](#give-a-star-%e2%ad%90)
   - [How to build](#how-to-build)
 - [Docs](#docs)
+  - [Contributors](#contributors)
   - [Contributing](#contributing)
   - [Free](#free)
   - [3.0.2](#302)
@@ -244,6 +245,12 @@ Any doubts? Go to docs
 # Docs #
 
 Wanna start? please [Read the docs](https://jp-project.readthedocs.io/en/latest/index.html)
+
+## Contributors
+
+Thank you all!
+
+[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/0)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/0)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/1)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/1)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/2)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/2)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/3)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/3)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/4)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/4)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/5)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/5)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/6)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/6)[![](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/images/7)](https://sourcerer.io/fame/brunohbrito/brunohbrito/JPProject.IdentityServer4.AdminUI/links/7)
 
 ## Contributing
 
