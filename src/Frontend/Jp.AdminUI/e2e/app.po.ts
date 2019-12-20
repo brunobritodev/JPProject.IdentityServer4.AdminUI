@@ -2,14 +2,14 @@ import { browser, by, element } from "protractor";
 
 export class JpProjectWebAppPage {
     navigateTo() {
-        return browser.get("/");
+        return browser.get("http://localhost:4200/");
     }
 
     getUrl() {
         return browser.getCurrentUrl();
     }
 
-    getParagraphText() {
-        return element(by.css("login-container text-center py-2")).getText();
+    getButtonText() {
+        return element(by.css(".login-container .card-body .mt-3")).getText();
     }
 }
