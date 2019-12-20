@@ -7,6 +7,11 @@
             "type": "npm",
             "script": "e2e",
             "problemMatcher": []
-        }
+        },
+        {
+          "type": "npm",
+          "script": "start",
+          "problemMatcher": []
+      },
     ]
 }
