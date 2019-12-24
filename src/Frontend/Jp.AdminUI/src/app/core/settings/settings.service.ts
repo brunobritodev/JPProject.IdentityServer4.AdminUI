@@ -12,7 +12,7 @@ declare var $: any;
 @Injectable()
 export class SettingsService {
 
-    private user: UserProfile;
+    public user: UserProfile;
     public app: any;
     public layout: any;
     userProfileObservable: Observable<object>;

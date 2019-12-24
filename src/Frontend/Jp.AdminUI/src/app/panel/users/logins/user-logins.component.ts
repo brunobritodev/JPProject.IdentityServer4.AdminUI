@@ -5,7 +5,7 @@ import { UserService } from '@shared/services/user.service';
 import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { UserLogin } from '@shared/viewModel/user-login.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
-import { Observable } from 'rxjs';
+import { throwError } from 'rxjs';
 import { debounceTime, flatMap, map, tap } from 'rxjs/operators';
 
 
@@ -74,7 +74,7 @@ export class UserLoginsComponent implements OnInit {
             this.errors = [];
             this.errors.push("Unknown error while trying to remove");
             this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to remove");
+            return throwError("Unknown error while trying to remove");
         }
 
     }

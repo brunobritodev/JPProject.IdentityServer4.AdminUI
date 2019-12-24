@@ -7,7 +7,7 @@ import { ResetPassword } from '@shared/viewModel/reset-password.model';
 import { UserProfile } from '@shared/viewModel/userProfile.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import * as jsonpatch from 'fast-json-patch';
-import { Observable } from 'rxjs';
+import { throwError } from 'rxjs';
 import { flatMap, tap } from 'rxjs/operators';
 
 
@@ -80,7 +80,7 @@ export class UserEditComponent implements OnInit {
             this.errors = [];
             this.errors.push("Unknown error while trying to update");
             this.showButtonLoading = false;
-            return Observable.throw("Unknown error while trying to update");
+            return throwError("Unknown error while trying to update");
         }
     }
 

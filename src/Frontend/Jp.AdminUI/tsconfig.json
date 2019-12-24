@@ -1,34 +1,40 @@
 {
-    "compileOnSave": false,
-    "compilerOptions": {
-        "baseUrl": "./",
-        "outDir": "./dist/out-tsc",
-        "sourceMap": true,
-        "declaration": false,
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "target": "es5",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "lib": [
-            "es2017",
-            "dom"
-        ],
-        "paths": {
-            "@shared/*": [
-                "src/app/shared/*"
-            ],
-            "@app/*": [
-                "src/app/panel/*"
-            ],
-            "@core/*": [
-                "src/app/core/*"
-            ],
-            "@env/*": [
-                "src/environments/*"
-            ]
-        }
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@shared/*": [
+          "src/app/shared/*"
+      ],
+      "@app/*": [
+          "src/app/panel/*"
+      ],
+      "@core/*": [
+          "src/app/core/*"
+      ],
+      "@env/*": [
+          "src/environments/*"
+      ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
 }

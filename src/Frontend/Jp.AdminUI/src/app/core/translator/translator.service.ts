@@ -15,6 +15,7 @@ export class TranslatorService {
         { code: "ru", text: "Russian" },
         { code: "zh-cn", text: "Chinese Simplified" },
         { code: "zh-tw", text: "Chinese Traditional" },
+        { code: "el", text: "Greek"}
     ];
 
     constructor(public translate: TranslateService) {
