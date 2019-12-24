@@ -73,11 +73,11 @@
             "confirmButtonText": "Ναι, διεγραψέ το!",
             "deleted": "Ο πόρος έχει διαγραφεί.",
             "text": "Δε θα μπορέσετε να το ανακτήσετε!",
-            "title": "Είσαι σίγουρος;"
+            "title": "Είσαι σίγουρος"
         },
         "scope": {
-            "Έμφαση": "Έμφαση",
-            "Έμφαση-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "Emphasize": "Έμφαση",
+            "Emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
             "description": "Περιγραφή",
             "description-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
             "displayName": "Εμφανιζόμενο όνομα",
@@ -237,7 +237,7 @@
             "description-tooltip": "This value will be used e.g. on the consent screen.",
             "displayName": "Εμφανιζόμενο όνομα",
             "displayName-tooltip": "This value will be used e.g. on the consent screen.",
-            "emphasize": "Έμφαση",
+            "emphasize": "Emphasize",
             "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
             "enabled": "Ενεργό",
             "enabled-tooltip": "Υποδεικνύει ότι αυτός ο πόρος είναι ενεργός και μπορεί να ζητηθεί. Η προεπιλογή είναι αληθές",
@@ -256,7 +256,7 @@
             "description-tooltip": "This value will be used e.g. on the consent screen.",
             "displayName": "Εμφανιζόμενο όνομα",
             "displayName-tooltip": "This value will be used e.g. on the consent screen.",
-            "emphasize": "Έμφαση",
+            "emphasize": "Emphasize",
             "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
             "enabled": "Ενεργό",
             "enabled-tooltip": "Υποδεικνύει ότι αυτός ο πόρος είναι ενεργός και μπορεί να ζητηθεί. Η προεπιλογή είναι αληθές",
