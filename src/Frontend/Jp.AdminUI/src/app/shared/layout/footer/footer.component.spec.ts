@@ -5,13 +5,15 @@ import { FooterComponent } from "./footer.component";
 
 import { SettingsService } from "@core/settings/settings.service";
 import { HttpClientModule } from "@angular/common/http";
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { VersionService } from '@shared/services/version.service';
 
 describe("Component: Footer", () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientModule],
-            providers: [SettingsService]
+            imports: [HttpClientModule, OAuthModule.forRoot()],
+            providers: [SettingsService, VersionService]
         }).compileComponents();
     });
 

@@ -54,8 +54,8 @@ export class EmailSettingsComponent implements OnInit {
 
     
     public updateSettings() {
-        this.errors.splice(0,this.errors.length);
-        var configurations = new Array<GlobalSettings>();
+        this.errors.splice(0, this.errors.length);
+        let configurations = new Array<GlobalSettings>();
         configurations.push(this.settings.username);
         configurations.push(this.settings.password);
         configurations.push(this.settings.sendMail);
@@ -83,11 +83,11 @@ export class EmailSettingsComponent implements OnInit {
         });
     }
 
-    public changeUseSsl(){
+    public changeUseSsl() {
         this.settings.useSsl.value = this.useSsl.toString();
     }
 
-    public changeSendEmail(){
+    public changeSendEmail() {
         this.settings.sendMail.value = this.sendMail.toString();
     }
 }

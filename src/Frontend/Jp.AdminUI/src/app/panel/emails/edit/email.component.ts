@@ -16,7 +16,7 @@ import { Observable, Subject } from 'rxjs';
     encapsulation: ViewEncapsulation.None
 })
 export class EmailComponent implements OnInit {
-    
+
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
         showCloseButton: true,
@@ -26,7 +26,7 @@ export class EmailComponent implements OnInit {
     editorConfig: AngularEditorConfig = {
         editable: true,
         sanitize: false
-    }    
+    };
 
     emailTypes$: Observable<Array<any>>;
     showButtonLoading: boolean;
@@ -35,7 +35,8 @@ export class EmailComponent implements OnInit {
     @ViewChild('editor', { static: true }) editor: any;
     instance: any;
     linkForThemes: any = null;
-    editorThemes = ['3024-day', '3024-night', 'ambiance-mobile', 'ambiance', 'base16-dark', 'base16-light', 'blackboard', 'cobalt', 'eclipse', 'elegant', 'erlang-dark', 'lesser-dark', 'mbo', 'mdn-like', 'midnight', 'monokai', 'neat', 'neo', 'night', 'paraiso-dark', 'paraiso-light', 'pastel-on-dark', 'rubyblue', 'solarized', 'the-matrix', 'tomorrow-night-eighties', 'twilight', 'vibrant-ink', 'xq-dark', 'xq-light'];
+    editorThemes = ['3024-day', '3024-night', 'ambiance-mobile', 'ambiance', 'base16-dark', 'base16-light', 'blackboard', 'cobalt', 'eclipse',
+     'elegant', 'erlang-dark', 'lesser-dark', 'mbo', 'mdn-like', 'midnight', 'monokai', 'neat', 'neo', 'night', 'paraiso-dark', 'paraiso-light', 'pastel-on-dark', 'rubyblue', 'solarized', 'the-matrix', 'tomorrow-night-eighties', 'twilight', 'vibrant-ink', 'xq-dark', 'xq-light'];
     editorOpts = {
         mode: 'htmlmixed',
         lineNumbers: true,
@@ -75,7 +76,7 @@ export class EmailComponent implements OnInit {
 
     createCSS(path) {
         let link = document.createElement('link');
-        link.href = path
+        link.href = path;
         link.type = 'text/css';
         link.rel = 'stylesheet';
         link.id = 'cm_theme';
@@ -131,6 +132,6 @@ export class EmailComponent implements OnInit {
             this.linkForThemes.setAttribute('href', themesBase + this.editorOpts.theme + '.css');
         }
         this.instance.setOption('theme', this.editorOpts.theme);
-    };
+    }
 
 }

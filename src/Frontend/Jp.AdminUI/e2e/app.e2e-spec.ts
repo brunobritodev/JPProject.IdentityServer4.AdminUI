@@ -11,7 +11,7 @@ describe("jpproject WebApp", function () {
 
   it("should display sign-in page", () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual("SIGN IN TO CONTINUE.");
+    expect(page.getButtonText()).toEqual("Login");
     expect(page.getUrl()).toContain("/login");
   });
 });

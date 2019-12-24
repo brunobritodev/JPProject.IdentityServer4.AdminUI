@@ -8,6 +8,8 @@ import { SettingsService } from "@core/settings/settings.service";
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
 import { AppComponent } from "../../../../app.component";
 import { HttpClientModule } from "@angular/common/http";
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { VersionService } from '@shared/services/version.service';
 
 describe("Component: Userblock", () => {
 
@@ -17,8 +19,8 @@ describe("Component: Userblock", () => {
             platformBrowserDynamicTesting());
 
         TestBed.configureTestingModule({
-            imports: [HttpClientModule],
-            providers: [UserblockService, SettingsService]
+            imports: [HttpClientModule, OAuthModule.forRoot()],
+            providers: [UserblockService, SettingsService, VersionService]
         });
     });
 

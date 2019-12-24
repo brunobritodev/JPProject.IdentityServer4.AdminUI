@@ -10,6 +10,8 @@ import { ThemesService } from "@core/themes/themes.service";
 import { TranslatorService } from "@core/translator/translator.service";
 import { SharedModule } from "@shared/shared.module";
 import { createTranslateLoader } from "../../../app.module";
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { VersionService } from '@shared/services/version.service';
 
 describe("Component: Offsidebar", () => {
 
@@ -24,9 +26,10 @@ describe("Component: Offsidebar", () => {
                     }
                 }),
                 HttpClientModule,
-                SharedModule
+                SharedModule,
+                OAuthModule.forRoot()
             ],
-            providers: [SettingsService, ThemesService, TranslatorService]
+            providers: [SettingsService, ThemesService, TranslatorService, VersionService]
         }).compileComponents();
     });
 
