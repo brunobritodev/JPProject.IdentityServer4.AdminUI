@@ -18,78 +18,78 @@
         "goback": "Πίσω",
         "identity-resource": "Πόροι Identity",
         "loading": "Παρακαλώ περίμενετε να φορτωθεί!",
-        "persisted-grants": "Αποθηκευμένες Εξουσιοδοτήσεις",
-        "remove": "Remove",
-        "revoke": "Revoke",
-        "roles": "Roles",
-        "users": "Users",
-        "emails": "Email",
-        "list": "List",
-        "settings": "SSO Global Settings"
+        "persisted-grants": "Ενεργές Εξουσιοδοτήσεις",
+        "remove": "Διαγραφή",
+        "revoke": "Ανακάλεσε",
+        "roles": "Ρόλοι",
+        "users": "Χρήστες",
+        "emails": "Διευθύνσεις email",
+        "list": "Λίστα",
+        "settings": "Καθολικές ρυθμίσεις SSO"
     },
     "header": {
         "search": {
-            "PLACEHOLDER": "Type and hit enter.."
+            "PLACEHOLDER": "Πληκτρολογήστε και πατήστε το πλήκτρο enter.."
         }
     },
     "apiResource": {
         "add": {
-            "description": "Description",
-            "description-tooltip": "This value can be used e.g. on the consent screen.",
-            "displayName": "Display Name",
-            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
-            "enabled": "Enabled",
-            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-            "name": "Name",
-            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
-            "userClaims": "User Claims",
-            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+            "description": "Περιγραφή",
+            "description-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
+            "displayName": "Εμφανιζόμενο όνομα",
+            "displayName-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
+            "enabled": "Ενεργό",
+            "enabled-tooltip": "Υποδεικνύει ότι αυτός ο πόρος είναι ενεργός και μπορεί να ζητηθεί. Η προεπιλογή είναι αληθές",
+            "name": "Όνομα",
+            "name-tooltip": "Μοναδικό όνομα του API. Η τιμή χρησιμοποιείται για αυθεντικοποίηση με ενδοσκόπηση και θα προστεθεί στην τιμή του audience του εξερχόμενου token πρόσβασης ",
+            "userClaims": "Αξιώσεις χρηστών",
+            "userClaims-tooltip": "Λίστα με τις σχετικές αξιώσεις χρηστών που μπορούν να συμπεριληφθούν στο token πρόσβασης."
         },
-        "description": "Resources are something you want to protect with IdentityServer – either APIs (by doing this your data will be protected as well). So to access your database content must be through an API.",
+        "description": "Οι πόροι είναι κάτι το οποίο θέλουμε να προστατεύσουμε με τον IdentityServer (τα δεδομένα θα είναι επίσης προστατευμένα). Για να αποκτήσετε πρόσβαση στα περιεχόμενα της βάσης θα πρέπει να γίνει μέσω ενός API.",
         "edit": {
-            "description": "Description",
-            "description-tooltip": "This value can be used e.g. on the consent screen.",
-            "displayName": "Display Name",
-            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
-            "enabled": "Enabled",
-            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-            "name": "Name",
-            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
-            "scope": "Api Scopes",
-            "scope-tooltip": "An API must have at least one scope. Each scope can have different settings.",
-            "secrets": "Api Secrets",
-            "secrets-tooltip": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.",
-            "userClaims": "User Claims",
-            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+            "description": "Περιγραφή",
+            "description-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
+            "displayName": "Εμφανιζόμενο όνομα",
+            "displayName-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
+            "enabled": "Ενεργό",
+            "enabled-tooltip": "Υποδεικνύει ότι αυτός ο πόρος είναι ενεργός και μπορεί να ζητηθεί. Η προεπιλογή είναι αληθές",
+            "name": "Όνομα",
+            "name-tooltip": "Μοναδικό όνομα του API. Η τιμή χρησιμοποιείται για αυθεντικοποίηση με ενδοσκόπηση και θα προστεθεί στην τιμή του audience του εξερχόμενου token πρόσβασης ",
+            "scope": "Πεδίο εφαρμογής Api",
+            "scope-tooltip": "Το API έχει τουλάχιστον ένα πεδίο εφαρμογής. Κάθε πεδίο εφαρμογής μπορεί να έχει διαφορετικές ρυθμίσεις.",
+            "secrets": "Ιδιωτικά κλειδιά Api",
+            "secrets-tooltip": "Το ιδιωτικό κλειδί API χρησιμοποιείται για το τελικό σημείο πρόσβασης ενδοσκόπησης. Το API μπορεί να αυθεντικοποιηθεί με ενδοσκόπηση χρησιμοποιώντας το όνομα του API και το ιδιωτικό κλειδί.",
+            "userClaims": "Αξιώσεις χρηστών",
+            "userClaims-tooltip": "Λίστα με τις σχετικές αξιώσεις χρηστών που μπορούν να συμπεριληφθούν στο token πρόσβασης."
         },
         "list": {
-            "description": "Description",
-            "name": "Name"
+            "description": "Περιγραφή",
+            "name": "Όνομα"
         },
-        "new-api": "New Api Resource",
+        "new-api": "Νέος προστατευμένος πόρος",
         "remove": {
-            "cancelButtonText": "No, cancel plx!",
-            "cancelled": "Your Resource is safe :)",
-            "confirmButtonText": "Yes, delete it!",
-            "deleted": "Resource has been deleted.",
-            "text": "Your will not be able to recover!",
-            "title": "Are you sure"
+            "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
+            "cancelled": "Ο πόρος σου είναι ασφαλής :)",
+            "confirmButtonText": "Ναι, διεγραψέ το!",
+            "deleted": "Ο πόρος έχει διαγραφεί.",
+            "text": "Δε θα μπορέσετε να το ανακτήσετε!",
+            "title": "Είσαι σίγουρος;"
         },
         "scope": {
-            "Emphasize": "Emphasize",
-            "Emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
-            "description": "Description",
-            "description-tooltip": "This value can be used e.g. on the consent screen.",
-            "displayName": "Display Name",
-            "displayName-tooltip": "This value can be used e.g. on the consent screen.",
-            "name": "Name",
-            "name-tooltip": "The unique name of the API. This value is used for authentication with introspection and will be added to the audience of the outgoing access token.",
+            "Έμφαση": "Έμφαση",
+            "Έμφαση-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "description": "Περιγραφή",
+            "description-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
+            "displayName": "Εμφανιζόμενο όνομα",
+            "displayName-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
+            "name": "Όνομα",
+            "name-tooltip": "Μοναδικό όνομα του API. Η τιμή χρησιμοποιείται για αυθεντικοποίηση με ενδοσκόπηση και θα προστεθεί στην τιμή του audience του εξερχόμενου token πρόσβασης ",
             "required": "Required",
             "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen. Defaults to false.",
             "showInDiscoveryDocument": "Show In Discovery Document",
             "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true",
-            "userClaims": "User Claims",
-            "userClaims-tooltip": "List of associated user claim types that should be included in the access token."
+            "userClaims": "Αξιώσεις χρηστών",
+            "userClaims-tooltip": "Λίστα με τις σχετικές αξιώσεις χρηστών που μπορούν να συμπεριληφθούν στο token πρόσβασης."
         },
         "secret-description": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret."
     },
@@ -99,7 +99,7 @@
         "Image": "Image",
         "PropertiesDescription": "Dictionary to hold any custom client-specific values as needed",
         "SecretDescription": "In certain situations, clients need to authenticate with identityserver, e.g.: <br>1- confidential applications (aka clients) requesting tokens at the token endpoint. <br>2- APIs validating reference tokens at the introspection endpoint",
-        "TableClientName": "Client Name",
+        "TableClientName": "Client Όνομα",
         "claims": {
             "type": "Type",
             "type-tooltip": "Type",
@@ -107,11 +107,11 @@
             "value-tooltip": "Value"
         },
         "clone": {
-            "cancelButtonText": "No, cancel plx!",
+            "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
             "cancelled": ":)",
             "cloned": "Client has been cloned.",
             "confirmButtonText": "Yes, clone it!",
-            "text": "Are you sure?",
+            "text": "Είσαι σίγουρος?",
             "title": "Clone"
         },
         "details": {
@@ -135,7 +135,7 @@
             "allowedGrantTypes-tooltip": "Specifies the grant types the client is allowed to use. Use the GrantTypes class for common combinations. List of default grants: Implicit Grant - (implicit), Client Credentials Grant - (client_credentials), Authorization Code Grant - (authorization_code), Hybrid grant - (hybrid), Resource Owner Password Credentials Grant - (password)",
             "allowedScopes": "Allowed Scopes",
             "allowedScopes-tooltip": "By default a client has no access to any resources - specify the allowed resources by adding the corresponding scopes names",
-            "alwaysIncludeUserClaimsInIdToken": "Always Include User Claims In IdToken",
+            "alwaysIncludeUserClaimsInIdToken": "Always Include Αξιώσεις χρηστών In IdToken",
             "alwaysIncludeUserClaimsInIdToken-tooltip": "When requesting both an id token and access token, should the user claims always be added to the id token instead of requring the client to use the userinfo endpoint. Default is false",
             "alwaysSendClientClaims": "Always Send Client Claims",
             "alwaysSendClientClaims-tooltip": "If set, the client claims will be sent for every flow. If not, only for client credentials flow (default is false) ",
@@ -157,12 +157,12 @@
             "clientSecrets-tooltip": "List of client secrets - credentials to access the token endpoint.",
             "clientUri": "Client Uri",
             "clientUri-tooltip": "URI to further information about client (used on consent screen)",
-            "description": "Description",
+            "description": "Περιγραφή",
             "description-tooltip": "Client Description.",
             "deviceCodeLifetime": "Device Code Lifetime",
             "deviceCodeLifetime-tooltip": "Lifetime to device code in seconds (defaults to 300 seconds / 5 minutes)",
             "deviceFlow": "Device Flow",
-            "enabled": "Enabled",
+            "enabled": "Ενεργό",
             "enabled-tooltip": "Specifies if client is enabled. Defaults to true.",
             "frontChannelLogoutSessionRequired": "Front Channel Logout Session",
             "frontChannelLogoutSessionRequired-tooltip": "Specifies if the user’s session id should be sent to the FrontChannelLogoutUri. Defaults to true",
@@ -176,7 +176,7 @@
             "includeJwtId-tooltip": "Specifies whether JWT access tokens should have an embedded unique ID (via the jti claim).",
             "logoUri": "Logo Uri (Https)",
             "logoUri-tooltip": "URI to client logo (used on consent screen). Must be Https",
-            "name": "Name",
+            "name": "Όνομα",
             "name-tooltip": "Client display name (used for logging and consent screen)",
             "pairWiseSubjectSalt": "Pair Wise Subject Salt",
             "pairWiseSubjectSalt-tooltip": "Salt value used in pair-wise subjectId generation for users of this client.",
@@ -218,12 +218,12 @@
             "value-tooltip": "Value"
         },
         "remove": {
-            "cancelButtonText": "No, cancel plx!",
+            "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
             "cancelled": "Your Client is safe :)",
-            "confirmButtonText": "Yes, delete it!",
+            "confirmButtonText": "Ναι, διεγραψέ το!",
             "deleted": "Client has been deleted.",
-            "text": "Your will not be able to recover!",
-            "title": "Are you sure"
+            "text": "Δε θα μπορέσετε να το ανακτήσετε!",
+            "title": "Είσαι σίγουρος"
         }
     },
     "home": {
@@ -233,54 +233,54 @@
     },
     "identityResource": {
         "add": {
-            "description": "Description",
+            "description": "Περιγραφή",
             "description-tooltip": "This value will be used e.g. on the consent screen.",
-            "displayName": "Display Name",
+            "displayName": "Εμφανιζόμενο όνομα",
             "displayName-tooltip": "This value will be used e.g. on the consent screen.",
-            "emphasize": "Emphasize",
+            "emphasize": "Έμφαση",
             "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
-            "enabled": "Enabled",
-            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-            "name": "Name",
+            "enabled": "Ενεργό",
+            "enabled-tooltip": "Υποδεικνύει ότι αυτός ο πόρος είναι ενεργός και μπορεί να ζητηθεί. Η προεπιλογή είναι αληθές",
+            "name": "Όνομα",
             "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
             "required": "Required",
             "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
             "showInDiscoveryDocument": "Show In Discovery Document",
             "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
-            "userClaims": "User Claims",
+            "userClaims": "Αξιώσεις χρηστών",
             "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
         },
         "description": "Identity resources are data like user ID, name, or email address of a user. An identity resource has a unique name, and you can assign arbitrary claim types to it. These claims will then be included in the identity token for the user.",
         "edit": {
-            "description": "Description",
+            "description": "Περιγραφή",
             "description-tooltip": "This value will be used e.g. on the consent screen.",
-            "displayName": "Display Name",
+            "displayName": "Εμφανιζόμενο όνομα",
             "displayName-tooltip": "This value will be used e.g. on the consent screen.",
-            "emphasize": "Emphasize",
+            "emphasize": "Έμφαση",
             "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
-            "enabled": "Enabled",
-            "enabled-tooltip": "Indicates if this resource is enabled and can be requested. Defaults to true.",
-            "name": "Name",
+            "enabled": "Ενεργό",
+            "enabled-tooltip": "Υποδεικνύει ότι αυτός ο πόρος είναι ενεργός και μπορεί να ζητηθεί. Η προεπιλογή είναι αληθές",
+            "name": "Όνομα",
             "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
             "required": "Required",
             "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
             "showInDiscoveryDocument": "Show In Discovery Document",
             "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
-            "userClaims": "User Claims",
+            "userClaims": "Αξιώσεις χρηστών",
             "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
         },
         "list": {
-            "description": "Description",
-            "name": "Name"
+            "description": "Περιγραφή",
+            "name": "Όνομα"
         },
         "newIr": "New Identity Resource",
         "remove": {
-            "cancelButtonText": "No, cancel plx!",
-            "cancelled": "Your Resource is safe :)",
-            "confirmButtonText": "Yes, delete it!",
-            "deleted": "Resource has been deleted.",
-            "text": "Your will not be able to recover!",
-            "title": "Are you sure"
+            "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
+            "cancelled": "Ο πόρος σου είναι ασφαλής :)",
+            "confirmButtonText": "Ναι, διεγραψέ το!",
+            "deleted": "Ο πόρος έχει διαγραφεί.",
+            "text": "Δε θα μπορέσετε να το ανακτήσετε!",
+            "title": "Είσαι σίγουρος"
         }
     },
     "offsidebar": {
@@ -301,35 +301,35 @@
             "type": "Type"
         },
         "remove": {
-            "cancelButtonText": "No, cancel plx!",
+            "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
             "cancelled": "Grant is safe :)",
-            "confirmButtonText": "Yes, delete it!",
+            "confirmButtonText": "Ναι, διεγραψέ το!",
             "deleted": "Grant has been deleted.",
-            "text": "Your will not be able to recover!",
-            "title": "Are you sure"
+            "text": "Δε θα μπορέσετε να το ανακτήσετε!",
+            "title": "Είσαι σίγουρος"
         }
     },
     "roles": {
         "add": {
-            "roleName": "Name",
+            "roleName": "Όνομα",
             "roleName-tooltip": "Gets or sets the role name."
         },
         "description": "Represents a role in the identity system",
         "edit": {
-            "roleName": "Name",
+            "roleName": "Όνομα",
             "roleName-tooltip": "Gets or sets the role name."
         },
         "list": {
             "email": "Email",
-            "name": "Name",
+            "name": "Όνομα",
             "picture": "Picture"
         },
-        "name": "Name",
+        "name": "Όνομα",
         "new-role": "New role",
         "selectedRole": "Selected Role"
     },
     "secrets": {
-        "description": "Description",
+        "description": "Περιγραφή",
         "description-tooltip": "Set description",
         "expiration": "Expiration",
         "expiration-tooltip": "Set expiration",
@@ -379,7 +379,7 @@
             "lockoutEnabled-tooltip": "Gets or sets a flag indicating if the user could be locked out",
             "lockoutEnd": "Lockout End",
             "lockoutEnd-tooltip": "Gets or sets the date and time, in UTC, when any user lockout ends",
-            "name": "Display Name",
+            "name": "Εμφανιζόμενο όνομα",
             "name-tooltip": "Gets or sets the user name",
             "password": "Password",
             "password-tooltip": "Password",
@@ -399,27 +399,27 @@
             "email": "Email",
             "info": "User information",
             "log-tooltip": "Show events",
-            "name": "Name",
+            "name": "Όνομα",
             "picture": "Picture",
             "username": "Username"
         },
         "logins": {
             "loginProvider": "Provider",
             "nologins": "There is no available logins",
-            "providerDisplayName": "Name",
+            "providerDisplayName": "Όνομα",
             "providerKey": "Key"
         },
         "new-user": "New User",
         "remove": {
-            "cancelButtonText": "No, cancel plx!",
+            "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
             "cancelled": "User is safe :)",
-            "confirmButtonText": "Yes, delete it!",
+            "confirmButtonText": "Ναι, διεγραψέ το!",
             "deleted": "User has been deleted.",
-            "text": "Your will not be able to recover!",
-            "title": "Are you sure"
+            "text": "Δε θα μπορέσετε να το ανακτήσετε!",
+            "title": "Είσαι σίγουρος"
         },
         "roles": {
-            "name": "Name",
+            "name": "Όνομα",
             "role": "Role",
             "role-tooltip": "Select user role"
         },
@@ -436,7 +436,7 @@
             "subject-tooltip": "Email subject",
             "bcc": "Bcc",
             "bcc-tooltip": "Blind Carbon Copy - Blind copy someone",
-            "senderName": "Sender Name",
+            "senderName": "Sender Όνομα",
             "senderName-tooltip": "The name of who will send the e-mail.",
             "senderAddress": "Sender Address",
             "senderAddress-tooltip": "Address from who will send the e-mail",

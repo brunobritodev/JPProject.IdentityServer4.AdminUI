@@ -2,7 +2,7 @@ import { browser, by, element } from "protractor";
 
 export class JpProjectWebAppPage {
     navigateTo() {
-        return browser.get("http://localhost:4200/");
+        return browser.get("/");
     }
 
     getUrl() {

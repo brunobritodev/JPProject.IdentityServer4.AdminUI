@@ -4,10 +4,9 @@ import { TranslateService } from "@ngx-translate/core";
 @Injectable()
 export class TranslatorService {
 
-    private defaultLanguage: string = "el";
+    private defaultLanguage: string = "en";
 
     private availablelangs = [
-        { code: "el", text: "Greek"},
         { code: "en", text: "English" },
         { code: "es", text: "Spanish" },
         { code: "pt", text: "Portuguese" },
@@ -16,7 +15,7 @@ export class TranslatorService {
         { code: "ru", text: "Russian" },
         { code: "zh-cn", text: "Chinese Simplified" },
         { code: "zh-tw", text: "Chinese Traditional" },
-
+        { code: "el", text: "Greek"}
     ];
 
     constructor(public translate: TranslateService) {
