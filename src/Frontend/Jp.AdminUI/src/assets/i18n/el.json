@@ -83,47 +83,47 @@
             "displayName": "Εμφανιζόμενο όνομα",
             "displayName-tooltip": "Αυτή η τιμή μπορεί να χρησιμοποιθεί π.χ. στην σελίδα συγκατάθεσης",
             "name": "Όνομα",
-            "name-tooltip": "Μοναδικό όνομα του API. Η τιμή χρησιμοποιείται για αυθεντικοποίηση με ενδοσκόπηση και θα προστεθεί στην τιμή του audience του εξερχόμενου token πρόσβασης ",
+            "name-tooltip": "Μοναδικό όνομα του API. Η τιμή χρησιμοποιείται για αυθεντικοποίηση με ενδοσκόπηση και θα προστεθεί στην τιμή του audience του εξερχόμενου token πρόσβασης.",
             "required": "Απαιτούμενο",
-            "required-tooltip": "Καθορίζει εάν ο χρήστης αποεπιλέξει το πεδίο εφαρμογής στην σελίδα σSpecifies whether the user can de-select the scope on the consent screen. Defaults to false.",
-            "showInDiscoveryDocument": "Show In Discovery Document",
-            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true",
+            "required-tooltip": "Καθορίζει εάν ο χρήστης αποεπιλέξει το πεδίο εφαρμογής στην σελίδα συγκατάθεσης. Η προεπιλογή είναι ψευδές.",
+            "showInDiscoveryDocument": "Εμφάνιση στην σελίδα ανακάλυψης",
+            "showInDiscoveryDocument-tooltip": "Καθορίζει εάν το πεδίο εφαρμογής εμφανίζεται στην σελίδα ανακάλυψης. Η προεπιλογή είναι αληθές",
             "userClaims": "Αξιώσεις χρηστών",
             "userClaims-tooltip": "Λίστα με τις σχετικές αξιώσεις χρηστών που μπορούν να συμπεριληφθούν στο token πρόσβασης."
         },
-        "secret-description": "The API secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret."
+        "secret-description": "Το ιδιωτικό κλειδί API χρησιμοποιείται για το τελικό σημείο πρόσβασης ενδοσκόπησης. Το API μπορεί να αυθεντικοποιηθεί με ενδοσκόπηση χρησιμοποιώντας το όνομα του API και το ιδιωτικό κλειδί API."
     },
     "client": {
-        "ClaimDescription": "Allows settings claims for the client (will be included in the access token)",
-        "ClientDescription": "The Client class represents an OpenID Connect or OAuth 2.0 client - e.g. a native application, a web application or a JS-based application",
-        "Image": "Image",
-        "PropertiesDescription": "Dictionary to hold any custom client-specific values as needed",
-        "SecretDescription": "In certain situations, clients need to authenticate with identityserver, e.g.: <br>1- confidential applications (aka clients) requesting tokens at the token endpoint. <br>2- APIs validating reference tokens at the introspection endpoint",
-        "TableClientName": "Client Όνομα",
+        "ClaimDescription": "Ρυθμίσεις για τις αξιώσεις εφαρμογών πελάτη (θα συμπεριληφθούν στο token αυθεντικοποίησης)",
+        "ClientDescription": "Η εφαρμογή πελάτη αναπαριστά μία εφαρμογή πελάτη OpenID Connect ή OAuth 2.0 - π.χ. μία native εφαρμογή, μία εφαρμογή web ή μία εφαρμογή JS",
+        "Image": "Εικόνα",
+        "PropertiesDescription": "Dictionary που κρατά τιμές συγκεκριμένα ανά εφαρμογή πελάτη",
+        "SecretDescription": "Σε συγκεκριμένες περιπτώσεις, οι εφαρμογές πελάτη πρέπει να αυθεντικοποιηθούν με τον identityserver, π.χ.: <br>1- απόρρητες εφαρμογές (δλδ εφαρμογές πελάτη) που αιτούνται token στο τελικό σημείο πρόσβασης. <br>2- API που επικυρώνουν τα token αναφοράς στο τελικό σημείο πρόσβασης ενδοσκόπησης",
+        "TableClientName": "Όνομα εφαρμογής πελάτη",
         "claims": {
-            "type": "Type",
-            "type-tooltip": "Type",
-            "value": "Value",
-            "value-tooltip": "Value"
+            "type": "Τύπος",
+            "type-tooltip": "Τύπος",
+            "value": "Τιμή",
+            "value-tooltip": "Τιμή"
         },
         "clone": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
             "cancelled": ":)",
-            "cloned": "Client has been cloned.",
-            "confirmButtonText": "Yes, clone it!",
+            "cloned": "Η εφαρμογή πελάτη έχει αντιγραφεί.",
+            "confirmButtonText": "Ναι, αντέγραψε το!",
             "text": "Είσαι σίγουρος?",
-            "title": "Clone"
+            "title": "Αντιγραφή"
         },
         "details": {
-            "absoluteRefreshTokenLifetime": "Absolute Refresh Token Lifetime",
-            "absoluteRefreshTokenLifetime-tooltip": "Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days",
-            "accessTokenLifetime": "Access Token Lifetime",
-            "accessTokenLifetime-tooltip": "Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)",
-            "accessTokenTypes": "Access Token Type",
-            "accessTokenTypes-tooltip": "Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt)",
-            "allowAccessTokensViaBrowser": "Allow Access Token Via Browser",
-            "allowAccessTokensViaBrowser-tooltip": "Specifies whether this client is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code id_token to add the token response type and thus leaking the token to the browser.",
-            "allowOfflineAccess": "Allow Offline Access",
+            "absoluteRefreshTokenLifetime": "Απόλυτος χρόνος ζωής του Token Ανανέωσης",
+            "absoluteRefreshTokenLifetime-tooltip": "Μέγιστος χρόνος ζωής του token ανανέωσης σε δυτερόλεπτα. Η προεπιλογή είναι 2592000 δευτερόλεπτα / 30 ημέρες",
+            "accessTokenLifetime": "Χρόνος ζωής του Token Αυθεντικοποίησης",
+            "accessTokenLifetime-tooltip": "Χρόνος ζωής του token αυθεντικοποίησης σε δευτερόλεπτα (προεπιλογή: 3600 δευτερόλεπτα / 1 ώρα)",
+            "accessTokenTypes": "Τύπος Token Αυθεντικοποίησης",
+            "accessTokenTypes-tooltip": "Καθορίζει εάν το token αυθεντικοποίησης είναι token αναφοράς ή αυτάρκης token JWT (προεπιλογή: Jwt)",
+            "allowAccessTokensViaBrowser": "Επιτρέπει Token αυθεντικοποίησης μέσω περιηγητή ιστού",
+            "allowAccessTokensViaBrowser-tooltip": "Καθορίζει εάν η εφαρμογή πελάτη επιτρέπεται να έχει πρόσβαση σε token αυθεντικοποίησης μέσω περιηγητή ιστού. Αυτό είναι χρήσιμο για την ενίσχυση των ροών οι οποίες επιτρέπουν πολλαπλούς τύπους απαντήσεων (π.χ. μη επιτρέποντας μια υβριδική ροή εφαρμογής πελάτη που υποτίθεται ότι χρησιμοποιεί κωδικό id_token για να προσθέσει στον τύπο απάντησης του token και ως αποτέλεσμα να διαρεύσει το token στον περιηγητή ιστού.",
+            "allowOfflineAccess": "Επιτρέπει την offline σύνδεση",
             "allowOfflineAccess-tooltip": "Specifies whether this client can request refresh tokens (be requesting the offline_access scope)",
             "allowPlainTextPkce": "Allow Plain Text Pkce",
             "allowPlainTextPkce-tooltip": "Specifies whether clients using PKCE can use a plain text code challenge (not recommended - and default to false)",
@@ -214,8 +214,8 @@
         "property": {
             "key": "Key",
             "key-tooltip": "Key",
-            "value": "Value",
-            "value-tooltip": "Value"
+            "value": "Τιμή",
+            "value-tooltip": "Τιμή"
         },
         "remove": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
@@ -298,7 +298,7 @@
             "key": "Key",
             "picture": "Picture",
             "scopes": "Scopes",
-            "type": "Type"
+            "type": "Τύπος"
         },
         "remove": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
@@ -355,10 +355,10 @@
     },
     "users": {
         "claims": {
-            "type": "Type",
-            "type-tooltip": "Type",
-            "value": "Value",
-            "value-tooltip": "Value"
+            "type": "Τύπος",
+            "type-tooltip": "Τύπος",
+            "value": "Τιμή",
+            "value-tooltip": "Τιμή"
         },
         "description": "A user is a person or robot that can access resources and clients.",
         "edit": {
