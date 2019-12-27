@@ -219,61 +219,61 @@
         },
         "remove": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
-            "cancelled": "Your Client is safe :)",
-            "confirmButtonText": "Ναι, διεγραψέ το!",
-            "deleted": "Client has been deleted.",
+            "cancelled": "Ο Client είναι ασφαλής :)",
+            "confirmButtonText": "Ναι, διεγραψέ τον!",
+            "deleted": "Ο Client έχει διαγραφεί.",
             "text": "Δε θα μπορέσετε να το ανακτήσετε!",
             "title": "Είσαι σίγουρος"
         }
     },
     "home": {
-        "CLIENTDESCRIPTION": "Manage your clients.",
-        "DESCRIPTION": "This is IdentityServer4 Admin Panel. Here you can manage your IS4 settings.",
-        "WELCOME": "Welcome"
+        "CLIENTDESCRIPTION": "Διαχειριστείτε τους clients.",
+        "DESCRIPTION": "Αυτό είναι το panel διαχείρισης του IdentityServer4. Μπορείτε να διαχειριστείτε τις ρυθμίσεις του IS4.",
+        "WELCOME": "Καλώς ήρθατε"
     },
     "identityResource": {
         "add": {
             "description": "Περιγραφή",
-            "description-tooltip": "This value will be used e.g. on the consent screen.",
+            "description-tooltip": "Αυτή η τιμή θα χρησιμοποιηθεί π.χ. στην οθόνη consent",
             "displayName": "Εμφανιζόμενο όνομα",
-            "displayName-tooltip": "This value will be used e.g. on the consent screen.",
+            "displayName-tooltip": "Αυτή η τιμή θα χρησιμοποιηθεί π.χ. στην οθόνη consent",
             "emphasize": "Εμφαση",
-            "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "emphasize-tooltip": "Καθορίζει έαν η οθόνη consent θα δώσει έμφαση σε αυτό το scope (εάν θέλουμε να υλοποιήσουμε αυτό το feature στην οθόνη consent). Κάντε χρήση αυτής της ρύθμισης για ευαίσθητα ή σημαντικά scope. Η προεπιλογή είναι όχι.",
             "enabled": "Ενεργό",
             "enabled-tooltip": "Υποδεικνύει ότι αυτό το resource είναι ενεργό και μπορεί να αιτηθεί. Η προεπιλογή είναι ναι",
             "name": "Όνομα",
-            "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
+            "name-tooltip": "Το μοναδικό όνομα του identity resource. Αυτή η τιμή του client θα πρέπει να χρησιμοποιηθεί για το scope parameter στο αίτημα για authorize",
             "required": "Απαιτούμενο",
-            "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
-            "showInDiscoveryDocument": "Show In Discovery Document",
-            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
-            "userClaims": "Αξιώσεις χρηστών",
-            "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
+            "required-tooltip": "Καθορίζει εάν ο χρήστης μπορεί να αποεπιλέξει το scope στην οθόνη consent (εάν θέλουμε να υλοποιήσουμε αυτό το feature στην οθόνη consent). Η προεπιλογή είναι όχι.",
+            "showInDiscoveryDocument": "Εμφάνιση στο Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Καθορίζει εάν το scope εμφανίζεται στο discovery document. Η προεπιλογή είναι ναι.",
+            "userClaims": "Claims χρηστών",
+            "userClaims-tooltip": "Λίστα των σχετικών claim χρηστών που πρέπει να συμπεριληφθούν στο identity token."
         },
         "description": "Identity resources are data like user ID, name, or email address of a user. An identity resource has a unique name, and you can assign arbitrary claim types to it. These claims will then be included in the identity token for the user.",
         "edit": {
             "description": "Περιγραφή",
-            "description-tooltip": "This value will be used e.g. on the consent screen.",
+            "description-tooltip": "Αυτή η τιμή θα χρησιμοποιηθεί π.χ. στην οθόνη consent",
             "displayName": "Εμφανιζόμενο όνομα",
-            "displayName-tooltip": "This value will be used e.g. on the consent screen.",
+            "displayName-tooltip": "Αυτή η τιμή θα χρησιμοποιηθεί π.χ. στην οθόνη consent",
             "emphasize": "Εμφαση",
-            "emphasize-tooltip": "Specifies whether the consent screen will emphasize this scope (if the consent screen wants to implement such a feature). Use this setting for sensitive or important scopes. Defaults to false.",
+            "emphasize-tooltip": "Καθορίζει έαν η οθόνη consent θα δώσει έμφαση σε αυτό το scope (εάν θέλουμε να υλοποιήσουμε αυτό το feature στην οθόνη consent). Κάντε χρήση αυτής της ρύθμισης για ευαίσθητα ή σημαντικά scope. Η προεπιλογή είναι όχι.",
             "enabled": "Ενεργό",
             "enabled-tooltip": "Υποδεικνύει ότι αυτό το resource είναι ενεργό και μπορεί να αιτηθεί. Η προεπιλογή είναι ναι",
             "name": "Όνομα",
             "name-tooltip": "The unique name of the identity resource. This is the value a client will use for the scope parameter in the authorize request.",
             "required": "Απαιτούμενο",
-            "required-tooltip": "Specifies whether the user can de-select the scope on the consent screen (if the consent screen wants to implement such a feature). Defaults to false.",
-            "showInDiscoveryDocument": "Show In Discovery Document",
-            "showInDiscoveryDocument-tooltip": "Specifies whether this scope is shown in the discovery document. Defaults to true.",
-            "userClaims": "Αξιώσεις χρηστών",
-            "userClaims-tooltip": "List of associated user claim types that should be included in the identity token."
+            "required-tooltip": "Καθορίζει εάν ο χρήστης μπορεί να αποεπιλέξει το scope στην οθόνη consent (εάν θέλουμε να υλοποιήσουμε αυτό το feature στην οθόνη consent). Η προεπιλογή είναι όχι.",
+            "showInDiscoveryDocument": "Εμφάνιση στο Discovery Document",
+            "showInDiscoveryDocument-tooltip": "Καθορίζει εάν το scope εμφανίζεται στο discovery document. Η προεπιλογή είναι ναι.",
+            "userClaims": "Claims χρηστών",
+            "userClaims-tooltip": "Λίστα των σχετικών claim χρηστών που πρέπει να συμπεριληφθούν στο identity token."
         },
         "list": {
             "description": "Περιγραφή",
             "name": "Όνομα"
         },
-        "newIr": "New Identity Resource",
+        "newIr": "Νέο Identity Resource",
         "remove": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
             "cancelled": "Το resouce σου είναι ασφαλές :)",
@@ -285,26 +285,26 @@
     },
     "offsidebar": {
         "setting": {
-            "SETTINGS": "Settings"
+            "SETTINGS": "Ρυθμίσεις"
         }
     },
     "persistedGrant": {
-        "description": "description",
+        "description": "περιγραφή",
         "list": {
             "clientId": "Client",
-            "creationTime": "CreationTime",
+            "creationTime": "Χρόνος δημιουργείας",
             "email": "Email",
-            "expiration": "Expiration",
-            "key": "Key",
-            "picture": "Picture",
+            "expiration": "Λήξη",
+            "key": "Κλειδί",
+            "picture": "Εικόνα",
             "scopes": "Scopes",
             "type": "Τύπος"
         },
         "remove": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
-            "cancelled": "Grant is safe :)",
+            "cancelled": "Το Grant είναι ασφαλές :)",
             "confirmButtonText": "Ναι, διεγραψέ το!",
-            "deleted": "Grant has been deleted.",
+            "deleted": "Το Grant έχει διαγραφεί.",
             "text": "Δε θα μπορέσετε να το ανακτήσετε!",
             "title": "Είσαι σίγουρος"
         }
@@ -312,46 +312,46 @@
     "roles": {
         "add": {
             "roleName": "Όνομα",
-            "roleName-tooltip": "Gets or sets the role name."
+            "roleName-tooltip": "Λαμβάνει ή θέτει το όνομα ρόλου."
         },
-        "description": "Represents a role in the identity system",
+        "description": "Αναπαριστά ένα ρόλο στο σύστημα του identity",
         "edit": {
             "roleName": "Όνομα",
-            "roleName-tooltip": "Gets or sets the role name."
+            "roleName-tooltip": "Λαμβάνει ή θέτει το όνομα ρόλου."
         },
         "list": {
             "email": "Email",
             "name": "Όνομα",
-            "picture": "Picture"
+            "picture": "Εικόνα"
         },
         "name": "Όνομα",
-        "new-role": "New role",
-        "selectedRole": "Selected Role"
+        "new-role": "Νέος ρόλος",
+        "selectedRole": "Επιλεγμένος Ρόλος"
     },
     "secrets": {
         "description": "Περιγραφή",
-        "description-tooltip": "Set description",
-        "expiration": "Expiration",
-        "expiration-tooltip": "Set expiration",
-        "hashType": "Hash Type",
-        "hashType-tooltip": "Set the hash of Secret Value",
-        "secretType": "Secret Type",
-        "secretType-tooltip": "The type of the client secret",
-        "secretValue": "Secret Value",
-        "secretValue-tooltip": "Specifies the secret of client"
+        "description-tooltip": "Θέσε περιγραφή",
+        "expiration": "Λήξη",
+        "expiration-tooltip": "Θέσε λήξη",
+        "hashType": "Τύπος Hash",
+        "hashType-tooltip": "Θέσε το hash της τιμής του Secret",
+        "secretType": "Τύπος Secret",
+        "secretType-tooltip": "Ο τύπος του client secret",
+        "secretValue": "Τιμή Secret",
+        "secretValue-tooltip": "Καθορίζει το secret του client"
     },
     "sidebar": {
-        "WELCOME": "Welcome",
+        "WELCOME": "Καλώς ήλθατε",
         "heading": {
-            "HEADER": "Menu Heading"
+            "HEADER": "Heading Μενού"
         },
         "nav": {
-            "SINGLEVIEW": "Single View"
+            "SINGLEVIEW": "Προβολή Single"
         }
     },
     "toasterMessages": {
-        "message-success": "Well done!",
-        "title-success": "Success"
+        "message-success": "Μπράβο!",
+        "title-success": "Επιτυχία"
     },
     "users": {
         "claims": {
@@ -360,104 +360,104 @@
             "value": "Τιμή",
             "value-tooltip": "Τιμή"
         },
-        "description": "A user is a person or robot that can access resources and clients.",
+        "description": "Ο χρήστης είναι άτομο ή robot που μπορεί να αποκτήσει access σε resources και clients.",
         "edit": {
-            "accessFailedCount": "Access Failed Count",
-            "accessFailedCount-tooltip": "Gets or sets the number of failed login attempts for the current user",
-            "change-password": "Change password",
+            "accessFailedCount": "Αριθμός Αποτυχίας Access",
+            "accessFailedCount-tooltip": "Λαμβάνει ή θέτει τον αριθμό των αποτυχημένων προσπαθειών login για τον συκγεκριμένο χρήστη",
+            "change-password": "Αλλαγή password",
             "claims": "Claims",
-            "claims-tooltip": "Allows settings claims for the user (will be included in the access token)",
-            "confirmPassword": "Confirm password",
-            "confirmPassword-tooltip": "Confirm password",
+            "claims-tooltip": "Επιτρέπει την ρύθμιση των claims του χρήστη (θα συμπεριληφθούν στο access token)",
+            "confirmPassword": "Επιβεβαίωση password",
+            "confirmPassword-tooltip": "Επιβεβαίωση password",
             "email": "Email",
-            "email-tooltip": "Gets or sets the email address for this user",
-            "emailConfirmed": "Email Confirmed",
-            "emailConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their email address",
-            "externalLogins": "External Logins",
-            "externalLogins-tooltip": "Manage user external login. e.g Google, Facebook",
-            "lockoutEnabled": "lockout Enabled",
-            "lockoutEnabled-tooltip": "Gets or sets a flag indicating if the user could be locked out",
-            "lockoutEnd": "Lockout End",
-            "lockoutEnd-tooltip": "Gets or sets the date and time, in UTC, when any user lockout ends",
+            "email-tooltip": "Λαμβάνει ή θέτει την διεύθυνση email για αυτόν τον χρήστη",
+            "emailConfirmed": "Επιβεβαίωση Email",
+            "emailConfirmed-tooltip": "Λαμβάνει ή θέτει ένα flag που καθορίζει εάν ο χρήστης έχει επιβεβαιώση την διεύθυνση email του",
+            "externalLogins": "Εξωτερικά Logins",
+            "externalLogins-tooltip": "Διαχειριστείτε τα εξωτερικά login χρηστών. π.χ. Google, Facebook",
+            "lockoutEnabled": "Ενεργοποίηση lockout",
+            "lockoutEnabled-tooltip": "Λαμβάνει ή θέτει ένα flag που καθορίζει εάν ο χρήστης μπορεί να γίνει locked out",
+            "lockoutEnd": "Λήξη Lockout",
+            "lockoutEnd-tooltip": "Λαμβάνει ή θέτει την μέρα και ώρα σε UTC που λήγει το lockout κάθε χρήστη",
             "name": "Εμφανιζόμενο όνομα",
-            "name-tooltip": "Gets or sets the user name",
+            "name-tooltip": "Λαμβάνει ή θέτει το user name",
             "password": "Password",
             "password-tooltip": "Password",
-            "phoneNumber": "Phone Number",
-            "phoneNumber-tooltip": "Gets or sets a telephone number for the user",
-            "phoneNumberConfirmed": "Phone Number Confirmed",
-            "phoneNumberConfirmed-tooltip": "Gets or sets a flag indicating if a user has confirmed their telephone address",
-            "roles": "Roles",
-            "roles-tooltip": "Allows settings roles for the user (will be included in the access token)",
-            "twoFactorEnabled": "TwoFactor Enabled",
-            "twoFactorEnabled-tooltip": "Gets or sets a flag indicating if two factor authentication is enabled for this user",
-            "user-data": "User Data",
+            "phoneNumber": "Τηλέφωνο",
+            "phoneNumber-tooltip": "Λαμβάνει ή θέτει το τηλέφωνο του χρήστη",
+            "phoneNumberConfirmed": "Επειβαιώση Τηλεφώνου",
+            "phoneNumberConfirmed-tooltip": "Λαμβάνει ή θέτει ένα flag που καθορίζει εάν ο χρήστης έχει επιβεβαιώσει το τηλέφωνό του",
+            "roles": "Ρόλοι",
+            "roles-tooltip": "Επιτρέπει την ρύθμιση ρόλων για τον χρήστη (θα συμπεριληφθούν στο access token)",
+            "twoFactorEnabled": "Ενεργοποίηση TwoFactor",
+            "twoFactorEnabled-tooltip": "Λαμβάνει ή θέτει ένα flag που καθορίζει εάν το two factor authentication είναι ενεργό για αυτόν τον χρήστη",
+            "user-data": "Δεδομένα Χρήστη",
             "userName": "UserName",
-            "userName-tooltip": "Gets or sets the user name for this user."
+            "userName-tooltip": "Λαμβάνει ή θέτει το user name για αυτόν τον χρήστη."
         },
         "list": {
             "email": "Email",
-            "info": "User information",
-            "log-tooltip": "Show events",
+            "info": "Πληροφορίες Χρήστη",
+            "log-tooltip": "Εμφάνιση events",
             "name": "Όνομα",
-            "picture": "Picture",
+            "picture": "Εικόνα",
             "username": "Username"
         },
         "logins": {
             "loginProvider": "Provider",
-            "nologins": "There is no available logins",
+            "nologins": "Δεν υπάρχουν διαθέσιμα logins",
             "providerDisplayName": "Όνομα",
-            "providerKey": "Key"
+            "providerKey": "Κλειδί"
         },
-        "new-user": "New User",
+        "new-user": "Νέος Χρήστης",
         "remove": {
             "cancelButtonText": "Όχι, ακύρωσε το σε παρακαλώ!",
-            "cancelled": "User is safe :)",
+            "cancelled": "Ο Χρήστης είναι ασφαλής :)",
             "confirmButtonText": "Ναι, διεγραψέ το!",
-            "deleted": "User has been deleted.",
+            "deleted": "Ο χρήστης έχει διαγραφεί.",
             "text": "Δε θα μπορέσετε να το ανακτήσετε!",
             "title": "Είσαι σίγουρος"
         },
         "roles": {
             "name": "Όνομα",
-            "role": "Role",
-            "role-tooltip": "Select user role"
+            "role": "Ρόλος",
+            "role-tooltip": "Επέλεξε ρόλο χρήστη"
         },
         "events": {
 
         }
     },
     "emails": {
-        "description": "Email templates for SSO.",
+        "description": "Email templates για το SSO.",
         "edit": {
-            "type": "Email type",
-            "type-tooltip": "Type of communication with the user",
-            "subject": "Subject",
-            "subject-tooltip": "Email subject",
+            "type": "Τύπος Email",
+            "type-tooltip": "Τύπος επικοινωνίας με τον χρήστη",
+            "subject": "Θέμα",
+            "subject-tooltip": "Θέμα Email",
             "bcc": "Bcc",
-            "bcc-tooltip": "Blind Carbon Copy - Blind copy someone",
-            "senderName": "Sender Όνομα",
-            "senderName-tooltip": "The name of who will send the e-mail.",
-            "senderAddress": "Sender Address",
-            "senderAddress-tooltip": "Address from who will send the e-mail",
+            "bcc-tooltip": "Blind Carbon Copy - Blind copy κάποιον",
+            "senderName": "Όνομα Αποστολέα",
+            "senderName-tooltip": "Το όνομα από τον οποίο θα σταλεί το e-mail.",
+            "senderAddress": "Διεύθυνση Αποστολέα",
+            "senderAddress-tooltip": "Διεύθυνση από την οποία θα σταλεί το e-mail",
             "editor": "Editor",
             "code": "HTML Code Editor",
-            "variables": "Variables",
-            "variables-description": "A list of variables which will be replaced before send to User.",
-            "variables-name": "The name of user",
-            "variables-picture": "Url of user profile picture",
-            "variables-username": "Username choosen by user",
-            "variables-code": "Generated code for user for him confirm E-mail",
-            "variables-provider": "When user are using Federation login. It'll be the provider name (E.G: Google | Facebook)",
-            "variables-phoneNumber": "Provided phone number",
-            "variables-email": "User e-mail",
-            "variables-url": "Unique url generate for user to confirm e-mail"
+            "variables": "Μεταβλητές",
+            "variables-description": "Μια λίστα με μεταβλητές οι οποίες θα τροποποιηθούν πριν σταλεί στον Χρήστη.",
+            "variables-name": "Το όνομα του χρήστη",
+            "variables-picture": "Url της εικόνα προφίλ του χρήστη",
+            "variables-username": "Username που επιλέχθηκε για τον χρήστη",
+            "variables-code": "Κωδικός επιβεβαίωσης E-mail για τον χρήστη",
+            "variables-provider": "Όταν ο χρήστης χρησιμοποιεί Federation login θα είναι το όνομα του provider (E.G: Google | Facebook)",
+            "variables-phoneNumber": "Παρεχόμενο τηλέφωνο",
+            "variables-email": "Ε-mail χρήστη",
+            "variables-url": "Μοναδικό url που δημιουργείται για τον χρήστη για να επιβεβαιωθεί το e-mail"
         }
     },
     "settings": {
-        "description": "Global settings to manage your SSO configuration",
+        "description": "Καθολικές ρυθμίσες για να διαχεριστείτε την παραμετροποίηση του SSO",
         "emails": {
-            "description": "SMTP Settings for e-mail services.",
+            "description": "Ρυθμίσεις SMTP για τις υπηρεσίες e-mail.",
             "server": "Server",
             "server-tooltip": "Server address uri",
             "password": "Password",
@@ -468,8 +468,8 @@
             "port-tooltip": "SMTP Port",
             "useSsl": "SSL",
             "useSsl-tooltip": "Use ssl",
-            "sendEmail": "Send e-mail",
-            "sendEmail-tooltip": "SSO should send e-mail?"
+            "sendEmail": "Αποστολή e-mail",
+            "sendEmail-tooltip": "Ο SSO μπορεί να στείλει e-mail?"
         }
     }
 }
