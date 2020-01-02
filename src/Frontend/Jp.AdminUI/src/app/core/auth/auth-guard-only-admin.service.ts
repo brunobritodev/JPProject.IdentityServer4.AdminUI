@@ -6,7 +6,7 @@ import { filter, map, tap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable()
-export class AuthGuardWithForcedLogin implements CanActivate {
+export class AuthGuardOnlyAdmin implements CanActivate {
   private isAuthenticated: boolean;
 
   constructor(
