@@ -88,7 +88,8 @@ Client configuration
             IdentityServerConstants.StandardScopes.OpenId,
             IdentityServerConstants.StandardScopes.Profile,
             IdentityServerConstants.StandardScopes.Email,
-            "jp_api.is4"
+            "jp_api.is4",
+            "role"
         }
     },
 
@@ -125,6 +126,12 @@ Api resource configuration
         }
     }
 ```
+
+Identity Resource:
+```
+    new IdentityResource("role", new List<string>(){"roles"}),
+```
+
 
 ## Table of Contents ##
 
