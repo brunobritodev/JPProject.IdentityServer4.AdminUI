@@ -11,6 +11,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
+    "lintfix": "ng lint --fix=true",
     "modernizr": "modernizr -c modernizr-config.json -d src/modernizr.js",
     "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update",
     "e2e": "ng e2e",
@@ -116,6 +117,6 @@
     "ts-node": "^8.3.0",
     "tslint": "^5.14.0",
     "typescript": ">=3.4.0 <3.5.0",
-    "webdriver-manager": "12.1.5"
+    "webdriver-manager": "12.1.7"
   }
 }

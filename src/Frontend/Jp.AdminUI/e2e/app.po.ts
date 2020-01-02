@@ -9,7 +9,7 @@ export class JpProjectWebAppPage {
         return browser.getCurrentUrl();
     }
 
-    getParagraphText() {
-        return element(by.css("login-container text-center py-2")).getText();
+    getButtonText() {
+        return element(by.css(".login-container .card-body .mt-3")).getText();
     }
 }

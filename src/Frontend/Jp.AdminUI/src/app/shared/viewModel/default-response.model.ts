@@ -1,3 +1,9 @@
+
+export class KeyValuePair {
+  constructor(public key: string,
+      public value: string) { }
+}
+
 export class ProblemDetails {
 
     public success: boolean;
@@ -14,9 +20,9 @@ export class ProblemDetails {
                 }
                 if (Array.isArray(err.error.errors)) { return err.error.errors.map((element, i) => new KeyValuePair(i, element.message)); }
 
-                var mappedErrors = [];
+                let mappedErrors = [];
                 Object.keys(err.error.errors).map(function (key, index) {
-                    mappedErrors.push(new KeyValuePair(key, err.error.errors[key]))
+                    mappedErrors.push(new KeyValuePair(key, err.error.errors[key]));
                 });
                 return mappedErrors;
             }
@@ -30,7 +36,3 @@ export class ProblemDetails {
     }
 }
 
-export class KeyValuePair {
-    constructor(public key: string,
-        public value: string) { }
-}
