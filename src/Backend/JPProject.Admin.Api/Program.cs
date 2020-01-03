@@ -1,10 +1,11 @@
-﻿using System;
+﻿using JPProject.Admin.Api.Configuration;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
+using System;
 
 namespace JPProject.Admin.Api
 {
@@ -12,7 +13,7 @@ namespace JPProject.Admin.Api
     {
         public static void Main(string[] args)
         {
-            Console.Title = "JP Project - User Management";
+            Console.Title = "JP Project - Admin Light API";
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
@@ -25,7 +26,11 @@ namespace JPProject.Admin.Api
                 .WriteTo.Console()
                 .CreateLogger();
 
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            AdminUiMigrationHelpers.EnsureSeedData(host.Services).Wait();
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

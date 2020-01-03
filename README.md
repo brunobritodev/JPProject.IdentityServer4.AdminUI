@@ -82,7 +82,7 @@ Client configuration
         IdentityTokenLifetime = 3600,
         LogoUri = "https://jpproject.azurewebsites.net/sso/images/brand/logo.png",
         AuthorizationCodeLifetime = 3600,
-        PostLogoutRedirectUris = {$"{configuration["ApplicationSettings:IS4AdminUi"]}",},
+        PostLogoutRedirectUris = {"http://localhost:4300",},
         AllowedScopes =
         {
             IdentityServerConstants.StandardScopes.OpenId,
