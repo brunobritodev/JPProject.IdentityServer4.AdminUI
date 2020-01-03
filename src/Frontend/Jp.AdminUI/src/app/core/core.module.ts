@@ -12,8 +12,8 @@ import {
 } from 'angular-oauth2-oidc';
 
 import { authProdConfig } from './auth/auth-config.prod';
-import { AuthGuardWithForcedLogin } from './auth/auth-guard-with-forced-login.service';
-import { AuthGuard } from './auth/auth-guard.service';
+import { AuthGuardAuthenticadeOnly } from './auth/auth-guard-authenticated-only.service';
+import { AuthGuardOnlyAdmin } from './auth/auth-guard-only-admin.service';
 import { authModuleConfig } from './auth/auth-module-config';
 import { AuthService } from './auth/auth.service';
 import { MenuService } from './menu/menu.service';
@@ -39,8 +39,8 @@ export function storageFactory(): OAuthStorage {
         TranslatorService,
         MenuService,
         AuthService,
-        AuthGuard,
-        AuthGuardWithForcedLogin,
+        AuthGuardOnlyAdmin,
+        AuthGuardAuthenticadeOnly,
     ],
     declarations: [
     ],

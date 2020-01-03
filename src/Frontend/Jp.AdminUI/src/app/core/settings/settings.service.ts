@@ -83,6 +83,10 @@ export class SettingsService {
         this.user.picture = image;
     }
 
+    public getUserClaims(): object {
+        return this.oauthService.getIdentityClaims();
+    }
+    
     public saveLayout() {
         localStorage.setItem("LayoutSettings", JSON.stringify(this.layout));
     }

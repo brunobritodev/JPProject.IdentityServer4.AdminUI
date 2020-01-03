@@ -2,6 +2,7 @@
 using AutoMapper.Configuration;
 using JPProject.Admin.Application.AutoMapper;
 using JPProject.Admin.Database;
+using JPProject.Admin.Infra.Data.Context;
 using JPProject.AspNet.Core;
 using JPProject.Domain.Core.ViewModels;
 using MediatR;
@@ -19,6 +20,7 @@ namespace JPProject.Admin.Api.Configuration
             var database = configuration.GetValue<DatabaseType>("ApplicationSettings:DatabaseType");
             var connString = configuration.GetConnectionString("SSOConnection");
 
+            services.Configure<JpDatabaseOptions>(o => o.MustThrowExceptionIfDatabaseDontExist = false);
             services.ConfigureJpAdmin<AspNetUser>().AddDatabase(database, connString);
 
             return services;

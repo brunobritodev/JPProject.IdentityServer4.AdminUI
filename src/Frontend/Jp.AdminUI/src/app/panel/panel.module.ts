@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardWithForcedLogin } from '@core/auth/auth-guard-with-forced-login.service';
+import { AuthGuardAuthenticadeOnly } from '@core/auth/auth-guard-authenticated-only.service';
 import { ToasterService } from 'angular2-toaster';
 
 import { SharedModule } from '../shared/shared.module';
@@ -9,7 +9,7 @@ const routes: Routes = [
     {
         path: "",
         canActivate: [
-            AuthGuardWithForcedLogin
+            AuthGuardAuthenticadeOnly
         ],
         children: [
             { path: "", redirectTo: "home", pathMatch: "full" },
@@ -34,7 +34,7 @@ const routes: Routes = [
     declarations: [
     ],
     providers: [
-        AuthGuardWithForcedLogin,
+        AuthGuardAuthenticadeOnly,
         ToasterService
     ],
     exports: [
