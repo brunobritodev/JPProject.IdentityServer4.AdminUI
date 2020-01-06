@@ -1,0 +1,125 @@
+<div class="card b">
+    <div class="card-header bg-gray-lighter text-bold">Storage</div>
+    <div class="card-body">
+        <p>{{ 'settings.storage.description' | translate}}</p>
+
+        <tabset>
+            <!-- Azure Settings -->
+            <tab [heading]="'settings.storage.azure' | translate" [active]="settings.service.value == 'Azure'" (select)="changeTab('Azure')">
+                <p>{{ 'settings.storage.azure-description' | translate}}</p>
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.username-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.username' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" autocomplete="on" [placeholder]="'settings.storage.username-tooltip' | translate" [(ngModel)]="settings.username.value" />
+                        </div>
+                    </div>
+                </fieldset>
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.password-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.password' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" autocomplete="on" [placeholder]="'settings.storage.password-tooltip' | translate" [(ngModel)]="settings.password.value" />
+                        </div>
+                    </div>
+                </fieldset>
+            </tab>
+
+            <!-- Amazon S3 Settings -->
+            <tab [heading]="'settings.storage.s3' | translate" [active]="settings.service.value == 'S3'" (select)="changeTab('S3')">
+                <p>{{ 'settings.storage.s3-description' | translate}}</p>
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.username-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.username' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" autocomplete="on" [placeholder]="'settings.storage.username-tooltip' | translate" [(ngModel)]="settings.username.value" />
+                        </div>
+                    </div>
+                </fieldset>
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.password-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.password' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" autocomplete="on" [placeholder]="'settings.storage.password-tooltip' | translate" [(ngModel)]="settings.password.value" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.bucket-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.bucket' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" autocomplete="on" [placeholder]="'settings.storage.bucket-tooltip' | translate" [(ngModel)]="settings.storageName.value" />
+                        </div>
+                    </div>
+                </fieldset>
+            </tab>
+
+            <!-- Local (Filesystem) storage service (It doesn't mean Brower storage) -->
+            <tab [heading]="'settings.storage.local' | translate" [active]="settings.service.value == 'Local'" (select)="changeTab('Local')">
+                <p>{{ 'settings.storage.local-description' | translate}}</p>
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.virtualPath-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.virtualPath' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" [placeholder]="'settings.storage.virtualPath-tooltip' | translate" [(ngModel)]="settings.virtualPath.value" />
+                            <small class="text-muted">{{settings.basePath.value + settings.virtualPath.value}}</small>
+                        </div>
+                    </div>
+                </fieldset>
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.basePath-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.basePath' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" [placeholder]="'settings.storage.basePath-tooltip' | translate" [(ngModel)]="settings.basePath.value" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!--Input - text -->
+                <fieldset>
+                    <div class="form-group row">
+                        <label placement="top" [tooltip]="'settings.storage.physicalPath-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.storage.physicalPath' | translate }} <i class="fa fa-comment-dots"></i></label>
+                        <div class="col-xl-9">
+                            <input class="form-control" [placeholder]="'settings.storage.physicalPath-tooltip' | translate" [(ngModel)]="settings.physicalPath.value" />
+                        </div>
+                    </div>
+                </fieldset>
+            </tab>
+
+        </tabset>
+
+    </div>
+    <div class="card-body bt">
+        <p>
+            <strong>Other options</strong>
+        </p>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.storage.useStorage-tooltip' | translate">{{ 'settings.storage.useStorage' | translate }}
+            <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                <input type="checkbox" [(ngModel)]="useStorage" (ngModelChange)="changeStorage()" />
+                <span></span>
+            </label>
+                </div>
+            </div>
+        </fieldset>
+        <p>
+            <small class="text-muted">* If you are not an Administrator, some fields will not show.</small>
+        </p>
+
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-info" (click)="updateSettings()" type="button">Update settings</button>
+    </div>
+</div>
