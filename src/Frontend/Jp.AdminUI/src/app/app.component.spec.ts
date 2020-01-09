@@ -9,7 +9,7 @@ import { LayoutModule } from "./shared/layout/layout.module";
 import { SharedModule } from "./shared/shared.module";
 import { APP_BASE_HREF } from "@angular/common";
 import { RoutesModule } from "./app.routing.module";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe("App: JpProject", () => {
     beforeEach(() => {
@@ -21,7 +21,7 @@ describe("App: JpProject", () => {
                 AppComponent
             ],
             imports: [
-                HttpClientModule,
+                HttpClientTestingModule,
                 TranslateModule.forRoot(),
                 CoreModule,
                 LayoutModule,
