@@ -83,6 +83,27 @@ jobs:
           workingDir: src/Frontend/Jp.AdminUI
 
       - task: Npm@1
+        displayName: 'NPM - Test - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run test -- --watch=false --code-coverage'
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - E2E - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run e2e'
+          workingDir: src/Frontend/Jp.AdminUI 
+
+      - task: CmdLine@2
+        displayName: 'Create Code coverage report'
+        inputs:
+          script: |
+            dotnet tool install -g dotnet-reportgenerator-globaltool 
+                    reportgenerator "-reports:./**/coverage.cobertura.xml;./**/cobertura-coverage.xml" "-targetdir:./src/CodeCoverage" "-reporttypes:HtmlInline_AzurePipelines_Dark;Cobertura;Badges"
+
+      - task: Npm@1
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
@@ -104,3 +125,25 @@ jobs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
           ArtifactName: 'jpproject.admin-ui.$(Build.BuildNumber)'
           publishLocation: 'Container'
+
+      - task: PublishCodeCoverageResults@1
+        displayName: 'Publish code coverage from ./src/CodeCoverage/Cobertura.xml'
+        inputs:
+          codeCoverageTool: Cobertura
+          summaryFileLocation: './src/CodeCoverage/Cobertura.xml'
+          reportDirectory: './src/CodeCoverage'
+
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular test results'
+        inputs:
+          testRunTitle: Angular
+          testResultsFormat: JUnit
+          testResultsFiles: "**/TESTS*.xml"
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular E2E test results'
+        inputs:
+          testRunTitle: Angular_E2E
+          testResultsFormat: JUnit
+          testResultsFiles: "**/junit*.xml"            
