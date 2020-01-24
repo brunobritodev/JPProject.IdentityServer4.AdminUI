@@ -485,7 +485,7 @@
             "local": "Local",
             "bucket": "Bucket",
             "bucket-tooltip": "Bucket Name",
-            "virtualPath-tooltip": "Virtual Path to concate with Base Path",
+            "virtualPath-tooltip": "Virtual Path to concatenate with Base Path",
             "virtualPath": "Virtual Path",
             "basePath-tooltip": "Base Path",
             "basePath": "Base site href",
