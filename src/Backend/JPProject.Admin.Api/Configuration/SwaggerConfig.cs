@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
 
 namespace JPProject.Admin.Api.Configuration
 {
@@ -33,6 +33,7 @@ namespace JPProject.Admin.Api.Configuration
 
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme()
                 {
+                    Type = SecuritySchemeType.OAuth2,
                     Flows = new OpenApiOAuthFlows()
                     {
                         Implicit = new OpenApiOAuthFlow()
@@ -40,10 +41,19 @@ namespace JPProject.Admin.Api.Configuration
                             AuthorizationUrl = new Uri($"{configuration["ApplicationSettings:Authority"]}/connect/authorize"),
                             Scopes = new Dictionary<string, string>
                             {
-                                {"jp_api.user", "User Management API - full access"},
                                 {"jp_api.is4", "IS4 Management API - full access"},
                             },
                         }
+                    }
+                });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "oauth2" }
+                        },
+                        new[] { "jp_api.is4" }
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();
