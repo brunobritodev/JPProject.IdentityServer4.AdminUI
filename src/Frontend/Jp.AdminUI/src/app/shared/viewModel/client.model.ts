@@ -1,4 +1,5 @@
 import { Claim } from './claim.model';
+import { FileViewModel } from './file.model';
 
 export class ClientSecret {
     constructor() {
@@ -49,6 +50,7 @@ export class NewClient {
     description: string;
     clientType: number;
     postLogoutRedirectUris: string;
+    logo: FileViewModel;
 }
 
 export class Client {
@@ -98,6 +100,7 @@ export class Client {
     userCodeType: string;
     deviceCodeLifetime: number;
     userSsoLifetime: number;
+    logo: FileViewModel;
     
     public static isValid(client: Client, errors: string[]): boolean {
         errors.length = 0;

@@ -44,39 +44,36 @@
                     </div>
                 </div>
             </fieldset>
-        
+
             <!--Input - text -->
             <fieldset>
                 <div class="form-group row">
                     <label placement="top" [tooltip]="'client.details.description-tooltip' | translate" class="col-xl-3 col-form-label">{{
                         'client.details.description' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-9">
-                        <input class="form-control" autocomplete="client-description" [placeholder]="'client.details.description-tooltip' | translate"
-                            [(ngModel)]="model.description" />
+                        <input class="form-control" autocomplete="client-description" [placeholder]="'client.details.description-tooltip' | translate" [(ngModel)]="model.description" />
                     </div>
                 </div>
             </fieldset>
-        
+
             <!--Input - text -->
             <fieldset>
                 <div class="form-group row">
                     <label placement="top" [tooltip]="'client.details.clientUri-tooltip' | translate" class="col-xl-3 col-form-label">{{
                         'client.details.clientUri' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-9">
-                        <input class="form-control" autocomplete="client-clientUri" [placeholder]="'client.details.clientUri-tooltip' | translate"
-                            [(ngModel)]="model.clientUri" />
+                        <input class="form-control" autocomplete="client-clientUri" [placeholder]="'client.details.clientUri-tooltip' | translate" [(ngModel)]="model.clientUri" />
                     </div>
                 </div>
             </fieldset>
-        
+
             <!--Input - text -->
             <fieldset>
                 <div class="form-group row">
                     <label placement="top" [tooltip]="'client.details.postLogoutRedirectUris-tooltip' | translate" class="col-xl-3 col-form-label">{{
                         'client.details.postLogoutRedirectUris' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-9">
-                        <input class="form-control" autocomplete="client-postLogoutRedirectUris" [placeholder]="'client.details.postLogoutRedirectUris-tooltip' | translate"
-                            [(ngModel)]="model.postLogoutRedirectUris" />
+                        <input class="form-control" autocomplete="client-postLogoutRedirectUris" [placeholder]="'client.details.postLogoutRedirectUris-tooltip' | translate" [(ngModel)]="model.postLogoutRedirectUris" />
                     </div>
                 </div>
             </fieldset>
@@ -87,8 +84,28 @@
                     <label placement="top" [tooltip]="'client.details.logoUri-tooltip' | translate" class="col-xl-3 col-form-label">{{
                         'client.details.logoUri' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-9">
-                        <input class="form-control" autocomplete="client-logoUri" [placeholder]="'client.details.logoUri-tooltip' | translate"
-                            [(ngModel)]="model.logoUri" />
+                        <div *ngIf="settings.lightVersion">
+                            <input class="form-control" autocomplete="client-logoUri" [placeholder]="'client.details.logoUri-tooltip' | translate" [(ngModel)]="model.logoUri" />
+                        </div>
+                        <div *ngIf="!settings.lightVersion">
+                            <div class="row" *ngIf="showCropper">
+                                <div class="col-lg-3 col-md-12 justify-content-center">
+                                    <img [src]="croppedImage" class="img-thumbnail" />
+                                </div>
+                                <div class="col-lg-9 col-md-12">
+                                    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (loadImageFailed)="loadImageFailed()" outputType="base64"></image-cropper>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input class="form-control" autocomplete="client-logoUri" *ngIf="!showCropper" [placeholder]="'client.details.logoUri-tooltip' | translate" [(ngModel)]="model.logoUri" />
+                                    <label for="image-input" class="file-upload">
+                                    <button class="btn btn-secondary btn-block">Upload Image</button>
+                                    <input id="image-input" type="file" (change)="fileChangeEvent($event)">
+                                </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </fieldset>
@@ -123,8 +140,8 @@
                     <!-- END card-->
                 </div>
                 <div class="col-md-4">
-                     <!-- START card-->
-                     <div class="card bg-warning pointer" (click)="selectClient(2)">
+                    <!-- START card-->
+                    <div class="card bg-warning pointer" (click)="selectClient(2)">
                         <div class="card-body text-center">
                             <div class="text-lg m-0">🖥️️</div>
                             <p>Web App - Server Side (MVC)</p>
@@ -138,8 +155,8 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                     <!-- START card-->
-                     <div class="card bg-success pointer" (click)="selectClient(3)">
+                    <!-- START card-->
+                    <div class="card bg-success pointer" (click)="selectClient(3)">
                         <div class="card-body text-center">
                             <div class="text-lg m-0">💻</div>
                             <p>SPA - Single Page Application (e.g Angular, Blazor)</p>
@@ -164,8 +181,8 @@
                     <!-- END card-->
                 </div>
                 <div class="col-md-4">
-                     <!-- START card-->
-                     <div class="card bg-yellow-dark pointer" (click)="selectClient(5)">
+                    <!-- START card-->
+                    <div class="card bg-yellow-dark pointer" (click)="selectClient(5)">
                         <div class="card-body text-center">
                             <div class="text-lg m-0"><i class="fa fa-server"></i></div>
                             <p>Server</p>
@@ -179,8 +196,8 @@
             </div>
             <div class="row">
                 <div class="col-md-4 offset-4">
-                     <!-- START card-->
-                     <div class="card bg-dark pointer" (click)="selectClient(6)">
+                    <!-- START card-->
+                    <div class="card bg-dark pointer" (click)="selectClient(6)">
                         <div class="card-body text-center text-light">
                             <div class="text-lg m-0">📺</div>
                             <p>Devices - TVs, gaming consoles, printers, cash registers, audio appliances etc</p>
@@ -191,9 +208,9 @@
                     </div>
                     <!-- END card-->
                 </div>
-                
+
             </div>
-            
+
         </div>
 
     </div>
