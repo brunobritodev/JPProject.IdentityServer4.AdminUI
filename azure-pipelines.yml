@@ -83,6 +83,20 @@ jobs:
           workingDir: src/Frontend/Jp.AdminUI
 
       - task: Npm@1
+        displayName: 'NPM - Test - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run test -- --watch=false --code-coverage'
+          workingDir: src/Frontend/Jp.AdminUI
+
+      - task: Npm@1
+        displayName: 'NPM - E2E - AdminUI'
+        inputs:
+          command: custom
+          customCommand: 'run e2e'
+          workingDir: src/Frontend/Jp.AdminUI 
+
+      - task: Npm@1
         displayName: 'NPM - Build Prod - AdminUI'
         inputs:
           command: custom
@@ -104,3 +118,25 @@ jobs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/jpproject.admin-ui.$(Build.BuildNumber).zip'
           ArtifactName: 'jpproject.admin-ui.$(Build.BuildNumber)'
           publishLocation: 'Container'
+
+      - task: PublishCodeCoverageResults@1
+        displayName: 'Publish code coverage Angular results'
+        inputs:
+          codeCoverageTool: Cobertura
+          summaryFileLocation: './src/Frontend/Jp.AdminUI/coverage/cobertura-coverage.xml'
+          reportDirectory: './src/Frontend/Jp.AdminUI/coverage/'
+
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular test results'
+        inputs:
+          testRunTitle: Angular
+          testResultsFormat: JUnit
+          testResultsFiles: "**/TESTS*.xml"
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular E2E test results'
+        inputs:
+          testRunTitle: Angular_E2E
+          testResultsFormat: JUnit
+          testResultsFiles: "**/junit*.xml"            
