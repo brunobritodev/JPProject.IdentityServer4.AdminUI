@@ -11,6 +11,7 @@ export class TranslatorService {
         { code: "es", text: "Spanish" },
         { code: "pt", text: "Portuguese" },
         { code: "fr", text: "French" },
+        { code: "de", text: "German" },
         { code: "nl", text: "Dutch" },
         { code: "ru", text: "Russian" },
         { code: "zh-cn", text: "Chinese Simplified" },
