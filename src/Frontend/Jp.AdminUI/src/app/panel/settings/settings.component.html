@@ -18,12 +18,16 @@
                 <div class="card-header bg-gray-lighter text-bold">SSO Settings</div>
                 <div class="list-group">
                     <a href="#" class="list-group-item" (click)="settingSection=1" [ngClass]="{'active': (settingSection == 1)}">Emails</a>
+                    <a href="#" class="list-group-item" (click)="settingSection=2" [ngClass]="{'active': (settingSection == 2)}">Storage</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-9">
             <div *ngIf="settingSection == 1">
                 <app-email-settings *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-email-settings>
+            </div>
+            <div *ngIf="settingSection == 2">
+                <app-storage-settings *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-storage-settings>
             </div>
         </div>
     </div>

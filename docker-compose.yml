@@ -13,9 +13,9 @@ services:
         environment: 
             ASPNETCORE_ENVIRONMENT: "Development"
             ASPNETCORE_URLS: http://+
-            CUSTOMCONNSTR_SSOConnection: "<you database connstring>"
-            ApplicationSettings:Authority: "http://sso.teste.work"
-            ApplicationSettings:DatabaseType: SqlServer
+            CUSTOMCONNSTR_SSOConnection: "<your conn string>"
+            ApplicationSettings:Authority: "<YOUR Auth server>"
+            ApplicationSettings:DatabaseType: SqlServer # Options: SqlServer / MySql / Sqlite / PostgreSql
             ApplicationSettings:RequireHttpsMetadata: 'false'
             ApplicationSettings:ApiName: jp_api
             ApplicationSettings:ApiSecret: "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++"

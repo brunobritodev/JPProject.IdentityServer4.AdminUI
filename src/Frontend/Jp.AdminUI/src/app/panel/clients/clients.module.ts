@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 import { DndModule } from 'ng2-dnd';
 import { TagInputModule } from 'ngx-chips';
+import { ImageCropperModule } from 'ngx-image-cropper';
 import { NgxSelectModule } from 'ngx-select-ex';
 
 import { ClientAddComponent } from './add/add.component';
@@ -33,7 +34,8 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         DndModule.forRoot(),
         NgxSelectModule,
-        TagInputModule
+        TagInputModule,
+        ImageCropperModule
     ],
     declarations: [
         ClientListComponent,

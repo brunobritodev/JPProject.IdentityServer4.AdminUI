@@ -470,6 +470,29 @@
             "useSsl-tooltip": "Use ssl",
             "sendEmail": "Send e-mail",
             "sendEmail-tooltip": "SSO should send e-mail?"
+        },
+        "storage": {
+            "description": "Storage Settings for profile images, client images and any kind of SSO file.",
+            "password": "Password",
+            "password-tooltip": "Storage Password",
+            "username": "Username",
+            "username-tooltip": "Storage Username",
+            "azure-description": "Azure Blob settings",
+            "azure": "Azure",
+            "s3-description": "Amazon S3 storage",
+            "s3": "Amazon S3",
+            "local-description": "Storage will be the same folder of SSO filesystem",
+            "local": "Local",
+            "bucket": "Bucket",
+            "bucket-tooltip": "Bucket Name",
+            "virtualPath-tooltip": "Virtual Path to concatenate with Base Path",
+            "virtualPath": "Virtual Path",
+            "basePath-tooltip": "Base Path",
+            "basePath": "Base site href",
+            "useStorage": "Use Storage",
+            "useStorage-tooltip": "SSO should use storage?",
+            "physicalPath": "Physical Path",
+            "physicalPath-tooltip": "Location to save image"
         }
     }
 }

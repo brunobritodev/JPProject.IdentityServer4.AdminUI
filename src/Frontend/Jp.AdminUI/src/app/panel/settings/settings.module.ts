@@ -8,6 +8,7 @@ import { NgxSelectModule } from 'ngx-select-ex';
 import { EmailSettingsComponent } from './emails/email-settings.component';
 import { GlobalSettingsService } from './global-settings.service';
 import { SettingsComponent } from './settings.component';
+import { StorageSettingsComponent } from './storage/storage-settings.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
     declarations: [
         SettingsComponent,
         EmailSettingsComponent,
+        StorageSettingsComponent
     ],
     providers: [
         GlobalSettingsService

@@ -470,6 +470,29 @@
             "useSsl-tooltip": "Use ssl",
             "sendEmail": "Αποστολή e-mail",
             "sendEmail-tooltip": "Ο SSO μπορεί να στείλει e-mail?"
+        },
+        "storage": {
+          "description": "Ρυθμίσεις του Storage για τις εικόνες προφίλ, εικόνες client και κάθε είδους αρχείου του SSO.",
+          "password": "Password",
+          "password-tooltip": "Storage Password",
+          "username": "Username",
+          "username-tooltip": "Storage Username",
+          "azure-description": "Ρυθμίσεις Azure Blob",
+          "azure": "Azure",
+          "s3-description": "Ρυθμίσεις Amazon",
+          "s3": "Amazon S3",
+          "local-description": "Το Storage θα είναι στον ίδιο φάκελο με το filesystem του SSO",
+          "local": "Local",
+          "bucket": "Bucket",
+          "bucket-tooltip": "Όνομα του Bucket",
+          "virtualPath-tooltip": "Virtual Path για να ενωθεί με το Base Path",
+          "virtualPath": "Virtual Path",
+          "basePath-tooltip": "Base Path",
+          "basePath": "Base site href",
+          "useStorage": "Χρήση του Storage",
+          "useStorage-tooltip": "Ο SSO θα χρησιμοποιεί storage?",
+          "physicalPath": "Physical Path",
+          "physicalPath-tooltip": "Τοποθεσία αποθήκευσης εικόνων"
         }
     }
 }
