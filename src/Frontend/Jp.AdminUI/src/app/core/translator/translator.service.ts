@@ -12,6 +12,7 @@ export class TranslatorService {
         { code: "pt", text: "Portuguese" },
         { code: "fr", text: "French" },
         { code: "nl", text: "Dutch" },
+        { code: "de", text: "German" },
         { code: "ru", text: "Russian" },
         { code: "zh-cn", text: "Chinese Simplified" },
         { code: "zh-tw", text: "Chinese Traditional" },

@@ -17,7 +17,7 @@
         "empty": "Leer",
         "goback": "Zurück",
         "identity-resource": "Identitätsressourcen",
-        "loading": "Laden... Bitte warten!",
+        "loading": "Lädt inhalte... Bitte warten!",
         "persisted-grants": "Persistente API-Grants",
         "remove": "Entfernen",
         "revoke": "Widerrufen",
@@ -45,7 +45,7 @@
             "userClaims": "Benutzer-Claims",
             "userClaims-tooltip": "Liste der verknüpften Benutzeranspruchstypen, die in das Zugriffstoken aufgenommen werden sollten."
         },
-        "description": "Ressourcen sind etwas, das Sie mit IdentityServer schützen möchten - entweder APIs (dadurch werden auch Ihre Daten geschützt). Der Zugriff auf Ihre Datenbankinhalte muss also über eine API erfolgen.",
+        "description": "Ressourcen sind etwas, das Sie mit IdentityServer schützen möchten - wie etwa APIs (dadurch werden auch Ihre Daten geschützt). Der Zugriff auf Ihre Datenbankinhalte muss also über eine API erfolgen.",
         "edit": {
             "description": "Beschreibung",
             "description-tooltip": "Dieser Wert kann z.B. auf dem Zustimmungsbildschirm verwendet werden.",
