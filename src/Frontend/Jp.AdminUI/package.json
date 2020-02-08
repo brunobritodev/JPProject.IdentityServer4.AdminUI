@@ -75,7 +75,7 @@
     "ng2-validation": "4.2.0",
     "ngx-bootstrap": "^5.1.0",
     "ngx-chips": "^2.0.0-beta.0",
-    "ngx-color-picker": "^8.1.0",
+    "ngx-color-picker": "^9.0.0",
     "ngx-image-cropper": "^2.0.3",
     "ngx-infinite-scroll": "^7.1.0",
     "ngx-select-ex": "^3.6.8",
