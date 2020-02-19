@@ -6,6 +6,7 @@ export const authProdConfig: AuthConfig = {
     clientId: 'IS4-Admin',
     requireHttps: environment.RequireHttps,
     redirectUri: environment.Uri + "/login-callback",
+    responseType: 'code',
     silentRefreshRedirectUri: environment.Uri + '/silent-refresh.html',
     scope: "openid profile email jp_api.is4 role",
     sessionChecksEnabled: true,

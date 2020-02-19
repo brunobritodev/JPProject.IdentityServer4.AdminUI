@@ -393,7 +393,13 @@
             "twoFactorEnabled-tooltip": "Gets or sets a flag indicating if two factor authentication is enabled for this user",
             "user-data": "User Data",
             "userName": "UserName",
-            "userName-tooltip": "Gets or sets the user name for this user."
+            "userName-tooltip": "Gets or sets the user name for this user.",
+            "confirmEmail": "Confirm e-mail",
+            "confirmEmail-tooltip": "This user should confirm his e-mail",
+            "socialNumber": "Social Number",
+            "socialNumber-tooltip": "SSN for Users. EID in case of company user",
+            "birthdate": "Birthdate",
+            "birthdate-tooltip": "User birthdate"
         },
         "list": {
             "email": "Email",

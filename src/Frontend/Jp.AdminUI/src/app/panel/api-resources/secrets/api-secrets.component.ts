@@ -58,10 +58,10 @@ export class ApiResourceSecretsComponent implements OnInit {
         });
     }
 
-    public remove(id: number) {
+    public remove(secret: ApiResourceSecret) {
         this.showButtonLoading = true;
         this.errors = [];
-        this.apiResourceService.removeSecret(this.resourceName, id).subscribe(
+        this.apiResourceService.removeSecret(this.resourceName, secret.type, secret.value).subscribe(
             () => {
                 this.showSuccessMessage();
                 this.loadSecrets();

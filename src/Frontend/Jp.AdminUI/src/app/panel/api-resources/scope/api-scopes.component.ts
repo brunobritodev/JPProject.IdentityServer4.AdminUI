@@ -63,10 +63,10 @@ export class ApiResourceScopesComponent implements OnInit {
         });
     }
 
-    public remove(id: number) {
+    public remove(scope: Scope) {
         this.showButtonLoading = true;
         this.errors = [];
-        this.apiResourceService.removeScope(this.resourceName, id).subscribe(
+        this.apiResourceService.removeScope(this.resourceName, scope.name).subscribe(
             () => {
                 this.showSuccessMessage();
                 this.loadScopes();

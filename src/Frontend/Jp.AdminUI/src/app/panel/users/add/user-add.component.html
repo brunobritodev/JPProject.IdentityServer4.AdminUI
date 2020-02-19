@@ -30,9 +30,8 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.userName-tooltip' | translate">{{
                     'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate"
-                        [(ngModel)]="model.userName" (keyup)="checkIfUniquenameExists()" (blur)="checkIfUniquenameExists()" [ngClass]="getClassUsernameExist()"
-                        required />
+                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate" [(ngModel)]="model.userName" (keyup)="checkIfUniquenameExists()" (blur)="checkIfUniquenameExists()" [ngClass]="getClassUsernameExist()" required
+                    />
                 </div>
             </div>
         </fieldset>
@@ -42,8 +41,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.name-tooltip' | translate">{{
                     'users.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate"
-                        [(ngModel)]="model.name" />
+                    <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate" [(ngModel)]="model.name" />
                 </div>
             </div>
         </fieldset>
@@ -53,8 +51,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{
                     'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate"
-                        [(ngModel)]="model.email" (keyup)="checkIfEmailExists()" (blur)="checkIfEmailExists()" [ngClass]="getClassEmailExist()" required />
+                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [(ngModel)]="model.email" (keyup)="checkIfEmailExists()" (blur)="checkIfEmailExists()" [ngClass]="getClassEmailExist()" required />
                 </div>
             </div>
         </fieldset>
@@ -64,7 +61,7 @@
                 <label class="col-xl-4 col-form-label">{{
                     'users.edit.password' | translate }}</label>
                 <div class="col-xl-8">
-                        <input class="form-control" autocomplete="current-password" type="password" [(ngModel)]="model.password" />
+                    <input class="form-control" autocomplete="current-password" type="password" [(ngModel)]="model.password" />
                 </div>
             </div>
         </fieldset>
@@ -78,7 +75,24 @@
                 </div>
             </div>
         </fieldset>
-
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <div class="col-xl-4">
+                    <label class="col-form-label">{{ 'users.edit.confirmEmail' | translate }}
+                </label>&nbsp;
+                    <button type="button" class="btn btn-xs btn-info" [popover]="'users.edit.confirmEmail-tooltip' | translate" [popoverTitle]="'users.edit.confirmEmail' | translate" placement="top" container="body" [adaptivePosition]="false">
+                    <i class="fa fa-comment-dots"></i>
+                </button>
+                </div>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                    <input type="checkbox" [(ngModel)]="model.confirmEmail" />
+                    <span></span>
+                </label>
+                </div>
+            </div>
+        </fieldset>
     </div>
     <div class="card-footer">
         <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>

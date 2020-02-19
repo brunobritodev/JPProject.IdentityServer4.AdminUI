@@ -49,8 +49,8 @@ export class UserService {
         return this.http.post<UserProfile>(`${this.endpointSignUp}`, model);
     }
 
-    public remove(id: string): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${id}`);
+    public remove(username: string): Observable<void> {
+        return this.http.delete<void>(`${this.endpoint}/${username}`);
     }
 
     public getUserClaims(userName: string): Observable<Claim[]> {

@@ -62,11 +62,11 @@ export class ClientClaimsComponent implements OnInit {
     }
 
 
-    public remove(id: number) {
+    public remove(claim: ClientClaim) {
 
         this.showButtonLoading = true;
         this.errors = [];
-        this.clientService.removeClaim(this.client, id).subscribe(
+        this.clientService.removeClaim(this.client, claim.type, claim.value).subscribe(
             () => {
                 this.showSuccessMessage();
                 this.loadClaims();

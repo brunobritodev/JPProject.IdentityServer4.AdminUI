@@ -34,7 +34,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let property of clientProperties">
-                    <td><button class="btn btn-danger" (click)="remove(property.id)"><i class="fa fa-times"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="remove(property.key)"><i class="fa fa-times"></i></button></td>
                     <td>{{property.key}}</td>
                     <td>{{property.value}}</td>
                 </tr>
@@ -48,27 +48,25 @@
         <h3>{{ client }}</h3>
     </div>
     <div class="card-body">
-        
+
         <!--Input - text -->
         <fieldset>
             <div class="form-group row">
                 <label class="col-xl-3 col-form-label">{{ 'client.property.key' | translate }} <i class="fa fa-comment-dots"
                         placement="top" [tooltip]="'client.property.key-tooltip' | translate"></i></label>
                 <div class="col-xl-9">
-                    <input class="form-control" autocomplete="property-value" [placeholder]="'client.property.key-tooltip' | translate"
-                        [(ngModel)]="model.key" />
+                    <input class="form-control" autocomplete="property-value" [placeholder]="'client.property.key-tooltip' | translate" [(ngModel)]="model.key" />
                 </div>
             </div>
         </fieldset>
-        
+
         <!--Input - text -->
         <fieldset>
             <div class="form-group row">
                 <label class="col-xl-3 col-form-label">{{ 'client.property.value' | translate }} <i class="fa fa-comment-dots"
                         placement="top" [tooltip]="'client.property.value-tooltip' | translate"></i></label>
                 <div class="col-xl-9">
-                    <input class="form-control" autocomplete="property-value" [placeholder]="'client.property.value-tooltip' | translate"
-                        [(ngModel)]="model.value" />
+                    <input class="form-control" autocomplete="property-value" [placeholder]="'client.property.value-tooltip' | translate" [(ngModel)]="model.value" />
                 </div>
             </div>
         </fieldset>

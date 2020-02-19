@@ -35,7 +35,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let scope of apiScopes">
-                    <td><button class="btn btn-danger btn-xs" (click)="remove(scope.id)"><i class="fa fa-times"></i></button></td>
+                    <td><button class="btn btn-danger btn-xs" (click)="remove(scope)"><i class="fa fa-times"></i></button></td>
                     <td>{{scope.name}}</td>
                     <td>{{scope.description}}</td>
                     <td><button class="btn btn-info btn-xs" (click)="details(scope)"><i class="fas fa-info"></i></button></td>
@@ -119,8 +119,7 @@
                                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{
                                     'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
                                 <div class="col-xl-8">
-                                    <tag-input theme='bootstrap' [disable]="true" name="apiScopes" [modelAsStrings]="true"
-                                        [identifyBy]="'id'" [displayBy]="'type'" [(ngModel)]="selectedScope.userClaims"></tag-input>
+                                    <tag-input theme='bootstrap' [disable]="true" name="apiScopes" [modelAsStrings]="true" [identifyBy]="'id'" [displayBy]="'type'" [(ngModel)]="selectedScope.userClaims"></tag-input>
                                 </div>
                             </div>
                         </fieldset>
@@ -143,8 +142,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.name-tooltip' | translate">{{
                     'apiResource.scope.name' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="model-name" [placeholder]="'apiResource.scope.name-tooltip' | translate"
-                        [(ngModel)]="model.name" />
+                    <input class="form-control" autocomplete="model-name" [placeholder]="'apiResource.scope.name-tooltip' | translate" [(ngModel)]="model.name" />
                 </div>
             </div>
         </fieldset>
@@ -154,8 +152,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.displayName-tooltip' | translate">{{
                     'apiResource.scope.displayName' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="model-displayName" [placeholder]="'apiResource.scope.displayName-tooltip' | translate"
-                        [(ngModel)]="model.displayName" />
+                    <input class="form-control" autocomplete="model-displayName" [placeholder]="'apiResource.scope.displayName-tooltip' | translate" [(ngModel)]="model.displayName" />
                 </div>
             </div>
         </fieldset>
@@ -165,8 +162,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.description-tooltip' | translate">{{
                     'apiResource.scope.description' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="model-description" [placeholder]="'apiResource.scope.description-tooltip' | translate"
-                        [(ngModel)]="model.description" />
+                    <input class="form-control" autocomplete="model-description" [placeholder]="'apiResource.scope.description-tooltip' | translate" [(ngModel)]="model.description" />
                 </div>
             </div>
         </fieldset>
@@ -215,8 +211,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'apiResource.scope.userClaims-tooltip' | translate">{{
                     'apiResource.scope.userClaims' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.scope.userClaims' | translate"
-                        [(ngModel)]="model.userClaims"></tag-input>
+                    <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [placeholder]="'+' + 'apiResource.scope.userClaims' | translate" [(ngModel)]="model.userClaims"></tag-input>
                 </div>
                 <div class="col-xl-8 offset-4">
                     <small>Sugestions</small>

@@ -79,8 +79,7 @@
                     <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.name-tooltip' | translate">{{
                         'users.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-8">
-                        <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate"
-                            [(ngModel)]="model.name" />
+                        <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate" [(ngModel)]="model.name" />
                     </div>
                 </div>
             </fieldset>
@@ -90,8 +89,7 @@
                     <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{
                         'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-8">
-                        <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate"
-                            [(ngModel)]="model.email" />
+                        <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [(ngModel)]="model.email" />
                     </div>
                 </div>
             </fieldset>
@@ -111,11 +109,20 @@
             <!--Input - text -->
             <fieldset>
                 <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.socialNumber-tooltip' | translate">{{
+                        'users.edit.socialNumber' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input class="form-control" autocomplete="model-socialNumber" [placeholder]="'users.edit.socialNumber-tooltip' | translate" [(ngModel)]="model.socialNumber" />
+                    </div>
+                </div>
+            </fieldset>
+            <!--Input - text -->
+            <fieldset>
+                <div class="form-group row">
                     <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.phoneNumber-tooltip' | translate">{{
                         'users.edit.phoneNumber' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-8">
-                        <input class="form-control" autocomplete="model-phoneNumber" [placeholder]="'users.edit.phoneNumber-tooltip' | translate"
-                            [(ngModel)]="model.phoneNumber" />
+                        <input class="form-control" autocomplete="model-phoneNumber" [placeholder]="'users.edit.phoneNumber-tooltip' | translate" [(ngModel)]="model.phoneNumber" />
                     </div>
                 </div>
             </fieldset>
@@ -129,6 +136,16 @@
                             <input type="checkbox" [(ngModel)]="model.phoneNumberConfirmed" />
                             <span></span>
                         </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Datepicker-->
+            <fieldset>
+                <div class="form-group row mb">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.birthdate-tooltip' | translate">{{
+                        'users.edit.birthdate' | translate }} <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [(bsValue)]="model.birthdate" name="dp-basic" [bsConfig]="bsConfig">
                     </div>
                 </div>
             </fieldset>
@@ -151,8 +168,7 @@
                     <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.lockoutEnd-tooltip' | translate">{{
                         'users.edit.lockoutEnd' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-8">
-                        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [(bsValue)]="model.lockoutEnd"
-                            name="dp-basic" [bsConfig]="bsConfig">
+                        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [(bsValue)]="model.lockoutEnd" name="dp-basic" [bsConfig]="bsConfig">
                     </div>
                 </div>
             </fieldset>
@@ -175,8 +191,7 @@
                     <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.accessFailedCount-tooltip' | translate">{{
                         'users.edit.accessFailedCount' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-8">
-                        <input class="form-control" autocomplete="model-accessFailedCount" [placeholder]="'users.edit.accessFailedCount-tooltip' | translate"
-                            [(ngModel)]="model.accessFailedCount" numbersOnly />
+                        <input class="form-control" autocomplete="model-accessFailedCount" [placeholder]="'users.edit.accessFailedCount-tooltip' | translate" [(ngModel)]="model.accessFailedCount" numbersOnly />
                     </div>
                 </div>
             </fieldset>

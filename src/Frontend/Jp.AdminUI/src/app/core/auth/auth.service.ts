@@ -131,7 +131,7 @@ export class AuthService {
                             // enter credentials.
                             //
                             // Enable this to ALWAYS force a user to login.
-                            // this.oauthService.initImplicitFlow();
+                             this.oauthService.initLoginFlow();
                             //
                             // Instead, we'll now do this:
                             console.warn('User interaction is needed to log in, we will wait for the user to manually log in.');
@@ -159,7 +159,7 @@ export class AuthService {
     }
 
     public login(targetUrl?: string) {
-        this.oauthService.initImplicitFlow(encodeURIComponent(targetUrl || this.router.url));
+        this.oauthService.initLoginFlow(encodeURIComponent(targetUrl || this.router.url));
     }
 
     public logout() { this.oauthService.logOut(); }

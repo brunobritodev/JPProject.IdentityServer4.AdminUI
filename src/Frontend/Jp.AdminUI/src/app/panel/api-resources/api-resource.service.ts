@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { ApiResource, ApiResourceSecret } from '@shared/viewModel/api-resource.model';
@@ -44,8 +44,11 @@ export class ApiResourceService {
         return this.http.get<ApiResourceSecret[]>(`${this.endpoint}/${resourceName}/secrets`);
     }
 
-    public removeSecret(resourceName: string, id: number): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${resourceName}/secrets/${id}`);
+    public removeSecret(resourceName: string, type: string, value: string): Observable<void> {
+        const params = new HttpParams();
+        params.set('type', type);
+        params.set('value', value);
+        return this.http.delete<void>(`${this.endpoint}/${resourceName}/secrets`, { params });
     }
 
     public saveSecret(model: ApiResourceSecret): Observable<ApiResourceSecret[]> {
@@ -55,8 +58,8 @@ export class ApiResourceService {
     public getScopes(resourceName: string): Observable<Scope[]> {
         return this.http.get<Scope[]>(`${this.endpoint}/${resourceName}/scopes`);
     }
-    public removeScope(resourceName: string, id: number): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${resourceName}/scopes/${id}`);
+    public removeScope(resourceName: string, name: string): Observable<void> {
+        return this.http.delete<void>(`${this.endpoint}/${resourceName}/scopes/${name}`);
     }
 
     public saveScope(model: Scope): Observable<Scope[]> {
