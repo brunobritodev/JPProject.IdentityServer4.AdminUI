@@ -28,9 +28,7 @@
                 <tbody>
                     <tr *ngFor="let grant of persistedGrants">
                         <td>
-                            <button class="btn btn-primary btn-xs" (click)="details(grant.key)" placement="top"
-                                [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button>
-                            &nbsp;
+                            <button class="btn btn-primary btn-xs" (click)="details(grant.key)" placement="top" [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button> &nbsp;
                         </td>
                         <td>{{grant.creationTime | date: 'short'}}</td>
                         <td *ngIf="!settings.lightVersion"><img *ngIf="grant.picture" width="32" [src]="grant.picture" /></td>
@@ -38,8 +36,7 @@
                         <td>{{grant.clientId}}</td>
                         <td>{{grant.type}}</td>
                         <td>
-                            <button class="btn btn-danger btn-xs" placement="top"
-                                [tooltip]="'general.revoke' | translate" (click)="remove(grant.key)"><i
+                            <button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.revoke' | translate" (click)="remove(grant.key)"><i
                                     class="fa fa-times"></i></button>
                         </td>
                     </tr>
@@ -60,8 +57,7 @@
                         <option value="40">40</option>
                         <option value="50">50</option>
                     </select>
-                    <ngb-pagination [collectionSize]="total" [(page)]="page" [maxSize]="5" [rotate]="true"
-                        [ellipses]="false" [boundaryLinks]="true" [pageSize]="quantity" (pageChange)="loadGrants()">
+                    <ngb-pagination [collectionSize]="total" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" [pageSize]="quantity" (pageChange)="loadGrants()">
                     </ngb-pagination>
                 </div>
             </div>
@@ -92,9 +88,12 @@
             <dd class="col-sm-9">{{grantDetail.expiration}}</dd>
             <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.scopes' | translate }}</dt>
             <dd class="col-sm-9">
-                <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [disable]="true"
-                    [(ngModel)]="grantDetail.parsedData.Scopes">
+                <tag-input theme='bootstrap' name="userClaims" [modelAsStrings]="true" [disable]="true" [(ngModel)]="grantDetail.parsedData.Scopes">
                 </tag-input>
+            </dd>
+            <dt class="col-sm-3 text-right">{{ 'persistedGrant.list.details' | translate }}</dt>
+            <dd class="col-sm-9">
+                <pre>{{ grantDetail.parsedData | json }}</pre>
             </dd>
         </dl>
     </div>

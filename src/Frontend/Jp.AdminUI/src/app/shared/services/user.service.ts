@@ -46,7 +46,7 @@ export class UserService {
     }
 
     public save(model: UserProfile): Observable<UserProfile> {
-        return this.http.post<UserProfile>(`${this.endpointSignUp}`, model);
+        return this.http.post<UserProfile>(`${this.endpoint}`, model);
     }
 
     public remove(username: string): Observable<void> {

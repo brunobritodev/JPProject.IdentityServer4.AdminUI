@@ -32,7 +32,7 @@ export class PersistedGrantListComponent implements OnInit {
 
     public loadGrants() {
         this.persistedGrantService.getPersistedGrants(this.quantity, this.page).subscribe(a => {
-            this.persistedGrants = a.persistedGrants;
+            this.persistedGrants = a.collection;
             this.total = a.total;
             this.persistedGrants.forEach(grant => grant.parsedData = JSON.parse(grant.data));
         });
