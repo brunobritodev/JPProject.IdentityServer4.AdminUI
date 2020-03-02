@@ -51,9 +51,9 @@ export class ClientService {
     }
 
     public removeSecret(client: string, type: string, value: string): Observable<void> {
-        const params = new HttpParams();
-        params.set('type', type);
-        params.set('value', value);
+        const params = new HttpParams()
+                            .set('type', type)
+                            .set('value', value);
 
         return this.http.delete<void>(`${this.endpoint}/${client}/secrets`, { params });
     }
@@ -79,9 +79,9 @@ export class ClientService {
     }
 
     public removeClaim(client: string, type: string, value: string): Observable<void> {
-        const params = new HttpParams();
-        params.set('type', type);
-        params.set('value', value);
+        const params = new HttpParams()
+                            .set('type', type)
+                            .set('value', value);
         return this.http.delete<void>(`${this.endpoint}/${client}/claims`, { params });
     }
 

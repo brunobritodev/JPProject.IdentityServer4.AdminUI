@@ -1,14 +1,9 @@
-﻿using AutoMapper;
-using AutoMapper.Configuration;
-using JPProject.Admin.Application.AutoMapper;
-using JPProject.Admin.Database;
-using JPProject.Admin.Infra.Data.Context;
+﻿using Jp.Database.Context;
 using JPProject.AspNet.Core;
 using JPProject.Domain.Core.ViewModels;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace JPProject.Admin.Api.Configuration
@@ -17,11 +12,14 @@ namespace JPProject.Admin.Api.Configuration
     {
         public static IServiceCollection ConfigureAdminUi(this IServiceCollection services, IConfiguration configuration)
         {
-            var database = configuration.GetValue<DatabaseType>("ApplicationSettings:DatabaseType");
-            var connString = configuration.GetConnectionString("SSOConnection");
+            services.ConfigureProviderForContext<EventStoreContext>(DetectDatabase(configuration));
+            services.AddDbContext<EventStoreContext>(ProviderSelector.WithProviderAutoSelection(DetectDatabase(configuration)));
 
-            services.Configure<JpDatabaseOptions>(o => o.MustThrowExceptionIfDatabaseDontExist = false);
-            services.ConfigureJpAdmin<AspNetUser>().AddDatabase(database, connString);
+            services
+                .ConfigureJpAdminServices<AspNetUser>()
+                .ConfigureJpAdminStorageServices()
+                .AddJpAdminContext(ProviderSelector.WithProviderAutoSelection(DetectDatabase(configuration)))
+                .AddEventStore<EventStoreContext>();
 
             return services;
 
@@ -29,13 +27,16 @@ namespace JPProject.Admin.Api.Configuration
 
         public static void ConfigureDefaultSettings(this IServiceCollection services)
         {
-            var configurationExpression = new MapperConfigurationExpression();
-            AdminUiMapperConfiguration.RegisterMappings().ForEach(p => configurationExpression.AddProfile(p));
-            var automapperConfig = new MapperConfiguration(configurationExpression);
-
-            services.TryAddSingleton(automapperConfig.CreateMapper());
             // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
         }
+
+        /// <summary>
+        /// it's just a tuple. Returns 2 parameters.
+        /// Trying to improve readability at ConfigureServices
+        /// </summary>
+        private static (DatabaseType, string) DetectDatabase(IConfiguration configuration) => (
+            configuration.GetValue<DatabaseType>("ApplicationSettings:DatabaseType"),
+            configuration.GetConnectionString("SSOConnection"));
     }
 }

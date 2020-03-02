@@ -4,7 +4,7 @@ import { TranslatorService } from '@core/translator/translator.service';
 import { RoleService } from '@shared/services/role.service';
 import { UserService } from '@shared/services/user.service';
 import { ProblemDetails } from '@shared/viewModel/default-response.model';
-import { UserRole } from '@shared/viewModel/user-role.model';
+import { Role, SaveRole } from '@shared/viewModel/role.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import { Observable } from 'rxjs';
 import { debounceTime, flatMap, map, tap } from 'rxjs/operators';
@@ -19,8 +19,8 @@ import { debounceTime, flatMap, map, tap } from 'rxjs/operators';
 export class UserRolesComponent implements OnInit {
 
     public errors: Array<string>;
-    public model: UserRole;
-    public userRoles: UserRole[];
+    public model: SaveRole;
+    public userRoles: Role[];
     public roles: string[];
 
     public toasterconfig: ToasterConfig = new ToasterConfig({
@@ -44,7 +44,7 @@ export class UserRolesComponent implements OnInit {
     public ngOnInit() {
         this.route.params.pipe(tap(p => this.userName = p["username"])).pipe(map(p => p["username"])).pipe(flatMap(m => this.userService.getUserRoles(m.toString()))).subscribe(result => this.userRoles = result);
         this.errors = [];
-        this.model = new UserRole();
+        this.model = new SaveRole();
         this.showButtonLoading = false;
         this.roleService.getAvailableRoles().subscribe(roles => this.roles = roles.map(r => r.name));
 
@@ -85,7 +85,7 @@ export class UserRolesComponent implements OnInit {
                 if (registerResult) {
                     this.showSuccessMessage();
                     this.loadClaims();
-                    this.model = new UserRole();
+                    this.model = new SaveRole();
                 }
                 this.showButtonLoading = false;
             },

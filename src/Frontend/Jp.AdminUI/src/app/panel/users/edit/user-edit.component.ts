@@ -31,7 +31,7 @@ export class UserEditComponent implements OnInit {
     public bsConfig = {
         containerClass: 'theme-angle'
     };
-    public showButtonLoading: boolean;
+    public showButtonLoading: boolean = true;
 
     public shouldChangePass: boolean = false;
     public shouldChangeUserData: boolean = true;
@@ -52,12 +52,15 @@ export class UserEditComponent implements OnInit {
                 tap(user => this.patchObserver = jsonpatch.observe(user))
             ).subscribe(result => {
                 this.model = result;
+                this.showButtonLoading = false;
                 if (this.model.lockoutEnd != null)
                     this.model.lockoutEnd = new Date(this.model.lockoutEnd);
+            }, err => {
+                this.router.navigate(['/users']);
             });
         this.errors = [];
         this.resetPassword = new ResetPassword();
-        this.showButtonLoading = false;
+        
     }
 
     public update() {

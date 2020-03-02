@@ -25,9 +25,14 @@ namespace JPProject.Admin.Api.Controllers
         }
 
         [HttpGet, Route("")]
-        public async Task<ActionResult<ListOfPersistedGrantViewModel>> List([Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1)
+        public async Task<ActionResult<ListOf<PersistedGrantViewModel>>> List([Range(1, 50)] int? limit = 10, [Range(1, int.MaxValue)] int? offset = 1)
         {
-            var irs = await _persistedGrantAppService.GetPersistedGrants(new PagingViewModel(limit ?? 10, offset ?? 0));
+            var searchPersisted = new PersistedGrantSearch()
+            {
+                Limit = limit,
+                Offset = offset
+            };
+            var irs = await _persistedGrantAppService.GetPersistedGrants(searchPersisted);
 
             return ResponseGet(irs);
         }

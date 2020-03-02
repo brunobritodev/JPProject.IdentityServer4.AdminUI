@@ -1,7 +1,7 @@
 export class EventHistoryData {
     public category: string;
     public action: string;
-    public id: string;
+    public aggregate: string;
     public when: string;
     public who: string;
     public details: string;

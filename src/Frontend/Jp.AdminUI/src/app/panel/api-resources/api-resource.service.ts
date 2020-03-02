@@ -45,9 +45,10 @@ export class ApiResourceService {
     }
 
     public removeSecret(resourceName: string, type: string, value: string): Observable<void> {
-        const params = new HttpParams();
-        params.set('type', type);
-        params.set('value', value);
+        const params = new HttpParams()
+                            .set('type', type)
+                            .set('value', value);
+
         return this.http.delete<void>(`${this.endpoint}/${resourceName}/secrets`, { params });
     }
 

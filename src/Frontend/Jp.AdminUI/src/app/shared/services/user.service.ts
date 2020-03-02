@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Claim } from '@shared/viewModel/claim.model';
 import { ListOf } from '@shared/viewModel/list-of.model';
+import { Role, SaveRole } from '@shared/viewModel/role.model';
 import { Operation } from 'fast-json-patch';
 import { Observable } from 'rxjs';
 
 import { EventHistoryData } from '../viewModel/event-history-data.model';
 import { ResetPassword } from '../viewModel/reset-password.model';
 import { UserLogin } from '../viewModel/user-login.model';
-import { UserRole } from '../viewModel/user-role.model';
 import { ListOfUsers, UserProfile } from '../viewModel/userProfile.model';
 
 @Injectable()
@@ -65,15 +65,15 @@ export class UserService {
         return this.http.post<Claim>(`${this.endpoint}/${username}/claims`, model);
     }
 
-    public getUserRoles(userName: string): Observable<UserRole[]> {
-        return this.http.get<UserRole[]>(`${this.endpoint}/${userName}/roles`);
+    public getUserRoles(userName: string): Observable<Role[]> {
+        return this.http.get<Role[]>(`${this.endpoint}/${userName}/roles`);
     }
 
     public removeRole(username: string, role: string): Observable<void> {
         return this.http.delete<void>(`${this.endpoint}/${username}/roles/${role}`);
     }
 
-    public saveRole(username: string, model: UserRole): Observable<boolean> {
+    public saveRole(username: string, model: SaveRole): Observable<boolean> {
         return this.http.post<boolean>(`${this.endpoint}/${username}/roles`, model);
     }
 

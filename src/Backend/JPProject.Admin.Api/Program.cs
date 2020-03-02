@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace JPProject.Admin.Api
 {
@@ -28,7 +29,7 @@ namespace JPProject.Admin.Api
 
             var host = CreateHostBuilder(args).Build();
 
-            AdminUiMigrationHelpers.EnsureSeedData(host.Services).Wait();
+            AdminUiMigrationHelpers.EnsureSeedData(host.Services.CreateScope()).Wait();
 
             host.Run();
         }

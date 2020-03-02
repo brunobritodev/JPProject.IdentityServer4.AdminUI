@@ -25,7 +25,8 @@
         "users": "Users",
         "emails": "Email",
         "list": "List",
-        "settings": "SSO Global Settings"
+        "settings": "SSO Global Settings",
+        "events": "Events"
     },
     "header": {
         "search": {
@@ -500,5 +501,18 @@
             "physicalPath": "Physical Path",
             "physicalPath-tooltip": "Location to save image"
         }
+    },
+    "events": {
+        "description": "Search for generated events from SSO",
+        "who": "Who",
+        "when": "When",
+        "action": "Actions",
+        "where": "Where",
+        "details": "Details",
+        "category": "Category",
+        "aggregate": "Aggregate",
+        "aggregate-tooltip": "Aggregate name",
+        "eventType": "Event Type",
+        "eventType-tooltip": "Category of an Event (Optional)"
     }
 }
