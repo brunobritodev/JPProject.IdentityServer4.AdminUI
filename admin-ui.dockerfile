@@ -1,5 +1,5 @@
 # base image
-FROM node:12.7-alpine as builder
+FROM node:13.8.0-alpine as builder
 
 # install and cache app dependencies
 COPY ["src/Frontend/Jp.AdminUI/package.json", "./"]
