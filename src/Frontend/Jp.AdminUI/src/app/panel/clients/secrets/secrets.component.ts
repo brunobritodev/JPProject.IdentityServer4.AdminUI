@@ -61,11 +61,11 @@ export class ClientSecretsComponent implements OnInit {
         });
     }
 
-    public remove(id: number) {
+    public remove(secret: ClientSecret) {
 
         this.showButtonLoading = true;
         this.errors = [];
-        this.clientService.removeSecret(this.client, id).subscribe(
+        this.clientService.removeSecret(this.client, secret.type, secret.value).subscribe(
             () => {
                 this.showSuccessMessage();
                 this.loadSecrets();

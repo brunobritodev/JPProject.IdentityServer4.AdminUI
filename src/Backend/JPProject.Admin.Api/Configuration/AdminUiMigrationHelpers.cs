@@ -1,7 +1,9 @@
-﻿using JPProject.Admin.Infra.Data.Context;
-using JPProject.EntityFrameworkCore.Context;
+﻿using IdentityServer4.EntityFramework.Entities;
+using Jp.Database.Context;
+using JPProject.Admin.EntityFramework.Repository.Context;
+using JPProject.EntityFrameworkCore.MigrationHelper;
 using Microsoft.Extensions.DependencyInjection;
-using System;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace JPProject.Admin.Api.Configuration
@@ -10,23 +12,23 @@ namespace JPProject.Admin.Api.Configuration
     {
         /// <summary>
         /// Generate migrations before running this method, you can use command bellow:
-        /// Nuget package manager: Add-Migration DbInit -context ApplicationIdentityContext -output Data/Migrations
+        /// Nuget package manager: Add-Migration DbInit -context ApplicationIdentityContext -output Data/Migrations333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
         /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationIdentityContext -o Data/Migrations
         /// </summary>
         public static async Task EnsureSeedData(IServiceScope serviceScope)
         {
             var services = serviceScope.ServiceProvider;
-            await EnsureSeedData(services);
-        }
-        public static async Task EnsureSeedData(IServiceProvider serviceProvider)
-        {
-            await Infra.Data.Configuration.DbMigrationHelpers.CheckDatabases(serviceProvider, new JpDatabaseOptions() { MustThrowExceptionIfDatabaseDontExist = true });
+            var ssoContext = services.GetRequiredService<JpProjectAdminUiContext>();
 
-            using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            {
-                var eventStoreDb = scope.ServiceProvider.GetRequiredService<EventStoreContext>();
-                await Infra.Data.Configuration.DbMigrationHelpers.ConfigureEventStoreContext(eventStoreDb);
-            }
+            Log.Information("Check if database contains Client (ConfigurationDbStore) table");
+            await DbHealthChecker.WaitForTable<Client>(ssoContext);
+
+            Log.Information("Check if database contains PersistedGrant (PersistedGrantDbStore) table");
+            await DbHealthChecker.WaitForTable<PersistedGrant>(ssoContext);
+            Log.Information("Checks done");
+
+            var eventStoreDb = serviceScope.ServiceProvider.GetRequiredService<EventStoreContext>();
+            await eventStoreDb.Database.EnsureCreatedAsync();
         }
     }
 }

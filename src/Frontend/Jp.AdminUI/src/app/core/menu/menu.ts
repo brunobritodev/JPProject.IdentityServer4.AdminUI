@@ -8,14 +8,15 @@ export class MenuItem {
     icon?: string;
     alert?: string;
     submenu?: Array<any>;
-    lightVersion?: boolean;
+    lightVersion: boolean;
     translate?: string;
 }
 
 const Home: MenuItem = {
     text: "Home",
     link: "/home",
-    icon: "icon-home"
+    icon: "icon-home",
+    lightVersion: false
 };
 
 const Settings: MenuItem = {
@@ -28,6 +29,7 @@ const Clients: MenuItem  = {
     translate: "general.clients",
     link: "/clients",
     icon: "fa fa-desktop",
+    lightVersion: true,
     submenu: [
         {
             text: "List",
@@ -46,6 +48,7 @@ const IdentityResource: MenuItem  = {
     translate: "general.identity-resource",
     link: "/identity-resource",
     icon: "far fa-id-card",
+    lightVersion: true,
     submenu: [
         {
             text: "List",
@@ -64,6 +67,7 @@ const ApiResource: MenuItem  = {
     translate: "general.api-resource",
     link: "/api-resource",
     icon: "fas fa-cloud",
+    lightVersion: true,
     submenu: [
         {
             text: "List",
@@ -81,7 +85,8 @@ const ApiResource: MenuItem  = {
 const PersistedGrants: MenuItem  = {
     translate: "general.persisted-grants",
     link: "/persisted-grants",
-    icon: "fas fa-key"
+    icon: "fas fa-key",
+    lightVersion: true
 };
 
 const Users: MenuItem  = {
@@ -138,9 +143,17 @@ const Emails: MenuItem  = {
     ],
     lightVersion: false
 };
+
+const Events: MenuItem  = {
+    translate: "general.events",
+    link: "/events",
+    icon: "far fa-save",
+    lightVersion: false
+};
 const headingMain: MenuItem  = {
     text: "IdentityServer4",
-    heading: true
+    heading: true,
+    lightVersion: true,
 };
 
 const headingUsers: MenuItem  = {
@@ -165,6 +178,7 @@ export const menu: MenuItem[]  = [
     Users,
     Roles,
     headingSettings,
+    Events,
     Emails,
     Settings
 ];

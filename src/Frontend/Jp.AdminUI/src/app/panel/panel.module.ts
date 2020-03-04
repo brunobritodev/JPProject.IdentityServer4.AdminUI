@@ -21,7 +21,8 @@ const routes: Routes = [
             { path: "users", loadChildren: "app/panel/users/user.module#UserModule" },
             { path: "roles", loadChildren: "app/panel/roles/roles.module#RoleModule" },
             { path: "emails", loadChildren: "app/panel/emails/emails.module#EmailModule" },
-            { path: "settings", loadChildren: "app/panel/settings/settings.module#SettingsModule" }
+            { path: "settings", loadChildren: "app/panel/settings/settings.module#SettingsModule" },
+            { path: "events", loadChildren: "app/panel/events/events.module#EventsModule" }
         ]
     },
 ];

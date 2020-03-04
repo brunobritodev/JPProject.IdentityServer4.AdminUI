@@ -25,9 +25,7 @@ export class SettingsService {
         private oauthService: OAuthService,
         private versionService: VersionService) {
 
-        this.isLightVersion$ = this.versionService.getVersion().pipe(tap(light =>
-            this.lightVersion = light
-        ));
+        this.isLightVersion$ = this.versionService.getVersion().pipe(tap(light => this.lightVersion = light));
         // App Settings
         // -----------------------------------
         this.app = {

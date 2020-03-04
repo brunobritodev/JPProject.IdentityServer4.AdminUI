@@ -34,7 +34,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let claim of claims">
-                    <td><button class="btn btn-danger btn-xs" placement="top"  [tooltip]="'general.remove' | translate" (click)="remove(claim.id)"><i class="fa fa-times"></i></button></td>
+                    <td><button class="btn btn-danger btn-xs" placement="top" [tooltip]="'general.remove' | translate" (click)="remove(claim)"><i class="fa fa-times"></i></button></td>
                     <td>{{claim.type}}</td>
                     <td>{{claim.value}}</td>
                 </tr>
@@ -55,8 +55,7 @@
                 <label class="col-xl-3 col-form-label">{{ 'client.claims.type' | translate }} <i class="fa fa-comment-dots"
                         placement="top" [tooltip]="'client.claims.type-tooltip' | translate"></i></label>
                 <div class="col-xl-9">
-                        <input class="form-control" autocomplete="claims-type" [placeholder]="'client.claims.type-tooltip' | translate"
-                        [(ngModel)]="model.type" />
+                    <input class="form-control" autocomplete="claims-type" [placeholder]="'client.claims.type-tooltip' | translate" [(ngModel)]="model.type" />
                 </div>
                 <div class="col-xl-9 offset-3">
                     <small>Sugestions</small>
@@ -73,8 +72,7 @@
                 <label class="col-xl-3 col-form-label">{{ 'client.claims.value' | translate }} <i class="fa fa-comment-dots"
                         placement="top" [tooltip]="'client.claims.value-tooltip' | translate"></i></label>
                 <div class="col-xl-9">
-                    <input class="form-control" autocomplete="claims-value" [placeholder]="'client.claims.value-tooltip' | translate"
-                        [(ngModel)]="model.value" />
+                    <input class="form-control" autocomplete="claims-value" [placeholder]="'client.claims.value-tooltip' | translate" [(ngModel)]="model.value" />
                 </div>
             </div>
         </fieldset>

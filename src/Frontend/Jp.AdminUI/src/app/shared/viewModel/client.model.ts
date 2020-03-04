@@ -36,7 +36,6 @@ export class KeyValuePair {
 
 
 export class ClientProperty {
-    id: number;
     clientId: string;
     key: string;
     value: string;

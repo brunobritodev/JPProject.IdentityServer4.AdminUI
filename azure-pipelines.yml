@@ -89,12 +89,12 @@ jobs:
           customCommand: 'run test -- --watch=false --code-coverage'
           workingDir: src/Frontend/Jp.AdminUI
 
-      - task: Npm@1
-        displayName: 'NPM - E2E - AdminUI'
-        inputs:
-          command: custom
-          customCommand: 'run e2e'
-          workingDir: src/Frontend/Jp.AdminUI 
+      # - task: Npm@1
+      #   displayName: 'NPM - E2E - AdminUI'
+      #   inputs:
+      #     command: custom
+      #     customCommand: 'run e2e'
+      #     workingDir: src/Frontend/Jp.AdminUI 
 
       - task: Npm@1
         displayName: 'NPM - Build Prod - AdminUI'

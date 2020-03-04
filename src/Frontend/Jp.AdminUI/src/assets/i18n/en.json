@@ -25,7 +25,8 @@
         "users": "Users",
         "emails": "Email",
         "list": "List",
-        "settings": "SSO Global Settings"
+        "settings": "SSO Global Settings",
+        "events": "Events"
     },
     "header": {
         "search": {
@@ -393,7 +394,13 @@
             "twoFactorEnabled-tooltip": "Gets or sets a flag indicating if two factor authentication is enabled for this user",
             "user-data": "User Data",
             "userName": "UserName",
-            "userName-tooltip": "Gets or sets the user name for this user."
+            "userName-tooltip": "Gets or sets the user name for this user.",
+            "confirmEmail": "Confirm e-mail",
+            "confirmEmail-tooltip": "This user should confirm his e-mail",
+            "socialNumber": "Social Number",
+            "socialNumber-tooltip": "SSN for Users. EID in case of company user",
+            "birthdate": "Birthdate",
+            "birthdate-tooltip": "User birthdate"
         },
         "list": {
             "email": "Email",
@@ -494,5 +501,18 @@
             "physicalPath": "Physical Path",
             "physicalPath-tooltip": "Location to save image"
         }
+    },
+    "events": {
+        "description": "Search for generated events from SSO",
+        "who": "Who",
+        "when": "When",
+        "action": "Actions",
+        "where": "Where",
+        "details": "Details",
+        "category": "Category",
+        "aggregate": "Aggregate",
+        "aggregate-tooltip": "Aggregate name",
+        "eventType": "Event Type",
+        "eventType-tooltip": "Category of an Event (Optional)"
     }
 }

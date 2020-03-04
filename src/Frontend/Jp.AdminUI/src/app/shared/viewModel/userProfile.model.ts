@@ -18,6 +18,9 @@ export class UserProfile {
     public jobTitle: string;
     public password: string;
     public confirmPassword: string;
+    public confirmEmail: boolean;
+    public socialNumber: string;
+    public birthdate?: Date;
 
     public isValidEmail(): boolean {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

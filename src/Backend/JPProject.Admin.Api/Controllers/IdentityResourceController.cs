@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using IdentityServer4.Models;
+﻿using IdentityServer4.Models;
 using JPProject.Admin.Application.Interfaces;
 using JPProject.Admin.Application.ViewModels.IdentityResourceViewModels;
 using JPProject.Domain.Core.Bus;
@@ -9,6 +7,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace JPProject.Admin.Api.Controllers
 {
@@ -47,6 +47,7 @@ namespace JPProject.Admin.Api.Controllers
                 NotifyModelStateErrors();
                 return ModelStateErrorResponseError();
             }
+
             await _identityResourceAppService.Save(model);
             var idr = await _identityResourceAppService.GetDetails(model.Name);
             return ResponsePost(nameof(Details), new { resource = model.Name }, idr);
@@ -66,7 +67,8 @@ namespace JPProject.Admin.Api.Controllers
         }
 
         [HttpPatch("{resource}")]
-        public async Task<ActionResult> PartialUpdate(string resource, [FromBody] JsonPatchDocument<IdentityResource> model)
+        public async Task<ActionResult> PartialUpdate(string resource,
+            [FromBody] JsonPatchDocument<IdentityResource> model)
         {
             if (!ModelState.IsValid)
             {
