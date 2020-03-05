@@ -72,16 +72,18 @@ Client configuration
         ClientId = "IS4-Admin",
         ClientName = "IS4-Admin",
         ClientUri = "http://localhost:4300",
-        AllowedGrantTypes = GrantTypes.Implicit,
-        AllowAccessTokensViaBrowser = true,
+        AllowedGrantTypes = GrantTypes.Code,
+        AllowAccessTokensViaBrowser = false,
+        RequireConsent = true,
+        RequirePkce = true,
+        AllowPlainTextPkce = false,
+        RequireClientSecret = false,
         RedirectUris = new[] {
             "http://localhost:4300/login-callback",
             "http://localhost:4300/silent-refresh.html"
         },
         AllowedCorsOrigins = { "http://localhost:4300" },
-        IdentityTokenLifetime = 3600,
         LogoUri = "https://jpproject.azurewebsites.net/sso/images/brand/logo.png",
-        AuthorizationCodeLifetime = 3600,
         PostLogoutRedirectUris = {"http://localhost:4300",},
         AllowedScopes =
         {
