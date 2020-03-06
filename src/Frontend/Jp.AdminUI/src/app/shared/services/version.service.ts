@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class VersionService {
-    
+
 
     endpoint: string;
 
@@ -15,7 +15,8 @@ export class VersionService {
     }
 
     public getVersion(): Observable<boolean> {
-        return this.http.get(`${this.endpoint}`, { responseType: 'text' }).pipe(map(t => t == "light"));
+        return this.http.get(`${this.endpoint}`, { responseType: 'text' })
+            .pipe(map(t =>  JSON.parse(t) == "light"));
     }
-    
+
 }

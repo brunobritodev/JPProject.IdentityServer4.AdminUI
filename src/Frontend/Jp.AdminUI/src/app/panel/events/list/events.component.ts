@@ -1,62 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { TranslatorService } from '@core/translator/translator.service';
 import { UserService } from '@shared/services/user.service';
 import { EventHistoryData } from '@shared/viewModel/event-history-data.model';
+import { EventSelector } from '@shared/viewModel/event-selector';
 import { ListOf } from '@shared/viewModel/list-of.model';
 import { UserProfile } from '@shared/viewModel/userProfile.model';
 import { forkJoin, Observable, Subject } from 'rxjs';
-import { catchError, debounceTime, flatMap, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, flatMap, map, switchMap, tap } from 'rxjs/operators';
+
+import { EventsService } from '../events.service';
 
 @Component({
-    selector: "app-user-events",
-    templateUrl: "./user-events.component.html",
-    styleUrls: ["./user-events.component.scss"],
+    selector: "app-events",
+    templateUrl: "./events.component.html",
+    styleUrls: ["./events.component.scss"],
     providers: [UserService]
 })
-export class UserEventsComponent implements OnInit {
+export class EventsComponent implements OnInit {
 
     public model: EventHistoryData[];
-
+    public selectedType: string;
     public total: number;
     public page: number = 1;
     public quantity: number = 10;
     private eventSearch: Subject<string> = new Subject<string>();
-    public user: UserProfile;
+
+    public eventsToSelect: EventSelector[];
+    public aggregatesToSelect: Array<string>;
+
+    public selectedAggregate: string;
+    aggregatesTypes: string[];
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router,
         public translator: TranslatorService,
-        private userService: UserService) { }
+        private eventService: EventsService) { }
 
     ngOnInit() {
-        this.route.params
-            .pipe(
-                flatMap(p => this.userService.getDetails(p["username"])),
-                tap(user => this.user = user),
-            )
-            .subscribe(s => this.loadResources(),
-                err => {
-                    this.router.navigate(['/users']);
-                });
+        this.eventService.listAggregates().subscribe(s => {
+            this.eventsToSelect = s;
+            this.aggregatesTypes = Array.from(new Set(this.eventsToSelect.map(m => m.aggregateType)));
+        });
 
         this.eventSearch
             .pipe(debounceTime(500))
-            .pipe(switchMap(text => this.userService.searchEvents(this.user.userName, text, this.quantity, this.page)))
+            .pipe(switchMap(text => this.eventService.searchEvents(text, this.quantity, this.page)))
             .subscribe((response: ListOf<EventHistoryData>) => {
                 this.model = response.collection;
                 this.total = response.total;
+                this.model.forEach(e => e.show = false);
             });
+        this.loadResources();
     }
 
     public loadResources() {
-        this.userService.showEvents(this.user.userName, this.quantity, this.page)
-            .subscribe((response: ListOf<EventHistoryData>) => {
-                this.setEveryoneToNotShow();
-                this.model = response.collection;
-                this.total = response.total;
-            });
+        this.eventSearch.next(this.selectedAggregate == null ? "" : this.selectedAggregate);
     }
 
     public findEvent(event: any) {
@@ -80,7 +79,7 @@ export class UserEventsComponent implements OnInit {
             return;
         }
 
-        let htmlContent = `<pre class="pre-scrollable-width">${JSON.stringify(JSON.parse(item.details), null, 4)}</pre>`;
+        let htmlContent = `<pre>${JSON.stringify(JSON.parse(item.details), null, 4)}</pre>`;
 
         // Create an empty <tr> element and add it to the 1st position of the table:
         var row = table.insertRow(index + 2);
@@ -97,11 +96,14 @@ export class UserEventsComponent implements OnInit {
     }
 
     private setEveryoneToNotShow() {
-        if (this.model == null)
-            return;
         // set all others items as show = false
         this.model.forEach(e => {
             e.show = false;
         });
     }
+
+    public getAggregates(type: string) {
+        this.aggregatesToSelect = this.eventsToSelect.filter(f => f.aggregateType == type).map(m => m.aggregate);
+    }
+
 }

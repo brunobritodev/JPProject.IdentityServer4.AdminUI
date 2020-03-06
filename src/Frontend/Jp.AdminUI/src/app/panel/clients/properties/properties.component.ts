@@ -57,10 +57,10 @@ export class ClientPropertiesComponent implements OnInit {
         });
     }
 
-    public remove(id: number) {
+    public remove(key: string) {
 
         this.showButtonLoading = true;
-        this.clientService.removeProperty(this.client, id).subscribe(
+        this.clientService.removeProperty(this.client, key).subscribe(
             () => {
                 this.showSuccessMessage();
                 this.loadProperties();

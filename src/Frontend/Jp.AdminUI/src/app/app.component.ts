@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
         private authService: AuthService,
         public settings: SettingsService
     ) {
-        this.authService.runInitialLoginSequence(); 
+        this.authService.runInitialLoginSequence();
     }
 
 

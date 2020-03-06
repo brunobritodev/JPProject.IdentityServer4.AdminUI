@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { ClientList } from '@shared/viewModel/client-list.model';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class ClientService {
     endpoint: string;
-    
+
 
     constructor(private http: HttpClient) {
         this.endpoint = environment.ResourceServer + "clients";
@@ -36,9 +36,9 @@ export class ClientService {
     public partialUpdate(client: string, patch: Operation[]): Observable<void> {
         return this.http.patch<void>(`${this.endpoint}/${client}`, patch);
     }
-    
+
     public copy(clientId: string): Observable<Client> {
-        const command = { };
+        const command = {};
         return this.http.post<Client>(`${this.endpoint}/${clientId}/copy`, command);
     }
 
@@ -50,20 +50,24 @@ export class ClientService {
         return this.http.get<ClientSecret[]>(`${this.endpoint}/${clientId}/secrets`);
     }
 
-    public removeSecret(client: string, id: number): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${client}/secrets/${id}`);
+    public removeSecret(client: string, type: string, value: string): Observable<void> {
+        const params = new HttpParams()
+                            .set('type', type)
+                            .set('value', value);
+
+        return this.http.delete<void>(`${this.endpoint}/${client}/secrets`, { params });
     }
 
     public saveSecret(model: ClientSecret): Observable<ClientSecret[]> {
-        return this.http.post<ClientSecret[]>(`${this.endpoint}/${model.clientId}/secrets` , model);
+        return this.http.post<ClientSecret[]>(`${this.endpoint}/${model.clientId}/secrets`, model);
     }
 
     public getClientProperties(clientId: string): Observable<ClientProperty[]> {
         return this.http.get<ClientProperty[]>(`${this.endpoint}/${clientId}/properties`);
     }
 
-    public removeProperty(client: string, id: number): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${client}/properties/${id}`);
+    public removeProperty(client: string, key: string): Observable<void> {
+        return this.http.delete<void>(`${this.endpoint}/${client}/properties/${key}`);
     }
 
     public saveProperty(model: ClientProperty): Observable<ClientProperty[]> {
@@ -74,8 +78,11 @@ export class ClientService {
         return this.http.get<ClientClaim[]>(`${this.endpoint}/${clientId}/claims`);
     }
 
-    public removeClaim(client: string, id: number): Observable<void> {
-        return this.http.delete<void>(`${this.endpoint}/${client}/claims/${id}`);
+    public removeClaim(client: string, type: string, value: string): Observable<void> {
+        const params = new HttpParams()
+                            .set('type', type)
+                            .set('value', value);
+        return this.http.delete<void>(`${this.endpoint}/${client}/claims`, { params });
     }
 
     public saveClaim(model: ClientClaim): Observable<ClientClaim[]> {

@@ -37,7 +37,11 @@ export class RoutesModule {
     constructor(public menuService: MenuService, tr: TranslatorService, private settings: SettingsService) {
 
         this.settings.isLightVersion$.subscribe(lightVersion => {
-            menuService.addMenu(menu.filter(f => f.lightVersion == null || f.lightVersion == lightVersion));
+
+            if (lightVersion)
+                menuService.addMenu(menu.filter(f => f.lightVersion == lightVersion));
+            else
+                menuService.addMenu(menu);
         });
     }
 }

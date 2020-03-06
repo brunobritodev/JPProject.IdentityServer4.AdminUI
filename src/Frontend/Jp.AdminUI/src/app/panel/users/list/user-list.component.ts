@@ -46,7 +46,7 @@ export class UserListComponent implements OnInit {
         });
     }
 
-    public remove(id: string) {
+    public remove(user: UserProfile) {
         this.translator.translate.get('identityResource.remove').subscribe(m => {
             Swal.fire({
                 title: m['title'],
@@ -60,7 +60,7 @@ export class UserListComponent implements OnInit {
             }).then(isConfirm => {
                 if (isConfirm) {
 
-                    this.userService.remove(id).subscribe(
+                    this.userService.remove(user.userName).subscribe(
                         () => {
                             this.loadResources();
                             Swal.fire("Deleted!", m["deleted"], 'success');
