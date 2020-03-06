@@ -299,7 +299,8 @@
             "key": "Key",
             "picture": "Picture",
             "scopes": "Scopes",
-            "type": "Type"
+            "type": "Type",
+            "details": "Details"
         },
         "remove": {
             "cancelButtonText": "No, cancel plx!",

@@ -36,10 +36,10 @@ export class UserEventsComponent implements OnInit {
                 flatMap(p => this.userService.getDetails(p["username"])),
                 tap(user => this.user = user),
             )
-            .subscribe(s => this.loadResources(), 
-            err => {
-                this.router.navigate(['/users']);
-            });
+            .subscribe(s => this.loadResources(),
+                err => {
+                    this.router.navigate(['/users']);
+                });
 
         this.eventSearch
             .pipe(debounceTime(500))
@@ -53,6 +53,7 @@ export class UserEventsComponent implements OnInit {
     public loadResources() {
         this.userService.showEvents(this.user.userName, this.quantity, this.page)
             .subscribe((response: ListOf<EventHistoryData>) => {
+                this.setEveryoneToNotShow();
                 this.model = response.collection;
                 this.total = response.total;
             });
@@ -79,7 +80,7 @@ export class UserEventsComponent implements OnInit {
             return;
         }
 
-        let htmlContent = `<pre>${JSON.stringify(JSON.parse(item.details), null, 4)}</pre>`;
+        let htmlContent = `<pre class="pre-scrollable-width">${JSON.stringify(JSON.parse(item.details), null, 4)}</pre>`;
 
         // Create an empty <tr> element and add it to the 1st position of the table:
         var row = table.insertRow(index + 2);
@@ -96,6 +97,8 @@ export class UserEventsComponent implements OnInit {
     }
 
     private setEveryoneToNotShow() {
+        if (this.model == null)
+            return;
         // set all others items as show = false
         this.model.forEach(e => {
             e.show = false;
