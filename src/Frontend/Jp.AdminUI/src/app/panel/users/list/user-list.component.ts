@@ -4,8 +4,8 @@ import { UserService } from '@shared/services/user.service';
 import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { EventHistoryData } from '@shared/viewModel/event-history-data.model';
 import { ListOfUsers, UserProfile } from '@shared/viewModel/userProfile.model';
-import { Observable, Subject } from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
+import { Observable, pipe, Subject } from 'rxjs';
+import { debounceTime, switchMap, tap } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 
     public users: UserProfile[];
     public selectedUser: UserProfile;
-
+    public loading: boolean = true;
     public total: number;
     public page: number = 1;
     public quantity: number = 10;
@@ -32,18 +32,31 @@ export class UserListComponent implements OnInit {
         this.loadResources();
         this.userSearch
             .pipe(debounceTime(500))
+            .pipe(tap(() => this.animateLoadUsers()))
             .pipe(switchMap(a => this.userService.findUsers(a, this.quantity, this.page)))
             .subscribe((response: ListOfUsers) => {
                 this.users = response.collection;
                 this.total = response.total;
+                this.stopAnimateLoadUsers();
             });
     }
 
+    private animateLoadUsers() {
+        this.loading = true;
+    }
+
+    private stopAnimateLoadUsers(){
+        this.loading = false;
+    }
+
     public loadResources() {
-        this.userService.getUsers(this.quantity, this.page).subscribe(a => {
-            this.users = a.collection;
-            this.total = a.total;
-        });
+        this.animateLoadUsers();
+        this.userService.getUsers(this.quantity, this.page)
+            .subscribe(a => {
+                this.users = a.collection;
+                this.total = a.total;
+                this.stopAnimateLoadUsers();
+            });
     }
 
     public remove(user: UserProfile) {
