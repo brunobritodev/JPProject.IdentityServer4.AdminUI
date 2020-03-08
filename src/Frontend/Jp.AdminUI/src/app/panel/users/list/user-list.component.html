@@ -17,6 +17,11 @@
     </div>
 
     <div class="card-body">
+        <div class="overlay" *ngIf="loading">
+            <div class="w-100 d-flex justify-content-center align-items-center">
+                <app-loading></app-loading>
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-striped">
 
