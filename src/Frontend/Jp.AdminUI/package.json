@@ -42,7 +42,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "@swimlane/ngx-datatable": "^15.0.2",
     "ag-grid": "^18.1.2",
-    "ag-grid-angular": "^21.1.0",
+    "ag-grid-angular": "^23.0.0",
     "angular-froala-wysiwyg": "^3.0.6",
     "angular-oauth2-oidc": "^8.0.2",
     "angular-tree-component": "^8.3.0",
