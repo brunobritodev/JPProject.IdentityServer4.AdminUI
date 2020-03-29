@@ -68,7 +68,6 @@
     "modernizr": "^3.7.1",
     "moment": "^2.24.0",
     "ng2-charts": "^2.3.0",
-    "ng2-dnd": "5.0.2",
     "ng2-file-upload": "1.3.0",
     "ng2-material-dropdown": "^0.10.1",
     "ng2-tooltip-directive": "^2.1.9",
