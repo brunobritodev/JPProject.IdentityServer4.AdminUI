@@ -15,7 +15,7 @@ export const routes = [
     {
         path: "",
         component: LayoutComponent,
-        loadChildren: "app/panel/panel.module#PanelModule"
+        loadChildren: () => import("./panel/panel.module").then(m => m.PanelModule)
     },
 
     // 404 Not found
