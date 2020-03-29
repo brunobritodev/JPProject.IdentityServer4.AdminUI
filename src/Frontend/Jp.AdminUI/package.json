@@ -26,15 +26,15 @@
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
-    "@angular/animations": "^8.2.14",
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
+    "@angular/animations": "^9.1.0",
+    "@angular/common": "^9.1.0",
+    "@angular/compiler": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "@angular/forms": "^9.1.0",
     "@angular/http": "7.2.15",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/router": "^8.2.14",
+    "@angular/platform-browser": "^9.1.0",
+    "@angular/platform-browser-dynamic": "^9.1.0",
+    "@angular/router": "^9.1.0",
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@kolkov/angular-editor": "^1.0.0-rc.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
@@ -80,7 +80,7 @@
     "ngx-select-ex": "^3.6.8",
     "npm": "^6.11.2",
     "popper.js": "^1.14.7",
-    "rxjs": "6.5.2",
+    "rxjs": "6.5.4",
     "screenfull": "^4.1.0",
     "simple-line-icons": "2.4.1",
     "source-sans-pro": "^2.20.2",
@@ -89,13 +89,13 @@
     "sweetalert2": "^8.15.1",
     "weather-icons": "1.3.2",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.801.2",
     "@angular/cli": "^9.1.0",
-    "@angular/compiler-cli": "^8.2.14",
-    "@angular/language-service": "^8.2.14",
+    "@angular/compiler-cli": "^9.1.0",
+    "@angular/language-service": "^9.1.0",
     "@types/codemirror": "0.0.76",
     "@types/jasmine": "^3.3.15",
     "@types/jasminewd2": "2.0.6",
@@ -119,7 +119,7 @@
     "puppeteer": "^2.0.0",
     "ts-node": "^8.3.0",
     "tslint": "^5.14.0",
-    "typescript": ">=3.4.0 <3.5.0",
+    "typescript": "3.8.3",
     "webdriver-manager": "12.1.7"
   }
 }

@@ -7,10 +7,10 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es5",
+    "target": "ESNext",
     "typeRoots": [
       "node_modules/@types"
     ],
