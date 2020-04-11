@@ -430,9 +430,6 @@
             "name": "Name",
             "role": "Role",
             "role-tooltip": "Select user role"
-        },
-        "events": {
-
         }
     },
     "emails": {
@@ -515,5 +512,16 @@
         "aggregate-tooltip": "Aggregate name",
         "eventType": "Event Type",
         "eventType-tooltip": "Category of an Event (Optional)"
+    },
+    "validations": {
+        "minlength": "Too short",
+        "required": "Required field",
+        "equalToPassword": "Password are not equal.",
+        "confirmPassword": "Confirm password",
+        "email": "Invalid E-mail",
+        "equalToEmail": "E-mail are not equal",
+        "invalidUserOrPassword": "Invalid username or password",
+        "notEqualToPassword": "The new password should be different from actual."
+
     }
 }

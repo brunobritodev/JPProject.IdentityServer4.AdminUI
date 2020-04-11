@@ -53,7 +53,7 @@ export class ClientService {
     public removeSecret(client: string, type: string, value: string): Observable<void> {
         const params = new HttpParams()
                             .set('type', type)
-                            .set('value', value);
+                            .set('value', encodeURIComponent(value));
 
         return this.http.delete<void>(`${this.endpoint}/${client}/secrets`, { params });
     }

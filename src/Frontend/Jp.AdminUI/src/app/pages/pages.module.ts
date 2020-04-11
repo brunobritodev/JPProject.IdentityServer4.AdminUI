@@ -2,10 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { TextMaskModule } from 'angular2-text-mask';
 import { AlertModule } from 'ngx-bootstrap/alert';
 
-import { SharedModule } from '../shared/shared.module';
 import { Error404Component } from './error404/error404.component';
 import { Error500Component } from './error500/error500.component';
 import { LoginCallbackComponent } from './login-callback/login-callback.component';
@@ -25,8 +23,7 @@ const routes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forChild(routes),
-        AlertModule.forRoot(),
-        TextMaskModule,
+        AlertModule.forRoot()
     ],
     declarations: [
         LoginComponent,

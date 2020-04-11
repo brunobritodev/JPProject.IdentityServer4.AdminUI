@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { NgxSelectModule } from 'ngx-select-ex';
@@ -30,7 +31,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         SharedModule,
+        ToasterModule.forRoot(),
         RouterModule.forChild(routes),
+        ToasterModule.forRoot(),
         NgxSelectModule,
         TagInputModule,
         ImageCropperModule

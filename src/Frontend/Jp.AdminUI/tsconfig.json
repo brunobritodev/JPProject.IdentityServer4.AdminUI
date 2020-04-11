@@ -7,30 +7,23 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ESNext",
     "typeRoots": [
       "node_modules/@types"
     ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
-      "@shared/*": [
-          "src/app/shared/*"
-      ],
-      "@app/*": [
-          "src/app/panel/*"
-      ],
-      "@core/*": [
-          "src/app/core/*"
-      ],
-      "@env/*": [
-          "src/environments/*"
-      ]
+      "@shared/*": ["src/app/shared/*"],
+      "@app/*": ["src/app/panel/*"],
+      "@core/*": ["src/app/core/*"],
+      "@env/*": ["src/environments/*"],
+      "@validators": ["src/app/shared/validators"]
     }
   },
   "angularCompilerOptions": {

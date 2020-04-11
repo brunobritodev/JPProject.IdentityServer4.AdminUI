@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
+import { ToasterModule } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
 import { NgxSelectModule } from 'ngx-select-ex';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
         SharedModule,
+        ToasterModule.forRoot(),
         RouterModule.forChild(routes),
         NgxSelectModule,
         TagInputModule

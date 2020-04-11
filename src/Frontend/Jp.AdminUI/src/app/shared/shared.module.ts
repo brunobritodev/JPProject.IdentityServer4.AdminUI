@@ -1,40 +1,38 @@
-import { NgModule, ModuleWithProviders } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { RouterModule } from "@angular/router";
-import { TranslateModule } from "@ngx-translate/core";
-import { ToasterModule } from "angular2-toaster/angular2-toaster";
-
-import { AccordionModule } from "ngx-bootstrap/accordion";
-import { AlertModule } from "ngx-bootstrap/alert";
-import { ButtonsModule } from "ngx-bootstrap/buttons";
-import { CarouselModule } from "ngx-bootstrap/carousel";
-import { CollapseModule } from "ngx-bootstrap/collapse";
-import { BsDropdownModule } from "ngx-bootstrap/dropdown";
-import { ModalModule } from "ngx-bootstrap/modal";
-import { PaginationModule } from "ngx-bootstrap/pagination";
-import { ProgressbarModule } from "ngx-bootstrap/progressbar";
-import { RatingModule } from "ngx-bootstrap/rating";
-import { TabsModule } from "ngx-bootstrap/tabs";
-import { TimepickerModule } from "ngx-bootstrap/timepicker";
-import { PopoverModule } from "ngx-bootstrap/popover";
-import { TypeaheadModule } from "ngx-bootstrap/typeahead";
-import { DatepickerModule } from "ngx-bootstrap/datepicker";
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import {TooltipModule} from 'ng2-tooltip-directive';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
-import { FlotDirective } from "./directives/flot/flot.directive";
-import { SparklineDirective } from "./directives/sparkline/sparkline.directive";
-import { EasypiechartDirective } from "./directives/easypiechart/easypiechart.directive";
-import { CheckallDirective } from "./directives/checkall/checkall.directive";
-import { VectormapDirective } from "./directives/vectormap/vectormap.directive";
-import { NowDirective } from "./directives/now/now.directive";
-import { ScrollableDirective } from "./directives/scrollable/scrollable.directive";
-import { JqcloudDirective } from "./directives/jqcloud/jqcloud.directive";
-import { ColorsService } from "./services/colors.service";
-import {TextMaskModule} from "angular2-text-mask";
-import { SpinnersComponent } from "./components/spinners/spinners.component";
-import { NumberDirective } from "./directives/numberCheck/numbers-only.directive";
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { SpinnersComponent } from './components/spinners/spinners.component';
+import { CheckallDirective } from './directives/checkall/checkall.directive';
+import { EasypiechartDirective } from './directives/easypiechart/easypiechart.directive';
+import { FlotDirective } from './directives/flot/flot.directive';
+import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
+import { NowDirective } from './directives/now/now.directive';
+import { NumberDirective } from './directives/numberCheck/numbers-only.directive';
+import { ScrollableDirective } from './directives/scrollable/scrollable.directive';
+import { SparklineDirective } from './directives/sparkline/sparkline.directive';
+import { VectormapDirective } from './directives/vectormap/vectormap.directive';
+import { ColorsService } from './services/colors.service';
 
 
 // https://angular.io/styleguide#!#04-10
@@ -61,7 +59,6 @@ import { NumberDirective } from "./directives/numberCheck/numbers-only.directive
         TooltipModule,
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToasterModule,
         BsDatepickerModule.forRoot(),
     ],
     providers: [
@@ -77,6 +74,7 @@ import { NumberDirective } from "./directives/numberCheck/numbers-only.directive
         ScrollableDirective,
         JqcloudDirective,
         SpinnersComponent,
+        LoadingSpinnerComponent,
         NumberDirective,
     ],
     exports: [
@@ -102,7 +100,6 @@ import { NumberDirective } from "./directives/numberCheck/numbers-only.directive
         TooltipModule,
         PopoverModule,
         TypeaheadModule,
-        ToasterModule,
         FlotDirective,
         SparklineDirective,
         EasypiechartDirective,
@@ -111,9 +108,9 @@ import { NumberDirective } from "./directives/numberCheck/numbers-only.directive
         NowDirective,
         ScrollableDirective,
         JqcloudDirective,
-        TextMaskModule,
         SpinnersComponent,
-        NumberDirective,
+        LoadingSpinnerComponent,
+        NumberDirective
     ]
 })
 

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ToasterModule } from 'angular2-toaster';
 
 import { AppComponent } from './app.component';
 import { RoutesModule } from './app.routing.module';
@@ -24,10 +25,10 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         HttpClientModule,
-        BrowserAnimationsModule, // required for ng2-tag-input
+        BrowserModule,
+        BrowserAnimationsModule,
         CoreModule.forRoot(),
         LayoutModule,
-        SharedModule.forRoot(),
         RoutesModule,
         TranslateModule.forRoot({
             loader: {

@@ -11,3 +11,8 @@
 @import "./app/shared/styles/bootstrap.scss";
 //== Application
 @import "./app/shared/styles/app.scss";
+.ng-invalid.ng-touched {
+    border-color: #f05050;
+}
+
+div.ng-invalid.ng-touched {}
