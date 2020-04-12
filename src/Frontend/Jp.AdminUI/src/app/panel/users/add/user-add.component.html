@@ -18,7 +18,7 @@
 </div>
 
 <app-loading *ngIf="showButtonLoading"></app-loading>
-<div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
+<div class="card card-default" [hidden]="showButtonLoading">
     <div class="card-header">
         <h3>{{ 'users.new-user' | translate }}</h3>
     </div>
@@ -30,8 +30,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.userName-tooltip' | translate">{{
                     'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate" [formControl]="registerForm.controls.userName" (keyup)="checkIfUniquenameExists()" (blur)="checkIfUniquenameExists()" [ngClass]="getClassUsernameExist()"
-                        required/>
+                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate" [formControl]="registerForm.controls.userName" required/>
                     <app-input-validation [control]="registerForm.controls.userName" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
@@ -53,8 +52,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{
                     'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [formControl]="registerForm.controls.email" (keyup)="checkIfEmailExists()" (blur)="checkIfEmailExists()" [ngClass]="getClassEmailExist()" required
-                    />
+                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [formControl]="registerForm.controls.email" required />
                     <app-input-validation [control]="registerForm.controls.email" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
@@ -107,8 +105,6 @@
         <a class="mb-1 btn btn-secondary" [routerLink]="['/users']">Cancel</a>
     </div>
 </div>
-<p>Form value: {{ registerForm.value | json }}</p>
-<p>Form status: {{ registerForm.status | json }}</p>
 <div *ngIf="errors.length> 0">
     <alert type="danger">
         <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>

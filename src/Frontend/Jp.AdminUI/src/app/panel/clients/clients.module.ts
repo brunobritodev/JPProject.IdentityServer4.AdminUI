@@ -4,7 +4,6 @@ import { SharedModule } from '@shared/shared.module';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { ClientAddComponent } from './add/add.component';
 import { ClientClaimsComponent } from './claims/claims.component';
@@ -34,7 +33,6 @@ const routes: Routes = [
         ToasterModule.forRoot(),
         RouterModule.forChild(routes),
         ToasterModule.forRoot(),
-        NgxSelectModule,
         TagInputModule,
         ImageCropperModule
     ],

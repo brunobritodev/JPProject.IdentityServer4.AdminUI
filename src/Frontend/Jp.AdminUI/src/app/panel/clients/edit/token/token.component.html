@@ -26,7 +26,7 @@
             <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.accessTokenTypes-tooltip' | translate">{{
                 'client.details.accessTokenTypes' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <ngx-select [items]="accessTokenTypes" [(ngModel)]="model.accessTokenType" [placeholder]="'client.details.accessTokenTypes' | translate"></ngx-select>
+                <ng-select [items]="accessTokenTypes" [(ngModel)]="model.accessTokenType" bindValue="id" bindLabel="text" [placeholder]="'client.details.accessTokenTypes' | translate"></ng-select>
             </div>
         </div>
     </fieldset>
@@ -66,7 +66,7 @@
             <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'client.details.refreshTokenUsage-tooltip' | translate">{{
                 'client.details.refreshTokenUsage' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <ngx-select [items]="refreshTokenUsages" [(ngModel)]="model.refreshTokenUsage" [placeholder]="'client.details.refreshTokenUsage-tooltip' | translate"></ngx-select>
+                <ng-select [items]="refreshTokenUsages" [(ngModel)]="model.refreshTokenUsage" bindValue="id" bindLabel="text" [placeholder]="'client.details.refreshTokenUsage-tooltip' | translate"></ng-select>
             </div>
         </div>
     </fieldset>
@@ -80,7 +80,7 @@
                 </button>
             </div>
             <div class="col-xl-8">
-                <ngx-select [items]="tokenExpirations" [(ngModel)]="model.refreshTokenExpiration" [placeholder]="'client.details.refreshTokenExpiration-tooltip' | translate"></ngx-select>
+                <ng-select [items]="tokenExpirations" [(ngModel)]="model.refreshTokenExpiration" bindValue="id" bindLabel="text" [placeholder]="'client.details.refreshTokenExpiration-tooltip' | translate"></ng-select>
             </div>
         </div>
     </fieldset>

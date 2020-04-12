@@ -4,7 +4,6 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '@shared/shared.module';
 import { ToasterModule } from 'angular2-toaster/src/toaster.module';
 import { TagInputModule } from 'ngx-chips';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { EventsService } from './events.service';
 import { EventsComponent } from './list/events.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
         SharedModule,
         ToasterModule.forRoot(),
         RouterModule.forChild(routes),
-        NgxSelectModule,
         TagInputModule,
         NgbPaginationModule
     ],

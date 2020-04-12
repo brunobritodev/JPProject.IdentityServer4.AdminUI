@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 import { ToasterModule } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { RoleAddComponent } from './add/role-add.component';
 import { RoleEditComponent } from './edit/role-edit.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
         SharedModule,
         ToasterModule.forRoot(),
         RouterModule.forChild(routes),
-        NgxSelectModule,
         TagInputModule
     ],
     declarations: [

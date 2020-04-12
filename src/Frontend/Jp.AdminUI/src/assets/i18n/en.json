@@ -294,7 +294,7 @@
         "list": {
             "clientId": "Client",
             "creationTime": "CreationTime",
-            "email": "Email",
+            "username": "Username",
             "expiration": "Expiration",
             "key": "Key",
             "picture": "Picture",
@@ -521,7 +521,8 @@
         "email": "Invalid E-mail",
         "equalToEmail": "E-mail are not equal",
         "invalidUserOrPassword": "Invalid username or password",
-        "notEqualToPassword": "The new password should be different from actual."
-
+        "notEqualToPassword": "The new password should be different from actual.",
+        "emailExist": "E-mail already exists",
+        "usernameExist": "Username already exists"
     }
 }

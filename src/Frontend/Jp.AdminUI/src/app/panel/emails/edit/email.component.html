@@ -25,7 +25,7 @@
                     <label class="col-xl-3 col-form-label" placement="top" [tooltip]="'emails.edit.type-tooltip' | translate">{{
                             'emails.edit.type' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-9">
-                        <ngx-select [items]="emailTypes$ | async" optionValueField="key" optionTextField="value" (select)="getEmailTemplate($event)" [(ngModel)]="selectedType" [noAutoComplete] [placeholder]="'emails.edit.type' | translate"></ngx-select>
+                        <ng-select [items]="emailTypes$ | async" bindValue="key" bindLabel="value" (select)="getEmailTemplate($event)" [(ngModel)]="selectedType" [placeholder]="'emails.edit.type' | translate"></ng-select>
                     </div>
                 </div>
             </fieldset>

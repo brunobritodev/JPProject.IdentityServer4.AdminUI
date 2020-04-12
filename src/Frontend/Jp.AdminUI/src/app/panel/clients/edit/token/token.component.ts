@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Client } from "@shared/viewModel/client.model";
-import { TranslatorService } from "@core/translator/translator.service";
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TranslatorService } from '@core/translator/translator.service';
+import { NgSelectConfig } from '@ng-select/ng-select';
+import { Client } from '@shared/viewModel/client.model';
 
 
 @Component({
@@ -19,7 +20,10 @@ export class ClientTokenComponent implements OnInit {
     tokenExpirations: { id: number; text: string; }[];
     constructor(
         private route: ActivatedRoute,
-        public translator: TranslatorService) { }
+        public translator: TranslatorService) {
+            
+
+         }
 
 
     ngOnInit() {

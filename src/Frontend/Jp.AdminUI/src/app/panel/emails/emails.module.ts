@@ -4,7 +4,6 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { SharedModule } from '@shared/shared.module';
 import { ToasterModule } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { EmailComponent } from './edit/email.component';
 import { EmailService } from './emails.service';
@@ -19,7 +18,6 @@ const routes: Routes = [
         SharedModule,
         ToasterModule.forRoot(),
         RouterModule.forChild(routes),
-        NgxSelectModule,
         TagInputModule,
         AngularEditorModule
     ],

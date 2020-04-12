@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateModule } from '@ngx-translate/core';
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -60,6 +61,7 @@ import { ColorsService } from './services/colors.service';
         PopoverModule.forRoot(),
         TypeaheadModule.forRoot(),
         BsDatepickerModule.forRoot(),
+        NgSelectModule
     ],
     providers: [
         ColorsService
@@ -110,7 +112,8 @@ import { ColorsService } from './services/colors.service';
         JqcloudDirective,
         SpinnersComponent,
         LoadingSpinnerComponent,
-        NumberDirective
+        NumberDirective,
+        NgSelectModule
     ]
 })
 

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 import { ToasterModule } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { EmailSettingsComponent } from './emails/email-settings.component';
 import { GlobalSettingsService } from './global-settings.service';
@@ -20,7 +19,6 @@ const routes: Routes = [
         SharedModule,
         ToasterModule.forRoot(),
         RouterModule.forChild(routes),
-        NgxSelectModule,
         TagInputModule
     ],
     declarations: [

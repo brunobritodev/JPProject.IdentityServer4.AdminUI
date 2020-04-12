@@ -17,8 +17,7 @@
                     <tr>
                         <th></th>
                         <th>{{ 'persistedGrant.list.creationTime' | translate }}</th>
-                        <th *ngIf="!settings.lightVersion"> {{ 'persistedGrant.list.picture' | translate }} </th>
-                        <th *ngIf="!settings.lightVersion"> {{ 'persistedGrant.list.email' | translate }}</th>
+                        <th *ngIf="!settings.lightVersion"> {{ 'persistedGrant.list.username' | translate }}</th>
                         <th> {{ 'persistedGrant.list.clientId' | translate }}</th>
                         <th> {{ 'persistedGrant.list.type' | translate }} </th>
                         <th></th>
@@ -31,7 +30,6 @@
                             <button class="btn btn-primary btn-xs" (click)="details(grant.key)" placement="top" [tooltip]="'general.details' | translate"><i class="fa fa-info"></i></button> &nbsp;
                         </td>
                         <td>{{grant.creationTime | date: 'short'}}</td>
-                        <td *ngIf="!settings.lightVersion"><img *ngIf="grant.picture" width="32" [src]="grant.picture" /></td>
                         <td *ngIf="!settings.lightVersion">{{grant.email}}</td>
                         <td>{{grant.clientId}}</td>
                         <td>{{grant.type}}</td>

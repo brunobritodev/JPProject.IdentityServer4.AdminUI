@@ -87,11 +87,11 @@ export class UserService {
     }
 
     public checkUserName(userName: string): Observable<boolean> {
-        return this.http.get<boolean>(`${this.endpoint}/check-username/${userName}`);
+        return this.http.get<boolean>(`${this.endpointSignUp}/check-username/${userName}`);
     }
 
     public checkEmail(email: string): Observable<boolean> {
-        return this.http.get<boolean>(`${this.endpoint}/check-email/${email}`);
+        return this.http.get<boolean>(`${this.endpointSignUp}/check-email/${email}`);
     }
 
     public resetPassword(username: string, resetPassword: ResetPassword): Observable<boolean> {

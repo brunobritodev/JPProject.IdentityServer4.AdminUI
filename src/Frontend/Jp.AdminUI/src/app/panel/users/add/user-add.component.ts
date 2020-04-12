@@ -29,11 +29,10 @@ export class UserAddComponent implements OnInit {
         name: new FormControl<string>(null, [Validators.minLength(2), Validators.required]),
         userName: new FormControl<string>(null, [Validators.required]),
         phoneNumber: new FormControl<string>(null, null),
-        confirmEmail: new FormControl<boolean> (null, null)
+        confirmEmail: new FormControl<boolean>(null, null)
     });
 
     public errors: Array<string>;
-    public model: UserProfile;
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
         showCloseButton: true
@@ -42,10 +41,6 @@ export class UserAddComponent implements OnInit {
         containerClass: 'theme-angle'
     };
     public showButtonLoading: boolean = false;
-    private userExistsSubject: Subject<string> = new Subject<string>();
-    private emailExistsSubject: Subject<string> = new Subject<string>();
-    userExist: boolean;
-    emailExist: boolean;
 
     constructor(
         private route: ActivatedRoute,
@@ -55,29 +50,22 @@ export class UserAddComponent implements OnInit {
         public toasterService: ToasterService) { }
 
     public ngOnInit() {
-        this.model = new UserProfile();
         this.errors = [];
         this.showButtonLoading = false;
-        this.userExistsSubject
-            .pipe(debounceTime(500))
-            .pipe(switchMap(a => this.userService.checkUserName(a)))
-            .subscribe((response: boolean) => {
-                this.userExist = response;
-            });
-
-        this.emailExistsSubject
-            .pipe(debounceTime(500))
-            .pipe(switchMap(a => this.userService.checkEmail(a)))
-            .subscribe((response: boolean) => {
-                this.emailExist = response;
-            });
-
+       
         this.registerForm.controls.email.valueChanges.pipe(debounceTime(500))
             .pipe(switchMap(a => this.userService.checkEmail(a)))
-            .subscribe((response: boolean) => {
-                this.emailExist = response;
-                if (this.emailExist)
-                    this.registerForm.controls['email'].setErrors({ 'incorrect': true });
+            .subscribe((emailExist: boolean) => {
+                if (emailExist)
+                    this.registerForm.controls.email.setErrors({ 'emailExist': true });
+            });
+
+
+        this.registerForm.controls.userName.valueChanges.pipe(debounceTime(500))
+            .pipe(switchMap(a => this.userService.checkUserName(a)))
+            .subscribe((userExist: boolean) => {
+                if (userExist)
+                    this.registerForm.controls.userName.setErrors({ 'usernameExist': true });
             });
     }
 
@@ -93,7 +81,7 @@ export class UserAddComponent implements OnInit {
             registerResult => {
                 if (registerResult) {
                     this.showSuccessMessage();
-                    this.router.navigate(["/users", this.model.userName, 'edit']);
+                    this.router.navigate(["/users", this.registerForm.value.userName, 'edit']);
                 }
             },
             err => {
@@ -123,33 +111,4 @@ export class UserAddComponent implements OnInit {
         });
     }
 
-    public checkIfEmailExists() {
-        if (this.model.email == null || this.model.email === "")
-            return;
-
-        if (!this.model.isValidEmail())
-            return;
-
-        this.emailExistsSubject.next(this.model.email);
-    }
-
-    public checkIfUniquenameExists() {
-        if (this.model.userName == null || this.model.userName === "")
-            return;
-        this.userExistsSubject.next(this.model.userName);
-    }
-
-    public getClassUsernameExist(): string {
-        if (this.model.userName == null || this.model.userName === "")
-            return "";
-
-        return this.userExist ? "is-invalid" : "is-valid";
-    }
-
-    public getClassEmailExist(): string {
-        if (this.model.email == null || this.model.email === "")
-            return "";
-
-        return !this.model.isValidEmail() || this.emailExist ? "is-invalid" : "is-valid";
-    }
 }
