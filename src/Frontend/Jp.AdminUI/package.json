@@ -40,7 +40,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "@swimlane/ngx-datatable": "^15.0.2",
+    "@swimlane/ngx-datatable": "^16.1.0",
     "ag-grid": "^18.1.2",
     "ag-grid-angular": "^21.1.0",
     "angular-froala-wysiwyg": "^3.0.6",
