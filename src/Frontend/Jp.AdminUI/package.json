@@ -78,7 +78,7 @@
     "ngx-color-picker": "^8.1.0",
     "ngx-image-cropper": "^2.0.3",
     "ngx-infinite-scroll": "^7.1.0",
-    "ngx-select-ex": "^3.6.8",
+    "ngx-select-ex": "^4.0.0",
     "npm": "^6.11.2",
     "popper.js": "^1.14.7",
     "rxjs": "6.5.2",
