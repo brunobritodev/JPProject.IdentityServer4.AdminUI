@@ -1,31 +1,31 @@
 {
     "menu": {
-        "users": "用户数",
-        "roles": "的角色",
-        "ssoSettings": "SSO设定",
-        "configuration": "组态",
-        "email-templates": "范本",
-        "settings": "设定值"
+        "users": "用户",
+        "roles": "角色",
+        "ssoSettings": "SSO设置",
+        "configuration": "配置",
+        "email-templates": "邮件模板",
+        "settings": "设置"
     },
     "general": {
-        "add": "加",
-        "api-resource": "受保护的资源",
-        "clients": "客户群",
+        "add": "新增",
+        "api-resource": "API资源",
+        "clients": "客户端",
         "copy": "复制",
-        "details": "细节",
+        "details": "详情",
         "edit": "编辑",
-        "empty": "空的",
-        "goback": "回去",
+        "empty": "空",
+        "goback": "返回",
         "identity-resource": "身份资源",
-        "loading": "加载请稍候！",
-        "persisted-grants": "持续补助金",
-        "remove": "去掉",
+        "loading": "加载中,请稍候！",
+        "persisted-grants": "持久授权",
+        "remove": "删除",
         "revoke": "撤消",
-        "roles": "的角色",
-        "users": "用户数",
+        "roles": "角色",
+        "users": "用户",
         "emails": "电子邮件",
-        "list": "清单",
-        "settings": "SSO全局设置"
+        "list": "列表",
+        "settings": "设置"
     },
     "header": {
         "search": {
@@ -66,14 +66,14 @@
             "description": "描述",
             "name": "名称"
         },
-        "new-api": "新的Api资源",
+        "new-api": "新增Api资源",
         "remove": {
             "cancelButtonText": "不，取消plx！",
             "cancelled": "您的资源是安全的:)",
             "confirmButtonText": "是的，删除它！",
             "deleted": "资源已被删除。",
             "text": "您将无法恢复！",
-            "title": "你确定吗"
+            "title": "您确定吗"
         },
         "scope": {
             "Emphasize": "注重",
@@ -111,7 +111,7 @@
             "cancelled": ":)",
             "cloned": "客户端已被克隆。",
             "confirmButtonText": "是的，克隆它！",
-            "text": "你确定吗？",
+            "text": "您确定吗？",
             "title": "克隆"
         },
         "details": {
@@ -129,9 +129,9 @@
             "allowPlainTextPkce-tooltip": "指定使用PKCE的客户端是否可以使用纯文本代码质询（不推荐-默认为false）",
             "allowRememberConsent": "记住同意",
             "allowRememberConsent-tooltip": "指定用户是否可以选择存储同意决策。默认为true。",
-            "allowedCorsOrigins": "允许的Cors来源",
-            "allowedCorsOrigins-tooltip": "如果指定，将由默认的CORS策略服务实现（内存和EF）用于为JavaScript客户端构建CORS策略。",
-            "allowedGrantTypes": "允许的赠款类型",
+            "allowedCorsOrigins": "允许的跨域来源",
+            "allowedCorsOrigins-tooltip": "如果指定，将由默认的跨域策略服务实现（内存和EF）用于为JavaScript客户端构建跨域策略。",
+            "allowedGrantTypes": "允许的授权类型",
             "allowedGrantTypes-tooltip": "指定允许客户端使用的授权类型。将GrantTypes类用于常见组合。默认授予的列表：隐式授予-（隐式），客户端凭据授予-（client_credentials），授权代码授予-（authorization_code），混合授权-（混合），资源所有者密码凭据授予-（密码）",
             "allowedScopes": "允许范围",
             "allowedScopes-tooltip": "默认情况下，客户端无权访问任何资源-通过添加相应的作用域名称来指定允许的资源",
@@ -142,23 +142,23 @@
             "auth": "认证方式",
             "authorizationCodeLifetime": "授权码有效期",
             "authorizationCodeLifetime-tooltip": "授权码的生存时间（以秒为单位）（默认为300秒/ 5分钟）",
-            "backChannelLogoutSessionRequired": "后通道注销会话",
+            "backChannelLogoutSessionRequired": "反向通道注销会话",
             "backChannelLogoutSessionRequired-tooltip": "指定是否在请求中将用户的会话ID发送到BackChannelLogoutUri。默认为true",
-            "backChannelLogoutUri": "后退频道Uri",
+            "backChannelLogoutUri": "反向通道Uri",
             "backChannelLogoutUri-tooltip": "指定客户端上用于基于HTTP的反向通道注销的注销URI。有关更多详细信息，请参见OIDC反向通道规范",
             "basic": "基本的",
-            "claims": "索偿",
+            "claims": "声明",
             "claims-tooltip": "允许客户端声明所有权（将包含在访问令牌中）",
-            "clientClaimsPrefix": "客户索赔前缀",
+            "clientClaimsPrefix": "客户声明前缀",
             "clientClaimsPrefix-tooltip": "如果设置，则前缀客户声明类型将带有前缀。默认为client_。目的是确保它们不会意外地与用户声明冲突。",
-            "clientId": "客户编号",
+            "clientId": "客户端编号",
             "clientId-tooltip": "客户端的唯一ID",
             "clientSecrets": "客户机密",
             "clientSecrets-tooltip": "客户端机密列表-访问令牌端点的凭据。",
-            "clientUri": "客户Uri",
-            "clientUri-tooltip": "有关客户的更多信息的URI（用于同意屏幕）",
+            "clientUri": "客户端Uri",
+            "clientUri-tooltip": "有关客户端的更多信息的URI（用于同意屏幕）",
             "description": "描述",
-            "description-tooltip": "客户描述。",
+            "description-tooltip": "客户端描述。",
             "deviceCodeLifetime": "设备代码寿命",
             "deviceCodeLifetime-tooltip": "设备代码的生存时间（以秒为单位）（默认为300秒/ 5分钟）",
             "deviceFlow": "设备流程",
@@ -180,7 +180,7 @@
             "name-tooltip": "客户端显示名称（用于登录和同意屏幕）",
             "pairWiseSubjectSalt": "一对明智的主题盐",
             "pairWiseSubjectSalt-tooltip": "此客户端用户的成对subjectId生成中使用的盐值。",
-            "properties": "性质",
+            "properties": "属性",
             "properties-tooltip": "字典可根据需要保存任何自定义客户端特定的值。",
             "protocolType": "协议类型",
             "protocolType-tooltip": "默认值为OpenID Connect协议",
@@ -199,7 +199,7 @@
             "settings": "设定值",
             "slidingRefreshTokenLifetime": "滑动刷新令牌寿命",
             "slidingRefreshTokenLifetime-tooltip": "刷新令牌的滑动寿命（以秒为单位）。默认为1296000秒/ 15天",
-            "token": "代币",
+            "token": "令牌",
             "updateAccessTokenClaimsOnRefresh": "刷新更新访问令牌声明",
             "updateAccessTokenClaimsOnRefresh-tooltip": "获取或设置一个值，该值指示是否应在刷新令牌请求时更新访问令牌（及其声明）",
             "userCodeType": "用户代码类型",
@@ -223,7 +223,7 @@
             "confirmButtonText": "是的，删除它！",
             "deleted": "客户端已被删除。",
             "text": "您将无法恢复！",
-            "title": "你确定吗"
+            "title": "您确定吗"
         }
     },
     "home": {
@@ -243,7 +243,7 @@
             "enabled-tooltip": "指示是否启用了此资源并且可以请求该资源。默认为true。",
             "name": "名称",
             "name-tooltip": "身份资源的唯一名称。这是客户端将用于授权请求中的scope参数的值。",
-            "required": "需要",
+            "required": "必须",
             "required-tooltip": "指定用户是否可以在同意屏幕上取消选择范围（如果同意屏幕要实现这样的功能）。默认为false。",
             "showInDiscoveryDocument": "显示在发现文档中",
             "showInDiscoveryDocument-tooltip": "指定此范围是否显示在发现文档中。默认为true。",
@@ -262,7 +262,7 @@
             "enabled-tooltip": "指示是否启用了此资源并且可以请求该资源。默认为true。",
             "name": "名称",
             "name-tooltip": "身份资源的唯一名称。这是客户端将用于授权请求中的scope参数的值。",
-            "required": "需要",
+            "required": "必须",
             "required-tooltip": "指定用户是否可以在同意屏幕上取消选择范围（如果同意屏幕要实现这样的功能）。默认为false。",
             "showInDiscoveryDocument": "显示在发现文档中",
             "showInDiscoveryDocument-tooltip": "指定此范围是否显示在发现文档中。默认为true。",
@@ -273,14 +273,14 @@
             "description": "描述",
             "name": "名称"
         },
-        "newIr": "新身份资源",
+        "newIr": "新增身份资源",
         "remove": {
             "cancelButtonText": "不，取消plx！",
             "cancelled": "您的资源是安全的:)",
             "confirmButtonText": "是的，删除它！",
             "deleted": "资源已被删除。",
             "text": "您将无法恢复！",
-            "title": "你确定吗"
+            "title": "您确定吗"
         }
     },
     "offsidebar": {
@@ -291,10 +291,10 @@
     "persistedGrant": {
         "description": "描述",
         "list": {
-            "clientId": "客户",
+            "clientId": "客户端Id",
             "creationTime": "创建时间",
             "email": "电子邮件",
-            "expiration": "期满",
+            "expiration": "过期时间",
             "key": "键",
             "picture": "图片",
             "scopes": "范围",
@@ -302,7 +302,7 @@
         },
         "remove": {
             "cancelButtonText": "不，取消plx！",
-            "cancelled": "格兰特是安全的:)",
+            "cancelled": "授权是安全的:)",
             "confirmButtonText": "是的，删除它！",
             "deleted": "授权已被删除。",
             "text": "您将无法恢复！",
@@ -325,20 +325,20 @@
             "picture": "图片"
         },
         "name": "名称",
-        "new-role": "新角色",
+        "new-role": "新增角色",
         "selectedRole": "选定角色"
     },
     "secrets": {
         "description": "描述",
-        "description-tooltip": "设定说明",
-        "expiration": "期满",
+        "description-tooltip": "设置说明",
+        "expiration": "过期时间",
         "expiration-tooltip": "设置到期时间",
-        "hashType": "杂凑类型",
-        "hashType-tooltip": "设置秘密值的哈希",
-        "secretType": "秘密类型",
+        "hashType": "哈希类型",
+        "hashType-tooltip": "设置机密值的哈希",
+        "secretType": "机密类型",
         "secretType-tooltip": "客户机密的类型",
-        "secretValue": "秘密价值",
-        "secretValue-tooltip": "指定客户端的秘密"
+        "secretValue": "机密值",
+        "secretValue-tooltip": "指定客户端的机密值"
     },
     "sidebar": {
         "WELCOME": "欢迎",
@@ -346,7 +346,7 @@
             "HEADER": "菜单标题"
         },
         "nav": {
-            "SINGLEVIEW": "单一检视"
+            "SINGLEVIEW": "单一视图"
         }
     },
     "toasterMessages": {
@@ -365,7 +365,7 @@
             "accessFailedCount": "访问失败计数",
             "accessFailedCount-tooltip": "获取或设置当前用户失败的登录尝试次数",
             "change-password": "更改密码",
-            "claims": "索偿",
+            "claims": "声明",
             "claims-tooltip": "允许针对用户的设置声明（将包含在访问令牌中）",
             "confirmPassword": "确认密码",
             "confirmPassword-tooltip": "确认密码",
@@ -387,9 +387,9 @@
             "phoneNumber-tooltip": "获取或设置用户的电话号码",
             "phoneNumberConfirmed": "电话号码已确认",
             "phoneNumberConfirmed-tooltip": "获取或设置一个标志，该标志指示用户是否已确认其电话地址",
-            "roles": "的角色",
+            "roles": "角色",
             "roles-tooltip": "允许用户设置角色（将包含在访问令牌中）",
-            "twoFactorEnabled": "启用TwoFactor",
+            "twoFactorEnabled": "启用双重身份验证",
             "twoFactorEnabled-tooltip": "获取或设置一个标志，该标志指示是否为此用户启用了双重身份验证",
             "user-data": "用户数据",
             "userName": "用户名",
@@ -409,14 +409,14 @@
             "providerDisplayName": "名称",
             "providerKey": "键"
         },
-        "new-user": "新的用户",
+        "new-user": "新增用户",
         "remove": {
             "cancelButtonText": "不，取消plx！",
             "cancelled": "用户安全：)",
             "confirmButtonText": "是的，删除它！",
             "deleted": "用户已被删除。",
             "text": "您将无法恢复！",
-            "title": "你确定吗"
+            "title": "您确定吗"
         },
         "roles": {
             "name": "名称",
@@ -427,19 +427,19 @@
     "emails": {
         "description": "SSO的电子邮件模板。",
         "edit": {
-            "type": "电邮类型",
+            "type": "邮件类型",
             "type-tooltip": "与用户的交流类型",
-            "subject": "学科",
+            "subject": "主题",
             "subject-tooltip": "电子邮件主题",
             "bcc": "密件抄送",
-            "bcc-tooltip": "盲抄-抄袭某人",
+            "bcc-tooltip": "密送-密码发送给某人",
             "senderName": "发件者姓名",
             "senderName-tooltip": "发送电子邮件的人的姓名。",
             "senderAddress": "发件人地址",
             "senderAddress-tooltip": "发送电子邮件的地址",
             "editor": "编辑",
             "code": "HTML代码编辑器",
-            "variables": "变数",
+            "variables": "变量",
             "variables-description": "在发送给用户之前将被替换的变量列表。",
             "variables-name": "用户名",
             "variables-picture": "用户个人资料图片的网址",
@@ -461,12 +461,12 @@
             "password-tooltip": "SMTP密码",
             "username": "用户名",
             "username-tooltip": "SMTP用户名",
-            "port": "港口",
+            "port": "端口",
             "port-tooltip": "SMTP端口",
             "useSsl": "SSL协议",
             "useSsl-tooltip": "使用ssl",
-            "sendEmail": "发电子邮件",
-            "sendEmail-tooltip": "SSO应该发送电子邮件吗？"
+            "sendEmail": "发送电子邮件",
+            "sendEmail-tooltip": "是否允许SSO发送电子邮件？"
         }
     }
 }
