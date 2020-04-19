@@ -498,7 +498,17 @@
             "useStorage-tooltip": "SSO should use storage?",
             "physicalPath": "Physical Path",
             "physicalPath-tooltip": "Location to save image"
+        },
+        "recaptcha": {
+            "description": "ReCaptcha V3 Configuration",
+            "site-key": "Site Key",
+            "site-key-tooltip": "Site key is used in HTML",
+            "private-key": "Secret key",
+            "private-key-tooltip": "Secret key is for communication between API and reCAPTCHA",
+            "useRecaptcha-tooltip": "If enabled it will be used in some flows",
+            "useRecaptcha": "Enable reCAPTCHA"
         }
+
     },
     "events": {
         "description": "Search for generated events from SSO",

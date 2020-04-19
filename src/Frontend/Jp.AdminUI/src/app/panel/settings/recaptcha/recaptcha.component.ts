@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TranslatorService } from '@core/translator/translator.service';
 import { ProblemDetails } from '@shared/viewModel/default-response.model';
 import { GlobalSettings } from '@shared/viewModel/global-settings.model';
+import { RecaptchaSettings } from '@shared/viewModel/recaptcha-settings';
 import { SMTP } from '@shared/viewModel/smtp.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 
@@ -9,11 +10,11 @@ import { GlobalSettingsService } from '../global-settings.service';
 
 
 @Component({
-    selector: "app-email-settings",
-    templateUrl: "./email-settings.component.html",
-    styleUrls: ["./email-settings.component.scss"]
+    selector: "app-recaptcha",
+    templateUrl: "./recaptcha.component.html",
+    styleUrls: ["./recaptcha.component.scss"]
 })
-export class EmailSettingsComponent implements OnInit {
+export class RecaptchaSettingsComponent implements OnInit {
 
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
@@ -23,15 +24,14 @@ export class EmailSettingsComponent implements OnInit {
 
     showButtonLoading: boolean;
 
-    public settings: SMTP;
+    public settings: RecaptchaSettings;
 
     @Input()
     public errors: Array<string>;
 
     @Input()
     public model: Array<GlobalSettings>;
-    sendMail: boolean;
-    useSsl: boolean;
+    useRecaptcha: boolean;
 
     constructor(
         public translator: TranslatorService,
@@ -40,27 +40,21 @@ export class EmailSettingsComponent implements OnInit {
 
     ngOnInit() {
 
-        this.settings = new SMTP();
-        this.settings.username = GlobalSettings.getSetting(this.model, "Smtp:Username");
-        this.settings.password = GlobalSettings.getSetting(this.model, "Smtp:Password");
-        this.settings.server = GlobalSettings.getSetting(this.model, "Smtp:Server");
-        this.settings.port = GlobalSettings.getSetting(this.model, "Smtp:Port");
-        this.settings.useSsl = GlobalSettings.getSetting(this.model, "Smtp:UseSsl");
-        this.settings.sendMail = GlobalSettings.getSetting(this.model, "SendEmail");
+        this.settings = new RecaptchaSettings();
+        this.settings.siteKey = GlobalSettings.getSetting(this.model, "Recaptcha:SiteKey");
+        this.settings.privateKey = GlobalSettings.getSetting(this.model, "Recaptcha:PrivateKey");
+        this.settings.useRecaptcha = GlobalSettings.getSetting(this.model, "UseRecaptcha");
 
-        this.sendMail = this.settings.sendMail.value == "true";
-        this.useSsl = this.settings.useSsl.value == "true";
+        this.useRecaptcha = this.settings.useRecaptcha.value == "true";
     }
+
 
     public updateSettings() {
         this.errors.splice(0, this.errors.length);
         let configurations = new Array<GlobalSettings>();
-        configurations.push(this.settings.username);
-        configurations.push(this.settings.password);
-        configurations.push(this.settings.sendMail);
-        configurations.push(this.settings.server);
-        configurations.push(this.settings.port);
-        configurations.push(this.settings.useSsl);
+        configurations.push(this.settings.siteKey);
+        configurations.push(this.settings.privateKey);
+        configurations.push(this.settings.useRecaptcha);
         this.showButtonLoading = true;
 
 
@@ -82,11 +76,7 @@ export class EmailSettingsComponent implements OnInit {
         });
     }
 
-    public changeUseSsl() {
-        this.settings.useSsl.value = this.useSsl.toString();
-    }
-
-    public changeSendEmail() {
-        this.settings.sendMail.value = this.sendMail.toString();
+    public changeUseRecaptcha() {
+        this.settings.useRecaptcha.value = this.useRecaptcha.toString();
     }
 }

@@ -19,6 +19,7 @@
                 <div class="list-group">
                     <a href="#" class="list-group-item" (click)="settingSection=1" [ngClass]="{'active': (settingSection == 1)}">Emails</a>
                     <a href="#" class="list-group-item" (click)="settingSection=2" [ngClass]="{'active': (settingSection == 2)}">Storage</a>
+                    <a href="#" class="list-group-item" (click)="settingSection=3" [ngClass]="{'active': (settingSection == 3)}">Recaptcha</a>
                 </div>
             </div>
         </div>
@@ -28,6 +29,9 @@
             </div>
             <div *ngIf="settingSection == 2">
                 <app-storage-settings *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-storage-settings>
+            </div>
+            <div *ngIf="settingSection == 3">
+                <app-recaptcha *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-recaptcha>
             </div>
         </div>
     </div>

@@ -1,0 +1,50 @@
+<div class="card b">
+    <div class="card-header bg-gray-lighter text-bold">ReCaptcha V3</div>
+    <div class="card-body">
+        <p>{{ 'settings.recaptcha.description' | translate}}</p>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.recaptcha.site-key-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.recaptcha.site-key' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9 col-xs-12">
+                    <input class="form-control" autocomplete="on" [placeholder]="'settings.recaptcha.site-key' | translate" [(ngModel)]="settings.siteKey.value" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.recaptcha.private-key-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.recaptcha.private-key' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9">
+                    <input class="form-control" autocomplete="on" [placeholder]="'settings.recaptcha.private-key-tooltip' | translate" [(ngModel)]="settings.privateKey.value" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="card-body bt">
+        <p>
+            <strong>Other options</strong>
+        </p>
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.recaptcha.useRecaptcha-tooltip' | translate">{{
+            'settings.recaptcha.useRecaptcha' | translate }}
+            <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                <input type="checkbox" [(ngModel)]="useRecaptcha" (ngModelChange)="changeUseRecaptcha()" />
+                <span></span>
+            </label>
+                </div>
+            </div>
+        </fieldset>
+        <p>
+            <small class="text-muted">* If you are not an Administrator, some fields will not show.</small>
+        </p>
+
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-info" (click)="updateSettings()" type="button">Update settings</button>
+    </div>
+</div>

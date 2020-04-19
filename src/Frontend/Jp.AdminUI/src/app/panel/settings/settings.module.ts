@@ -6,6 +6,7 @@ import { TagInputModule } from 'ngx-chips';
 
 import { EmailSettingsComponent } from './emails/email-settings.component';
 import { GlobalSettingsService } from './global-settings.service';
+import { RecaptchaSettingsComponent } from './recaptcha/recaptcha.component';
 import { SettingsComponent } from './settings.component';
 import { StorageSettingsComponent } from './storage/storage-settings.component';
 
@@ -24,7 +25,8 @@ const routes: Routes = [
     declarations: [
         SettingsComponent,
         EmailSettingsComponent,
-        StorageSettingsComponent
+        StorageSettingsComponent,
+        RecaptchaSettingsComponent
     ],
     providers: [
         GlobalSettingsService

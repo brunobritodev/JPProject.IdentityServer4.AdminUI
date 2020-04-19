@@ -41,24 +41,16 @@ export class StorageSettingsComponent implements OnInit {
     ngOnInit() {
 
         this.settings = new StorageSettings();
-        this.settings.username = this.getSetting("Storage:Username");
-        this.settings.password = this.getSetting("Storage:Password");
-        this.settings.service = this.getSetting("Storage:Service");
-        this.settings.virtualPath = this.getSetting("Storage:VirtualPath");
-        this.settings.useStorage = this.getSetting("UseStorage");
-        this.settings.basePath = this.getSetting("Storage:BasePath");
-        this.settings.storageName = this.getSetting("Storage:StorageName");
-        this.settings.physicalPath = this.getSetting("Storage:PhysicalPath");
+        this.settings.username = GlobalSettings.getSetting(this.model, "Storage:Username");
+        this.settings.password = GlobalSettings.getSetting(this.model, "Storage:Password");
+        this.settings.service = GlobalSettings.getSetting(this.model, "Storage:Service");
+        this.settings.virtualPath = GlobalSettings.getSetting(this.model, "Storage:VirtualPath");
+        this.settings.useStorage = GlobalSettings.getSetting(this.model, "UseStorage");
+        this.settings.basePath = GlobalSettings.getSetting(this.model, "Storage:BasePath");
+        this.settings.storageName = GlobalSettings.getSetting(this.model, "Storage:StorageName");
+        this.settings.physicalPath = GlobalSettings.getSetting(this.model, "Storage:PhysicalPath");
 
         this.useStorage = this.settings.useStorage.value == "true";
-    }
-
-    private getSetting(key: string): GlobalSettings {
-        var item = this.model.find(f => f.key === key);
-        if (item.value == null)
-            item.value = "";
-
-        return item;
     }
 
     public updateSettings() {
