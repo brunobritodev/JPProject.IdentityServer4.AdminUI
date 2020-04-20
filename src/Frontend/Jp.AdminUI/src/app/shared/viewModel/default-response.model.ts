@@ -1,7 +1,7 @@
 
 export class KeyValuePair {
-  constructor(public key: string,
-      public value: string) { }
+    constructor(public key: string,
+        public value: string) { }
 }
 
 export class ProblemDetails {
@@ -21,8 +21,11 @@ export class ProblemDetails {
                 if (Array.isArray(err.error.errors)) { return err.error.errors.map((element, i) => new KeyValuePair(i, element.message)); }
 
                 let mappedErrors = [];
-                Object.keys(err.error.errors).map(function (key, index) {
-                    mappedErrors.push(new KeyValuePair(key, err.error.errors[key]));
+                Object.keys(err.error.errors).map((key, index) => {
+                    if (Array.isArray(err.error.errors[key]))
+                        mappedErrors = mappedErrors.concat(err.error.errors[key].map((a, i) => new KeyValuePair(i, a)));
+                    else
+                        mappedErrors.push(new KeyValuePair(index.toString(), err.error.errors[key]));
                 });
                 return mappedErrors;
             }

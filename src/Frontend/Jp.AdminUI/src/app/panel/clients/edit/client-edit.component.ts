@@ -12,7 +12,7 @@ import { flatMap, tap } from 'rxjs/operators';
 @Component({
     selector: "app-client-edit",
     templateUrl: "./client-edit.component.html",
-    styleUrls: ["./client-edit.component.scss"]
+    styleUrls: ["./client-edit.component.scss"],
 })
 export class ClientEditComponent implements OnInit {
 
@@ -21,7 +21,7 @@ export class ClientEditComponent implements OnInit {
     public toasterconfig: ToasterConfig = new ToasterConfig({
         positionClass: 'toast-top-right',
         showCloseButton: true,
-        timeout: 60000
+        timeout: 2000
     });
     public showButtonLoading: boolean;
     public clientId: string;

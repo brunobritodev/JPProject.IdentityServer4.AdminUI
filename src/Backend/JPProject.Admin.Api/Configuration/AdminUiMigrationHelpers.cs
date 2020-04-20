@@ -12,8 +12,8 @@ namespace JPProject.Admin.Api.Configuration
     {
         /// <summary>
         /// Generate migrations before running this method, you can use command bellow:
-        /// Nuget package manager: Add-Migration DbInit -context ApplicationIdentityContext -output Data/Migrations333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
-        /// Dotnet CLI: dotnet ef migrations add DbInit -c ApplicationIdentityContext -o Data/Migrations
+        /// Nuget package manager: Add-Migration DbInit -context EventStoreContext -output Data/Migrations
+        /// Dotnet CLI: dotnet ef migrations add DbInit -c EventStoreContext -o Data/Migrations
         /// </summary>
         public static async Task EnsureSeedData(IServiceScope serviceScope)
         {

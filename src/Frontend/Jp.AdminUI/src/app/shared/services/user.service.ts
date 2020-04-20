@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
+import { AdminAddNewUser } from '@shared/viewModel/admin-add-new-user.model';
 import { Claim } from '@shared/viewModel/claim.model';
 import { ListOf } from '@shared/viewModel/list-of.model';
 import { Role, SaveRole } from '@shared/viewModel/role.model';
@@ -45,7 +46,7 @@ export class UserService {
         return this.http.patch<boolean>(`${this.endpoint}/${username}`, patch);
     }
 
-    public save(model: UserProfile): Observable<UserProfile> {
+    public save(model: AdminAddNewUser): Observable<UserProfile> {
         return this.http.post<UserProfile>(`${this.endpoint}`, model);
     }
 
@@ -86,11 +87,11 @@ export class UserService {
     }
 
     public checkUserName(userName: string): Observable<boolean> {
-        return this.http.get<boolean>(`${this.endpoint}/check-username/${userName}`);
+        return this.http.get<boolean>(`${this.endpointSignUp}/check-username/${userName}`);
     }
 
     public checkEmail(email: string): Observable<boolean> {
-        return this.http.get<boolean>(`${this.endpoint}/check-email/${email}`);
+        return this.http.get<boolean>(`${this.endpointSignUp}/check-email/${email}`);
     }
 
     public resetPassword(username: string, resetPassword: ResetPassword): Observable<boolean> {

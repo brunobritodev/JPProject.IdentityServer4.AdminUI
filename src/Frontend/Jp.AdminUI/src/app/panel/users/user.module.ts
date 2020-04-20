@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { InputValidationComponent } from '@shared/components/input-validation/input-validation';
 import { SharedModule } from '@shared/shared.module';
-import { DndModule } from 'ng2-dnd';
+import { ToasterModule } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { UserAddComponent } from './add/user-add.component';
 import { UserClaimsComponent } from './claims/user-claims.component';
@@ -29,11 +29,10 @@ const routes: Routes = [
 @NgModule({
     imports: [
         SharedModule,
+        ToasterModule.forRoot(),
         RouterModule.forChild(routes),
-        DndModule.forRoot(),
-        NgxSelectModule,
         TagInputModule,
-        NgbPaginationModule
+        NgbPaginationModule,
     ],
     declarations: [
         UserListComponent,
@@ -42,7 +41,8 @@ const routes: Routes = [
         UserClaimsComponent,
         UserRolesComponent,
         UserLoginsComponent,
-        UserEventsComponent
+        UserEventsComponent,
+        InputValidationComponent
     ],
     exports: [
         RouterModule

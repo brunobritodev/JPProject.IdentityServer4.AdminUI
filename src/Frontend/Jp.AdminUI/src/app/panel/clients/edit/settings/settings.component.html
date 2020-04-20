@@ -138,8 +138,8 @@
             <label placement="top" [tooltip]="'client.details.protocolType-tooltip' | translate" class="col-xl-4 col-form-label">{{
                 'client.details.protocolType' | translate }} <i class="fa fa-comment-dots"></i></label>
             <div class="col-xl-8">
-                <ngx-select [items]="[model.protocolType]" [(ngModel)]="model.protocolType" placeholder="ProtocolType">
-                </ngx-select>
+                <ng-select [items]="[model.protocolType]" [(ngModel)]="model.protocolType" placeholder="ProtocolType">
+                </ng-select>
             </div>
         </div>
     </fieldset>

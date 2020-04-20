@@ -84,8 +84,8 @@ export class EmailComponent implements OnInit {
         return document.getElementsByTagName('head')[0].appendChild(link);
     }
 
-    public getEmailTemplate($event: string) {
-        this.emailService.getEmail($event).subscribe(s => {
+    public getEmailTemplate($event: any) {
+        this.emailService.getEmail($event.value).subscribe(s => {
             if (s.bcc == null)
                 s.bcc = new Bcc();
 

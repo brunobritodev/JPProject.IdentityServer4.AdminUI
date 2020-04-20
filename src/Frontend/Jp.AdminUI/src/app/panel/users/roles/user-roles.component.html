@@ -52,7 +52,7 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.roles.role-tooltip' | translate">{{
                     'users.roles.role' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <ngx-select [items]="roles" [(ngModel)]="model.role" [placeholder]="'users.roles.role-tooltip' | translate"></ngx-select>
+                    <ng-select [items]="roles" [(ngModel)]="model.role" [placeholder]="'users.roles.role-tooltip' | translate"></ng-select>
                 </div>
             </div>
         </fieldset>

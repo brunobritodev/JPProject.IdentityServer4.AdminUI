@@ -10,5 +10,5 @@ export const environment = {
   RequireHttps: false,
   Uri: "http://localhost:4300",
   defaultTheme: "E",
-  version: "3.0.0"
+  version: "3.0.3"
 };

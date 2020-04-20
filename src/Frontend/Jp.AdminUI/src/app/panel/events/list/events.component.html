@@ -37,7 +37,7 @@
                 <div class="form-group row">
                     <label class="col-xl-2 col-form-label" placement="top" [tooltip]="'events.eventType-tooltip' | translate">{{ 'events.eventType' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-4">
-                        <ngx-select [items]="aggregatesTypes" (select)="getAggregates($event)" [allowClear]="true" [(ngModel)]="selectedType" [noAutoComplete] [placeholder]="'emails.edit.type' | translate"></ngx-select>
+                        <ng-select [items]="aggregatesTypes" (change)="getAggregates($event)" [(ngModel)]="selectedType" [placeholder]="'events.eventType' | translate"></ng-select>
                     </div>
                     <label class="col-xl-2 col-form-label" placement="top" [tooltip]="'events.aggregate-tooltip' | translate">{{ 'events.aggregate' | translate }} <i class="fa fa-comment-dots"></i></label>
                     <div class="col-xl-4">

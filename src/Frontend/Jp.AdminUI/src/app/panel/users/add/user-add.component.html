@@ -18,11 +18,11 @@
 </div>
 
 <app-loading *ngIf="showButtonLoading"></app-loading>
-<div class="card card-default" *ngIf="model" [hidden]="showButtonLoading">
+<div class="card card-default" [hidden]="showButtonLoading">
     <div class="card-header">
         <h3>{{ 'users.new-user' | translate }}</h3>
     </div>
-    <div class="card-body">
+    <div class="card-body" [formGroup]="registerForm">
 
         <!--Input - text -->
         <fieldset>
@@ -30,8 +30,8 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.userName-tooltip' | translate">{{
                     'users.edit.userName' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate" [(ngModel)]="model.userName" (keyup)="checkIfUniquenameExists()" (blur)="checkIfUniquenameExists()" [ngClass]="getClassUsernameExist()" required
-                    />
+                    <input class="form-control" autocomplete="username" [placeholder]="'users.edit.userName-tooltip' | translate" [formControl]="registerForm.controls.userName" required/>
+                    <app-input-validation [control]="registerForm.controls.userName" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
         </fieldset>
@@ -41,17 +41,19 @@
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.name-tooltip' | translate">{{
                     'users.edit.name' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate" [(ngModel)]="model.name" />
+                    <input class="form-control" autocomplete="name" [placeholder]="'users.edit.name-tooltip' | translate" [formControl]="registerForm.controls.name" />
+                    <app-input-validation [control]="registerForm.controls.name" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
         </fieldset>
         <!--Input - text -->
         <fieldset>
-            <div class="form-group row">
+            <div class=" form-group row">
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'users.edit.email-tooltip' | translate">{{
                     'users.edit.email' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [(ngModel)]="model.email" (keyup)="checkIfEmailExists()" (blur)="checkIfEmailExists()" [ngClass]="getClassEmailExist()" required />
+                    <input class="form-control" autocomplete="model-email" [placeholder]="'users.edit.email-tooltip' | translate" [formControl]="registerForm.controls.email" required />
+                    <app-input-validation [control]="registerForm.controls.email" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
         </fieldset>
@@ -61,7 +63,8 @@
                 <label class="col-xl-4 col-form-label">{{
                     'users.edit.password' | translate }}</label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="current-password" type="password" [(ngModel)]="model.password" />
+                    <input class="form-control" autocomplete="current-password" type="password" [formControl]="registerForm.controls.password" />
+                    <app-input-validation [control]="registerForm.controls.password" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
         </fieldset>
@@ -71,7 +74,8 @@
                 <label class="col-xl-4 col-form-label">{{
                     'users.edit.confirmPassword' | translate }}</label>
                 <div class="col-xl-8">
-                    <input class="form-control" autocomplete="current-password" [(ngModel)]="model.confirmPassword" type="password" />
+                    <input class="form-control" autocomplete="current-password" [formControl]="registerForm.controls.confirmPassword" type="password" />
+                    <app-input-validation [control]="registerForm.controls.confirmPassword" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
             </div>
         </fieldset>
@@ -81,13 +85,13 @@
                 <div class="col-xl-4">
                     <label class="col-form-label">{{ 'users.edit.confirmEmail' | translate }}
                 </label>&nbsp;
-                    <button type="button" class="btn btn-xs btn-info" [popover]="'users.edit.confirmEmail-tooltip' | translate" [popoverTitle]="'users.edit.confirmEmail' | translate" placement="top" container="body" [adaptivePosition]="false">
+                    <button type="button" class="btn btn-xs btn-info" [popover]="'users.edit.confirmEmail-tooltip' | translate" [popoverTitle]=" 'users.edit.confirmEmail' | translate" placement="top" container="body" [adaptivePosition]="false">
                     <i class="fa fa-comment-dots"></i>
                 </button>
                 </div>
                 <div class="col-xl-8">
                     <label class="switch m-0">
-                    <input type="checkbox" [(ngModel)]="model.confirmEmail" />
+                    <input type="checkbox"  [formControl]="registerForm.controls.confirmEmail" />
                     <span></span>
                 </label>
                 </div>
@@ -95,12 +99,13 @@
         </fieldset>
     </div>
     <div class="card-footer">
-        <button class="mb-1 btn btn-primary" (click)="save()" type="button">Save</button>
+        <button class="mb-1 btn btn-primary" (click)="save()" type="button">
+            <ng-container *ngIf="!showButtonLoading">{{ 'general.add' | translate }}</ng-container>
+            <loading-spinner *ngIf="showButtonLoading" [whiteStroke]="true" [width]="20" [height]="20" ></loading-spinner></button>
         <a class="mb-1 btn btn-secondary" [routerLink]="['/users']">Cancel</a>
     </div>
 </div>
-
-<div *ngIf="errors.length > 0">
+<div *ngIf="errors.length> 0">
     <alert type="danger">
         <div *ngFor="let error of errors; let i = index"><strong>{{i+1}}</strong> {{error}}</div>
     </alert>

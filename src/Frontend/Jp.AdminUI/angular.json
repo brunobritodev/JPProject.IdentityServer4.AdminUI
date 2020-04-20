@@ -41,7 +41,7 @@
                     },
                     "configurations": {
                         "production": {
-                            "optimization": true,
+                            "optimization": false,
                             "outputHashing": "all",
                             "sourceMap": false,
                             "extractCss": true,
@@ -53,6 +53,12 @@
                             "fileReplacements": [{
                                 "replace": "src/environments/environment.ts",
                                 "with": "src/environments/environment.prod.ts"
+                            }]
+                        },
+                        "docker": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.docker.ts"
                             }]
                         }
                     }
@@ -132,5 +138,8 @@
                 }
             }
         }
+    },
+    "cli": {
+        "analytics": "6cd983e6-b858-419c-921b-86af62903cd0"
     }
 }

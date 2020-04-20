@@ -294,7 +294,7 @@
         "list": {
             "clientId": "Client",
             "creationTime": "CreationTime",
-            "email": "Email",
+            "username": "Username",
             "expiration": "Expiration",
             "key": "Key",
             "picture": "Picture",
@@ -430,9 +430,6 @@
             "name": "Name",
             "role": "Role",
             "role-tooltip": "Select user role"
-        },
-        "events": {
-
         }
     },
     "emails": {
@@ -501,7 +498,17 @@
             "useStorage-tooltip": "SSO should use storage?",
             "physicalPath": "Physical Path",
             "physicalPath-tooltip": "Location to save image"
+        },
+        "recaptcha": {
+            "description": "ReCaptcha V3 Configuration",
+            "site-key": "Site Key",
+            "site-key-tooltip": "Site key is used in HTML",
+            "private-key": "Secret key",
+            "private-key-tooltip": "Secret key is for communication between API and reCAPTCHA",
+            "useRecaptcha-tooltip": "If enabled it will be used in some flows",
+            "useRecaptcha": "Enable reCAPTCHA"
         }
+
     },
     "events": {
         "description": "Search for generated events from SSO",
@@ -515,5 +522,17 @@
         "aggregate-tooltip": "Aggregate name",
         "eventType": "Event Type",
         "eventType-tooltip": "Category of an Event (Optional)"
+    },
+    "validations": {
+        "minlength": "Too short",
+        "required": "Required field",
+        "equalToPassword": "Password are not equal.",
+        "confirmPassword": "Confirm password",
+        "email": "Invalid E-mail",
+        "equalToEmail": "E-mail are not equal",
+        "invalidUserOrPassword": "Invalid username or password",
+        "notEqualToPassword": "The new password should be different from actual.",
+        "emailExist": "E-mail already exists",
+        "usernameExist": "Username already exists"
     }
 }

@@ -39,20 +39,19 @@ export class EmailSettingsComponent implements OnInit {
         private settingsServices: GlobalSettingsService) { }
 
     ngOnInit() {
-        
+
         this.settings = new SMTP();
-        this.settings.username = this.model.find(f => f.key == "Smtp:Username");
-        this.settings.password = this.model.find(f => f.key == "Smtp:Password");
-        this.settings.server = this.model.find(f => f.key == "Smtp:Server");
-        this.settings.port = this.model.find(f => f.key == "Smtp:Port");
-        this.settings.useSsl = this.model.find(f => f.key == "Smtp:UseSsl");
-        this.settings.sendMail = this.model.find(f => f.key == "SendEmail");
+        this.settings.username = GlobalSettings.getSetting(this.model, "Smtp:Username");
+        this.settings.password = GlobalSettings.getSetting(this.model, "Smtp:Password");
+        this.settings.server = GlobalSettings.getSetting(this.model, "Smtp:Server");
+        this.settings.port = GlobalSettings.getSetting(this.model, "Smtp:Port");
+        this.settings.useSsl = GlobalSettings.getSetting(this.model, "Smtp:UseSsl");
+        this.settings.sendMail = GlobalSettings.getSetting(this.model, "SendEmail");
 
         this.sendMail = this.settings.sendMail.value == "true";
         this.useSsl = this.settings.useSsl.value == "true";
     }
 
-    
     public updateSettings() {
         this.errors.splice(0, this.errors.length);
         let configurations = new Array<GlobalSettings>();
@@ -76,7 +75,7 @@ export class EmailSettingsComponent implements OnInit {
             }
         );
     }
-    
+
     public showSuccessMessage() {
         this.translator.translate.get('toasterMessages').subscribe(a => {
             this.toasterService.pop("success", a["title-success"], a["message-success"]);

@@ -1,0 +1,5 @@
+<div *ngIf="errorValidation(control)">
+    <ng-container *ngFor="let error of ObjectKeys(control.errors); let first = first">
+        <span class="text-danger">{{ errorMsgs[error] }}</span>
+    </ng-container>
+</div>

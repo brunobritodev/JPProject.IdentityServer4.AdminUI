@@ -1,17 +1,18 @@
-/* tslint:disable:no-unused-variable */
-
-import { TestBed, async, inject } from "@angular/core/testing";
-import { OffsidebarComponent } from "./offsidebar.component";
-import { TranslateService, TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
-
-import { SettingsService } from "@core/settings/settings.service";
-import { ThemesService } from "@core/themes/themes.service";
-import { TranslatorService } from "@core/translator/translator.service";
-import { SharedModule } from "@shared/shared.module";
-import { createTranslateLoader } from "../../../app.module";
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { async, inject, TestBed } from '@angular/core/testing';
+import { SettingsService } from '@core/settings/settings.service';
+import { ThemesService } from '@core/themes/themes.service';
+import { TranslatorService } from '@core/translator/translator.service';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { VersionService } from '@shared/services/version.service';
+import { SharedModule } from '@shared/shared.module';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { ToasterModule } from 'angular2-toaster';
+
+import { createTranslateLoader } from '../../../app.module';
+import { OffsidebarComponent } from './offsidebar.component';
+
+/* tslint:disable:no-unused-variable */
 
 describe("Component: Offsidebar", () => {
 
@@ -27,6 +28,7 @@ describe("Component: Offsidebar", () => {
                 }),
                 HttpClientModule,
                 SharedModule,
+                ToasterModule.forRoot(),
                 OAuthModule.forRoot()
             ],
             providers: [SettingsService, ThemesService, TranslatorService, VersionService]

@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { SharedModule } from '@shared/shared.module';
-import { DndModule } from 'ng2-dnd';
+import { ToasterModule } from 'angular2-toaster';
 import { TagInputModule } from 'ngx-chips';
-import { NgxSelectModule } from 'ngx-select-ex';
 
 import { EmailComponent } from './edit/email.component';
 import { EmailService } from './emails.service';
@@ -17,9 +16,8 @@ const routes: Routes = [
 @NgModule({
     imports: [
         SharedModule,
+        ToasterModule.forRoot(),
         RouterModule.forChild(routes),
-        DndModule.forRoot(),
-        NgxSelectModule,
         TagInputModule,
         AngularEditorModule
     ],

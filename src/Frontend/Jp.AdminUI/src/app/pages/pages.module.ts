@@ -1,15 +1,13 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { SharedModule } from "../shared/shared.module";
-import { DndModule } from "ng2-dnd";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
-import { AlertModule } from "ngx-bootstrap/alert";
-import { TextMaskModule } from "angular2-text-mask";
-import { LoginComponent } from "./login/login.component";
-import { Error404Component } from "./error404/error404.component";
-import { LoginCallbackComponent } from "./login-callback/login-callback.component";
-import { Error500Component } from "./error500/error500.component";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
+import { Error404Component } from './error404/error404.component';
+import { Error500Component } from './error500/error500.component';
+import { LoginCallbackComponent } from './login-callback/login-callback.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
@@ -25,9 +23,7 @@ const routes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forChild(routes),
-        DndModule.forRoot(),
-        AlertModule.forRoot(),
-        TextMaskModule,
+        AlertModule.forRoot()
     ],
     declarations: [
         LoginComponent,
