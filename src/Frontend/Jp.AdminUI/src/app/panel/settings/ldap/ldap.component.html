@@ -1,0 +1,184 @@
+<div class="card b">
+    <div class="card-header bg-gray-lighter text-bold">LDAP</div>
+    <div class="card-body" [formGroup]="settingsForms">
+        <p>{{ 'settings.ldap.description' | translate}}</p>
+
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.domainName-tooltip' | translate">{{ 'settings.ldap.domainName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" [placeholder]="'settings.ldap.domainName-tooltip' | translate" [formControl]="settingsForms.controls.domainName" required/>
+                    <p>
+                        <small class="text-muted">E.g: jpproject.net / Ip: 3.4.5.6</small>
+                    </p>
+                    <app-input-validation [control]="settingsForms.controls.domainName" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.distinguishedName-tooltip' | translate">{{ 'settings.ldap.distinguishedName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" [placeholder]="'settings.ldap.distinguishedName-tooltip' | translate" [formControl]="settingsForms.controls.distinguishedName" required/>
+                    <p>
+                        <small class="text-muted">E.g: dc=jpproject,dc=net</small>
+                    </p>
+                    <app-input-validation [control]="settingsForms.controls.distinguishedName" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+            </div>
+        </fieldset>
+
+        <!--Select-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.searchScope-tooltip' | translate">{{ 'settings.ldap.searchScope' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <ng-select [items]="searchScope" [formControl]="settingsForms.controls.searchScope" bindValue="id" bindLabel="text" [placeholder]="'settings.ldap.searchScope' | translate"></ng-select>
+                    <app-input-validation [control]="settingsForms.controls.searchScope" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+            </div>
+        </fieldset>
+
+        <!--Select-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.authType-tooltip' | translate">{{ 'settings.ldap.authType' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <ng-select [items]="authType" [formControl]="settingsForms.controls.authType" bindValue="id" bindLabel="text" [placeholder]="'settings.ldap.authType' | translate"></ng-select>
+                    <app-input-validation [control]="settingsForms.controls.authType" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <!--Select with tags-->
+        <fieldset>
+            <div class="form-group row">
+                <div class="col-xl-4">
+                    <label class="col-form-label">{{ 'settings.ldap.attributes' | translate }} </label>&nbsp;
+                    <button type="button" class="btn btn-xs btn-info" [popover]="'settings.ldap.attributes-tooltip' | translate" [popoverTitle]="'settings.ldap.attributes' | translate" placement="auto" container="body" [adaptivePosition]="false">
+                <i class="fa fa-comment-dots" placement="top"></i>
+            </button>
+                </div>
+                <div class="col-xl-8">
+                    <tag-input theme='bootstrap' name="attributes" [modelAsStrings]="true" placeholder='+Attribute' [(ngModel)]="attributes" [ngModelOptions]="{standalone: true}"></tag-input>
+                </div>
+                <div class="col-xl-8 offset-4">
+                    <small>Options:</small>
+                    <br>
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('givenName')" type="button">First Name (givenName)&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('initials')" type="button">Initials&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('sn')" type="button">Last Name(sn)&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('displayName')" type="button">displayName&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('description')" type="button">Description&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('physicalDeliveryOfficeName')" type="button">Office&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('telephoneNumber')" type="button">Telephone Number&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('mail')" type="button">E-mail&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="btn btn-oval btn-xs btn-info mb-1" (click)="addAttribute('cn')" type="button">Common Name(cn)&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>&nbsp;
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <hr>
+    <div class="card-body">
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.ldap.username-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.ldap.username' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9 col-xs-12">
+                    <input class="form-control" autocomplete="username" [placeholder]="'settings.ldap.username-tooltip' | translate" [(ngModel)]="username" />
+                </div>
+            </div>
+        </fieldset>
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
+                <label placement="top" [tooltip]="'settings.ldap.password-tooltip' | translate" class="col-xl-3 col-form-label">{{ 'settings.ldap.password' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-9 col-xs-12">
+                    <input class="form-control" type="password" autocomplete="current-password" [placeholder]="'settings.ldap.password-tooltip' | translate" [(ngModel)]="password" />
+                </div>
+            </div>
+        </fieldset>
+        <button class="btn btn-outline-warning" (click)="testConnection()" type="button">{{ 'settings.ldap.test' | translate}}</button>
+
+        <div *ngIf="showLdapTest">
+            <!-- START card-->
+            <div class="card">
+                <div class="card-body bg-danger text-center" [ngClass]="{'bg-primary': runningLdapTest && ldapResult == null, 'bg-danger': ldapResult && !ldapResult.success, 'bg-success': ldapResult && ldapResult.success}">
+                    <div class="d-flex">
+                        <div>LDAP</div>
+                        <div class="ml-auto">
+                            <span *ngIf="runningLdapTest">{{ 'settings.ldap.running' | translate }}</span>
+                            <span *ngIf="!runningLdapTest">{{ 'settings.ldap.run-done' | translate }}</span>
+                        </div>
+                    </div>
+                    <img class="img-thumbnail circle thumb96" src="assets/img/server.png" alt="Image">
+                    <h4 class="mt-0">{{'settings.ldap.connection-test' | translate}}</h4>
+                    <div class="progress progress-xs mb-3" *ngIf="runningLdapTest">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            <span class="sr-only">Wait</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END card-->
+                <div class="card-body no-padding" *ngIf="ldapResult">
+                    <div class="list-group mb0">
+                        <div class="list-group-item bt0">
+                            <em class="fa-fw fas mr-2" [ngClass]="{'fa-times text-danger': !ldapResult.success, 'fa-check text-success': ldapResult.success}"></em>
+
+                            <span *ngIf="ldapResult.success">{{ 'settings.ldap.success' | translate }}</span>
+                            <span *ngIf="!ldapResult.success">{{ 'settings.ldap.error' | translate }}</span>
+                        </div>
+                        <div class="list-group-item" *ngIf="!ldapResult.success">
+                            <em class="fa-fw fa fa-list-alt mr-2"></em>Step: {{ldapResult.step}}
+                        </div>
+                        <div class="list-group-item" *ngIf="!ldapResult.success">
+                            <em class="fa-fw fa fa-comment-alt mr-2"></em>{{ldapResult.error}}
+                        </div>
+
+                        <div class="list-group-item" *ngIf="ldapResult.success">
+                            <em class="fa-fw fa fa-truck mr-2"></em>Claims
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-accent-primary" *ngFor="let item of ldapResult.claims">
+                                    {{item.type}}: <strong>{{item.value}}</strong>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="card-body">
+            <p>
+                <strong>Other options</strong>
+            </p>
+            <!--Checkbox-->
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.useLdap-tooltip' | translate">{{ 'settings.ldap.useLdap' | translate }}
+                <i class="fa fa-comment-dots"></i></label>
+                    <div class="col-xl-8">
+                        <label class="switch m-0">
+                    <input type="checkbox" [(ngModel)]="useLdap" />
+                    <span></span>
+                </label>
+                    </div>
+                </div>
+            </fieldset>
+            <p>
+                <small class="text-muted">* If you are not an Administrator, some fields will not show.</small>
+            </p>
+
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-info" (click)="updateSettings()" type="button">{{ 'settings.update' | translate }}</button>
+    </div>
+</div>

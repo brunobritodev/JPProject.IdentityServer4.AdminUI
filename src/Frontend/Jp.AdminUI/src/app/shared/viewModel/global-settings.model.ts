@@ -11,4 +11,12 @@ export class GlobalSettings {
 
         return item;
     }
+
+    public static updateSetting(model: Array<GlobalSettings>, key: string, value: string): GlobalSettings {
+        let item = model.find(f => f.key === key);
+        if (item != null)
+            item.value = value;
+
+        return item;
+    }
 }

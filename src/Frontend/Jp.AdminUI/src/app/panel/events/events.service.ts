@@ -20,16 +20,16 @@ export class EventsService {
 
     public searchEvents(aggregate: string, quantity: number, page: number): Observable<ListOf<EventHistoryData>> {
         let params = new HttpParams()
-                        .set('limit', quantity.toString())
-                        .set('offset', ((page - 1) * quantity).toString());
-        if(aggregate && aggregate != ""){
+            .set('limit', quantity.toString())
+            .set('offset', ((page - 1) * quantity).toString());
+        if (aggregate && aggregate != "") {
             params = params.set('aggregate', aggregate);
         }
 
         return this.http.get<ListOf<EventHistoryData>>(`${this.endpoint}`, { params });
     }
 
-    public listAggregates(){
+    public listAggregates() {
         return this.http.get<EventSelector[]>(`${this.endpoint}/aggregates`);
     }
 

@@ -461,6 +461,7 @@
     },
     "settings": {
         "description": "Global settings to manage your SSO configuration",
+        "update": "Update settings",
         "emails": {
             "description": "SMTP Settings for e-mail services.",
             "server": "Server",
@@ -507,6 +508,33 @@
             "private-key-tooltip": "Secret key is for communication between API and reCAPTCHA",
             "useRecaptcha-tooltip": "If enabled it will be used in some flows",
             "useRecaptcha": "Enable reCAPTCHA"
+        },
+        "ldap": {
+            "description": "Lightweight Directory Access Protocol is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network",
+            "domainName-tooltip": "Domain Name",
+            "domainName": "Domain Name",
+            "distinguishedName-tooltip": "A name that includes an object's entire path to the root of the LDAP namespace is called its distinguished name, or DN.",
+            "distinguishedName": "Distinguished Name",
+            "searchFilter-tooltip": "Search Filter",
+            "searchFilter": "Search Filter",
+            "authType-tooltip": "Used to specify the authentication method to use on a connection",
+            "authType": "Authentication Type",
+            "attributes-tooltip": "Attributes are the elements responsible for storing data in a directory",
+            "attributes": "Attributes",
+            "test": "Test Connection",
+            "connection-test": "Connection Test",
+            "running": "Running",
+            "run-done": "Done",
+            "success": "Success",
+            "error": "Error",
+            "username": "Username",
+            "password": "Password",
+            "username-tooltip": "LDAP test Username",
+            "password-tooltip": "LDAP test Password",
+            "searchScope-tooltip": "Specifies the scope of a search",
+            "searchScope": "Search Scope",
+            "useLdap-tooltip": "Set SSO to use LDAP instead ASP.NET Identity",
+            "useLdap": "Use Ldap"
         }
 
     },
