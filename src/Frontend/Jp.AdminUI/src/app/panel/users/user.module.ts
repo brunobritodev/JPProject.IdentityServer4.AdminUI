@@ -41,7 +41,8 @@ const routes: Routes = [
         UserClaimsComponent,
         UserRolesComponent,
         UserLoginsComponent,
-        UserEventsComponent
+        UserEventsComponent,
+        InputValidationComponent
     ],
     exports: [
         RouterModule
