@@ -20,6 +20,7 @@
                     <a href="#" class="list-group-item" (click)="settingSection=1" [ngClass]="{'active': (settingSection == 1)}">Emails</a>
                     <a href="#" class="list-group-item" (click)="settingSection=2" [ngClass]="{'active': (settingSection == 2)}">Storage</a>
                     <a href="#" class="list-group-item" (click)="settingSection=3" [ngClass]="{'active': (settingSection == 3)}">Recaptcha</a>
+                    <a href="#" class="list-group-item" (click)="settingSection=4" [ngClass]="{'active': (settingSection == 4)}">LDAP</a>
                 </div>
             </div>
         </div>
@@ -32,6 +33,9 @@
             </div>
             <div *ngIf="settingSection == 3">
                 <app-recaptcha *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-recaptcha>
+            </div>
+            <div *ngIf="settingSection == 4">
+                <app-ldap *ngIf="settings.length" [model]="settings" [(errors)]="errors"></app-ldap>
             </div>
         </div>
     </div>

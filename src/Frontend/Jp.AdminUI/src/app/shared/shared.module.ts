@@ -22,6 +22,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
+import { InputValidationComponent } from './components/input-validation/input-validation';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { SpinnersComponent } from './components/spinners/spinners.component';
 import { CheckallDirective } from './directives/checkall/checkall.directive';
@@ -62,6 +63,7 @@ import { ColorsService } from './services/colors.service';
         TypeaheadModule.forRoot(),
         BsDatepickerModule.forRoot(),
         NgSelectModule
+        
     ],
     providers: [
         ColorsService
@@ -78,6 +80,7 @@ import { ColorsService } from './services/colors.service';
         SpinnersComponent,
         LoadingSpinnerComponent,
         NumberDirective,
+        InputValidationComponent
     ],
     exports: [
         CommonModule,
@@ -112,6 +115,7 @@ import { ColorsService } from './services/colors.service';
         JqcloudDirective,
         SpinnersComponent,
         LoadingSpinnerComponent,
+        InputValidationComponent,
         NumberDirective,
         NgSelectModule
     ]

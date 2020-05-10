@@ -470,6 +470,67 @@
             "useSsl-tooltip": "SSL benutzen",
             "sendEmail": "Sende Email",
             "sendEmail-tooltip": "Soll SSO die Email senden?"
+        },
+        "recaptcha": {
+            "description": "ReCaptcha V3-Konfiguration",
+            "site-key": "Site Key",
+            "site-key-tooltip": "Der Site-Schlüssel wird in HTML verwendet",
+            "private-key": "Geheimer Schlüssel",
+            "private-key-tooltip": "Der geheime Schlüssel dient zur Kommunikation zwischen API und reCAPTCHA",
+            "useRecaptcha-tooltip": "Wenn aktiviert, wird es in einigen Flows verwendet",
+            "useRecaptcha": "Aktivieren Sie reCAPTCHA"
+        },
+        "ldap": {
+            "description": "Das Lightweight Directory Access Protocol ist ein offenes, herstellerneutrales Anwendungsprotokoll nach Industriestandard für den Zugriff auf und die Verwaltung von verteilten Verzeichnisinformationsdiensten über ein IP-Netzwerk (Internet Protocol)",
+            "domainName-tooltip": "Domain Name",
+            "domainName": "Domain Name",
+            "distinguishedName-tooltip": "Ein Name, der den gesamten Pfad eines Objekts zum Stammverzeichnis des LDAP-Namespace enthält, wird als definierter Name oder DN bezeichnet.",
+            "distinguishedName": "Distinguished Name",
+            "searchFilter-tooltip": "Suchfilter",
+            "searchFilter": "Suchfilter",
+            "authType-tooltip": "Wird verwendet, um die Authentifizierungsmethode anzugeben, die für eine Verbindung verwendet werden soll",
+            "authType": "Authentifizierungsart",
+            "attributes-tooltip": "Attribute sind die Elemente, die für das Speichern von Daten in einem Verzeichnis verantwortlich sind",
+            "attributes": "Attribute",
+            "test": "Testverbindung",
+            "connection-test": "Verbindungstest",
+            "running": "Laufen",
+            "run-done": "Erledigt",
+            "success": "Erfolg",
+            "error": "Error",
+            "username": "Nutzername",
+            "password": "Passwort",
+            "username-tooltip": "LDAP-Test Benutzername",
+            "password-tooltip": "LDAP-Testkennwort",
+            "searchScope-tooltip": "Gibt den Umfang einer Suche an",
+            "searchScope": "Suchbereich",
+            "useLdap-tooltip": "Stellen Sie SSO so ein, dass LDAP anstelle von ASP.NET Identity verwendet wird",
+            "useLdap": "Verwenden Sie Ldap"
         }
+    },
+    "events": {
+        "description": "Suchen Sie nach generierten Ereignissen aus SSO",
+        "who": "WHO",
+        "when": "Wann",
+        "action": "Aktionen",
+        "where": "Wo",
+        "details": "Einzelheiten",
+        "category": "Kategorie",
+        "aggregate": "Aggregat",
+        "aggregate-tooltip": "Aggregatname",
+        "eventType": "Ereignistyp",
+        "eventType-tooltip": "Kategorie eines Ereignisses (optional)"
+    },
+    "validations": {
+        "minlength": "Zu kurz",
+        "required": "Pflichtfeld",
+        "equalToPassword": "Passwort sind nicht gleich.",
+        "confirmPassword": "Kennwort bestätigen",
+        "email": "Ungültige E-Mail",
+        "equalToEmail": "E-Mail sind nicht gleich",
+        "invalidUserOrPassword": "ungültiger Benutzername oder Passwort",
+        "notEqualToPassword": "Das neue Passwort sollte sich vom tatsächlichen unterscheiden.",
+        "emailExist": "E-Mail existiert bereits",
+        "usernameExist": "Benutzername existiert bereits"
     }
 }
