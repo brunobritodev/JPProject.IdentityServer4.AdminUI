@@ -21,6 +21,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 import { SettingsService } from './settings/settings.service';
 import { ThemesService } from './themes/themes.service';
 import { TranslatorService } from './translator/translator.service';
+import { authConfig } from './auth/auth-config';
 
 export function storageFactory(): OAuthStorage {
     return localStorage;
@@ -54,7 +55,6 @@ export class CoreModule {
             providers: [
                 { provide: AuthConfig, useValue: authProdConfig },
                 { provide: OAuthModuleConfig, useValue: authModuleConfig },
-                { provide: ValidationHandler, useClass: JwksValidationHandler },
                 { provide: OAuthStorage, useFactory: storageFactory },
             ]
         };
