@@ -6,15 +6,72 @@
         <!--Input - text -->
         <fieldset>
             <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.address-tooltip' | translate">{{ 'settings.ldap.address' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" [placeholder]="'settings.ldap.address-tooltip' | translate" [formControl]="settingsForms.controls.address" required/>
+                    <p>
+                        <small class="text-muted">E.g: jpproject.net / Ip: 3.4.5.6</small>
+                    </p>
+                    <app-input-validation [control]="settingsForms.controls.address" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <!--Input - text -->
+        <fieldset>
+            <div class="form-group row">
                 <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.domainName-tooltip' | translate">{{ 'settings.ldap.domainName' | translate }} <i class="fa fa-comment-dots"></i></label>
                 <div class="col-xl-8">
                     <input class="form-control" [placeholder]="'settings.ldap.domainName-tooltip' | translate" [formControl]="settingsForms.controls.domainName" required/>
                     <p>
-                        <small class="text-muted">E.g: jpproject.net / Ip: 3.4.5.6</small>
+                        <small class="text-muted">E.g: jpproject</small>
                     </p>
                     <app-input-validation [control]="settingsForms.controls.domainName" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
                 </div>
 
+            </div>
+        </fieldset>
+
+        <!--Input - Number -->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.portNumber-tooltip' | translate">{{
+                'settings.ldap.portNumber' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <input class="form-control" [placeholder]="'settings.ldap.portNumber-tooltip' | translate" [formControl]="settingsForms.controls.portNumber" numbersOnly />
+                    <app-input-validation [control]="settingsForms.controls.portNumber" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+            </div>
+        </fieldset>
+
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.fullyQualifiedDomainName-tooltip' | translate">{{
+                'settings.ldap.fullyQualifiedDomainName' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                    <input type="checkbox" [formControl]="settingsForms.controls.fullyQualifiedDomainName" />
+                    <span></span>
+                </label>
+                    <app-input-validation [control]="settingsForms.controls.fullyQualifiedDomainName" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
+            </div>
+        </fieldset>
+
+        <!--Checkbox-->
+        <fieldset>
+            <div class="form-group row">
+                <label class="col-xl-4 col-form-label" placement="top" [tooltip]="'settings.ldap.connectionless-tooltip' | translate">{{
+                'settings.ldap.connectionless' | translate }} <i class="fa fa-comment-dots"></i></label>
+                <div class="col-xl-8">
+                    <label class="switch m-0">
+                    <input type="checkbox" [formControl]="settingsForms.controls.connectionLess" />
+                    <span></span>
+                </label>
+                    <app-input-validation [control]="settingsForms.controls.connectionLess" [errorMsgs]="getErrorMessages() | async"></app-input-validation>
+                </div>
             </div>
         </fieldset>
 

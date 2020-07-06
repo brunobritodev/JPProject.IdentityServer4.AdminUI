@@ -13,6 +13,7 @@ import { UserProfile } from '@shared/viewModel/userProfile.model';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, share, switchMap } from 'rxjs/operators';
+import { isBoolean } from 'util';
 
 import { GlobalSettingsService } from '../global-settings.service';
 
@@ -42,10 +43,14 @@ export class LdapComponent implements OnInit {
     public showLdapTest: boolean = false;
 
     readonly settingsForms = new FormGroup<Ldap>({
+        address: new FormControl<string>(null, Validators.required),
         domainName: new FormControl<string>(null, Validators.required),
         distinguishedName: new FormControl<string>(null, Validators.required),
         authType: new FormControl<string>(null, null),
-        searchScope: new FormControl<string>(null, Validators.required)
+        searchScope: new FormControl<string>(null, Validators.required),
+        portNumber: new FormControl<number>({ value: 389, disabled: false }, [Validators.min(0), Validators.max(99999)]),
+        connectionLess: new FormControl<boolean>(null, Validators.required),
+        fullyQualifiedDomainName: new FormControl<boolean>(null, Validators.required)
     });
     useLdap: boolean;
 
@@ -81,7 +86,11 @@ export class LdapComponent implements OnInit {
             authType: GlobalSettings.getSetting(this.model, "Ldap:AuthType").value,
             distinguishedName: GlobalSettings.getSetting(this.model, "Ldap:DistinguishedName").value,
             domainName: GlobalSettings.getSetting(this.model, "Ldap:DomainName").value,
-            searchScope: GlobalSettings.getSetting(this.model, "Ldap:SearchScope").value
+            address: GlobalSettings.getSetting(this.model, "Ldap:Address").value,
+            searchScope: GlobalSettings.getSetting(this.model, "Ldap:SearchScope").value,
+            portNumber: parseInt(GlobalSettings.getSetting(this.model, "Ldap:PortNumber").value),
+            connectionLess: GlobalSettings.getSetting(this.model, "Ldap:ConnectionLess").value == 'true',
+            fullyQualifiedDomainName: GlobalSettings.getSetting(this.model, "Ldap:FullyQualifiedDomainName").value == 'true',
         };
         this.settingsForms.setValue(content);
 
@@ -124,7 +133,13 @@ export class LdapComponent implements OnInit {
         configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:AuthType", this.settingsForms.value.authType));
         configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:DistinguishedName", this.settingsForms.value.distinguishedName));
         configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:DomainName", this.settingsForms.value.domainName));
+        configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:Address", this.settingsForms.value.address));
         configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:SearchScope", this.settingsForms.value.searchScope));
+
+        configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:PortNumber", this.settingsForms.value.portNumber.toString()));
+        configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:ConnectionLess", this.settingsForms.value.connectionLess ? "true" : "false"));
+        configurations.push(GlobalSettings.updateSetting(this.model, "Ldap:FullyQualifiedDomainName", this.settingsForms.value.fullyQualifiedDomainName ? "true" : "false"));
+
         configurations.push(GlobalSettings.updateSetting(this.model, "LoginStrategy", this.useLdap ? "Ldap" : "Identity"));
 
         this.showButtonLoading = true;
@@ -159,7 +174,9 @@ export class LdapComponent implements OnInit {
         const distinguishedName = this.settingsForms.value.distinguishedName;
         const domainName = this.settingsForms.value.domainName;
         const searchScope = this.settingsForms.value.searchScope;
-        this.settingsServices.testLdap(attributes, authType, distinguishedName, domainName, searchScope, this.username, this.password).subscribe(
+        const address = this.settingsForms.value.address;
+        const number = this.settingsForms.value.portNumber;
+        this.settingsServices.testLdap(attributes, authType, distinguishedName, domainName, searchScope, address, number, this.username, this.password).subscribe(
             (data: LdapConnectionResult) => {
                 this.ldapResult = data;
                 this.showButtonLoading = false;

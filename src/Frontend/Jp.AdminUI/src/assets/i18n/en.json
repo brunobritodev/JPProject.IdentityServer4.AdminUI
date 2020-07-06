@@ -511,7 +511,7 @@
         },
         "ldap": {
             "description": "Lightweight Directory Access Protocol is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network",
-            "domainName-tooltip": "Domain Name",
+            "domainName-tooltip": "The server ID. A string specifying the domain name",
             "domainName": "Domain Name",
             "distinguishedName-tooltip": "A name that includes an object's entire path to the root of the LDAP namespace is called its distinguished name, or DN.",
             "distinguishedName": "Distinguished Name",
@@ -534,9 +534,16 @@
             "searchScope-tooltip": "Specifies the scope of a search",
             "searchScope": "Search Scope",
             "useLdap-tooltip": "Set SSO to use LDAP instead ASP.NET Identity",
-            "useLdap": "Use Ldap"
+            "useLdap": "Use Ldap",
+            "connectionless": "Connection Less",
+            "connectionless-tooltip": "TRUE if the connection is UDP or FALSE if the connection uses TCP/IP",
+            "fullyQualifiedDomainName": "Fully Qualified Domain Name",
+            "fullyQualifiedDomainName-tooltip": "TRUE if each element in servers is a fully-qualified DNS host name. If FALSE an element can be an IP address, a DNS domain or host name",
+            "portNumber": "Port Number",
+            "portNumber-tooltip": "The port number to be used when connecting to the server",
+            "address": "Address",
+            "address-tooltip": "The address of LDAP server name or dotted strings representing the IP address of the LDAP server."
         }
-
     },
     "events": {
         "description": "Search for generated events from SSO",

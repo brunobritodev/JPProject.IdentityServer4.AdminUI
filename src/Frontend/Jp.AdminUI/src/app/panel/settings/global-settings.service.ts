@@ -25,11 +25,13 @@ export class GlobalSettingsService {
         return this.http.put<void>(`${this.endpoint}`, model);
     }
 
-    public testLdap(attributes: string, authType: string, distinguishedName: string, domainName: string, searchScope: string, username: string, password: string) {
+    public testLdap(attributes: string, authType: string, distinguishedName: string, domainName: string, searchScope: string, address: string, portNumber: number, username: string, password: string) {
         let params = new HttpParams()
             .set('distinguishedName', distinguishedName)
             .set('domainName', domainName)
-            .set('searchScope', searchScope);
+            .set('searchScope', searchScope)
+            .set('address', address)
+            .set('portNumber', portNumber.toString());
 
         if (authType != null && authType != "")
             params = params.set('authType', authType);
