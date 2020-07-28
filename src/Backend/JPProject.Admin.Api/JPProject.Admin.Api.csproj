@@ -13,7 +13,7 @@
     <PackageReference Include="JPProject.Admin.Application" Version="3.2.2" />
     <PackageReference Include="JPProject.Admin.EntityFramework.Repository" Version="3.2.2" />
     <PackageReference Include="JPProject.AspNet.Core" Version="3.2.2" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.13.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
