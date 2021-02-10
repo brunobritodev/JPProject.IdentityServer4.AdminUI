@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.406-buster AS build
 WORKDIR /src
 COPY ["src/Backend/JPProject.Admin.Api/JPProject.Admin.Api.csproj", "Backend/JPProject.Admin.Api/"]
 RUN dotnet restore "Backend/JPProject.Admin.Api/JPProject.Admin.Api.csproj"
