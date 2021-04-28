@@ -1,5 +1,5 @@
 # base image
-FROM node:13.12-alpine as builder
+FROM node:16.0.0-alpine as builder
 ARG env=docker
 # install and cache app dependencies
 COPY ["src/Frontend/Jp.AdminUI/package.json", "./"]
