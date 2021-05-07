@@ -65,7 +65,7 @@
         "jquery-sparkline": "2.4.0",
         "jquery.browser": "0.1.0",
         "jquery.flot.tooltip": "0.9.0",
-        "lodash": "^4.17.15",
+        "lodash": "^4.17.21",
         "modernizr": "^3.10.0",
         "moment": "^2.24.0",
         "ng2-charts": "^2.3.0",
