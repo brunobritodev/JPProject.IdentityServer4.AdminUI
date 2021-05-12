@@ -1,3 +1,8 @@
+Archived project. If you are looking for an api and management ecosystem. You can try [SSO](https://github.com/brunohbrito/JPProject.IdentityServer4.SSO) which are properly working. Or try [Skorubo Version](IdentityServer4.Admin), he is working at the project and keeping it up-to-date!
+
+
+----------
+
 ![image](https://github.com/brunohbrito/JPProject.Core/blob/master/build/logo.png?raw=true)
 
 
