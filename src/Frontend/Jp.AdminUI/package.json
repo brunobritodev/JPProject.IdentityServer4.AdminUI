@@ -52,7 +52,7 @@
         "bootstrap": "^4.4.1",
         "chart.js": "^2.9.3",
         "classlist.js": "1.1.20150312",
-        "codemirror": "^5.52.2",
+        "codemirror": "^5.58.2",
         "core-js": "^3.6.5",
         "easy-pie-chart": "2.1.7",
         "enhanced-resolve": "^4.1.1",
